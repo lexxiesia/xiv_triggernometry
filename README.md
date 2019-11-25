@@ -2,7 +2,7 @@
 
 ## How to Setup
 
- 1. Navigate to your Triggernometry add-on tab in ACT.
+ 1. Navigate to your Triggernometry plugin tab in ACT.
  2. Right-click on **Remote Triggers** and choose **Add**> **Repository** from the list.
  3. Name it whatever you want but put the following in the address:
  ```https://raw.githubusercontent.com/lexxiesia/xiv_triggernometry/master/Triggernometry_Lexxie.xml```

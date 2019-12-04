@@ -1,5 +1,5 @@
 # xiv_triggernometry
-###### Repository Triggernometry version 1.1.2.1
+```Repository Triggernometry version 1.1.2.1```
 ***
 ## How to Setup
 

@@ -16,3 +16,5 @@
 Triggers within the repository are separated by content folders. Most stuff are enabled by default. Disable triggers that you don't want activated. That is all!
 
 If there're any problems or issues, hit me up on Discord.
+***
+###### Repository Triggernometry version 1.1.2.1

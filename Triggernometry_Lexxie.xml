@@ -5734,157 +5734,48 @@
                       </Trigger>
                     </Triggers>
                   </Folder>
-                  <Folder Id="b1f842e8-da2d-4079-b8dd-9a4d54853e32" Name="Almighty Judgment" Enabled="true">
-                    <Folders />
-                    <Triggers>
-                      <Trigger Enabled="true" Name="Reset" Id="0bcd8904-477e-407c-aae8-db0ae2b33b0d" RegularExpression="14:488E:Perfect Alexander">
-                        <Actions>
-                          <Action OrderNumber="1" VariableName="judgmentcount" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Variable" ExecutionDelayExpression="20000">
-                            <Condition Enabled="false" Grouping="Or" />
-                            <Conditions />
-                          </Action>
-                          <Action OrderNumber="2" ListVariableName="circleorder" VariableName="judgmentcount" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="ListVariable">
-                            <Condition Enabled="false" Grouping="Or" />
-                            <Conditions />
-                          </Action>
-                          <Action OrderNumber="3" JsonEndpointExpression="http://localhost:1337/place" JsonPayloadExpression="{ &quot;One&quot;: { &quot;Active&quot;: false } }" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="GenericJson">
-                            <Condition Enabled="false" Grouping="Or" />
-                            <Conditions />
-                          </Action>
-                          <Action OrderNumber="4" JsonEndpointExpression="http://localhost:1337/place" JsonPayloadExpression="{ &quot;Two&quot;: { &quot;Active&quot;: false } }" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="GenericJson">
-                            <Condition Enabled="false" Grouping="Or" />
-                            <Conditions />
-                          </Action>
-                        </Actions>
-                        <Condition Enabled="false" Grouping="Or" />
-                        <Conditions />
-                      </Trigger>
-                      <Trigger Enabled="true" Name="Circle order" Id="0c5f3713-af54-435b-af0d-785fc9bb8691" RegularExpression="15:[0-9a-fA-F]+:Perfect Alexander:488F:Almighty Judgment:[A-Fa-f04:]+:1000:100:(?&lt;y&gt;(92|100|108)):">
-                        <Actions>
-                          <Action OrderNumber="1" ListVariableOp="Push" ListVariableName="circleorder" ListVariableExpression="${y}" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="ListVariable">
-                            <Condition Enabled="false" Grouping="Or" />
-                            <Conditions />
-                          </Action>
-                        </Actions>
-                        <Condition Enabled="false" Grouping="Or" />
-                        <Conditions />
-                      </Trigger>
-                      <Trigger Enabled="true" Sequential="True" Name="Count" Id="b55f2de8-5bcb-49c2-972d-f71c8a84a33e" RegularExpression="15:[0-9a-fA-F]+:Perfect Alexander:488F:">
-                        <Actions>
-                          <Action OrderNumber="1" VariableOp="SetNumeric" VariableName="judgmentcount" VariableExpression="${var:judgmentcount}+1" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Variable" Asynchronous="False">
-                            <Condition Enabled="false" Grouping="Or" />
-                            <Conditions />
-                          </Action>
-                          <Action OrderNumber="2" LogMessageText="delay" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="LogMessage" ExecutionDelayExpression="300" Asynchronous="False" DebugLevel="None">
-                            <Condition Enabled="false" Grouping="Or" />
-                            <Conditions />
-                          </Action>
-                          <Action OrderNumber="3" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" TriggerId="80179f3c-75ac-4deb-a0ff-8d16cba4ceb0" TriggerForce="regexp" ActionType="Trigger" Asynchronous="False">
-                            <Condition Enabled="true" Grouping="Or">
-                              <ConditionSingle Enabled="true" ExpressionL="${var:judgmentcount}" ExpressionTypeL="Numeric" ExpressionR="15" ExpressionTypeR="Numeric" ConditionType="NumericGreater" />
-                            </Condition>
-                            <Conditions />
-                          </Action>
-                        </Actions>
-                        <Condition Enabled="false" Grouping="Or" />
-                        <Conditions />
-                      </Trigger>
-                      <Trigger Enabled="true" Name="Waymark placer" Id="80179f3c-75ac-4deb-a0ff-8d16cba4ceb0" RegularExpression="" PeriodRefire="Deny" RefirePeriodExpression="3000">
-                        <Actions>
-                          <Action OrderNumber="1" JsonEndpointExpression="http://localhost:1337/place" JsonPayloadExpression="{&quot;One&quot;:{&quot;X&quot;:108.0,&quot;Y&quot;:0.0,&quot;Z&quot;:100.0,&quot;ID&quot;:1,&quot;Active&quot;:true}}" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="GenericJson">
-                            <Condition Enabled="true" Grouping="And">
-                              <ConditionSingle Enabled="true" ExpressionL="${lvar:circleorder[1]}" ExpressionTypeL="String" ExpressionR="92" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
-                              <ConditionSingle Enabled="true" ExpressionL="${lvar:circleorder[2]}" ExpressionTypeL="String" ExpressionR="108" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
-                            </Condition>
-                            <Conditions />
-                          </Action>
-                          <Action OrderNumber="2" JsonEndpointExpression="http://localhost:1337/place" JsonPayloadExpression="{&quot;One&quot;:{&quot;X&quot;:108.0,&quot;Y&quot;:0.0,&quot;Z&quot;:108.0,&quot;ID&quot;:1,&quot;Active&quot;:true}}" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="GenericJson">
-                            <Condition Enabled="true" Grouping="Or">
-                              <ConditionGroup Enabled="true" Grouping="And">
-                                <ConditionSingle Enabled="true" ExpressionL="${lvar:circleorder[1]}" ExpressionTypeL="String" ExpressionR="100" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
-                                <ConditionSingle Enabled="true" ExpressionL="${lvar:circleorder[2]}" ExpressionTypeL="String" ExpressionR="108" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
-                              </ConditionGroup>
-                              <ConditionGroup Enabled="true" Grouping="And">
-                                <ConditionSingle Enabled="true" ExpressionL="${lvar:circleorder[1]}" ExpressionTypeL="String" ExpressionR="108" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
-                                <ConditionSingle Enabled="true" ExpressionL="${lvar:circleorder[2]}" ExpressionTypeL="String" ExpressionR="100" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
-                              </ConditionGroup>
-                            </Condition>
-                            <Conditions />
-                          </Action>
-                          <Action OrderNumber="3" JsonEndpointExpression="http://localhost:1337/place" JsonPayloadExpression="{&quot;One&quot;:{&quot;X&quot;:100.0,&quot;Y&quot;:0.0,&quot;Z&quot;:108.0,&quot;ID&quot;:1,&quot;Active&quot;:true}}" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="GenericJson">
-                            <Condition Enabled="true" Grouping="Or">
-                              <ConditionGroup Enabled="true" Grouping="And">
-                                <ConditionSingle Enabled="true" ExpressionL="${lvar:circleorder[1]}" ExpressionTypeL="String" ExpressionR="92" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
-                                <ConditionSingle Enabled="true" ExpressionL="${lvar:circleorder[2]}" ExpressionTypeL="String" ExpressionR="100" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
-                              </ConditionGroup>
-                              <ConditionGroup Enabled="true" Grouping="And">
-                                <ConditionSingle Enabled="true" ExpressionL="${lvar:circleorder[1]}" ExpressionTypeL="String" ExpressionR="100" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
-                                <ConditionSingle Enabled="true" ExpressionL="${lvar:circleorder[2]}" ExpressionTypeL="String" ExpressionR="92" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
-                              </ConditionGroup>
-                            </Condition>
-                            <Conditions />
-                          </Action>
-                          <Action OrderNumber="4" JsonEndpointExpression="http://localhost:1337/place" JsonPayloadExpression="{&quot;One&quot;:{&quot;X&quot;:100.0,&quot;Y&quot;:0.0,&quot;Z&quot;:100.0,&quot;ID&quot;:1,&quot;Active&quot;:true}}" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="GenericJson">
-                            <Condition Enabled="true" Grouping="And">
-                              <ConditionSingle Enabled="true" ExpressionL="${lvar:circleorder[1]}" ExpressionTypeL="String" ExpressionR="108" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
-                              <ConditionSingle Enabled="true" ExpressionL="${lvar:circleorder[2]}" ExpressionTypeL="String" ExpressionR="92" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
-                            </Condition>
-                            <Conditions />
-                          </Action>
-                          <Action OrderNumber="5" LogMessageText="delay" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="LogMessage" ExecutionDelayExpression="100" Asynchronous="False" DebugLevel="None">
-                            <Condition Enabled="false" Grouping="Or" />
-                            <Conditions />
-                          </Action>
-                          <Action OrderNumber="6" JsonEndpointExpression="http://localhost:1337/place" JsonPayloadExpression="{&quot;Two&quot;:{&quot;X&quot;:108.0,&quot;Y&quot;:0.0,&quot;Z&quot;:108.0,&quot;ID&quot;:2,&quot;Active&quot;:true}}" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="GenericJson">
-                            <Condition Enabled="true" Grouping="Or">
-                              <ConditionGroup Enabled="true" Grouping="And">
-                                <ConditionSingle Enabled="true" ExpressionL="${lvar:circleorder[1]}" ExpressionTypeL="String" ExpressionR="92" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
-                                <ConditionSingle Enabled="true" ExpressionL="${lvar:circleorder[2]}" ExpressionTypeL="String" ExpressionR="108" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
-                              </ConditionGroup>
-                              <ConditionGroup Enabled="true" Grouping="And">
-                                <ConditionSingle Enabled="true" ExpressionL="${lvar:circleorder[1]}" ExpressionTypeL="String" ExpressionR="92" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
-                                <ConditionSingle Enabled="true" ExpressionL="${lvar:circleorder[2]}" ExpressionTypeL="String" ExpressionR="100" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
-                              </ConditionGroup>
-                            </Condition>
-                            <Conditions />
-                          </Action>
-                          <Action OrderNumber="7" JsonEndpointExpression="http://localhost:1337/place" JsonPayloadExpression="{&quot;Two&quot;:{&quot;X&quot;:108.0,&quot;Y&quot;:0.0,&quot;Z&quot;:100.0,&quot;ID&quot;:2,&quot;Active&quot;:true}}" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="GenericJson">
-                            <Condition Enabled="true" Grouping="And">
-                              <ConditionSingle Enabled="true" ExpressionL="${lvar:circleorder[1]}" ExpressionTypeL="String" ExpressionR="100" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
-                              <ConditionSingle Enabled="true" ExpressionL="${lvar:circleorder[2]}" ExpressionTypeL="String" ExpressionR="108" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
-                            </Condition>
-                            <Conditions />
-                          </Action>
-                          <Action OrderNumber="8" JsonEndpointExpression="http://localhost:1337/place" JsonPayloadExpression="{&quot;Two&quot;:{&quot;X&quot;:100.0,&quot;Y&quot;:0.0,&quot;Z&quot;:108.0,&quot;ID&quot;:2,&quot;Active&quot;:true}}" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="GenericJson">
-                            <Condition Enabled="true" Grouping="Or">
-                              <ConditionGroup Enabled="true" Grouping="And">
-                                <ConditionSingle Enabled="true" ExpressionL="${lvar:circleorder[1]}" ExpressionTypeL="String" ExpressionR="108" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
-                                <ConditionSingle Enabled="true" ExpressionL="${lvar:circleorder[2]}" ExpressionTypeL="String" ExpressionR="100" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
-                              </ConditionGroup>
-                              <ConditionGroup Enabled="true" Grouping="And">
-                                <ConditionSingle Enabled="true" ExpressionL="${lvar:circleorder[1]}" ExpressionTypeL="String" ExpressionR="108" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
-                                <ConditionSingle Enabled="true" ExpressionL="${lvar:circleorder[2]}" ExpressionTypeL="String" ExpressionR="92" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
-                              </ConditionGroup>
-                            </Condition>
-                            <Conditions />
-                          </Action>
-                          <Action OrderNumber="9" JsonEndpointExpression="http://localhost:1337/place" JsonPayloadExpression="{&quot;Two&quot;:{&quot;X&quot;:100.0,&quot;Y&quot;:0.0,&quot;Z&quot;:100.0,&quot;ID&quot;:2,&quot;Active&quot;:true}}" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="GenericJson">
-                            <Condition Enabled="true" Grouping="And">
-                              <ConditionSingle Enabled="true" ExpressionL="${lvar:circleorder[1]}" ExpressionTypeL="String" ExpressionR="100" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
-                              <ConditionSingle Enabled="true" ExpressionL="${lvar:circleorder[2]}" ExpressionTypeL="String" ExpressionR="92" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
-                            </Condition>
-                            <Conditions />
-                          </Action>
-                        </Actions>
-                        <Condition Enabled="false" Grouping="Or" />
-                        <Conditions />
-                      </Trigger>
-                    </Triggers>
-                  </Folder>
                   <Folder Id="33c6c6da-fcdd-49bd-bfbb-0a21b1c1994d" Name="Sacrament/Radiant Sacrament" Enabled="true">
                     <Folders />
                     <Triggers>
-                      <Trigger Enabled="true" Name="Sacrament" Id="67879cca-a78d-4060-956b-d29beb858727" RegularExpression="15:[\w]+:Perfect Alexander:49AA:[\w :]+:1000:(?&lt;x&gt;[0-9\.-]+):(?&lt;y&gt;[0-9\.-]+):">
+                      <Trigger Enabled="true" Sequential="True" Name="Radiant Sacrament" Id="c8863a3a-af0a-4644-9213-62d52d75b543" RegularExpression="1(6:(?&lt;ID2&gt;[\w]{8}):[^:]{1,30}:4885:[\w :]+:(?&lt;x&gt;[0-9\.-]+):(?&lt;y&gt;[0-9\.-]+):|5:(?&lt;ID&gt;[\w]{8}):[^:]{1,30}:489E:)">
+                        <Actions>
+                          <Action OrderNumber="1" VariableOp="SetString" VariableName="radiantID" VariableExpression="${ID}" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Variable" Asynchronous="False">
+                            <Condition Enabled="true" Grouping="Or">
+                              <ConditionSingle Enabled="true" ExpressionL="${ID}" ExpressionTypeL="String" ExpressionTypeR="String" ConditionType="StringNotEqualNocase" />
+                            </Condition>
+                            <Conditions />
+                          </Action>
+                          <Action OrderNumber="2" AuraName="safespot" AuraImage="${var:ImagePath}nnw.png" AuraXIniExpression="${var:calibX}" AuraYIniExpression="${var:calibY}" AuraWIniExpression="40" AuraHIniExpression="40" AuraOIniExpression="100" JsonEndpointExpression="http://localhost:1337/place" JsonPayloadExpression="{&quot;One&quot;:{&quot;X&quot;:${numeric:25+0.75*${x}},&quot;Y&quot;:0.0,&quot;Z&quot;:${numeric:25+0.75*${y}},&quot;ID&quot;:0,&quot;Active&quot;:true}}" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="GenericJson" Asynchronous="False">
+                            <Condition Enabled="true" Grouping="Or">
+                              <ConditionSingle Enabled="true" ExpressionL="${ID2}" ExpressionTypeL="String" ExpressionR="${var:radiantID}" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
+                            </Condition>
+                            <Conditions />
+                          </Action>
+                        </Actions>
+                        <Condition Enabled="false" Grouping="Or" />
+                        <Conditions />
+                      </Trigger>
+                      <Trigger Enabled="true" Sequential="True" Name="Waymark Reset" Id="c04b5682-9837-4f79-a2e4-40b342b10ba3" RegularExpression="15:[\w]{8}:[^:]{1,30}:(?&lt;skillID&gt;(4889|4886)):" PeriodRefire="Deny" RefirePeriodExpression="3000">
+                        <Actions>
+                          <Action OrderNumber="1" AuraName="safespot" AuraImage="${var:ImagePath}nne.png" AuraXIniExpression="${var:calibX}" AuraYIniExpression="${var:calibY}" AuraWIniExpression="40" AuraHIniExpression="40" AuraOIniExpression="100" JsonEndpointExpression="http://localhost:1337/place" JsonPayloadExpression="{ &quot;One&quot;: { &quot;Active&quot;: false } }" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="GenericJson" Asynchronous="False">
+                            <Condition Enabled="false" Grouping="Or" />
+                            <Conditions />
+                          </Action>
+                          <Action OrderNumber="2" LogMessageText="delay" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="LogMessage" ExecutionDelayExpression="100" Asynchronous="False" DebugLevel="None">
+                            <Condition Enabled="false" Grouping="Or" />
+                            <Conditions />
+                          </Action>
+                          <Action OrderNumber="3" AuraName="safespot" AuraImage="${var:ImagePath}nne.png" AuraXIniExpression="${var:calibX}" AuraYIniExpression="${var:calibY}" AuraWIniExpression="40" AuraHIniExpression="40" AuraOIniExpression="100" JsonEndpointExpression="http://localhost:1337/place" JsonPayloadExpression="{ &quot;Two&quot;: { &quot;Active&quot;: false } }" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="GenericJson" Asynchronous="False">
+                            <Condition Enabled="true" Grouping="Or">
+                              <ConditionSingle Enabled="true" ExpressionL="${skillID}" ExpressionTypeL="String" ExpressionR="4889" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
+                            </Condition>
+                            <Conditions />
+                          </Action>
+                        </Actions>
+                        <Condition Enabled="false" Grouping="Or" />
+                        <Conditions />
+                      </Trigger>
+                      <Trigger Enabled="true" Name="Sacrament" Id="1a0ce1fd-8690-4f11-bc5f-2a2445de1ad4" RegularExpression="15:[\w]{8}:[^:]{1,30}:49AA:[\w :]+:(?&lt;x&gt;[0-9\.-]+):(?&lt;y&gt;[0-9\.-]+):">
                         <Actions>
                           <Action OrderNumber="1" AuraName="safespot" AuraImage="${var:ImagePath}nnw.png" AuraXIniExpression="${var:calibX}" AuraYIniExpression="${var:calibY}" AuraWIniExpression="40" AuraHIniExpression="40" AuraOIniExpression="100" JsonEndpointExpression="http://localhost:1337/place" JsonPayloadExpression="{&quot;One&quot;:{&quot;X&quot;:107.15,&quot;Y&quot;:0.0,&quot;Z&quot;:82.5,&quot;ID&quot;:1,&quot;Active&quot;:true},&quot;Two&quot;:{&quot;X&quot;:92.85,&quot;Y&quot;:0.0,&quot;Z&quot;:117.5,&quot;ID&quot;:2,&quot;Active&quot;:true}} " TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="GenericJson">
                             <Condition Enabled="true" Grouping="And">
@@ -5904,45 +5795,120 @@
                         <Condition Enabled="false" Grouping="Or" />
                         <Conditions />
                       </Trigger>
-                      <Trigger Enabled="true" Name="Waymark Reset" Id="b06c7ae9-c31e-49a4-8587-a4b00ab6106d" RegularExpression="15:[\w]+:Perfect Alexander:(?&lt;skillID&gt;(4889|4886)):">
+                    </Triggers>
+                  </Folder>
+                  <Folder Id="2415ea81-e17e-49ec-8535-9d7711c000d2" Name="Almighty Judgment" Enabled="true">
+                    <Folders />
+                    <Triggers>
+                      <Trigger Enabled="true" Sequential="True" Name="Reset" Id="af5cb452-26bc-45f4-9d5f-9302975cf4d9" RegularExpression="14:488E:">
                         <Actions>
-                          <Action OrderNumber="1" AuraName="safespot" AuraImage="${var:ImagePath}nne.png" AuraXIniExpression="${var:calibX}" AuraYIniExpression="${var:calibY}" AuraWIniExpression="40" AuraHIniExpression="40" AuraOIniExpression="100" JsonEndpointExpression="http://localhost:1337/place" JsonPayloadExpression="{ &quot;One&quot;: { &quot;Active&quot;: false } }" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="GenericJson">
-                            <Condition Enabled="true" Grouping="Or">
-                              <ConditionSingle Enabled="true" ExpressionL="${skillID}" ExpressionTypeL="String" ExpressionR="4889" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
-                            </Condition>
-                            <Conditions />
-                          </Action>
-                          <Action OrderNumber="2" LogMessageText="delay" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="LogMessage" ExecutionDelayExpression="100" Asynchronous="False" DebugLevel="None">
+                          <Action OrderNumber="1" ListVariableName="circleorder" VariableName="judgmentcount" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="ListVariable" ExecutionDelayExpression="20000" Asynchronous="False">
                             <Condition Enabled="false" Grouping="Or" />
                             <Conditions />
                           </Action>
-                          <Action OrderNumber="3" AuraName="safespot" AuraImage="${var:ImagePath}nne.png" AuraXIniExpression="${var:calibX}" AuraYIniExpression="${var:calibY}" AuraWIniExpression="40" AuraHIniExpression="40" AuraOIniExpression="100" JsonEndpointExpression="http://localhost:1337/place" JsonPayloadExpression="{&quot;Two&quot;:{&quot;X&quot;:100,&quot;Y&quot;:0.0,&quot;Z&quot;:100,&quot;ID&quot;:0,&quot;Active&quot;:true}}" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="GenericJson">
-                            <Condition Enabled="true" Grouping="Or">
-                              <ConditionSingle Enabled="true" ExpressionL="${skillID}" ExpressionTypeL="String" ExpressionR="4889" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
-                            </Condition>
+                          <Action OrderNumber="2" JsonEndpointExpression="http://localhost:1337/place" JsonPayloadExpression="{ &quot;One&quot;: { &quot;Active&quot;: false } }" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="GenericJson" Asynchronous="False">
+                            <Condition Enabled="false" Grouping="Or" />
                             <Conditions />
                           </Action>
-                          <Action OrderNumber="4" AuraName="safespot" AuraImage="${var:ImagePath}nne.png" AuraXIniExpression="${var:calibX}" AuraYIniExpression="${var:calibY}" AuraWIniExpression="40" AuraHIniExpression="40" AuraOIniExpression="100" JsonEndpointExpression="http://localhost:1337/place" JsonPayloadExpression="{ &quot;One&quot;: { &quot;Active&quot;: false } }" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="GenericJson">
-                            <Condition Enabled="true" Grouping="Or">
-                              <ConditionSingle Enabled="true" ExpressionL="${skillID}" ExpressionTypeL="String" ExpressionR="4886" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
-                            </Condition>
+                          <Action OrderNumber="3" LogMessageText="delay" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="LogMessage" ExecutionDelayExpression="100" Asynchronous="False" DebugLevel="None">
+                            <Condition Enabled="false" Grouping="Or" />
+                            <Conditions />
+                          </Action>
+                          <Action OrderNumber="4" JsonEndpointExpression="http://localhost:1337/place" JsonPayloadExpression="{ &quot;Two&quot;: { &quot;Active&quot;: false } }" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="GenericJson" Asynchronous="False">
+                            <Condition Enabled="false" Grouping="Or" />
                             <Conditions />
                           </Action>
                         </Actions>
                         <Condition Enabled="false" Grouping="Or" />
                         <Conditions />
                       </Trigger>
-                      <Trigger Enabled="true" Name="Radiant Sacrament" Id="bd8179e7-9b72-40e7-81fe-2d478d79f240" RegularExpression="1(6:(?&lt;ID2&gt;[\w]+):Perfect Alexander:4885:[\w :]+:1000:(?&lt;x&gt;[0-9\.-]+):(?&lt;y&gt;[0-9\.-]+):|5:(?&lt;ID&gt;[\w]+):Perfect Alexander:489E:)">
+                      <Trigger Enabled="true" Sequential="True" Name="Circles" Id="48ec353f-550c-43ae-b3b2-1c75917e02ab" RegularExpression="15:[\w]{8}:[^:]+:488F:[^1]+1000:100:(?&lt;y&gt;(92|100|108)):">
                         <Actions>
-                          <Action OrderNumber="1" VariableOp="SetString" VariableName="radiantID" VariableExpression="${ID}" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Variable">
-                            <Condition Enabled="true" Grouping="Or">
-                              <ConditionSingle Enabled="true" ExpressionL="${ID}" ExpressionTypeL="String" ExpressionTypeR="String" ConditionType="StringNotEqualNocase" />
+                          <Action OrderNumber="1" ListVariableOp="Push" ListVariableName="circleorder" ListVariableExpression="${y}" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="ListVariable" Asynchronous="False">
+                            <Condition Enabled="false" Grouping="Or" />
+                            <Conditions />
+                          </Action>
+                          <Action OrderNumber="2" LogMessageText="delay" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="LogMessage" ExecutionDelayExpression="50" Asynchronous="False" DebugLevel="None">
+                            <Condition Enabled="false" Grouping="Or" />
+                            <Conditions />
+                          </Action>
+                          <Action OrderNumber="3" JsonEndpointExpression="http://localhost:1337/place" JsonPayloadExpression="{&quot;One&quot;:{&quot;X&quot;:100.0,&quot;Y&quot;:0.0,&quot;Z&quot;:100.0,&quot;ID&quot;:1,&quot;Active&quot;:true}}" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="GenericJson" Asynchronous="False" RefireInterrupt="True">
+                            <Condition Enabled="true" Grouping="And">
+                              <ConditionSingle Enabled="true" ExpressionL="${lvar:circleorder.size}" ExpressionTypeL="Numeric" ExpressionR="2" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
+                              <ConditionSingle Enabled="true" ExpressionL="${lvar:circleorder[1]}" ExpressionTypeL="Numeric" ExpressionR="108" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
+                              <ConditionSingle Enabled="true" ExpressionL="${lvar:circleorder[2]}" ExpressionTypeL="Numeric" ExpressionR="92" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
                             </Condition>
                             <Conditions />
                           </Action>
-                          <Action OrderNumber="2" AuraName="safespot" AuraImage="${var:ImagePath}nnw.png" AuraXIniExpression="${var:calibX}" AuraYIniExpression="${var:calibY}" AuraWIniExpression="40" AuraHIniExpression="40" AuraOIniExpression="100" JsonEndpointExpression="http://localhost:1337/place" JsonPayloadExpression="{&quot;One&quot;:{&quot;X&quot;:${x},&quot;Y&quot;:0.0,&quot;Z&quot;:${y},&quot;ID&quot;:0,&quot;Active&quot;:true}}" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="GenericJson">
+                          <Action OrderNumber="4" JsonEndpointExpression="http://localhost:1337/place" JsonPayloadExpression="{&quot;One&quot;:{&quot;X&quot;:100.0,&quot;Y&quot;:0.0,&quot;Z&quot;:108.0,&quot;ID&quot;:1,&quot;Active&quot;:true}}" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="GenericJson" Asynchronous="False" RefireInterrupt="True">
                             <Condition Enabled="true" Grouping="Or">
-                              <ConditionSingle Enabled="true" ExpressionL="${ID2}" ExpressionTypeL="String" ExpressionR="${var:radiantID}" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
+                              <ConditionGroup Enabled="true" Grouping="And">
+                                <ConditionSingle Enabled="true" ExpressionL="${lvar:circleorder[1]}" ExpressionTypeL="Numeric" ExpressionR="100" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
+                                <ConditionSingle Enabled="true" ExpressionL="${lvar:circleorder[2]}" ExpressionTypeL="Numeric" ExpressionR="92" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
+                                <ConditionSingle Enabled="true" ExpressionL="${lvar:circleorder.size}" ExpressionTypeL="Numeric" ExpressionR="2" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
+                              </ConditionGroup>
+                              <ConditionGroup Enabled="true" Grouping="And">
+                                <ConditionSingle Enabled="true" ExpressionL="${lvar:circleorder.size}" ExpressionTypeL="Numeric" ExpressionR="2" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
+                                <ConditionSingle Enabled="true" ExpressionL="${lvar:circleorder[1]}" ExpressionTypeL="Numeric" ExpressionR="92" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
+                                <ConditionSingle Enabled="true" ExpressionL="${lvar:circleorder[2]}" ExpressionTypeL="Numeric" ExpressionR="100" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
+                              </ConditionGroup>
+                            </Condition>
+                            <Conditions />
+                          </Action>
+                          <Action OrderNumber="5" JsonEndpointExpression="http://localhost:1337/place" JsonPayloadExpression="{&quot;One&quot;:{&quot;X&quot;:108.0,&quot;Y&quot;:0.0,&quot;Z&quot;:100.0,&quot;ID&quot;:1,&quot;Active&quot;:true}}" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="GenericJson" Asynchronous="False" RefireInterrupt="True">
+                            <Condition Enabled="true" Grouping="And">
+                              <ConditionSingle Enabled="true" ExpressionL="${lvar:circleorder.size}" ExpressionTypeL="Numeric" ExpressionR="2" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
+                              <ConditionSingle Enabled="true" ExpressionL="${lvar:circleorder[1]}" ExpressionTypeL="Numeric" ExpressionR="92" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
+                              <ConditionSingle Enabled="true" ExpressionL="${lvar:circleorder[2]}" ExpressionTypeL="Numeric" ExpressionR="108" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
+                            </Condition>
+                            <Conditions />
+                          </Action>
+                          <Action OrderNumber="6" JsonEndpointExpression="http://localhost:1337/place" JsonPayloadExpression="{&quot;One&quot;:{&quot;X&quot;:108.0,&quot;Y&quot;:0.0,&quot;Z&quot;:108.0,&quot;ID&quot;:1,&quot;Active&quot;:true}}" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="GenericJson" Asynchronous="False" RefireInterrupt="True">
+                            <Condition Enabled="true" Grouping="Or">
+                              <ConditionGroup Enabled="true" Grouping="And">
+                                <ConditionSingle Enabled="true" ExpressionL="${lvar:circleorder.size}" ExpressionTypeL="Numeric" ExpressionR="2" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
+                                <ConditionSingle Enabled="true" ExpressionL="${lvar:circleorder[1]}" ExpressionTypeL="Numeric" ExpressionR="108" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
+                                <ConditionSingle Enabled="true" ExpressionL="${lvar:circleorder[2]}" ExpressionTypeL="Numeric" ExpressionR="100" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
+                              </ConditionGroup>
+                              <ConditionGroup Enabled="true" Grouping="And">
+                                <ConditionSingle Enabled="true" ExpressionL="${lvar:circleorder[1]}" ExpressionTypeL="Numeric" ExpressionR="100" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
+                                <ConditionSingle Enabled="true" ExpressionL="${lvar:circleorder[2]}" ExpressionTypeL="Numeric" ExpressionR="108" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
+                                <ConditionSingle Enabled="true" ExpressionL="${lvar:circleorder.size}" ExpressionTypeL="Numeric" ExpressionR="2" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
+                              </ConditionGroup>
+                            </Condition>
+                            <Conditions />
+                          </Action>
+                          <Action OrderNumber="7" LogMessageText="delay" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="LogMessage" ExecutionDelayExpression="50" Asynchronous="False" DebugLevel="None">
+                            <Condition Enabled="false" Grouping="Or" />
+                            <Conditions />
+                          </Action>
+                          <Action OrderNumber="8" JsonEndpointExpression="http://localhost:1337/place" JsonPayloadExpression="{&quot;Two&quot;:{&quot;X&quot;:100.0,&quot;Y&quot;:0.0,&quot;Z&quot;:100.0,&quot;ID&quot;:2,&quot;Active&quot;:true}}" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="GenericJson" Asynchronous="False" RefireInterrupt="True">
+                            <Condition Enabled="true" Grouping="And">
+                              <ConditionSingle Enabled="true" ExpressionL="${lvar:circleorder[1]}" ExpressionTypeL="Numeric" ExpressionR="100" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
+                              <ConditionSingle Enabled="true" ExpressionL="${lvar:circleorder[2]}" ExpressionTypeL="Numeric" ExpressionR="92" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
+                              <ConditionSingle Enabled="true" ExpressionL="${lvar:circleorder.size}" ExpressionTypeL="Numeric" ExpressionR="2" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
+                            </Condition>
+                            <Conditions />
+                          </Action>
+                          <Action OrderNumber="9" JsonEndpointExpression="http://localhost:1337/place" JsonPayloadExpression="{&quot;Two&quot;:{&quot;X&quot;:108.0,&quot;Y&quot;:0.0,&quot;Z&quot;:100.0,&quot;ID&quot;:2,&quot;Active&quot;:true}}" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="GenericJson" Asynchronous="False" RefireInterrupt="True">
+                            <Condition Enabled="true" Grouping="And">
+                              <ConditionSingle Enabled="true" ExpressionL="${lvar:circleorder[1]}" ExpressionTypeL="Numeric" ExpressionR="100" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
+                              <ConditionSingle Enabled="true" ExpressionL="${lvar:circleorder[2]}" ExpressionTypeL="Numeric" ExpressionR="108" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
+                              <ConditionSingle Enabled="true" ExpressionL="${lvar:circleorder.size}" ExpressionTypeL="Numeric" ExpressionR="2" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
+                            </Condition>
+                            <Conditions />
+                          </Action>
+                          <Action OrderNumber="10" JsonEndpointExpression="http://localhost:1337/place" JsonPayloadExpression="{&quot;Two&quot;:{&quot;X&quot;:108.0,&quot;Y&quot;:0.0,&quot;Z&quot;:108.0,&quot;ID&quot;:2,&quot;Active&quot;:true}}" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="GenericJson" Asynchronous="False" RefireInterrupt="True">
+                            <Condition Enabled="true" Grouping="And">
+                              <ConditionSingle Enabled="true" ExpressionL="${lvar:circleorder.size}" ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
+                              <ConditionSingle Enabled="true" ExpressionL="${lvar:circleorder[1]}" ExpressionTypeL="Numeric" ExpressionR="92" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
+                            </Condition>
+                            <Conditions />
+                          </Action>
+                          <Action OrderNumber="11" JsonEndpointExpression="http://localhost:1337/place" JsonPayloadExpression="{&quot;Two&quot;:{&quot;X&quot;:100.0,&quot;Y&quot;:0.0,&quot;Z&quot;:108.0,&quot;ID&quot;:2,&quot;Active&quot;:true}}" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="GenericJson" Asynchronous="False" RefireInterrupt="True">
+                            <Condition Enabled="true" Grouping="And">
+                              <ConditionSingle Enabled="true" ExpressionL="${lvar:circleorder.size}" ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
+                              <ConditionSingle Enabled="true" ExpressionL="${lvar:circleorder[1]}" ExpressionTypeL="Numeric" ExpressionR="108" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
                             </Condition>
                             <Conditions />
                           </Action>
@@ -7292,10 +7258,10 @@
                       </Trigger>
                     </Triggers>
                   </Folder>
-                  <Folder Id="cada10ff-a2b7-489f-b111-05f66178a89a" Name="Fate Calibration" Enabled="true">
+                  <Folder Id="6087f423-69ae-4b41-a8da-b3d423eb51f7" Name="Fate Calibration" Enabled="true">
                     <Folders />
                     <Triggers>
-                      <Trigger Enabled="true" Sequential="True" Name="Clone order" Id="b8362135-28d9-494e-a414-bd0113e89a22" RegularExpression="23:10[\w]{6}:(?&lt;name&gt;[\w'\-]+ [\w'\-]+):40(?&lt;ID&gt;[\w]+)::[\w]{4}:[\w]{4}:0062:">
+                      <Trigger Enabled="true" Sequential="True" Name="Clone order" Id="b1c84846-f6df-490c-b601-206ec398e4ee" RegularExpression="23:10[\w]{6}:(?&lt;name&gt;[\w'\-]+ [\w'\-]+):40(?&lt;ID&gt;[\w]+)::[\w]{4}:[\w]{4}:0062:">
                         <Actions>
                           <Action OrderNumber="1" VariableOp="SetString" VariableName="cloneID" VariableExpression="${ID}" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Variable" Asynchronous="False">
                             <Condition Enabled="true" Grouping="Or">
@@ -7307,7 +7273,7 @@
                             <Condition Enabled="false" Grouping="Or" />
                             <Conditions />
                           </Action>
-                          <Action OrderNumber="3" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" TriggerId="020ae05a-faf3-4a74-94c6-ee4e323a22fa" TriggerForce="regexp" ActionType="Trigger" ExecutionDelayExpression="250" Asynchronous="False">
+                          <Action OrderNumber="3" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" TriggerId="d3199b67-166e-4024-af14-9ee815c89527" TriggerForce="regexp" ActionType="Trigger" ExecutionDelayExpression="500" Asynchronous="False">
                             <Condition Enabled="false" Grouping="Or" />
                             <Conditions />
                           </Action>
@@ -7318,9 +7284,9 @@
                         </Condition>
                         <Conditions />
                       </Trigger>
-                      <Trigger Enabled="true" Sequential="True" Name="Associate cloneID with mechanic" Id="020ae05a-faf3-4a74-94c6-ee4e323a22fa" RegularExpression="oh shit I missed it" PeriodRefire="Deny" RefirePeriodExpression="2000">
+                      <Trigger Enabled="true" Sequential="True" Name="Associate cloneID with mechanic" Id="d3199b67-166e-4024-af14-9ee815c89527" RegularExpression="00:0038:repeat clone call" PeriodRefire="Deny" RefirePeriodExpression="2000">
                         <Actions>
-                          <Action OrderNumber="1" ListVariableOp="SortAlphaAsc" ListVariableName="clonelist" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="ListVariable" ExecutionDelayExpression="250" Asynchronous="False">
+                          <Action OrderNumber="1" ListVariableOp="SortAlphaAsc" ListVariableName="clonelist" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="ListVariable" Asynchronous="False">
                             <Condition Enabled="false" Grouping="Or" />
                             <Conditions />
                           </Action>
@@ -7417,7 +7383,7 @@
                         <Condition Enabled="false" Grouping="Or" />
                         <Conditions />
                       </Trigger>
-                      <Trigger Enabled="true" Name="Fate Projection" Id="61cb28ff-11c1-44c4-8ce9-195b36666ff3" RegularExpression="1(4:(?&lt;skillID&gt;(487B|4B13)):Perfect Alexander|5:[\w]+:Perfect Alexander:(?&lt;skillID2&gt;(487C|4B14)))">
+                      <Trigger Enabled="true" Name="Fate Projection" Id="57aa0a23-7b30-4c2d-8bce-2b479fdb49fb" RegularExpression="1(4:(?&lt;skillID&gt;(487B|4B13)):|5:[\w]{8}:[^:]{1,30}:(?&lt;skillID2&gt;(487C|4B14)))">
                         <Actions>
                           <Action OrderNumber="1" VariableOp="SetString" VariableName="fate" VariableExpression="a" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Variable">
                             <Condition Enabled="true" Grouping="Or">
@@ -7456,7 +7422,7 @@
                         <Condition Enabled="false" Grouping="Or" />
                         <Conditions />
                       </Trigger>
-                      <Trigger Enabled="true" Name="Wipe" Id="a76a4a7d-1e5a-46c9-bf29-1dff4dc67e45" RegularExpression="21:[\w]+:(40000003|40000010)">
+                      <Trigger Enabled="true" Name="Wipe" Id="fa9f74e4-2d20-4532-aadf-3f5f9cbea52e" RegularExpression="21:[\w]{8}:400000(03|10)">
                         <Actions>
                           <Action OrderNumber="1" VariableName="cloneID" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Variable">
                             <Condition Enabled="false" Grouping="Or" />
@@ -7474,7 +7440,7 @@
                         <Condition Enabled="false" Grouping="Or" />
                         <Conditions />
                       </Trigger>
-                      <Trigger Enabled="true" Name="Opticals Fate Beta" Id="11de9f49-0577-4900-a5eb-cdae89f75c50" RegularExpression="15:[\w]+:Perfect Alexander:48A(?&lt;ID&gt;[0-1]):">
+                      <Trigger Enabled="true" Name="Opticals Fate Beta" Id="d27e8227-671d-49c6-9a30-6ffda70acc0b" RegularExpression="15:[\w]{8}:[^:]{1,30}:48A(?&lt;ID&gt;[0-1]):">
                         <Actions>
                           <Action OrderNumber="1" UseTTSTextExpression="spread optical" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="UseTTS">
                             <Condition Enabled="true" Grouping="Or">
@@ -7492,7 +7458,7 @@
                         <Condition Enabled="false" Grouping="Or" />
                         <Conditions />
                       </Trigger>
-                      <Trigger Enabled="true" Name="Stillness/Motion Fate Alpha" Id="ba404832-ea20-4e2c-87f0-888e00052bc8" RegularExpression="15:[\w]+:Perfect Alexander:(?&lt;skillID&gt;(4B0D|4B0E|4899|489A)):" PeriodRefire="Deny" RefirePeriodExpression="2000">
+                      <Trigger Enabled="true" Name="Stillness/Motion Fate Alpha" Id="0a93f500-803e-432a-8add-1eb3694546e4" RegularExpression="15:[\w]{8}:[^:]{1,30}:(?&lt;skillID&gt;(4B0D|4B0E|4899|489A)):" PeriodRefire="Deny" RefirePeriodExpression="2000">
                         <Actions>
                           <Action OrderNumber="1" UseTTSTextExpression="Motion first" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="UseTTS">
                             <Condition Enabled="true" Grouping="Or">
@@ -7522,7 +7488,7 @@
                         <Condition Enabled="false" Grouping="Or" />
                         <Conditions />
                       </Trigger>
-                      <Trigger Enabled="true" Name="Radiant safe spot Fate Beta" Id="503fa19f-8fb2-4497-b62a-e7264c6ed028" RegularExpression="15:[\w]+:Perfect Alexander:489E:[\w :]+:1000:(?&lt;x&gt;[0-9\.-]+):(?&lt;y&gt;[0-9\.-]+):">
+                      <Trigger Enabled="true" Name="Radiant safe spot Fate Beta" Id="6ada22bc-cadb-4f7c-b2a4-504ada0e4b89" RegularExpression="15:[\w]{8}:[^:]+:489E:[\w :]+:(?&lt;x&gt;[0-9\.-]+):(?&lt;y&gt;[0-9\.-]+):">
                         <Actions>
                           <Action OrderNumber="1" UseTTSTextExpression="Radiant West" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="UseTTS">
                             <Condition Enabled="true" Grouping="And">

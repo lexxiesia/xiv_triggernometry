@@ -1,3 +1,4 @@
+
 # xiv_triggernometry
 
 ## How to Setup
@@ -11,6 +12,10 @@
  If you don't see **Remote Triggers**, you are running an old version of Triggernometry. Download the latest update from [https://github.com/paissaheavyindustries/Triggernometry/releases/](https://github.com/paissaheavyindustries/Triggernometry/releases/).
  
  This repository is currently on **Triggernometry v1.1.2.1**
+
+ ### Known Issues
+ - Main repository folder `Github` occasionally gets disabled after a new upload.
+ - Some disabled folders/triggers becomes enabled after uploading to the repository.
 
 ## What's in it?
 Triggers within the repository are separated by content folders. Most stuff are enabled by default. Disable triggers that you don't want activated. That is all!

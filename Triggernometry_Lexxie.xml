@@ -4662,7 +4662,21 @@
                   <Folder Id="73e1e566-5b3e-403d-87bf-2e3e28f83574" Name="Hand of Prayer/Parting" Enabled="true">
                     <Folders />
                     <Triggers>
-                      <Trigger Enabled="true" Name="First Movement" Id="5b481a9a-09ff-4b2b-bf49-885c7230f8ed" RegularExpression=":Living Liquid:4826:" PeriodRefire="Deny" RefirePeriodExpression="1000">
+                      <Trigger Enabled="true" Name="Second Movement" Id="5b481a9a-09ff-4b2b-bf49-885c7230f8ed" RegularExpression=":Liquid Rage:4829:" PeriodRefire="Deny" RefirePeriodExpression="1000">
+                        <Actions>
+                          <Action OrderNumber="1" UseTTSTextExpression="Move boss" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="UseTTS">
+                            <Condition Enabled="true" Grouping="And">
+                              <ConditionSingle Enabled="true" ExpressionL="${var:swingCount}" ExpressionTypeL="Numeric" ExpressionR="3" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
+                            </Condition>
+                            <Conditions />
+                          </Action>
+                        </Actions>
+                        <Condition Enabled="true" Grouping="And">
+                          <ConditionSingle Enabled="true" ExpressionL="${_ffxivplayer.role}" ExpressionTypeL="String" ExpressionR="Tank" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
+                        </Condition>
+                        <Conditions />
+                      </Trigger>
+                      <Trigger Enabled="true" Name="First Movement" Id="f63ba847-8416-4834-a1e7-c5b79f284039" RegularExpression=":Living Liquid:4826:" PeriodRefire="Deny" RefirePeriodExpression="1000">
                         <Actions>
                           <Action OrderNumber="1" UseTTSTextExpression="Move boss" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="UseTTS" ExecutionDelayExpression="11300">
                             <Condition Enabled="true" Grouping="And">
@@ -6690,6 +6704,7 @@
                         </Actions>
                         <Condition Enabled="true" Grouping="And">
                           <ConditionSingle Enabled="true" ExpressionL="${player}" ExpressionTypeL="String" ExpressionR="${_ffxivplayer}" ExpressionTypeR="String" ConditionType="StringEqualCase" />
+                          <ConditionSingle Enabled="true" ExpressionL="${var:dataPhase}" ExpressionTypeL="String" ExpressionR="brute" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
                         </Condition>
                         <Conditions />
                       </Trigger>

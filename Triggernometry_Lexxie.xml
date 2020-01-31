@@ -1793,7 +1793,6 @@
                                 <ConditionSingle Enabled="true" ExpressionL="${_ffxiventity[${dps}].job}" ExpressionTypeL="String" ExpressionR="SAM" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
                               </ConditionGroup>
                             </Condition>
-                            <Conditions />
                           </Action>
                           <Action OrderNumber="2" UseTTSTextExpression="Ranged" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="UseTTS">
                             <Condition Enabled="true" Grouping="And">
@@ -1807,7 +1806,6 @@
                                 <ConditionSingle Enabled="true" ExpressionL="${_ffxiventity[${dps}].job}" ExpressionTypeL="String" ExpressionR="RDM" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
                               </ConditionGroup>
                             </Condition>
-                            <Conditions />
                           </Action>
                         </Actions>
                         <Condition Enabled="true" Grouping="And">
@@ -1818,14 +1816,57 @@
                         <Actions>
                           <Action OrderNumber="1" FolderId="a88dc736-a159-49c5-ae78-aa62ea057442" VariableOp="SetNumeric" VariableName="geocrush" VariableExpression="1" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" TriggerOp="EnableTrigger" TriggerId="65a3a6bf-49f6-4f29-8d0c-524acd2008dc" ActionType="Variable">
                             <Condition Enabled="false" Grouping="Or" />
-                            <Conditions />
                           </Action>
                           <Action OrderNumber="2" FolderOp="DisableFolder" FolderId="a88dc736-a159-49c5-ae78-aa62ea057442" VariableOp="SetNumeric" VariableName="geocrush" VariableExpression="0" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" TriggerOp="DisableTrigger" TriggerId="65a3a6bf-49f6-4f29-8d0c-524acd2008dc" ActionType="Variable" ExecutionDelayExpression="20000">
+                            <Condition Enabled="false" Grouping="Or" />
+                          </Action>
+                        </Actions>
+                        <Condition Enabled="false" Grouping="Or" />
+                      </Trigger>
+                    </Triggers>
+                  </Folder>
+                  <Folder Id="82924c76-d12e-4e3c-bb75-a6e5dfd321ab" Name="Earthen Fist" Enabled="true">
+                    <Folders />
+                    <Triggers>
+                      <Trigger Enabled="true" Name="Left to Right" Id="263da6fa-8902-4faf-a2eb-c7d67175e2a6" RegularExpression="14:412F:Titan Maximum">
+                        <Actions>
+                          <Action OrderNumber="1" UseTTSTextExpression="Left to Right" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="UseTTS">
                             <Condition Enabled="false" Grouping="Or" />
                             <Conditions />
                           </Action>
                         </Actions>
                         <Condition Enabled="false" Grouping="Or" />
+                        <Conditions />
+                      </Trigger>
+                      <Trigger Enabled="true" Name="Right to Left" Id="0928028b-950c-46f9-a76c-a130d3ac27e2" RegularExpression="14:4130:Titan Maximum">
+                        <Actions>
+                          <Action OrderNumber="1" UseTTSTextExpression="Right to Left" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="UseTTS">
+                            <Condition Enabled="false" Grouping="Or" />
+                            <Conditions />
+                          </Action>
+                        </Actions>
+                        <Condition Enabled="false" Grouping="Or" />
+                        <Conditions />
+                      </Trigger>
+                      <Trigger Enabled="true" Name="Stay Left" Id="045a7e88-e453-4cea-a0d5-03593d7e43e3" RegularExpression="14:4131:Titan Maximum">
+                        <Actions>
+                          <Action OrderNumber="1" UseTTSTextExpression="Stay Left" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="UseTTS">
+                            <Condition Enabled="false" Grouping="Or" />
+                            <Conditions />
+                          </Action>
+                        </Actions>
+                        <Condition Enabled="false" Grouping="Or" />
+                        <Conditions />
+                      </Trigger>
+                      <Trigger Enabled="true" Name="Stay Right" Id="a9c0e3e8-2715-4977-8883-892a29c80de1" RegularExpression="14:4132:Titan Maximum">
+                        <Actions>
+                          <Action OrderNumber="1" UseTTSTextExpression="Stay Right" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="UseTTS">
+                            <Condition Enabled="false" Grouping="Or" />
+                            <Conditions />
+                          </Action>
+                        </Actions>
+                        <Condition Enabled="false" Grouping="Or" />
+                        <Conditions />
                       </Trigger>
                     </Triggers>
                   </Folder>
@@ -1835,14 +1876,7 @@
                     <Actions>
                       <Action OrderNumber="1" UseTTSTextExpression="MOVE" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="UseTTS">
                         <Condition Enabled="false" Grouping="Or" />
-                      </Action>
-                    </Actions>
-                    <Condition Enabled="false" Grouping="Or" />
-                  </Trigger>
-                  <Trigger Enabled="true" Name="Fault Zone" Id="2ab377b0-4d93-4c0a-b679-d85a33c15099" RegularExpression="Titan readies Fault Zone">
-                    <Actions>
-                      <Action OrderNumber="1" UseTTSTextExpression="sides" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="UseTTS">
-                        <Condition Enabled="false" Grouping="Or" />
+                        <Conditions />
                       </Action>
                     </Actions>
                     <Condition Enabled="false" Grouping="Or" />
@@ -1855,21 +1889,54 @@
                     </Actions>
                     <Condition Enabled="false" Grouping="Or" />
                   </Trigger>
-                  <Trigger Enabled="false" Name="Earthen Gauntlets" Id="396dfddc-0a05-4a06-9596-523ac1cdb1de" RegularExpression="15:.{8}:Titan:40E6:Earthen Gauntlets:">
+                  <Trigger Enabled="true" Name="Earthen Wheels" Id="396dfddc-0a05-4a06-9596-523ac1cdb1de" RegularExpression=":Titan:40E8:Earthen Wheels:">
                     <Actions>
-                      <Action OrderNumber="1" UseTTSTextExpression="FRONT" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="UseTTS">
+                      <Action OrderNumber="1" UseTTSTextExpression="FRONT" TextAuraEffect="Bold" TextAuraFontSize="24" TextAuraForeground="#FFBB00" TextAuraOutline="Black" TextAuraName="earthenGauntlets" TextAuraExpression="Nice Car: Sides" TextAuraXIniExpression="0" TextAuraYIniExpression="500" TextAuraWIniExpression="${_screenwidth}" TextAuraHIniExpression="100" TextAuraOIniExpression="100" TextAuraTTLTickExpression="5-${_since}" TextAuraUseOutline="True" TextAuraFontName="Microsoft Sans Serif" ActionType="TextAura">
                         <Condition Enabled="false" Grouping="Or" />
+                        <Conditions />
                       </Action>
                     </Actions>
                     <Condition Enabled="false" Grouping="Or" />
                   </Trigger>
-                  <Trigger Enabled="false" Name="Earthen Wheels" Id="6364f4bd-fde3-408e-8aa5-819aab195fd9" RegularExpression="15:.{8}:Titan:40E8:Earthen Wheels:">
+                  <Trigger Enabled="true" Name="Plate Fracture" Id="1a7f0601-4943-45d9-b7b9-10a372a25d79" RegularExpression="14:(?&lt;id&gt;[0-9]{4}):Titan Maximum starts using">
                     <Actions>
-                      <Action OrderNumber="1" UseTTSTextExpression="SIDE" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="UseTTS">
-                        <Condition Enabled="false" Grouping="Or" />
+                      <Action OrderNumber="1" TextAuraEffect="Bold" TextAuraFontSize="20.25" TextAuraForeground="#22BB22" TextAuraOutline="Black" TextAuraName="plateFracture" TextAuraExpression="BREAKING: Front Right" TextAuraXIniExpression="0" TextAuraYIniExpression="500" TextAuraWIniExpression="${_screenwidth}" TextAuraHIniExpression="100" TextAuraOIniExpression="100" TextAuraTTLTickExpression="3-${_since}" TextAuraFontName="Microsoft Sans Serif" ActionType="TextAura">
+                        <Condition Enabled="true" Grouping="And">
+                          <ConditionSingle Enabled="true" ExpressionL="${id}" ExpressionTypeL="String" ExpressionR="4125" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
+                        </Condition>
+                        <Conditions />
+                      </Action>
+                      <Action OrderNumber="2" TextAuraEffect="Bold" TextAuraFontSize="20.25" TextAuraForeground="#22BB22" TextAuraOutline="Black" TextAuraName="plateFracture" TextAuraExpression="BREAKING: Back Right" TextAuraXIniExpression="0" TextAuraYIniExpression="500" TextAuraWIniExpression="${_screenwidth}" TextAuraHIniExpression="100" TextAuraOIniExpression="100" TextAuraTTLTickExpression="3-${_since}" TextAuraFontName="Microsoft Sans Serif" ActionType="TextAura">
+                        <Condition Enabled="true" Grouping="And">
+                          <ConditionSingle Enabled="true" ExpressionL="${id}" ExpressionTypeL="String" ExpressionR="4126" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
+                        </Condition>
+                        <Conditions />
+                      </Action>
+                      <Action OrderNumber="3" TextAuraEffect="Bold" TextAuraFontSize="20.25" TextAuraForeground="#22BB22" TextAuraOutline="Black" TextAuraName="plateFracture" TextAuraExpression="BREAKING: Back Left" TextAuraXIniExpression="0" TextAuraYIniExpression="500" TextAuraWIniExpression="${_screenwidth}" TextAuraHIniExpression="100" TextAuraOIniExpression="100" TextAuraTTLTickExpression="3-${_since}" TextAuraFontName="Microsoft Sans Serif" ActionType="TextAura">
+                        <Condition Enabled="true" Grouping="And">
+                          <ConditionSingle Enabled="true" ExpressionL="${id}" ExpressionTypeL="String" ExpressionR="4127" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
+                        </Condition>
+                        <Conditions />
+                      </Action>
+                      <Action OrderNumber="4" TextAuraEffect="Bold" TextAuraFontSize="20.25" TextAuraForeground="#22BB22" TextAuraOutline="Black" TextAuraName="plateFracture" TextAuraExpression="BREAKING: Front Left" TextAuraXIniExpression="0" TextAuraYIniExpression="500" TextAuraWIniExpression="${_screenwidth}" TextAuraHIniExpression="100" TextAuraOIniExpression="100" TextAuraTTLTickExpression="3-${_since}" TextAuraFontName="Microsoft Sans Serif" ActionType="TextAura">
+                        <Condition Enabled="true" Grouping="And">
+                          <ConditionSingle Enabled="true" ExpressionL="${id}" ExpressionTypeL="String" ExpressionR="4128" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
+                        </Condition>
+                        <Conditions />
                       </Action>
                     </Actions>
                     <Condition Enabled="false" Grouping="Or" />
+                    <Conditions />
+                  </Trigger>
+                  <Trigger Enabled="true" Name="Earthen Gauntlets" Id="ce3301a1-e992-471c-8b9a-7e22a51692d4" RegularExpression=":Titan:40E6:Earthen Gauntlets:">
+                    <Actions>
+                      <Action OrderNumber="1" UseTTSTextExpression="FRONT" TextAuraEffect="Bold" TextAuraFontSize="24" TextAuraForeground="#FFBB00" TextAuraOutline="Black" TextAuraName="earthenGauntlets" TextAuraExpression="Landslide: In Front" TextAuraXIniExpression="0" TextAuraYIniExpression="500" TextAuraWIniExpression="${_screenwidth}" TextAuraHIniExpression="100" TextAuraOIniExpression="100" TextAuraTTLTickExpression="5-${_since}" TextAuraUseOutline="True" TextAuraFontName="Microsoft Sans Serif" ActionType="TextAura">
+                        <Condition Enabled="false" Grouping="Or" />
+                        <Conditions />
+                      </Action>
+                    </Actions>
+                    <Condition Enabled="false" Grouping="Or" />
+                    <Conditions />
                   </Trigger>
                 </Triggers>
               </Folder>
@@ -1970,67 +2037,82 @@
                   </Trigger>
                   <Trigger Enabled="true" Name="Empty Rage" Id="4cda3816-596a-45ae-97a1-afe7a65904e6" RegularExpression="14:3E6B:The Hand Of Erebos starts using (?:Empty Rage|)">
                     <Actions>
-                      <Action OrderNumber="1" UseTTSTextExpression="Away" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="UseTTS" />
+                      <Action OrderNumber="1" UseTTSTextExpression="Away" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="UseTTS">
+                        <Conditions />
+                      </Action>
                     </Actions>
+                    <Condition Enabled="false" Grouping="Or" />
                   </Trigger>
                   <Trigger Enabled="true" Name="Empty Hate" Id="1445b71f-766d-47d7-9bd1-8796db7eab0a" RegularExpression="14:3E59:The Hand Of Erebos starts using (?:Empty Hate|)">
                     <Actions>
-                      <Action OrderNumber="1" UseTTSTextExpression="Knockback" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="UseTTS" />
-                    </Actions>
-                  </Trigger>
-                  <Trigger Enabled="true" Name="Doomvoid Cleaver" Id="9ec30c07-1bf9-4c38-a8f5-e94034ba6f62" RegularExpression="14:3E64:Voidwalker">
-                    <Actions>
-                      <Action OrderNumber="1" UseTTSTextExpression="Position" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="UseTTS" />
-                    </Actions>
-                  </Trigger>
-                  <Trigger Enabled="true" Name="Doomvoid Guillotine" Id="29d8b0f0-b626-4fcc-98cb-016fd192a078" RegularExpression="14:3E4F:Voidwalker">
-                    <Actions>
-                      <Action OrderNumber="1" UseTTSTextExpression="Side" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="UseTTS" />
+                      <Action OrderNumber="1" UseTTSTextExpression="Knockback" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="UseTTS">
+                        <Conditions />
+                      </Action>
                     </Actions>
                     <Condition Enabled="false" Grouping="Or" />
                   </Trigger>
-                  <Trigger Enabled="true" Name="Doomvoid Slicer" Id="aa0364e0-cb26-4048-83c7-fc4934ff3fbd" RegularExpression="14:3E50:Voidwalker">
+                  <Trigger Enabled="true" Name="Doomvoid Cleaver" Id="9ec30c07-1bf9-4c38-a8f5-e94034ba6f62" RegularExpression="14:3E64:Voidwalker starts using Doomvoid Cleaver">
                     <Actions>
-                      <Action OrderNumber="1" UseTTSTextExpression="In" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="UseTTS" />
+                      <Action OrderNumber="1" UseTTSTextExpression="Position" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="UseTTS">
+                        <Conditions />
+                      </Action>
                     </Actions>
                     <Condition Enabled="false" Grouping="Or" />
                   </Trigger>
-                  <Trigger Enabled="true" Name="Cycle of Chaos" Id="c3149fed-d9a1-4a70-b803-b033be2c5883" RegularExpression="2b:Voidwalker readies Cycle of Chaos">
+                  <Trigger Enabled="true" Name="Doomvoid Guillotine" Id="29d8b0f0-b626-4fcc-98cb-016fd192a078" RegularExpression="14:3E4F:Voidwalker starts using Doomvoid Guillotine">
                     <Actions>
-                      <Action OrderNumber="1" TextAuraEffect="Bold" TextAuraFontSize="20.25" TextAuraForeground="#22BB22" TextAuraOutline="Black" TextAuraName="cycleChaos" TextAuraExpression="Sides &gt; In &gt; Position" TextAuraXIniExpression="0" TextAuraYIniExpression="500" TextAuraWIniExpression="1920" TextAuraHIniExpression="100" TextAuraOIniExpression="100" TextAuraFontName="Microsoft Sans Serif" ActionType="TextAura">
+                      <Action OrderNumber="1" UseTTSTextExpression="Side" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="UseTTS">
+                        <Conditions />
+                      </Action>
+                    </Actions>
+                    <Condition Enabled="false" Grouping="Or" />
+                  </Trigger>
+                  <Trigger Enabled="true" Name="Doomvoid Slicer" Id="aa0364e0-cb26-4048-83c7-fc4934ff3fbd" RegularExpression="14:3E50:Voidwalker starts using Doomvoid Slicer">
+                    <Actions>
+                      <Action OrderNumber="1" UseTTSTextExpression="In" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="UseTTS">
+                        <Conditions />
+                      </Action>
+                    </Actions>
+                    <Condition Enabled="false" Grouping="Or" />
+                  </Trigger>
+                  <Trigger Enabled="true" Name="Cycle of Chaos" Id="c3149fed-d9a1-4a70-b803-b033be2c5883" RegularExpression="14:40B9:Voidwalker starts using Cycle of Chaos">
+                    <Actions>
+                      <Action OrderNumber="1" TextAuraEffect="Bold" TextAuraFontSize="20.25" TextAuraForeground="#22BB22" TextAuraOutline="Black" TextAuraName="cycleChaos" TextAuraExpression="Sides &gt; In &gt; Position" TextAuraXIniExpression="0" TextAuraYIniExpression="500" TextAuraWIniExpression="${_screenwidth}" TextAuraHIniExpression="100" TextAuraOIniExpression="100" TextAuraTTLTickExpression="10-${_since}" TextAuraFontName="Microsoft Sans Serif" ActionType="TextAura">
                         <Condition Enabled="false" Grouping="Or" />
+                        <Conditions />
                       </Action>
                       <Action OrderNumber="2" UseTTSTextExpression="Side" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="UseTTS">
                         <Condition Enabled="false" Grouping="Or" />
+                        <Conditions />
                       </Action>
                       <Action OrderNumber="3" UseTTSTextExpression="In" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="UseTTS" ExecutionDelayExpression="5000">
                         <Condition Enabled="false" Grouping="Or" />
+                        <Conditions />
                       </Action>
                       <Action OrderNumber="4" UseTTSTextExpression="Position" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="UseTTS" ExecutionDelayExpression="3000">
                         <Condition Enabled="false" Grouping="Or" />
-                      </Action>
-                      <Action OrderNumber="5" TextAuraOp="DeactivateAura" TextAuraFontSize="8.25" TextAuraName="cycleChaos" TextAuraFontName="Microsoft Sans Serif" ActionType="TextAura" ExecutionDelayExpression="1000">
-                        <Condition Enabled="false" Grouping="Or" />
+                        <Conditions />
                       </Action>
                     </Actions>
                     <Condition Enabled="false" Grouping="Or" />
                   </Trigger>
-                  <Trigger Enabled="true" Name="Cycle of Retribution" Id="b0bd991e-456f-4e44-b9b9-d171eef54f8b" RegularExpression="2b:Voidwalker readies Cycle of Retribution">
+                  <Trigger Enabled="true" Name="Cycle of Retribution" Id="b0bd991e-456f-4e44-b9b9-d171eef54f8b" RegularExpression="14:4659:Voidwalker starts using Cycle of Retribution">
                     <Actions>
-                      <Action OrderNumber="1" TextAuraEffect="Bold" TextAuraFontSize="36" TextAuraForeground="#22BB22" TextAuraOutline="Black" TextAuraName="cycleRetribution" TextAuraExpression="In &gt; Position &gt; Sides" TextAuraXIniExpression="0" TextAuraYIniExpression="500" TextAuraWIniExpression="1920" TextAuraHIniExpression="100" TextAuraOIniExpression="100" TextAuraFontName="Microsoft Sans Serif" ActionType="TextAura">
+                      <Action OrderNumber="1" TextAuraEffect="Bold" TextAuraFontSize="20.25" TextAuraForeground="#22BB22" TextAuraOutline="Black" TextAuraName="cycleRetribution" TextAuraExpression="In &gt; Position &gt; Sides" TextAuraXIniExpression="0" TextAuraYIniExpression="500" TextAuraWIniExpression="${_screenwidth}" TextAuraHIniExpression="100" TextAuraOIniExpression="100" TextAuraTTLTickExpression="10-${_since}" TextAuraUseOutline="True" TextAuraFontName="Microsoft Sans Serif" ActionType="TextAura">
                         <Condition Enabled="false" Grouping="Or" />
+                        <Conditions />
                       </Action>
                       <Action OrderNumber="2" UseTTSTextExpression="In" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="UseTTS">
                         <Condition Enabled="false" Grouping="Or" />
+                        <Conditions />
                       </Action>
                       <Action OrderNumber="3" UseTTSTextExpression="Position" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="UseTTS" ExecutionDelayExpression="5000">
                         <Condition Enabled="false" Grouping="Or" />
+                        <Conditions />
                       </Action>
                       <Action OrderNumber="4" UseTTSTextExpression="Side" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="UseTTS" ExecutionDelayExpression="3000">
                         <Condition Enabled="false" Grouping="Or" />
-                      </Action>
-                      <Action OrderNumber="5" AuraOp="DeactivateAllAura" TextAuraOp="DeactivateAura" TextAuraFontSize="8.25" TextAuraName="cycleRetribution" TextAuraFontName="Microsoft Sans Serif" ActionType="TextAura" ExecutionDelayExpression="1000">
-                        <Condition Enabled="false" Grouping="Or" />
+                        <Conditions />
                       </Action>
                     </Actions>
                     <Condition Enabled="false" Grouping="Or" />

@@ -1,4 +1,5 @@
 
+
 # xiv_triggernometry
 
 ## How to Setup
@@ -7,11 +8,13 @@
  2. Right-click on **Remote Triggers** and choose **Add**> **Repository** from the list.
  3. Name it whatever you want but put the following in the address:
  ```https://raw.githubusercontent.com/lexxiesia/xiv_triggernometry/master/Triggernometry_Lexxie.xml```
- 4. Click **Add** and you're done!
+ 4. Under the **Update and Permissions** section, make sure your settings are as follows:
+![](https://raw.githubusercontent.com/lexxiesia/xiv_triggernometry/master/resources/screenshots/repo_setting.jpg)
+ 5. Click **Add** and you're done!
  
  If you don't see **Remote Triggers**, you are running an old version of Triggernometry. Download the latest update from [https://github.com/paissaheavyindustries/Triggernometry/releases/](https://github.com/paissaheavyindustries/Triggernometry/releases/).
  
- This repository is currently on **Triggernometry v1.1.2.1**
+ This repository is currently on **Triggernometry v1.1.3.0**
 
  ### Known Issues
  - Main repository folder `Github` occasionally gets disabled after a new upload.
@@ -22,4 +25,4 @@ Triggers within the repository are separated by content folders. Most stuff are 
 
 If there're any problems or issues, hit me up on Discord.
 ***
-##### Repository Triggernometry version 1.1.2.1
+##### Repository Triggernometry version 1.1.3.0

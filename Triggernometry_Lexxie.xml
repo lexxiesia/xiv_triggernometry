@@ -2084,129 +2084,6 @@
                   </Trigger>
                 </Triggers>
               </Folder>
-              <Folder ZoneFilterEnabled="True" Id="cf8ebf68-a2df-4746-8a16-e7747521d183" ZoneFilterRegularExpression="Eden's\ Verse:\ Fulmination\ \(Savage\)" Name="05 - Eden's Verse: Fulmination" Enabled="true">
-                <Folders />
-                <Triggers>
-                  <Trigger Enabled="true" Name="Fury's Bolt" Id="02b1a331-d7ab-4c2d-8147-bbf8204009d6" RegularExpression="1[AE]:[A-F0-9]{8}:Ramuh (?&lt;effect&gt;gains|loses) the effect of Fury's Bolt">
-                    <Actions>
-                      <Action OrderNumber="1" VariableName="hasFury" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Variable">
-                        <Condition Enabled="true" Grouping="And">
-                          <ConditionSingle Enabled="true" ExpressionL="${effect}" ExpressionTypeL="String" ExpressionR="loses" ExpressionTypeR="String" ConditionType="StringEqualCase" />
-                        </Condition>
-                      </Action>
-                      <Action OrderNumber="2" VariableOp="SetString" VariableName="hasFury" VariableExpression="true" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Variable">
-                        <Condition Enabled="true" Grouping="And">
-                          <ConditionSingle Enabled="true" ExpressionL="${effect}" ExpressionTypeL="String" ExpressionR="gains" ExpressionTypeR="String" ConditionType="StringEqualCase" />
-                        </Condition>
-                      </Action>
-                    </Actions>
-                    <Condition Enabled="false" Grouping="Or" />
-                  </Trigger>
-                  <Trigger Enabled="true" Name="Stepped Leader" Id="6036e650-ef60-4f28-be7a-7379b6a585bf" RegularExpression="14:4BC6:Ramuh starts using Stepped Leader">
-                    <Actions>
-                      <Action OrderNumber="1" PlaySoundFileExpression="https://raw.githubusercontent.com/lexxiesia/xiv_triggernometry/master/resources/wav/arthars/twister1.wav" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="PlaySound">
-                        <Condition Enabled="true" Grouping="Or">
-                          <ConditionSingle Enabled="true" ExpressionL="${evar:hasFury}" ExpressionTypeL="Numeric" ExpressionR="0" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
-                        </Condition>
-                      </Action>
-                      <Action OrderNumber="2" UseTTSTextExpression="Stack" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="UseTTS">
-                        <Condition Enabled="true" Grouping="And">
-                          <ConditionSingle Enabled="true" ExpressionL="${var:hasFury}" ExpressionTypeL="String" ExpressionR="true" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
-                        </Condition>
-                      </Action>
-                    </Actions>
-                    <Condition Enabled="false" Grouping="Or" />
-                  </Trigger>
-                  <Trigger Enabled="true" Name="Levinforce" Id="230a8cc4-2d55-40e6-9b11-4525123651aa" RegularExpression="14:4BCC:Ramuh starts using Levinforce">
-                    <Actions>
-                      <Action OrderNumber="1" UseTTSTextExpression="Knockback" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="UseTTS">
-                        <Condition Enabled="false" Grouping="Or" />
-                      </Action>
-                    </Actions>
-                    <Condition Enabled="false" Grouping="Or" />
-                  </Trigger>
-                  <Trigger Enabled="true" Name="Deadly Discharge" Id="c866f335-3fb2-4aa4-8dbe-89ec1fd138fd" RegularExpression="14:4BB[12]:Will of Ramuh starts using Deadly Discharge" PeriodRefire="Deny" RefirePeriodExpression="1000">
-                    <Actions>
-                      <Action OrderNumber="1" UseTTSTextExpression="Short" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="UseTTS">
-                        <Condition Enabled="true" Grouping="Or">
-                          <ConditionSingle Enabled="true" ExpressionL="${evar:hasFury}" ExpressionTypeL="Numeric" ExpressionR="0" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
-                        </Condition>
-                      </Action>
-                      <Action OrderNumber="2" UseTTSTextExpression="Long" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="UseTTS">
-                        <Condition Enabled="true" Grouping="Or">
-                          <ConditionSingle Enabled="true" ExpressionL="${var:hasFury}" ExpressionTypeL="String" ExpressionR="true" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
-                        </Condition>
-                      </Action>
-                    </Actions>
-                    <Condition Enabled="false" Grouping="Or" />
-                  </Trigger>
-                  <Trigger Enabled="true" Name="Thunderstorm" Id="a25e1094-d8e0-44f5-807f-6ab2696dadec" RegularExpression="14:4BBF:Ramuh starts using Thunderstorm">
-                    <Actions>
-                      <Action OrderNumber="1" UseTTSTextExpression="Orb" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="UseTTS">
-                        <Condition Enabled="false" Grouping="Or" />
-                      </Action>
-                    </Actions>
-                    <Condition Enabled="false" Grouping="Or" />
-                  </Trigger>
-                  <Trigger Enabled="true" Name="Fury's Fourteen" Id="e60f5128-cf20-4ec1-b851-5ee79986e2f2" RegularExpression="14:4BAB:Ramuh starts using Fury's Fourteen">
-                    <Actions>
-                      <Action OrderNumber="1" VariableOp="SetNumeric" VariableName="fourteenCounter" VariableExpression="${var:fourteenCounter}+1" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Variable">
-                        <Condition Enabled="false" Grouping="Or" />
-                      </Action>
-                      <Action OrderNumber="2" UseTTSTextExpression="Orb" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="UseTTS">
-                        <Condition Enabled="true" Grouping="And">
-                          <ConditionSingle Enabled="true" ExpressionL="${var:fourteenCounter}" ExpressionTypeL="Numeric" ExpressionR="2" ExpressionTypeR="Numeric" ConditionType="NumericLessEqual" />
-                        </Condition>
-                      </Action>
-                    </Actions>
-                    <Condition Enabled="false" Grouping="Or" />
-                  </Trigger>
-                  <Trigger Enabled="true" Name="# Reset" Id="0d926636-1512-40e7-83ed-bc52b3d9ed4f" RegularExpression="21:........:40000010:">
-                    <Actions>
-                      <Action OrderNumber="1" ListVariableName="hasFury" ListVariableExpression="${name}" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="ListVariable">
-                        <Condition Enabled="false" Grouping="Or" />
-                      </Action>
-                      <Action OrderNumber="2" VariableName="fourteenCounter" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Variable">
-                        <Condition Enabled="false" Grouping="Or" />
-                      </Action>
-                    </Actions>
-                    <Condition Enabled="false" Grouping="Or" />
-                  </Trigger>
-                  <Trigger Enabled="true" Name="Judgment Volts" Id="9a3e8d21-fe5d-4730-95d3-102ee17d03b6" RegularExpression="14:4BB7:Ramuh starts using Judgment Volts">
-                    <Actions>
-                      <Action OrderNumber="1" UseTTSTextExpression="Orb" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="UseTTS">
-                        <Condition Enabled="false" Grouping="And">
-                          <ConditionSingle Enabled="true" ExpressionL="${var:hasFury}" ExpressionTypeL="String" ExpressionR="true" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
-                        </Condition>
-                      </Action>
-                    </Actions>
-                    <Condition Enabled="false" Grouping="Or" />
-                  </Trigger>
-                  <Trigger Enabled="true" Name="Tribunal Summons" Id="0fb10df9-51ae-4159-a618-30e1d7d9b52f" RegularExpression="03:(?&lt;id&gt;[0-8A-F]{8}):Added new combatant Will Of Ixion" PeriodRefire="Deny" RefirePeriodExpression="1000">
-                    <Actions>
-                      <Action OrderNumber="1" UseTTSTextExpression="Left Safe" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="UseTTS">
-                        <Condition Enabled="true" Grouping="Or">
-                          <ConditionSingle Enabled="true" ExpressionL="${_ffxiventity[${id}].x}" ExpressionTypeL="Numeric" ExpressionR="102.5" ExpressionTypeR="String" ConditionType="NumericEqual" />
-                          <ConditionSingle Enabled="true" ExpressionL="${_ffxiventity[${id}].x}" ExpressionTypeL="Numeric" ExpressionR="107.5" ExpressionTypeR="String" ConditionType="NumericEqual" />
-                          <ConditionSingle Enabled="true" ExpressionL="${_ffxiventity[${id}].x}" ExpressionTypeL="Numeric" ExpressionR="112.5" ExpressionTypeR="String" ConditionType="NumericEqual" />
-                          <ConditionSingle Enabled="true" ExpressionL="${_ffxiventity[${id}].x}" ExpressionTypeL="Numeric" ExpressionR="117.5" ExpressionTypeR="String" ConditionType="NumericEqual" />
-                        </Condition>
-                      </Action>
-                      <Action OrderNumber="2" UseTTSTextExpression="Right Safe" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="UseTTS">
-                        <Condition Enabled="true" Grouping="Or">
-                          <ConditionSingle Enabled="true" ExpressionL="${_ffxiventity[${id}].x}" ExpressionTypeL="Numeric" ExpressionR="82.5" ExpressionTypeR="String" ConditionType="NumericEqual" />
-                          <ConditionSingle Enabled="true" ExpressionL="${_ffxiventity[${id}].x}" ExpressionTypeL="Numeric" ExpressionR="87.5" ExpressionTypeR="String" ConditionType="NumericEqual" />
-                          <ConditionSingle Enabled="true" ExpressionL="${_ffxiventity[${id}].x}" ExpressionTypeL="Numeric" ExpressionR="92.5" ExpressionTypeR="String" ConditionType="NumericEqual" />
-                          <ConditionSingle Enabled="true" ExpressionL="${_ffxiventity[${id}].x}" ExpressionTypeL="Numeric" ExpressionR="97.5" ExpressionTypeR="String" ConditionType="NumericEqual" />
-                        </Condition>
-                      </Action>
-                    </Actions>
-                    <Condition Enabled="true" Grouping="And">
-                      <ConditionSingle Enabled="true" ExpressionL="${var:fourteenCounter}" ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="Numeric" ConditionType="NumericGreaterEqual" />
-                    </Condition>
-                  </Trigger>
-                </Triggers>
-              </Folder>
               <Folder ZoneFilterEnabled="True" Id="f5812880-081c-414f-9300-2e8b22fbe1c0" ZoneFilterRegularExpression="Eden's\ Verse:\ Furor\ \(Savage\)" Name="06 - Eden's Verse: Furor" Enabled="true">
                 <Folders />
                 <Triggers>
@@ -2224,20 +2101,17 @@
                         <Condition Enabled="true" Grouping="And">
                           <ConditionSingle Enabled="true" ExpressionL="${source}" ExpressionTypeL="String" ExpressionR="${_ffxivplayer}" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
                         </Condition>
-                        <Conditions />
                       </Action>
                       <Action OrderNumber="2" TextAuraEffect="Bold" TextAuraFontSize="24" TextAuraForeground="#FFBB00" TextAuraOutline="Black" TextAuraName="chainPartner" TextAuraExpression="Partner: ${source}" TextAuraXIniExpression="0" TextAuraYIniExpression="500" TextAuraWIniExpression="${_screenwidth}" TextAuraHIniExpression="100" TextAuraOIniExpression="100" TextAuraTTLTickExpression="5-${_since}" TextAuraUseOutline="True" TextAuraFontName="Microsoft Sans Serif" ActionType="TextAura">
                         <Condition Enabled="true" Grouping="And">
                           <ConditionSingle Enabled="true" ExpressionL="${target}" ExpressionTypeL="String" ExpressionR="${_ffxivplayer}" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
                         </Condition>
-                        <Conditions />
                       </Action>
                     </Actions>
                     <Condition Enabled="true" Grouping="Or">
                       <ConditionSingle Enabled="true" ExpressionL="${source}" ExpressionTypeL="String" ExpressionR="${_ffxivplayer}" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
                       <ConditionSingle Enabled="true" ExpressionL="${target}" ExpressionTypeL="String" ExpressionR="${_ffxivplayer}" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
                     </Condition>
-                    <Conditions />
                   </Trigger>
                 </Triggers>
               </Folder>
@@ -2254,25 +2128,140 @@
                         <Actions>
                           <Action OrderNumber="1" VariableOp="SetString" VariableName="dataPhase" VariableExpression="betwixtWorlds" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Variable">
                             <Condition Enabled="false" Grouping="Or" />
-                            <Conditions />
                           </Action>
                         </Actions>
                         <Condition Enabled="false" Grouping="Or" />
-                        <Conditions />
                       </Trigger>
                       <Trigger Enabled="true" Name="False Midnight" Id="c0c66e51-9afa-4a0d-8122-1aaa1ca45c8a" RegularExpression="14:4C99:The Idol Of Darkness starts using False Midnight">
                         <Actions>
                           <Action OrderNumber="1" VariableOp="SetString" VariableName="dataPhase" VariableExpression="falseMidnight" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Variable">
                             <Condition Enabled="false" Grouping="Or" />
-                            <Conditions />
                           </Action>
                         </Actions>
                         <Condition Enabled="false" Grouping="Or" />
-                        <Conditions />
                       </Trigger>
                       <Trigger Enabled="true" Name="# Reset" Id="fc9f36d3-9bb8-4e7c-b2f0-08d6a507c5b9" RegularExpression="21:........:40000010:">
                         <Actions>
                           <Action OrderNumber="1" VariableName="dataPhase" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Variable">
+                            <Condition Enabled="false" Grouping="Or" />
+                          </Action>
+                        </Actions>
+                        <Condition Enabled="false" Grouping="Or" />
+                      </Trigger>
+                      <Trigger Enabled="true" Name="Adds" Id="299276d6-7f55-452a-9c7b-6ea7c2a64243" RegularExpression="03:[0-9A-F]{8}:Added new combatant Blasphemy" PeriodRefire="Deny" RefirePeriodExpression="1000">
+                        <Actions>
+                          <Action OrderNumber="1" VariableOp="SetString" VariableName="dataPhase" VariableExpression="adds" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Variable">
+                            <Condition Enabled="false" Grouping="Or" />
+                          </Action>
+                        </Actions>
+                        <Condition Enabled="false" Grouping="Or" />
+                      </Trigger>
+                    </Triggers>
+                  </Folder>
+                </Folders>
+                <Triggers>
+                  <Trigger Enabled="true" Name="Teleport" Id="46277cc0-584e-47cf-88e9-b7a30dda1093" RegularExpression="1A:[0-9A-F]{8}:(?&lt;name&gt;[\w-' ]+) gains the effect of (?&lt;dir&gt;Left|Right|Forward|Back) With Thee">
+                    <Actions>
+                      <Action OrderNumber="1" TextAuraEffect="Bold" TextAuraFontSize="24" TextAuraForeground="#FFBB00" TextAuraOutline="Black" TextAuraName="teleportText" TextAuraExpression="Teleporting ${dir}" TextAuraXIniExpression="0" TextAuraYIniExpression="500" TextAuraWIniExpression="${_screenwidth}" TextAuraHIniExpression="100" TextAuraOIniExpression="100" TextAuraTTLTickExpression="5-${_since}" TextAuraUseOutline="True" TextAuraFontName="Microsoft Sans Serif" ActionType="TextAura">
+                        <Condition Enabled="false" Grouping="Or" />
+                      </Action>
+                      <Action OrderNumber="2" UseTTSTextExpression="${dir}" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="UseTTS">
+                        <Condition Enabled="false" Grouping="Or" />
+                      </Action>
+                    </Actions>
+                    <Condition Enabled="true" Grouping="And">
+                      <ConditionSingle Enabled="true" ExpressionL="${name}" ExpressionTypeL="String" ExpressionR="${_ffxivplayer}" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
+                    </Condition>
+                  </Trigger>
+                  <Trigger Enabled="true" Name="Unjoined Aspect" Id="2b83e5bf-8f65-4e35-8c94-91476649a6a2" RegularExpression="1A:[0-9A-F]{8}:(?&lt;name&gt;[\w-' ]+) gains the effect of (?&lt;color&gt;Astral|Umbral) Effect">
+                    <Actions>
+                      <Action OrderNumber="1" VariableOp="SetString" VariableName="colorEffect" VariableExpression="light" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Variable">
+                        <Condition Enabled="true" Grouping="And">
+                          <ConditionSingle Enabled="true" ExpressionL="${color}" ExpressionTypeL="String" ExpressionR="Astral" ExpressionTypeR="String" ConditionType="StringEqualCase" />
+                        </Condition>
+                      </Action>
+                      <Action OrderNumber="2" VariableOp="SetString" VariableName="colorEffect" VariableExpression="dark" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Variable">
+                        <Condition Enabled="true" Grouping="And">
+                          <ConditionSingle Enabled="true" ExpressionL="${color}" ExpressionTypeL="String" ExpressionR="Umbral" ExpressionTypeR="String" ConditionType="StringEqualCase" />
+                        </Condition>
+                      </Action>
+                    </Actions>
+                    <Condition Enabled="true" Grouping="And">
+                      <ConditionSingle Enabled="true" ExpressionL="${name}" ExpressionTypeL="String" ExpressionR="${_ffxivplayer}" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
+                    </Condition>
+                  </Trigger>
+                  <Trigger Enabled="true" Name="Crusade" Id="af7daabf-cded-4aad-a1ad-43f4d3add336" RegularExpression="14:4C76:The Idol Of Darkness starts using Crusade">
+                    <Actions>
+                      <Action OrderNumber="1" UseTTSTextExpression="Knockback" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="UseTTS">
+                        <Condition Enabled="false" Grouping="Or" />
+                      </Action>
+                    </Actions>
+                    <Condition Enabled="false" Grouping="Or" />
+                  </Trigger>
+                  <Trigger Enabled="true" Name="Unshadowed Strike" Id="8f349865-c108-42f9-8047-d57dc385bc83" RegularExpression="23:[0-9A-F]{8}:The Idol Of Darkness:[0-9A-F]{8}:(?&lt;name&gt;[\w-' ]+):.{4}:.{4}:0025:">
+                    <Actions>
+                      <Action OrderNumber="1" PlaySoundFileExpression="https://raw.githubusercontent.com/lexxiesia/xiv_triggernometry/master/resources/wav/arthars/megabeam.wav" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="PlaySound">
+                        <Condition Enabled="false" Grouping="Or" />
+                      </Action>
+                    </Actions>
+                    <Condition Enabled="false" Grouping="Or" />
+                  </Trigger>
+                  <Trigger Enabled="true" Name="Strength in Numbers" Id="59c7eeac-4b2e-48d5-947b-c367401c17a2" RegularExpression="14:4C70:Idolatry starts using Strerngth In Numbers" PeriodRefire="Deny" RefirePeriodExpression="1000">
+                    <Actions>
+                      <Action OrderNumber="1" UseTTSTextExpression="Dynamo" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="UseTTS">
+                        <Condition Enabled="false" Grouping="Or" />
+                      </Action>
+                    </Actions>
+                    <Condition Enabled="false" Grouping="Or" />
+                  </Trigger>
+                </Triggers>
+              </Folder>
+              <Folder ZoneFilterEnabled="True" Id="50985836-92d4-440a-b54f-b210283b7b0c" ZoneFilterRegularExpression="Eden's\ Verse:\ Fulmination\ \(Savage\)" Name="05 - Eden's Verse: Fulmination" Enabled="true">
+                <Folders>
+                  <Folder Id="dcc313c8-5b5c-4c58-84d5-90d75c426d0f" Name="Fury's Fourteen - Ixions" Enabled="true">
+                    <Folders />
+                    <Triggers>
+                      <Trigger Enabled="true" Name="Safe Zones" Id="1e00b5bc-4633-4012-9b0b-054d045eb799" RegularExpression="03:(?&lt;id&gt;[0-8A-F]{8}):Added new combatant Will Of Ixion" PeriodRefire="Deny" RefirePeriodExpression="1000">
+                        <Actions>
+                          <Action OrderNumber="1" UseTTSTextExpression="Left Safe" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="UseTTS">
+                            <Condition Enabled="true" Grouping="And">
+                              <ConditionGroup Enabled="true" Grouping="Or">
+                                <ConditionSingle Enabled="true" ExpressionL="${_ffxiventity[${id}].x}" ExpressionTypeL="Numeric" ExpressionR="102.5" ExpressionTypeR="String" ConditionType="NumericEqual" />
+                                <ConditionSingle Enabled="true" ExpressionL="${_ffxiventity[${id}].x}" ExpressionTypeL="Numeric" ExpressionR="107.5" ExpressionTypeR="String" ConditionType="NumericEqual" />
+                                <ConditionSingle Enabled="true" ExpressionL="${_ffxiventity[${id}].x}" ExpressionTypeL="Numeric" ExpressionR="112.5" ExpressionTypeR="String" ConditionType="NumericEqual" />
+                                <ConditionSingle Enabled="true" ExpressionL="${_ffxiventity[${id}].x}" ExpressionTypeL="Numeric" ExpressionR="117.5" ExpressionTypeR="String" ConditionType="NumericEqual" />
+                              </ConditionGroup>
+                              <ConditionGroup Enabled="true" Grouping="Or">
+                                <ConditionSingle Enabled="true" ExpressionL="${_ffxiventity[${id}].y}" ExpressionTypeL="Numeric" ExpressionR="80" ExpressionTypeR="String" ConditionType="NumericEqual" />
+                                <ConditionSingle Enabled="true" ExpressionL="${_ffxiventity[${id}].y}" ExpressionTypeL="Numeric" ExpressionR="120" ExpressionTypeR="String" ConditionType="NumericEqual" />
+                              </ConditionGroup>
+                            </Condition>
+                            <Conditions />
+                          </Action>
+                          <Action OrderNumber="2" UseTTSTextExpression="Right Safe" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="UseTTS">
+                            <Condition Enabled="true" Grouping="And">
+                              <ConditionGroup Enabled="true" Grouping="Or">
+                                <ConditionSingle Enabled="true" ExpressionL="${_ffxiventity[${id}].x}" ExpressionTypeL="Numeric" ExpressionR="82.5" ExpressionTypeR="String" ConditionType="NumericEqual" />
+                                <ConditionSingle Enabled="true" ExpressionL="${_ffxiventity[${id}].x}" ExpressionTypeL="Numeric" ExpressionR="87.5" ExpressionTypeR="String" ConditionType="NumericEqual" />
+                                <ConditionSingle Enabled="true" ExpressionL="${_ffxiventity[${id}].x}" ExpressionTypeL="Numeric" ExpressionR="92.5" ExpressionTypeR="String" ConditionType="NumericEqual" />
+                                <ConditionSingle Enabled="true" ExpressionL="${_ffxiventity[${id}].x}" ExpressionTypeL="Numeric" ExpressionR="97.5" ExpressionTypeR="String" ConditionType="NumericEqual" />
+                              </ConditionGroup>
+                              <ConditionGroup Enabled="true" Grouping="Or">
+                                <ConditionSingle Enabled="true" ExpressionL="${_ffxiventity[${id}].y}" ExpressionTypeL="Numeric" ExpressionR="120" ExpressionTypeR="String" ConditionType="NumericEqual" />
+                                <ConditionSingle Enabled="true" ExpressionL="${_ffxiventity[${id}].x}" ExpressionTypeL="Numeric" ExpressionR="80" ExpressionTypeR="String" ConditionType="NumericEqual" />
+                              </ConditionGroup>
+                            </Condition>
+                            <Conditions />
+                          </Action>
+                        </Actions>
+                        <Condition Enabled="true" Grouping="And">
+                          <ConditionSingle Enabled="true" ExpressionL="${var:hasGallop" ExpressionTypeL="String" ExpressionR="false" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
+                        </Condition>
+                        <Conditions />
+                      </Trigger>
+                      <Trigger Enabled="true" Name="Fury's Fourteen" Id="95cf1574-4ed7-44d9-9de3-7be0b0127971" RegularExpression="14:4BAB:Ramuh starts using Fury's Fourteen">
+                        <Actions>
+                          <Action OrderNumber="1" VariableOp="SetString" VariableName="hasGallop" VariableExpression="false" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Variable">
                             <Condition Enabled="false" Grouping="Or" />
                             <Conditions />
                           </Action>
@@ -2280,9 +2269,9 @@
                         <Condition Enabled="false" Grouping="Or" />
                         <Conditions />
                       </Trigger>
-                      <Trigger Enabled="true" Name="Adds" Id="299276d6-7f55-452a-9c7b-6ea7c2a64243" RegularExpression="03:[0-9A-F]{8}:Added new combatant Blasphemy" PeriodRefire="Deny" RefirePeriodExpression="1000">
+                      <Trigger Enabled="true" Name="Charge" Id="2096a9dd-823b-4725-a64a-b8f91c09fa48" RegularExpression=":Ramuh:4BA[DE]:Centaur's Charge:">
                         <Actions>
-                          <Action OrderNumber="1" VariableOp="SetString" VariableName="dataPhase" VariableExpression="adds" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Variable">
+                          <Action OrderNumber="1" VariableOp="SetString" VariableName="hasGallop" VariableExpression="true" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Variable">
                             <Condition Enabled="false" Grouping="Or" />
                             <Conditions />
                           </Action>
@@ -2294,43 +2283,43 @@
                   </Folder>
                 </Folders>
                 <Triggers>
-                  <Trigger Enabled="true" Name="Teleport" Id="46277cc0-584e-47cf-88e9-b7a30dda1093" RegularExpression="1A:[0-9A-F]{8}:(?&lt;name&gt;[\w-' ]+) gains the effect of (?&lt;dir&gt;Left|Right|Forward|Back) With Thee">
+                  <Trigger Enabled="true" Name="Fury's Bolt" Id="a763872e-e584-44e1-9d4a-d32a25f3bf7f" RegularExpression="1[AE]:[A-F0-9]{8}:Ramuh (?&lt;effect&gt;gains|loses) the effect of Fury's Bolt">
                     <Actions>
-                      <Action OrderNumber="1" TextAuraEffect="Bold" TextAuraFontSize="24" TextAuraForeground="#FFBB00" TextAuraOutline="Black" TextAuraName="teleportText" TextAuraExpression="Teleporting ${dir}" TextAuraXIniExpression="0" TextAuraYIniExpression="500" TextAuraWIniExpression="${_screenwidth}" TextAuraHIniExpression="100" TextAuraOIniExpression="100" TextAuraTTLTickExpression="5-${_since}" TextAuraUseOutline="True" TextAuraFontName="Microsoft Sans Serif" ActionType="TextAura">
-                        <Condition Enabled="false" Grouping="Or" />
-                        <Conditions />
-                      </Action>
-                      <Action OrderNumber="2" UseTTSTextExpression="${dir}" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="UseTTS">
-                        <Condition Enabled="false" Grouping="Or" />
-                        <Conditions />
-                      </Action>
-                    </Actions>
-                    <Condition Enabled="true" Grouping="And">
-                      <ConditionSingle Enabled="true" ExpressionL="${name}" ExpressionTypeL="String" ExpressionR="${_ffxivplayer}" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
-                    </Condition>
-                    <Conditions />
-                  </Trigger>
-                  <Trigger Enabled="true" Name="Unjoined Aspect" Id="2b83e5bf-8f65-4e35-8c94-91476649a6a2" RegularExpression="1A:[0-9A-F]{8}:(?&lt;name&gt;[\w-' ]+) gains the effect of (?&lt;color&gt;Astral|Umbral) Effect">
-                    <Actions>
-                      <Action OrderNumber="1" VariableOp="SetString" VariableName="colorEffect" VariableExpression="light" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Variable">
+                      <Action OrderNumber="1" VariableName="hasFury" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Variable">
                         <Condition Enabled="true" Grouping="And">
-                          <ConditionSingle Enabled="true" ExpressionL="${color}" ExpressionTypeL="String" ExpressionR="Astral" ExpressionTypeR="String" ConditionType="StringEqualCase" />
+                          <ConditionSingle Enabled="true" ExpressionL="${effect}" ExpressionTypeL="String" ExpressionR="loses" ExpressionTypeR="String" ConditionType="StringEqualCase" />
                         </Condition>
                         <Conditions />
                       </Action>
-                      <Action OrderNumber="2" VariableOp="SetString" VariableName="colorEffect" VariableExpression="dark" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Variable">
+                      <Action OrderNumber="2" VariableOp="SetString" VariableName="hasFury" VariableExpression="true" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Variable">
                         <Condition Enabled="true" Grouping="And">
-                          <ConditionSingle Enabled="true" ExpressionL="${color}" ExpressionTypeL="String" ExpressionR="Umbral" ExpressionTypeR="String" ConditionType="StringEqualCase" />
+                          <ConditionSingle Enabled="true" ExpressionL="${effect}" ExpressionTypeL="String" ExpressionR="gains" ExpressionTypeR="String" ConditionType="StringEqualCase" />
                         </Condition>
                         <Conditions />
                       </Action>
                     </Actions>
-                    <Condition Enabled="true" Grouping="And">
-                      <ConditionSingle Enabled="true" ExpressionL="${name}" ExpressionTypeL="String" ExpressionR="${_ffxivplayer}" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
-                    </Condition>
+                    <Condition Enabled="false" Grouping="Or" />
                     <Conditions />
                   </Trigger>
-                  <Trigger Enabled="true" Name="Crusade" Id="af7daabf-cded-4aad-a1ad-43f4d3add336" RegularExpression="14:4C76:The Idol Of Darkness starts using Crusade">
+                  <Trigger Enabled="true" Name="Stepped Leader" Id="d41494ec-988a-44cc-b4aa-27a8bfa67391" RegularExpression="14:4BC6:Ramuh starts using Stepped Leader">
+                    <Actions>
+                      <Action OrderNumber="1" PlaySoundFileExpression="https://raw.githubusercontent.com/lexxiesia/xiv_triggernometry/master/resources/wav/arthars/twister1.wav" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="PlaySound">
+                        <Condition Enabled="true" Grouping="Or">
+                          <ConditionSingle Enabled="true" ExpressionL="${evar:hasFury}" ExpressionTypeL="Numeric" ExpressionR="0" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
+                        </Condition>
+                        <Conditions />
+                      </Action>
+                      <Action OrderNumber="2" UseTTSTextExpression="Stack" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="UseTTS">
+                        <Condition Enabled="true" Grouping="And">
+                          <ConditionSingle Enabled="true" ExpressionL="${var:hasFury}" ExpressionTypeL="String" ExpressionR="true" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
+                        </Condition>
+                        <Conditions />
+                      </Action>
+                    </Actions>
+                    <Condition Enabled="false" Grouping="Or" />
+                    <Conditions />
+                  </Trigger>
+                  <Trigger Enabled="true" Name="Levinforce" Id="d644fce4-320a-4b4b-9b2a-cccc414dade2" RegularExpression="14:4BCC:Ramuh starts using Levinforce">
                     <Actions>
                       <Action OrderNumber="1" UseTTSTextExpression="Knockback" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="UseTTS">
                         <Condition Enabled="false" Grouping="Or" />
@@ -2340,9 +2329,27 @@
                     <Condition Enabled="false" Grouping="Or" />
                     <Conditions />
                   </Trigger>
-                  <Trigger Enabled="true" Name="Unshadowed Strike" Id="8f349865-c108-42f9-8047-d57dc385bc83" RegularExpression="23:[0-9A-F]{8}:The Idol Of Darkness:[0-9A-F]{8}:(?&lt;name&gt;[\w-' ]+):.{4}:.{4}:0025:">
+                  <Trigger Enabled="true" Name="Deadly Discharge" Id="4e2d26f7-cbe3-48a6-a981-4d8276a1942b" RegularExpression="14:[0-9A-F]{4}:Will of Ramuh starts using Deadly Discharge" PeriodRefire="Deny" RefirePeriodExpression="1000">
                     <Actions>
-                      <Action OrderNumber="1" PlaySoundFileExpression="https://raw.githubusercontent.com/lexxiesia/xiv_triggernometry/master/resources/wav/arthars/megabeam.wav" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="PlaySound">
+                      <Action OrderNumber="1" UseTTSTextExpression="Short" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="UseTTS">
+                        <Condition Enabled="true" Grouping="Or">
+                          <ConditionSingle Enabled="true" ExpressionL="${evar:hasFury}" ExpressionTypeL="Numeric" ExpressionR="0" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
+                        </Condition>
+                        <Conditions />
+                      </Action>
+                      <Action OrderNumber="2" UseTTSTextExpression="Long" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="UseTTS">
+                        <Condition Enabled="true" Grouping="Or">
+                          <ConditionSingle Enabled="true" ExpressionL="${var:hasFury}" ExpressionTypeL="String" ExpressionR="true" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
+                        </Condition>
+                        <Conditions />
+                      </Action>
+                    </Actions>
+                    <Condition Enabled="false" Grouping="Or" />
+                    <Conditions />
+                  </Trigger>
+                  <Trigger Enabled="true" Name="Thunderstorm" Id="fa88fefc-5689-46ee-8c22-4f7d134af4a0" RegularExpression="14:4BBF:Ramuh starts using Thunderstorm">
+                    <Actions>
+                      <Action OrderNumber="1" UseTTSTextExpression="Orb" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="UseTTS">
                         <Condition Enabled="false" Grouping="Or" />
                         <Conditions />
                       </Action>
@@ -2350,10 +2357,38 @@
                     <Condition Enabled="false" Grouping="Or" />
                     <Conditions />
                   </Trigger>
-                  <Trigger Enabled="true" Name="Strength in Numbers" Id="59c7eeac-4b2e-48d5-947b-c367401c17a2" RegularExpression="14:4C70:Idolatry starts using Strerngth In Numbers" PeriodRefire="Deny" RefirePeriodExpression="1000">
+                  <Trigger Enabled="true" Name="Fury's Fourteen" Id="20b007f1-920b-4ce1-be6c-c8e532cd5c3c" RegularExpression="14:4BAB:Ramuh starts using Fury's Fourteen">
                     <Actions>
-                      <Action OrderNumber="1" UseTTSTextExpression="Dynamo" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="UseTTS">
+                      <Action OrderNumber="1" UseTTSTextExpression="Orb" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="UseTTS">
+                        <Condition Enabled="true" Grouping="And">
+                          <ConditionSingle Enabled="true" ExpressionL="${var:fourteenCounter}" ExpressionTypeL="Numeric" ExpressionR="2" ExpressionTypeR="Numeric" ConditionType="NumericLessEqual" />
+                        </Condition>
+                        <Conditions />
+                      </Action>
+                    </Actions>
+                    <Condition Enabled="false" Grouping="Or" />
+                    <Conditions />
+                  </Trigger>
+                  <Trigger Enabled="true" Name="# Reset" Id="7425b837-83d0-4e46-8fa8-a9014a849472" RegularExpression="21:........:40000010:">
+                    <Actions>
+                      <Action OrderNumber="1" ListVariableName="hasFury" ListVariableExpression="${name}" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="ListVariable">
                         <Condition Enabled="false" Grouping="Or" />
+                        <Conditions />
+                      </Action>
+                      <Action OrderNumber="2" VariableName="hasGallop" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Variable">
+                        <Condition Enabled="false" Grouping="Or" />
+                        <Conditions />
+                      </Action>
+                    </Actions>
+                    <Condition Enabled="false" Grouping="Or" />
+                    <Conditions />
+                  </Trigger>
+                  <Trigger Enabled="true" Name="Judgment Volts" Id="c795d405-758b-43d0-a6d6-0fd45aca28f0" RegularExpression="14:4BB7:Ramuh starts using Judgment Volts">
+                    <Actions>
+                      <Action OrderNumber="1" UseTTSTextExpression="Orb" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="UseTTS">
+                        <Condition Enabled="false" Grouping="And">
+                          <ConditionSingle Enabled="true" ExpressionL="${var:hasFury}" ExpressionTypeL="String" ExpressionR="true" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
+                        </Condition>
                         <Conditions />
                       </Action>
                     </Actions>

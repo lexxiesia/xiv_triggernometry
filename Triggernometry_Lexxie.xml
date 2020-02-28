@@ -2260,17 +2260,14 @@
                     <Actions>
                       <Action OrderNumber="1" TextAuraEffect="Bold" TextAuraFontSize="24" TextAuraForeground="#FFBB00" TextAuraOutline="Black" TextAuraName="teleportText" TextAuraExpression="Teleporting ${dir} in ${numeric:${duration}-${_since}}" TextAuraXIniExpression="0" TextAuraYIniExpression="500" TextAuraWIniExpression="${_screenwidth}" TextAuraHIniExpression="100" TextAuraOIniExpression="100" TextAuraTTLTickExpression="${duration}-${_since}" TextAuraUseOutline="True" TextAuraFontName="Microsoft Sans Serif" ActionType="TextAura">
                         <Condition Enabled="false" Grouping="Or" />
-                        <Conditions />
                       </Action>
                       <Action OrderNumber="2" UseTTSTextExpression="${dir}" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="UseTTS">
                         <Condition Enabled="false" Grouping="Or" />
-                        <Conditions />
                       </Action>
                     </Actions>
                     <Condition Enabled="true" Grouping="And">
                       <ConditionSingle Enabled="true" ExpressionL="${name}" ExpressionTypeL="String" ExpressionR="${_ffxivplayer}" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
                     </Condition>
-                    <Conditions />
                   </Trigger>
                 </Triggers>
               </Folder>
@@ -6276,12 +6273,12 @@
                   </Trigger>
                 </Triggers>
               </Folder>
-              <Folder ZoneFilterEnabled="True" Id="b734209b-df7a-402b-ac54-7121dc9919da" ZoneFilterRegularExpression="^Cinder Drift \(Extreme\)$" Name="Ruby Weapon" Enabled="true">
+              <Folder ZoneFilterEnabled="True" Id="be7a8a88-6786-46e3-b471-2a1a9de3a386" ZoneFilterRegularExpression="^Cinder Drift \(Extreme\)$" Name="Ruby Weapon" Enabled="true">
                 <Folders>
-                  <Folder Id="1b4479bc-0a41-4fdf-a13b-396b571da128" Name="Tracker" Enabled="true">
+                  <Folder Id="b59fa1e8-fdc6-46f5-bba5-28b1053fbf98" Name="Tracker" Enabled="true">
                     <Folders />
                     <Triggers>
-                      <Trigger Enabled="true" Name="Counter" Id="33ea0476-7117-4b62-9cb0-1b78eab781f5" RegularExpression="14:(4AD0|4AEC):The Ruby Weapon starts using">
+                      <Trigger Enabled="true" Name="Counter" Id="23397adb-c958-4926-9f05-c66463308b51" RegularExpression="14:(4AD0|4AEC):The Ruby Weapon starts using">
                         <Actions>
                           <Action OrderNumber="1" VariableOp="SetNumeric" VariableName="rubyCounter" VariableExpression="${var:rubyCounter}+1" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Variable">
                             <Condition Enabled="false" Grouping="Or" />
@@ -6295,7 +6292,7 @@
                   </Folder>
                 </Folders>
                 <Triggers>
-                  <Trigger Enabled="true" Name="Negative Aura" Id="8a2d23fb-e7a7-4099-933b-f521b5b542a4" RegularExpression="14:4AFE:The Ruby Weapon starts using Negative Aura">
+                  <Trigger Enabled="true" Name="Negative Aura" Id="7db7feb8-8c48-4bbc-9937-80d3779b0968" RegularExpression="14:4AFE:The Ruby Weapon starts using Negative Aura">
                     <Actions>
                       <Action OrderNumber="1" UseTTSTextExpression="Look away" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="UseTTS">
                         <Condition Enabled="false" Grouping="Or" />
@@ -6305,7 +6302,7 @@
                     <Condition Enabled="false" Grouping="Or" />
                     <Conditions />
                   </Trigger>
-                  <Trigger Enabled="true" Name="Screech" Id="7b1ac1b8-6ccc-4da0-8888-0289f3fd2424" RegularExpression="14:4AEE:The Ruby Weapon starts using Screech">
+                  <Trigger Enabled="true" Name="Screech" Id="cf734775-0ee2-4dc1-91b4-5e0d80ce3d49" RegularExpression="14:4AEE:The Ruby Weapon starts using Screech">
                     <Actions>
                       <Action OrderNumber="1" UseTTSTextExpression="Knockback" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="UseTTS">
                         <Condition Enabled="false" Grouping="Or" />
@@ -6315,39 +6312,7 @@
                     <Condition Enabled="false" Grouping="Or" />
                     <Conditions />
                   </Trigger>
-                  <Trigger Enabled="true" Name="Undermine" Id="4c94280e-8c53-456d-bc75-27f70f9b07ba" RegularExpression="14:4AD0:The Ruby Weapon starts using Undermine">
-                    <Actions>
-                      <Action OrderNumber="1" UseTTSTextExpression="Off Lines" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="UseTTS">
-                        <Condition Enabled="false" Grouping="Or" />
-                        <Conditions />
-                      </Action>
-                    </Actions>
-                    <Condition Enabled="false" Grouping="Or" />
-                    <Conditions />
-                  </Trigger>
-                  <Trigger Enabled="true" Name="Liquefaction" Id="6a83ea5c-8a3b-400c-a804-03c45729ad97" RegularExpression="14:4AEC:The Ruby Weapon starts using Liquefaction">
-                    <Actions>
-                      <Action OrderNumber="1" UseTTSTextExpression="On Lines" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="UseTTS">
-                        <Condition Enabled="false" Grouping="And">
-                          <ConditionSingle Enabled="true" ExpressionL="${var:rubyCounter}%2" ExpressionTypeL="Numeric" ExpressionR="0" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
-                        </Condition>
-                        <Conditions />
-                      </Action>
-                    </Actions>
-                    <Condition Enabled="false" Grouping="Or" />
-                    <Conditions />
-                  </Trigger>
-                  <Trigger Enabled="true" Name="Cut and Run" Id="976357c4-df98-4d0e-b147-fbb5c50ab87e" RegularExpression="14:4B05:The Ruby Weapon starts using Cut [Aa]nd Run">
-                    <Actions>
-                      <Action OrderNumber="1" UseTTSTextExpression="Sides" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="UseTTS">
-                        <Condition Enabled="false" Grouping="Or" />
-                        <Conditions />
-                      </Action>
-                    </Actions>
-                    <Condition Enabled="false" Grouping="Or" />
-                    <Conditions />
-                  </Trigger>
-                  <Trigger Enabled="true" Name="Pall of Grief" Id="80cfd3e5-0c56-447b-a428-cfe0b7009334" RegularExpression="1A:[0-9A-F]{8}:(?&lt;name&gt;[\w-' ]+) gains the effect of Pall of Grief">
+                  <Trigger Enabled="true" Name="Pall of Grief" Id="111179d9-6e51-4321-b687-37fc0abdec8c" RegularExpression="1A:[0-9A-F]{8}:(?&lt;name&gt;[\w-' ]+) gains the effect of Pall of Grief">
                     <Actions>
                       <Action OrderNumber="1" UseTTSTextExpression="Red, West" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="UseTTS">
                         <Condition Enabled="false" Grouping="Or" />
@@ -6359,7 +6324,7 @@
                     </Condition>
                     <Conditions />
                   </Trigger>
-                  <Trigger Enabled="true" Name="Pall of Rage" Id="1710306f-d4e5-49be-ad7e-be810265687c" RegularExpression="1A:[0-9A-F]{8}:(?&lt;name&gt;[\w-' ]+) gains the effect of Pall of Rage">
+                  <Trigger Enabled="true" Name="Pall of Rage" Id="4f3d3ba7-b500-481c-9f23-d62fad83a01d" RegularExpression="1A:[0-9A-F]{8}:(?&lt;name&gt;[\w-' ]+) gains the effect of Pall of Rage">
                     <Actions>
                       <Action OrderNumber="1" UseTTSTextExpression="Blue, East" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="UseTTS">
                         <Condition Enabled="false" Grouping="Or" />
@@ -6371,7 +6336,7 @@
                     </Condition>
                     <Conditions />
                   </Trigger>
-                  <Trigger Enabled="true" Name="Meteor Stream" Id="54cfaef6-5d8d-48c3-8c11-b1e26f64ac70" RegularExpression="1B:[0-9A-F]{8}:(?&lt;name&gt;[\w-' ]+):.{4}:.{4}:00E0:">
+                  <Trigger Enabled="true" Name="Meteor Stream" Id="fcf0b293-0c34-4b22-a08a-f442ad012b53" RegularExpression="1B:[0-9A-F]{8}:(?&lt;name&gt;[\w-' ]+):.{4}:.{4}:00E0:">
                     <Actions>
                       <Action OrderNumber="1" UseTTSTextExpression="Spread" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="UseTTS">
                         <Condition Enabled="false" Grouping="Or" />
@@ -6383,7 +6348,7 @@
                     </Condition>
                     <Conditions />
                   </Trigger>
-                  <Trigger Enabled="true" Name="Change of Heart" Id="9cf80537-2d49-4fa1-b6dc-b49402f39217" RegularExpression="14:4AFC:The Ruby Weapon starts using Change [Oo]f Heart">
+                  <Trigger Enabled="true" Name="Change of Heart" Id="20322141-dc1e-4ce3-b583-ebbcb0492ad2" RegularExpression="14:4AFC:The Ruby Weapon starts using Change [Oo]f Heart">
                     <Actions>
                       <Action OrderNumber="1" UseTTSTextExpression="Switch" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="UseTTS">
                         <Condition Enabled="false" Grouping="Or" />
@@ -6391,6 +6356,28 @@
                       </Action>
                     </Actions>
                     <Condition Enabled="false" Grouping="Or" />
+                    <Conditions />
+                  </Trigger>
+                  <Trigger Enabled="true" Name="Meteor" Id="a5b1aadf-55ae-4bfd-b9a5-89815ecd9b69" RegularExpression="1B:[0-9A-F]{8}:(?&lt;name&gt;[a-zA-Z-' ]+):.{4}:.{4}:00(?&lt;number&gt;[0-9A-F]{2}):.{4}:.{4}:.{4}:">
+                    <Actions>
+                      <Action OrderNumber="1" VariableOp="SetNumeric" VariableName="meteorNumber" VariableExpression="hex2dec(${number})-201" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Variable" Asynchronous="False">
+                        <Condition Enabled="false" Grouping="Or" />
+                        <Conditions />
+                      </Action>
+                      <Action OrderNumber="2" UseTTSTextExpression="${var:meteorNumber}" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="UseTTS" Asynchronous="False">
+                        <Condition Enabled="false" Grouping="Or" />
+                        <Conditions />
+                      </Action>
+                      <Action OrderNumber="3" TextAuraEffect="Bold" TextAuraFontSize="36" TextAuraForeground="#FF3300" TextAuraOutline="Black" TextAuraName="meteorProject" TextAuraExpression="Meteor: #${var:meteorNumber}" TextAuraXIniExpression="0" TextAuraYIniExpression="200" TextAuraWIniExpression="${_screenwidth}" TextAuraHIniExpression="500" TextAuraOIniExpression="100" TextAuraTTLTickExpression="5-${_since}" TextAuraUseOutline="True" TextAuraFontName="Microsoft Sans Serif" ActionType="TextAura" Asynchronous="False">
+                        <Condition Enabled="false" Grouping="Or" />
+                        <Conditions />
+                      </Action>
+                    </Actions>
+                    <Condition Enabled="true" Grouping="And">
+                      <ConditionSingle Enabled="true" ExpressionL="${name}" ExpressionTypeL="String" ExpressionR="${_ffxivplayer}" ExpressionTypeR="String" ConditionType="StringEqualCase" />
+                      <ConditionSingle Enabled="true" ExpressionL="hex2dec(${number})-201" ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="Numeric" ConditionType="NumericGreaterEqual" />
+                      <ConditionSingle Enabled="true" ExpressionL="hex2dec(${number})-201" ExpressionTypeL="Numeric" ExpressionR="8" ExpressionTypeR="Numeric" ConditionType="NumericLessEqual" />
+                    </Condition>
                     <Conditions />
                   </Trigger>
                 </Triggers>

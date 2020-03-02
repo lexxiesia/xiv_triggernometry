@@ -3218,7 +3218,7 @@
                     </Condition>
                     <Conditions />
                   </Trigger>
-                  <Trigger Enabled="true" Name="Icelit Dragonsong" Id="5b09fddb-244f-4978-bc4e-9d5f424f5640" RegularExpression=":Shiva:4D70:">
+                  <Trigger Enabled="true" Name="Icelit Dragonsong" Id="5b09fddb-244f-4978-bc4e-9d5f424f5640" RegularExpression=":Shiva:4D7D:">
                     <Actions>
                       <Action OrderNumber="1" UseTTSTextExpression="Cleanse DPS" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="UseTTS">
                         <Condition Enabled="false" Grouping="Or" />
@@ -3228,6 +3228,40 @@
                     <Condition Enabled="true" Grouping="And">
                       <ConditionSingle Enabled="true" ExpressionL="${_ffxivplayer.role}" ExpressionTypeL="String" ExpressionR="Healer" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
                     </Condition>
+                    <Conditions />
+                  </Trigger>
+                  <Trigger Enabled="true" Name="Refulgent Chain" Id="94e825a4-6cc1-4f49-b7d6-aad766c4a6e5" RegularExpression="1A:[A-F0-9]{8}:(?&lt;player&gt;[a-zA-Z-' ]{1,31}) gains the effect of Refulgent Chain" PeriodRefire="Deny" RefirePeriodExpression="1000">
+                    <Actions>
+                      <Action OrderNumber="1" UseTTSTextExpression="Chain" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="UseTTS">
+                        <Condition Enabled="false" Grouping="Or" />
+                        <Conditions />
+                      </Action>
+                    </Actions>
+                    <Condition Enabled="true" Grouping="And">
+                      <ConditionSingle Enabled="true" ExpressionL="${player}" ExpressionTypeL="String" ExpressionR="${_ffxivplayer}" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
+                    </Condition>
+                    <Conditions />
+                  </Trigger>
+                  <Trigger Enabled="true" Name="Holy Light" Id="ceed7c27-ba4f-4b2e-adaa-b242277a4ba2" RegularExpression="23:[0-9A-F]{8}:[\w-' ]+:[0-9A-F]{8}:(?&lt;name&gt;[\w-' ]+):.{4}:.{4}:0002:" PeriodRefire="Deny" RefirePeriodExpression="5000">
+                    <Actions>
+                      <Action OrderNumber="1" UseTTSTextExpression="Orb" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="UseTTS">
+                        <Condition Enabled="true" Grouping="And">
+                          <ConditionSingle Enabled="true" ExpressionL="${name}" ExpressionTypeL="String" ExpressionR="${_ffxivplayer}" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
+                        </Condition>
+                        <Conditions />
+                      </Action>
+                    </Actions>
+                    <Condition Enabled="false" Grouping="Or" />
+                    <Conditions />
+                  </Trigger>
+                  <Trigger Enabled="true" Name="Drachen Armor" Id="91fb1531-3136-451b-8cf3-904fe3b39d8e" RegularExpression="(:Shiva:4DD2:|:Frozen Mirror:4DC2:)">
+                    <Actions>
+                      <Action OrderNumber="1" UseTTSTextExpression="Move" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="UseTTS">
+                        <Condition Enabled="false" Grouping="Or" />
+                        <Conditions />
+                      </Action>
+                    </Actions>
+                    <Condition Enabled="false" Grouping="Or" />
                     <Conditions />
                   </Trigger>
                 </Triggers>

@@ -1,6 +1,12 @@
+<h1 align="center">
+  <br>xiv_triggernometry<br>
+</h1>
+<h4 align="center">Repository Information</h4>
 
-
-# xiv_triggernometry
+<p align="center">
+  <a href="https://na.finalfantasyxiv.com/shadowbringers/patch_5_2/"><img src="https://img.shields.io/badge/ffxiv-patch%205.2-yellow"></a>
+  <a href="https://github.com/paissaheavyindustries/Triggernometry/releases/tag/v1.1.3.0"><img src="https://img.shields.io/badge/triggernometry-v1.1.3.0-blue"></a>
+</p>
 
 ## How to Setup
 
@@ -24,5 +30,3 @@
 Triggers within the repository are separated by content folders. Most stuff are enabled by default. Disable triggers that you don't want activated. That is all!
 
 If there're any problems or issues, hit me up on Discord.
-***
-##### Repository Triggernometry version 1.1.3.0

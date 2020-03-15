@@ -2655,7 +2655,7 @@
                   <Folder Id="b6ba4a6e-59be-4bea-b60a-b4834d45b80d" Name="Strike Spark" Enabled="true">
                     <Folders />
                     <Triggers>
-                      <Trigger Enabled="false" Name="Safe Zone TTS" Id="e2077b69-cbd5-4aba-bfa4-d0d89e2e7c7d" RegularExpression="">
+                      <Trigger Enabled="true" Name="Safe Zone TTS" Id="e2077b69-cbd5-4aba-bfa4-d0d89e2e7c7d" RegularExpression="">
                         <Actions>
                           <Action OrderNumber="1" UseTTSTextExpression="north" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="UseTTS">
                             <Condition Enabled="true" Grouping="And">
@@ -3399,15 +3399,15 @@
                     <Condition Enabled="false" Grouping="Or" />
                     <Conditions />
                   </Trigger>
-                  <Trigger Enabled="true" Name="Hallowed Wings" Id="ae34a937-1396-4ab2-8bf3-ae27d652ce90" RegularExpression="14:4D7(?&lt;id&gt;5|6):Shiva starts using Hallowed Wings">
+                  <Trigger Enabled="true" Name="Hallowed Wings - Safe Zone" Id="ae34a937-1396-4ab2-8bf3-ae27d652ce90" RegularExpression="14:4D7(?&lt;id&gt;5|6):Shiva starts using Hallowed Wings">
                     <Actions>
-                      <Action OrderNumber="1" UseTTSTextExpression="Left" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="UseTTS">
+                      <Action OrderNumber="1" UseTTSTextExpression="Go Left" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="UseTTS">
                         <Condition Enabled="true" Grouping="And">
                           <ConditionSingle Enabled="true" ExpressionL="${id}" ExpressionTypeL="String" ExpressionR="6" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
                         </Condition>
                         <Conditions />
                       </Action>
-                      <Action OrderNumber="2" UseTTSTextExpression="Right" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="UseTTS">
+                      <Action OrderNumber="2" UseTTSTextExpression="Go Right" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="UseTTS">
                         <Condition Enabled="true" Grouping="And">
                           <ConditionSingle Enabled="true" ExpressionL="${id}" ExpressionTypeL="String" ExpressionR="5" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
                         </Condition>
@@ -3711,7 +3711,7 @@
                   </Trigger>
                   <Trigger Enabled="true" Name="Shining Armor" Id="c96d2775-d08c-47a4-9837-7b5e975aaa1a" RegularExpression="00:[0-9A-F]{4}:Shiva:The Light shall usher in peace!">
                     <Actions>
-                      <Action OrderNumber="1" UseTTSTextExpression="Look Away" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="UseTTS" ExecutionDelayExpression="4000">
+                      <Action OrderNumber="1" UseTTSTextExpression="Look Away" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="UseTTS" ExecutionDelayExpression="3000">
                         <Condition Enabled="false" Grouping="Or" />
                         <Conditions />
                       </Action>
@@ -3757,6 +3757,24 @@
                       </Action>
                       <Action OrderNumber="2" TextAuraEffect="Bold" TextAuraFontSize="20.25" TextAuraForeground="#00FF40" TextAuraOutline="Black" TextAuraName="rushText" TextAuraExpression="Tether #${numeric:${var:rushCounter}}" TextAuraXIniExpression="0" TextAuraYIniExpression="500" TextAuraWIniExpression="${_screenwidth}" TextAuraHIniExpression="100" TextAuraOIniExpression="100" TextAuraTTLTickExpression="10-${_since}" TextAuraUseOutline="True" TextAuraFontName="Microsoft Sans Serif" ActionType="TextAura">
                         <Condition Enabled="false" Grouping="Or" />
+                        <Conditions />
+                      </Action>
+                    </Actions>
+                    <Condition Enabled="false" Grouping="Or" />
+                    <Conditions />
+                  </Trigger>
+                  <Trigger Enabled="false" Name="Hallowed Wings - Unsafe Wing" Id="3e3515ef-c560-4c6f-af8e-4a9b1a5f648c" RegularExpression="14:4D7(?&lt;id&gt;5|6):Shiva starts using Hallowed Wings">
+                    <Actions>
+                      <Action OrderNumber="1" UseTTSTextExpression="Right Wing" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="UseTTS">
+                        <Condition Enabled="true" Grouping="And">
+                          <ConditionSingle Enabled="true" ExpressionL="${id}" ExpressionTypeL="String" ExpressionR="6" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
+                        </Condition>
+                        <Conditions />
+                      </Action>
+                      <Action OrderNumber="2" UseTTSTextExpression="Left Wing" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="UseTTS">
+                        <Condition Enabled="true" Grouping="And">
+                          <ConditionSingle Enabled="true" ExpressionL="${id}" ExpressionTypeL="String" ExpressionR="5" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
+                        </Condition>
                         <Conditions />
                       </Action>
                     </Actions>

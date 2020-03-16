@@ -2655,7 +2655,7 @@
                   <Folder Id="b6ba4a6e-59be-4bea-b60a-b4834d45b80d" Name="Strike Spark" Enabled="true">
                     <Folders />
                     <Triggers>
-                      <Trigger Enabled="true" Name="Safe Zone TTS" Id="e2077b69-cbd5-4aba-bfa4-d0d89e2e7c7d" RegularExpression="">
+                      <Trigger Enabled="false" Name="Safe Zone TTS" Id="e2077b69-cbd5-4aba-bfa4-d0d89e2e7c7d" RegularExpression="">
                         <Actions>
                           <Action OrderNumber="1" UseTTSTextExpression="north" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="UseTTS">
                             <Condition Enabled="true" Grouping="And">
@@ -3333,6 +3333,10 @@
                             <Condition Enabled="false" Grouping="Or" />
                             <Conditions />
                           </Action>
+                          <Action OrderNumber="3" VariableName="shiva" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Variable">
+                            <Condition Enabled="false" Grouping="Or" />
+                            <Conditions />
+                          </Action>
                         </Actions>
                         <Condition Enabled="false" Grouping="Or" />
                         <Conditions />
@@ -3355,6 +3359,87 @@
                           </Action>
                         </Actions>
                         <Condition Enabled="false" Grouping="Or" />
+                        <Conditions />
+                      </Trigger>
+                    </Triggers>
+                  </Folder>
+                  <Folder Id="2d1553b3-f7ea-45ce-8298-9a2060670a8a" Name="Hallowed Wings - Experimental" Enabled="false">
+                    <Folders />
+                    <Triggers>
+                      <Trigger Enabled="true" Name="Mirror, Mirror" Id="acced3f3-e1da-434d-b3bb-699ee0df9f6f" RegularExpression="15:(?&lt;shiva&gt;[0-9A-F]{8}):[^:]*:4D5A:">
+                        <Actions>
+                          <Action OrderNumber="1" VariableOp="SetString" VariableName="shiva" VariableExpression="${shiva}" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Variable">
+                            <Condition Enabled="false" Grouping="Or" />
+                            <Conditions />
+                          </Action>
+                          <Action OrderNumber="2" VariableName="shiva" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Variable" ExecutionDelayExpression="17000">
+                            <Condition Enabled="false" Grouping="Or" />
+                            <Conditions />
+                          </Action>
+                        </Actions>
+                        <Condition Enabled="false" Grouping="Or" />
+                        <Conditions />
+                      </Trigger>
+                      <Trigger Enabled="true" Name="Hallowed Wings" Id="9a24234e-9b0a-4a47-a715-abab173fa59d" RegularExpression="14:(?&lt;wingCast&gt;(4D75|4D76)):Shiva starts using Hallowed Wings">
+                        <Actions>
+                          <Action OrderNumber="1" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="LogMessage" ExecutionDelayExpression="100">
+                            <Condition Enabled="false" Grouping="Or" />
+                            <Conditions />
+                          </Action>
+                          <Action OrderNumber="2" UseTTSTextExpression="West side" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="UseTTS">
+                            <Condition Enabled="true" Grouping="Xor">
+                              <ConditionSingle Enabled="true" ExpressionL="${numeric:abs(${_ffxiventity[${var:shiva}].heading})}" ExpressionTypeL="Numeric" ExpressionR="3" ExpressionTypeR="Numeric" ConditionType="NumericGreater" />
+                              <ConditionSingle Enabled="true" ExpressionL="${wingCast}" ExpressionTypeL="String" ExpressionR="4D75" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
+                            </Condition>
+                            <Conditions />
+                          </Action>
+                          <Action OrderNumber="3" UseTTSTextExpression="East side" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="UseTTS">
+                            <Condition Enabled="true" Grouping="Xor">
+                              <ConditionSingle Enabled="true" ExpressionL="${numeric:abs(${_ffxiventity[${var:shiva}].heading})}" ExpressionTypeL="Numeric" ExpressionR="3" ExpressionTypeR="Numeric" ConditionType="NumericGreater" />
+                              <ConditionSingle Enabled="true" ExpressionL="${wingCast}" ExpressionTypeL="String" ExpressionR="4D76" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
+                            </Condition>
+                            <Conditions />
+                          </Action>
+                          <Action OrderNumber="4" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="LogMessage" ExecutionDelayExpression="500">
+                            <Condition Enabled="false" Grouping="Or" />
+                            <Conditions />
+                          </Action>
+                          <Action OrderNumber="5" UseTTSTextExpression="go left" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="UseTTS">
+                            <Condition Enabled="true" Grouping="Or">
+                              <ConditionSingle Enabled="true" ExpressionL="${wingCast}" ExpressionTypeL="String" ExpressionR="4D76" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
+                            </Condition>
+                            <Conditions />
+                          </Action>
+                          <Action OrderNumber="6" UseTTSTextExpression="go right" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="UseTTS">
+                            <Condition Enabled="true" Grouping="Or">
+                              <ConditionSingle Enabled="true" ExpressionL="${wingCast}" ExpressionTypeL="String" ExpressionR="4D75" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
+                            </Condition>
+                            <Conditions />
+                          </Action>
+                        </Actions>
+                        <Condition Enabled="true" Grouping="Or">
+                          <ConditionSingle Enabled="true" ExpressionL="${evar:shiva}" ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
+                        </Condition>
+                        <Conditions />
+                      </Trigger>
+                      <Trigger Enabled="true" Name="Reflected Hallowed Wings" Id="548a0efd-c629-40ba-bb02-e23d61095724" RegularExpression="15:(?&lt;mirror&gt;[0-9A-F]{8}):[^:]*:4D91:">
+                        <Actions>
+                          <Action OrderNumber="1" UseTTSTextExpression="clockwise" TextAuraEffect="Bold" TextAuraFontSize="24" TextAuraForeground="#FFBB00" TextAuraOutline="Black" TextAuraName="mirrorMovement" TextAuraExpression="Move Clockwise" TextAuraXIniExpression="0" TextAuraYIniExpression="500" TextAuraWIniExpression="${_screenwidth}" TextAuraHIniExpression="100" TextAuraOIniExpression="100" TextAuraTTLTickExpression="10-${_since}" TextAuraUseOutline="True" TextAuraFontName="Microsoft Sans Serif" ActionType="TextAura">
+                            <Condition Enabled="true" Grouping="Or">
+                              <ConditionSingle Enabled="true" ExpressionL="${_ffxiventity[${mirror}].x}" ExpressionTypeL="Numeric" ExpressionR="80" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
+                            </Condition>
+                            <Conditions />
+                          </Action>
+                          <Action OrderNumber="2" UseTTSTextExpression="counter clockwise" TextAuraEffect="Bold" TextAuraFontSize="24" TextAuraForeground="#FFBB00" TextAuraOutline="Black" TextAuraName="mirrorMovement" TextAuraExpression="Move Counter Clockwise" TextAuraXIniExpression="0" TextAuraYIniExpression="500" TextAuraWIniExpression="${_screenwidth}" TextAuraHIniExpression="100" TextAuraOIniExpression="100" TextAuraTTLTickExpression="10-${_since}" TextAuraUseOutline="True" TextAuraFontName="Microsoft Sans Serif" ActionType="TextAura">
+                            <Condition Enabled="true" Grouping="Or">
+                              <ConditionSingle Enabled="true" ExpressionL="${_ffxiventity[${mirror}].x}" ExpressionTypeL="Numeric" ExpressionR="120" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
+                            </Condition>
+                            <Conditions />
+                          </Action>
+                        </Actions>
+                        <Condition Enabled="true" Grouping="Or">
+                          <ConditionSingle Enabled="true" ExpressionL="${evar:shiva}" ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
+                        </Condition>
                         <Conditions />
                       </Trigger>
                     </Triggers>

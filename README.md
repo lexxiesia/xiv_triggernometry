@@ -5,7 +5,7 @@
 
 <p align="center">
   <a href="https://na.finalfantasyxiv.com/shadowbringers/patch_5_2/"><img src="https://img.shields.io/badge/ffxiv-patch%205.2-yellow"></a>
-  <a href="https://github.com/paissaheavyindustries/Triggernometry/releases/tag/v1.1.3.0"><img src="https://img.shields.io/badge/triggernometry-v1.1.3.0-blue"></a>
+  <a href="https://github.com/paissaheavyindustries/Triggernometry/releases/tag/v1.1.3.1"><img src="https://img.shields.io/badge/triggernometry-v1.1.3.1-blue"></a>
 </p>
 
 ## How to Setup
@@ -19,8 +19,6 @@
  5. Click **Add** and you're done!
  
  If you don't see **Remote Triggers**, you are running an old version of Triggernometry. Download the latest update from [https://github.com/paissaheavyindustries/Triggernometry/releases/](https://github.com/paissaheavyindustries/Triggernometry/releases/).
- 
- This repository is currently on **Triggernometry v1.1.3.0**
 
  ### Known Issues
  - Main repository folder `Github` occasionally gets disabled after a new upload.

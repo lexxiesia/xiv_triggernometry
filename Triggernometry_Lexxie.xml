@@ -3067,7 +3067,6 @@
                         <Actions>
                           <Action OrderNumber="1" VariableOp="SetString" VariableName="unsafeSide" VariableExpression="${actorId}" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Variable">
                             <Condition Enabled="true" Grouping="Or" />
-                            <Conditions />
                           </Action>
                         </Actions>
                         <Condition Enabled="true" Grouping="And">
@@ -3092,7 +3091,6 @@
                             </ConditionGroup>
                           </ConditionGroup>
                         </Condition>
-                        <Conditions />
                       </Trigger>
                       <Trigger Enabled="true" Name="Safe Side" Id="f95ff0ae-b6ae-4630-aff5-6d669d4465a6" RegularExpression=":Ramuh:4E3B:Impact:">
                         <Actions>
@@ -3105,7 +3103,6 @@
                               <ConditionSingle Enabled="true" ExpressionL="${_ffxiventity[${var:unsafeSide}].x}" ExpressionTypeL="Numeric" ExpressionR="102" ExpressionTypeR="Numeric" ConditionType="NumericGreaterEqual" />
                               <ConditionSingle Enabled="true" ExpressionL="${_ffxiventity[${var:unsafeSide}].x}" ExpressionTypeL="Numeric" ExpressionR="118" ExpressionTypeR="Numeric" ConditionType="NumericLessEqual" />
                             </Condition>
-                            <Conditions />
                           </Action>
                           <Action OrderNumber="2" UseTTSTextExpression="Right Safe" TextAuraEffect="Bold" TextAuraFontSize="24" TextAuraForeground="#FFBB00" TextAuraOutline="Black" TextAuraName="safeZone" TextAuraExpression="Right Safe" TextAuraXIniExpression="0" TextAuraYIniExpression="500" TextAuraWIniExpression="${_screenwidth}" TextAuraHIniExpression="100" TextAuraOIniExpression="100" TextAuraTTLTickExpression="5-${_since}" TextAuraUseOutline="True" TextAuraFontName="Microsoft Sans Serif" ActionType="TextAura">
                             <Condition Enabled="true" Grouping="And">
@@ -3116,18 +3113,15 @@
                               <ConditionSingle Enabled="true" ExpressionL="${_ffxiventity[${var:unsafeSide}].x}" ExpressionTypeL="Numeric" ExpressionR="82" ExpressionTypeR="Numeric" ConditionType="NumericGreaterEqual" />
                               <ConditionSingle Enabled="true" ExpressionL="${_ffxiventity[${var:unsafeSide}].x}" ExpressionTypeL="Numeric" ExpressionR="98" ExpressionTypeR="Numeric" ConditionType="NumericLessEqual" />
                             </Condition>
-                            <Conditions />
                           </Action>
                           <Action OrderNumber="3" VariableName="unsafeSide" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Variable" ExecutionDelayExpression="5000">
                             <Condition Enabled="false" Grouping="Or" />
-                            <Conditions />
                           </Action>
                         </Actions>
                         <Condition Enabled="false" Grouping="And">
                           <ConditionSingle Enabled="true" ExpressionL="${var:fourteenCounter}" ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="Numeric" ConditionType="NumericGreaterEqual" />
                           <ConditionSingle Enabled="true" ExpressionL="${var:fourteenCounter}" ExpressionTypeL="Numeric" ExpressionR="2" ExpressionTypeR="Numeric" ConditionType="NumericGreaterEqual" />
                         </Condition>
-                        <Conditions />
                       </Trigger>
                     </Triggers>
                   </Folder>
@@ -3140,17 +3134,14 @@
                             <Condition Enabled="true" Grouping="And">
                               <ConditionSingle Enabled="true" ExpressionL="${effect}" ExpressionTypeL="String" ExpressionR="loses" ExpressionTypeR="String" ConditionType="StringEqualCase" />
                             </Condition>
-                            <Conditions />
                           </Action>
                           <Action OrderNumber="2" VariableOp="SetString" VariableName="hasFury" VariableExpression="true" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Variable">
                             <Condition Enabled="true" Grouping="And">
                               <ConditionSingle Enabled="true" ExpressionL="${effect}" ExpressionTypeL="String" ExpressionR="gains" ExpressionTypeR="String" ConditionType="StringEqualCase" />
                             </Condition>
-                            <Conditions />
                           </Action>
                         </Actions>
                         <Condition Enabled="false" Grouping="Or" />
-                        <Conditions />
                       </Trigger>
                       <Trigger Enabled="true" Name="Surge Protection" Id="2a1bbf44-e3fb-4ce8-8df1-7cea4e69deb9" RegularExpression="1[AE]:[A-F0-9]{8}:(?&lt;name&gt;[\w-' ]+) (?&lt;effect&gt;gains|loses) the effect of Surge Protection">
                         <Actions>
@@ -3158,29 +3149,24 @@
                             <Condition Enabled="true" Grouping="And">
                               <ConditionSingle Enabled="true" ExpressionL="${effect}" ExpressionTypeL="String" ExpressionR="loses" ExpressionTypeR="String" ConditionType="StringEqualCase" />
                             </Condition>
-                            <Conditions />
                           </Action>
                           <Action OrderNumber="2" VariableOp="SetString" VariableName="surgeProtection" VariableExpression="true" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Variable">
                             <Condition Enabled="true" Grouping="And">
                               <ConditionSingle Enabled="true" ExpressionL="${effect}" ExpressionTypeL="String" ExpressionR="gains" ExpressionTypeR="String" ConditionType="StringEqualCase" />
                             </Condition>
-                            <Conditions />
                           </Action>
                         </Actions>
                         <Condition Enabled="true" Grouping="And">
                           <ConditionSingle Enabled="true" ExpressionL="${name}" ExpressionTypeL="String" ExpressionR="${_ffxivplayer}" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
                         </Condition>
-                        <Conditions />
                       </Trigger>
                       <Trigger Enabled="true" Name="Fury's Fourteen" Id="2a0b19a1-8ac1-4d41-895a-21be0372166f" RegularExpression="14:4BAB:Ramuh starts using Fury's Fourteen">
                         <Actions>
                           <Action OrderNumber="1" LogLevel="-1" VariableOp="SetNumeric" VariableName="fourteenCounter" VariableExpression="${var:fourteenCounter}+1" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Variable">
                             <Condition Enabled="false" Grouping="Or" />
-                            <Conditions />
                           </Action>
                         </Actions>
                         <Condition Enabled="false" Grouping="Or" />
-                        <Conditions />
                       </Trigger>
                     </Triggers>
                   </Folder>
@@ -3192,27 +3178,22 @@
                         <Condition Enabled="true" Grouping="Or">
                           <ConditionSingle Enabled="true" ExpressionL="${evar:hasFury}" ExpressionTypeL="Numeric" ExpressionR="0" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
                         </Condition>
-                        <Conditions />
                       </Action>
                       <Action OrderNumber="2" UseTTSTextExpression="Stack" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="UseTTS">
                         <Condition Enabled="true" Grouping="And">
                           <ConditionSingle Enabled="true" ExpressionL="${var:hasFury}" ExpressionTypeL="String" ExpressionR="true" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
                         </Condition>
-                        <Conditions />
                       </Action>
                     </Actions>
                     <Condition Enabled="false" Grouping="Or" />
-                    <Conditions />
                   </Trigger>
                   <Trigger Enabled="true" Name="Levinforce" Id="7a810f94-12da-4b04-92dd-38931aae00c4" RegularExpression="14:4BCC:Ramuh starts using Levinforce">
                     <Actions>
                       <Action OrderNumber="1" UseTTSTextExpression="Knockback" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="UseTTS">
                         <Condition Enabled="false" Grouping="Or" />
-                        <Conditions />
                       </Action>
                     </Actions>
                     <Condition Enabled="false" Grouping="Or" />
-                    <Conditions />
                   </Trigger>
                   <Trigger Enabled="true" Name="Tribunal Summons" Id="a5d44b9e-7d0e-4ba8-9ecc-99d049327a42" RegularExpression="14:4BAC:Ramuh starts using Tribunal Summons" PeriodRefire="Deny" RefirePeriodExpression="1000">
                     <Actions>
@@ -3220,31 +3201,26 @@
                         <Condition Enabled="true" Grouping="Or">
                           <ConditionSingle Enabled="true" ExpressionL="${evar:hasFury}" ExpressionTypeL="Numeric" ExpressionR="0" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
                         </Condition>
-                        <Conditions />
                       </Action>
                       <Action OrderNumber="2" UseTTSTextExpression="Long" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="UseTTS">
                         <Condition Enabled="true" Grouping="Or">
                           <ConditionSingle Enabled="true" ExpressionL="${var:hasFury}" ExpressionTypeL="String" ExpressionR="true" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
                         </Condition>
-                        <Conditions />
                       </Action>
                     </Actions>
                     <Condition Enabled="true" Grouping="And">
                       <ConditionSingle Enabled="true" ExpressionL="${evar:fourteenCounter}" ExpressionTypeL="Numeric" ExpressionR="0" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
                     </Condition>
-                    <Conditions />
                   </Trigger>
                   <Trigger Enabled="true" Name="Thunderstorm" Id="743bd99b-9caf-47d4-875d-2ee98d76cd87" RegularExpression="14:4BBF:Ramuh starts using Thunderstorm">
                     <Actions>
                       <Action OrderNumber="1" UseTTSTextExpression="Orb" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="UseTTS">
                         <Condition Enabled="false" Grouping="Or" />
-                        <Conditions />
                       </Action>
                     </Actions>
                     <Condition Enabled="true" Grouping="Or">
                       <ConditionSingle Enabled="true" ExpressionL="${evar:surgeProtection}" ExpressionTypeL="Numeric" ExpressionR="0" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
                     </Condition>
-                    <Conditions />
                   </Trigger>
                   <Trigger Enabled="true" Name="Fury's Fourteen" Id="ba9d66a3-9e70-4a50-af70-c4cb8c46f133" RegularExpression="14:4BAB:Ramuh starts using Fury's Fourteen">
                     <Actions>
@@ -3253,25 +3229,20 @@
                           <ConditionSingle Enabled="true" ExpressionL="${var:fourteenCounter}" ExpressionTypeL="Numeric" ExpressionR="2" ExpressionTypeR="Numeric" ConditionType="NumericLessEqual" />
                           <ConditionSingle Enabled="true" ExpressionL="${evar:surgeProtection}" ExpressionTypeL="Numeric" ExpressionR="0" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
                         </Condition>
-                        <Conditions />
                       </Action>
                     </Actions>
                     <Condition Enabled="false" Grouping="Or" />
-                    <Conditions />
                   </Trigger>
                   <Trigger Enabled="true" Name="# Reset" Id="43f54cf7-b489-4eb6-a268-bcf4bd864029" RegularExpression="21:........:40000010:">
                     <Actions>
                       <Action OrderNumber="1" ListVariableName="hasFury" ListVariableExpression="${name}" VariableName="hasFury" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Variable">
                         <Condition Enabled="false" Grouping="Or" />
-                        <Conditions />
                       </Action>
                       <Action OrderNumber="2" VariableName="fourteenCounter" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Variable">
                         <Condition Enabled="false" Grouping="Or" />
-                        <Conditions />
                       </Action>
                     </Actions>
                     <Condition Enabled="false" Grouping="Or" />
-                    <Conditions />
                   </Trigger>
                   <Trigger Enabled="true" Name="Judgment Volts" Id="6e0c229f-a232-41d4-804b-1060f523314a" RegularExpression="14:[0-9A-F]{4}:Ramuh starts using Judgment Volts">
                     <Actions>
@@ -3279,33 +3250,27 @@
                         <Condition Enabled="true" Grouping="And">
                           <ConditionSingle Enabled="true" ExpressionL="${evar:surgeProtection}" ExpressionTypeL="Numeric" ExpressionR="0" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
                         </Condition>
-                        <Conditions />
                       </Action>
                     </Actions>
                     <Condition Enabled="true" Grouping="And">
                       <ConditionSingle Enabled="true" ExpressionL="${var:hasFury}" ExpressionTypeL="String" ExpressionR="true" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
                     </Condition>
-                    <Conditions />
                   </Trigger>
                   <Trigger Enabled="true" Name="Stormcloud Summons" Id="b5903fe8-7404-4af6-94c3-baf0c56a224d" RegularExpression="15:4BB8:Ramuh starts using Stormcloud Summons">
                     <Actions>
                       <Action OrderNumber="1" LogLevel="-1" UseTTSTextExpression="Stormcloud" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="UseTTS">
                         <Condition Enabled="false" Grouping="Or" />
-                        <Conditions />
                       </Action>
                     </Actions>
                     <Condition Enabled="false" Grouping="Or" />
-                    <Conditions />
                   </Trigger>
                   <Trigger Enabled="true" Name="Chain Lightning" Id="791a1b58-92d4-4f28-9697-6fff004e24e6" RegularExpression="14:4BC4:Ramuh starts using Chain Lightning">
                     <Actions>
                       <Action OrderNumber="1" LogLevel="-1" UseTTSTextExpression="Chain Lightning" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="UseTTS">
                         <Condition Enabled="false" Grouping="Or" />
-                        <Conditions />
                       </Action>
                     </Actions>
                     <Condition Enabled="false" Grouping="Or" />
-                    <Conditions />
                   </Trigger>
                   <Trigger Enabled="true" Name="Fury's Bolt" Id="0afdb8db-e218-4955-aee9-f69d68005713" RegularExpression="1A:[A-F0-9]{8}:Ramuh gains the effect of Fury's Bolt" PeriodRefire="Deny" RefirePeriodExpression="7000">
                     <Actions>
@@ -3313,11 +3278,9 @@
                         <Condition Enabled="true" Grouping="And">
                           <ConditionSingle Enabled="true" ExpressionL="${effect}" ExpressionTypeL="String" ExpressionR="gains" ExpressionTypeR="String" ConditionType="StringEqualCase" />
                         </Condition>
-                        <Conditions />
                       </Action>
                     </Actions>
                     <Condition Enabled="false" Grouping="Or" />
-                    <Conditions />
                   </Trigger>
                 </Triggers>
               </Folder>
@@ -4950,7 +4913,47 @@
               <Folder Id="a21aaa28-0dca-4ac0-8a73-1011324ecbf7" Name="P3 - Alexander Prime" Enabled="true">
                 <Folders>
                   <Folder Id="086e1cf1-20b4-4cd8-929a-6850f5ebbde2" Name="Temporal Stasis" Enabled="true">
-                    <Folders />
+                    <Folders>
+                      <Folder Id="784b0c36-3337-470f-acdd-555d7f6ef4b6" Name="No Debuff" Enabled="true">
+                        <Folders />
+                        <Triggers>
+                          <Trigger Enabled="true" Name="Counter" Id="274b17c4-8425-4305-a8f4-08658fb7b5f5" RegularExpression="1A:[A-F0-9]{8}:(?&lt;player&gt;[a-zA-Z-' ]{1,31}) gains the effect of (Aggravated Assault|House Arrest|Restraining Order)" PeriodRefire="Deny">
+                            <Actions>
+                              <Action OrderNumber="1" VariableOp="SetNumeric" VariableName="temporalDebuff" VariableExpression="${var:temporalDebuff} + 1" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Variable">
+                                <Condition Enabled="false" Grouping="Or" />
+                                <Conditions />
+                              </Action>
+                            </Actions>
+                            <Condition Enabled="true" Grouping="And">
+                              <ConditionSingle Enabled="true" ExpressionL="${player}" ExpressionTypeL="String" ExpressionR="${_ffxivplayer}" ExpressionTypeR="String" ConditionType="StringNotEqualNocase" />
+                              <ConditionGroup Enabled="true" Grouping="Or">
+                                <ConditionSingle Enabled="true" ExpressionL="${var:dataPhase}" ExpressionTypeL="String" ExpressionR="temporal" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
+                                <ConditionSingle Enabled="true" ExpressionL="${var:dataPhase}" ExpressionTypeL="String" ExpressionR="brute" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
+                              </ConditionGroup>
+                            </Condition>
+                            <Conditions />
+                          </Trigger>
+                          <Trigger Enabled="true" Name="Callout" Id="21030600-7a85-4551-8048-e05e9f0cdcb6" RegularExpression="1A:[A-F0-9]{8}:(?&lt;player&gt;[a-zA-Z-' ]{1,31}) gains the effect of (Aggravated Assault|House Arrest|Restraining Order)" PeriodRefire="Deny">
+                            <Actions>
+                              <Action OrderNumber="1" UseTTSTextExpression="Clean, Right Robot" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="UseTTS" ExecutionDelayExpression="500">
+                                <Condition Enabled="true" Grouping="And">
+                                  <ConditionSingle Enabled="true" ExpressionL="${var:temporalDebuff}" ExpressionTypeL="Numeric" ExpressionR="6" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
+                                </Condition>
+                                <Conditions />
+                              </Action>
+                            </Actions>
+                            <Condition Enabled="true" Grouping="And">
+                              <ConditionSingle Enabled="true" ExpressionL="${player}" ExpressionTypeL="String" ExpressionR="${_ffxivplayer}" ExpressionTypeR="String" ConditionType="StringNotEqualNocase" />
+                              <ConditionGroup Enabled="true" Grouping="Or">
+                                <ConditionSingle Enabled="true" ExpressionL="${var:dataPhase}" ExpressionTypeL="String" ExpressionR="temporal" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
+                                <ConditionSingle Enabled="true" ExpressionL="${var:dataPhase}" ExpressionTypeL="String" ExpressionR="brute" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
+                              </ConditionGroup>
+                            </Condition>
+                            <Conditions />
+                          </Trigger>
+                        </Triggers>
+                      </Folder>
+                    </Folders>
                     <Triggers>
                       <Trigger Enabled="true" Name="Aggravated Assault" Id="3c42d9dc-a30f-4a99-91da-d1743c8af9b7" RegularExpression="1A:[A-F0-9]{8}:(?&lt;player&gt;[a-zA-Z-' ]{1,31}) gains the effect of Aggravated Assault">
                         <Actions>
@@ -4999,25 +5002,6 @@
                           </ConditionGroup>
                         </Condition>
                       </Trigger>
-                      <Trigger Enabled="true" Name="No Debuff" Id="281d5485-59d9-412b-8dcc-9df3ba05b0f2" RegularExpression="1A:[A-F0-9]{8}:(?&lt;player&gt;[a-zA-Z-' ]{1,31}) gains the effect of (Aggravated Assault|House Arrest|Restraining Order)" PeriodRefire="Deny">
-                        <Actions>
-                          <Action OrderNumber="1" VariableOp="SetNumeric" VariableName="temporalDebuff" VariableExpression="${var:temporalDebuff} + 1" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Variable">
-                            <Condition Enabled="false" Grouping="Or" />
-                          </Action>
-                          <Action OrderNumber="2" UseTTSTextExpression="Clean, Right Robot" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="UseTTS" ExecutionDelayExpression="500">
-                            <Condition Enabled="true" Grouping="And">
-                              <ConditionSingle Enabled="true" ExpressionL="${var:temporalDebuff}" ExpressionTypeL="Numeric" ExpressionR="6" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
-                            </Condition>
-                          </Action>
-                        </Actions>
-                        <Condition Enabled="true" Grouping="And">
-                          <ConditionSingle Enabled="true" ExpressionL="${player}" ExpressionTypeL="String" ExpressionR="${_ffxivplayer}" ExpressionTypeR="String" ConditionType="StringNotEqualNocase" />
-                          <ConditionGroup Enabled="true" Grouping="Or">
-                            <ConditionSingle Enabled="true" ExpressionL="${var:dataPhase}" ExpressionTypeL="String" ExpressionR="temporal" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
-                            <ConditionSingle Enabled="true" ExpressionL="${var:dataPhase}" ExpressionTypeL="String" ExpressionR="brute" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
-                          </ConditionGroup>
-                        </Condition>
-                      </Trigger>
                       <Trigger Enabled="true" Name="# Reset" Id="7126b941-7440-4061-88ea-3aff4fde4e4b" RegularExpression="21:........:40000010:">
                         <Actions>
                           <Action OrderNumber="1" VariableName="temporalDebuff" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Variable">
@@ -5029,7 +5013,56 @@
                     </Triggers>
                   </Folder>
                   <Folder Id="969d1347-0131-4c4a-8681-2c615cad86e8" Name="Inception Formation" Enabled="true">
-                    <Folders />
+                    <Folders>
+                      <Folder Id="720dfddc-c9d1-4a91-90f7-5e33ed9d46a6" Name="No Debuff" Enabled="true">
+                        <Folders />
+                        <Triggers>
+                          <Trigger Enabled="true" Name="Callout" Id="eb203af1-5193-4865-b3e6-94ff55b8130d" RegularExpression="1A:[A-F0-9]{8}:(?&lt;player&gt;[a-zA-Z-' ]{1,31}) gains the effect of (Aggravated Assault|Shared Sentence|Restraining Order)">
+                            <Actions>
+                              <Action OrderNumber="1" LogLevel="-1" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="LogMessage" ExecutionDelayExpression="500">
+                                <Condition Enabled="false" Grouping="Or" />
+                                <Conditions />
+                              </Action>
+                              <Action OrderNumber="2" UseTTSTextExpression="Stack, Alexander Right Side" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="UseTTS">
+                                <Condition Enabled="true" Grouping="And">
+                                  <ConditionSingle Enabled="true" ExpressionL="${inceptionDebuff}" ExpressionTypeL="Numeric" ExpressionR="5" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
+                                  <ConditionSingle Enabled="true" ExpressionL="${_ffxivplayer.role}" ExpressionTypeL="String" ExpressionR="Tank" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
+                                </Condition>
+                                <Conditions />
+                              </Action>
+                              <Action OrderNumber="3" UseTTSTextExpression="Clean, Alexander Left Side" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="UseTTS">
+                                <Condition Enabled="true" Grouping="And">
+                                  <ConditionSingle Enabled="true" ExpressionL="${inceptionDebuff}" ExpressionTypeL="Numeric" ExpressionR="5" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
+                                  <ConditionGroup Enabled="true" Grouping="Or">
+                                    <ConditionSingle Enabled="true" ExpressionL="${_ffxivplayer.role}" ExpressionTypeL="String" ExpressionR="DPS" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
+                                    <ConditionSingle Enabled="true" ExpressionL="${_ffxivplayer.role}" ExpressionTypeL="String" ExpressionR="Healer" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
+                                  </ConditionGroup>
+                                </Condition>
+                                <Conditions />
+                              </Action>
+                            </Actions>
+                            <Condition Enabled="true" Grouping="And">
+                              <ConditionSingle Enabled="true" ExpressionL="${player}" ExpressionTypeL="String" ExpressionR="${_ffxivplayer}" ExpressionTypeR="String" ConditionType="StringNotEqualNocase" />
+                              <ConditionSingle Enabled="true" ExpressionL="${var:dataPhase}" ExpressionTypeL="String" ExpressionR="inception" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
+                            </Condition>
+                            <Conditions />
+                          </Trigger>
+                          <Trigger Enabled="true" Name="Counter" Id="44a06b96-8caa-4f25-95d6-80dc9f1d06d3" RegularExpression="1A:[A-F0-9]{8}:(?&lt;player&gt;[a-zA-Z-' ]{1,31}) gains the effect of (Aggravated Assault|Shared Sentence|Restraining Order)">
+                            <Actions>
+                              <Action OrderNumber="1" VariableOp="SetNumeric" VariableName="inceptionDebuff" VariableExpression="${var:inceptionDebuff} + 1" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Variable">
+                                <Condition Enabled="false" Grouping="Or" />
+                                <Conditions />
+                              </Action>
+                            </Actions>
+                            <Condition Enabled="true" Grouping="And">
+                              <ConditionSingle Enabled="true" ExpressionL="${player}" ExpressionTypeL="String" ExpressionR="${_ffxivplayer}" ExpressionTypeR="String" ConditionType="StringNotEqualNocase" />
+                              <ConditionSingle Enabled="true" ExpressionL="${var:dataPhase}" ExpressionTypeL="String" ExpressionR="inception" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
+                            </Condition>
+                            <Conditions />
+                          </Trigger>
+                        </Triggers>
+                      </Folder>
+                    </Folders>
                     <Triggers>
                       <Trigger Enabled="true" Name="Aggravated Assault" Id="cce478e9-96c4-48a7-8fda-9c63f0a99837" RegularExpression="1A:[A-F0-9]{8}:(?&lt;player&gt;[a-zA-Z-' ]{1,31}) gains the effect of Aggravated Assault">
                         <Actions>
@@ -5069,32 +5102,6 @@
                         <Condition Enabled="true" Grouping="And">
                           <ConditionSingle Enabled="true" ExpressionL="${var:dataPhase}" ExpressionTypeL="String" ExpressionR="inception" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
                           <ConditionSingle Enabled="true" ExpressionL="${player}" ExpressionTypeL="String" ExpressionR="${_ffxivplayer}" ExpressionTypeR="String" ConditionType="StringEqualCase" />
-                        </Condition>
-                      </Trigger>
-                      <Trigger Enabled="true" Name="No Debuff" Id="feb1b98e-9282-4865-8076-ac2f29222345" RegularExpression="1A:[A-F0-9]{8}:(?&lt;player&gt;[a-zA-Z-' ]{1,31}) gains the effect of (Aggravated Assault|Shared Sentence|Restraining Order)">
-                        <Actions>
-                          <Action OrderNumber="1" VariableOp="SetNumeric" VariableName="inceptionDebuff" VariableExpression="${var:inceptionDebuff} + 1" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Variable">
-                            <Condition Enabled="false" Grouping="Or" />
-                          </Action>
-                          <Action OrderNumber="2" UseTTSTextExpression="Stack, Alexander Right Side" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="UseTTS">
-                            <Condition Enabled="true" Grouping="And">
-                              <ConditionSingle Enabled="true" ExpressionL="${inceptionDebuff}" ExpressionTypeL="Numeric" ExpressionR="5" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
-                              <ConditionSingle Enabled="true" ExpressionL="${_ffxivplayer.role}" ExpressionTypeL="String" ExpressionR="Tank" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
-                            </Condition>
-                          </Action>
-                          <Action OrderNumber="3" UseTTSTextExpression="Clean, Alexander Left Side" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="UseTTS">
-                            <Condition Enabled="true" Grouping="And">
-                              <ConditionSingle Enabled="true" ExpressionL="${inceptionDebuff}" ExpressionTypeL="Numeric" ExpressionR="5" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
-                              <ConditionGroup Enabled="true" Grouping="Or">
-                                <ConditionSingle Enabled="true" ExpressionL="${_ffxivplayer.role}" ExpressionTypeL="String" ExpressionR="DPS" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
-                                <ConditionSingle Enabled="true" ExpressionL="${_ffxivplayer.role}" ExpressionTypeL="String" ExpressionR="Healer" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
-                              </ConditionGroup>
-                            </Condition>
-                          </Action>
-                        </Actions>
-                        <Condition Enabled="true" Grouping="And">
-                          <ConditionSingle Enabled="true" ExpressionL="${player}" ExpressionTypeL="String" ExpressionR="${_ffxivplayer}" ExpressionTypeR="String" ConditionType="StringNotEqualNocase" />
-                          <ConditionSingle Enabled="true" ExpressionL="${var:dataPhase}" ExpressionTypeL="String" ExpressionR="inception" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
                         </Condition>
                       </Trigger>
                       <Trigger Enabled="true" Name="# Reset" Id="cae86e64-e432-4e41-8f9c-ca43b3308a3a" RegularExpression="21:........:40000010:">
@@ -6211,88 +6218,125 @@
                   </Trigger>
                 </Triggers>
               </Folder>
-              <Folder Id="a59ba181-c3b2-4bb0-9262-3670af8f9404" Name="HP Tracker" Enabled="true">
+              <Folder Id="c9e4f0a9-d2b3-45b2-bfaa-caf71ed65a6b" Name="HP Tracker" Enabled="true">
                 <Folders>
-                  <Folder Id="3541a7fa-5824-4392-85d0-355e36e50f83" Name="P1 - Living Liquid" Enabled="true">
+                  <Folder Id="c7a0b7dc-f0cd-4f16-b94f-6ca9c8f23159" Name="P1 - Living Liquid" Enabled="true">
                     <Folders />
                     <Triggers>
-                      <Trigger Enabled="true" Name="Living Hand" Id="feaa3a50-0d60-4406-9ce8-9e753a83a05f" RegularExpression="0D:Liquid Hand HP at (?&lt;hp&gt;[0-9]{1,3})%">
+                      <Trigger Enabled="true" Name="Living Hand" Id="60a43c6f-ddb8-4aec-979b-c4d59706ab4c" RegularExpression="0D:Liquid Hand HP at (?&lt;hp&gt;[0-9]{1,3})%">
                         <Actions>
                           <Action OrderNumber="1" TextAuraEffect="Bold" TextAuraFontSize="14.25" TextAuraForeground="Lime" TextAuraOutline="Black" TextAuraName="hpHand" TextAuraExpression="Living Hand: HP ${hp}%" TextAuraXIniExpression="${_screenwidth}/2" TextAuraYIniExpression="325" TextAuraWIniExpression="${_screenwidth}/2" TextAuraHIniExpression="100" TextAuraOIniExpression="100" TextAuraUseOutline="True" TextAuraFontName="Courier New" ActionType="TextAura">
                             <Condition Enabled="false" Grouping="Or" />
+                            <Conditions />
                           </Action>
                         </Actions>
                         <Condition Enabled="false" Grouping="Or" />
+                        <Conditions />
                       </Trigger>
-                      <Trigger Enabled="true" Name="Livinq Liquid" Id="b050608f-945d-4f5c-80a7-7aa8441b11aa" RegularExpression="0D:Living Liquid HP at (?&lt;hp&gt;[0-9]{1,3})%">
+                      <Trigger Enabled="true" Name="Livinq Liquid" Id="13c0624d-68de-4818-9758-76a06e729829" RegularExpression="0D:Living Liquid HP at (?&lt;hp&gt;[0-9]{1,3})%">
                         <Actions>
                           <Action OrderNumber="1" TextAuraEffect="Bold" TextAuraFontSize="14.25" TextAuraForeground="Lime" TextAuraOutline="Black" TextAuraName="hpLiquid" TextAuraExpression="Living Liquid: HP ${hp}%" TextAuraXIniExpression="${_screenwidth}/2" TextAuraYIniExpression="300" TextAuraWIniExpression="${_screenwidth}/2" TextAuraHIniExpression="100" TextAuraOIniExpression="100" TextAuraUseOutline="True" TextAuraFontName="Courier New" ActionType="TextAura">
                             <Condition Enabled="false" Grouping="Or" />
+                            <Conditions />
                           </Action>
                         </Actions>
                         <Condition Enabled="false" Grouping="Or" />
+                        <Conditions />
                       </Trigger>
-                      <Trigger Enabled="true" Name="# Reset" Id="a1d41b73-cd51-4a23-b647-1542c3dc7694" RegularExpression="04:[0-9A-F]{8}:Removing combatant (?&lt;actor&gt;Living Hand|Living Liquid)">
+                      <Trigger Enabled="true" Name="# Reset" Id="15e65973-5297-48e3-b24f-31eb1fad5de0" RegularExpression="04:[0-9A-F]{8}:Removing combatant Living Liquid">
                         <Actions>
                           <Action OrderNumber="1" LogLevel="-1" TextAuraOp="DeactivateAura" TextAuraFontSize="8.25" TextAuraName="hpLiquid" TextAuraFontName="Microsoft Sans Serif" ActionType="TextAura">
-                            <Condition Enabled="true" Grouping="And">
+                            <Condition Enabled="false" Grouping="And">
                               <ConditionSingle Enabled="true" ExpressionL="${actor}" ExpressionTypeL="String" ExpressionR="Living Liquid" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
                             </Condition>
+                            <Conditions />
                           </Action>
                           <Action OrderNumber="2" LogLevel="-1" TextAuraOp="DeactivateAura" TextAuraFontSize="8.25" TextAuraName="hpHand" TextAuraFontName="Microsoft Sans Serif" ActionType="TextAura">
-                            <Condition Enabled="true" Grouping="And">
+                            <Condition Enabled="false" Grouping="And">
                               <ConditionSingle Enabled="true" ExpressionL="${actor}" ExpressionTypeL="String" ExpressionR="Living Hand" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
                             </Condition>
+                            <Conditions />
                           </Action>
                         </Actions>
                         <Condition Enabled="false" Grouping="Or" />
+                        <Conditions />
                       </Trigger>
                     </Triggers>
                   </Folder>
-                  <Folder Id="614a5178-9743-448d-8c26-4ba2c3c2393e" Name="P2 - Brute Justice / Cruise Chaser" Enabled="true">
+                  <Folder Id="5c8b0709-7f87-46db-a784-642b0d942e98" Name="P2 - Brute Justice / Cruise Chaser" Enabled="true">
                     <Folders />
                     <Triggers>
-                      <Trigger Enabled="true" Name="Brute Justice" Id="3a79d596-764b-4649-a178-b3b2e2fbd214" RegularExpression="0D:Brute Justice HP at (?&lt;hp&gt;[0-9]{1,3})%">
+                      <Trigger Enabled="true" Name="Brute Justice" Id="e799891a-05fa-4e67-82e5-d4c4a5566f69" RegularExpression="0D:Brute Justice HP at (?&lt;hp&gt;[0-9]{1,3})%">
                         <Actions>
                           <Action OrderNumber="1" TextAuraEffect="Bold" TextAuraFontSize="14.25" TextAuraForeground="Lime" TextAuraOutline="Black" TextAuraName="hpBrute" TextAuraExpression="Brute Justice: HP ${hp}%" TextAuraXIniExpression="${_screenwidth}/2" TextAuraYIniExpression="300" TextAuraWIniExpression="${_screenwidth}/2" TextAuraHIniExpression="100" TextAuraOIniExpression="100" TextAuraUseOutline="True" TextAuraFontName="Courier New" ActionType="TextAura">
                             <Condition Enabled="false" Grouping="Or" />
+                            <Conditions />
                           </Action>
                         </Actions>
                         <Condition Enabled="true" Grouping="Or">
                           <ConditionSingle Enabled="true" ExpressionL="${var:dataPhase}" ExpressionTypeL="String" ExpressionR="brute" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
                           <ConditionSingle Enabled="true" ExpressionL="${var:dataPhase}" ExpressionTypeL="String" ExpressionR="cruise" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
                         </Condition>
+                        <Conditions />
                       </Trigger>
-                      <Trigger Enabled="true" Name="Cruise Chaser" Id="f58fa00f-01f6-41cd-84c2-116acc34802b" RegularExpression="0D:Cruise Chaser HP at (?&lt;hp&gt;[0-9]{1,3})%">
+                      <Trigger Enabled="true" Name="Cruise Chaser" Id="0657c5a5-7a6f-4c3d-9856-c844ce66bf97" RegularExpression="0D:Cruise Chaser HP at (?&lt;hp&gt;[0-9]{1,3})%">
                         <Actions>
                           <Action OrderNumber="1" TextAuraEffect="Bold" TextAuraFontSize="14.25" TextAuraForeground="Lime" TextAuraOutline="Black" TextAuraName="hpCruise" TextAuraExpression="Cruise Chaser: HP ${hp}%" TextAuraXIniExpression="${_screenwidth}/2" TextAuraYIniExpression="325" TextAuraWIniExpression="${_screenwidth}/2" TextAuraHIniExpression="100" TextAuraOIniExpression="100" TextAuraUseOutline="True" TextAuraFontName="Courier New" ActionType="TextAura">
                             <Condition Enabled="false" Grouping="Or" />
+                            <Conditions />
                           </Action>
                         </Actions>
                         <Condition Enabled="true" Grouping="Or">
                           <ConditionSingle Enabled="true" ExpressionL="${var:dataPhase}" ExpressionTypeL="String" ExpressionR="brute" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
                           <ConditionSingle Enabled="true" ExpressionL="${var:dataPhase}" ExpressionTypeL="String" ExpressionR="cruise" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
                         </Condition>
+                        <Conditions />
                       </Trigger>
-                      <Trigger Enabled="true" Name="# Reset" Id="943e8ccd-38f2-480b-bbb9-dfbdcced2cc4" RegularExpression="04:[0-9A-F]{8}:Removing combatant (?&lt;actor&gt;Brute Justice|Cruise Chaser)">
+                      <Trigger Enabled="true" Name="# Reset" Id="64b7af65-4360-4cef-bcac-7d154e6e36b5" RegularExpression="04:[0-9A-F]{8}:Removing combatant (?&lt;actor&gt;Brute Justice|Cruise Chaser)">
                         <Actions>
                           <Action OrderNumber="1" LogLevel="-1" TextAuraOp="DeactivateAura" TextAuraFontSize="8.25" TextAuraName="hpBrute" TextAuraFontName="Microsoft Sans Serif" ActionType="TextAura">
                             <Condition Enabled="true" Grouping="And">
                               <ConditionSingle Enabled="true" ExpressionL="${actor}" ExpressionTypeL="String" ExpressionR="Brute Justice" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
                             </Condition>
+                            <Conditions />
                           </Action>
                           <Action OrderNumber="2" LogLevel="-1" TextAuraOp="DeactivateAura" TextAuraFontSize="8.25" TextAuraName="hpCruise" TextAuraFontName="Microsoft Sans Serif" ActionType="TextAura">
                             <Condition Enabled="true" Grouping="And">
                               <ConditionSingle Enabled="true" ExpressionL="${actor}" ExpressionTypeL="String" ExpressionR="Cruise Chaser" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
                             </Condition>
+                            <Conditions />
                           </Action>
                         </Actions>
                         <Condition Enabled="false" Grouping="Or" />
+                        <Conditions />
                       </Trigger>
                     </Triggers>
                   </Folder>
                 </Folders>
-                <Triggers />
+                <Triggers>
+                  <Trigger Enabled="true" Name="# Reset" Id="95626368-83e6-4597-8d42-1bef891ccdcf" RegularExpression="(The Epic [Oo]f Alexander \(Ultimate\) has ended.\|21:........:40000010:)">
+                    <Actions>
+                      <Action OrderNumber="1" LogLevel="-1" TextAuraOp="DeactivateAura" TextAuraFontSize="8.25" TextAuraName="hpLiquid" TextAuraFontName="Microsoft Sans Serif" ActionType="TextAura">
+                        <Condition Enabled="false" Grouping="Or" />
+                        <Conditions />
+                      </Action>
+                      <Action OrderNumber="2" LogLevel="-1" TextAuraOp="DeactivateAura" TextAuraFontSize="8.25" TextAuraName="hpHand" TextAuraFontName="Microsoft Sans Serif" ActionType="TextAura">
+                        <Condition Enabled="false" Grouping="Or" />
+                        <Conditions />
+                      </Action>
+                      <Action OrderNumber="3" LogLevel="-1" TextAuraOp="DeactivateAura" TextAuraFontSize="8.25" TextAuraName="hpBrute" TextAuraFontName="Microsoft Sans Serif" ActionType="TextAura">
+                        <Condition Enabled="false" Grouping="Or" />
+                        <Conditions />
+                      </Action>
+                      <Action OrderNumber="4" LogLevel="-1" TextAuraOp="DeactivateAura" TextAuraFontSize="8.25" TextAuraName="hpCruise" TextAuraFontName="Microsoft Sans Serif" ActionType="TextAura">
+                        <Condition Enabled="false" Grouping="Or" />
+                        <Conditions />
+                      </Action>
+                    </Actions>
+                    <Condition Enabled="false" Grouping="Or" />
+                    <Conditions />
+                  </Trigger>
+                </Triggers>
               </Folder>
             </Folders>
             <Triggers>

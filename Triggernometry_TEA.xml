@@ -1119,7 +1119,7 @@
           <Folder Id="ceda1ef1-468b-4acd-8177-9fc944c23815" Name="Fate Calibration" Enabled="true">
             <Folders />
             <Triggers>
-              <Trigger Enabled="true" Source="FFXIVNetwork" Sequential="True" Name="Clone Images" Id="6a971ba2-b506-48e5-9785-90c1631acdb1" RegularExpression="">
+              <Trigger Enabled="true" Sequential="True" Name="Clone Images" Id="6a971ba2-b506-48e5-9785-90c1631acdb1" RegularExpression="">
                 <Actions>
                   <Action OrderNumber="1" AuraName="FateDebuff" AuraImage="https://raw.githubusercontent.com/ayaliz/gaming/master/Icons/015740.png" AuraXIniExpression="${_imageaura[FatePosition].x}+44" AuraYIniExpression="${_imageaura[FatePosition].y}+52" AuraWIniExpression="24" AuraHIniExpression="32" AuraOIniExpression="100" UseTTSTextExpression="Share" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Aura" Asynchronous="False" Description="Nothing" DescriptionOverride="True">
                     <Condition Enabled="true" Grouping="And">
@@ -1210,7 +1210,7 @@
                 <Condition Enabled="false" Grouping="Or" />
                 <Conditions />
               </Trigger>
-              <Trigger Enabled="true" Source="FFXIVNetwork" Name="Wipe" Id="4ab21f84-4e54-4d5d-92d7-a964529197fb" RegularExpression="21:........:400000[01][03]:" DebugLevel="None">
+              <Trigger Enabled="true" Name="Wipe" Id="4ab21f84-4e54-4d5d-92d7-a964529197fb" RegularExpression="21:........:400000[01][03]:" DebugLevel="None">
                 <Actions>
                   <Action OrderNumber="1" VariableOp="UnsetRegex" VariableName="^FateAB$|cloneID$|TeaTTS$" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Variable" Description="Scalar variables" DescriptionOverride="True">
                     <Condition Enabled="false" Grouping="Or" />
@@ -1228,7 +1228,7 @@
                 <Condition Enabled="false" Grouping="Or" />
                 <Conditions />
               </Trigger>
-              <Trigger Enabled="true" Source="FFXIVNetwork" Sequential="True" Name="Clone Finder" Id="0c4ddb01-a314-4df4-861e-1676d18ed870" RegularExpression="23:.{8}:(?&lt;name&gt;[\w\-' ]+):(?&lt;ID&gt;[\w]{8}).{14}62" DebugLevel="None" MutexToCapture="clones">
+              <Trigger Enabled="true" Sequential="True" Name="Clone Finder" Id="0c4ddb01-a314-4df4-861e-1676d18ed870" RegularExpression="23:.{8}:(?&lt;name&gt;[\w\-' ]+):(?&lt;ID&gt;[\w]{8}).{14}62" DebugLevel="None" MutexToCapture="clones">
                 <Actions>
                   <Action OrderNumber="1" ListVariableOp="Push" ListVariableName="clonelist" ListVariableExpression="${ID}" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="ListVariable" Asynchronous="False" Description="Add ID to clonelist" DescriptionOverride="True">
                     <Condition Enabled="false" Grouping="Or" />
@@ -1244,7 +1244,7 @@
                 <Condition Enabled="false" Grouping="Or" />
                 <Conditions />
               </Trigger>
-              <Trigger Enabled="true" Source="FFXIVNetwork" Sequential="True" Name="Fate Projection" Id="248b65e6-0a55-4d78-b636-b0faf25c2293" RegularExpression="14:4(?&lt;skillID&gt;(87B|B13)):Perfect Alexander starts using">
+              <Trigger Enabled="true" Sequential="True" Name="Fate Projection" Id="248b65e6-0a55-4d78-b636-b0faf25c2293" RegularExpression="14:4(?&lt;skillID&gt;(87B|B13)):Perfect Alexander starts using">
                 <Actions>
                   <Action OrderNumber="1" AuraName="FatePosition" AuraImage="https://raw.githubusercontent.com/ayaliz/gaming/master/Icons/fatecalib.png" AuraXIniExpression="(${_screenwidth}/6)*4" AuraYIniExpression="${_screenheight}/4" AuraWIniExpression="345" AuraHIniExpression="100" AuraOIniExpression="100" VariableOp="SetString" VariableName="fate" VariableExpression="a" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Aura" Description="Fate Calibration Header (Move me!) | Toggle to enable/disable images" DescriptionOverride="True">
                     <Condition Enabled="false" Grouping="Or" />
@@ -1308,7 +1308,7 @@
                 <Condition Enabled="false" Grouping="Or" />
                 <Conditions />
               </Trigger>
-              <Trigger Enabled="true" Source="FFXIVNetwork" Name="α Stillness/Motion + β Optical/Radiant" Id="cdbd7a3b-e809-42c1-a8b1-017432a38908" RegularExpression="15:(?&lt;alex&gt;.{8}):Perfect Alexander:4(?&lt;skillID&gt;(B(0[DE]|14)|8(7C|8[69]|A[01]|9[9A]|9E))):" PeriodRefire="Deny" RefirePeriodExpression="1500">
+              <Trigger Enabled="true" Name="α Stillness/Motion + β Optical/Radiant" Id="cdbd7a3b-e809-42c1-a8b1-017432a38908" RegularExpression="15:(?&lt;alex&gt;.{8}):Perfect Alexander:4(?&lt;skillID&gt;(B(0[DE]|14)|8(7C|8[69]|A[01]|9[9A]|9E))):" PeriodRefire="Deny" RefirePeriodExpression="1500">
                 <Actions>
                   <Action OrderNumber="1" VariableOp="UnsetRegex" VariableName="^FateAB$|cloneID$|TeaTTS$" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Variable" Description="Unset obsolete scalar variables at Fate Calibration cast finish" DescriptionOverride="True">
                     <Condition Enabled="true" Grouping="Or">
@@ -1473,7 +1473,7 @@
                 <Condition Enabled="false" Grouping="Or" />
                 <Conditions />
               </Trigger>
-              <Trigger Enabled="true" Source="FFXIVNetwork" Name="Clone TTS" Id="5a50ca24-b594-4b2b-91d3-9956d67f0a96" RegularExpression="^00:0038:repeat clone call">
+              <Trigger Enabled="true" Name="Clone TTS" Id="5a50ca24-b594-4b2b-91d3-9956d67f0a96" RegularExpression="^00:0038:repeat clone call">
                 <Actions>
                   <Action OrderNumber="1" UseTTSTextExpression="Nothing" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="UseTTS" Asynchronous="False" Description="Nothing" DescriptionOverride="True">
                     <Condition Enabled="true" Grouping="And">
@@ -1664,7 +1664,7 @@
           <Folder Id="cb6c9056-ce14-40d6-aa76-daa3a52655c7" Name="Almighty Judgment" Enabled="true">
             <Folders />
             <Triggers>
-              <Trigger Enabled="true" Source="FFXIVNetwork" Sequential="True" Name="Reset" Id="d8ec6afa-206b-40d0-87cd-13e050377f41" RegularExpression="14:488E:Perfect Alexander" DebugLevel="None">
+              <Trigger Enabled="true" Sequential="True" Name="Reset" Id="d8ec6afa-206b-40d0-87cd-13e050377f41" RegularExpression="14:488E:Perfect Alexander" DebugLevel="None">
                 <Actions>
                   <Action OrderNumber="1" ListVariableName="circleorder" VariableName="judgmentcount" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="ListVariable" ExecutionDelayExpression="20000" Asynchronous="False">
                     <Condition Enabled="false" Grouping="Or" />
@@ -1686,7 +1686,7 @@
                 <Condition Enabled="false" Grouping="Or" />
                 <Conditions />
               </Trigger>
-              <Trigger Enabled="true" Source="FFXIVNetwork" Sequential="True" Name="Circles" Id="b16dd38e-fa17-4b67-8e7f-0dd737ca0126" RegularExpression="15:[0-9a-fA-F]+:Perfect Alexander:488F:Almighty Judgment:[A-Fa-f04:]+:1000:100:(?&lt;y&gt;[10892]{2,3})" DebugLevel="None" MutexToCapture="circles">
+              <Trigger Enabled="true" Sequential="True" Name="Circles" Id="b16dd38e-fa17-4b67-8e7f-0dd737ca0126" RegularExpression="15:[0-9a-fA-F]+:Perfect Alexander:488F:Almighty Judgment:[A-Fa-f04:]+:1000:100:(?&lt;y&gt;[10892]{2,3})" DebugLevel="None" MutexToCapture="circles">
                 <Actions>
                   <Action OrderNumber="1" ListVariableOp="Push" ListVariableName="circleorder" ListVariableExpression="${y}" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="ListVariable" Asynchronous="False">
                     <Condition Enabled="true" Grouping="Or">
@@ -1787,7 +1787,7 @@
           <Folder Id="ba3069c8-6004-41c7-a637-07df6c96d64d" Name="Sacrament/Radiant Sacrament" Enabled="true">
             <Folders />
             <Triggers>
-              <Trigger Enabled="true" Source="FFXIVNetwork" Sequential="True" Name="# Reset" Id="76443b1d-163f-443b-9b08-0c16d0aac356" RegularExpression=":Perfect Alexander:(?&lt;skillID&gt;488[69]):" DebugLevel="None" PeriodRefire="Deny" RefirePeriodExpression="3000">
+              <Trigger Enabled="true" Sequential="True" Name="# Reset" Id="76443b1d-163f-443b-9b08-0c16d0aac356" RegularExpression=":Perfect Alexander:(?&lt;skillID&gt;488[69]):" DebugLevel="None" PeriodRefire="Deny" RefirePeriodExpression="3000">
                 <Actions>
                   <Action OrderNumber="1" AuraName="safespot" AuraImage="${var:ImagePath}nne.png" AuraXIniExpression="${var:calibX}" AuraYIniExpression="${var:calibY}" AuraWIniExpression="40" AuraHIniExpression="40" AuraOIniExpression="100" JsonEndpointExpression="http://localhost:1337/place" JsonPayloadExpression="{ &quot;One&quot;: { &quot;Active&quot;: false } }" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="GenericJson" Asynchronous="False">
                     <Condition Enabled="false" Grouping="Or" />

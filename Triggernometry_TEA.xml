@@ -1228,7 +1228,7 @@
                 <Condition Enabled="false" Grouping="Or" />
                 <Conditions />
               </Trigger>
-              <Trigger Enabled="true" Sequential="True" Name="Clone Finder" Id="0c4ddb01-a314-4df4-861e-1676d18ed870" RegularExpression="23:.{8}:(?&lt;name&gt;[\w\-' ]+):(?&lt;ID&gt;[\w]{8}).{14}62" DebugLevel="None" MutexToCapture="clones">
+              <Trigger Enabled="true" Sequential="True" Name="Clone Finder" Id="0c4ddb01-a314-4df4-861e-1676d18ed870" RegularExpression="23:[0-9A-F]{8}:(?&lt;name&gt;[\w\-' ]+):(?&lt;ID&gt;[0-9A-F]{8}):(.?)*?:0062:" DebugLevel="None" MutexToCapture="clones">
                 <Actions>
                   <Action OrderNumber="1" ListVariableOp="Push" ListVariableName="clonelist" ListVariableExpression="${ID}" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="ListVariable" Asynchronous="False" Description="Add ID to clonelist" DescriptionOverride="True">
                     <Condition Enabled="false" Grouping="Or" />
@@ -1686,7 +1686,7 @@
                 <Condition Enabled="false" Grouping="Or" />
                 <Conditions />
               </Trigger>
-              <Trigger Enabled="true" Sequential="True" Name="Circles" Id="b16dd38e-fa17-4b67-8e7f-0dd737ca0126" RegularExpression="15:[0-9a-fA-F]+:Perfect Alexander:488F:Almighty Judgment:[A-Fa-f04:]+:1000:100:(?&lt;y&gt;[10892]{2,3})" DebugLevel="None" MutexToCapture="circles">
+              <Trigger Enabled="true" Sequential="True" Name="Circles" Id="b16dd38e-fa17-4b67-8e7f-0dd737ca0126" RegularExpression="15:[0-9a-fA-F]+:Perfect Alexander:488F:Almighty Judgment:[A-Fa-f04:]+:1000:100:(?&lt;y&gt;(92|100|108)):" DebugLevel="None" MutexToCapture="circles">
                 <Actions>
                   <Action OrderNumber="1" ListVariableOp="Push" ListVariableName="circleorder" ListVariableExpression="${y}" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="ListVariable" Asynchronous="False">
                     <Condition Enabled="true" Grouping="Or">

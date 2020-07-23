@@ -7874,34 +7874,38 @@
                       <Folder Id="838f77cf-67b5-4d2e-b20b-83309e999d40" Name="Final Word" Enabled="true">
                         <Folders />
                         <Triggers>
-                          <Trigger Enabled="true" Name="Contact" Id="734d8696-e85b-464e-899a-faada3481d4f" RegularExpression="1A:[A-F0-9]{8}:(?&lt;player&gt;[a-zA-Z-' ]{1,31}) gains the effect of Final Word: Contact (?&lt;contact&gt;Regulation|Prohibition)">
+                          <Trigger Enabled="true" Name="Contact - TTS" Id="734d8696-e85b-464e-899a-faada3481d4f" RegularExpression="1A:[A-F0-9]{8}:(?&lt;player&gt;[a-zA-Z-' ]{1,31}) gains the effect of Final Word: Contact (?&lt;contact&gt;Regulation|Prohibition)">
                             <Actions>
                               <Action OrderNumber="1" UseTTSTextExpression="Light Mark" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="UseTTS">
                                 <Condition Enabled="true" Grouping="And">
                                   <ConditionSingle Enabled="true" ExpressionL="${contact}" ExpressionTypeL="String" ExpressionR="Prohibition" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
                                 </Condition>
+                                <Conditions />
                               </Action>
                               <Action OrderNumber="2" UseTTSTextExpression="Light Beacon" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="UseTTS">
                                 <Condition Enabled="true" Grouping="And">
                                   <ConditionSingle Enabled="true" ExpressionL="${contact}" ExpressionTypeL="String" ExpressionR="Regulation" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
                                 </Condition>
+                                <Conditions />
                               </Action>
                             </Actions>
                             <Condition Enabled="true" Grouping="And">
                               <ConditionSingle Enabled="true" ExpressionL="${player}" ExpressionTypeL="String" ExpressionR="${_ffxivplayer}" ExpressionTypeR="String" ConditionType="StringEqualCase" />
                             </Condition>
                           </Trigger>
-                          <Trigger Enabled="true" Name="Escape" Id="b6eaf3fe-52b3-4606-a9f4-bcb60fea92ed" RegularExpression="1A:[A-F0-9]{8}:(?&lt;player&gt;[a-zA-Z-' ]{1,31}) gains the effect of Final Word: Escape (?&lt;escape&gt;Prohibition|Detection)">
+                          <Trigger Enabled="true" Name="Escape - TTS" Id="b6eaf3fe-52b3-4606-a9f4-bcb60fea92ed" RegularExpression="1A:[A-F0-9]{8}:(?&lt;player&gt;[a-zA-Z-' ]{1,31}) gains the effect of Final Word: Escape (?&lt;escape&gt;Prohibition|Detection)">
                             <Actions>
                               <Action OrderNumber="1" UseTTSTextExpression="Dark Beacon" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="UseTTS">
                                 <Condition Enabled="true" Grouping="And">
                                   <ConditionSingle Enabled="true" ExpressionL="${escape}" ExpressionTypeL="String" ExpressionR="Detection" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
                                 </Condition>
+                                <Conditions />
                               </Action>
                               <Action OrderNumber="2" UseTTSTextExpression="Dark Mark" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="UseTTS">
                                 <Condition Enabled="true" Grouping="And">
                                   <ConditionSingle Enabled="true" ExpressionL="${escape}" ExpressionTypeL="String" ExpressionR="Prohibition" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
                                 </Condition>
+                                <Conditions />
                               </Action>
                             </Actions>
                             <Condition Enabled="true" Grouping="And">
@@ -7937,7 +7941,7 @@
                                 </Condition>
                                 <Conditions />
                               </Action>
-                              <Action OrderNumber="2" AuraImageMode="CenterImage" AuraName="escapeImage" AuraImage="${var:iconPath}Purple.png" AuraXIniExpression="${_screenwidth}/2" AuraYIniExpression="0" AuraWIniExpression="${_screenwidth}/2" AuraHIniExpression="${_screenheight}/2" AuraOIniExpression="100" AuraTTLTickExpression="10-${_since}" TextAuraFontSize="36" TextAuraForeground="#FF3300" TextAuraOutline="Black" TextAuraName="TEA_Compressed_Image" TextAuraExpression="${debuff} ${numeric:${duration}-${_since}}" TextAuraXIniExpression="0" TextAuraYIniExpression="500" TextAuraWIniExpression="${_screenwidth}" TextAuraHIniExpression="200" TextAuraOIniExpression="100" TextAuraTTLTickExpression="${duration}-${_since}" TextAuraUseOutline="True" TextAuraFontName="Microsoft Sans Serif" ActionType="Aura">
+                              <Action OrderNumber="2" AuraImageMode="CenterImage" AuraName="escapeImage" AuraImage="${var:iconPath}Purple.png" AuraXIniExpression="${_screenwidth}/2" AuraYIniExpression="0" AuraWIniExpression="${_screenwidth}/2" AuraHIniExpression="${_screenheight}/2" AuraOIniExpression="100" AuraTTLTickExpression="10-${_since}" TextAuraFontSize="36" TextAuraForeground="#FF3300" TextAuraOutline="Black" TextAuraName="TEA_Compressed_Image" TextAuraExpression="${debuff} ${numeric:${duration}-${_since}}" TextAuraXIniExpression="0" TextAuraYIniExpression="500" TextAuraWIniExpression="${_screenwidth}" TextAuraHIniExpression="200" TextAuraOIniExpression="100" TextAuraTTLTickExpression="${duration}-${_since}" TextAuraUseOutline="True" TextAuraFontName="Microsoft Sans Serif" Enabled="False" ActionType="Aura">
                                 <Condition Enabled="true" Grouping="And">
                                   <ConditionSingle Enabled="true" ExpressionL="${contact}" ExpressionTypeL="String" ExpressionR="Prohibition" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
                                 </Condition>
@@ -7950,6 +7954,41 @@
                             </Condition>
                             <Conditions />
                           </Trigger>
+                          <Trigger Enabled="true" Name="Ordained Motion/Stillness - Text" Id="402e544b-ca52-4a37-8f5a-0797c8649efb" RegularExpression="14:(?&lt;ID&gt;487E|487F):Perfect Alexander starts using">
+                            <Actions>
+                              <Action OrderNumber="1" AuraName="TEA_Compressed_Duration" TextAuraEffect="Bold" TextAuraFontSize="36" TextAuraForeground="Red" TextAuraOutline="Black" TextAuraName="finalWord" TextAuraExpression="STOP EVERYTHING" TextAuraXIniExpression="0" TextAuraYIniExpression="500" TextAuraWIniExpression="${_screenwidth}" TextAuraHIniExpression="200" TextAuraOIniExpression="100" TextAuraTTLTickExpression="5-${_since}" TextAuraUseOutline="True" TextAuraFontName="Arial Black" ActionType="TextAura">
+                                <Condition Enabled="true" Grouping="And">
+                                  <ConditionSingle Enabled="true" ExpressionL="${ID}" ExpressionTypeL="String" ExpressionR="487F" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
+                                </Condition>
+                                <Conditions />
+                              </Action>
+                              <Action OrderNumber="2" AuraName="TEA_Compressed_Duration" TextAuraEffect="Bold" TextAuraFontSize="24" TextAuraForeground="#FF9D00" TextAuraOutline="Black" TextAuraName="finalWord" TextAuraExpression="Keep Moving" TextAuraXIniExpression="0" TextAuraYIniExpression="500" TextAuraWIniExpression="${_screenwidth}" TextAuraHIniExpression="200" TextAuraOIniExpression="100" TextAuraTTLTickExpression="5-${_since}" TextAuraUseOutline="True" TextAuraFontName="Microsoft Sans Serif" ActionType="TextAura">
+                                <Condition Enabled="true" Grouping="And">
+                                  <ConditionSingle Enabled="true" ExpressionL="${ID}" ExpressionTypeL="String" ExpressionR="487F" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
+                                </Condition>
+                                <Conditions />
+                              </Action>
+                            </Actions>
+                            <Condition Enabled="false" Grouping="And" />
+                            <Conditions />
+                          </Trigger>
+                          <Trigger Enabled="true" Name="Ordained Motion/Stillness - TTS" Id="e9b697b7-666f-4b71-a7d6-131e13f4f5c2" RegularExpression="14:(?&lt;id&gt;487E|487F):Perfect Alexander starts using">
+                            <Actions>
+                              <Action OrderNumber="1" UseTTSTextExpression="Move" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="UseTTS">
+                                <Condition Enabled="true" Grouping="And">
+                                  <ConditionSingle Enabled="true" ExpressionL="${id}" ExpressionTypeL="String" ExpressionR="487E" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
+                                </Condition>
+                                <Conditions />
+                              </Action>
+                              <Action OrderNumber="2" UseTTSTextExpression="Stop" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="UseTTS">
+                                <Condition Enabled="true" Grouping="And">
+                                  <ConditionSingle Enabled="true" ExpressionL="${id}" ExpressionTypeL="String" ExpressionR="487F" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
+                                </Condition>
+                                <Conditions />
+                              </Action>
+                            </Actions>
+                            <Condition Enabled="false" Grouping="Or" />
+                          </Trigger>
                         </Triggers>
                       </Folder>
                     </Folders>
@@ -7958,21 +7997,6 @@
                         <Actions>
                           <Action OrderNumber="1" UseTTSTextExpression="Spread" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="UseTTS">
                             <Condition Enabled="false" Grouping="Or" />
-                          </Action>
-                        </Actions>
-                        <Condition Enabled="false" Grouping="Or" />
-                      </Trigger>
-                      <Trigger Enabled="true" Name="Ordained Motion/Stillness" Id="e9b697b7-666f-4b71-a7d6-131e13f4f5c2" RegularExpression="14:(?&lt;id&gt;487E|487F):Perfect Alexander starts using">
-                        <Actions>
-                          <Action OrderNumber="1" UseTTSTextExpression="Move" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="UseTTS">
-                            <Condition Enabled="true" Grouping="And">
-                              <ConditionSingle Enabled="true" ExpressionL="${id}" ExpressionTypeL="String" ExpressionR="487E" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
-                            </Condition>
-                          </Action>
-                          <Action OrderNumber="2" UseTTSTextExpression="Stop" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="UseTTS">
-                            <Condition Enabled="true" Grouping="And">
-                              <ConditionSingle Enabled="true" ExpressionL="${id}" ExpressionTypeL="String" ExpressionR="487F" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
-                            </Condition>
                           </Action>
                         </Actions>
                         <Condition Enabled="false" Grouping="Or" />
@@ -8011,21 +8035,19 @@
                             <Actions>
                               <Action OrderNumber="1" AuraName="TEA_Compressed_Duration" TextAuraFontSize="36" TextAuraForeground="#FF3300" TextAuraOutline="Black" TextAuraName="compressedDebuff" TextAuraExpression="${debuff}" TextAuraXIniExpression="0" TextAuraYIniExpression="500" TextAuraWIniExpression="${_screenwidth}" TextAuraHIniExpression="200" TextAuraOIniExpression="100" TextAuraTTLTickExpression="${duration}-${_since}" TextAuraUseOutline="True" TextAuraFontName="Microsoft Sans Serif" ActionType="TextAura">
                                 <Condition Enabled="false" Grouping="Or" />
+                                <Conditions />
                               </Action>
                               <Action OrderNumber="2" UseTTSTextExpression="Lightning" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="UseTTS">
                                 <Condition Enabled="true" Grouping="And">
                                   <ConditionSingle Enabled="true" ExpressionL="${debuff}" ExpressionTypeL="String" ExpressionR="Lightning" ExpressionTypeR="String" ConditionType="StringEqualCase" />
                                 </Condition>
+                                <Conditions />
                               </Action>
                               <Action OrderNumber="3" UseTTSTextExpression="Water" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="UseTTS">
                                 <Condition Enabled="true" Grouping="And">
                                   <ConditionSingle Enabled="true" ExpressionL="${debuff}" ExpressionTypeL="String" ExpressionR="Water" ExpressionTypeR="String" ConditionType="StringEqualCase" />
                                 </Condition>
-                              </Action>
-                              <Action OrderNumber="4" UseTTSTextExpression="Drop in Five" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" Enabled="False" ActionType="UseTTS" ExecutionDelayExpression="24000">
-                                <Condition Enabled="true" Grouping="And">
-                                  <ConditionSingle Enabled="true" ExpressionL="${evar:seenGavel}" ExpressionTypeL="Numeric" ExpressionR="0" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
-                                </Condition>
+                                <Conditions />
                               </Action>
                             </Actions>
                             <Condition Enabled="true" Grouping="And">
@@ -8036,11 +8058,7 @@
                             <Actions>
                               <Action OrderNumber="1" AuraName="TEA_Compressed_Duration" TextAuraEffect="Bold" TextAuraFontSize="24" TextAuraForeground="#FFBB00" TextAuraOutline="Black" TextAuraName="compressedTimer" TextAuraExpression="Drop in ${numeric:${duration}-${_since}}" TextAuraXIniExpression="0" TextAuraYIniExpression="540" TextAuraWIniExpression="${_screenwidth}" TextAuraHIniExpression="200" TextAuraOIniExpression="100" TextAuraTTLTickExpression="${duration}-${_since}" TextAuraUseOutline="True" TextAuraFontName="Microsoft Sans Serif" ActionType="TextAura">
                                 <Condition Enabled="false" Grouping="Or" />
-                              </Action>
-                              <Action OrderNumber="2" UseTTSTextExpression="Drop in Five" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" Enabled="False" ActionType="UseTTS" ExecutionDelayExpression="24000">
-                                <Condition Enabled="true" Grouping="And">
-                                  <ConditionSingle Enabled="true" ExpressionL="${evar:seenGavel}" ExpressionTypeL="Numeric" ExpressionR="0" ExpressionTypeR="String" ConditionType="NumericEqual" />
-                                </Condition>
+                                <Conditions />
                               </Action>
                             </Actions>
                             <Condition Enabled="false" Grouping="And">
@@ -8132,7 +8150,7 @@
                                 </Condition>
                                 <Conditions />
                               </Trigger>
-                              <Trigger Enabled="true" Sequential="True" Name="4th" Id="173d7b27-f71f-426a-abd5-c0a694ea8fb3" RegularExpression=":Brute Justice:4841:">
+                              <Trigger Enabled="true" Sequential="True" Name="4th" Id="173d7b27-f71f-426a-abd5-c0a694ea8fb3" RegularExpression=":Brute Justice:4841:" PeriodRefire="Deny" RefirePeriodExpression="1000">
                                 <Actions>
                                   <Action OrderNumber="1" LogMessageText="delay" LogLevel="-1" UseTTSTextExpression="Pass Nisi" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="UseTTS" ExecutionDelayExpression="3000">
                                     <Condition Enabled="false" Grouping="Or" />

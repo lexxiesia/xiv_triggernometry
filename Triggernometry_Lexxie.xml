@@ -2044,10 +2044,11 @@
                     </Actions>
                     <Condition Enabled="false" Grouping="Or" />
                   </Trigger>
-                  <Trigger Enabled="true" Name="Beyond Defense" Id="25ab59b9-732b-4d31-8ccb-e7baa14a1bbe" RegularExpression=":Omega-M:332C:Beyond Defense:.{8}:(?&lt;player&gt;[\w' ]+):">
+                  <Trigger Enabled="true" Name="Beyond Defense" Id="25ab59b9-732b-4d31-8ccb-e7baa14a1bbe" RegularExpression=":Omega-M:332C:Beyond Defense:.{8}:(?&lt;player&gt;[\w-' ]+):">
                     <Actions>
                       <Action OrderNumber="1" LogLevel="-1" UseTTSTextExpression="Don't stack" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="UseTTS">
                         <Condition Enabled="false" Grouping="Or" />
+                        <Conditions />
                       </Action>
                     </Actions>
                     <Condition Enabled="true" Grouping="And">
@@ -2195,15 +2196,16 @@
                         <Condition Enabled="true" Grouping="And">
                           <ConditionSingle Enabled="true" ExpressionL="${id}" ExpressionTypeL="String" ExpressionR="009D" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
                         </Condition>
+                        <Conditions />
                       </Action>
                       <Action OrderNumber="2" LogLevel="-1" UseTTSTextExpression="Back Right" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="UseTTS">
                         <Condition Enabled="true" Grouping="And">
                           <ConditionSingle Enabled="true" ExpressionL="${id}" ExpressionTypeL="String" ExpressionR="009C" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
                         </Condition>
+                        <Conditions />
                       </Action>
                     </Actions>
                     <Condition Enabled="true" Grouping="And">
-                      <ConditionSingle Enabled="true" ExpressionL="${player}" ExpressionTypeL="String" ExpressionR="${_ffxivplayer}" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
                       <ConditionSingle Enabled="true" ExpressionL="${dataPhase}" ExpressionTypeL="String" ExpressionR="finalOmega" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
                     </Condition>
                   </Trigger>
@@ -7602,7 +7604,7 @@
                           </Trigger>
                         </Triggers>
                       </Folder>
-                      <Folder Id="d4532eb1-137d-49a2-a32c-5d404fae2486" Name="Hand of Prayer/Parting" Enabled="true">
+                      <Folder FFXIVJobFilterEnabled="True" FFXIVJobFilter="70868271104" Id="d4532eb1-137d-49a2-a32c-5d404fae2486" Name="Hand of Prayer/Parting" Enabled="true">
                         <Folders />
                         <Triggers>
                           <Trigger Enabled="true" Name="Second Movement" Id="6e663f25-fc61-4677-b7a1-35d600d7ff4b" RegularExpression=":Liquid Rage:4829:" PeriodRefire="Deny" RefirePeriodExpression="1000">
@@ -7611,9 +7613,10 @@
                                 <Condition Enabled="true" Grouping="And">
                                   <ConditionSingle Enabled="true" ExpressionL="${var:swingCount}" ExpressionTypeL="Numeric" ExpressionR="3" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
                                 </Condition>
+                                <Conditions />
                               </Action>
                             </Actions>
-                            <Condition Enabled="true" Grouping="And">
+                            <Condition Enabled="false" Grouping="And">
                               <ConditionSingle Enabled="true" ExpressionL="${_ffxivplayer.role}" ExpressionTypeL="String" ExpressionR="Tank" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
                             </Condition>
                           </Trigger>
@@ -7623,9 +7626,10 @@
                                 <Condition Enabled="true" Grouping="And">
                                   <ConditionSingle Enabled="true" ExpressionL="${var:swingCount}" ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
                                 </Condition>
+                                <Conditions />
                               </Action>
                             </Actions>
-                            <Condition Enabled="true" Grouping="And">
+                            <Condition Enabled="false" Grouping="And">
                               <ConditionSingle Enabled="true" ExpressionL="${_ffxivplayer.role}" ExpressionTypeL="String" ExpressionR="Tank" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
                             </Condition>
                           </Trigger>
@@ -8166,121 +8170,119 @@
                                 <Actions>
                                   <Action OrderNumber="1" LogMessageText="delay" LogLevel="-1" UseTTSTextExpression="Pass Nisi" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="UseTTS" ExecutionDelayExpression="3000">
                                     <Condition Enabled="false" Grouping="Or" />
+                                    <Conditions />
                                   </Action>
-                                  <Action OrderNumber="2" TextAuraEffect="Bold" TextAuraFontSize="24" TextAuraForeground="#0080FF" TextAuraOutline="Black" TextAuraName="finalNisi" TextAuraExpression="Pass Nisi to ${var:dNisiAlpha}" TextAuraXIniExpression="${var:nisiX}" TextAuraYIniExpression="${var:nisiY}" TextAuraWIniExpression="${var:nisiWidth}" TextAuraHIniExpression="${var:nisiHeight}" TextAuraOIniExpression="${var:nisiOpacity}" TextAuraTTLTickExpression="10-${_since}" TextAuraUseOutline="True" TextAuraFontName="Microsoft Sans Serif" Enabled="False" ActionType="TextAura">
+                                  <Action OrderNumber="2" TextAuraEffect="Bold" TextAuraFontSize="24" TextAuraForeground="#0080FF" TextAuraOutline="Black" TextAuraName="finalNisi" TextAuraExpression="Pass Nisi to ${var:dNisiAlpha}" TextAuraXIniExpression="${var:nisiX}" TextAuraYIniExpression="${var:nisiY}" TextAuraWIniExpression="${var:nisiWidth}" TextAuraHIniExpression="${var:nisiHeight}" TextAuraOIniExpression="${var:nisiOpacity}" TextAuraTTLTickExpression="10-${_since}" TextAuraUseOutline="True" TextAuraFontName="Microsoft Sans Serif" ActionType="TextAura">
                                     <Condition Enabled="true" Grouping="And">
                                       <ConditionSingle Enabled="true" ExpressionL="${_ffxivparty[1].role}" ExpressionTypeL="String" ExpressionR="DPS" ExpressionTypeR="String" ConditionType="StringNotEqualCase" />
                                       <ConditionSingle Enabled="true" ExpressionL="${_ffxivparty[1].name}" ExpressionTypeL="String" ExpressionR="${var:nisiAlpha}" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
-                                      <ConditionSingle Enabled="true" ExpressionL="${var:waterThunder}" ExpressionTypeL="Numeric" ExpressionR="6" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
                                     </Condition>
+                                    <Conditions />
                                   </Action>
-                                  <Action OrderNumber="3" UseTTSTextExpression="Swap with ${var:dNisiBeta}" TextAuraEffect="Bold" TextAuraFontSize="24" TextAuraForeground="#FF8000" TextAuraOutline="Black" TextAuraName="finalNisi" TextAuraExpression="Pass Nisi to ${var:dNisiBeta}" TextAuraXIniExpression="${var:nisiX}" TextAuraYIniExpression="${var:nisiY}" TextAuraWIniExpression="${var:nisiWidth}" TextAuraHIniExpression="${var:nisiHeight}" TextAuraOIniExpression="${var:nisiOpacity}" TextAuraTTLTickExpression="10-${_since}" TextAuraUseOutline="True" TextAuraFontName="Microsoft Sans Serif" Enabled="False" ActionType="TextAura">
+                                  <Action OrderNumber="3" UseTTSTextExpression="Swap with ${var:dNisiBeta}" TextAuraEffect="Bold" TextAuraFontSize="24" TextAuraForeground="#FF8000" TextAuraOutline="Black" TextAuraName="finalNisi" TextAuraExpression="Pass Nisi to ${var:dNisiBeta}" TextAuraXIniExpression="${var:nisiX}" TextAuraYIniExpression="${var:nisiY}" TextAuraWIniExpression="${var:nisiWidth}" TextAuraHIniExpression="${var:nisiHeight}" TextAuraOIniExpression="${var:nisiOpacity}" TextAuraTTLTickExpression="10-${_since}" TextAuraUseOutline="True" TextAuraFontName="Microsoft Sans Serif" ActionType="TextAura">
                                     <Condition Enabled="true" Grouping="And">
                                       <ConditionSingle Enabled="true" ExpressionL="${_ffxivparty[1].role}" ExpressionTypeL="String" ExpressionR="DPS" ExpressionTypeR="String" ConditionType="StringNotEqualCase" />
                                       <ConditionSingle Enabled="true" ExpressionL="${_ffxivparty[1].name}" ExpressionTypeL="String" ExpressionR="${var:nisiBeta}" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
-                                      <ConditionSingle Enabled="true" ExpressionL="${var:waterThunder}" ExpressionTypeL="Numeric" ExpressionR="6" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
                                     </Condition>
+                                    <Conditions />
                                   </Action>
-                                  <Action OrderNumber="4" UseTTSTextExpression="Swap with ${var:dNisiGamma}" TextAuraEffect="Bold" TextAuraFontSize="24" TextAuraForeground="#8000FF" TextAuraOutline="Black" TextAuraName="finalNisi" TextAuraExpression="Pass Nisi to ${var:dNisiGamma}" TextAuraXIniExpression="${var:nisiX}" TextAuraYIniExpression="${var:nisiY}" TextAuraWIniExpression="${var:nisiWidth}" TextAuraHIniExpression="${var:nisiHeight}" TextAuraOIniExpression="${var:nisiOpacity}" TextAuraTTLTickExpression="10-${_since}" TextAuraUseOutline="True" TextAuraFontName="Microsoft Sans Serif" Enabled="False" ActionType="TextAura">
+                                  <Action OrderNumber="4" UseTTSTextExpression="Swap with ${var:dNisiGamma}" TextAuraEffect="Bold" TextAuraFontSize="24" TextAuraForeground="#8000FF" TextAuraOutline="Black" TextAuraName="finalNisi" TextAuraExpression="Pass Nisi to ${var:dNisiGamma}" TextAuraXIniExpression="${var:nisiX}" TextAuraYIniExpression="${var:nisiY}" TextAuraWIniExpression="${var:nisiWidth}" TextAuraHIniExpression="${var:nisiHeight}" TextAuraOIniExpression="${var:nisiOpacity}" TextAuraTTLTickExpression="10-${_since}" TextAuraUseOutline="True" TextAuraFontName="Microsoft Sans Serif" ActionType="TextAura">
                                     <Condition Enabled="true" Grouping="And">
                                       <ConditionSingle Enabled="true" ExpressionL="${_ffxivparty[1].role}" ExpressionTypeL="String" ExpressionR="DPS" ExpressionTypeR="String" ConditionType="StringNotEqualCase" />
                                       <ConditionSingle Enabled="true" ExpressionL="${_ffxivparty[1].name}" ExpressionTypeL="String" ExpressionR="${var:nisiGamma}" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
-                                      <ConditionSingle Enabled="true" ExpressionL="${var:waterThunder}" ExpressionTypeL="Numeric" ExpressionR="6" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
                                     </Condition>
+                                    <Conditions />
                                   </Action>
-                                  <Action OrderNumber="5" UseTTSTextExpression="Swap with ${var:dNisiDelta}" TextAuraEffect="Bold" TextAuraFontSize="24" TextAuraForeground="Lime" TextAuraOutline="Black" TextAuraName="finalNisi" TextAuraExpression="Pass Nisi to ${var:dNisiDelta}" TextAuraXIniExpression="${var:nisiX}" TextAuraYIniExpression="${var:nisiY}" TextAuraWIniExpression="${var:nisiWidth}" TextAuraHIniExpression="${var:nisiHeight}" TextAuraOIniExpression="${var:nisiOpacity}" TextAuraTTLTickExpression="10-${_since}" TextAuraUseOutline="True" TextAuraFontName="Microsoft Sans Serif" Enabled="False" ActionType="TextAura">
+                                  <Action OrderNumber="5" UseTTSTextExpression="Swap with ${var:dNisiDelta}" TextAuraEffect="Bold" TextAuraFontSize="24" TextAuraForeground="Lime" TextAuraOutline="Black" TextAuraName="finalNisi" TextAuraExpression="Pass Nisi to ${var:dNisiDelta}" TextAuraXIniExpression="${var:nisiX}" TextAuraYIniExpression="${var:nisiY}" TextAuraWIniExpression="${var:nisiWidth}" TextAuraHIniExpression="${var:nisiHeight}" TextAuraOIniExpression="${var:nisiOpacity}" TextAuraTTLTickExpression="10-${_since}" TextAuraUseOutline="True" TextAuraFontName="Microsoft Sans Serif" ActionType="TextAura">
                                     <Condition Enabled="true" Grouping="And">
                                       <ConditionSingle Enabled="true" ExpressionL="${_ffxivparty[1].role}" ExpressionTypeL="String" ExpressionR="DPS" ExpressionTypeR="String" ConditionType="StringNotEqualCase" />
                                       <ConditionSingle Enabled="true" ExpressionL="${_ffxivparty[1].name}" ExpressionTypeL="String" ExpressionR="${var:nisiDelta}" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
-                                      <ConditionSingle Enabled="true" ExpressionL="${var:waterThunder}" ExpressionTypeL="Numeric" ExpressionR="6" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
                                     </Condition>
+                                    <Conditions />
                                   </Action>
-                                  <Action OrderNumber="6" UseTTSTextExpression="Swap with ${var:sNisiAlpha}" TextAuraEffect="Bold" TextAuraFontSize="24" TextAuraForeground="#0080FF" TextAuraOutline="Black" TextAuraName="finalNisi" TextAuraExpression="Pass Nisi to ${var:sNisiAlpha}" TextAuraXIniExpression="${var:nisiX}" TextAuraYIniExpression="${var:nisiY}" TextAuraWIniExpression="${var:nisiWidth}" TextAuraHIniExpression="${var:nisiHeight}" TextAuraOIniExpression="${var:nisiOpacity}" TextAuraTTLTickExpression="10-${_since}" TextAuraUseOutline="True" TextAuraFontName="Microsoft Sans Serif" Enabled="False" ActionType="TextAura">
+                                  <Action OrderNumber="6" UseTTSTextExpression="Swap with ${var:sNisiAlpha}" TextAuraEffect="Bold" TextAuraFontSize="24" TextAuraForeground="#0080FF" TextAuraOutline="Black" TextAuraName="finalNisi" TextAuraExpression="Pass Nisi to ${var:sNisiAlpha}" TextAuraXIniExpression="${var:nisiX}" TextAuraYIniExpression="${var:nisiY}" TextAuraWIniExpression="${var:nisiWidth}" TextAuraHIniExpression="${var:nisiHeight}" TextAuraOIniExpression="${var:nisiOpacity}" TextAuraTTLTickExpression="10-${_since}" TextAuraUseOutline="True" TextAuraFontName="Microsoft Sans Serif" ActionType="TextAura">
                                     <Condition Enabled="true" Grouping="And">
                                       <ConditionSingle Enabled="true" ExpressionL="${_ffxivparty[1].role}" ExpressionTypeL="String" ExpressionR="DPS" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
                                       <ConditionSingle Enabled="true" ExpressionL="${_ffxivparty[1].name}" ExpressionTypeL="String" ExpressionR="${var:nisiAlpha}" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
-                                      <ConditionSingle Enabled="true" ExpressionL="${var:waterThunder}" ExpressionTypeL="Numeric" ExpressionR="6" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
                                     </Condition>
+                                    <Conditions />
                                   </Action>
-                                  <Action OrderNumber="7" UseTTSTextExpression="Swap with ${var:sNisiBeta}" TextAuraEffect="Bold" TextAuraFontSize="24" TextAuraForeground="#FF8000" TextAuraOutline="Black" TextAuraName="finalNisi" TextAuraExpression="Pass Nisi to ${var:sNisiBeta}" TextAuraXIniExpression="${var:nisiX}" TextAuraYIniExpression="${var:nisiY}" TextAuraWIniExpression="${var:nisiWidth}" TextAuraHIniExpression="${var:nisiHeight}" TextAuraOIniExpression="${var:nisiOpacity}" TextAuraTTLTickExpression="10-${_since}" TextAuraUseOutline="True" TextAuraFontName="Microsoft Sans Serif" Enabled="False" ActionType="TextAura">
+                                  <Action OrderNumber="7" UseTTSTextExpression="Swap with ${var:sNisiBeta}" TextAuraEffect="Bold" TextAuraFontSize="24" TextAuraForeground="#FF8000" TextAuraOutline="Black" TextAuraName="finalNisi" TextAuraExpression="Pass Nisi to ${var:sNisiBeta}" TextAuraXIniExpression="${var:nisiX}" TextAuraYIniExpression="${var:nisiY}" TextAuraWIniExpression="${var:nisiWidth}" TextAuraHIniExpression="${var:nisiHeight}" TextAuraOIniExpression="${var:nisiOpacity}" TextAuraTTLTickExpression="10-${_since}" TextAuraUseOutline="True" TextAuraFontName="Microsoft Sans Serif" ActionType="TextAura">
                                     <Condition Enabled="true" Grouping="And">
                                       <ConditionSingle Enabled="true" ExpressionL="${_ffxivparty[1].role}" ExpressionTypeL="String" ExpressionR="DPS" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
                                       <ConditionSingle Enabled="true" ExpressionL="${_ffxivparty[1].name}" ExpressionTypeL="String" ExpressionR="${var:nisiBeta}" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
-                                      <ConditionSingle Enabled="true" ExpressionL="${var:waterThunder}" ExpressionTypeL="Numeric" ExpressionR="6" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
                                     </Condition>
+                                    <Conditions />
                                   </Action>
-                                  <Action OrderNumber="8" UseTTSTextExpression="Swap with ${var:sNisiGamma}" TextAuraEffect="Bold" TextAuraFontSize="24" TextAuraForeground="#8000FF" TextAuraOutline="Black" TextAuraName="finalNisi" TextAuraExpression="Pass Nisi to ${var:sNisiGamma}" TextAuraXIniExpression="${var:nisiX}" TextAuraYIniExpression="${var:nisiY}" TextAuraWIniExpression="${var:nisiWidth}" TextAuraHIniExpression="${var:nisiHeight}" TextAuraOIniExpression="${var:nisiOpacity}" TextAuraTTLTickExpression="10-${_since}" TextAuraUseOutline="True" TextAuraFontName="Microsoft Sans Serif" Enabled="False" ActionType="TextAura">
+                                  <Action OrderNumber="8" UseTTSTextExpression="Swap with ${var:sNisiGamma}" TextAuraEffect="Bold" TextAuraFontSize="24" TextAuraForeground="#8000FF" TextAuraOutline="Black" TextAuraName="finalNisi" TextAuraExpression="Pass Nisi to ${var:sNisiGamma}" TextAuraXIniExpression="${var:nisiX}" TextAuraYIniExpression="${var:nisiY}" TextAuraWIniExpression="${var:nisiWidth}" TextAuraHIniExpression="${var:nisiHeight}" TextAuraOIniExpression="${var:nisiOpacity}" TextAuraTTLTickExpression="10-${_since}" TextAuraUseOutline="True" TextAuraFontName="Microsoft Sans Serif" ActionType="TextAura">
                                     <Condition Enabled="true" Grouping="And">
                                       <ConditionSingle Enabled="true" ExpressionL="${_ffxivparty[1].role}" ExpressionTypeL="String" ExpressionR="DPS" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
                                       <ConditionSingle Enabled="true" ExpressionL="${_ffxivparty[1].name}" ExpressionTypeL="String" ExpressionR="${var:nisiGamma}" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
-                                      <ConditionSingle Enabled="true" ExpressionL="${var:waterThunder}" ExpressionTypeL="Numeric" ExpressionR="6" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
                                     </Condition>
+                                    <Conditions />
                                   </Action>
-                                  <Action OrderNumber="9" UseTTSTextExpression="Swap with ${var:sNisiDelta}" TextAuraEffect="Bold" TextAuraFontSize="24" TextAuraForeground="Lime" TextAuraOutline="Black" TextAuraName="finalNisi" TextAuraExpression="Pass Nisi to ${var:sNisiDelta}" TextAuraXIniExpression="${var:nisiX}" TextAuraYIniExpression="${var:nisiY}" TextAuraWIniExpression="${var:nisiWidth}" TextAuraHIniExpression="${var:nisiHeight}" TextAuraOIniExpression="${var:nisiOpacity}" TextAuraTTLTickExpression="10-${_since}" TextAuraUseOutline="True" TextAuraFontName="Microsoft Sans Serif" Enabled="False" ActionType="TextAura">
+                                  <Action OrderNumber="9" UseTTSTextExpression="Swap with ${var:sNisiDelta}" TextAuraEffect="Bold" TextAuraFontSize="24" TextAuraForeground="Lime" TextAuraOutline="Black" TextAuraName="finalNisi" TextAuraExpression="Pass Nisi to ${var:sNisiDelta}" TextAuraXIniExpression="${var:nisiX}" TextAuraYIniExpression="${var:nisiY}" TextAuraWIniExpression="${var:nisiWidth}" TextAuraHIniExpression="${var:nisiHeight}" TextAuraOIniExpression="${var:nisiOpacity}" TextAuraTTLTickExpression="10-${_since}" TextAuraUseOutline="True" TextAuraFontName="Microsoft Sans Serif" ActionType="TextAura">
                                     <Condition Enabled="true" Grouping="And">
                                       <ConditionSingle Enabled="true" ExpressionL="${_ffxivparty[1].role}" ExpressionTypeL="String" ExpressionR="DPS" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
                                       <ConditionSingle Enabled="true" ExpressionL="${_ffxivparty[1].name}" ExpressionTypeL="String" ExpressionR="${var:nisiDelta}" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
-                                      <ConditionSingle Enabled="true" ExpressionL="${var:waterThunder}" ExpressionTypeL="Numeric" ExpressionR="6" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
                                     </Condition>
+                                    <Conditions />
                                   </Action>
-                                  <Action OrderNumber="10" UseTTSTextExpression="Swap with ${var:nisiAlpha}" TextAuraEffect="Bold" TextAuraFontSize="24" TextAuraForeground="#0080FF" TextAuraOutline="Black" TextAuraName="finalNisi" TextAuraExpression="Get Nisi from ${var:nisiAlpha}" TextAuraXIniExpression="${var:nisiX}" TextAuraYIniExpression="${var:nisiY}" TextAuraWIniExpression="${var:nisiWidth}" TextAuraHIniExpression="${var:nisiHeight}" TextAuraOIniExpression="${var:nisiOpacity}" TextAuraTTLTickExpression="10-${_since}" TextAuraUseOutline="True" TextAuraFontName="Microsoft Sans Serif" Enabled="False" ActionType="TextAura">
+                                  <Action OrderNumber="10" UseTTSTextExpression="Swap with ${var:nisiAlpha}" TextAuraEffect="Bold" TextAuraFontSize="24" TextAuraForeground="#0080FF" TextAuraOutline="Black" TextAuraName="finalNisi" TextAuraExpression="Get Nisi from ${var:nisiAlpha}" TextAuraXIniExpression="${var:nisiX}" TextAuraYIniExpression="${var:nisiY}" TextAuraWIniExpression="${var:nisiWidth}" TextAuraHIniExpression="${var:nisiHeight}" TextAuraOIniExpression="${var:nisiOpacity}" TextAuraTTLTickExpression="10-${_since}" TextAuraUseOutline="True" TextAuraFontName="Microsoft Sans Serif" ActionType="TextAura">
                                     <Condition Enabled="true" Grouping="Or">
                                       <ConditionGroup Enabled="true" Grouping="And">
                                         <ConditionSingle Enabled="true" ExpressionL="${_ffxiventity[${var:nisiAlpha}].role}" ExpressionTypeL="String" ExpressionR="DPS" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
                                         <ConditionSingle Enabled="true" ExpressionL="${_ffxivparty[1].name}" ExpressionTypeL="String" ExpressionR="${var:sNisiAlpha}" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
-                                        <ConditionSingle Enabled="true" ExpressionL="${var:waterThunder}" ExpressionTypeL="Numeric" ExpressionR="6" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
                                       </ConditionGroup>
                                       <ConditionGroup Enabled="true" Grouping="And">
                                         <ConditionSingle Enabled="true" ExpressionL="${_ffxiventity[${var:nisiAlpha}].role}" ExpressionTypeL="String" ExpressionR="DPS" ExpressionTypeR="String" ConditionType="StringNotEqualNocase" />
                                         <ConditionSingle Enabled="true" ExpressionL="${_ffxivparty[1].name}" ExpressionTypeL="String" ExpressionR="${var:dNisiAlpha}" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
-                                        <ConditionSingle Enabled="true" ExpressionL="${var:waterThunder}" ExpressionTypeL="Numeric" ExpressionR="6" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
                                       </ConditionGroup>
                                     </Condition>
+                                    <Conditions />
                                   </Action>
-                                  <Action OrderNumber="11" UseTTSTextExpression="Swap with ${var:nisiBeta}" TextAuraEffect="Bold" TextAuraFontSize="24" TextAuraForeground="#FF8000" TextAuraOutline="Black" TextAuraName="finalNisi" TextAuraExpression="Get Nisi from ${var:nisiBeta}" TextAuraXIniExpression="${var:nisiX}" TextAuraYIniExpression="${var:nisiY}" TextAuraWIniExpression="${var:nisiWidth}" TextAuraHIniExpression="${var:nisiHeight}" TextAuraOIniExpression="${var:nisiOpacity}" TextAuraTTLTickExpression="10-${_since}" TextAuraUseOutline="True" TextAuraFontName="Microsoft Sans Serif" Enabled="False" ActionType="TextAura">
+                                  <Action OrderNumber="11" UseTTSTextExpression="Swap with ${var:nisiBeta}" TextAuraEffect="Bold" TextAuraFontSize="24" TextAuraForeground="#FF8000" TextAuraOutline="Black" TextAuraName="finalNisi" TextAuraExpression="Get Nisi from ${var:nisiBeta}" TextAuraXIniExpression="${var:nisiX}" TextAuraYIniExpression="${var:nisiY}" TextAuraWIniExpression="${var:nisiWidth}" TextAuraHIniExpression="${var:nisiHeight}" TextAuraOIniExpression="${var:nisiOpacity}" TextAuraTTLTickExpression="10-${_since}" TextAuraUseOutline="True" TextAuraFontName="Microsoft Sans Serif" ActionType="TextAura">
                                     <Condition Enabled="true" Grouping="Or">
                                       <ConditionGroup Enabled="true" Grouping="And">
                                         <ConditionSingle Enabled="true" ExpressionL="${_ffxiventity[${var:nisiBeta}].role}" ExpressionTypeL="String" ExpressionR="DPS" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
                                         <ConditionSingle Enabled="true" ExpressionL="${_ffxivparty[1].name}" ExpressionTypeL="String" ExpressionR="${var:sNisiBeta}" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
-                                        <ConditionSingle Enabled="true" ExpressionL="${var:waterThunder}" ExpressionTypeL="Numeric" ExpressionR="6" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
                                       </ConditionGroup>
                                       <ConditionGroup Enabled="true" Grouping="And">
                                         <ConditionSingle Enabled="true" ExpressionL="${_ffxiventity[${var:nisiBeta}].role}" ExpressionTypeL="String" ExpressionR="DPS" ExpressionTypeR="String" ConditionType="StringNotEqualNocase" />
                                         <ConditionSingle Enabled="true" ExpressionL="${_ffxivparty[1].name}" ExpressionTypeL="String" ExpressionR="${var:dNisiBeta}" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
-                                        <ConditionSingle Enabled="true" ExpressionL="${var:waterThunder}" ExpressionTypeL="Numeric" ExpressionR="6" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
                                       </ConditionGroup>
                                     </Condition>
+                                    <Conditions />
                                   </Action>
-                                  <Action OrderNumber="12" UseTTSTextExpression="Swap with ${var:nisiGamma}" TextAuraEffect="Bold" TextAuraFontSize="24" TextAuraForeground="#8000FF" TextAuraOutline="Black" TextAuraName="finalNisi" TextAuraExpression="Get Nisi from ${var:nisiGamma}" TextAuraXIniExpression="${var:nisiX}" TextAuraYIniExpression="${var:nisiY}" TextAuraWIniExpression="${var:nisiWidth}" TextAuraHIniExpression="${var:nisiHeight}" TextAuraOIniExpression="${var:nisiOpacity}" TextAuraTTLTickExpression="10-${_since}" TextAuraUseOutline="True" TextAuraFontName="Microsoft Sans Serif" Enabled="False" ActionType="TextAura">
+                                  <Action OrderNumber="12" UseTTSTextExpression="Swap with ${var:nisiGamma}" TextAuraEffect="Bold" TextAuraFontSize="24" TextAuraForeground="#8000FF" TextAuraOutline="Black" TextAuraName="finalNisi" TextAuraExpression="Get Nisi from ${var:nisiGamma}" TextAuraXIniExpression="${var:nisiX}" TextAuraYIniExpression="${var:nisiY}" TextAuraWIniExpression="${var:nisiWidth}" TextAuraHIniExpression="${var:nisiHeight}" TextAuraOIniExpression="${var:nisiOpacity}" TextAuraTTLTickExpression="10-${_since}" TextAuraUseOutline="True" TextAuraFontName="Microsoft Sans Serif" ActionType="TextAura">
                                     <Condition Enabled="true" Grouping="Or">
                                       <ConditionGroup Enabled="true" Grouping="And">
                                         <ConditionSingle Enabled="true" ExpressionL="${_ffxiventity[${var:nisiGamma}].role}" ExpressionTypeL="String" ExpressionR="DPS" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
                                         <ConditionSingle Enabled="true" ExpressionL="${_ffxivparty[1].name}" ExpressionTypeL="String" ExpressionR="${var:sNisiGamma}" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
-                                        <ConditionSingle Enabled="true" ExpressionL="${var:waterThunder}" ExpressionTypeL="Numeric" ExpressionR="6" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
                                       </ConditionGroup>
                                       <ConditionGroup Enabled="true" Grouping="And">
                                         <ConditionSingle Enabled="true" ExpressionL="${_ffxiventity[${var:nisiGamma}].role}" ExpressionTypeL="String" ExpressionR="DPS" ExpressionTypeR="String" ConditionType="StringNotEqualNocase" />
                                         <ConditionSingle Enabled="true" ExpressionL="${_ffxivparty[1].name}" ExpressionTypeL="String" ExpressionR="${var:dNisiGamma}" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
-                                        <ConditionSingle Enabled="true" ExpressionL="${var:waterThunder}" ExpressionTypeL="Numeric" ExpressionR="6" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
                                       </ConditionGroup>
                                     </Condition>
+                                    <Conditions />
                                   </Action>
-                                  <Action OrderNumber="13" UseTTSTextExpression="Swap with ${var:nisiDelta}" TextAuraEffect="Bold" TextAuraFontSize="24" TextAuraForeground="Lime" TextAuraOutline="Black" TextAuraName="finalNisi" TextAuraExpression="Get Nisi from ${var:nisiDelta}" TextAuraXIniExpression="${var:nisiX}" TextAuraYIniExpression="${var:nisiY}" TextAuraWIniExpression="${var:nisiWidth}" TextAuraHIniExpression="${var:nisiHeight}" TextAuraOIniExpression="${var:nisiOpacity}" TextAuraTTLTickExpression="10-${_since}" TextAuraUseOutline="True" TextAuraFontName="Microsoft Sans Serif" Enabled="False" ActionType="TextAura">
+                                  <Action OrderNumber="13" UseTTSTextExpression="Swap with ${var:nisiDelta}" TextAuraEffect="Bold" TextAuraFontSize="24" TextAuraForeground="Lime" TextAuraOutline="Black" TextAuraName="finalNisi" TextAuraExpression="Get Nisi from ${var:nisiDelta}" TextAuraXIniExpression="${var:nisiX}" TextAuraYIniExpression="${var:nisiY}" TextAuraWIniExpression="${var:nisiWidth}" TextAuraHIniExpression="${var:nisiHeight}" TextAuraOIniExpression="${var:nisiOpacity}" TextAuraTTLTickExpression="10-${_since}" TextAuraUseOutline="True" TextAuraFontName="Microsoft Sans Serif" ActionType="TextAura">
                                     <Condition Enabled="true" Grouping="Or">
                                       <ConditionGroup Enabled="true" Grouping="And">
                                         <ConditionSingle Enabled="true" ExpressionL="${_ffxiventity[${var:nisiDelta}].role}" ExpressionTypeL="String" ExpressionR="DPS" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
                                         <ConditionSingle Enabled="true" ExpressionL="${_ffxivparty[1].name}" ExpressionTypeL="String" ExpressionR="${var:sNisiDelta}" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
-                                        <ConditionSingle Enabled="true" ExpressionL="${var:waterThunder}" ExpressionTypeL="Numeric" ExpressionR="6" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
                                       </ConditionGroup>
                                       <ConditionGroup Enabled="true" Grouping="And">
                                         <ConditionSingle Enabled="true" ExpressionL="${_ffxiventity[${var:nisiDelta}].role}" ExpressionTypeL="String" ExpressionR="DPS" ExpressionTypeR="String" ConditionType="StringNotEqualNocase" />
                                         <ConditionSingle Enabled="true" ExpressionL="${_ffxivparty[1].name}" ExpressionTypeL="String" ExpressionR="${var:dNisiDelta}" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
-                                        <ConditionSingle Enabled="true" ExpressionL="${var:waterThunder}" ExpressionTypeL="Numeric" ExpressionR="6" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
                                       </ConditionGroup>
                                     </Condition>
+                                    <Conditions />
                                   </Action>
-                                  <Action OrderNumber="14" LogLevel="-1" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" TriggerId="af224b88-c352-4077-9b8d-560be4672e2e" TriggerForce="regexp" ActionType="Trigger">
+                                  <Action OrderNumber="14" LogLevel="-1" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" TriggerId="af224b88-c352-4077-9b8d-560be4672e2e" TriggerForce="regexp" Enabled="False" ActionType="Trigger">
                                     <Condition Enabled="false" Grouping="Or" />
+                                    <Conditions />
                                   </Action>
                                 </Actions>
                                 <Condition Enabled="true" Grouping="And">
@@ -8598,10 +8600,11 @@
                         <Actions>
                           <Action OrderNumber="1" UseTTSTextExpression="Mines" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="UseTTS">
                             <Condition Enabled="false" Grouping="Or" />
+                            <Conditions />
                           </Action>
                         </Actions>
                         <Condition Enabled="true" Grouping="And">
-                          <ConditionSingle Enabled="true" ExpressionL="${_ffxivplayer.role}" ExpressionTypeL="String" ExpressionR="Tank" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
+                          <ConditionSingle Enabled="true" ExpressionL="${_ffxivparty[1].role}" ExpressionTypeL="String" ExpressionR="Tank" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
                         </Condition>
                       </Trigger>
                       <Trigger Enabled="true" Name="Plasma Shield" Id="cf540e2e-233f-49ba-84a2-4f89bd132fec" RegularExpression=":Cruise Chaser:4833:" PeriodRefire="Deny" RefirePeriodExpression="1000">
@@ -8626,6 +8629,7 @@
                         <Actions>
                           <Action OrderNumber="1" PlaySoundFileExpression="https://raw.githubusercontent.com/lexxiesia/xiv_triggernometry/master/resources/wav/arthars/superjump.wav" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="PlaySound">
                             <Condition Enabled="false" Grouping="Or" />
+                            <Conditions />
                           </Action>
                         </Actions>
                         <Condition Enabled="false" Grouping="Or">
@@ -8664,6 +8668,7 @@
                             <Condition Enabled="false" Grouping="And">
                               <ConditionSingle Enabled="true" ExpressionL="${_ffxivplayer}" ExpressionTypeL="String" ExpressionR="${var:cruiseTank}" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
                             </Condition>
+                            <Conditions />
                           </Action>
                         </Actions>
                         <Condition Enabled="true" Grouping="And">
@@ -11217,69 +11222,77 @@
                   </Folder>
                 </Folders>
                 <Triggers>
-                  <Trigger Enabled="true" Name="Shadow Spread" Id="8bba2266-8299-455a-987a-a9db6a3a1e41" RegularExpression="14:47A8:Hades starts using Shadow Spread">
+                  <Trigger Enabled="true" Name="Shadow Spread" Id="8bba2266-8299-455a-987a-a9db6a3a1e41" RegularExpression="14:47A8:Hades">
                     <Actions>
                       <Action OrderNumber="1" UseTTSTextExpression="Positions" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="UseTTS">
                         <Condition Enabled="false" Grouping="Or" />
+                        <Conditions />
                       </Action>
                       <Action OrderNumber="2" UseTTSTextExpression="Move" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="UseTTS" ExecutionDelayExpression="5500">
                         <Condition Enabled="false" Grouping="Or" />
+                        <Conditions />
                       </Action>
                     </Actions>
                     <Condition Enabled="false" Grouping="Or" />
                   </Trigger>
-                  <Trigger Enabled="true" Name="Shade Proximity" Id="94b9cfff-8729-454f-96a6-d2e9766470b0" RegularExpression="23:[0-9A-F]:(?:Igeyorhm's Shade|Lahabrea's Shade):[0-9A-F]:(?:Igeyorhm's Shade|Lahabrea's Shade):.{4}:.{4}:000E:" PeriodRefire="Deny" RefirePeriodExpression="10000">
+                  <Trigger Enabled="true" Name="Shade Proximity" Id="94b9cfff-8729-454f-96a6-d2e9766470b0" RegularExpression="23:[0-9A-F]{8}:(?:Igeyorhm's Shade|Lahabrea's Shade):[0-9A-F]{8}:(?:Igeyorhm's Shade|Lahabrea's Shade):.{4}:.{4}:000E:" PeriodRefire="Deny" RefirePeriodExpression="10000">
                     <Actions>
                       <Action OrderNumber="1" UseTTSTextExpression="Move Shades" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="UseTTS">
                         <Condition Enabled="false" Grouping="Or" />
+                        <Conditions />
                       </Action>
                     </Actions>
                     <Condition Enabled="true" Grouping="And">
                       <ConditionSingle Enabled="true" ExpressionL="${_ffxivplayer.role}" ExpressionTypeL="String" ExpressionR="Tank" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
                     </Condition>
                   </Trigger>
-                  <Trigger Enabled="true" Name="Burning Brand" Id="75d8dbde-0962-4a58-8b21-eaa9f0deaa7d" RegularExpression="1A:[0-9A-F]:(?&lt;name&gt;[\w-' ]+) gains the effect of Burning Brand">
+                  <Trigger Enabled="true" Name="Burning Brand" Id="75d8dbde-0962-4a58-8b21-eaa9f0deaa7d" RegularExpression="1A:[0-9A-F]{8}:(?&lt;name&gt;[\w-' ]+) gains the effect of Burning Brand">
                     <Actions>
                       <Action OrderNumber="1" UseTTSTextExpression="Attack Igeyorhm" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="UseTTS">
                         <Condition Enabled="false" Grouping="Or" />
+                        <Conditions />
                       </Action>
                     </Actions>
                     <Condition Enabled="true" Grouping="And">
                       <ConditionSingle Enabled="true" ExpressionL="${name}" ExpressionTypeL="String" ExpressionR="${_ffxivplayer}" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
                     </Condition>
                   </Trigger>
-                  <Trigger Enabled="true" Name="Freezing Brand" Id="a0c326f8-d1f7-4896-9fc3-c99735f4458f" RegularExpression="1A:[0-9A-F]:(?&lt;name&gt;[\w-' ]+) gains the effect of Freezing Brand">
+                  <Trigger Enabled="true" Name="Freezing Brand" Id="a0c326f8-d1f7-4896-9fc3-c99735f4458f" RegularExpression="1A:[0-9A-F]{8}:(?&lt;name&gt;[\w-' ]+) gains the effect of Freezing Brand">
                     <Actions>
                       <Action OrderNumber="1" UseTTSTextExpression="Attack Lahabrea" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="UseTTS">
                         <Condition Enabled="false" Grouping="Or" />
+                        <Conditions />
                       </Action>
                     </Actions>
                     <Condition Enabled="true" Grouping="And">
                       <ConditionSingle Enabled="true" ExpressionL="${name}" ExpressionTypeL="String" ExpressionR="${_ffxivplayer}" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
                     </Condition>
                   </Trigger>
-                  <Trigger Enabled="true" Name="Captivity" Id="9cccd884-0c7e-428e-a246-24940e225323" RegularExpression="1B:[0-9A-F]:(?&lt;name&gt;[\w-' ]+):.{4}:.{4}:0078:">
+                  <Trigger Enabled="true" Name="Captivity" Id="9cccd884-0c7e-428e-a246-24940e225323" RegularExpression="1B:[0-9A-F]{8}:(?&lt;name&gt;[\w-' ]+):.{4}:.{4}:0078:">
                     <Actions>
                       <Action OrderNumber="1" UseTTSTextExpression="Move Out" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="UseTTS">
                         <Condition Enabled="false" Grouping="Or" />
+                        <Conditions />
                       </Action>
                     </Actions>
                     <Condition Enabled="true" Grouping="And">
                       <ConditionSingle Enabled="true" ExpressionL="${name}" ExpressionTypeL="String" ExpressionR="${_ffxivplayer}" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
                     </Condition>
                   </Trigger>
-                  <Trigger Enabled="true" Name="Shadow Stream" Id="314060a5-1fc6-4956-81ee-4b06d3b8bb97" RegularExpression="14:47EA:Hades starts using Shadow Stream">
+                  <Trigger Enabled="true" Name="Shadow Stream" Id="314060a5-1fc6-4956-81ee-4b06d3b8bb97" RegularExpression="14:47EA:Hades">
                     <Actions>
                       <Action OrderNumber="1" UseTTSTextExpression="Sides" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="UseTTS">
                         <Condition Enabled="false" Grouping="Or" />
+                        <Conditions />
                       </Action>
                     </Actions>
                     <Condition Enabled="false" Grouping="Or" />
                   </Trigger>
-                  <Trigger Enabled="true" Name="Polydegmon's Purgation" Id="c8333566-d13b-4f99-b3d0-8269abdad0ac" RegularExpression="14:47EB:Hades starts using Polydegmon's Purgation">
+                  <Trigger Enabled="true" Name="Polydegmon's Purgation" Id="c8333566-d13b-4f99-b3d0-8269abdad0ac" RegularExpression="14:47EB:Hades">
                     <Actions>
                       <Action OrderNumber="1" UseTTSTextExpression="Front center" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="UseTTS">
                         <Condition Enabled="false" Grouping="Or" />
+                        <Conditions />
                       </Action>
                     </Actions>
                     <Condition Enabled="false" Grouping="Or" />
@@ -11387,18 +11400,20 @@
                       <Folder Id="9bc6ad98-0d2e-487e-828a-033d520f50f0" Name="Starbirth Reset" Enabled="true">
                         <Folders />
                         <Triggers>
-                          <Trigger Enabled="true" Name="Shadowreaver" Id="71240a79-9643-44c7-bce3-40f70ed2da52" RegularExpression="14:3EEA:Innocence starts using Shadowreaver">
+                          <Trigger Enabled="true" Name="Shadowreaver" Id="71240a79-9643-44c7-bce3-40f70ed2da52" RegularExpression="14:3EEA:Innocence">
                             <Actions>
                               <Action OrderNumber="1" VariableName="starbirthActive" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Variable">
                                 <Condition Enabled="false" Grouping="Or" />
+                                <Conditions />
                               </Action>
                             </Actions>
                             <Condition Enabled="false" Grouping="Or" />
                           </Trigger>
-                          <Trigger Enabled="true" Name="Beatific Vision" Id="62af0a8e-15a4-495c-a147-24b5f4482a0e" RegularExpression="14:3EEE:Innocence starts using Beatific Vision">
+                          <Trigger Enabled="true" Name="Beatific Vision" Id="62af0a8e-15a4-495c-a147-24b5f4482a0e" RegularExpression="14:3EEE:Innocence">
                             <Actions>
                               <Action OrderNumber="1" VariableName="starbirthActive" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Variable">
                                 <Condition Enabled="false" Grouping="Or" />
+                                <Conditions />
                               </Action>
                             </Actions>
                             <Condition Enabled="false" Grouping="Or" />
@@ -11407,13 +11422,15 @@
                       </Folder>
                     </Folders>
                     <Triggers>
-                      <Trigger Enabled="true" Name="Starbirth Counter" Id="8fca40f9-39d5-4f64-aa37-1094da58b05f" RegularExpression="14:3EEF:Innocence starts using Starbirth">
+                      <Trigger Enabled="true" Name="Starbirth Counter" Id="8fca40f9-39d5-4f64-aa37-1094da58b05f" RegularExpression="14:3EEF:Innocence">
                         <Actions>
                           <Action OrderNumber="1" VariableOp="SetNumeric" VariableName="starbirthCount" VariableExpression="${var:starbirthCount}+1" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Variable">
                             <Condition Enabled="false" Grouping="Or" />
+                            <Conditions />
                           </Action>
                           <Action OrderNumber="2" VariableOp="SetString" VariableName="starbirthActive" VariableExpression="true" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Variable">
                             <Condition Enabled="false" Grouping="Or" />
+                            <Conditions />
                           </Action>
                         </Actions>
                         <Condition Enabled="false" Grouping="Or" />
@@ -11432,10 +11449,11 @@
                         </Actions>
                         <Condition Enabled="false" Grouping="Or" />
                       </Trigger>
-                      <Trigger Enabled="true" Name="Light Pillar Counter" Id="8b395ae4-f285-4feb-b874-fd6fd4c4cc9f" RegularExpression="15:[0-9A-F]:Innocence:38FC:[^:]*:[0-9A-F]:(?&lt;name&gt;[\w-' ]+):">
+                      <Trigger Enabled="true" Name="Light Pillar Counter" Id="8b395ae4-f285-4feb-b874-fd6fd4c4cc9f" RegularExpression="15:[0-9A-F]{8}:Innocence:38FC:[^:]*:[0-9A-F]:(?&lt;name&gt;[\w-' ]+):">
                         <Actions>
                           <Action OrderNumber="1" VariableOp="SetNumeric" VariableName="lightPillar" VariableExpression="${var:lightPillar}+1" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Variable">
                             <Condition Enabled="false" Grouping="Or" />
+                            <Conditions />
                           </Action>
                         </Actions>
                         <Condition Enabled="false" Grouping="Or" />
@@ -11444,107 +11462,121 @@
                   </Folder>
                 </Folders>
                 <Triggers>
-                  <Trigger Enabled="true" Name="Reprobation Swords" Id="6e2e4ac1-16e7-40b7-8b57-885b98e910f8" RegularExpression="14:3EDC:Innocence starts using Rightful Reprobation">
+                  <Trigger Enabled="true" Name="Reprobation Swords" Id="6e2e4ac1-16e7-40b7-8b57-885b98e910f8" RegularExpression="14:3EDC:Innocence">
                     <Actions>
                       <Action OrderNumber="1" UseTTSTextExpression="Swords" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="UseTTS" ExecutionDelayExpression="7000">
                         <Condition Enabled="false" Grouping="Or" />
+                        <Conditions />
                       </Action>
                     </Actions>
                     <Condition Enabled="false" Grouping="Or" />
                   </Trigger>
-                  <Trigger Enabled="true" Name="Starbirth" Id="64102693-91d7-4fa9-8973-ed6d51ac14bc" RegularExpression="14:3EEF:Innocence starts using Starbirth">
+                  <Trigger Enabled="true" Name="Starbirth" Id="64102693-91d7-4fa9-8973-ed6d51ac14bc" RegularExpression="14:3EEF:Innocence">
                     <Actions>
                       <Action OrderNumber="1" UseTTSTextExpression="Corner" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="UseTTS">
                         <Condition Enabled="true" Grouping="And">
                           <ConditionSingle Enabled="true" ExpressionL="${var:starbirthCount}" ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
                         </Condition>
+                        <Conditions />
                       </Action>
                       <Action OrderNumber="2" UseTTSTextExpression="Avoid &amp; Charge" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="UseTTS">
                         <Condition Enabled="true" Grouping="Or">
                           <ConditionSingle Enabled="true" ExpressionL="${var:starbirthCount}" ExpressionTypeL="Numeric" ExpressionR="2" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
                           <ConditionSingle Enabled="true" ExpressionL="${var:starbirthCount}" ExpressionTypeL="Numeric" ExpressionR="5" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
                         </Condition>
+                        <Conditions />
                       </Action>
                       <Action OrderNumber="3" UseTTSTextExpression="Explode" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="UseTTS">
                         <Condition Enabled="true" Grouping="And">
                           <ConditionSingle Enabled="true" ExpressionL="${var:starbirthCount}" ExpressionTypeL="Numeric" ExpressionR="3" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
                         </Condition>
+                        <Conditions />
                       </Action>
                       <Action OrderNumber="4" UseTTSTextExpression="Charge" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="UseTTS">
                         <Condition Enabled="true" Grouping="And">
                           <ConditionSingle Enabled="true" ExpressionL="${var:starbirthCount}" ExpressionTypeL="Numeric" ExpressionR="4" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
                         </Condition>
+                        <Conditions />
                       </Action>
                       <Action OrderNumber="5" UseTTSTextExpression="Enrage" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="UseTTS">
                         <Condition Enabled="true" Grouping="And">
                           <ConditionSingle Enabled="true" ExpressionL="${var:starbirthCount}" ExpressionTypeL="Numeric" ExpressionR="6" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
                         </Condition>
+                        <Conditions />
                       </Action>
                     </Actions>
                     <Condition Enabled="false" Grouping="Or" />
                   </Trigger>
-                  <Trigger Enabled="true" Name="Light Pillar" Id="1587fb21-233e-40ff-bbe5-b65cd0790f01" RegularExpression="15:[0-9A-F]:Innocence:38FC:[^:]*:[0-9A-F]:(?&lt;name&gt;[\w-' ]+):">
+                  <Trigger Enabled="true" Name="Light Pillar" Id="1587fb21-233e-40ff-bbe5-b65cd0790f01" RegularExpression="15:[0-9A-F]{8}:Innocence:38FC:[^:]*:[0-9A-F]:(?&lt;name&gt;[\w-' ]+):">
                     <Actions>
                       <Action OrderNumber="1" UseTTSTextExpression="Avoid Starbirth" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="UseTTS">
                         <Condition Enabled="true" Grouping="And">
                           <ConditionSingle Enabled="true" ExpressionL="${var:lightPillar}" ExpressionTypeL="Numeric" ExpressionR="3" ExpressionTypeR="Numeric" ConditionType="NumericNotEqual" />
                           <ConditionSingle Enabled="true" ExpressionL="${name}" ExpressionTypeL="String" ExpressionR="${_ffxivplayer}" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
                         </Condition>
+                        <Conditions />
                       </Action>
                       <Action OrderNumber="2" UseTTSTextExpression="Aim at Starbirth" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="UseTTS">
                         <Condition Enabled="true" Grouping="And">
                           <ConditionSingle Enabled="true" ExpressionL="${var:lightPillar}" ExpressionTypeL="Numeric" ExpressionR="3" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
                           <ConditionSingle Enabled="true" ExpressionL="${name}" ExpressionTypeL="String" ExpressionR="${_ffxivplayer}" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
                         </Condition>
+                        <Conditions />
                       </Action>
                       <Action OrderNumber="3" UseTTSTextExpression="Line stack" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="UseTTS">
                         <Condition Enabled="true" Grouping="And">
                           <ConditionSingle Enabled="true" ExpressionL="${name}" ExpressionTypeL="String" ExpressionR="${_ffxivplayer}" ExpressionTypeR="String" ConditionType="StringNotEqualNocase" />
                         </Condition>
+                        <Conditions />
                       </Action>
                     </Actions>
                     <Condition Enabled="false" Grouping="And" />
                   </Trigger>
-                  <Trigger Enabled="true" Name="Winged Reprobation Tether" Id="0aba6889-8529-45f1-9017-201cb8d54009" RegularExpression="1B:[0-9A-F]:(?&lt;name&gt;[\w-' ]+):.{4}:.{4}:00AC:">
+                  <Trigger Enabled="true" Name="Winged Reprobation Tether" Id="0aba6889-8529-45f1-9017-201cb8d54009" RegularExpression="1B:[0-9A-F]{8}:(?&lt;name&gt;[\w-' ]+):.{4}:.{4}:00AC:">
                     <Actions>
                       <Action OrderNumber="1" UseTTSTextExpression="Tether" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="UseTTS">
                         <Condition Enabled="false" Grouping="Or" />
+                        <Conditions />
                       </Action>
                     </Actions>
                     <Condition Enabled="true" Grouping="And">
                       <ConditionSingle Enabled="true" ExpressionL="${name}" ExpressionTypeL="String" ExpressionR="${_ffxivplayer}" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
                     </Condition>
                   </Trigger>
-                  <Trigger Enabled="true" Name="Drop of Light" Id="886ab3b6-803b-42a6-aa5c-f0e0706eb762" RegularExpression="1B:[0-9A-F]:(?&lt;name&gt;[\w-' ]+):.{4}:.{4}:008A:">
+                  <Trigger Enabled="true" Name="Drop of Light" Id="886ab3b6-803b-42a6-aa5c-f0e0706eb762" RegularExpression="1B:[0-9A-F]{8}:(?&lt;name&gt;[\w-' ]+):.{4}:.{4}:008A:">
                     <Actions>
                       <Action OrderNumber="1" UseTTSTextExpression="Marked, avoid Starbirth" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="UseTTS">
                         <Condition Enabled="true" Grouping="And">
                           <ConditionSingle Enabled="true" ExpressionL="${var:starbirthActive}" ExpressionTypeL="String" ExpressionR="true" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
                         </Condition>
+                        <Conditions />
                       </Action>
                       <Action OrderNumber="2" UseTTSTextExpression="Marked" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="UseTTS">
                         <Condition Enabled="true" Grouping="And">
                           <ConditionSingle Enabled="true" ExpressionL="${evar:starbirthActive}" ExpressionTypeL="Numeric" ExpressionR="0" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
                         </Condition>
+                        <Conditions />
                       </Action>
                     </Actions>
                     <Condition Enabled="true" Grouping="And">
                       <ConditionSingle Enabled="true" ExpressionL="${name}" ExpressionTypeL="String" ExpressionR="${_ffxivplayer}" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
                     </Condition>
                   </Trigger>
-                  <Trigger Enabled="true" Name="Rotation" Id="ac91b7db-a2b5-4d3a-9cf8-afde2fce066c" RegularExpression="14:(?&lt;id&gt;[0-9A-F]{4}):Innocence starts using" PeriodRefire="Deny" RefirePeriodExpression="1000">
+                  <Trigger Enabled="true" Name="Rotation" Id="ac91b7db-a2b5-4d3a-9cf8-afde2fce066c" RegularExpression="14:(?&lt;id&gt;3ED[3579]):Innocence starts using" PeriodRefire="Deny" RefirePeriodExpression="1000">
                     <Actions>
                       <Action OrderNumber="1" UseTTSTextExpression="Rotate left" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="UseTTS">
                         <Condition Enabled="true" Grouping="Or">
                           <ConditionSingle Enabled="true" ExpressionL="${id}" ExpressionTypeL="String" ExpressionR="3ED7" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
                           <ConditionSingle Enabled="true" ExpressionL="${id}" ExpressionTypeL="String" ExpressionR="3ED3" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
                         </Condition>
+                        <Conditions />
                       </Action>
                       <Action OrderNumber="2" UseTTSTextExpression="Rotate right" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="UseTTS">
                         <Condition Enabled="true" Grouping="Or">
                           <ConditionSingle Enabled="true" ExpressionL="${id}" ExpressionTypeL="String" ExpressionR="3ED9" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
                           <ConditionSingle Enabled="true" ExpressionL="${id}" ExpressionTypeL="String" ExpressionR="3ED5" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
                         </Condition>
+                        <Conditions />
                       </Action>
                     </Actions>
                     <Condition Enabled="false" Grouping="Or" />
@@ -11554,18 +11586,20 @@
               <Folder ZoneFilterEnabled="True" Id="be7a8a88-6786-46e3-b471-2a1a9de3a386" ZoneFilterRegularExpression="^Cinder Drift \(Extreme\)$" Name="Ruby Weapon" Enabled="true">
                 <Folders />
                 <Triggers>
-                  <Trigger Enabled="true" Name="Negative Aura" Id="7db7feb8-8c48-4bbc-9937-80d3779b0968" RegularExpression="14:4AFE:The Ruby Weapon starts using Negative Aura">
+                  <Trigger Enabled="true" Name="Negative Aura" Id="7db7feb8-8c48-4bbc-9937-80d3779b0968" RegularExpression="14:4AFE:The Ruby Weapon">
                     <Actions>
                       <Action OrderNumber="1" UseTTSTextExpression="Look away" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="UseTTS">
                         <Condition Enabled="false" Grouping="Or" />
+                        <Conditions />
                       </Action>
                     </Actions>
                     <Condition Enabled="false" Grouping="Or" />
                   </Trigger>
-                  <Trigger Enabled="true" Name="Screech" Id="cf734775-0ee2-4dc1-91b4-5e0d80ce3d49" RegularExpression="14:4AEE:The Ruby Weapon starts using Screech">
+                  <Trigger Enabled="true" Name="Screech" Id="cf734775-0ee2-4dc1-91b4-5e0d80ce3d49" RegularExpression="14:4AEE:The Ruby Weapon">
                     <Actions>
                       <Action OrderNumber="1" UseTTSTextExpression="Knockback" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="UseTTS">
                         <Condition Enabled="false" Grouping="Or" />
+                        <Conditions />
                       </Action>
                     </Actions>
                     <Condition Enabled="false" Grouping="Or" />
@@ -11574,6 +11608,7 @@
                     <Actions>
                       <Action OrderNumber="1" UseTTSTextExpression="Red, West" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="UseTTS">
                         <Condition Enabled="false" Grouping="Or" />
+                        <Conditions />
                       </Action>
                     </Actions>
                     <Condition Enabled="true" Grouping="And">
@@ -11584,6 +11619,7 @@
                     <Actions>
                       <Action OrderNumber="1" UseTTSTextExpression="Blue, East" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="UseTTS">
                         <Condition Enabled="false" Grouping="Or" />
+                        <Conditions />
                       </Action>
                     </Actions>
                     <Condition Enabled="true" Grouping="And">
@@ -11594,16 +11630,18 @@
                     <Actions>
                       <Action OrderNumber="1" UseTTSTextExpression="Spread" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="UseTTS">
                         <Condition Enabled="false" Grouping="Or" />
+                        <Conditions />
                       </Action>
                     </Actions>
                     <Condition Enabled="true" Grouping="And">
                       <ConditionSingle Enabled="true" ExpressionL="${name}" ExpressionTypeL="String" ExpressionR="${_ffxivplayer}" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
                     </Condition>
                   </Trigger>
-                  <Trigger Enabled="true" Name="Change of Heart" Id="20322141-dc1e-4ce3-b583-ebbcb0492ad2" RegularExpression="14:4AFC:The Ruby Weapon starts using Change [Oo]f Heart">
+                  <Trigger Enabled="true" Name="Change of Heart" Id="20322141-dc1e-4ce3-b583-ebbcb0492ad2" RegularExpression="14:4AFC:The Ruby Weapon">
                     <Actions>
                       <Action OrderNumber="1" UseTTSTextExpression="Switch" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="UseTTS">
                         <Condition Enabled="false" Grouping="Or" />
+                        <Conditions />
                       </Action>
                     </Actions>
                     <Condition Enabled="false" Grouping="Or" />
@@ -11612,12 +11650,15 @@
                     <Actions>
                       <Action OrderNumber="1" VariableOp="SetNumeric" VariableName="meteorNumber" VariableExpression="hex2dec(${number})-201" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Variable" Asynchronous="False">
                         <Condition Enabled="false" Grouping="Or" />
+                        <Conditions />
                       </Action>
                       <Action OrderNumber="2" UseTTSTextExpression="${var:meteorNumber}" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="UseTTS" Asynchronous="False">
                         <Condition Enabled="false" Grouping="Or" />
+                        <Conditions />
                       </Action>
                       <Action OrderNumber="3" TextAuraEffect="Bold" TextAuraFontSize="36" TextAuraForeground="#FF3300" TextAuraOutline="Black" TextAuraName="meteorProject" TextAuraExpression="Meteor: #${var:meteorNumber}" TextAuraXIniExpression="0" TextAuraYIniExpression="200" TextAuraWIniExpression="${_screenwidth}" TextAuraHIniExpression="500" TextAuraOIniExpression="100" TextAuraTTLTickExpression="5-${_since}" TextAuraUseOutline="True" TextAuraFontName="Microsoft Sans Serif" ActionType="TextAura" Asynchronous="False">
                         <Condition Enabled="false" Grouping="Or" />
+                        <Conditions />
                       </Action>
                     </Actions>
                     <Condition Enabled="true" Grouping="And">
@@ -11626,18 +11667,20 @@
                       <ConditionSingle Enabled="true" ExpressionL="hex2dec(${number})-201" ExpressionTypeL="Numeric" ExpressionR="8" ExpressionTypeR="Numeric" ConditionType="NumericLessEqual" />
                     </Condition>
                   </Trigger>
-                  <Trigger Enabled="true" Name="Undermine" Id="a3fbed69-aa1d-4562-8f5b-6518bee1713d" RegularExpression="14:4AD0:The Ruby Weapon starts using Undermine">
+                  <Trigger Enabled="true" Name="Undermine" Id="a3fbed69-aa1d-4562-8f5b-6518bee1713d" RegularExpression="14:4AD0:The Ruby Weapon">
                     <Actions>
                       <Action OrderNumber="1" UseTTSTextExpression="Away from Lines" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="UseTTS">
                         <Condition Enabled="false" Grouping="Or" />
+                        <Conditions />
                       </Action>
                     </Actions>
                     <Condition Enabled="false" Grouping="Or" />
                   </Trigger>
-                  <Trigger Enabled="true" Name="Liquefaction" Id="340e5450-325c-43d2-946b-af6d4c0c077d" RegularExpression="14:4ACF:The Ruby Weapon starts using Liquefaction">
+                  <Trigger Enabled="true" Name="Liquefaction" Id="340e5450-325c-43d2-946b-af6d4c0c077d" RegularExpression="14:4ACF:The Ruby Weapon">
                     <Actions>
                       <Action OrderNumber="1" UseTTSTextExpression="Stand on Lines" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="UseTTS">
                         <Condition Enabled="false" Grouping="Or" />
+                        <Conditions />
                       </Action>
                     </Actions>
                     <Condition Enabled="false" Grouping="Or" />
@@ -13814,7 +13857,6 @@
                             <Actions>
                               <Action OrderNumber="1" LogLevel="-1" VariableName="mathBaseValue" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Variable">
                                 <Condition Enabled="false" Grouping="Or" />
-                                <Conditions />
                               </Action>
                             </Actions>
                             <Condition Enabled="false" Grouping="Or" />
@@ -14390,7 +14432,6 @@
                         <Actions>
                           <Action OrderNumber="1" LogLevel="-1" UseTTSTextExpression="Stop" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="UseTTS" ExecutionDelayExpression="(${duration}000-1000)">
                             <Condition Enabled="false" Grouping="Or" />
-                            <Conditions />
                           </Action>
                         </Actions>
                         <Condition Enabled="true" Grouping="Or">
@@ -14598,10 +14639,11 @@
                 </Actions>
                 <Condition Enabled="false" Grouping="Or" />
               </Trigger>
-              <Trigger Enabled="true" Name="Rebirth" Id="b2fcc5a8-81e0-4a8c-aef4-5693484e95e4" RegularExpression="1A:[0-9A-F]{8}:Avery Redwyne gains the effect of Raise">
+              <Trigger Enabled="true" Name="Rebirth" Id="b2fcc5a8-81e0-4a8c-aef4-5693484e95e4" RegularExpression="1A:[0-9A-F]{8}:Avery Redwyne gains the effect of (Transcendent|生還)">
                 <Actions>
                   <Action OrderNumber="1" LogLevel="-1" PlaySoundFileExpression="https://raw.githubusercontent.com/lexxiesia/xiv_triggernometry/master/resources/wav/gmmdfk.wav" PlaySoundVolumeExpression="50" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="PlaySound">
                     <Condition Enabled="false" Grouping="Or" />
+                    <Conditions />
                   </Action>
                 </Actions>
                 <Condition Enabled="false" Grouping="Or" />

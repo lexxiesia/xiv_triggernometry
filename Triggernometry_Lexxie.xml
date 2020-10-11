@@ -5312,11 +5312,13 @@
                                 <Condition Enabled="true" Grouping="And">
                                   <ConditionSingle Enabled="true" ExpressionL="${_ffxiventity[${ramuhClone}].y}" ExpressionTypeL="Numeric" ExpressionR="81" ExpressionTypeR="Numeric" ConditionType="NumericLessEqual" />
                                 </Condition>
+                                <Conditions />
                               </Action>
                               <Action OrderNumber="2" UseTTSTextExpression="Left Safe" VariableOp="SetString" VariableName="ramuhTeleport" VariableExpression="Ramuh North" TextAuraEffect="Bold" TextAuraFontSize="24" TextAuraForeground="#FFBB00" TextAuraOutline="Black" TextAuraName="ramuhTeleport" TextAuraExpression="Left Safe" TextAuraXIniExpression="0" TextAuraYIniExpression="500" TextAuraWIniExpression="${_screenwidth}" TextAuraHIniExpression="100" TextAuraOIniExpression="100" TextAuraTTLTickExpression="5-${_since}" TextAuraUseOutline="True" TextAuraFontName="Microsoft Sans Serif" ActionType="Variable">
                                 <Condition Enabled="true" Grouping="And">
-                                  <ConditionSingle Enabled="true" ExpressionL="${_ffxiventity[${ramuhClone}].y}" ExpressionTypeL="Numeric" ExpressionR="119" ExpressionTypeR="Numeric" ConditionType="NumericLessEqual" />
+                                  <ConditionSingle Enabled="true" ExpressionL="${_ffxiventity[${ramuhClone}].y}" ExpressionTypeL="Numeric" ExpressionR="119" ExpressionTypeR="Numeric" ConditionType="NumericGreaterEqual" />
                                 </Condition>
+                                <Conditions />
                               </Action>
                             </Actions>
                             <Condition Enabled="true" Grouping="And">
@@ -15765,14 +15767,12 @@
                 <Actions>
                   <Action OrderNumber="1" LogLevel="-1" PlaySoundFileExpression="https://raw.githubusercontent.com/lexxiesia/xiv_triggernometry/master/resources/wav/arthars/trick2.wav" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="PlaySound">
                     <Condition Enabled="false" Grouping="Or" />
-                    <Conditions />
                   </Action>
                 </Actions>
                 <Condition Enabled="true" Grouping="And">
                   <ConditionSingle Enabled="true" ExpressionL="${_ffxivparty[${NIN}].inparty}" ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
                   <ConditionSingle Enabled="true" ExpressionL="${_ffxivparty[${NIN}].job}" ExpressionTypeL="String" ExpressionR="NIN" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
                 </Condition>
-                <Conditions />
               </Trigger>
             </Triggers>
           </Folder>
@@ -15791,129 +15791,100 @@
                                 <Actions>
                                   <Action OrderNumber="1" ListVariableName="bluTargets" LogLevel="-1" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="ListVariable">
                                     <Condition Enabled="false" Grouping="Or" />
-                                    <Conditions />
                                   </Action>
                                   <Action OrderNumber="2" ListVariableOp="Push" ListVariableName="bluTargets" ListVariableExpression="Bahamut Prime" LogLevel="-1" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="ListVariable">
                                     <Condition Enabled="false" Grouping="Or" />
-                                    <Conditions />
                                   </Action>
                                 </Actions>
                                 <Condition Enabled="false" Grouping="Or" />
-                                <Conditions />
                               </Trigger>
                               <Trigger Enabled="true" Sequential="True" Name="Binding Coil - Turn 5" Id="c81e78bb-0b01-40a8-af03-7cc08f07c5f2" RegularExpression="01:Changed Zone to The Binding Coil Of Bahamut - Turn \(5\)">
                                 <Actions>
                                   <Action OrderNumber="1" ListVariableName="bluTargets" LogLevel="-1" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="ListVariable">
                                     <Condition Enabled="false" Grouping="Or" />
-                                    <Conditions />
                                   </Action>
                                   <Action OrderNumber="2" ListVariableOp="Push" ListVariableName="bluTargets" ListVariableExpression="Twintania" LogLevel="-1" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="ListVariable">
                                     <Condition Enabled="false" Grouping="Or" />
-                                    <Conditions />
                                   </Action>
                                 </Actions>
                                 <Condition Enabled="false" Grouping="Or" />
-                                <Conditions />
                               </Trigger>
                               <Trigger Enabled="true" Sequential="True" Name="Second Coil - Turn 4" Id="2fde8aa7-cdad-4df8-a534-ebdbd3412052" RegularExpression="01:Changed Zone to The Second Coil Of Bahamut - Turn \(4\)">
                                 <Actions>
                                   <Action OrderNumber="1" ListVariableName="bluTargets" LogLevel="-1" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="ListVariable">
                                     <Condition Enabled="false" Grouping="Or" />
-                                    <Conditions />
                                   </Action>
                                   <Action OrderNumber="2" ListVariableOp="Push" ListVariableName="bluTargets" ListVariableExpression="Nael Deus Darnus" LogLevel="-1" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="ListVariable">
                                     <Condition Enabled="false" Grouping="Or" />
-                                    <Conditions />
                                   </Action>
                                 </Actions>
                                 <Condition Enabled="false" Grouping="Or" />
-                                <Conditions />
                               </Trigger>
                               <Trigger Enabled="true" Sequential="True" Name="Burden of the Father" Id="f4df8c65-1099-41e5-91bf-06391c294490" RegularExpression="01:Changed Zone to Alexander - The Burder Of The Father \(Savage\)">
                                 <Actions>
                                   <Action OrderNumber="1" ListVariableName="bluTargets" LogLevel="-1" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="ListVariable">
                                     <Condition Enabled="false" Grouping="Or" />
-                                    <Conditions />
                                   </Action>
                                   <Action OrderNumber="2" ListVariableOp="Push" ListVariableName="bluTargets" ListVariableExpression="The Manipulator" LogLevel="-1" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="ListVariable">
                                     <Condition Enabled="false" Grouping="Or" />
-                                    <Conditions />
                                   </Action>
                                   <Action OrderNumber="3" ListVariableOp="Push" ListVariableName="bluTargets" ListVariableExpression="Right Foreleg" LogLevel="-1" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="ListVariable">
                                     <Condition Enabled="false" Grouping="Or" />
-                                    <Conditions />
                                   </Action>
                                   <Action OrderNumber="4" ListVariableOp="Push" ListVariableName="bluTargets" ListVariableExpression="Left Foreleg" LogLevel="-1" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="ListVariable">
                                     <Condition Enabled="false" Grouping="Or" />
-                                    <Conditions />
                                   </Action>
                                   <Action OrderNumber="5" ListVariableOp="Push" ListVariableName="bluTargets" ListVariableExpression="Right Hindleg" LogLevel="-1" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="ListVariable">
                                     <Condition Enabled="false" Grouping="Or" />
-                                    <Conditions />
                                   </Action>
                                   <Action OrderNumber="6" ListVariableOp="Push" ListVariableName="bluTargets" ListVariableExpression="Left Hindleg" LogLevel="-1" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="ListVariable">
                                     <Condition Enabled="false" Grouping="Or" />
-                                    <Conditions />
                                   </Action>
                                 </Actions>
                                 <Condition Enabled="false" Grouping="Or" />
-                                <Conditions />
                               </Trigger>
                               <Trigger Enabled="true" Sequential="True" Name="Burden of the Son" Id="02ee1896-5b85-456e-867d-39c4adaa13fd" RegularExpression="01:Changed Zone to Alexander - The Burder Of The Son \(Savage\)">
                                 <Actions>
                                   <Action OrderNumber="1" ListVariableName="bluTargets" LogLevel="-1" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="ListVariable">
                                     <Condition Enabled="false" Grouping="Or" />
-                                    <Conditions />
                                   </Action>
                                   <Action OrderNumber="2" ListVariableOp="Push" ListVariableName="bluTargets" ListVariableExpression="Onslaughter" LogLevel="-1" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="ListVariable">
                                     <Condition Enabled="false" Grouping="Or" />
-                                    <Conditions />
                                   </Action>
                                   <Action OrderNumber="3" ListVariableOp="Push" ListVariableName="bluTargets" ListVariableExpression="Blaster" LogLevel="-1" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="ListVariable">
                                     <Condition Enabled="false" Grouping="Or" />
-                                    <Conditions />
                                   </Action>
                                   <Action OrderNumber="4" ListVariableOp="Push" ListVariableName="bluTargets" ListVariableExpression="Swindler" LogLevel="-1" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="ListVariable">
                                     <Condition Enabled="false" Grouping="Or" />
-                                    <Conditions />
                                   </Action>
                                   <Action OrderNumber="5" ListVariableOp="Push" ListVariableName="bluTargets" ListVariableExpression="Brawler" LogLevel="-1" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="ListVariable">
                                     <Condition Enabled="false" Grouping="Or" />
-                                    <Conditions />
                                   </Action>
                                   <Action OrderNumber="6" ListVariableOp="Push" ListVariableName="bluTargets" ListVariableExpression="Vortexer" LogLevel="-1" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="ListVariable">
                                     <Condition Enabled="false" Grouping="Or" />
-                                    <Conditions />
                                   </Action>
                                   <Action OrderNumber="7" ListVariableOp="Push" ListVariableName="bluTargets" ListVariableExpression="Brute Justice" LogLevel="-1" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="ListVariable">
                                     <Condition Enabled="false" Grouping="Or" />
-                                    <Conditions />
                                   </Action>
                                 </Actions>
                                 <Condition Enabled="false" Grouping="Or" />
-                                <Conditions />
                               </Trigger>
                               <Trigger Enabled="true" Sequential="True" Name="Soul of the Creator" Id="2470c2fb-2af7-42cb-a7a1-830fcdfb634e" RegularExpression="01:Changed Zone to Alexander - The Soul Of The Creator \(Savage\)">
                                 <Actions>
                                   <Action OrderNumber="1" ListVariableName="bluTargets" LogLevel="-1" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="ListVariable">
                                     <Condition Enabled="false" Grouping="Or" />
-                                    <Conditions />
                                   </Action>
                                   <Action OrderNumber="2" ListVariableOp="Push" ListVariableName="bluTargets" ListVariableExpression="Alexander Prime" LogLevel="-1" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="ListVariable">
                                     <Condition Enabled="false" Grouping="Or" />
-                                    <Conditions />
                                   </Action>
                                   <Action OrderNumber="3" ListVariableOp="Push" ListVariableName="bluTargets" ListVariableExpression="The General's Might" LogLevel="-1" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="ListVariable">
                                     <Condition Enabled="false" Grouping="Or" />
-                                    <Conditions />
                                   </Action>
                                   <Action OrderNumber="4" ListVariableOp="Push" ListVariableName="bluTargets" ListVariableExpression="The General's Time" LogLevel="-1" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="ListVariable">
                                     <Condition Enabled="false" Grouping="Or" />
-                                    <Conditions />
                                   </Action>
                                 </Actions>
                                 <Condition Enabled="false" Grouping="Or" />
-                                <Conditions />
                               </Trigger>
                             </Triggers>
                           </Folder>
@@ -15924,273 +15895,212 @@
                                 <Actions>
                                   <Action OrderNumber="1" ListVariableName="bluTargets" LogLevel="-1" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="ListVariable">
                                     <Condition Enabled="false" Grouping="Or" />
-                                    <Conditions />
                                   </Action>
                                   <Action OrderNumber="2" ListVariableOp="Push" ListVariableName="bluTargets" ListVariableExpression="Titan" LogLevel="-1" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="ListVariable">
                                     <Condition Enabled="false" Grouping="Or" />
-                                    <Conditions />
                                   </Action>
                                 </Actions>
                                 <Condition Enabled="false" Grouping="Or" />
-                                <Conditions />
                               </Trigger>
                               <Trigger Enabled="true" Sequential="True" Name="The Bowl of Embers" Id="c5082bd0-ffde-4d66-8ac0-c577b1cd93ea" RegularExpression="01:Changed Zone to The Bowl Of Embers \(Extreme\)">
                                 <Actions>
                                   <Action OrderNumber="1" ListVariableName="bluTargets" LogLevel="-1" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="ListVariable">
                                     <Condition Enabled="false" Grouping="Or" />
-                                    <Conditions />
                                   </Action>
                                   <Action OrderNumber="2" ListVariableOp="Push" ListVariableName="bluTargets" ListVariableExpression="Ifrit" LogLevel="-1" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="ListVariable">
                                     <Condition Enabled="false" Grouping="Or" />
-                                    <Conditions />
                                   </Action>
                                 </Actions>
                                 <Condition Enabled="false" Grouping="Or" />
-                                <Conditions />
                               </Trigger>
                               <Trigger Enabled="true" Sequential="True" Name="The Howling Eye" Id="1826169c-fb6c-424f-b524-ad9702bfbfe9" RegularExpression="01:Changed Zone to The Howling Eye \(Extreme\)">
                                 <Actions>
                                   <Action OrderNumber="1" ListVariableName="bluTargets" LogLevel="-1" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="ListVariable">
                                     <Condition Enabled="false" Grouping="Or" />
-                                    <Conditions />
                                   </Action>
                                   <Action OrderNumber="2" ListVariableOp="Push" ListVariableName="bluTargets" ListVariableExpression="Garuda" LogLevel="-1" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="ListVariable">
                                     <Condition Enabled="false" Grouping="Or" />
-                                    <Conditions />
                                   </Action>
                                   <Action OrderNumber="3" ListVariableOp="Push" ListVariableName="bluTargets" ListVariableExpression="Suparna" LogLevel="-1" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="ListVariable">
                                     <Condition Enabled="false" Grouping="Or" />
-                                    <Conditions />
                                   </Action>
                                   <Action OrderNumber="4" ListVariableOp="Push" ListVariableName="bluTargets" ListVariableExpression="Chirada" LogLevel="-1" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="ListVariable">
                                     <Condition Enabled="false" Grouping="Or" />
-                                    <Conditions />
                                   </Action>
                                 </Actions>
                                 <Condition Enabled="false" Grouping="Or" />
-                                <Conditions />
                               </Trigger>
                               <Trigger Enabled="true" Sequential="True" Name="Thornmarch" Id="00f66011-db8e-4c5f-a8fa-932bf8c0888e" RegularExpression="01:Changed Zone to Thornmarch \(Extreme\)">
                                 <Actions>
                                   <Action OrderNumber="1" ListVariableName="bluTargets" LogLevel="-1" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="ListVariable">
                                     <Condition Enabled="false" Grouping="Or" />
-                                    <Conditions />
                                   </Action>
                                   <Action OrderNumber="2" ListVariableOp="Push" ListVariableName="bluTargets" ListVariableExpression="Good King Moggle Mog XII" LogLevel="-1" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="ListVariable">
                                     <Condition Enabled="false" Grouping="Or" />
-                                    <Conditions />
                                   </Action>
                                   <Action OrderNumber="3" ListVariableOp="Push" ListVariableName="bluTargets" ListVariableExpression="Whiskerwall Kupdi Koop" LogLevel="-1" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="ListVariable">
                                     <Condition Enabled="false" Grouping="Or" />
-                                    <Conditions />
                                   </Action>
                                   <Action OrderNumber="4" ListVariableOp="Push" ListVariableName="bluTargets" ListVariableExpression="Woolywart Kupqu Kogi" LogLevel="-1" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="ListVariable">
                                     <Condition Enabled="false" Grouping="Or" />
-                                    <Conditions />
                                   </Action>
                                   <Action OrderNumber="5" ListVariableOp="Push" ListVariableName="bluTargets" ListVariableExpression="Pukla Puki the Pomburner" LogLevel="-1" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="ListVariable">
                                     <Condition Enabled="false" Grouping="Or" />
-                                    <Conditions />
                                   </Action>
                                   <Action OrderNumber="6" ListVariableOp="Push" ListVariableName="bluTargets" ListVariableExpression="Pukna Pako the Tailturner" LogLevel="-1" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="ListVariable">
                                     <Condition Enabled="false" Grouping="Or" />
-                                    <Conditions />
                                   </Action>
                                   <Action OrderNumber="7" ListVariableOp="Push" ListVariableName="bluTargets" ListVariableExpression="Furryfoot Kupli Kipp" LogLevel="-1" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="ListVariable">
                                     <Condition Enabled="false" Grouping="Or" />
-                                    <Conditions />
                                   </Action>
                                   <Action OrderNumber="8" ListVariableOp="Push" ListVariableName="bluTargets" ListVariableExpression="Ruffletuft Kupta Kapa" LogLevel="-1" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="ListVariable">
                                     <Condition Enabled="false" Grouping="Or" />
-                                    <Conditions />
                                   </Action>
                                   <Action OrderNumber="9" ListVariableOp="Push" ListVariableName="bluTargets" ListVariableExpression="Puksi Piko the Shaggysong" LogLevel="-1" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="ListVariable">
                                     <Condition Enabled="false" Grouping="Or" />
-                                    <Conditions />
                                   </Action>
                                 </Actions>
                                 <Condition Enabled="false" Grouping="Or" />
-                                <Conditions />
                               </Trigger>
                               <Trigger Enabled="true" Sequential="True" Name="The Whorleater" Id="5bdd0d86-784e-4ca7-a102-262bcf81e725" RegularExpression="01:Changed Zone to The Whorleater \(Extreme\)">
                                 <Actions>
                                   <Action OrderNumber="1" ListVariableName="bluTargets" LogLevel="-1" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="ListVariable">
                                     <Condition Enabled="false" Grouping="Or" />
-                                    <Conditions />
                                   </Action>
                                   <Action OrderNumber="2" ListVariableOp="Push" ListVariableName="bluTargets" ListVariableExpression="Leviathan" LogLevel="-1" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="ListVariable">
                                     <Condition Enabled="false" Grouping="Or" />
-                                    <Conditions />
                                   </Action>
                                   <Action OrderNumber="3" ListVariableOp="Push" ListVariableName="bluTargets" ListVariableExpression="Leviathan's Tail" LogLevel="-1" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="ListVariable">
                                     <Condition Enabled="false" Grouping="Or" />
-                                    <Conditions />
                                   </Action>
                                 </Actions>
                                 <Condition Enabled="false" Grouping="Or" />
-                                <Conditions />
                               </Trigger>
                               <Trigger Enabled="true" Sequential="True" Name="The Striking Tree" Id="95f3f818-c16d-4446-baeb-aff5434e2713" RegularExpression="01:Changed Zone to The Striking Tree \(Extreme\)">
                                 <Actions>
                                   <Action OrderNumber="1" ListVariableName="bluTargets" LogLevel="-1" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="ListVariable">
                                     <Condition Enabled="false" Grouping="Or" />
-                                    <Conditions />
                                   </Action>
                                   <Action OrderNumber="2" ListVariableOp="Push" ListVariableName="bluTargets" ListVariableExpression="Ramuh" LogLevel="-1" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="ListVariable">
                                     <Condition Enabled="false" Grouping="Or" />
-                                    <Conditions />
                                   </Action>
                                 </Actions>
                                 <Condition Enabled="false" Grouping="Or" />
-                                <Conditions />
                               </Trigger>
                               <Trigger Enabled="true" Sequential="True" Name="Akh Afah Amphitheatre" Id="7fb7bd57-d68a-41af-9aae-0932e36549a2" RegularExpression="01:Changed Zone to Akh Afah Amphitheatre \(Extreme\)">
                                 <Actions>
                                   <Action OrderNumber="1" ListVariableName="bluTargets" LogLevel="-1" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="ListVariable">
                                     <Condition Enabled="false" Grouping="Or" />
-                                    <Conditions />
                                   </Action>
                                   <Action OrderNumber="2" ListVariableOp="Push" ListVariableName="bluTargets" ListVariableExpression="Shiva" LogLevel="-1" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="ListVariable">
                                     <Condition Enabled="false" Grouping="Or" />
-                                    <Conditions />
                                   </Action>
                                 </Actions>
                                 <Condition Enabled="false" Grouping="Or" />
-                                <Conditions />
                               </Trigger>
                               <Trigger Enabled="true" Sequential="True" Name="Thok ast Thok" Id="a1809262-55d0-4771-9a36-5d4f6c239c95" RegularExpression="01:Changed Zone to Thok [Aa]st Thok \(Extreme\)">
                                 <Actions>
                                   <Action OrderNumber="1" ListVariableName="bluTargets" LogLevel="-1" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="ListVariable">
                                     <Condition Enabled="false" Grouping="Or" />
-                                    <Conditions />
                                   </Action>
                                   <Action OrderNumber="2" ListVariableOp="Push" ListVariableName="bluTargets" ListVariableExpression="Ravana" LogLevel="-1" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="ListVariable">
                                     <Condition Enabled="false" Grouping="Or" />
-                                    <Conditions />
                                   </Action>
                                 </Actions>
                                 <Condition Enabled="false" Grouping="Or" />
-                                <Conditions />
                               </Trigger>
                               <Trigger Enabled="true" Sequential="True" Name="The Limitless Blue" Id="d89f83e2-ab1d-43f1-b803-1158f3780a80" RegularExpression="01:Changed Zone to The Limitless Blue \(Extreme\)">
                                 <Actions>
                                   <Action OrderNumber="1" ListVariableName="bluTargets" LogLevel="-1" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="ListVariable">
                                     <Condition Enabled="false" Grouping="Or" />
-                                    <Conditions />
                                   </Action>
                                   <Action OrderNumber="2" ListVariableOp="Push" ListVariableName="bluTargets" ListVariableExpression="Chitin Carapace" LogLevel="-1" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="ListVariable">
                                     <Condition Enabled="false" Grouping="Or" />
-                                    <Conditions />
                                   </Action>
                                   <Action OrderNumber="3" ListVariableOp="Push" ListVariableName="bluTargets" ListVariableExpression="Ul'sanuwa" LogLevel="-1" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="ListVariable">
                                     <Condition Enabled="false" Grouping="Or" />
-                                    <Conditions />
                                   </Action>
                                   <Action OrderNumber="4" ListVariableOp="Push" ListVariableName="bluTargets" ListVariableExpression="So'sanuwa" LogLevel="-1" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="ListVariable">
                                     <Condition Enabled="false" Grouping="Or" />
-                                    <Conditions />
                                   </Action>
                                   <Action OrderNumber="5" ListVariableOp="Push" ListVariableName="bluTargets" ListVariableExpression="Corona" LogLevel="-1" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="ListVariable">
                                     <Condition Enabled="false" Grouping="Or" />
-                                    <Conditions />
                                   </Action>
                                 </Actions>
                                 <Condition Enabled="false" Grouping="Or" />
-                                <Conditions />
                               </Trigger>
                               <Trigger Enabled="true" Sequential="True" Name="Thordan's Reign" Id="b9deb3dd-107c-45e1-9540-9f987c9a23a9" RegularExpression="01:Changed Zone to The Minstrel's Ballad: Thordan's Reign">
                                 <Actions>
                                   <Action OrderNumber="1" ListVariableName="bluTargets" LogLevel="-1" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="ListVariable">
                                     <Condition Enabled="false" Grouping="Or" />
-                                    <Conditions />
                                   </Action>
                                   <Action OrderNumber="2" ListVariableOp="Push" ListVariableName="bluTargets" ListVariableExpression="King Thordan" LogLevel="-1" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="ListVariable">
                                     <Condition Enabled="false" Grouping="Or" />
-                                    <Conditions />
                                   </Action>
                                   <Action OrderNumber="3" ListVariableOp="Push" ListVariableName="bluTargets" ListVariableExpression="Ser Janlenoux" LogLevel="-1" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="ListVariable">
                                     <Condition Enabled="false" Grouping="Or" />
-                                    <Conditions />
                                   </Action>
                                   <Action OrderNumber="4" ListVariableOp="Push" ListVariableName="bluTargets" ListVariableExpression="Ser Adelphel" LogLevel="-1" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="ListVariable">
                                     <Condition Enabled="false" Grouping="Or" />
-                                    <Conditions />
                                   </Action>
                                   <Action OrderNumber="5" ListVariableOp="Push" ListVariableName="bluTargets" ListVariableExpression="Ser Zephirin" LogLevel="-1" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="ListVariable">
                                     <Condition Enabled="false" Grouping="Or" />
-                                    <Conditions />
                                   </Action>
                                 </Actions>
                                 <Condition Enabled="false" Grouping="Or" />
-                                <Conditions />
                               </Trigger>
                               <Trigger Enabled="true" Sequential="True" Name="Containment Bay S1T7" Id="c3065ea3-cf8a-4486-8161-d29eee580237" RegularExpression="01:Changed Zone to Containment Bay S1T7 \(Extreme\)">
                                 <Actions>
                                   <Action OrderNumber="1" ListVariableName="bluTargets" LogLevel="-1" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="ListVariable">
                                     <Condition Enabled="false" Grouping="Or" />
-                                    <Conditions />
                                   </Action>
                                   <Action OrderNumber="2" ListVariableOp="Push" ListVariableName="bluTargets" ListVariableExpression="Sephirot" LogLevel="-1" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="ListVariable">
                                     <Condition Enabled="false" Grouping="Or" />
-                                    <Conditions />
                                   </Action>
                                 </Actions>
                                 <Condition Enabled="false" Grouping="Or" />
-                                <Conditions />
                               </Trigger>
                               <Trigger Enabled="true" Sequential="True" Name="Containment Bay P1T6" Id="d7b6ca76-4fba-43c6-ba26-8eb78ee052c2" RegularExpression="01:Changed Zone to Containment Bay P1T6 \(Extreme\)">
                                 <Actions>
                                   <Action OrderNumber="1" ListVariableName="bluTargets" LogLevel="-1" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="ListVariable">
                                     <Condition Enabled="false" Grouping="Or" />
-                                    <Conditions />
                                   </Action>
                                   <Action OrderNumber="2" ListVariableOp="Push" ListVariableName="bluTargets" ListVariableExpression="Sophia" LogLevel="-1" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="ListVariable">
                                     <Condition Enabled="false" Grouping="Or" />
-                                    <Conditions />
                                   </Action>
                                 </Actions>
                                 <Condition Enabled="false" Grouping="Or" />
-                                <Conditions />
                               </Trigger>
                               <Trigger Enabled="true" Sequential="True" Name="Containment Bay Z1T9" Id="35d20551-7cf9-4025-aa0f-b18898056601" RegularExpression="01:Changed Zone to Containment Bay Z1T9 \(Extreme\)">
                                 <Actions>
                                   <Action OrderNumber="1" ListVariableName="bluTargets" LogLevel="-1" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="ListVariable">
                                     <Condition Enabled="false" Grouping="Or" />
-                                    <Conditions />
                                   </Action>
                                   <Action OrderNumber="2" ListVariableOp="Push" ListVariableName="bluTargets" ListVariableExpression="Zurvan" LogLevel="-1" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="ListVariable">
                                     <Condition Enabled="false" Grouping="Or" />
-                                    <Conditions />
                                   </Action>
                                 </Actions>
                                 <Condition Enabled="false" Grouping="Or" />
-                                <Conditions />
                               </Trigger>
                               <Trigger Enabled="true" Sequential="True" Name="Nidhogg's Rage" Id="4f0422e7-8d6a-4045-aa5a-e0e60413f729" RegularExpression="01:Changed Zone to The Minstrel's Ballad: Nidhogg's Rage">
                                 <Actions>
                                   <Action OrderNumber="1" ListVariableName="bluTargets" LogLevel="-1" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="ListVariable">
                                     <Condition Enabled="false" Grouping="Or" />
-                                    <Conditions />
                                   </Action>
                                   <Action OrderNumber="2" ListVariableOp="Push" ListVariableName="bluTargets" ListVariableExpression="Nidhogg" LogLevel="-1" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="ListVariable">
                                     <Condition Enabled="false" Grouping="Or" />
-                                    <Conditions />
                                   </Action>
                                   <Action OrderNumber="3" ListVariableOp="Push" ListVariableName="bluTargets" ListVariableExpression="Shadow Falak" LogLevel="-1" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="ListVariable">
                                     <Condition Enabled="false" Grouping="Or" />
-                                    <Conditions />
                                   </Action>
                                   <Action OrderNumber="4" ListVariableOp="Push" ListVariableName="bluTargets" ListVariableExpression="Shadow Dragon" LogLevel="-1" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="ListVariable">
                                     <Condition Enabled="false" Grouping="Or" />
-                                    <Conditions />
                                   </Action>
                                   <Action OrderNumber="5" ListVariableOp="Push" ListVariableName="bluTargets" ListVariableExpression="Shadow Brobinyak" LogLevel="-1" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="ListVariable">
                                     <Condition Enabled="false" Grouping="Or" />
-                                    <Conditions />
                                   </Action>
                                 </Actions>
                                 <Condition Enabled="false" Grouping="Or" />
-                                <Conditions />
                               </Trigger>
                             </Triggers>
                           </Folder>
@@ -16205,41 +16115,34 @@
                             <Condition Enabled="true" Grouping="And">
                               <ConditionSingle Enabled="true" ExpressionL="${libra}" ExpressionTypeL="String" ExpressionR="Astral" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
                             </Condition>
-                            <Conditions />
                           </Action>
                           <Action OrderNumber="2" AuraOp="DeactivateAura" AuraName="umbralAttenuation" LogLevel="-1" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" Enabled="False" ActionType="Aura">
                             <Condition Enabled="true" Grouping="And">
                               <ConditionSingle Enabled="true" ExpressionL="${libra}" ExpressionTypeL="String" ExpressionR="Umbral" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
                             </Condition>
-                            <Conditions />
                           </Action>
                           <Action OrderNumber="3" AuraOp="DeactivateAura" AuraName="physicalAttenuation" LogLevel="-1" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" Enabled="False" ActionType="Aura">
                             <Condition Enabled="true" Grouping="And">
                               <ConditionSingle Enabled="true" ExpressionL="${libra}" ExpressionTypeL="String" ExpressionR="Physical" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
                             </Condition>
-                            <Conditions />
                           </Action>
                           <Action OrderNumber="4" AuraOp="DeactivateAura" AuraName="condensedLibra" LogLevel="-1" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Aura">
                             <Condition Enabled="false" Grouping="Or" />
-                            <Conditions />
                           </Action>
                         </Actions>
                         <Condition Enabled="true" Grouping="And">
                           <ConditionSingle Enabled="true" ExpressionL="${lvar:bluTargets.indexof(${target})}" ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
                         </Condition>
-                        <Conditions />
                       </Trigger>
                       <Trigger Enabled="true" Name="Gains" Id="e4616050-1c65-498e-bb5c-b65203929856" RegularExpression="1A:[A-F0-9]{8}:(?&lt;target&gt;[\w-' ]+) gains the effect of (?&lt;libra&gt;Astral|Umbral|Physical) Attenuation" PeriodRefire="Deny">
                         <Actions>
                           <Action OrderNumber="1" AuraImageMode="CenterImage" AuraName="condensedLibra" AuraImage="https://raw.githubusercontent.com/lexxiesia/xiv_triggernometry/master/resources/icons/blu/${libra}.png" AuraXIniExpression="${_screenwidth}/2" AuraYIniExpression="0" AuraWIniExpression="${_screenwidth}/2" AuraHIniExpression="${_screenheight}/2" AuraOIniExpression="100" TextAuraFontSize="36" TextAuraForeground="#FF3300" TextAuraOutline="Black" TextAuraName="TEA_Compressed_Image" TextAuraExpression="${debuff} ${numeric:${duration}-${_since}}" TextAuraXIniExpression="0" TextAuraYIniExpression="500" TextAuraWIniExpression="${_screenwidth}" TextAuraHIniExpression="200" TextAuraOIniExpression="100" TextAuraTTLTickExpression="${duration}-${_since}" TextAuraUseOutline="True" TextAuraFontName="Microsoft Sans Serif" ActionType="Aura">
                             <Condition Enabled="false" Grouping="Or" />
-                            <Conditions />
                           </Action>
                         </Actions>
                         <Condition Enabled="true" Grouping="And">
                           <ConditionSingle Enabled="true" ExpressionL="${lvar:bluTargets.indexof(${target})}" ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
                         </Condition>
-                        <Conditions />
                       </Trigger>
                     </Triggers>
                   </Folder>
@@ -16249,31 +16152,25 @@
                     <Actions>
                       <Action OrderNumber="1" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" TriggerOp="CancelAllTrigger" ActionType="Trigger">
                         <Condition Enabled="false" Grouping="Or" />
-                        <Conditions />
                       </Action>
                       <Action OrderNumber="2" LogLevel="-1" TextAuraOp="DeactivateAllAura" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="TextAura">
                         <Condition Enabled="false" Grouping="Or" />
-                        <Conditions />
                       </Action>
                       <Action OrderNumber="3" AuraOp="DeactivateAllAura" LogLevel="-1" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Aura">
                         <Condition Enabled="false" Grouping="Or" />
-                        <Conditions />
                       </Action>
                     </Actions>
                     <Condition Enabled="false" Grouping="Or" />
-                    <Conditions />
                   </Trigger>
                   <Trigger Enabled="true" Name="Moon Flute" Id="206dd494-a2b6-44ee-9e93-4c5a502f3a06" RegularExpression="1A:[A-F0-9]{8}:(?&lt;player&gt;[\w-' ]+) gains the effect of Waxing Nocturne from (.*?)? for (?&lt;duration&gt;[0-9]{1,2})\.00 Seconds">
                     <Actions>
                       <Action OrderNumber="1" AuraName="TEA_Compressed_Duration" TextAuraEffect="Bold" TextAuraFontSize="20.25" TextAuraForeground="Lime" TextAuraOutline="Black" TextAuraName="moonFlute" TextAuraExpression="Waning Nocturne in ${numeric:${duration}-${_since}}" TextAuraXIniExpression="0" TextAuraYIniExpression="500" TextAuraWIniExpression="${_screenwidth}" TextAuraHIniExpression="200" TextAuraOIniExpression="100" TextAuraTTLTickExpression="${duration}-${_since}" TextAuraUseOutline="True" TextAuraFontName="Microsoft Sans Serif" ActionType="TextAura">
                         <Condition Enabled="false" Grouping="Or" />
-                        <Conditions />
                       </Action>
                     </Actions>
                     <Condition Enabled="true" Grouping="And">
                       <ConditionSingle Enabled="true" ExpressionL="${player}" ExpressionTypeL="String" ExpressionR="${_ffxivplayer}" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
                     </Condition>
-                    <Conditions />
                   </Trigger>
                 </Triggers>
               </Folder>

@@ -19637,7 +19637,35 @@
           <Folder ZoneFilterEnabled="True" Id="e3bfac0f-49ed-4dc6-a446-74e668115e17" ZoneFilterRegularExpression="The\ Bozjan\ Southern\ Front" Name="Critical Engagements" Enabled="true">
             <Folders>
               <Folder Id="28521c71-7898-48c2-a87f-fd7fbf93822b" Name="Kill It with Fire" Enabled="true">
-                <Folders />
+                <Folders>
+                  <Folder Id="3d550fc8-efed-43cd-9f9f-922b2d03bed7" Name="Reset" Enabled="true">
+                    <Folders />
+                    <Triggers>
+                      <Trigger Enabled="true" Name="Player" Id="b8fe8d5c-8b70-4033-891f-9c7fcfd1b7f9" RegularExpression="19:(?&lt;player&gt;[\w-' ]+) was defeated by">
+                        <Actions>
+                          <Action OrderNumber="1" LogLevel="-1" VariableName="deadLeaves" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Variable">
+                            <Condition Enabled="false" Grouping="Or" />
+                            <Conditions />
+                          </Action>
+                        </Actions>
+                        <Condition Enabled="true" Grouping="Or">
+                          <ConditionSingle Enabled="true" ExpressionL="${player}" ExpressionTypeL="String" ExpressionR="${_ffxivplayer}" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
+                        </Condition>
+                        <Conditions />
+                      </Trigger>
+                      <Trigger Enabled="true" Name="Peerifool" Id="b53a2ce6-d0d0-4a7d-9a34-df58cc295634" RegularExpression="19:Peerifool was defeated by">
+                        <Actions>
+                          <Action OrderNumber="1" LogLevel="-1" VariableName="deadLeaves" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Variable">
+                            <Condition Enabled="false" Grouping="Or" />
+                            <Conditions />
+                          </Action>
+                        </Actions>
+                        <Condition Enabled="false" Grouping="Or" />
+                        <Conditions />
+                      </Trigger>
+                    </Triggers>
+                  </Folder>
+                </Folders>
                 <Triggers>
                   <Trigger Enabled="true" Name="Dead Leaves" Id="82816e6d-9399-4c4b-8486-cbc75d93ceff" RegularExpression="14:5025:Peerifool">
                     <Actions>
@@ -19685,16 +19713,6 @@
                     <Condition Enabled="true" Grouping="Or">
                       <ConditionSingle Enabled="true" ExpressionL="${player}" ExpressionTypeL="String" ExpressionR="${_ffxivplayer}" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
                     </Condition>
-                    <Conditions />
-                  </Trigger>
-                  <Trigger Enabled="true" Name="# Reset" Id="b8fe8d5c-8b70-4033-891f-9c7fcfd1b7f9" RegularExpression="19:Peerifool was defeated by">
-                    <Actions>
-                      <Action OrderNumber="1" LogLevel="-1" VariableName="deadLeaves" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Variable">
-                        <Condition Enabled="false" Grouping="Or" />
-                        <Conditions />
-                      </Action>
-                    </Actions>
-                    <Condition Enabled="false" Grouping="Or" />
                     <Conditions />
                   </Trigger>
                   <Trigger Enabled="true" Name="Harvest Festival" Id="683234f4-39b9-48dc-935d-fc52279d23de" RegularExpression="14:501F:Peerifool">

@@ -14716,30 +14716,32 @@
                       <Folder Id="d31c9c90-4613-4a37-87bb-c7a209b23c9d" Name="Math" Enabled="true">
                         <Folders />
                         <Triggers>
-                          <Trigger Enabled="true" Name="HP Penalty" Id="1919fa95-6a1a-4f87-b45f-c9f6b50ac643" RegularExpression="1A:(?&lt;playerID&gt;[0-9A-F]{8}):(?&lt;name&gt;[\w-' ]+) gains the effect of (HP Penalty|最大ＨＰ低下\[強\])">
+                          <Trigger Enabled="true" Name="HP Penalty" Id="1919fa95-6a1a-4f87-b45f-c9f6b50ac643" RegularExpression="1A:[0-9A-F]{8}:(?&lt;name&gt;[\w-' ]+) gains the effect of (HP Penalty|最大ＨＰ低下\[強\])">
                             <Actions>
-                              <Action OrderNumber="1" LogLevel="-1" VariableOp="SetNumeric" VariableName="mathBaseValue" VariableExpression="${_ffxivparty[${playerID}].currenthp}" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Variable">
+                              <Action OrderNumber="1" LogLevel="-1" VariableOp="SetNumeric" VariableName="mathBaseValue" VariableExpression="${_ffxivparty[1].currenthp}" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Variable">
                                 <Condition Enabled="false" Grouping="Or" />
+                                <Conditions />
                               </Action>
                             </Actions>
                             <Condition Enabled="true" Grouping="And">
                               <ConditionSingle Enabled="true" ExpressionL="${evar:mathBaseValue}" ExpressionTypeL="Numeric" ExpressionR="0" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
                               <ConditionSingle Enabled="true" ExpressionL="${name}" ExpressionTypeL="String" ExpressionR="${_ffxivplayer}" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
-                              <ConditionSingle Enabled="true" ExpressionL="${_ffxivparty[${playerID}].currenthp}" ExpressionTypeL="Numeric" ExpressionR="0" ExpressionTypeR="Numeric" ConditionType="NumericGreaterEqual" />
-                              <ConditionSingle Enabled="true" ExpressionL="${_ffxivparty[${playerID}].currenthp}" ExpressionTypeL="Numeric" ExpressionR="10" ExpressionTypeR="Numeric" ConditionType="NumericLessEqual" />
+                              <ConditionSingle Enabled="true" ExpressionL="${_ffxivparty[1].currenthp}" ExpressionTypeL="Numeric" ExpressionR="0" ExpressionTypeR="Numeric" ConditionType="NumericGreaterEqual" />
+                              <ConditionSingle Enabled="true" ExpressionL="${_ffxivparty[1].currenthp}" ExpressionTypeL="Numeric" ExpressionR="10" ExpressionTypeR="Numeric" ConditionType="NumericLessEqual" />
                             </Condition>
                           </Trigger>
-                          <Trigger Enabled="true" Name="HP Penalty (Failsafe)" Id="c86e7bea-6fa8-4363-86d1-7c37b9b6d4e3" RegularExpression="1A:(?&lt;playerID&gt;[0-9A-F]{8}):(?&lt;name&gt;[\w-' ]+) gains the effect of (HP Penalty|最大ＨＰ低下\[強\])">
+                          <Trigger Enabled="true" Name="HP Penalty (Failsafe)" Id="c86e7bea-6fa8-4363-86d1-7c37b9b6d4e3" RegularExpression="1A:[0-9A-F]{8}:(?&lt;name&gt;[\w-' ]+) gains the effect of (HP Penalty|最大ＨＰ低下\[強\])">
                             <Actions>
-                              <Action OrderNumber="1" LogLevel="-1" VariableOp="SetNumeric" VariableName="mathBaseValue" VariableExpression="${_ffxivparty[${playerID}].currenthp}" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Variable" ExecutionDelayExpression="500">
+                              <Action OrderNumber="1" LogLevel="-1" VariableOp="SetNumeric" VariableName="mathBaseValue" VariableExpression="${_ffxivparty[1].currenthp}" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Variable" ExecutionDelayExpression="500">
                                 <Condition Enabled="false" Grouping="Or" />
+                                <Conditions />
                               </Action>
                             </Actions>
                             <Condition Enabled="true" Grouping="And">
                               <ConditionSingle Enabled="true" ExpressionL="${evar:mathBaseValue}" ExpressionTypeL="Numeric" ExpressionR="0" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
                               <ConditionSingle Enabled="true" ExpressionL="${name}" ExpressionTypeL="String" ExpressionR="${_ffxivplayer}" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
-                              <ConditionSingle Enabled="true" ExpressionL="${_ffxivparty[${playerID}].currenthp}" ExpressionTypeL="Numeric" ExpressionR="0" ExpressionTypeR="Numeric" ConditionType="NumericGreaterEqual" />
-                              <ConditionSingle Enabled="true" ExpressionL="${_ffxivparty[${playerID}].currenthp}" ExpressionTypeL="Numeric" ExpressionR="10" ExpressionTypeR="Numeric" ConditionType="NumericLessEqual" />
+                              <ConditionSingle Enabled="true" ExpressionL="${_ffxivparty[1].currenthp}" ExpressionTypeL="Numeric" ExpressionR="0" ExpressionTypeR="Numeric" ConditionType="NumericGreaterEqual" />
+                              <ConditionSingle Enabled="true" ExpressionL="${_ffxivparty[1].currenthp}" ExpressionTypeL="Numeric" ExpressionR="10" ExpressionTypeR="Numeric" ConditionType="NumericLessEqual" />
                             </Condition>
                           </Trigger>
                           <Trigger Enabled="true" Name="Divide by 4" Id="3ec3663d-0674-422d-9e83-7647418d660b" RegularExpression="14:2CCC:(Construct 7|労働七号)">
@@ -16206,10 +16208,6 @@
                   <Folder Id="6c3f44ed-c0f0-4327-bc1d-aed7471d3f10" Name="Math" Enabled="true">
                     <Folders />
                     <Triggers>
-                      <Trigger Enabled="true" Name="Indivisible" Id="b0708c71-182a-42bc-b1b6-66f097d5c0e2" RegularExpression="14:50C8:Mark Xiii-X Magitek Laborer">
-                        <Actions />
-                        <Condition Enabled="false" Grouping="Or" />
-                      </Trigger>
                       <Trigger Enabled="true" Name="Divide by 5" Id="0472b220-07bf-4973-b576-54263e37efe2" RegularExpression="14:50C7:Mark Xiii-X Magitek Laborer">
                         <Actions>
                           <Action OrderNumber="1" LogLevel="-1" UseTTSTextExpression="Go Four" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="UseTTS">
@@ -16302,8 +16300,9 @@
                       </Trigger>
                       <Trigger Enabled="true" Name="HP Penalty" Id="ed9ba2f5-9935-4315-9630-0ee1faafd4cc" RegularExpression="1A:[0-9A-F]{8}:(?&lt;name&gt;[\w-' ]+) gains the effect of (HP Penalty|最大ＨＰ低下\[強\])">
                         <Actions>
-                          <Action OrderNumber="1" LogLevel="-1" VariableOp="SetNumeric" VariableName="mathBaseValue" VariableExpression="${_ffxivparty[${playerID}].currenthp}" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Variable">
+                          <Action OrderNumber="1" LogLevel="-1" VariableOp="SetNumeric" VariableName="mathBaseValue" VariableExpression="${_ffxivparty[1].currenthp}" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Variable">
                             <Condition Enabled="false" Grouping="Or" />
+                            <Conditions />
                           </Action>
                         </Actions>
                         <Condition Enabled="true" Grouping="And">
@@ -16315,8 +16314,9 @@
                       </Trigger>
                       <Trigger Enabled="true" Name="HP Penalty (Failsafe)" Id="cf31b8df-97d6-4508-a061-b90eefb4180c" RegularExpression="1A:[0-9A-F]{8}:(?&lt;name&gt;[\w-' ]+) gains the effect of (HP Penalty|最大ＨＰ低下\[強\])">
                         <Actions>
-                          <Action OrderNumber="1" LogLevel="-1" VariableOp="SetNumeric" VariableName="mathBaseValue" VariableExpression="${_ffxivparty[${playerID}].currenthp}" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Variable" ExecutionDelayExpression="500">
+                          <Action OrderNumber="1" LogLevel="-1" VariableOp="SetNumeric" VariableName="mathBaseValue" VariableExpression="${_ffxivparty[1].currenthp}" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Variable" ExecutionDelayExpression="500">
                             <Condition Enabled="false" Grouping="Or" />
+                            <Conditions />
                           </Action>
                         </Actions>
                         <Condition Enabled="true" Grouping="And">
@@ -16330,11 +16330,47 @@
                         <Actions>
                           <Action OrderNumber="1" LogLevel="-1" VariableName="mathBaseValue" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Variable">
                             <Condition Enabled="false" Grouping="Or" />
+                            <Conditions />
                           </Action>
                         </Actions>
                         <Condition Enabled="true" Grouping="And">
                           <ConditionSingle Enabled="true" ExpressionL="${name}" ExpressionTypeL="String" ExpressionR="${_ffxivplayer}" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
                         </Condition>
+                      </Trigger>
+                      <Trigger Enabled="true" Name="Indivisible" Id="dc04c7e9-08cd-487b-b92f-11c41d67cd7f" RegularExpression="14:50C8:Mark Xiii-X Magitek Laborer">
+                        <Actions>
+                          <Action OrderNumber="1" LogLevel="-1" UseTTSTextExpression="Go Three" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="UseTTS">
+                            <Condition Enabled="true" Grouping="Or">
+                              <ConditionSingle Enabled="true" ExpressionL="${var:mathBaseValue}" ExpressionTypeL="Numeric" ExpressionR="3" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
+                            </Condition>
+                            <Conditions />
+                          </Action>
+                          <Action OrderNumber="2" LogLevel="-1" UseTTSTextExpression="Go Two" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="UseTTS">
+                            <Condition Enabled="true" Grouping="Or">
+                              <ConditionSingle Enabled="true" ExpressionL="${var:mathBaseValue}" ExpressionTypeL="Numeric" ExpressionR="9" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
+                            </Condition>
+                            <Conditions />
+                          </Action>
+                          <Action OrderNumber="3" LogLevel="-1" UseTTSTextExpression="Go One" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="UseTTS">
+                            <Condition Enabled="true" Grouping="Or">
+                              <ConditionSingle Enabled="true" ExpressionL="${var:mathBaseValue}" ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
+                              <ConditionSingle Enabled="true" ExpressionL="${var:mathBaseValue}" ExpressionTypeL="Numeric" ExpressionR="4" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
+                              <ConditionSingle Enabled="true" ExpressionL="${var:mathBaseValue}" ExpressionTypeL="Numeric" ExpressionR="6" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
+                            </Condition>
+                            <Conditions />
+                          </Action>
+                          <Action OrderNumber="4" LogLevel="-1" UseTTSTextExpression="Stay Out" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="UseTTS">
+                            <Condition Enabled="true" Grouping="Or">
+                              <ConditionSingle Enabled="true" ExpressionL="${var:mathBaseValue}" ExpressionTypeL="Numeric" ExpressionR="2" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
+                              <ConditionSingle Enabled="true" ExpressionL="${var:mathBaseValue}" ExpressionTypeL="Numeric" ExpressionR="3" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
+                              <ConditionSingle Enabled="true" ExpressionL="${var:mathBaseValue}" ExpressionTypeL="Numeric" ExpressionR="5" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
+                              <ConditionSingle Enabled="true" ExpressionL="${var:mathBaseValue}" ExpressionTypeL="Numeric" ExpressionR="7" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
+                            </Condition>
+                            <Conditions />
+                          </Action>
+                        </Actions>
+                        <Condition Enabled="false" Grouping="Or" />
+                        <Conditions />
                       </Trigger>
                     </Triggers>
                   </Folder>
@@ -17151,6 +17187,7 @@
                               <ConditionSingle Enabled="true" ExpressionL="${_ffxivplayer.job}" ExpressionTypeL="String" ExpressionR="Tank" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
                               <ConditionSingle Enabled="true" ExpressionL="${_ffxivplayer.job}" ExpressionTypeL="String" ExpressionR="Healer" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
                             </Condition>
+                            <Conditions />
                           </Action>
                           <Action OrderNumber="2" LogLevel="-1" UseTTSTextExpression="Tankbuster" TextAuraEffect="Bold" TextAuraFontSize="24" TextAuraForeground="#FFBB00" TextAuraOutline="Black" TextAuraName="tankbusterText" TextAuraExpression="Tankbuster on ${name}" TextAuraXIniExpression="0" TextAuraYIniExpression="500" TextAuraWIniExpression="${_screenwidth}" TextAuraHIniExpression="100" TextAuraOIniExpression="100" TextAuraTTLTickExpression="3-${_since}" TextAuraUseOutline="True" TextAuraFontName="Microsoft Sans Serif" ActionType="TextAura">
                             <Condition Enabled="true" Grouping="And">
@@ -17160,6 +17197,7 @@
                                 <ConditionSingle Enabled="true" ExpressionL="${_ffxivparty[1].role}" ExpressionTypeL="String" ExpressionR="Tank" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
                               </ConditionGroup>
                             </Condition>
+                            <Conditions />
                           </Action>
                         </Actions>
                         <Condition Enabled="true" Grouping="Or">
@@ -17688,6 +17726,7 @@
                     <Actions>
                       <Action OrderNumber="1" LogLevel="-1" UseTTSTextExpression="Raidwide" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="UseTTS">
                         <Condition Enabled="false" Grouping="Or" />
+                        <Conditions />
                       </Action>
                     </Actions>
                     <Condition Enabled="true" Grouping="Or">

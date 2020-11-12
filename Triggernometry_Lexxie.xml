@@ -4472,14 +4472,6 @@
                     </Actions>
                     <Condition Enabled="false" Grouping="Or" />
                   </Trigger>
-                  <Trigger Enabled="true" Name="# Congratulations" Id="85d90269-6dc5-4ef1-914d-ace3513a0a6e" RegularExpression="19:(Raktapaksa|ラクタパクシャ) was defeated by">
-                    <Actions>
-                      <Action OrderNumber="1" LogLevel="-1" PlaySoundFileExpression="https://raw.githubusercontent.com/lexxiesia/xiv_triggernometry/master/resources/wav/kongouratulations.mp3" PlaySoundVolumeExpression="50" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="PlaySound">
-                        <Condition Enabled="false" Grouping="Or" />
-                      </Action>
-                    </Actions>
-                    <Condition Enabled="false" Grouping="Or" />
-                  </Trigger>
                   <Trigger Enabled="true" Name="# Reset" Id="6ab0b0ce-1aca-43c2-8568-9d5a87bdbe00" RegularExpression="21:........:400000[01][03]:">
                     <Actions>
                       <Action OrderNumber="1" LogLevel="-1" VariableName="dataPhase" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Variable">
@@ -4722,14 +4714,6 @@
                       <ConditionSingle Enabled="true" ExpressionL="${var:dataPhase}" ExpressionTypeL="String" ExpressionR="betwixtWorlds" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
                       <ConditionSingle Enabled="true" ExpressionL="${_ffxivparty[1].role}" ExpressionTypeL="String" ExpressionR="DPS" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
                     </Condition>
-                  </Trigger>
-                  <Trigger Enabled="true" Name="# Congratulations" Id="49c0508e-af12-45ff-a14c-272e37a3b932" RegularExpression="19:(The Idol [Oo]f Darkness|ダークアイドル) was defeated by">
-                    <Actions>
-                      <Action OrderNumber="1" LogLevel="-1" PlaySoundFileExpression="https://raw.githubusercontent.com/lexxiesia/xiv_triggernometry/master/resources/wav/kongouratulations.mp3" PlaySoundVolumeExpression="50" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="PlaySound">
-                        <Condition Enabled="false" Grouping="Or" />
-                      </Action>
-                    </Actions>
-                    <Condition Enabled="false" Grouping="Or" />
                   </Trigger>
                   <Trigger Enabled="true" Name="Strength in Numbers" Id="5b3fb679-d1cb-4907-ba53-1a5e41f40ac0" RegularExpression="14:4C70:(Idolatry|アイドラトリー)" PeriodRefire="Deny" RefirePeriodExpression="1000">
                     <Actions>
@@ -5207,14 +5191,6 @@
                     </Actions>
                     <Condition Enabled="false" Grouping="Or" />
                   </Trigger>
-                  <Trigger Enabled="true" Name="# Congratulations" Id="9a763b48-245b-4a52-a6f2-768f291a45a1" RegularExpression="19:(Shiva|シヴァ) was defeated by">
-                    <Actions>
-                      <Action OrderNumber="1" LogLevel="-1" PlaySoundFileExpression="https://raw.githubusercontent.com/lexxiesia/xiv_triggernometry/master/resources/wav/kongouratulations.mp3" PlaySoundVolumeExpression="50" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="PlaySound">
-                        <Condition Enabled="false" Grouping="Or" />
-                      </Action>
-                    </Actions>
-                    <Condition Enabled="false" Grouping="Or" />
-                  </Trigger>
                   <Trigger Enabled="true" Name="Scythe Kick" Id="19c70e6f-834d-41b1-a3c4-02ce6e1048b0" RegularExpression="14:4D6E:(Shiva|シヴァ)">
                     <Actions>
                       <Action OrderNumber="1" PlaySoundFileExpression="https://raw.githubusercontent.com/lexxiesia/xiv_triggernometry/master/resources/wav/donatsu.mp3" UseTTSTextExpression="In" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="PlaySound">
@@ -5467,14 +5443,6 @@
                         <Condition Enabled="false" Grouping="And">
                           <ConditionSingle Enabled="true" ExpressionL="${effect}" ExpressionTypeL="String" ExpressionR="gains" ExpressionTypeR="String" ConditionType="StringEqualCase" />
                         </Condition>
-                      </Action>
-                    </Actions>
-                    <Condition Enabled="false" Grouping="Or" />
-                  </Trigger>
-                  <Trigger Enabled="true" Name="# Congratulations" Id="523da9ee-a73e-425a-9f69-30d2a18f520a" RegularExpression="19:(Ramuh|ラムウ) was defeated by">
-                    <Actions>
-                      <Action OrderNumber="1" LogLevel="-1" PlaySoundFileExpression="https://raw.githubusercontent.com/lexxiesia/xiv_triggernometry/master/resources/wav/kongouratulations.mp3" PlaySoundVolumeExpression="50" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="PlaySound">
-                        <Condition Enabled="false" Grouping="Or" />
                       </Action>
                     </Actions>
                     <Condition Enabled="false" Grouping="Or" />
@@ -12572,7 +12540,6 @@
                     <Actions>
                       <Action OrderNumber="1" UseTTSTextExpression="Stack" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="UseTTS">
                         <Condition Enabled="false" Grouping="And" />
-                        <Conditions />
                       </Action>
                     </Actions>
                     <Condition Enabled="false" Grouping="And" />
@@ -15883,6 +15850,14 @@
               <ConditionSingle Enabled="true" ExpressionL="${_ffxivparty[${ninja}].job}" ExpressionTypeL="String" ExpressionR="NIN" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
             </Condition>
           </Trigger>
+          <Trigger Enabled="true" Name="Congratulations" Id="10c12ebb-9a8b-4083-9229-96c6449f1a89" RegularExpression="21:8003[0-9A-F]{4}:40000003:">
+            <Actions>
+              <Action OrderNumber="1" LogLevel="-1" PlaySoundFileExpression="https://raw.githubusercontent.com/lexxiesia/xiv_triggernometry/master/resources/wav/kongouratulations.mp3" PlaySoundVolumeExpression="50" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="PlaySound">
+                <Condition Enabled="false" Grouping="Or" />
+              </Action>
+            </Actions>
+            <Condition Enabled="false" Grouping="Or" />
+          </Trigger>
         </Triggers>
       </Folder>
       <Folder Id="95eb0fb0-3634-4595-acfe-32a8ea2ee557" Name="General" Enabled="true">
@@ -16816,7 +16791,7 @@
                     </Actions>
                     <Condition Enabled="false" Grouping="Or" />
                   </Trigger>
-                  <Trigger Enabled="true" Name="# Win" Id="5ecc0e8b-6095-4bbf-acb5-6a56d603bb90" RegularExpression="19:Pyrobolus Mater was defeated by">
+                  <Trigger Enabled="true" Name="# Win" Id="5ecc0e8b-6095-4bbf-acb5-6a56d603bb90" RegularExpression="21:[0-9A-F]{8}:80000014:">
                     <Actions>
                       <Action OrderNumber="1" LogLevel="-1" VariableName="inDuel" TextAuraOp="DeactivateAura" TextAuraFontSize="8.25" TextAuraName="slowDeflagration" TextAuraFontName="Microsoft Sans Serif" ActionType="TextAura">
                         <Condition Enabled="false" Grouping="Or" />
@@ -17039,31 +17014,7 @@
                 </Triggers>
               </Folder>
               <Folder Id="30b9d11e-68f2-441e-97ac-1cefbc3c68ba" Name="Kill It with Fire" Enabled="true">
-                <Folders>
-                  <Folder Id="8ac00bce-f484-46fb-8686-25349619818c" Name="Reset" Enabled="true">
-                    <Folders />
-                    <Triggers>
-                      <Trigger Enabled="true" Name="Player" Id="71cd787c-6927-45c0-84ee-37ad1466b48c" RegularExpression="19:(?&lt;player&gt;[\w-' ]+) was defeated by">
-                        <Actions>
-                          <Action OrderNumber="1" LogLevel="-1" VariableName="deadLeaves" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Variable">
-                            <Condition Enabled="false" Grouping="Or" />
-                          </Action>
-                        </Actions>
-                        <Condition Enabled="true" Grouping="Or">
-                          <ConditionSingle Enabled="true" ExpressionL="${player}" ExpressionTypeL="String" ExpressionR="${_ffxivplayer}" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
-                        </Condition>
-                      </Trigger>
-                      <Trigger Enabled="true" Name="Peerifool" Id="c9276058-7c58-4a76-8ba3-00f1a9567aed" RegularExpression="19:Peerifool was defeated by">
-                        <Actions>
-                          <Action OrderNumber="1" LogLevel="-1" VariableName="deadLeaves" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Variable">
-                            <Condition Enabled="false" Grouping="Or" />
-                          </Action>
-                        </Actions>
-                        <Condition Enabled="false" Grouping="Or" />
-                      </Trigger>
-                    </Triggers>
-                  </Folder>
-                </Folders>
+                <Folders />
                 <Triggers>
                   <Trigger Enabled="true" Name="Dead Leaves" Id="89a11520-5a7c-4e6a-b90b-092a056d3630" RegularExpression="14:5025:Peerifool">
                     <Actions>
@@ -17147,6 +17098,14 @@
                     </Actions>
                     <Condition Enabled="false" Grouping="Or" />
                   </Trigger>
+                  <Trigger Enabled="true" Name="# Reset" Id="c9276058-7c58-4a76-8ba3-00f1a9567aed" RegularExpression="21:[0-9A-F]{8}:80000014:">
+                    <Actions>
+                      <Action OrderNumber="1" LogLevel="-1" VariableName="deadLeaves" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Variable">
+                        <Condition Enabled="false" Grouping="Or" />
+                      </Action>
+                    </Actions>
+                    <Condition Enabled="false" Grouping="Or" />
+                  </Trigger>
                 </Triggers>
               </Folder>
               <Folder Id="a712eb58-4366-4e8e-a9ba-05b5b8a3467a" Name="Vigil of the Lost" Enabled="true">
@@ -17206,12 +17165,12 @@
                   <Folder Id="3ce7402f-aa25-4a6b-9961-0265235efc28" Name="Brionac" Enabled="true">
                     <Folders />
                     <Triggers>
-                      <Trigger Enabled="true" Name="Magitek Core" Id="ae644b1a-7b2d-4f6d-ae94-b32a1230d0ab" RegularExpression="03:[0-9-A-F]{8}:Added new combatant Magitek Core">
+                      <Trigger Enabled="true" Name="Anti-Warmachina Weaponry" Id="ae644b1a-7b2d-4f6d-ae94-b32a1230d0ab" RegularExpression="14:51CD:Brionac">
                         <Actions>
-                          <Action OrderNumber="1" LogLevel="-1" UseTTSTextExpression="Core" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="UseTTS">
+                          <Action OrderNumber="1" LogLevel="-1" UseTTSTextExpression="Core" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="UseTTS" ExecutionDelayExpression="6500">
                             <Condition Enabled="false" Grouping="Or" />
                           </Action>
-                          <Action OrderNumber="2" LogLevel="-1" UseTTSTextExpression="Tankbuster" TextAuraEffect="Bold" TextAuraFontSize="24" TextAuraForeground="#FFBB00" TextAuraOutline="Black" TextAuraName="switchTarget" TextAuraExpression="Magitek Core: Switch Targets" TextAuraXIniExpression="0" TextAuraYIniExpression="500" TextAuraWIniExpression="${_screenwidth}" TextAuraHIniExpression="100" TextAuraOIniExpression="100" TextAuraTTLTickExpression="3-${_since}" TextAuraUseOutline="True" TextAuraFontName="Microsoft Sans Serif" ActionType="TextAura">
+                          <Action OrderNumber="2" LogLevel="-1" UseTTSTextExpression="Tankbuster" TextAuraEffect="Bold" TextAuraFontSize="24" TextAuraForeground="#FFBB00" TextAuraOutline="Black" TextAuraName="switchTarget" TextAuraExpression="Magitek Core: Switch Targets" TextAuraXIniExpression="0" TextAuraYIniExpression="500" TextAuraWIniExpression="${_screenwidth}" TextAuraHIniExpression="100" TextAuraOIniExpression="100" TextAuraTTLTickExpression="9-${_since}" TextAuraUseOutline="True" TextAuraFontName="Microsoft Sans Serif" ActionType="TextAura" ExecutionDelayExpression="6500">
                             <Condition Enabled="false" Grouping="Or" />
                           </Action>
                         </Actions>
@@ -17268,10 +17227,26 @@
                           <ConditionSingle Enabled="true" ExpressionL="${_ffxivparty[1].z}" ExpressionTypeL="Numeric" ExpressionR="231" ExpressionTypeR="Numeric" ConditionType="NumericGreater" />
                         </Condition>
                       </Trigger>
-                      <Trigger Enabled="true" Name="Energy Generation" Id="8343f03a-5b58-4af5-8f3e-cf05f96c5b0a" RegularExpression="14:51D0:Brionac">
+                      <Trigger Enabled="true" Sequential="True" Name="Energy Generation" Id="8343f03a-5b58-4af5-8f3e-cf05f96c5b0a" RegularExpression="14:51D0:Brionac">
                         <Actions>
-                          <Action OrderNumber="1" LogLevel="-1" UseTTSTextExpression="Orbs" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="UseTTS">
+                          <Action OrderNumber="1" LogLevel="-1" VariableOp="SetNumeric" VariableName="energyCount" VariableExpression="${var:energyCount}+1" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Variable">
                             <Condition Enabled="false" Grouping="Or" />
+                          </Action>
+                          <Action OrderNumber="2" LogLevel="-1" UseTTSTextExpression="Under Orb" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="UseTTS">
+                            <Condition Enabled="true" Grouping="Or">
+                              <ConditionSingle Enabled="true" ExpressionL="${var:energyCount}" ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
+                            </Condition>
+                          </Action>
+                          <Action OrderNumber="3" LogLevel="-1" UseTTSTextExpression="Corner" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="UseTTS">
+                            <Condition Enabled="true" Grouping="Or">
+                              <ConditionSingle Enabled="true" ExpressionL="${var:energyCount}" ExpressionTypeL="Numeric" ExpressionR="2" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
+                            </Condition>
+                          </Action>
+                          <Action OrderNumber="4" LogLevel="-1" UseTTSTextExpression="Orbs" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="UseTTS">
+                            <Condition Enabled="true" Grouping="Or">
+                              <ConditionSingle Enabled="true" ExpressionL="${var:energyCount}" ExpressionTypeL="Numeric" ExpressionR="2" ExpressionTypeR="Numeric" ConditionType="NumericNotEqual" />
+                              <ConditionSingle Enabled="true" ExpressionL="${var:energyCount}" ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="Numeric" ConditionType="NumericNotEqual" />
+                            </Condition>
                           </Action>
                         </Actions>
                         <Condition Enabled="true" Grouping="Or">
@@ -17411,7 +17386,7 @@
                           <ConditionSingle Enabled="true" ExpressionL="${_ffxivparty[1].z}" ExpressionTypeL="Numeric" ExpressionR="255" ExpressionTypeR="Numeric" ConditionType="NumericGreater" />
                         </Condition>
                       </Trigger>
-                      <Trigger Enabled="true" Name="The King's Notice" Id="6b560394-3d30-4d3e-bfe0-3e549053368b" RegularExpression="14:51(6E|4A):Lyon The Beast King" PeriodRefire="Deny" RefirePeriodExpression="1000">
+                      <Trigger Enabled="true" Name="The King's Notice" Id="6b560394-3d30-4d3e-bfe0-3e549053368b" RegularExpression="14:516E:Lyon The Beast King" PeriodRefire="Deny" RefirePeriodExpression="1000">
                         <Actions>
                           <Action OrderNumber="1" LogLevel="-1" UseTTSTextExpression="Look away" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="UseTTS">
                             <Condition Enabled="false" Grouping="Or">
@@ -17484,7 +17459,7 @@
                           <ConditionSingle Enabled="true" ExpressionL="${_ffxivparty[1].z}" ExpressionTypeL="Numeric" ExpressionR="231" ExpressionTypeR="Numeric" ConditionType="NumericLess" />
                         </Condition>
                       </Trigger>
-                      <Trigger Enabled="true" Name="MRV Missile" Id="9773e5c7-a999-4ff7-8e7d-c6bf722dff61" RegularExpression="14:51F[CD]:4[Tt]h Legion Helldiver" PeriodRefire="Deny" RefirePeriodExpression="1000">
+                      <Trigger Enabled="true" Name="MRV Missile" Id="9773e5c7-a999-4ff7-8e7d-c6bf722dff61" RegularExpression="14:51FC:4[Tt]h Legion Helldiver">
                         <Actions>
                           <Action OrderNumber="1" LogLevel="-1" UseTTSTextExpression="Raidwide" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="UseTTS">
                             <Condition Enabled="false" Grouping="Or">
@@ -17497,13 +17472,10 @@
                           <ConditionSingle Enabled="true" ExpressionL="${_ffxivparty[1].z}" ExpressionTypeL="Numeric" ExpressionR="231" ExpressionTypeR="Numeric" ConditionType="NumericLess" />
                         </Condition>
                       </Trigger>
-                      <Trigger Enabled="true" Name="Infrared Blast" Id="d970fd9a-13da-47b4-bca3-00f765fabe07" RegularExpression="14:51EC:4[Tt]h Legion Helldiver" PeriodRefire="Deny" RefirePeriodExpression="1000">
+                      <Trigger Enabled="true" Name="Infrared Blast" Id="d970fd9a-13da-47b4-bca3-00f765fabe07" RegularExpression="14:51EC:4[Tt]h Legion Helldiver">
                         <Actions>
-                          <Action OrderNumber="1" LogLevel="-1" UseTTSTextExpression="Tethers" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="UseTTS">
-                            <Condition Enabled="false" Grouping="Or">
-                              <ConditionSingle Enabled="true" ExpressionL="${_ffxivplayer.job}" ExpressionTypeL="String" ExpressionR="Tank" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
-                              <ConditionSingle Enabled="true" ExpressionL="${_ffxivplayer.job}" ExpressionTypeL="String" ExpressionR="Healer" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
-                            </Condition>
+                          <Action OrderNumber="1" LogLevel="-1" UseTTSTextExpression="Tether" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="UseTTS" ExecutionDelayExpression="6000">
+                            <Condition Enabled="false" Grouping="Or" />
                           </Action>
                         </Actions>
                         <Condition Enabled="true" Grouping="Or">
@@ -17526,6 +17498,9 @@
                             <Condition Enabled="false" Grouping="And">
                               <ConditionSingle Enabled="true" ExpressionL="${actor}" ExpressionTypeL="String" ExpressionR="Living Hand" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
                             </Condition>
+                          </Action>
+                          <Action OrderNumber="3" LogLevel="-1" VariableName="energyCount" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Variable">
+                            <Condition Enabled="false" Grouping="Or" />
                           </Action>
                         </Actions>
                         <Condition Enabled="false" Grouping="Or" />
@@ -17716,6 +17691,14 @@
                         </Actions>
                         <Condition Enabled="false" Grouping="Or" />
                       </Trigger>
+                      <Trigger Enabled="true" Name="Meteor" Id="4eb2c3cc-aa98-4065-96ea-de0cf76d5c2d" RegularExpression="14:4F92:Adrammelech">
+                        <Actions>
+                          <Action OrderNumber="1" LogLevel="-1" UseTTSTextExpression="Meteor" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="UseTTS" ExecutionDelayExpression="4500">
+                            <Condition Enabled="false" Grouping="Or" />
+                          </Action>
+                        </Actions>
+                        <Condition Enabled="false" Grouping="Or" />
+                      </Trigger>
                     </Triggers>
                   </Folder>
                 </Folders>
@@ -17727,45 +17710,7 @@
           <Folder Id="40ffcc10-73a7-4a92-b455-d8af48de0c72" ZoneFilterRegularExpression="The\ Bozjan\ Southern\ Front" Name="Duels" Enabled="true">
             <Folders>
               <Folder Id="1560fd96-22e0-4457-846f-826f585d0cae" Name="Aces High" Enabled="true">
-                <Folders>
-                  <Folder Id="c033dd42-c841-499f-86cc-cafc4bc02e2a" Name="Trackers" Enabled="true">
-                    <Folders />
-                    <Triggers>
-                      <Trigger Enabled="true" Name="# Initialize" Id="a8ce0f03-d8be-4e0c-8186-69dd2313a82a" RegularExpression=":(?&lt;name&gt;[\w-' ]+):[0-9A-F]{2,4}:(.?)*:[0-9A-F]{8}:Gabriel:">
-                        <Actions>
-                          <Action OrderNumber="1" LogLevel="-1" VariableOp="SetString" VariableName="inDuel" VariableExpression="${name}" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Variable">
-                            <Condition Enabled="false" Grouping="Or" />
-                          </Action>
-                        </Actions>
-                        <Condition Enabled="true" Grouping="And">
-                          <ConditionSingle Enabled="true" ExpressionL="${name}" ExpressionTypeL="String" ExpressionR="${_ffxivplayer}" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
-                          <ConditionSingle Enabled="true" ExpressionL="${evar:inDuel}" ExpressionTypeL="Numeric" ExpressionR="0" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
-                        </Condition>
-                      </Trigger>
-                      <Trigger Enabled="true" Name="# Death" Id="a0497bb2-6abb-44c1-902a-b88910b11106" RegularExpression="19:(?&lt;name&gt;[\w-' ]+) was defeated by">
-                        <Actions>
-                          <Action OrderNumber="1" LogLevel="-1" VariableName="inDuel" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Variable">
-                            <Condition Enabled="false" Grouping="Or" />
-                          </Action>
-                        </Actions>
-                        <Condition Enabled="true" Grouping="And">
-                          <ConditionSingle Enabled="true" ExpressionL="${var:inDuel}" ExpressionTypeL="String" ExpressionR="${_ffxivplayer}" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
-                          <ConditionSingle Enabled="true" ExpressionL="${name}" ExpressionTypeL="String" ExpressionR="${_ffxivplayer}" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
-                        </Condition>
-                      </Trigger>
-                      <Trigger Enabled="true" Name="# Win" Id="74315b76-6a2e-44bf-82f3-a554cec5f6f5" RegularExpression="19:Gabriel was defeated by">
-                        <Actions>
-                          <Action OrderNumber="1" LogLevel="-1" VariableName="inDuel" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Variable">
-                            <Condition Enabled="false" Grouping="Or" />
-                          </Action>
-                        </Actions>
-                        <Condition Enabled="true" Grouping="And">
-                          <ConditionSingle Enabled="true" ExpressionL="${var:inDuel}" ExpressionTypeL="String" ExpressionR="${_ffxivplayer}" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
-                        </Condition>
-                      </Trigger>
-                    </Triggers>
-                  </Folder>
-                </Folders>
+                <Folders />
                 <Triggers>
                   <Trigger Enabled="true" Name="Enhanced Mobility" Id="80137e15-d919-4cb5-8a76-51e95f8f02e8" RegularExpression="14:4E8F:Gabriel">
                     <Actions>
@@ -17801,37 +17746,21 @@
                       <ConditionSingle Enabled="true" ExpressionL="${var:inDuel}" ExpressionTypeL="String" ExpressionR="${_ffxivplayer}" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
                     </Condition>
                   </Trigger>
+                  <Trigger Enabled="true" Name="# Initialize" Id="a8ce0f03-d8be-4e0c-8186-69dd2313a82a" RegularExpression=":(?&lt;name&gt;[\w-' ]+):[0-9A-F]{2,4}:(.?)*:[0-9A-F]{8}:Gabriel:">
+                    <Actions>
+                      <Action OrderNumber="1" LogLevel="-1" VariableOp="SetString" VariableName="inDuel" VariableExpression="${name}" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Variable">
+                        <Condition Enabled="false" Grouping="Or" />
+                      </Action>
+                    </Actions>
+                    <Condition Enabled="true" Grouping="And">
+                      <ConditionSingle Enabled="true" ExpressionL="${name}" ExpressionTypeL="String" ExpressionR="${_ffxivplayer}" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
+                      <ConditionSingle Enabled="true" ExpressionL="${evar:inDuel}" ExpressionTypeL="Numeric" ExpressionR="0" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
+                    </Condition>
+                  </Trigger>
                 </Triggers>
               </Folder>
               <Folder Id="3512908d-9ce7-4a0b-a81f-ff4838f4c6b0" Name="Beast of Man" Enabled="true">
-                <Folders>
-                  <Folder Id="52a89a93-fc0d-48c5-87ff-3e34e0ca02cb" Name="Trackers" Enabled="true">
-                    <Folders />
-                    <Triggers>
-                      <Trigger Enabled="true" Name="# Initialize" Id="845d15d9-ebc5-4250-9eed-e6d0cc33ca01" RegularExpression=":(?&lt;name&gt;[\w-' ]+):[0-9A-F]{2,4}:(.?)*:[0-9A-F]{8}:Lyon The Beast King:">
-                        <Actions>
-                          <Action OrderNumber="1" LogLevel="-1" VariableOp="SetString" VariableName="inDuel" VariableExpression="${name}" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Variable">
-                            <Condition Enabled="false" Grouping="Or" />
-                          </Action>
-                        </Actions>
-                        <Condition Enabled="true" Grouping="And">
-                          <ConditionSingle Enabled="true" ExpressionL="${name}" ExpressionTypeL="String" ExpressionR="${_ffxivplayer}" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
-                          <ConditionSingle Enabled="true" ExpressionL="${evar:inDuel}" ExpressionTypeL="Numeric" ExpressionR="0" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
-                        </Condition>
-                      </Trigger>
-                      <Trigger Enabled="true" Name="# Win" Id="643ee058-97e5-410a-996a-33230d448302" RegularExpression="19:Lyon The Beast King was defeated by">
-                        <Actions>
-                          <Action OrderNumber="1" LogLevel="-1" VariableName="inDuel" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Variable">
-                            <Condition Enabled="false" Grouping="Or" />
-                          </Action>
-                        </Actions>
-                        <Condition Enabled="true" Grouping="And">
-                          <ConditionSingle Enabled="true" ExpressionL="${var:inDuel}" ExpressionTypeL="String" ExpressionR="${_ffxivplayer}" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
-                        </Condition>
-                      </Trigger>
-                    </Triggers>
-                  </Folder>
-                </Folders>
+                <Folders />
                 <Triggers>
                   <Trigger Enabled="true" Name="Taste of Blood" Id="f87dae25-7ee9-4961-873e-33b8c047d041" RegularExpression="14:514F:Lyon The Beast King">
                     <Actions>
@@ -17913,37 +17842,21 @@
                       <ConditionSingle Enabled="true" ExpressionL="${var:inDuel}" ExpressionTypeL="String" ExpressionR="${_ffxivplayer}" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
                     </Condition>
                   </Trigger>
+                  <Trigger Enabled="true" Name="# Initialize" Id="845d15d9-ebc5-4250-9eed-e6d0cc33ca01" RegularExpression=":(?&lt;name&gt;[\w-' ]+):[0-9A-F]{2,4}:(.?)*:[0-9A-F]{8}:Lyon The Beast King:">
+                    <Actions>
+                      <Action OrderNumber="1" LogLevel="-1" VariableOp="SetString" VariableName="inDuel" VariableExpression="${name}" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Variable">
+                        <Condition Enabled="false" Grouping="Or" />
+                      </Action>
+                    </Actions>
+                    <Condition Enabled="true" Grouping="And">
+                      <ConditionSingle Enabled="true" ExpressionL="${name}" ExpressionTypeL="String" ExpressionR="${_ffxivplayer}" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
+                      <ConditionSingle Enabled="true" ExpressionL="${evar:inDuel}" ExpressionTypeL="Numeric" ExpressionR="0" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
+                    </Condition>
+                  </Trigger>
                 </Triggers>
               </Folder>
               <Folder Id="1b9a99a2-e89f-426f-8152-141f5e1aa06a" Name="And the Flames Went Higher" Enabled="true">
-                <Folders>
-                  <Folder Id="8af94381-f7f4-418f-8493-6be52dc45174" Name="Trackers" Enabled="true">
-                    <Folders />
-                    <Triggers>
-                      <Trigger Enabled="true" Name="# Initialize" Id="669ce987-17af-40b7-9113-5f2df2f0bedf" RegularExpression=":(?&lt;name&gt;[\w-' ]+):[0-9A-F]{2,4}:(.?)*:[0-9A-F]{8}:Sartauvoir [Tt]he Inferno:">
-                        <Actions>
-                          <Action OrderNumber="1" LogLevel="-1" VariableOp="SetString" VariableName="inDuel" VariableExpression="${name}" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Variable">
-                            <Condition Enabled="false" Grouping="Or" />
-                          </Action>
-                        </Actions>
-                        <Condition Enabled="true" Grouping="And">
-                          <ConditionSingle Enabled="true" ExpressionL="${name}" ExpressionTypeL="String" ExpressionR="${_ffxivplayer}" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
-                          <ConditionSingle Enabled="true" ExpressionL="${evar:inDuel}" ExpressionTypeL="Numeric" ExpressionR="0" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
-                        </Condition>
-                      </Trigger>
-                      <Trigger Enabled="true" Name="# Win" Id="f61c5827-7381-4dc2-b8f9-6056609632ef" RegularExpression="19:Sartauvoir [Tt]he Inferno was defeated by">
-                        <Actions>
-                          <Action OrderNumber="1" LogLevel="-1" VariableName="inDuel" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Variable">
-                            <Condition Enabled="false" Grouping="Or" />
-                          </Action>
-                        </Actions>
-                        <Condition Enabled="true" Grouping="And">
-                          <ConditionSingle Enabled="true" ExpressionL="${var:inDuel}" ExpressionTypeL="String" ExpressionR="${_ffxivplayer}" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
-                        </Condition>
-                      </Trigger>
-                    </Triggers>
-                  </Folder>
-                </Folders>
+                <Folders />
                 <Triggers>
                   <Trigger Enabled="true" Name="Meltdown" Id="8a62b024-8f52-4f6b-8324-3c9229fa9ca2" RegularExpression="14:50A[DE]:Sartauvoir [Tt]he Inferno" PeriodRefire="Deny" RefirePeriodExpression="1000">
                     <Actions>
@@ -18007,11 +17920,22 @@
                       <ConditionSingle Enabled="true" ExpressionL="${var:inDuel}" ExpressionTypeL="String" ExpressionR="${_ffxivplayer}" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
                     </Condition>
                   </Trigger>
+                  <Trigger Enabled="true" Name="# Initialize" Id="669ce987-17af-40b7-9113-5f2df2f0bedf" RegularExpression=":(?&lt;name&gt;[\w-' ]+):[0-9A-F]{2,4}:(.?)*:[0-9A-F]{8}:Sartauvoir [Tt]he Inferno:">
+                    <Actions>
+                      <Action OrderNumber="1" LogLevel="-1" VariableOp="SetString" VariableName="inDuel" VariableExpression="${name}" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Variable">
+                        <Condition Enabled="false" Grouping="Or" />
+                      </Action>
+                    </Actions>
+                    <Condition Enabled="true" Grouping="And">
+                      <ConditionSingle Enabled="true" ExpressionL="${name}" ExpressionTypeL="String" ExpressionR="${_ffxivplayer}" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
+                      <ConditionSingle Enabled="true" ExpressionL="${evar:inDuel}" ExpressionTypeL="Numeric" ExpressionR="0" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
+                    </Condition>
+                  </Trigger>
                 </Triggers>
               </Folder>
             </Folders>
             <Triggers>
-              <Trigger Enabled="true" Name="# Death" Id="de6b1daa-ef48-43dc-a4b3-3e2d5aa76ee7" RegularExpression="19:(?&lt;name&gt;[\w-' ]+) was defeated by">
+              <Trigger Enabled="true" Name="# Reset" Id="de6b1daa-ef48-43dc-a4b3-3e2d5aa76ee7" RegularExpression="21:[0-9A-F]{8}:80000014:">
                 <Actions>
                   <Action OrderNumber="1" LogLevel="-1" VariableName="inDuel" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Variable">
                     <Condition Enabled="false" Grouping="Or" />

@@ -5237,33 +5237,42 @@
                           </Trigger>
                         </Triggers>
                       </Folder>
-                      <Folder FFXIVJobFilter="75305844736" Id="4230b5c1-81dd-4c37-95c9-8156442f7a2f" Name="Icelit Dragonsong" Enabled="true">
+                      <Folder FFXIVJobFilter="75305844736" Id="2ff3e0bd-a466-46c4-bf18-92c26796f081" Name="Icelit Dragonsong" Enabled="true">
                         <Folders />
                         <Triggers>
-                          <Trigger Enabled="true" Name="Cleanse" Id="77fb66d9-f697-4a38-84a7-7d917c92722c" RegularExpression=":(Shiva|シヴァ):4D7D:">
+                          <Trigger Enabled="true" Name="Cleanse" Id="14bc7601-61a3-4c66-abfe-c7863bf0ec94" RegularExpression=":(Shiva|シヴァ):4D7D:">
                             <Actions>
                               <Action OrderNumber="1" UseTTSTextExpression="Cleanse DPS" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="UseTTS">
                                 <Condition Enabled="false" Grouping="Or" />
+                                <Conditions />
                               </Action>
                             </Actions>
                             <Condition Enabled="true" Grouping="And">
                               <ConditionSingle Enabled="true" ExpressionL="${_ffxivplayer.role}" ExpressionTypeL="String" ExpressionR="Healer" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
                             </Condition>
+                            <Conditions />
                           </Trigger>
-                          <Trigger Enabled="true" Name="Final Tower" Id="2ee541b8-48a4-48c5-8e0a-8d19278d4cad" RegularExpression=":Shiva:4D7[EF]:" PeriodRefire="Deny" RefirePeriodExpression="1000">
+                          <Trigger Enabled="true" Sequential="True" Name="Final Tower" Id="957a84b5-491b-4ef9-9640-5dd79086c9af" RegularExpression=":Shiva:4D7[EF]:" PeriodRefire="Deny" RefirePeriodExpression="1000">
                             <Actions>
-                              <Action OrderNumber="1" LogLevel="-1" UseTTSTextExpression="Tower" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="UseTTS" ExecutionDelayExpression="1000">
+                              <Action OrderNumber="1" LogMessageText="delay" LogLevel="-1" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="LogMessage" ExecutionDelayExpression="1000">
+                                <Condition Enabled="false" Grouping="Or" />
+                                <Conditions />
+                              </Action>
+                              <Action OrderNumber="2" LogLevel="-1" UseTTSTextExpression="Tower" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="UseTTS">
                                 <Condition Enabled="true" Grouping="Or">
                                   <ConditionSingle Enabled="true" ExpressionL="${var:lightsteepedStacks}" ExpressionTypeL="Numeric" ExpressionR="2" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
                                 </Condition>
+                                <Conditions />
                               </Action>
-                              <Action OrderNumber="2" LogLevel="-1" UseTTSTextExpression="Stay Out" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="UseTTS" ExecutionDelayExpression="1000">
+                              <Action OrderNumber="3" LogLevel="-1" UseTTSTextExpression="Stay Out" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="UseTTS">
                                 <Condition Enabled="true" Grouping="Or">
                                   <ConditionSingle Enabled="true" ExpressionL="${var:lightsteepedStacks}" ExpressionTypeL="Numeric" ExpressionR="2" ExpressionTypeR="Numeric" ConditionType="NumericNotEqual" />
                                 </Condition>
+                                <Conditions />
                               </Action>
                             </Actions>
                             <Condition Enabled="false" Grouping="Or" />
+                            <Conditions />
                           </Trigger>
                         </Triggers>
                       </Folder>
@@ -5644,23 +5653,30 @@
                         </Actions>
                         <Condition Enabled="false" Grouping="Or" />
                       </Trigger>
-                      <Trigger Enabled="true" Name="Light Rampant" Id="53e1e697-e597-4165-b4a1-d0579a7961e7" RegularExpression=":Shiva:4D63:" PeriodRefire="Deny" RefirePeriodExpression="1000">
+                      <Trigger Enabled="false" Sequential="True" Name="Light Rampant" Id="916b6eb5-f4ba-4fd3-bb11-c6a6029b098d" RegularExpression=":Shiva:4D63:" PeriodRefire="Deny" RefirePeriodExpression="1000">
                         <Actions>
-                          <Action OrderNumber="1" LogLevel="-1" UseTTSTextExpression="Tower" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="UseTTS" ExecutionDelayExpression="1000">
+                          <Action OrderNumber="1" LogMessageText="delay" LogLevel="-1" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="LogMessage" ExecutionDelayExpression="1000">
+                            <Condition Enabled="false" Grouping="Or" />
+                            <Conditions />
+                          </Action>
+                          <Action OrderNumber="2" LogLevel="-1" UseTTSTextExpression="Tower" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="UseTTS">
                             <Condition Enabled="true" Grouping="Or">
                               <ConditionSingle Enabled="true" ExpressionL="${var:lightsteepedStacks}" ExpressionTypeL="Numeric" ExpressionR="3" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
                             </Condition>
+                            <Conditions />
                           </Action>
-                          <Action OrderNumber="2" LogLevel="-1" UseTTSTextExpression="Stay Out" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="UseTTS" ExecutionDelayExpression="1000">
+                          <Action OrderNumber="3" LogLevel="-1" UseTTSTextExpression="Stay Out" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="UseTTS">
                             <Condition Enabled="true" Grouping="Or">
                               <ConditionSingle Enabled="true" ExpressionL="${var:lightsteepedStacks}" ExpressionTypeL="Numeric" ExpressionR="3" ExpressionTypeR="Numeric" ConditionType="NumericNotEqual" />
                             </Condition>
+                            <Conditions />
                           </Action>
                         </Actions>
                         <Condition Enabled="true" Grouping="And">
                           <ConditionSingle Enabled="true" ExpressionL="${var:meteorCounter}" ExpressionTypeL="Numeric" ExpressionR="2" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
                           <ConditionSingle Enabled="true" ExpressionL="${var:dataPhase}" ExpressionTypeL="String" ExpressionR="lightRampant" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
                         </Condition>
+                        <Conditions />
                       </Trigger>
                     </Triggers>
                   </Folder>
@@ -14195,7 +14211,6 @@
                     <Actions>
                       <Action OrderNumber="1" PlaySoundFileExpression="https://raw.githubusercontent.com/robflop/megumin.love/master/src/resources/sounds/megumin/season-2/lalala.mp3" PlaySoundVolumeExpression="50" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="PlaySound">
                         <Condition Enabled="false" Grouping="Or" />
-                        <Conditions />
                       </Action>
                     </Actions>
                     <Condition Enabled="true" Grouping="And">
@@ -16057,7 +16072,6 @@
             <Actions>
               <Action OrderNumber="1" LogLevel="-1" PlaySoundFileExpression="https://raw.githubusercontent.com/lexxiesia/xiv_triggernometry/master/resources/wav/kongouratulations.mp3" PlaySoundVolumeExpression="50" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="PlaySound">
                 <Condition Enabled="false" Grouping="Or" />
-                <Conditions />
               </Action>
             </Actions>
             <Condition Enabled="true" Grouping="Or">

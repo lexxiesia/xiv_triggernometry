@@ -16972,11 +16972,67 @@
                 <Folders>
                   <Folder FFXIVJobFilterEnabled="True" FFXIVJobFilter="4437573632" Id="2d40d733-dc6c-46fc-93e1-2003c862ee2d" Name="Healers" Enabled="true">
                     <Folders />
-                    <Triggers />
+                    <Triggers>
+                      <Trigger Enabled="true" Name="Optimized Ultima" Id="16731e17-39c0-4d5e-8f09-870803c206f0" RegularExpression="14:5B10:The Emerald Weapon">
+                        <Actions>
+                          <Action OrderNumber="1" LogLevel="-1" UseTTSTextExpression="Raidwide" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="UseTTS">
+                            <Condition Enabled="false" Grouping="Or" />
+                            <Conditions />
+                          </Action>
+                        </Actions>
+                        <Condition Enabled="false" Grouping="Or" />
+                        <Conditions />
+                      </Trigger>
+                      <Trigger Enabled="true" Name="Emerald Shot" Id="1d0f4a5f-54d6-474f-9241-5eca988cf6c2" RegularExpression="14:55B0:The Emerald Weapon starts using Emerald Shot on (?&lt;player&gt;(?&lt;name&gt;[\w-']+) [\w-']+)\.">
+                        <Actions>
+                          <Action OrderNumber="1" LogLevel="-1" UseTTSTextExpression="Tankbuster" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="UseTTS">
+                            <Condition Enabled="false" Grouping="Or">
+                              <ConditionSingle Enabled="true" ExpressionL="${_ffxivplayer.job}" ExpressionTypeL="String" ExpressionR="Tank" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
+                              <ConditionSingle Enabled="true" ExpressionL="${_ffxivplayer.job}" ExpressionTypeL="String" ExpressionR="Healer" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
+                            </Condition>
+                            <Conditions />
+                          </Action>
+                          <Action OrderNumber="2" LogLevel="-1" UseTTSTextExpression="Tankbuster" TextAuraEffect="Bold" TextAuraFontSize="24" TextAuraForeground="#FFBB00" TextAuraOutline="Black" TextAuraName="tankbusterText" TextAuraExpression="Tankbuster on ${name}" TextAuraXIniExpression="0" TextAuraYIniExpression="500" TextAuraWIniExpression="${_screenwidth}" TextAuraHIniExpression="100" TextAuraOIniExpression="100" TextAuraTTLTickExpression="3-${_since}" TextAuraUseOutline="True" TextAuraFontName="Microsoft Sans Serif" ActionType="TextAura">
+                            <Condition Enabled="false" Grouping="Or" />
+                            <Conditions />
+                          </Action>
+                        </Actions>
+                        <Condition Enabled="false" Grouping="Or" />
+                        <Conditions />
+                      </Trigger>
+                    </Triggers>
                   </Folder>
                   <Folder FFXIVJobFilterEnabled="True" FFXIVJobFilter="70868271104" Id="a5b680b0-bd81-4b4b-bc98-e476461cbfc8" Name="Tanks" Enabled="true">
                     <Folders />
-                    <Triggers />
+                    <Triggers>
+                      <Trigger Enabled="true" Name="Optimized Ultima" Id="921eb44e-2807-40d2-90f2-21393dad069a" RegularExpression="14:5B10:The Emerald Weapon">
+                        <Actions>
+                          <Action OrderNumber="1" LogLevel="-1" UseTTSTextExpression="Raidwide" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="UseTTS">
+                            <Condition Enabled="false" Grouping="Or" />
+                            <Conditions />
+                          </Action>
+                        </Actions>
+                        <Condition Enabled="false" Grouping="Or" />
+                        <Conditions />
+                      </Trigger>
+                      <Trigger Enabled="true" Name="Emerald Shot" Id="54b5506c-f6f0-427f-9aa4-27691ec7a44e" RegularExpression="14:55B0:The Emerald Weapon starts using Emerald Shot on (?&lt;player&gt;(?&lt;name&gt;[\w-']+) [\w-']+)\.">
+                        <Actions>
+                          <Action OrderNumber="1" LogLevel="-1" UseTTSTextExpression="Tankbuster" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="UseTTS">
+                            <Condition Enabled="false" Grouping="Or">
+                              <ConditionSingle Enabled="true" ExpressionL="${_ffxivplayer.job}" ExpressionTypeL="String" ExpressionR="Tank" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
+                              <ConditionSingle Enabled="true" ExpressionL="${_ffxivplayer.job}" ExpressionTypeL="String" ExpressionR="Healer" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
+                            </Condition>
+                            <Conditions />
+                          </Action>
+                          <Action OrderNumber="2" LogLevel="-1" UseTTSTextExpression="Tankbuster" TextAuraEffect="Bold" TextAuraFontSize="24" TextAuraForeground="#FFBB00" TextAuraOutline="Black" TextAuraName="tankbusterText" TextAuraExpression="Tankbuster on ${name}" TextAuraXIniExpression="0" TextAuraYIniExpression="500" TextAuraWIniExpression="${_screenwidth}" TextAuraHIniExpression="100" TextAuraOIniExpression="100" TextAuraTTLTickExpression="3-${_since}" TextAuraUseOutline="True" TextAuraFontName="Microsoft Sans Serif" ActionType="TextAura">
+                            <Condition Enabled="false" Grouping="Or" />
+                            <Conditions />
+                          </Action>
+                        </Actions>
+                        <Condition Enabled="false" Grouping="Or" />
+                        <Conditions />
+                      </Trigger>
+                    </Triggers>
                   </Folder>
                   <Folder FFXIVJobFilterEnabled="True" FFXIVJobFilter="9129426944" Id="857cd95d-d966-4fa3-9c90-d42d2221be8b" Name="Melee" Enabled="true">
                     <Folders />
@@ -16984,11 +17040,46 @@
                   </Folder>
                   <Folder FFXIVJobFilterEnabled="True" FFXIVJobFilter="138516889600" Id="f9103dae-e63c-4373-9aab-57401226e309" Name="Ranged" Enabled="true">
                     <Folders />
-                    <Triggers />
+                    <Triggers>
+                      <Trigger Enabled="true" Name="Optimized Ultima" Id="a719738a-3bed-42c9-a5fb-4eb1f47e2d72" RegularExpression="14:5B10:The Emerald Weapon">
+                        <Actions>
+                          <Action OrderNumber="1" LogLevel="-1" UseTTSTextExpression="Raidwide" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="UseTTS">
+                            <Condition Enabled="false" Grouping="Or" />
+                            <Conditions />
+                          </Action>
+                        </Actions>
+                        <Condition Enabled="false" Grouping="Or" />
+                        <Conditions />
+                      </Trigger>
+                    </Triggers>
                   </Folder>
                   <Folder FFXIVJobFilterEnabled="True" FFXIVJobFilter="17263755264" Id="e8b59ae1-afb4-4988-8426-63b5bf8b383f" Name="Caster" Enabled="true">
                     <Folders />
-                    <Triggers />
+                    <Triggers>
+                      <Trigger Enabled="true" Name="Optimized Ultima" Id="3887a014-ecdf-4c72-81ab-42b07a5a0e67" RegularExpression="14:5B10:The Emerald Weapon">
+                        <Actions>
+                          <Action OrderNumber="1" LogLevel="-1" UseTTSTextExpression="Raidwide" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="UseTTS">
+                            <Condition Enabled="false" Grouping="Or" />
+                            <Conditions />
+                          </Action>
+                        </Actions>
+                        <Condition Enabled="false" Grouping="Or" />
+                        <Conditions />
+                      </Trigger>
+                      <Trigger Enabled="true" Name="Emerald Shot" Id="f5de089d-14a5-45c1-8575-4a888c6cdc45" RegularExpression="14:55B0:The Emerald Weapon">
+                        <Actions>
+                          <Action OrderNumber="1" LogLevel="-1" UseTTSTextExpression="Tankbuster" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="UseTTS">
+                            <Condition Enabled="false" Grouping="Or">
+                              <ConditionSingle Enabled="true" ExpressionL="${_ffxivplayer.job}" ExpressionTypeL="String" ExpressionR="Tank" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
+                              <ConditionSingle Enabled="true" ExpressionL="${_ffxivplayer.job}" ExpressionTypeL="String" ExpressionR="Healer" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
+                            </Condition>
+                            <Conditions />
+                          </Action>
+                        </Actions>
+                        <Condition Enabled="false" Grouping="Or" />
+                        <Conditions />
+                      </Trigger>
+                    </Triggers>
                   </Folder>
                 </Folders>
                 <Triggers>
@@ -19604,10 +19695,10 @@
               </Action>
             </Actions>
             <Condition Enabled="true" Grouping="Or">
-              <ConditionSingle Enabled="true" ExpressionL="${numeric:hex2dec(${ID})}" ExpressionTypeL="Numeric" ExpressionR="30089" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
-              <ConditionSingle Enabled="true" ExpressionL="${numeric:hex2dec(${ID})}" ExpressionTypeL="Numeric" ExpressionR="30091" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
-              <ConditionSingle Enabled="true" ExpressionL="${numeric:hex2dec(${ID})}" ExpressionTypeL="Numeric" ExpressionR="30093" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
-              <ConditionSingle Enabled="true" ExpressionL="${numeric:hex2dec(${ID})}" ExpressionTypeL="Numeric" ExpressionR="30095" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
+              <ConditionSingle Enabled="true" ExpressionL="${numeric:hex2dec(${ID})}" ExpressionTypeL="Numeric" ExpressionR="30098" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
+              <ConditionSingle Enabled="true" ExpressionL="${numeric:hex2dec(${ID})}" ExpressionTypeL="Numeric" ExpressionR="30102" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
+              <ConditionSingle Enabled="true" ExpressionL="${numeric:hex2dec(${ID})}" ExpressionTypeL="Numeric" ExpressionR="30104" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
+              <ConditionSingle Enabled="true" ExpressionL="${numeric:hex2dec(${ID})}" ExpressionTypeL="Numeric" ExpressionR="30100" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
               <ConditionSingle Enabled="true" ExpressionL="${numeric:hex2dec(${ID})}" ExpressionTypeL="Numeric" ExpressionR="30057" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
               <ConditionSingle Enabled="true" ExpressionL="${numeric:hex2dec(${ID})}" ExpressionTypeL="Numeric" ExpressionR="30067" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
               <ConditionSingle Enabled="true" ExpressionL="${numeric:hex2dec(${ID})}" ExpressionTypeL="Numeric" ExpressionR="30086" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />

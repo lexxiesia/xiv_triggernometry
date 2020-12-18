@@ -6597,6 +6597,11 @@
                             <Actions>
                               <Action OrderNumber="1" LogLevel="-1" UseTTSTextExpression="One Out" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="UseTTS">
                                 <Condition Enabled="false" Grouping="Or" />
+                                <Conditions />
+                              </Action>
+                              <Action OrderNumber="2" LogLevel="-1" VariableOp="SetString" VariableName="dataPhase" VariableExpression="dualspell" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Variable">
+                                <Condition Enabled="false" Grouping="Or" />
+                                <Conditions />
                               </Action>
                             </Actions>
                             <Condition Enabled="false" Grouping="Or" />
@@ -6621,9 +6626,11 @@
                             <Actions>
                               <Action OrderNumber="1" LogLevel="-1" VariableOp="SetNumeric" VariableName="dualspellCounter" VariableExpression="${var:dualspellCounter}+1" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Variable">
                                 <Condition Enabled="false" Grouping="Or" />
+                                <Conditions />
                               </Action>
                               <Action OrderNumber="2" LogMessageText="Headmarker Delay" LogLevel="Info" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="LogMessage" ExecutionDelayExpression="100">
                                 <Condition Enabled="false" Grouping="Or" />
+                                <Conditions />
                               </Action>
                               <Action OrderNumber="3" TextAuraEffect="Bold" TextAuraFontSize="36" TextAuraForeground="Red" TextAuraOutline="Black" TextAuraName="dualspellNumber" TextAuraExpression="#1" TextAuraXIniExpression="0" TextAuraYIniExpression="500" TextAuraWIniExpression="${_screenwidth}" TextAuraHIniExpression="50" TextAuraOIniExpression="100" TextAuraTTLTickExpression="3-${_since}" TextAuraUseOutline="True" TextAuraFontName="Microsoft Sans Serif" ActionType="TextAura">
                                 <Condition Enabled="true" Grouping="And">
@@ -6633,6 +6640,7 @@
                                     <ConditionSingle Enabled="true" ExpressionL="${var:dualspellCounter}" ExpressionTypeL="Numeric" ExpressionR="2" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
                                   </ConditionGroup>
                                 </Condition>
+                                <Conditions />
                               </Action>
                               <Action OrderNumber="4" TextAuraEffect="Bold" TextAuraFontSize="36" TextAuraForeground="Red" TextAuraOutline="Black" TextAuraName="dualspellNumber" TextAuraExpression="#2" TextAuraXIniExpression="0" TextAuraYIniExpression="500" TextAuraWIniExpression="${_screenwidth}" TextAuraHIniExpression="50" TextAuraOIniExpression="100" TextAuraTTLTickExpression="3-${_since}" TextAuraUseOutline="True" TextAuraFontName="Microsoft Sans Serif" ActionType="TextAura">
                                 <Condition Enabled="true" Grouping="And">
@@ -6642,6 +6650,7 @@
                                   </ConditionGroup>
                                   <ConditionSingle Enabled="true" ExpressionL="${clone}" ExpressionTypeL="String" ExpressionR="${myClone}" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
                                 </Condition>
+                                <Conditions />
                               </Action>
                               <Action OrderNumber="5" TextAuraEffect="Bold" TextAuraFontSize="36" TextAuraForeground="Red" TextAuraOutline="Black" TextAuraName="dualspellNumber" TextAuraExpression="#3" TextAuraXIniExpression="0" TextAuraYIniExpression="500" TextAuraWIniExpression="${_screenwidth}" TextAuraHIniExpression="50" TextAuraOIniExpression="100" TextAuraTTLTickExpression="3-${_since}" TextAuraUseOutline="True" TextAuraFontName="Microsoft Sans Serif" ActionType="TextAura">
                                 <Condition Enabled="true" Grouping="And">
@@ -6651,19 +6660,39 @@
                                   </ConditionGroup>
                                   <ConditionSingle Enabled="true" ExpressionL="${clone}" ExpressionTypeL="String" ExpressionR="${myClone}" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
                                 </Condition>
+                                <Conditions />
                               </Action>
                             </Actions>
                             <Condition Enabled="false" Grouping="And" />
                           </Trigger>
-                          <Trigger Enabled="true" Name="Clone Tracker" Id="81ce7def-50ef-4d91-a353-067fb3873623" RegularExpression="03:(?&lt;cloneID&gt;[0-9A-F]{8}):Added new combatant Shadow Of A Hero">
+                          <Trigger Enabled="true" Name="Clone Tracker" Id="81ce7def-50ef-4d91-a353-067fb3873623" RegularExpression="03:(?&lt;cloneID&gt;[0-9A-F]{8}):Added new combatant Shadow Of A Hero.*Job: (?&lt;job&gt;[\w]{3})">
                             <Actions>
                               <Action OrderNumber="1" LogLevel="-1" VariableOp="SetString" VariableName="myClone" VariableExpression="${cloneID}" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Variable">
                                 <Condition Enabled="false" Grouping="Or" />
+                                <Conditions />
                               </Action>
                             </Actions>
                             <Condition Enabled="true" Grouping="Or">
-                              <ConditionSingle Enabled="true" ExpressionL="${_ffxiventity[${cloneID}].job}" ExpressionTypeL="String" ExpressionR="${_ffxivparty[1].job}" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
+                              <ConditionSingle Enabled="true" ExpressionL="${job}" ExpressionTypeL="String" ExpressionR="${_ffxivparty[1].job}" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
                             </Condition>
+                          </Trigger>
+                          <Trigger Enabled="true" Sequential="True" Name="Stack" Id="2fd692d3-7d6e-4ab6-9cb7-979bfb3f4867" RegularExpression="1B:[0-9A-F]{8}:(?&lt;player&gt;(?&lt;name&gt;[\w-']+) [\w-']+):.{4}:.{4}:.{4}:">
+                            <Actions>
+                              <Action OrderNumber="1" TextAuraEffect="Bold" TextAuraFontSize="24" TextAuraForeground="#FFBB00" TextAuraOutline="Black" TextAuraName="dualspellStack" TextAuraExpression="Stack on ${name}" TextAuraXIniExpression="0" TextAuraYIniExpression="500" TextAuraWIniExpression="1440" TextAuraHIniExpression="150" TextAuraOIniExpression="100" TextAuraTTLTickExpression="14-${_since}" TextAuraUseOutline="True" TextAuraFontName="Microsoft Sans Serif" ActionType="TextAura" ExecutionDelayExpression="100">
+                                <Condition Enabled="true" Grouping="And">
+                                  <ConditionGroup Enabled="true" Grouping="Or">
+                                    <ConditionSingle Enabled="true" ExpressionL="${var:dualspellCounter}" ExpressionTypeL="Numeric" ExpressionR="6" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
+                                    <ConditionSingle Enabled="true" ExpressionL="${var:dualspellCounter}" ExpressionTypeL="Numeric" ExpressionR="5" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
+                                  </ConditionGroup>
+                                  <ConditionSingle Enabled="true" ExpressionL="${clone}" ExpressionTypeL="String" ExpressionR="${myClone}" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
+                                </Condition>
+                                <Conditions />
+                              </Action>
+                            </Actions>
+                            <Condition Enabled="true" Grouping="And">
+                              <ConditionSingle Enabled="true" ExpressionL="${var:dataPhase}" ExpressionTypeL="String" ExpressionR="dualspell" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
+                            </Condition>
+                            <Conditions />
                           </Trigger>
                         </Triggers>
                       </Folder>
@@ -6673,15 +6702,23 @@
                         <Actions>
                           <Action OrderNumber="1" LogLevel="-1" VariableName="umbraTarget" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Variable">
                             <Condition Enabled="false" Grouping="Or" />
+                            <Conditions />
                           </Action>
                           <Action OrderNumber="2" LogLevel="-1" VariableName="dualspellCounter" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Variable">
                             <Condition Enabled="false" Grouping="Or" />
+                            <Conditions />
                           </Action>
-                          <Action OrderNumber="3" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" TriggerOp="CancelAllTrigger" ActionType="Trigger">
+                          <Action OrderNumber="3" LogLevel="-1" VariableName="dataPhase" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Variable">
                             <Condition Enabled="false" Grouping="Or" />
+                            <Conditions />
                           </Action>
-                          <Action OrderNumber="4" LogLevel="-1" TextAuraOp="DeactivateAllAura" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="TextAura">
+                          <Action OrderNumber="4" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" TriggerOp="CancelAllTrigger" ActionType="Trigger">
                             <Condition Enabled="false" Grouping="Or" />
+                            <Conditions />
+                          </Action>
+                          <Action OrderNumber="5" LogLevel="-1" TextAuraOp="DeactivateAllAura" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="TextAura">
+                            <Condition Enabled="false" Grouping="Or" />
+                            <Conditions />
                           </Action>
                         </Actions>
                         <Condition Enabled="false" Grouping="Or" />
@@ -6767,25 +6804,69 @@
                       </Trigger>
                       <Trigger Enabled="true" Name="Giga Slash (Player)" Id="b81692e9-8d32-40e6-8012-739c10ac717b" RegularExpression="14:(?&lt;ID&gt;5B2[CD]):Shadowkeeper">
                         <Actions>
-                          <Action OrderNumber="1" LogLevel="-1" UseTTSTextExpression="Left Cleave" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="UseTTS">
+                          <Action OrderNumber="0" LogLevel="-1" UseTTSTextExpression="Left Cleave" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="UseTTS">
                             <Condition Enabled="true" Grouping="Or">
                               <ConditionSingle Enabled="true" ExpressionL="${ID}" ExpressionTypeL="String" ExpressionR="5B2D" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
                             </Condition>
+                            <Conditions />
                           </Action>
-                          <Action OrderNumber="2" LogLevel="-1" UseTTSTextExpression="Left Cleave" VariableOp="SetString" VariableName="gigaSlash" VariableExpression="leftCleave" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Variable">
-                            <Condition Enabled="true" Grouping="Or">
-                              <ConditionSingle Enabled="true" ExpressionL="${ID}" ExpressionTypeL="String" ExpressionR="5B2D" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
-                            </Condition>
-                          </Action>
-                          <Action OrderNumber="3" LogLevel="-1" UseTTSTextExpression="Right Cleave" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="UseTTS">
+                          <Action OrderNumber="1" LogLevel="-1" UseTTSTextExpression="Right Cleave" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="UseTTS">
                             <Condition Enabled="true" Grouping="Or">
                               <ConditionSingle Enabled="true" ExpressionL="${ID}" ExpressionTypeL="String" ExpressionR="5B2C" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
                             </Condition>
+                            <Conditions />
                           </Action>
-                          <Action OrderNumber="4" LogLevel="-1" UseTTSTextExpression="Right Cleave" VariableOp="SetString" VariableName="gigaSlash" VariableExpression="rightCleave" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Variable">
-                            <Condition Enabled="true" Grouping="Or">
-                              <ConditionSingle Enabled="true" ExpressionL="${ID}" ExpressionTypeL="String" ExpressionR="5B2C" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
+                          <Action OrderNumber="2" LogLevel="-1" UseTTSTextExpression="Tankbuster" TextAuraEffect="Bold" TextAuraFontSize="24" TextAuraForeground="#FFBB00" TextAuraOutline="Black" TextAuraName="gigaSlashDrop" TextAuraExpression="Drop Shadow NORTH" TextAuraXIniExpression="0" TextAuraYIniExpression="500" TextAuraWIniExpression="${_screenwidth}" TextAuraHIniExpression="100" TextAuraOIniExpression="100" TextAuraTTLTickExpression="8-${_since}" TextAuraUseOutline="True" TextAuraFontName="Microsoft Sans Serif" ActionType="TextAura">
+                            <Condition Enabled="true" Grouping="Xor">
+                              <ConditionGroup Enabled="true" Grouping="And">
+                                <ConditionSingle Enabled="true" ExpressionL="${var:myGigaSlash}" ExpressionTypeL="String" ExpressionR="975" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
+                                <ConditionSingle Enabled="true" ExpressionL="${ID}" ExpressionTypeL="String" ExpressionR="5B2D" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
+                              </ConditionGroup>
+                              <ConditionGroup Enabled="true" Grouping="And">
+                                <ConditionSingle Enabled="true" ExpressionL="${ID}" ExpressionTypeL="String" ExpressionR="5B2C" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
+                                <ConditionSingle Enabled="true" ExpressionL="${var:myGigaSlash}" ExpressionTypeL="String" ExpressionR="976" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
+                              </ConditionGroup>
                             </Condition>
+                            <Conditions />
+                          </Action>
+                          <Action OrderNumber="3" LogLevel="-1" UseTTSTextExpression="Tankbuster" TextAuraEffect="Bold" TextAuraFontSize="24" TextAuraForeground="#FFBB00" TextAuraOutline="Black" TextAuraName="gigaSlashDrop" TextAuraExpression="Drop Shadow WEST" TextAuraXIniExpression="0" TextAuraYIniExpression="500" TextAuraWIniExpression="${_screenwidth}" TextAuraHIniExpression="100" TextAuraOIniExpression="100" TextAuraTTLTickExpression="8-${_since}" TextAuraUseOutline="True" TextAuraFontName="Microsoft Sans Serif" ActionType="TextAura">
+                            <Condition Enabled="true" Grouping="Xor">
+                              <ConditionGroup Enabled="true" Grouping="And">
+                                <ConditionSingle Enabled="true" ExpressionL="${var:myGigaSlash}" ExpressionTypeL="String" ExpressionR="973" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
+                                <ConditionSingle Enabled="true" ExpressionL="${ID}" ExpressionTypeL="String" ExpressionR="5B2D" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
+                              </ConditionGroup>
+                              <ConditionGroup Enabled="true" Grouping="And">
+                                <ConditionSingle Enabled="true" ExpressionL="${ID}" ExpressionTypeL="String" ExpressionR="5B2C" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
+                                <ConditionSingle Enabled="true" ExpressionL="${var:myGigaSlash}" ExpressionTypeL="String" ExpressionR="974" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
+                              </ConditionGroup>
+                            </Condition>
+                            <Conditions />
+                          </Action>
+                          <Action OrderNumber="4" LogLevel="-1" UseTTSTextExpression="Tankbuster" TextAuraEffect="Bold" TextAuraFontSize="24" TextAuraForeground="#FFBB00" TextAuraOutline="Black" TextAuraName="gigaSlashDrop" TextAuraExpression="Drop Shadow SOUTH" TextAuraXIniExpression="0" TextAuraYIniExpression="500" TextAuraWIniExpression="${_screenwidth}" TextAuraHIniExpression="100" TextAuraOIniExpression="100" TextAuraTTLTickExpression="8-${_since}" TextAuraUseOutline="True" TextAuraFontName="Microsoft Sans Serif" ActionType="TextAura">
+                            <Condition Enabled="true" Grouping="Xor">
+                              <ConditionGroup Enabled="true" Grouping="And">
+                                <ConditionSingle Enabled="true" ExpressionL="${var:myGigaSlash}" ExpressionTypeL="String" ExpressionR="976" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
+                                <ConditionSingle Enabled="true" ExpressionL="${ID}" ExpressionTypeL="String" ExpressionR="5B2D" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
+                              </ConditionGroup>
+                              <ConditionGroup Enabled="true" Grouping="And">
+                                <ConditionSingle Enabled="true" ExpressionL="${ID}" ExpressionTypeL="String" ExpressionR="5B2C" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
+                                <ConditionSingle Enabled="true" ExpressionL="${var:myGigaSlash}" ExpressionTypeL="String" ExpressionR="975" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
+                              </ConditionGroup>
+                            </Condition>
+                            <Conditions />
+                          </Action>
+                          <Action OrderNumber="5" LogLevel="-1" UseTTSTextExpression="Tankbuster" TextAuraEffect="Bold" TextAuraFontSize="24" TextAuraForeground="#FFBB00" TextAuraOutline="Black" TextAuraName="gigaSlashDrop" TextAuraExpression="Drop Shadow EAST" TextAuraXIniExpression="0" TextAuraYIniExpression="500" TextAuraWIniExpression="${_screenwidth}" TextAuraHIniExpression="100" TextAuraOIniExpression="100" TextAuraTTLTickExpression="8-${_since}" TextAuraUseOutline="True" TextAuraFontName="Microsoft Sans Serif" ActionType="TextAura">
+                            <Condition Enabled="true" Grouping="Xor">
+                              <ConditionGroup Enabled="true" Grouping="And">
+                                <ConditionSingle Enabled="true" ExpressionL="${var:myGigaSlash}" ExpressionTypeL="String" ExpressionR="974" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
+                                <ConditionSingle Enabled="true" ExpressionL="${ID}" ExpressionTypeL="String" ExpressionR="5B2D" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
+                              </ConditionGroup>
+                              <ConditionGroup Enabled="true" Grouping="And">
+                                <ConditionSingle Enabled="true" ExpressionL="${ID}" ExpressionTypeL="String" ExpressionR="5B2C" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
+                                <ConditionSingle Enabled="true" ExpressionL="${var:myGigaSlash}" ExpressionTypeL="String" ExpressionR="973" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
+                              </ConditionGroup>
+                            </Condition>
+                            <Conditions />
                           </Action>
                         </Actions>
                         <Condition Enabled="false" Grouping="Or" />
@@ -6794,6 +6875,11 @@
                         <Actions>
                           <Action OrderNumber="1" LogLevel="-1" UseTTSTextExpression="Clone Cleave" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="UseTTS">
                             <Condition Enabled="false" Grouping="Or" />
+                            <Conditions />
+                          </Action>
+                          <Action OrderNumber="2" LogLevel="-1" VariableName="dataPhase" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Variable">
+                            <Condition Enabled="false" Grouping="Or" />
+                            <Conditions />
                           </Action>
                         </Actions>
                         <Condition Enabled="false" Grouping="Or" />
@@ -6808,8 +6894,9 @@
                       </Trigger>
                       <Trigger Enabled="true" Name="Umbral Orbs" Id="992cf820-e441-46e7-8b57-5a049a8cf812" RegularExpression="14:573[01]:Shadowkeeper">
                         <Actions>
-                          <Action OrderNumber="1" LogLevel="-1" UseTTSTextExpression="Orbs" VariableOp="SetString" VariableName="dataPhase" VariableExpression="panel" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="UseTTS" ExecutionDelayExpression="3500">
+                          <Action OrderNumber="1" LogLevel="-1" UseTTSTextExpression="Orbs" VariableOp="SetString" VariableName="dataPhase" VariableExpression="panel" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="UseTTS" ExecutionDelayExpression="4000">
                             <Condition Enabled="false" Grouping="Or" />
+                            <Conditions />
                           </Action>
                         </Actions>
                         <Condition Enabled="false" Grouping="Or" />
@@ -6866,74 +6953,29 @@
                         </Actions>
                         <Condition Enabled="false" Grouping="Or" />
                       </Trigger>
-                      <Trigger Enabled="true" Name="Shadow Servant" Id="9a3dac5c-6c72-4aac-9c57-1d40cf6c9996" RegularExpression="1A:[0-9A-F]:[\w-' ]+ gains the effect of Bind" PeriodRefire="Deny" RefirePeriodExpression="1000">
+                      <Trigger Enabled="true" Name="Shadow Servant" Id="9a3dac5c-6c72-4aac-9c57-1d40cf6c9996" RegularExpression="1A:[0-9A-F]{8}:(?&lt;player&gt;[\w-' ]+) gains the effect of Bind" PeriodRefire="Deny" RefirePeriodExpression="1000">
                         <Actions>
                           <Action OrderNumber="1" LogLevel="-1" UseTTSTextExpression="Move in" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="UseTTS" ExecutionDelayExpression="1000">
                             <Condition Enabled="false" Grouping="Or" />
+                            <Conditions />
                           </Action>
                         </Actions>
-                        <Condition Enabled="false" Grouping="Or" />
+                        <Condition Enabled="true" Grouping="Or">
+                          <ConditionSingle Enabled="true" ExpressionL="${player}" ExpressionTypeL="String" ExpressionR="${_ffxivplayer}" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
+                        </Condition>
                       </Trigger>
                     </Triggers>
                   </Folder>
                   <Folder Id="9afa2ba5-5826-4435-814c-60c1a58da67e" Name="Network Lines" Enabled="true">
                     <Folders />
                     <Triggers>
-                      <Trigger Enabled="true" Name="Servant of Shadow" Id="9297dcf6-7a1d-43be-abcd-133ac7375ba6" RegularExpression="\|(?&lt;ID&gt;97[3-6])\|Servant Of Shadow\|(?&lt;duration&gt;[\d])\.00\|[0-9A-F]{8}\|Shadowkeeper\|[0-9A-F]{8}\|(?&lt;player&gt;[\w-' ]+)\|">
+                      <Trigger Enabled="true" Name="Servant of Shadow" Id="9297dcf6-7a1d-43be-abcd-133ac7375ba6" RegularExpression="\|(?&lt;ID&gt;97[3-6])\|Servant Of Shadow\|9\.00\|[0-9A-F]{8}\|Shadowkeeper\|[0-9A-F]{8}\|(?&lt;player&gt;[a-zA-Z -']{1,31})\|">
                         <Actions>
-                          <Action OrderNumber="1" LogLevel="-1" UseTTSTextExpression="Tankbuster" TextAuraEffect="Bold" TextAuraFontSize="24" TextAuraForeground="#FFBB00" TextAuraOutline="Black" TextAuraName="gigaSlashDrop" TextAuraExpression="Drop Shadow WEST" TextAuraXIniExpression="0" TextAuraYIniExpression="500" TextAuraWIniExpression="${_screenwidth}" TextAuraHIniExpression="100" TextAuraOIniExpression="100" TextAuraTTLTickExpression="${duration}-${_since}" TextAuraUseOutline="True" TextAuraFontName="Microsoft Sans Serif" ActionType="TextAura">
-                            <Condition Enabled="true" Grouping="Xor">
-                              <ConditionGroup Enabled="true" Grouping="And">
-                                <ConditionSingle Enabled="true" ExpressionL="${ID}" ExpressionTypeL="String" ExpressionR="973" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
-                                <ConditionSingle Enabled="true" ExpressionL="${var:gigaSlash}" ExpressionTypeL="String" ExpressionR="leftCleave" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
-                              </ConditionGroup>
-                              <ConditionGroup Enabled="true" Grouping="And">
-                                <ConditionSingle Enabled="true" ExpressionL="${ID}" ExpressionTypeL="String" ExpressionR="974" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
-                                <ConditionSingle Enabled="true" ExpressionL="${var:gigaSlash}" ExpressionTypeL="String" ExpressionR="rightCleave" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
-                              </ConditionGroup>
-                            </Condition>
+                          <Action OrderNumber="1" LogLevel="-1" VariableOp="SetString" VariableName="myGigaSlash" VariableExpression="${ID}" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Variable">
+                            <Condition Enabled="false" Grouping="Or" />
                             <Conditions />
                           </Action>
-                          <Action OrderNumber="2" LogLevel="-1" UseTTSTextExpression="Tankbuster" TextAuraEffect="Bold" TextAuraFontSize="24" TextAuraForeground="#FFBB00" TextAuraOutline="Black" TextAuraName="gigaSlashDrop" TextAuraExpression="Drop Shadow EAST" TextAuraXIniExpression="0" TextAuraYIniExpression="500" TextAuraWIniExpression="${_screenwidth}" TextAuraHIniExpression="100" TextAuraOIniExpression="100" TextAuraTTLTickExpression="${duration}-${_since}" TextAuraUseOutline="True" TextAuraFontName="Microsoft Sans Serif" ActionType="TextAura">
-                            <Condition Enabled="true" Grouping="Xor">
-                              <ConditionGroup Enabled="true" Grouping="And">
-                                <ConditionSingle Enabled="true" ExpressionL="${ID}" ExpressionTypeL="String" ExpressionR="974" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
-                                <ConditionSingle Enabled="true" ExpressionL="${var:gigaSlash}" ExpressionTypeL="String" ExpressionR="leftCleave" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
-                              </ConditionGroup>
-                              <ConditionGroup Enabled="true" Grouping="And">
-                                <ConditionSingle Enabled="true" ExpressionL="${ID}" ExpressionTypeL="String" ExpressionR="973" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
-                                <ConditionSingle Enabled="true" ExpressionL="${var:gigaSlash}" ExpressionTypeL="String" ExpressionR="rightCleave" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
-                              </ConditionGroup>
-                            </Condition>
-                            <Conditions />
-                          </Action>
-                          <Action OrderNumber="3" LogLevel="-1" UseTTSTextExpression="Tankbuster" TextAuraEffect="Bold" TextAuraFontSize="24" TextAuraForeground="#FFBB00" TextAuraOutline="Black" TextAuraName="gigaSlashDrop" TextAuraExpression="Drop Shadow NORTH" TextAuraXIniExpression="0" TextAuraYIniExpression="500" TextAuraWIniExpression="${_screenwidth}" TextAuraHIniExpression="100" TextAuraOIniExpression="100" TextAuraTTLTickExpression="${duration}-${_since}" TextAuraUseOutline="True" TextAuraFontName="Microsoft Sans Serif" ActionType="TextAura">
-                            <Condition Enabled="true" Grouping="Xor">
-                              <ConditionGroup Enabled="true" Grouping="And">
-                                <ConditionSingle Enabled="true" ExpressionL="${ID}" ExpressionTypeL="String" ExpressionR="975" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
-                                <ConditionSingle Enabled="true" ExpressionL="${var:gigaSlash}" ExpressionTypeL="String" ExpressionR="leftCleave" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
-                              </ConditionGroup>
-                              <ConditionGroup Enabled="true" Grouping="And">
-                                <ConditionSingle Enabled="true" ExpressionL="${ID}" ExpressionTypeL="String" ExpressionR="976" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
-                                <ConditionSingle Enabled="true" ExpressionL="${var:gigaSlash}" ExpressionTypeL="String" ExpressionR="rightCleave" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
-                              </ConditionGroup>
-                            </Condition>
-                            <Conditions />
-                          </Action>
-                          <Action OrderNumber="4" LogLevel="-1" UseTTSTextExpression="Tankbuster" TextAuraEffect="Bold" TextAuraFontSize="24" TextAuraForeground="#FFBB00" TextAuraOutline="Black" TextAuraName="gigaSlashDrop" TextAuraExpression="Drop Shadow SOUTH" TextAuraXIniExpression="0" TextAuraYIniExpression="500" TextAuraWIniExpression="${_screenwidth}" TextAuraHIniExpression="100" TextAuraOIniExpression="100" TextAuraTTLTickExpression="${duration}-${_since}" TextAuraUseOutline="True" TextAuraFontName="Microsoft Sans Serif" ActionType="TextAura">
-                            <Condition Enabled="true" Grouping="Xor">
-                              <ConditionGroup Enabled="true" Grouping="And">
-                                <ConditionSingle Enabled="true" ExpressionL="${ID}" ExpressionTypeL="String" ExpressionR="976" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
-                                <ConditionSingle Enabled="true" ExpressionL="${var:gigaSlash}" ExpressionTypeL="String" ExpressionR="leftCleave" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
-                              </ConditionGroup>
-                              <ConditionGroup Enabled="true" Grouping="And">
-                                <ConditionSingle Enabled="true" ExpressionL="${ID}" ExpressionTypeL="String" ExpressionR="975" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
-                                <ConditionSingle Enabled="true" ExpressionL="${var:gigaSlash}" ExpressionTypeL="String" ExpressionR="rightCleave" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
-                              </ConditionGroup>
-                            </Condition>
-                            <Conditions />
-                          </Action>
-                          <Action OrderNumber="5" LogLevel="-1" VariableName="gigaSlash" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Variable" ExecutionDelayExpression="9000">
+                          <Action OrderNumber="2" LogLevel="-1" VariableName="myGigaSlash" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Variable" ExecutionDelayExpression="9000">
                             <Condition Enabled="false" Grouping="Or" />
                             <Conditions />
                           </Action>

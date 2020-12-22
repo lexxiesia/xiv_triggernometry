@@ -6103,15 +6103,384 @@
                       </Trigger>
                     </Triggers>
                   </Folder>
+                  <Folder Id="f0e982bc-91c8-48a0-ac2c-0b101e5b4a1f" Name="Headmarkers" Enabled="true">
+                    <Folders />
+                    <Triggers>
+                      <Trigger Enabled="true" Name="Formless Judgment" Id="86346b47-8cd3-4ea5-b8ce-6dcf997168c3" RegularExpression="\A.{15}14:58A9">
+                        <Actions>
+                          <Action OrderNumber="1" LogLevel="-1" VariableOp="SetNumeric" VariableName="e12TB" VariableExpression="1" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Variable">
+                            <Condition Enabled="false" Grouping="Or" />
+                            <Conditions />
+                          </Action>
+                          <Action OrderNumber="2" LogLevel="-1" VariableName="e12TB" VariableExpression="1" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Variable" ExecutionDelayExpression="5000">
+                            <Condition Enabled="false" Grouping="Or" />
+                            <Conditions />
+                          </Action>
+                        </Actions>
+                        <Condition Enabled="false" Grouping="Or" />
+                        <Conditions />
+                      </Trigger>
+                      <Trigger Enabled="true" Name="Check TB marker" Id="394e08bc-1a61-43db-90d1-f7cea48ca34b" RegularExpression="\A.{15}1B.{10}[^:]*.{12}(?&lt;fakeID&gt;[^:]*)" PeriodRefire="Deny" RefirePeriodExpression="1000">
+                        <Actions>
+                          <Action OrderNumber="1" LogLevel="-1" VariableOp="SetNumeric" VariableName="currentHeadmarkerOffset" VariableExpression="hex2dec(${fakeID})-218" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Variable" ExecutionDelayExpression="2500" Asynchronous="False">
+                            <Condition Enabled="true" Grouping="Or">
+                              <ConditionSingle Enabled="true" ExpressionL="${var:e12TB}" ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
+                            </Condition>
+                            <Conditions />
+                          </Action>
+                        </Actions>
+                        <Condition Enabled="false" Grouping="Or" />
+                        <Conditions />
+                      </Trigger>
+                      <Trigger Enabled="true" Name="TTS" Id="14f0d225-64d3-4210-a62d-9caf368402ac" RegularExpression="\A.{15}1B.{10}(?&lt;name&gt;[^:]*).{12}(?&lt;ID&gt;[^:]*)">
+                        <Actions>
+                          <Action OrderNumber="1" LogLevel="-1" UseTTSTextExpression="Yellow" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="UseTTS">
+                            <Condition Enabled="true" Grouping="Or">
+                              <ConditionSingle Enabled="true" ExpressionL="hex2dec(${ID})-${var:currentHeadmarkerOffset}" ExpressionTypeL="Numeric" ExpressionR="185" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
+                            </Condition>
+                            <Conditions />
+                          </Action>
+                          <Action OrderNumber="2" LogLevel="-1" UseTTSTextExpression="Orange" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="UseTTS">
+                            <Condition Enabled="true" Grouping="Or">
+                              <ConditionSingle Enabled="true" ExpressionL="hex2dec(${ID})-${var:currentHeadmarkerOffset}" ExpressionTypeL="Numeric" ExpressionR="186" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
+                            </Condition>
+                            <Conditions />
+                          </Action>
+                          <Action OrderNumber="3" LogLevel="-1" UseTTSTextExpression="Blue" UseTTSExclusive="False" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="UseTTS">
+                            <Condition Enabled="true" Grouping="Or">
+                              <ConditionSingle Enabled="true" ExpressionL="hex2dec(${ID})-${var:currentHeadmarkerOffset}" ExpressionTypeL="Numeric" ExpressionR="187" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
+                            </Condition>
+                            <Conditions />
+                          </Action>
+                          <Action OrderNumber="4" LogLevel="-1" UseTTSTextExpression="One" UseTTSExclusive="False" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="UseTTS">
+                            <Condition Enabled="true" Grouping="Or">
+                              <ConditionSingle Enabled="true" ExpressionL="hex2dec(${ID})-${var:currentHeadmarkerOffset}" ExpressionTypeL="Numeric" ExpressionR="145" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
+                              <ConditionSingle Enabled="true" ExpressionL="hex2dec(${ID})-${var:currentHeadmarkerOffset}" ExpressionTypeL="Numeric" ExpressionR="149" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
+                            </Condition>
+                            <Conditions />
+                          </Action>
+                          <Action OrderNumber="5" LogLevel="-1" UseTTSTextExpression="Two" UseTTSExclusive="False" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="UseTTS">
+                            <Condition Enabled="true" Grouping="Or">
+                              <ConditionSingle Enabled="true" ExpressionL="hex2dec(${ID})-${var:currentHeadmarkerOffset}" ExpressionTypeL="Numeric" ExpressionR="146" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
+                              <ConditionSingle Enabled="true" ExpressionL="hex2dec(${ID})-${var:currentHeadmarkerOffset}" ExpressionTypeL="Numeric" ExpressionR="150" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
+                            </Condition>
+                            <Conditions />
+                          </Action>
+                          <Action OrderNumber="6" LogLevel="-1" UseTTSTextExpression="Three" UseTTSExclusive="False" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="UseTTS">
+                            <Condition Enabled="true" Grouping="Or">
+                              <ConditionSingle Enabled="true" ExpressionL="hex2dec(${ID})-${var:currentHeadmarkerOffset}" ExpressionTypeL="Numeric" ExpressionR="147" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
+                              <ConditionSingle Enabled="true" ExpressionL="hex2dec(${ID})-${var:currentHeadmarkerOffset}" ExpressionTypeL="Numeric" ExpressionR="151" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
+                            </Condition>
+                            <Conditions />
+                          </Action>
+                          <Action OrderNumber="7" LogLevel="-1" UseTTSTextExpression="Four" UseTTSExclusive="False" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="UseTTS">
+                            <Condition Enabled="true" Grouping="Or">
+                              <ConditionSingle Enabled="true" ExpressionL="hex2dec(${ID})-${var:currentHeadmarkerOffset}" ExpressionTypeL="Numeric" ExpressionR="148" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
+                              <ConditionSingle Enabled="true" ExpressionL="hex2dec(${ID})-${var:currentHeadmarkerOffset}" ExpressionTypeL="Numeric" ExpressionR="152" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
+                            </Condition>
+                            <Conditions />
+                          </Action>
+                        </Actions>
+                        <Condition Enabled="true" Grouping="Or">
+                          <ConditionSingle Enabled="true" ExpressionL="${name}" ExpressionTypeL="String" ExpressionR="${_ffxivplayer}" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
+                        </Condition>
+                        <Conditions />
+                      </Trigger>
+                    </Triggers>
+                  </Folder>
+                  <Folder Id="09cb99e5-4559-4ce9-b900-40091ba18a0e" Name="Phase 2 (leave subfolders off)" Enabled="true">
+                    <Folders>
+                      <Folder Id="2a068912-6ee6-4e90-b969-06e1e936a65e" Name="Intermediate Relativity" Enabled="false">
+                        <Folders />
+                        <Triggers>
+                          <Trigger Enabled="true" Source="FFXIVNetwork" Name="Debuff Call" Id="1701b198-26ae-4d1b-93fe-e39c13d89460" RegularExpression="\A26\|[^\|]*\|(?&lt;statusID&gt;[^\|]*)\|[^\|]*\|(?&lt;duration&gt;[^\|]*)\|[^\|]*\|[^\|]*\|[^\|]*\|(?&lt;name&gt;[^\|]*)">
+                            <Actions>
+                              <Action OrderNumber="1" LogLevel="-1" UseTTSTextExpression="Place Eruption first" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="UseTTS">
+                                <Condition Enabled="true" Grouping="And">
+                                  <ConditionSingle Enabled="true" ExpressionL="${statusID}" ExpressionTypeL="String" ExpressionR="99c" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
+                                  <ConditionSingle Enabled="true" ExpressionL="${duration}" ExpressionTypeL="Numeric" ExpressionR="29" ExpressionTypeR="Numeric" ConditionType="NumericGreater" />
+                                </Condition>
+                                <Conditions />
+                              </Action>
+                              <Action OrderNumber="2" LogLevel="-1" UseTTSTextExpression="Place Blizzard first" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="UseTTS">
+                                <Condition Enabled="true" Grouping="And">
+                                  <ConditionSingle Enabled="true" ExpressionL="${statusID}" ExpressionTypeL="String" ExpressionR="99e" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
+                                  <ConditionSingle Enabled="true" ExpressionL="${duration}" ExpressionTypeL="Numeric" ExpressionR="29" ExpressionTypeR="Numeric" ConditionType="NumericGreater" />
+                                </Condition>
+                                <Conditions />
+                              </Action>
+                              <Action OrderNumber="3" LogLevel="-1" UseTTSTextExpression="Place Wind first" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="UseTTS">
+                                <Condition Enabled="true" Grouping="And">
+                                  <ConditionSingle Enabled="true" ExpressionL="${statusID}" ExpressionTypeL="String" ExpressionR="99f" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
+                                  <ConditionSingle Enabled="true" ExpressionL="${duration}" ExpressionTypeL="Numeric" ExpressionR="29" ExpressionTypeR="Numeric" ConditionType="NumericGreater" />
+                                </Condition>
+                                <Conditions />
+                              </Action>
+                              <Action OrderNumber="4" LogLevel="-1" UseTTSTextExpression="Place Flare first" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="UseTTS">
+                                <Condition Enabled="true" Grouping="And">
+                                  <ConditionSingle Enabled="true" ExpressionL="${statusID}" ExpressionTypeL="String" ExpressionR="690" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
+                                  <ConditionSingle Enabled="true" ExpressionL="${duration}" ExpressionTypeL="Numeric" ExpressionR="29" ExpressionTypeR="Numeric" ConditionType="NumericGreater" />
+                                </Condition>
+                                <Conditions />
+                              </Action>
+                              <Action OrderNumber="5" LogLevel="-1" UseTTSTextExpression="Place Shadoweye first" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="UseTTS">
+                                <Condition Enabled="true" Grouping="And">
+                                  <ConditionSingle Enabled="true" ExpressionL="${statusID}" ExpressionTypeL="String" ExpressionR="998" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
+                                  <ConditionSingle Enabled="true" ExpressionL="${duration}" ExpressionTypeL="Numeric" ExpressionR="29" ExpressionTypeR="Numeric" ConditionType="NumericGreater" />
+                                </Condition>
+                                <Conditions />
+                              </Action>
+                              <Action OrderNumber="6" LogLevel="-1" UseTTSTextExpression="Place Stack first" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="UseTTS">
+                                <Condition Enabled="true" Grouping="And">
+                                  <ConditionSingle Enabled="true" ExpressionL="${statusID}" ExpressionTypeL="String" ExpressionR="996" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
+                                  <ConditionSingle Enabled="true" ExpressionL="${duration}" ExpressionTypeL="Numeric" ExpressionR="29" ExpressionTypeR="Numeric" ConditionType="NumericGreater" />
+                                </Condition>
+                                <Conditions />
+                              </Action>
+                              <Action OrderNumber="7" LogLevel="-1" UseTTSTextExpression="Place Eruption second" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="UseTTS" ExecutionDelayExpression="9000">
+                                <Condition Enabled="true" Grouping="And">
+                                  <ConditionSingle Enabled="true" ExpressionL="${statusID}" ExpressionTypeL="String" ExpressionR="99c" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
+                                  <ConditionSingle Enabled="true" ExpressionL="${duration}" ExpressionTypeL="Numeric" ExpressionR="29" ExpressionTypeR="Numeric" ConditionType="NumericLess" />
+                                  <ConditionSingle Enabled="true" ExpressionL="${duration}" ExpressionTypeL="Numeric" ExpressionR="25" ExpressionTypeR="Numeric" ConditionType="NumericGreater" />
+                                </Condition>
+                                <Conditions />
+                              </Action>
+                              <Action OrderNumber="8" LogLevel="-1" UseTTSTextExpression="Place Blizzard second" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="UseTTS">
+                                <Condition Enabled="true" Grouping="And">
+                                  <ConditionSingle Enabled="true" ExpressionL="${statusID}" ExpressionTypeL="String" ExpressionR="99e" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
+                                  <ConditionSingle Enabled="true" ExpressionL="${duration}" ExpressionTypeL="Numeric" ExpressionR="29" ExpressionTypeR="Numeric" ConditionType="NumericLess" />
+                                  <ConditionSingle Enabled="true" ExpressionL="${duration}" ExpressionTypeL="Numeric" ExpressionR="25" ExpressionTypeR="Numeric" ConditionType="NumericGreater" />
+                                </Condition>
+                                <Conditions />
+                              </Action>
+                              <Action OrderNumber="9" LogLevel="-1" UseTTSTextExpression="Place Wind second" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="UseTTS">
+                                <Condition Enabled="true" Grouping="And">
+                                  <ConditionSingle Enabled="true" ExpressionL="${statusID}" ExpressionTypeL="String" ExpressionR="99f" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
+                                  <ConditionSingle Enabled="true" ExpressionL="${duration}" ExpressionTypeL="Numeric" ExpressionR="29" ExpressionTypeR="Numeric" ConditionType="NumericLess" />
+                                  <ConditionSingle Enabled="true" ExpressionL="${duration}" ExpressionTypeL="Numeric" ExpressionR="25" ExpressionTypeR="Numeric" ConditionType="NumericGreater" />
+                                </Condition>
+                                <Conditions />
+                              </Action>
+                              <Action OrderNumber="10" LogLevel="-1" UseTTSTextExpression="Place Flare second" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="UseTTS">
+                                <Condition Enabled="true" Grouping="And">
+                                  <ConditionSingle Enabled="true" ExpressionL="${statusID}" ExpressionTypeL="String" ExpressionR="690" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
+                                  <ConditionSingle Enabled="true" ExpressionL="${duration}" ExpressionTypeL="Numeric" ExpressionR="29" ExpressionTypeR="Numeric" ConditionType="NumericLess" />
+                                  <ConditionSingle Enabled="true" ExpressionL="${duration}" ExpressionTypeL="Numeric" ExpressionR="25" ExpressionTypeR="Numeric" ConditionType="NumericGreater" />
+                                </Condition>
+                                <Conditions />
+                              </Action>
+                              <Action OrderNumber="11" LogLevel="-1" UseTTSTextExpression="Place Shadoweye second" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="UseTTS">
+                                <Condition Enabled="true" Grouping="And">
+                                  <ConditionSingle Enabled="true" ExpressionL="${statusID}" ExpressionTypeL="String" ExpressionR="998" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
+                                  <ConditionSingle Enabled="true" ExpressionL="${duration}" ExpressionTypeL="Numeric" ExpressionR="29" ExpressionTypeR="Numeric" ConditionType="NumericLess" />
+                                  <ConditionSingle Enabled="true" ExpressionL="${duration}" ExpressionTypeL="Numeric" ExpressionR="25" ExpressionTypeR="Numeric" ConditionType="NumericGreater" />
+                                </Condition>
+                                <Conditions />
+                              </Action>
+                              <Action OrderNumber="12" LogLevel="-1" UseTTSTextExpression="Place Stack second" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="UseTTS">
+                                <Condition Enabled="true" Grouping="And">
+                                  <ConditionSingle Enabled="true" ExpressionL="${statusID}" ExpressionTypeL="String" ExpressionR="996" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
+                                  <ConditionSingle Enabled="true" ExpressionL="${duration}" ExpressionTypeL="Numeric" ExpressionR="29" ExpressionTypeR="Numeric" ConditionType="NumericLess" />
+                                  <ConditionSingle Enabled="true" ExpressionL="${duration}" ExpressionTypeL="Numeric" ExpressionR="25" ExpressionTypeR="Numeric" ConditionType="NumericGreater" />
+                                </Condition>
+                                <Conditions />
+                              </Action>
+                              <Action OrderNumber="13" LogLevel="-1" UseTTSTextExpression="Place Eruption third" UseTTSExclusive="False" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="UseTTS" ExecutionDelayExpression="5000">
+                                <Condition Enabled="true" Grouping="And">
+                                  <ConditionSingle Enabled="true" ExpressionL="${statusID}" ExpressionTypeL="String" ExpressionR="99c" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
+                                  <ConditionSingle Enabled="true" ExpressionL="${duration}" ExpressionTypeL="Numeric" ExpressionR="25" ExpressionTypeR="Numeric" ConditionType="NumericLess" />
+                                </Condition>
+                                <Conditions />
+                              </Action>
+                              <Action OrderNumber="14" LogLevel="-1" UseTTSTextExpression="Place Blizzard third" UseTTSExclusive="False" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="UseTTS">
+                                <Condition Enabled="true" Grouping="And">
+                                  <ConditionSingle Enabled="true" ExpressionL="${statusID}" ExpressionTypeL="String" ExpressionR="99e" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
+                                  <ConditionSingle Enabled="true" ExpressionL="${duration}" ExpressionTypeL="Numeric" ExpressionR="25" ExpressionTypeR="Numeric" ConditionType="NumericLess" />
+                                </Condition>
+                                <Conditions />
+                              </Action>
+                              <Action OrderNumber="15" LogLevel="-1" UseTTSTextExpression="Place Wind third" UseTTSExclusive="False" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="UseTTS">
+                                <Condition Enabled="true" Grouping="And">
+                                  <ConditionSingle Enabled="true" ExpressionL="${statusID}" ExpressionTypeL="String" ExpressionR="99f" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
+                                  <ConditionSingle Enabled="true" ExpressionL="${duration}" ExpressionTypeL="Numeric" ExpressionR="25" ExpressionTypeR="Numeric" ConditionType="NumericLess" />
+                                </Condition>
+                                <Conditions />
+                              </Action>
+                              <Action OrderNumber="16" LogLevel="-1" UseTTSTextExpression="Place Flare third" UseTTSExclusive="False" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="UseTTS">
+                                <Condition Enabled="true" Grouping="And">
+                                  <ConditionSingle Enabled="true" ExpressionL="${statusID}" ExpressionTypeL="String" ExpressionR="690" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
+                                  <ConditionSingle Enabled="true" ExpressionL="${duration}" ExpressionTypeL="Numeric" ExpressionR="25" ExpressionTypeR="Numeric" ConditionType="NumericLess" />
+                                </Condition>
+                                <Conditions />
+                              </Action>
+                              <Action OrderNumber="17" LogLevel="-1" UseTTSTextExpression="Place Shadoweye third" UseTTSExclusive="False" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="UseTTS">
+                                <Condition Enabled="true" Grouping="And">
+                                  <ConditionSingle Enabled="true" ExpressionL="${statusID}" ExpressionTypeL="String" ExpressionR="998" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
+                                  <ConditionSingle Enabled="true" ExpressionL="${duration}" ExpressionTypeL="Numeric" ExpressionR="25" ExpressionTypeR="Numeric" ConditionType="NumericLess" />
+                                </Condition>
+                                <Conditions />
+                              </Action>
+                              <Action OrderNumber="18" LogLevel="-1" UseTTSTextExpression="Place Stack third" UseTTSExclusive="False" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="UseTTS">
+                                <Condition Enabled="true" Grouping="And">
+                                  <ConditionSingle Enabled="true" ExpressionL="${statusID}" ExpressionTypeL="String" ExpressionR="996" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
+                                  <ConditionSingle Enabled="true" ExpressionL="${duration}" ExpressionTypeL="Numeric" ExpressionR="25" ExpressionTypeR="Numeric" ConditionType="NumericLess" />
+                                </Condition>
+                                <Conditions />
+                              </Action>
+                            </Actions>
+                            <Condition Enabled="true" Grouping="Or">
+                              <ConditionSingle Enabled="true" ExpressionL="${name}" ExpressionTypeL="String" ExpressionR="${_ffxivplayer}" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
+                            </Condition>
+                            <Conditions />
+                          </Trigger>
+                        </Triggers>
+                      </Folder>
+                      <Folder Id="69d56e7f-5a63-4acb-9de4-d89c2961439d" Name="Basic Relativity" Enabled="false">
+                        <Folders />
+                        <Triggers>
+                          <Trigger Enabled="true" Source="FFXIVNetwork" Name="Debuff Call" Id="7ea77cac-791e-45e2-b477-ce0961d4075c" RegularExpression="^26\|[^\|]*\|(?&lt;statusID&gt;[^\|]*)\|[^\|]*\|(?&lt;duration&gt;[^\|]*)\|[^\|]*\|[^\|]*\|[^\|]*\|(?&lt;name&gt;[^\|]*)">
+                            <Actions>
+                              <Action OrderNumber="1" LogLevel="-1" UseTTSTextExpression="Shadoweye" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="UseTTS">
+                                <Condition Enabled="true" Grouping="Or">
+                                  <ConditionSingle Enabled="true" ExpressionL="${statusID}" ExpressionTypeL="String" ExpressionR="998" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
+                                </Condition>
+                                <Conditions />
+                              </Action>
+                              <Action OrderNumber="2" LogLevel="-1" UseTTSTextExpression="Water" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="UseTTS">
+                                <Condition Enabled="true" Grouping="Or">
+                                  <ConditionSingle Enabled="true" ExpressionL="${statusID}" ExpressionTypeL="String" ExpressionR="99d" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
+                                </Condition>
+                                <Conditions />
+                              </Action>
+                              <Action OrderNumber="3" LogLevel="-1" UseTTSTextExpression="Long Fire" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="UseTTS">
+                                <Condition Enabled="true" Grouping="And">
+                                  <ConditionSingle Enabled="true" ExpressionL="${statusID}" ExpressionTypeL="String" ExpressionR="997" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
+                                  <ConditionSingle Enabled="true" ExpressionL="${duration}" ExpressionTypeL="Numeric" ExpressionR="20" ExpressionTypeR="Numeric" ConditionType="NumericGreater" />
+                                </Condition>
+                                <Conditions />
+                              </Action>
+                              <Action OrderNumber="4" LogLevel="-1" UseTTSTextExpression="Long Blizzard" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="UseTTS">
+                                <Condition Enabled="true" Grouping="And">
+                                  <ConditionSingle Enabled="true" ExpressionL="${statusID}" ExpressionTypeL="String" ExpressionR="99e" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
+                                  <ConditionSingle Enabled="true" ExpressionL="${duration}" ExpressionTypeL="Numeric" ExpressionR="20" ExpressionTypeR="Numeric" ConditionType="NumericGreater" />
+                                </Condition>
+                                <Conditions />
+                              </Action>
+                              <Action OrderNumber="5" LogLevel="-1" UseTTSTextExpression="Short Fire" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="UseTTS">
+                                <Condition Enabled="true" Grouping="And">
+                                  <ConditionSingle Enabled="true" ExpressionL="${statusID}" ExpressionTypeL="String" ExpressionR="997" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
+                                  <ConditionSingle Enabled="true" ExpressionL="${duration}" ExpressionTypeL="Numeric" ExpressionR="20" ExpressionTypeR="Numeric" ConditionType="NumericLess" />
+                                </Condition>
+                                <Conditions />
+                              </Action>
+                              <Action OrderNumber="6" LogLevel="-1" UseTTSTextExpression="Short Blizzard" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="UseTTS">
+                                <Condition Enabled="true" Grouping="And">
+                                  <ConditionSingle Enabled="true" ExpressionL="${statusID}" ExpressionTypeL="String" ExpressionR="99e" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
+                                  <ConditionSingle Enabled="true" ExpressionL="${duration}" ExpressionTypeL="Numeric" ExpressionR="20" ExpressionTypeR="Numeric" ConditionType="NumericLess" />
+                                </Condition>
+                                <Conditions />
+                              </Action>
+                            </Actions>
+                            <Condition Enabled="true" Grouping="Or">
+                              <ConditionSingle Enabled="true" ExpressionL="${name}" ExpressionTypeL="String" ExpressionR="${_ffxivplayer}" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
+                            </Condition>
+                            <Conditions />
+                          </Trigger>
+                        </Triggers>
+                      </Folder>
+                      <Folder Id="d9ef31c9-dd68-4a10-847c-6439dcfd1ed6" Name="Advanced Relativity" Enabled="false">
+                        <Folders />
+                        <Triggers>
+                          <Trigger Enabled="true" Source="FFXIVNetwork" Name="Debuff Call" Id="8beff3c4-aae3-4721-aba6-28338db93cb6" RegularExpression="\A26\|[^\|]*\|(?&lt;statusID&gt;[^\|]*)\|[^\|]*\|(?&lt;duration&gt;[^\|]*)\|[^\|]*\|[^\|]*\|[^\|]*\|(?&lt;name&gt;[^\|]*)">
+                            <Actions>
+                              <Action OrderNumber="1" LogLevel="-1" UseTTSTextExpression="Fire" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="UseTTS">
+                                <Condition Enabled="true" Grouping="Or">
+                                  <ConditionSingle Enabled="true" ExpressionL="${statusID}" ExpressionTypeL="String" ExpressionR="997" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
+                                </Condition>
+                                <Conditions />
+                              </Action>
+                              <Action OrderNumber="2" LogLevel="-1" UseTTSTextExpression="Shadoweye" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="UseTTS">
+                                <Condition Enabled="true" Grouping="Or">
+                                  <ConditionSingle Enabled="true" ExpressionL="${statusID}" ExpressionTypeL="String" ExpressionR="998" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
+                                </Condition>
+                                <Conditions />
+                              </Action>
+                              <Action OrderNumber="3" LogLevel="-1" UseTTSTextExpression="Double Wind" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="UseTTS">
+                                <Condition Enabled="true" Grouping="And">
+                                  <ConditionSingle Enabled="true" ExpressionL="${statusID}" ExpressionTypeL="String" ExpressionR="99f" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
+                                  <ConditionSingle Enabled="true" ExpressionL="${duration}" ExpressionTypeL="Numeric" ExpressionR="29" ExpressionTypeR="Numeric" ConditionType="NumericGreater" />
+                                </Condition>
+                                <Conditions />
+                              </Action>
+                            </Actions>
+                            <Condition Enabled="true" Grouping="Or">
+                              <ConditionSingle Enabled="true" ExpressionL="${name}" ExpressionTypeL="String" ExpressionR="${_ffxivplayer}" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
+                            </Condition>
+                            <Conditions />
+                          </Trigger>
+                        </Triggers>
+                      </Folder>
+                    </Folders>
+                    <Triggers>
+                      <Trigger Enabled="true" Name="Relativity Switcher" Id="452d7527-d775-41cc-a2f3-cbbb11cd240b" RegularExpression="\A.{15}14:58E([012])">
+                        <Actions>
+                          <Action OrderNumber="1" FolderId="69d56e7f-5a63-4acb-9de4-d89c2961439d" LogLevel="-1" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Folder">
+                            <Condition Enabled="true" Grouping="Or">
+                              <ConditionSingle Enabled="true" ExpressionL="$1" ExpressionTypeL="String" ExpressionR="0" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
+                            </Condition>
+                            <Conditions />
+                          </Action>
+                          <Action OrderNumber="2" FolderId="2a068912-6ee6-4e90-b969-06e1e936a65e" LogLevel="-1" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Folder">
+                            <Condition Enabled="true" Grouping="Or">
+                              <ConditionSingle Enabled="true" ExpressionL="$1" ExpressionTypeL="String" ExpressionR="1" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
+                            </Condition>
+                            <Conditions />
+                          </Action>
+                          <Action OrderNumber="3" FolderId="d9ef31c9-dd68-4a10-847c-6439dcfd1ed6" LogLevel="-1" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Folder">
+                            <Condition Enabled="true" Grouping="Or">
+                              <ConditionSingle Enabled="true" ExpressionL="$1" ExpressionTypeL="String" ExpressionR="2" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
+                            </Condition>
+                            <Conditions />
+                          </Action>
+                          <Action OrderNumber="4" FolderOp="DisableFolder" FolderId="69d56e7f-5a63-4acb-9de4-d89c2961439d" LogLevel="-1" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Folder" ExecutionDelayExpression="30000">
+                            <Condition Enabled="false" Grouping="Or" />
+                            <Conditions />
+                          </Action>
+                          <Action OrderNumber="5" FolderOp="DisableFolder" FolderId="2a068912-6ee6-4e90-b969-06e1e936a65e" LogLevel="-1" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Folder">
+                            <Condition Enabled="false" Grouping="Or" />
+                            <Conditions />
+                          </Action>
+                          <Action OrderNumber="6" FolderOp="DisableFolder" FolderId="d9ef31c9-dd68-4a10-847c-6439dcfd1ed6" LogLevel="-1" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Folder">
+                            <Condition Enabled="false" Grouping="Or" />
+                            <Conditions />
+                          </Action>
+                        </Actions>
+                        <Condition Enabled="false" Grouping="Or" />
+                        <Conditions />
+                      </Trigger>
+                    </Triggers>
+                  </Folder>
                 </Folders>
                 <Triggers>
                   <Trigger Enabled="true" Name="# Reset" Id="27182f09-162d-471d-835f-248361a6fbe8" RegularExpression="21:.{8}:400000[01][03]:">
                     <Actions>
-                      <Action OrderNumber="1" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" TriggerOp="CancelAllTrigger" ActionType="Trigger">
+                      <Action OrderNumber="1" ListVariableName="primalList" LogLevel="-1" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="ListVariable">
                         <Condition Enabled="false" Grouping="Or" />
                         <Conditions />
                       </Action>
-                      <Action OrderNumber="2" LogLevel="-1" TextAuraOp="DeactivateAllAura" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="TextAura">
+                      <Action OrderNumber="2" LogLevel="-1" VariableName="currentHeadmarkerOffset" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Variable">
+                        <Condition Enabled="false" Grouping="Or" />
+                        <Conditions />
+                      </Action>
+                      <Action OrderNumber="3" LogLevel="-1" VariableName="e12TB" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Variable">
+                        <Condition Enabled="false" Grouping="Or" />
+                        <Conditions />
+                      </Action>
+                      <Action OrderNumber="4" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" TriggerOp="CancelAllTrigger" ActionType="Trigger">
+                        <Condition Enabled="false" Grouping="Or" />
+                        <Conditions />
+                      </Action>
+                      <Action OrderNumber="5" LogLevel="-1" TextAuraOp="DeactivateAllAura" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="TextAura">
                         <Condition Enabled="false" Grouping="Or" />
                         <Conditions />
                       </Action>
@@ -6139,8 +6508,115 @@
                   </Trigger>
                   <Trigger Enabled="true" Name="Plunging Ice" Id="45eb90b6-2f03-4145-92c5-272d2b871996" RegularExpression="14:589D:Eden\'s Promise">
                     <Actions>
-                      <Action OrderNumber="1" LogLevel="-1" UseTTSTextExpression="Knockback" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="UseTTS" ExecutionDelayExpression="3100">
+                      <Action OrderNumber="1" LogLevel="-1" UseTTSTextExpression="Knockback" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="UseTTS" ExecutionDelayExpression="4000">
                         <Condition Enabled="false" Grouping="Or" />
+                        <Conditions />
+                      </Action>
+                    </Actions>
+                    <Condition Enabled="false" Grouping="Or" />
+                    <Conditions />
+                  </Trigger>
+                  <Trigger Enabled="true" Name="Cast/Release" Id="0e73666b-9d03-4944-a194-fdc614cd6bc7" RegularExpression="\A.{15}14:(4E43|5893)">
+                    <Actions>
+                      <Action OrderNumber="1" LogLevel="-1" UseTTSTextExpression="outside intercardinal" TextAuraEffect="Bold" TextAuraFontSize="24" TextAuraForeground="#FFBB00" TextAuraOutline="Black" TextAuraName="primalOutput" TextAuraExpression="Out + Intercardinals" TextAuraXIniExpression="0" TextAuraYIniExpression="500" TextAuraWIniExpression="${screenwidth}" TextAuraHIniExpression="100" TextAuraOIniExpression="100" TextAuraTTLTickExpression="3-${_since}" TextAuraUseOutline="True" TextAuraFontName="Microsoft Sans Serif" ActionType="TextAura" ExecutionDelayExpression="125" Description="Ramuh+Garuda" DescriptionOverride="True">
+                        <Condition Enabled="true" Grouping="Or">
+                          <ConditionGroup Enabled="true" Grouping="And">
+                            <ConditionSingle Enabled="true" ExpressionL="${lvar:primalList[${lvar:primalList.size}]}" ExpressionTypeL="String" ExpressionR="90" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
+                            <ConditionSingle Enabled="true" ExpressionL="${lvar:primalList[${numeric:${lvar:primalList.size}-1}]}" ExpressionTypeL="String" ExpressionR="91" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
+                          </ConditionGroup>
+                          <ConditionGroup Enabled="true" Grouping="And">
+                            <ConditionSingle Enabled="true" ExpressionL="${lvar:primalList[${numeric:${lvar:primalList.size}-1}]}" ExpressionTypeL="String" ExpressionR="90" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
+                            <ConditionSingle Enabled="true" ExpressionL="${lvar:primalList[${lvar:primalList.size}]}" ExpressionTypeL="String" ExpressionR="91" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
+                          </ConditionGroup>
+                        </Condition>
+                        <Conditions />
+                      </Action>
+                      <Action OrderNumber="2" LogLevel="-1" UseTTSTextExpression="outside front or back" TextAuraEffect="Bold" TextAuraFontSize="24" TextAuraForeground="#FFBB00" TextAuraOutline="Black" TextAuraName="primalOutput" TextAuraExpression="Out + Front/Back" TextAuraXIniExpression="0" TextAuraYIniExpression="500" TextAuraWIniExpression="${_screenwidth}" TextAuraHIniExpression="100" TextAuraOIniExpression="100" TextAuraTTLTickExpression="3-${_since}" TextAuraUseOutline="True" TextAuraFontName="Microsoft Sans Serif" ActionType="TextAura" Description="Ramuh+Leviathan" DescriptionOverride="True">
+                        <Condition Enabled="true" Grouping="Or">
+                          <ConditionGroup Enabled="true" Grouping="And">
+                            <ConditionSingle Enabled="true" ExpressionL="${lvar:primalList[${lvar:primalList.size}]}" ExpressionTypeL="String" ExpressionR="90" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
+                            <ConditionSingle Enabled="true" ExpressionL="${lvar:primalList[${numeric:${lvar:primalList.size}-1}]}" ExpressionTypeL="String" ExpressionR="8E" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
+                          </ConditionGroup>
+                          <ConditionGroup Enabled="true" Grouping="And">
+                            <ConditionSingle Enabled="true" ExpressionL="${lvar:primalList[${numeric:${lvar:primalList.size}-1}]}" ExpressionTypeL="String" ExpressionR="90" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
+                            <ConditionSingle Enabled="true" ExpressionL="${lvar:primalList[${lvar:primalList.size}]}" ExpressionTypeL="String" ExpressionR="8E" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
+                          </ConditionGroup>
+                        </Condition>
+                        <Conditions />
+                      </Action>
+                      <Action OrderNumber="3" LogLevel="-1" UseTTSTextExpression="outside sides" TextAuraEffect="Bold" TextAuraFontSize="24" TextAuraForeground="#FFBB00" TextAuraOutline="Black" TextAuraName="primalOutput" TextAuraExpression="Out + Sides" TextAuraXIniExpression="0" TextAuraYIniExpression="500" TextAuraWIniExpression="${_screenwidth}" TextAuraHIniExpression="100" TextAuraOIniExpression="100" TextAuraTTLTickExpression="3-${_since}" TextAuraUseOutline="True" TextAuraFontName="Microsoft Sans Serif" ActionType="TextAura" Description="Ramuh+Ifrit" DescriptionOverride="True">
+                        <Condition Enabled="true" Grouping="Or">
+                          <ConditionGroup Enabled="true" Grouping="And">
+                            <ConditionSingle Enabled="true" ExpressionL="${lvar:primalList[${lvar:primalList.size}]}" ExpressionTypeL="String" ExpressionR="90" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
+                            <ConditionSingle Enabled="true" ExpressionL="${lvar:primalList[${numeric:${lvar:primalList.size}-1}]}" ExpressionTypeL="String" ExpressionR="8F" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
+                          </ConditionGroup>
+                          <ConditionGroup Enabled="true" Grouping="And">
+                            <ConditionSingle Enabled="true" ExpressionL="${lvar:primalList[${numeric:${lvar:primalList.size}-1}]}" ExpressionTypeL="String" ExpressionR="90" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
+                            <ConditionSingle Enabled="true" ExpressionL="${lvar:primalList[${lvar:primalList.size}]}" ExpressionTypeL="String" ExpressionR="8F" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
+                          </ConditionGroup>
+                        </Condition>
+                        <Conditions />
+                      </Action>
+                      <Action OrderNumber="4" LogLevel="-1" UseTTSTextExpression="inside intercardinal" TextAuraEffect="Bold" TextAuraFontSize="24" TextAuraForeground="#FFBB00" TextAuraOutline="Black" TextAuraName="primalOutput" TextAuraExpression="Under Boss + Intercardinals" TextAuraXIniExpression="0" TextAuraYIniExpression="500" TextAuraWIniExpression="${_screenwidth}" TextAuraHIniExpression="100" TextAuraOIniExpression="100" TextAuraTTLTickExpression="3-${_since}" TextAuraUseOutline="True" TextAuraFontName="Microsoft Sans Serif" ActionType="TextAura" Description="Leviathan+Garuda" DescriptionOverride="True">
+                        <Condition Enabled="true" Grouping="Or">
+                          <ConditionGroup Enabled="true" Grouping="And">
+                            <ConditionSingle Enabled="true" ExpressionL="${lvar:primalList[${lvar:primalList.size}]}" ExpressionTypeL="String" ExpressionR="8E" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
+                            <ConditionSingle Enabled="true" ExpressionL="${lvar:primalList[${numeric:${lvar:primalList.size}-1}]}" ExpressionTypeL="String" ExpressionR="91" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
+                          </ConditionGroup>
+                          <ConditionGroup Enabled="true" Grouping="And">
+                            <ConditionSingle Enabled="true" ExpressionL="${lvar:primalList[${numeric:${lvar:primalList.size}-1}]}" ExpressionTypeL="String" ExpressionR="8E" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
+                            <ConditionSingle Enabled="true" ExpressionL="${lvar:primalList[${lvar:primalList.size}]}" ExpressionTypeL="String" ExpressionR="91" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
+                          </ConditionGroup>
+                        </Condition>
+                        <Conditions />
+                      </Action>
+                      <Action OrderNumber="5" LogLevel="-1" UseTTSTextExpression="inside flanks" TextAuraEffect="Bold" TextAuraFontSize="24" TextAuraForeground="#FFBB00" TextAuraOutline="Black" TextAuraName="primalOutput" TextAuraExpression="Under Boss + Sides" TextAuraXIniExpression="0" TextAuraYIniExpression="500" TextAuraWIniExpression="${_screenwidth}" TextAuraHIniExpression="100" TextAuraOIniExpression="100" TextAuraTTLTickExpression="3-${_since}" TextAuraUseOutline="True" TextAuraFontName="Microsoft Sans Serif" ActionType="TextAura" Description="Leviathan+Ifrit" DescriptionOverride="True">
+                        <Condition Enabled="true" Grouping="Or">
+                          <ConditionGroup Enabled="true" Grouping="And">
+                            <ConditionSingle Enabled="true" ExpressionL="${lvar:primalList[${lvar:primalList.size}]}" ExpressionTypeL="String" ExpressionR="8E" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
+                            <ConditionSingle Enabled="true" ExpressionL="${lvar:primalList[${numeric:${lvar:primalList.size}-1}]}" ExpressionTypeL="String" ExpressionR="8F" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
+                          </ConditionGroup>
+                          <ConditionGroup Enabled="true" Grouping="And">
+                            <ConditionSingle Enabled="true" ExpressionL="${lvar:primalList[${numeric:${lvar:primalList.size}-1}]}" ExpressionTypeL="String" ExpressionR="8E" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
+                            <ConditionSingle Enabled="true" ExpressionL="${lvar:primalList[${lvar:primalList.size}]}" ExpressionTypeL="String" ExpressionR="8F" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
+                          </ConditionGroup>
+                        </Condition>
+                        <Conditions />
+                      </Action>
+                      <Action OrderNumber="6" ListVariableOp="Remove" ListVariableName="primalList" ListVariableIndex="${lvar:primalList.size}" LogLevel="-1" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="ListVariable" ExecutionDelayExpression="800">
+                        <Condition Enabled="false" Grouping="Or" />
+                        <Conditions />
+                      </Action>
+                      <Action OrderNumber="7" ListVariableOp="Remove" ListVariableName="primalList" ListVariableIndex="${lvar:primalList.size}" LogLevel="-1" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="ListVariable" ExecutionDelayExpression="200">
+                        <Condition Enabled="false" Grouping="Or" />
+                        <Conditions />
+                      </Action>
+                    </Actions>
+                    <Condition Enabled="false" Grouping="Or" />
+                    <Conditions />
+                  </Trigger>
+                  <Trigger Enabled="true" Sequential="True" Name="Primal Tethers" Id="e4737c64-9f95-4939-ae2a-896b2d3fc505" RegularExpression="\A.{15}23.{20}[^:]*:.{12}(?&lt;tetherID&gt;(8E|8F|90|91))" MutexToCapture="primalList">
+                    <Actions>
+                      <Action OrderNumber="1" ListVariableOp="Push" ListVariableName="primalList" ListVariableExpression="${tetherID}" LogLevel="-1" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="ListVariable" Asynchronous="False">
+                        <Condition Enabled="false" Grouping="Or" />
+                        <Conditions />
+                      </Action>
+                    </Actions>
+                    <Condition Enabled="false" Grouping="Or" />
+                    <Conditions />
+                  </Trigger>
+                  <Trigger Enabled="true" Name="Palm of Temperance" Id="c48c5bde-671c-45a2-b36d-9be213115c93" RegularExpression="\A.{15}14:58B([45])">
+                    <Actions>
+                      <Action OrderNumber="1" LogLevel="-1" UseTTSTextExpression="Southeast Knockback" TextAuraEffect="Bold" TextAuraFontSize="24" TextAuraForeground="#FFBB00" TextAuraOutline="Black" TextAuraName="palmOfTemperance" TextAuraExpression="Southeast Knockback" TextAuraXIniExpression="0" TextAuraYIniExpression="500" TextAuraWIniExpression="${_screenwidth}" TextAuraHIniExpression="100" TextAuraOIniExpression="100" TextAuraTTLTickExpression="3-${_since}" TextAuraUseOutline="True" TextAuraFontName="Microsoft Sans Serif" ActionType="TextAura">
+                        <Condition Enabled="true" Grouping="Or">
+                          <ConditionSingle Enabled="true" ExpressionL="$1" ExpressionTypeL="String" ExpressionR="4" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
+                        </Condition>
+                        <Conditions />
+                      </Action>
+                      <Action OrderNumber="2" LogLevel="-1" UseTTSTextExpression="Southeast Knockback" TextAuraEffect="Bold" TextAuraFontSize="24" TextAuraForeground="#FFBB00" TextAuraOutline="Black" TextAuraName="palmOfTemperance" TextAuraExpression="Southwest Knockback" TextAuraXIniExpression="0" TextAuraYIniExpression="500" TextAuraWIniExpression="${_screenwidth}" TextAuraHIniExpression="100" TextAuraOIniExpression="100" TextAuraTTLTickExpression="3-${_since}" TextAuraUseOutline="True" TextAuraFontName="Microsoft Sans Serif" ActionType="TextAura">
+                        <Condition Enabled="true" Grouping="Or">
+                          <ConditionSingle Enabled="true" ExpressionL="$1" ExpressionTypeL="String" ExpressionR="5" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
+                        </Condition>
                         <Conditions />
                       </Action>
                     </Actions>
@@ -7960,7 +8436,7 @@
                   <Folder Id="e2f35cf4-eba0-4b86-bf03-d984fcfec9da" Name="Network Lines" Enabled="true">
                     <Folders />
                     <Triggers>
-                      <Trigger Enabled="true" Name="Servant of Shadow" Id="90ac4b08-0546-4d32-8592-4e30bd870037" RegularExpression="\|(?&lt;ID&gt;97[3-6])\|Servant Of Shadow\|9\.00\|[0-9A-F]{8}\|Shadowkeeper\|[0-9A-F]{8}\|(?&lt;player&gt;[a-zA-Z -']{1,31})\|">
+                      <Trigger Enabled="true" Source="FFXIVNetwork" Name="Servant of Shadow" Id="90ac4b08-0546-4d32-8592-4e30bd870037" RegularExpression="\|(?&lt;ID&gt;97[3-6])\|Servant Of Shadow\|9\.00\|[0-9A-F]{8}\|Shadowkeeper\|[0-9A-F]{8}\|(?&lt;player&gt;[a-zA-Z -']{1,31})\|">
                         <Actions>
                           <Action OrderNumber="1" LogLevel="-1" VariableOp="SetString" VariableName="myGigaSlash" VariableExpression="${ID}" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Variable">
                             <Condition Enabled="false" Grouping="Or" />
@@ -8063,7 +8539,7 @@
                           </Trigger>
                           <Trigger Enabled="true" Name="Mortal Powder Mark - Timer" Id="3a723344-01fa-42ed-b691-7363ab0f1337" RegularExpression="1A:[A-F0-9]{8}:(?&lt;player&gt;[a-zA-Z-' ]{1,31}) gains the effect of Mortal Powder Mark from Fatebreaker for (?&lt;duration&gt;[0-9]{2})\.00 Seconds">
                             <Actions>
-                              <Action OrderNumber="1" AuraName="TEA_Compressed_Duration" TextAuraEffect="Bold" TextAuraFontSize="24" TextAuraForeground="#FFBB00" TextAuraOutline="Black" TextAuraName="mortalPowderMark" TextAuraExpression="Explosion in ${numeric:${duration}-${_since}}" TextAuraXIniExpression="0" TextAuraYIniExpression="540" TextAuraWIniExpression="${_screenwidth}" TextAuraHIniExpression="200" TextAuraOIniExpression="100" TextAuraTTLTickExpression="${duration}-${_since}" TextAuraUseOutline="True" TextAuraFontName="Microsoft Sans Serif" ActionType="TextAura">
+                              <Action OrderNumber="1" AuraName="TEA_Compressed_Duration" TextAuraEffect="Bold" TextAuraFontSize="24" TextAuraForeground="#FFBB00" TextAuraOutline="Black" TextAuraName="mortalPowderMark" TextAuraExpression="Holy in ${numeric:${duration}-${_since}}" TextAuraXIniExpression="0" TextAuraYIniExpression="540" TextAuraWIniExpression="${_screenwidth}" TextAuraHIniExpression="200" TextAuraOIniExpression="100" TextAuraTTLTickExpression="${duration}-${_since}" TextAuraUseOutline="True" TextAuraFontName="Microsoft Sans Serif" ActionType="TextAura">
                                 <Condition Enabled="false" Grouping="Or" />
                                 <Conditions />
                               </Action>
@@ -8480,7 +8956,7 @@
                         <Condition Enabled="false" Grouping="Or" />
                         <Conditions />
                       </Trigger>
-                      <Trigger Enabled="true" Name="Shining Blade" Id="6a106ad5-3836-4fcd-9a56-e97ec834729c" RegularExpression="14:56(57|7E):Fatebreaker" PeriodRefire="Deny" RefirePeriodExpression="1000">
+                      <Trigger Enabled="true" Name="Shining Blade" Id="6a106ad5-3836-4fcd-9a56-e97ec834729c" RegularExpression="14:56(57|[79]E):Fatebreaker" PeriodRefire="Deny" RefirePeriodExpression="1000">
                         <Actions>
                           <Action OrderNumber="1" LogLevel="-1" UseTTSTextExpression="Move" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="UseTTS">
                             <Condition Enabled="false" Grouping="Or" />
@@ -8495,7 +8971,7 @@
                   <Folder Id="0157b04c-1a62-4e79-ab50-9b13e89b5f76" Name="Network Lines" Enabled="true">
                     <Folders />
                     <Triggers>
-                      <Trigger Enabled="true" Name="Bound of Faith - Fatebreaker's Image (Lightning)" Id="b4582ed4-c9d7-4020-a644-10103dd5f2aa" RegularExpression="^20\|.+\|(?&lt;sourceID&gt;[0-9A-F]{8})\|Fatebreaker\'s Image\|5682\|">
+                      <Trigger Enabled="true" Source="FFXIVNetwork" Name="Bound of Faith - Fatebreaker's Image (Lightning)" Id="b4582ed4-c9d7-4020-a644-10103dd5f2aa" RegularExpression="^20\|[^|]+\|(?&lt;sourceID&gt;[0-9A-F]{8})\|[^|]*\|5682\|">
                         <Actions>
                           <Action OrderNumber="1" LogLevel="-1" VariableOp="SetString" VariableName="lightningCallout" VariableExpression="${lvar:tetherCallout[1]}" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Variable">
                             <Condition Enabled="true" Grouping="Or">
@@ -8525,7 +9001,7 @@
                         <Condition Enabled="false" Grouping="Or" />
                         <Conditions />
                       </Trigger>
-                      <Trigger Enabled="true" Name="Bound of Faith - Fatebreaker's Image (Holy)" Id="2fd32775-8703-4cf5-aaa7-5902a29323a6" RegularExpression="^20\|.+\|(?&lt;sourceID&gt;[0-9A-F]{8})\|Fatebreaker\'s Image\|5BC5\|">
+                      <Trigger Enabled="true" Source="FFXIVNetwork" Name="Bound of Faith - Fatebreaker's Image (Holy)" Id="2fd32775-8703-4cf5-aaa7-5902a29323a6" RegularExpression="^20\|[^|]+\|(?&lt;sourceID&gt;[0-9A-F]{8})\|[^|]*\|5BC5\|">
                         <Actions>
                           <Action OrderNumber="1" LogLevel="-1" VariableOp="SetString" VariableName="holyCallout" VariableExpression="${lvar:tetherCallout[1]}" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Variable">
                             <Condition Enabled="true" Grouping="Or">
@@ -8555,7 +9031,7 @@
                         <Condition Enabled="false" Grouping="Or" />
                         <Conditions />
                       </Trigger>
-                      <Trigger Enabled="true" Name="Bound of Faith - Fatebreaker's Image (Fire)" Id="6b76c106-6a4e-44e4-b291-7ab9006aec8c" RegularExpression="^20\|.+\|(?&lt;sourceID&gt;[0-9A-F]{8})\|Fatebreaker\'s Image\|567F\|">
+                      <Trigger Enabled="true" Source="FFXIVNetwork" Name="Bound of Faith - Fatebreaker's Image (Fire)" Id="6b76c106-6a4e-44e4-b291-7ab9006aec8c" RegularExpression="^20\|[^|]+\|(?&lt;sourceID&gt;[0-9A-F]{8})\|[^|]*\|567F\|">
                         <Actions>
                           <Action OrderNumber="1" LogLevel="-1" VariableOp="SetString" VariableName="fireCallout" VariableExpression="${lvar:tetherCallout[1]}" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Variable">
                             <Condition Enabled="true" Grouping="Or">

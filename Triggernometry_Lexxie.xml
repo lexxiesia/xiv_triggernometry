@@ -5878,7 +5878,7 @@
                   <Folder Id="15e0ce1a-7a5e-4b10-b069-9dce7fbca51d" Name="Trackers" Enabled="true">
                     <Folders />
                     <Triggers>
-                      <Trigger Enabled="true" Sequential="True" Name="The Second / Third Art of Darkness" Id="cfe1efad-47b7-452b-980e-62a2c0c7ae89" RegularExpression="\A.{15}14:560(?&lt;id&gt;[1234]):Cloud Of Darkness starts using The (Second|Third) Art Of Darkness">
+                      <Trigger Enabled="true" Sequential="True" Name="The Second / Third Art of Darkness" Id="3d9460d1-e272-46e5-a539-f36b0364f8cf" RegularExpression="\A.{15}14:560(?&lt;id&gt;[1234]):Cloud Of Darkness starts using The (Second|Third) Art Of Darkness">
                         <Actions>
                           <Action OrderNumber="1" LogLevel="-1" VariableName="AoDCounter" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Variable">
                             <Condition Enabled="false" Grouping="Or" />
@@ -7476,20 +7476,17 @@
                                     <Condition Enabled="true" Grouping="And">
                                       <ConditionSingle Enabled="true" ExpressionL="${name}" ExpressionTypeL="String" ExpressionR="${_ffxivplayer}" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
                                     </Condition>
-                                    <Conditions />
                                   </Action>
                                   <Action OrderNumber="2" ListVariableOp="Insert" ListVariableName="weightTargets" ListVariableExpression="${name}" ListVariableIndex="2" LogLevel="-1" UseTTSTextExpression="Blue Weight" UseTTSExclusive="False" TextAuraEffect="Bold" TextAuraFontSize="24" TextAuraForeground="Red" TextAuraOutline="Black" TextAuraName="secondBlue" TextAuraExpression="Blue (with ${name})" TextAuraXIniExpression="0" TextAuraYIniExpression="500" TextAuraWIniExpression="${_screenwidth}" TextAuraHIniExpression="100" TextAuraOIniExpression="100" TextAuraTTLTickExpression="5-${_since}" TextAuraUseOutline="True" TextAuraFontName="Arial Black" ActionType="ListVariable" Description="[Check] Weight Targets: Partner" DescriptionOverride="True">
                                     <Condition Enabled="true" Grouping="And">
                                       <ConditionSingle Enabled="true" ExpressionL="${name}" ExpressionTypeL="String" ExpressionR="${_ffxivplayer}" ExpressionTypeR="String" ConditionType="StringNotEqualNocase" />
                                     </Condition>
-                                    <Conditions />
                                   </Action>
                                   <Action OrderNumber="3" LogLevel="-1" UseTTSTextExpression="Blue Weight" UseTTSExclusive="False" TextAuraEffect="Bold" TextAuraFontSize="24" TextAuraForeground="Red" TextAuraOutline="Black" TextAuraName="secondBlue" TextAuraExpression="Blue (with ${lvar:weightTargets[2]})" TextAuraXIniExpression="0" TextAuraYIniExpression="500" TextAuraWIniExpression="${_screenwidth}" TextAuraHIniExpression="100" TextAuraOIniExpression="100" TextAuraTTLTickExpression="5-${_since}" TextAuraUseOutline="True" TextAuraFontName="Arial Black" ActionType="TextAura" ExecutionDelayExpression="100" Description="Display Text: Weight Target (Partner)" DescriptionOverride="True">
                                     <Condition Enabled="true" Grouping="And">
                                       <ConditionSingle Enabled="true" ExpressionL="${lvar:weightTargets.size}" ExpressionTypeL="Numeric" ExpressionR="2" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
                                       <ConditionSingle Enabled="true" ExpressionL="${lvar:weightTargets.indexof(${_ffxivplayer})}" ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
                                     </Condition>
-                                    <Conditions />
                                   </Action>
                                 </Actions>
                                 <Condition Enabled="true" Grouping="Or">
@@ -7581,67 +7578,56 @@
                                 <Condition Enabled="true" Grouping="Or">
                                   <ConditionSingle Enabled="true" ExpressionL="hex2dec(${ID})-${var:currentHeadmarkerOffset}" ExpressionTypeL="Numeric" ExpressionR="185" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
                                 </Condition>
-                                <Conditions />
                               </Action>
                               <Action OrderNumber="2" AuraImageMode="CenterImage" AuraName="headMark" AuraImage="https://raw.githubusercontent.com/lexxiesia/xiv_triggernometry/master/resources/icons/e4s/orange.png" AuraXIniExpression="${_screenwidth}/2" AuraYIniExpression="0" AuraWIniExpression="${_screenwidth}/2" AuraHIniExpression="${_screenheight}/2" AuraOIniExpression="100" AuraTTLTickExpression="5-${_since}" LogLevel="-1" UseTTSTextExpression="Orange" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Aura" Description="Image: Orange Cube" DescriptionOverride="True">
                                 <Condition Enabled="true" Grouping="Or">
                                   <ConditionSingle Enabled="true" ExpressionL="hex2dec(${ID})-${var:currentHeadmarkerOffset}" ExpressionTypeL="Numeric" ExpressionR="186" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
                                 </Condition>
-                                <Conditions />
                               </Action>
                               <Action OrderNumber="3" AuraImageMode="CenterImage" AuraName="headMark" AuraImage="https://raw.githubusercontent.com/lexxiesia/xiv_triggernometry/master/resources/icons/e4s/blue.png" AuraXIniExpression="${_screenwidth}/2" AuraYIniExpression="0" AuraWIniExpression="${_screenwidth}/2" AuraHIniExpression="${_screenheight}/2" AuraOIniExpression="100" AuraTTLTickExpression="5-${_since}" LogLevel="-1" UseTTSTextExpression="Blue" UseTTSExclusive="False" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Aura" Description="Image: Blue Pyramid" DescriptionOverride="True">
                                 <Condition Enabled="true" Grouping="Or">
                                   <ConditionSingle Enabled="true" ExpressionL="hex2dec(${ID})-${var:currentHeadmarkerOffset}" ExpressionTypeL="Numeric" ExpressionR="187" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
                                 </Condition>
-                                <Conditions />
                               </Action>
                               <Action OrderNumber="4" AuraImageMode="CenterImage" AuraName="headMark" AuraImage="https://raw.githubusercontent.com/lexxiesia/xiv_triggernometry/master/resources/icons/o12s/sq1.png" AuraXIniExpression="${_screenwidth}/2" AuraYIniExpression="0" AuraWIniExpression="${_screenwidth}/2" AuraHIniExpression="${_screenheight}/2" AuraOIniExpression="100" AuraTTLTickExpression="8-${_since}" LogLevel="-1" UseTTSTextExpression="One" UseTTSExclusive="False" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Aura" Description="Image: Square 1" DescriptionOverride="True">
                                 <Condition Enabled="true" Grouping="Or">
                                   <ConditionSingle Enabled="true" ExpressionL="hex2dec(${ID})-${var:currentHeadmarkerOffset}" ExpressionTypeL="Numeric" ExpressionR="145" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
                                 </Condition>
-                                <Conditions />
                               </Action>
                               <Action OrderNumber="5" AuraImageMode="CenterImage" AuraName="headMark" AuraImage="https://raw.githubusercontent.com/lexxiesia/xiv_triggernometry/master/resources/icons/o12s/sq2.png" AuraXIniExpression="${_screenwidth}/2" AuraYIniExpression="0" AuraWIniExpression="${_screenwidth}/2" AuraHIniExpression="${_screenheight}/2" AuraOIniExpression="100" AuraTTLTickExpression="11-${_since}" LogLevel="-1" UseTTSTextExpression="Two" UseTTSExclusive="False" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Aura" Description="Image: Square 2" DescriptionOverride="True">
                                 <Condition Enabled="true" Grouping="Or">
                                   <ConditionSingle Enabled="true" ExpressionL="hex2dec(${ID})-${var:currentHeadmarkerOffset}" ExpressionTypeL="Numeric" ExpressionR="146" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
                                 </Condition>
-                                <Conditions />
                               </Action>
                               <Action OrderNumber="6" AuraImageMode="CenterImage" AuraName="headMark" AuraImage="https://raw.githubusercontent.com/lexxiesia/xiv_triggernometry/master/resources/icons/o12s/sq3.png" AuraXIniExpression="${_screenwidth}/2" AuraYIniExpression="0" AuraWIniExpression="${_screenwidth}/2" AuraHIniExpression="${_screenheight}/2" AuraOIniExpression="100" AuraTTLTickExpression="14-${_since}" LogLevel="-1" UseTTSTextExpression="Three" UseTTSExclusive="False" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Aura" Description="Image: Square 3" DescriptionOverride="True">
                                 <Condition Enabled="true" Grouping="Or">
                                   <ConditionSingle Enabled="true" ExpressionL="hex2dec(${ID})-${var:currentHeadmarkerOffset}" ExpressionTypeL="Numeric" ExpressionR="147" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
                                 </Condition>
-                                <Conditions />
                               </Action>
                               <Action OrderNumber="7" AuraImageMode="CenterImage" AuraName="headMark" AuraImage="https://raw.githubusercontent.com/lexxiesia/xiv_triggernometry/master/resources/icons/o12s/sq4.png" AuraXIniExpression="${_screenwidth}/2" AuraYIniExpression="0" AuraWIniExpression="${_screenwidth}/2" AuraHIniExpression="${_screenheight}/2" AuraOIniExpression="100" AuraTTLTickExpression="17-${_since}" LogLevel="-1" UseTTSTextExpression="Four" UseTTSExclusive="False" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Aura" Description="Image: Square 4" DescriptionOverride="True">
                                 <Condition Enabled="true" Grouping="Or">
                                   <ConditionSingle Enabled="true" ExpressionL="hex2dec(${ID})-${var:currentHeadmarkerOffset}" ExpressionTypeL="Numeric" ExpressionR="148" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
                                 </Condition>
-                                <Conditions />
                               </Action>
                               <Action OrderNumber="8" AuraImageMode="CenterImage" AuraName="headMark" AuraImage="https://raw.githubusercontent.com/lexxiesia/xiv_triggernometry/master/resources/icons/o12s/tri1.png" AuraXIniExpression="${_screenwidth}/2" AuraYIniExpression="0" AuraWIniExpression="${_screenwidth}/2" AuraHIniExpression="${_screenheight}/2" AuraOIniExpression="100" AuraTTLTickExpression="8-${_since}" LogLevel="-1" UseTTSTextExpression="One" UseTTSExclusive="False" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Aura" Description="Image: Triangle 1" DescriptionOverride="True">
                                 <Condition Enabled="true" Grouping="Or">
                                   <ConditionSingle Enabled="true" ExpressionL="hex2dec(${ID})-${var:currentHeadmarkerOffset}" ExpressionTypeL="Numeric" ExpressionR="149" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
                                 </Condition>
-                                <Conditions />
                               </Action>
                               <Action OrderNumber="9" AuraImageMode="CenterImage" AuraName="headMark" AuraImage="https://raw.githubusercontent.com/lexxiesia/xiv_triggernometry/master/resources/icons/o12s/tri2.png" AuraXIniExpression="${_screenwidth}/2" AuraYIniExpression="0" AuraWIniExpression="${_screenwidth}/2" AuraHIniExpression="${_screenheight}/2" AuraOIniExpression="100" AuraTTLTickExpression="11-${_since}" LogLevel="-1" UseTTSTextExpression="Two" UseTTSExclusive="False" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Aura" Description="Image: Triangle 2" DescriptionOverride="True">
                                 <Condition Enabled="true" Grouping="Or">
                                   <ConditionSingle Enabled="true" ExpressionL="hex2dec(${ID})-${var:currentHeadmarkerOffset}" ExpressionTypeL="Numeric" ExpressionR="150" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
                                 </Condition>
-                                <Conditions />
                               </Action>
                               <Action OrderNumber="10" AuraImageMode="CenterImage" AuraName="headMark" AuraImage="https://raw.githubusercontent.com/lexxiesia/xiv_triggernometry/master/resources/icons/o12s/tri3.png" AuraXIniExpression="${_screenwidth}/2" AuraYIniExpression="0" AuraWIniExpression="${_screenwidth}/2" AuraHIniExpression="${_screenheight}/2" AuraOIniExpression="100" AuraTTLTickExpression="14-${_since}" LogLevel="-1" UseTTSTextExpression="Three" UseTTSExclusive="False" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Aura" Description="Image: Triangle 3" DescriptionOverride="True">
                                 <Condition Enabled="true" Grouping="Or">
                                   <ConditionSingle Enabled="true" ExpressionL="hex2dec(${ID})-${var:currentHeadmarkerOffset}" ExpressionTypeL="Numeric" ExpressionR="151" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
                                 </Condition>
-                                <Conditions />
                               </Action>
                               <Action OrderNumber="11" AuraImageMode="CenterImage" AuraName="headMark" AuraImage="https://raw.githubusercontent.com/lexxiesia/xiv_triggernometry/master/resources/icons/o12s/tri4.png" AuraXIniExpression="${_screenwidth}/2" AuraYIniExpression="0" AuraWIniExpression="${_screenwidth}/2" AuraHIniExpression="${_screenheight}/2" AuraOIniExpression="100" AuraTTLTickExpression="17-${_since}" LogLevel="-1" UseTTSTextExpression="Four" UseTTSExclusive="False" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Aura" Description="Image: Triangle 4" DescriptionOverride="True">
                                 <Condition Enabled="true" Grouping="Or">
                                   <ConditionSingle Enabled="true" ExpressionL="hex2dec(${ID})-${var:currentHeadmarkerOffset}" ExpressionTypeL="Numeric" ExpressionR="152" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
                                 </Condition>
-                                <Conditions />
                               </Action>
                             </Actions>
                             <Condition Enabled="true" Grouping="Or">
@@ -7802,71 +7788,6 @@
                             </Actions>
                             <Condition Enabled="false" Grouping="Or" />
                           </Trigger>
-                          <Trigger Enabled="true" Name="Stock" Id="e66b19f8-0b66-482c-b241-eab601f7b437" RegularExpression="\A.{15}14:5892:">
-                            <Actions>
-                              <Action OrderNumber="1" LogLevel="-1" UseTTSTextExpression="outside intercardinal" TextAuraEffect="Bold" TextAuraFontSize="24" TextAuraForeground="Lime" TextAuraOutline="Black" TextAuraName="primalStock" TextAuraExpression="Stock: Out + Intercardinals" TextAuraXIniExpression="0" TextAuraYIniExpression="500" TextAuraWIniExpression="${screenwidth}" TextAuraHIniExpression="100" TextAuraOIniExpression="100" TextAuraTTLTickExpression="3-${_since}" TextAuraUseOutline="True" TextAuraFontName="Microsoft Sans Serif" ActionType="TextAura" ExecutionDelayExpression="125" Description="Ramuh+Garuda" DescriptionOverride="True">
-                                <Condition Enabled="true" Grouping="Or">
-                                  <ConditionGroup Enabled="true" Grouping="And">
-                                    <ConditionSingle Enabled="true" ExpressionL="${lvar:primalList[${lvar:primalList.size}]}" ExpressionTypeL="String" ExpressionR="90" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
-                                    <ConditionSingle Enabled="true" ExpressionL="${lvar:primalList[${numeric:${lvar:primalList.size}-1}]}" ExpressionTypeL="String" ExpressionR="91" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
-                                  </ConditionGroup>
-                                  <ConditionGroup Enabled="true" Grouping="And">
-                                    <ConditionSingle Enabled="true" ExpressionL="${lvar:primalList[${numeric:${lvar:primalList.size}-1}]}" ExpressionTypeL="String" ExpressionR="90" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
-                                    <ConditionSingle Enabled="true" ExpressionL="${lvar:primalList[${lvar:primalList.size}]}" ExpressionTypeL="String" ExpressionR="91" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
-                                  </ConditionGroup>
-                                </Condition>
-                              </Action>
-                              <Action OrderNumber="2" LogLevel="-1" UseTTSTextExpression="outside front or back" TextAuraEffect="Bold" TextAuraFontSize="24" TextAuraForeground="Lime" TextAuraOutline="Black" TextAuraName="primalStock" TextAuraExpression="Stock: Out + North/South" TextAuraXIniExpression="0" TextAuraYIniExpression="500" TextAuraWIniExpression="${_screenwidth}" TextAuraHIniExpression="100" TextAuraOIniExpression="100" TextAuraTTLTickExpression="3-${_since}" TextAuraUseOutline="True" TextAuraFontName="Microsoft Sans Serif" ActionType="TextAura" Description="Ramuh+Leviathan" DescriptionOverride="True">
-                                <Condition Enabled="true" Grouping="Or">
-                                  <ConditionGroup Enabled="true" Grouping="And">
-                                    <ConditionSingle Enabled="true" ExpressionL="${lvar:primalList[${lvar:primalList.size}]}" ExpressionTypeL="String" ExpressionR="90" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
-                                    <ConditionSingle Enabled="true" ExpressionL="${lvar:primalList[${numeric:${lvar:primalList.size}-1}]}" ExpressionTypeL="String" ExpressionR="8E" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
-                                  </ConditionGroup>
-                                  <ConditionGroup Enabled="true" Grouping="And">
-                                    <ConditionSingle Enabled="true" ExpressionL="${lvar:primalList[${numeric:${lvar:primalList.size}-1}]}" ExpressionTypeL="String" ExpressionR="90" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
-                                    <ConditionSingle Enabled="true" ExpressionL="${lvar:primalList[${lvar:primalList.size}]}" ExpressionTypeL="String" ExpressionR="8E" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
-                                  </ConditionGroup>
-                                </Condition>
-                              </Action>
-                              <Action OrderNumber="3" LogLevel="-1" UseTTSTextExpression="outside sides" TextAuraEffect="Bold" TextAuraFontSize="24" TextAuraForeground="Lime" TextAuraOutline="Black" TextAuraName="primalStock" TextAuraExpression="Stock: Out + Sides" TextAuraXIniExpression="0" TextAuraYIniExpression="500" TextAuraWIniExpression="${_screenwidth}" TextAuraHIniExpression="100" TextAuraOIniExpression="100" TextAuraTTLTickExpression="3-${_since}" TextAuraUseOutline="True" TextAuraFontName="Microsoft Sans Serif" ActionType="TextAura" Description="Ramuh+Ifrit" DescriptionOverride="True">
-                                <Condition Enabled="true" Grouping="Or">
-                                  <ConditionGroup Enabled="true" Grouping="And">
-                                    <ConditionSingle Enabled="true" ExpressionL="${lvar:primalList[${lvar:primalList.size}]}" ExpressionTypeL="String" ExpressionR="90" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
-                                    <ConditionSingle Enabled="true" ExpressionL="${lvar:primalList[${numeric:${lvar:primalList.size}-1}]}" ExpressionTypeL="String" ExpressionR="8F" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
-                                  </ConditionGroup>
-                                  <ConditionGroup Enabled="true" Grouping="And">
-                                    <ConditionSingle Enabled="true" ExpressionL="${lvar:primalList[${numeric:${lvar:primalList.size}-1}]}" ExpressionTypeL="String" ExpressionR="90" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
-                                    <ConditionSingle Enabled="true" ExpressionL="${lvar:primalList[${lvar:primalList.size}]}" ExpressionTypeL="String" ExpressionR="8F" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
-                                  </ConditionGroup>
-                                </Condition>
-                              </Action>
-                              <Action OrderNumber="4" LogLevel="-1" UseTTSTextExpression="inside intercardinal" TextAuraEffect="Bold" TextAuraFontSize="24" TextAuraForeground="Lime" TextAuraOutline="Black" TextAuraName="primalStock" TextAuraExpression="Stock: Under Boss + Intercardinals" TextAuraXIniExpression="0" TextAuraYIniExpression="500" TextAuraWIniExpression="${_screenwidth}" TextAuraHIniExpression="100" TextAuraOIniExpression="100" TextAuraTTLTickExpression="3-${_since}" TextAuraUseOutline="True" TextAuraFontName="Microsoft Sans Serif" ActionType="TextAura" Description="Leviathan+Garuda" DescriptionOverride="True">
-                                <Condition Enabled="true" Grouping="Or">
-                                  <ConditionGroup Enabled="true" Grouping="And">
-                                    <ConditionSingle Enabled="true" ExpressionL="${lvar:primalList[${lvar:primalList.size}]}" ExpressionTypeL="String" ExpressionR="8E" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
-                                    <ConditionSingle Enabled="true" ExpressionL="${lvar:primalList[${numeric:${lvar:primalList.size}-1}]}" ExpressionTypeL="String" ExpressionR="91" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
-                                  </ConditionGroup>
-                                  <ConditionGroup Enabled="true" Grouping="And">
-                                    <ConditionSingle Enabled="true" ExpressionL="${lvar:primalList[${numeric:${lvar:primalList.size}-1}]}" ExpressionTypeL="String" ExpressionR="8E" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
-                                    <ConditionSingle Enabled="true" ExpressionL="${lvar:primalList[${lvar:primalList.size}]}" ExpressionTypeL="String" ExpressionR="91" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
-                                  </ConditionGroup>
-                                </Condition>
-                              </Action>
-                              <Action OrderNumber="5" LogLevel="-1" UseTTSTextExpression="inside flanks" TextAuraEffect="Bold" TextAuraFontSize="24" TextAuraForeground="Lime" TextAuraOutline="Black" TextAuraName="primalStock" TextAuraExpression="Stock: Under Boss + Sides" TextAuraXIniExpression="0" TextAuraYIniExpression="500" TextAuraWIniExpression="${_screenwidth}" TextAuraHIniExpression="100" TextAuraOIniExpression="100" TextAuraTTLTickExpression="3-${_since}" TextAuraUseOutline="True" TextAuraFontName="Microsoft Sans Serif" ActionType="TextAura" Description="Leviathan+Ifrit" DescriptionOverride="True">
-                                <Condition Enabled="true" Grouping="Or">
-                                  <ConditionGroup Enabled="true" Grouping="And">
-                                    <ConditionSingle Enabled="true" ExpressionL="${lvar:primalList[${lvar:primalList.size}]}" ExpressionTypeL="String" ExpressionR="8E" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
-                                    <ConditionSingle Enabled="true" ExpressionL="${lvar:primalList[${numeric:${lvar:primalList.size}-1}]}" ExpressionTypeL="String" ExpressionR="8F" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
-                                  </ConditionGroup>
-                                  <ConditionGroup Enabled="true" Grouping="And">
-                                    <ConditionSingle Enabled="true" ExpressionL="${lvar:primalList[${numeric:${lvar:primalList.size}-1}]}" ExpressionTypeL="String" ExpressionR="8E" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
-                                    <ConditionSingle Enabled="true" ExpressionL="${lvar:primalList[${lvar:primalList.size}]}" ExpressionTypeL="String" ExpressionR="8F" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
-                                  </ConditionGroup>
-                                </Condition>
-                              </Action>
-                            </Actions>
-                            <Condition Enabled="false" Grouping="Or" />
-                          </Trigger>
                         </Triggers>
                       </Folder>
                       <Folder Id="cfc12337-47e5-4229-9407-26c97b531be9" Name="Trackers" Enabled="true">
@@ -7902,10 +7823,11 @@
                       <Folder Id="0ae77bce-d6c1-4a4e-8343-f5b139b34f98" Name="Lion Breath" Enabled="true">
                         <Folders />
                         <Triggers>
-                          <Trigger Enabled="true" Name="Tether" Id="3e35fe40-ea41-4662-8c8d-045947956068" RegularExpression="23:[0-9A-F]{8}Beastly Sculpture:[0-9A-F]{8}:(?&lt;target&gt;[\w-' ]+):.{4}:.{4}:0011:" PeriodRefire="Deny" RefirePeriodExpression="1000">
+                          <Trigger Enabled="true" Name="Tether" Id="3e35fe40-ea41-4662-8c8d-045947956068" RegularExpression="23:[0-9A-F]{8}:Beastly Sculpture:[0-9A-F]{8}:(?&lt;target&gt;[\w-' ]+):.{4}:.{4}:0011:" PeriodRefire="Deny" RefirePeriodExpression="1000">
                             <Actions>
                               <Action OrderNumber="1" AuraName="TEA_Compressed_Duration" TextAuraEffect="Bold" TextAuraFontSize="24" TextAuraForeground="#FFBB00" TextAuraOutline="Black" TextAuraName="breathTimer" TextAuraExpression="Breath in ${numeric:8-${_since}}" TextAuraXIniExpression="0" TextAuraYIniExpression="540" TextAuraWIniExpression="${_screenwidth}" TextAuraHIniExpression="200" TextAuraOIniExpression="100" TextAuraTTLTickExpression="7-${_since}" TextAuraUseOutline="True" TextAuraFontName="Microsoft Sans Serif" ActionType="TextAura">
                                 <Condition Enabled="false" Grouping="Or" />
+                                <Conditions />
                               </Action>
                             </Actions>
                             <Condition Enabled="false" Grouping="Or" />
@@ -8014,7 +7936,7 @@
                         </Actions>
                         <Condition Enabled="false" Grouping="Or" />
                       </Trigger>
-                      <Trigger Enabled="true" Name="Laser Eye" Id="2ac1c729-2e98-4a9e-8edf-6774cfb15530" RegularExpression="14:58B8:Eden's Promise">
+                      <Trigger Enabled="true" Name="Laser Eye" Id="a5b4964e-0d5e-4080-8445-6b88fbd3bc43" RegularExpression="14:58B8:Eden's Promise">
                         <Actions>
                           <Action OrderNumber="1" LogLevel="-1" UseTTSTextExpression="Knockback" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="UseTTS" ExecutionDelayExpression="10000">
                             <Condition Enabled="false" Grouping="Or" />

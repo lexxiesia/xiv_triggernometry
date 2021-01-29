@@ -8063,7 +8063,6 @@
                         <Actions>
                           <Action OrderNumber="1" LogLevel="-1" UseTTSTextExpression="Look out" TextAuraEffect="Bold" TextAuraFontSize="24" TextAuraForeground="Red" TextAuraOutline="Black" TextAuraName="lookOutside" TextAuraExpression="Look Outside" TextAuraXIniExpression="0" TextAuraYIniExpression="500" TextAuraWIniExpression="${_screenwidth}" TextAuraHIniExpression="100" TextAuraOIniExpression="100" TextAuraTTLTickExpression="7-${_since}" TextAuraUseOutline="True" TextAuraFontName="Arial Black" ActionType="UseTTS" ExecutionDelayExpression="4500">
                             <Condition Enabled="false" Grouping="And" />
-                            <Conditions />
                           </Action>
                         </Actions>
                         <Condition Enabled="true" Grouping="Or">
@@ -8075,29 +8074,33 @@
                   </Folder>
                   <Folder Id="99a7f769-a7de-424b-b2bb-a8e588f9b80f" Name="Network Lines" Enabled="true">
                     <Folders>
-                      <Folder Id="1464a6b1-31f2-4695-a640-d767e5b82135" Name="Checkers" Enabled="true">
+                      <Folder Id="c6db4aee-6a9a-40f6-8ba8-72b57ef1f96e" Name="Checkers" Enabled="true">
                         <Folders />
                         <Triggers>
-                          <Trigger Enabled="true" Source="FFXIVNetwork" Name="Short Fire" Id="ee032083-797a-44b6-ac5c-5c3a61f530dc" RegularExpression="^26\|[^\|]*\|(?&lt;statusID&gt;[^\|]*)\|[^\|]*\|(?&lt;duration&gt;[^\|]*)\|[^\|]*\|[^\|]*\|[^\|]*\|(?&lt;name&gt;[^\|]*)">
+                          <Trigger Enabled="true" Source="FFXIVNetwork" Name="Short Fire" Id="eba1061b-24fa-434b-8989-6f321437239a" RegularExpression="^26\|[^\|]*\|(?&lt;statusID&gt;[^\|]*)\|[^\|]*\|(?&lt;duration&gt;[^\|]*)\|[^\|]*\|[^\|]*\|[^\|]*\|(?&lt;name&gt;[^\|]*)">
                             <Actions>
                               <Action OrderNumber="1" ListVariableOp="Set" ListVariableName="fireSTargets" ListVariableExpression="${name}" ListVariableIndex="1" LogLevel="-1" UseTTSTextExpression="Blue Weight" UseTTSExclusive="False" VariableOp="SetString" VariableName="fireSSelf" VariableExpression="${name}" TextAuraEffect="Bold" TextAuraFontSize="24" TextAuraForeground="Red" TextAuraOutline="Black" TextAuraName="secondBlue" TextAuraExpression="Blue (with ${name})" TextAuraXIniExpression="0" TextAuraYIniExpression="500" TextAuraWIniExpression="${_screenwidth}" TextAuraHIniExpression="100" TextAuraOIniExpression="100" TextAuraTTLTickExpression="5-${_since}" TextAuraUseOutline="True" TextAuraFontName="Arial Black" ActionType="Variable" Description="[Check] Fire Targets: Self" DescriptionOverride="True">
                                 <Condition Enabled="true" Grouping="And">
                                   <ConditionSingle Enabled="true" ExpressionL="${name}" ExpressionTypeL="String" ExpressionR="${_ffxivplayer}" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
                                 </Condition>
+                                <Conditions />
                               </Action>
                               <Action OrderNumber="2" ListVariableOp="Set" ListVariableName="fireSTargets" ListVariableExpression="${name}" ListVariableIndex="2" LogLevel="-1" UseTTSTextExpression="Blue Weight" UseTTSExclusive="False" VariableOp="SetString" VariableName="fireSPartner" VariableExpression="${name}" TextAuraEffect="Bold" TextAuraFontSize="24" TextAuraForeground="Red" TextAuraOutline="Black" TextAuraName="secondBlue" TextAuraExpression="Blue (with ${name})" TextAuraXIniExpression="0" TextAuraYIniExpression="500" TextAuraWIniExpression="${_screenwidth}" TextAuraHIniExpression="100" TextAuraOIniExpression="100" TextAuraTTLTickExpression="5-${_since}" TextAuraUseOutline="True" TextAuraFontName="Arial Black" ActionType="Variable" Description="[Check] Fire Targets: Partner" DescriptionOverride="True">
                                 <Condition Enabled="true" Grouping="And">
                                   <ConditionSingle Enabled="true" ExpressionL="${name}" ExpressionTypeL="String" ExpressionR="${_ffxivplayer}" ExpressionTypeR="String" ConditionType="StringNotEqualNocase" />
                                 </Condition>
+                                <Conditions />
                               </Action>
                               <Action OrderNumber="3" LogLevel="-1" UseTTSTextExpression="Blue Weight" UseTTSExclusive="False" TextAuraEffect="Bold" TextAuraFontSize="24" TextAuraForeground="Red" TextAuraOutline="Black" TextAuraName="shortFire" TextAuraExpression="Short Fire (with ${var:fireSPartner})" TextAuraXIniExpression="0" TextAuraYIniExpression="550" TextAuraWIniExpression="${_screenwidth}" TextAuraHIniExpression="100" TextAuraOIniExpression="100" TextAuraTTLTickExpression="5-${_since}" TextAuraUseOutline="True" TextAuraFontName="Arial Black" ActionType="TextAura" ExecutionDelayExpression="100" Description="Display Text: Fire Target (Partner)" DescriptionOverride="True">
                                 <Condition Enabled="true" Grouping="And">
                                   <ConditionSingle Enabled="true" ExpressionL="${evar:fireSPartner}" ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
                                   <ConditionSingle Enabled="true" ExpressionL="${var:fireSSelf}" ExpressionTypeL="String" ExpressionR="${_ffxivplayer}" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
                                 </Condition>
+                                <Conditions />
                               </Action>
                               <Action OrderNumber="4" ListVariableName="fireSTargets" ListVariableExpression="${name}" ListVariableIndex="1" LogLevel="-1" UseTTSTextExpression="Blue Weight" UseTTSExclusive="False" VariableOp="UnsetRegex" VariableName="^fireS(Self|Partner)$" TextAuraEffect="Bold" TextAuraFontSize="24" TextAuraForeground="Red" TextAuraOutline="Black" TextAuraName="secondBlue" TextAuraExpression="Blue (with ${name})" TextAuraXIniExpression="0" TextAuraYIniExpression="500" TextAuraWIniExpression="${_screenwidth}" TextAuraHIniExpression="100" TextAuraOIniExpression="100" TextAuraTTLTickExpression="5-${_since}" TextAuraUseOutline="True" TextAuraFontName="Arial Black" ActionType="Variable" ExecutionDelayExpression="10000" Description="Reset" DescriptionOverride="True">
                                 <Condition Enabled="false" Grouping="And" />
+                                <Conditions />
                               </Action>
                             </Actions>
                             <Condition Enabled="true" Grouping="And">
@@ -8105,27 +8108,32 @@
                               <ConditionSingle Enabled="true" ExpressionL="${duration}" ExpressionTypeL="Numeric" ExpressionR="20" ExpressionTypeR="Numeric" ConditionType="NumericLess" />
                               <ConditionSingle Enabled="true" ExpressionL="${statusID}" ExpressionTypeL="String" ExpressionR="997" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
                             </Condition>
+                            <Conditions />
                           </Trigger>
-                          <Trigger Enabled="true" Source="FFXIVNetwork" Name="Short Blizzard" Id="ab77547e-af56-4f1a-8042-c68c34c8a1be" RegularExpression="^26\|[^\|]*\|(?&lt;statusID&gt;[^\|]*)\|[^\|]*\|(?&lt;duration&gt;[^\|]*)\|[^\|]*\|[^\|]*\|[^\|]*\|(?&lt;name&gt;[^\|]*)">
+                          <Trigger Enabled="true" Source="FFXIVNetwork" Name="Short Blizzard" Id="8a98c3d5-af24-4bc4-8ac7-0ebc38de7dce" RegularExpression="^26\|[^\|]*\|(?&lt;statusID&gt;[^\|]*)\|[^\|]*\|(?&lt;duration&gt;[^\|]*)\|[^\|]*\|[^\|]*\|[^\|]*\|(?&lt;name&gt;[^\|]*)">
                             <Actions>
                               <Action OrderNumber="1" ListVariableOp="Set" ListVariableName="iceSTargets" ListVariableExpression="${name}" ListVariableIndex="1" LogLevel="-1" UseTTSTextExpression="Blue Weight" UseTTSExclusive="False" VariableOp="SetString" VariableName="iceSSelf" VariableExpression="${name}" TextAuraEffect="Bold" TextAuraFontSize="24" TextAuraForeground="Red" TextAuraOutline="Black" TextAuraName="secondBlue" TextAuraExpression="Blue (with ${name})" TextAuraXIniExpression="0" TextAuraYIniExpression="500" TextAuraWIniExpression="${_screenwidth}" TextAuraHIniExpression="100" TextAuraOIniExpression="100" TextAuraTTLTickExpression="5-${_since}" TextAuraUseOutline="True" TextAuraFontName="Arial Black" ActionType="Variable" Description="[Check] Ice Targets: Self" DescriptionOverride="True">
                                 <Condition Enabled="true" Grouping="And">
                                   <ConditionSingle Enabled="true" ExpressionL="${name}" ExpressionTypeL="String" ExpressionR="${_ffxivplayer}" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
                                 </Condition>
+                                <Conditions />
                               </Action>
                               <Action OrderNumber="2" ListVariableOp="Set" ListVariableName="iceSTargets" ListVariableExpression="${name}" ListVariableIndex="2" LogLevel="-1" UseTTSTextExpression="Blue Weight" UseTTSExclusive="False" VariableOp="SetString" VariableName="iceSPartner" VariableExpression="${name}" TextAuraEffect="Bold" TextAuraFontSize="24" TextAuraForeground="Red" TextAuraOutline="Black" TextAuraName="secondBlue" TextAuraExpression="Blue (with ${name})" TextAuraXIniExpression="0" TextAuraYIniExpression="500" TextAuraWIniExpression="${_screenwidth}" TextAuraHIniExpression="100" TextAuraOIniExpression="100" TextAuraTTLTickExpression="5-${_since}" TextAuraUseOutline="True" TextAuraFontName="Arial Black" ActionType="Variable" Description="[Check] Ice Targets: Partner" DescriptionOverride="True">
                                 <Condition Enabled="true" Grouping="And">
                                   <ConditionSingle Enabled="true" ExpressionL="${name}" ExpressionTypeL="String" ExpressionR="${_ffxivplayer}" ExpressionTypeR="String" ConditionType="StringNotEqualNocase" />
                                 </Condition>
+                                <Conditions />
                               </Action>
                               <Action OrderNumber="3" LogLevel="-1" UseTTSTextExpression="Blue Weight" UseTTSExclusive="False" TextAuraEffect="Bold" TextAuraFontSize="24" TextAuraForeground="Aqua" TextAuraOutline="Black" TextAuraName="shortBlizzard" TextAuraExpression="Short Blizzard (with ${var:iceSPartner})" TextAuraXIniExpression="0" TextAuraYIniExpression="550" TextAuraWIniExpression="${_screenwidth}" TextAuraHIniExpression="100" TextAuraOIniExpression="100" TextAuraTTLTickExpression="5-${_since}" TextAuraUseOutline="True" TextAuraFontName="Arial Black" ActionType="TextAura" ExecutionDelayExpression="100" Description="Display Text: Ice Target (Partner)" DescriptionOverride="True">
                                 <Condition Enabled="true" Grouping="And">
                                   <ConditionSingle Enabled="true" ExpressionL="${evar:iceSPartner}" ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
                                   <ConditionSingle Enabled="true" ExpressionL="${var:iceSSelf}" ExpressionTypeL="String" ExpressionR="${_ffxivplayer}" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
                                 </Condition>
+                                <Conditions />
                               </Action>
                               <Action OrderNumber="4" ListVariableName="iceSTargets" ListVariableExpression="${name}" ListVariableIndex="1" LogLevel="-1" UseTTSTextExpression="Blue Weight" UseTTSExclusive="False" VariableOp="UnsetRegex" VariableName="^iceS(Self|Partner)$" TextAuraEffect="Bold" TextAuraFontSize="24" TextAuraForeground="Red" TextAuraOutline="Black" TextAuraName="secondBlue" TextAuraExpression="Blue (with ${name})" TextAuraXIniExpression="0" TextAuraYIniExpression="500" TextAuraWIniExpression="${_screenwidth}" TextAuraHIniExpression="100" TextAuraOIniExpression="100" TextAuraTTLTickExpression="5-${_since}" TextAuraUseOutline="True" TextAuraFontName="Arial Black" ActionType="Variable" ExecutionDelayExpression="10000" Description="Reset" DescriptionOverride="True">
                                 <Condition Enabled="false" Grouping="And" />
+                                <Conditions />
                               </Action>
                             </Actions>
                             <Condition Enabled="true" Grouping="And">
@@ -8133,27 +8141,32 @@
                               <ConditionSingle Enabled="true" ExpressionL="${duration}" ExpressionTypeL="Numeric" ExpressionR="20" ExpressionTypeR="Numeric" ConditionType="NumericLess" />
                               <ConditionSingle Enabled="true" ExpressionL="${statusID}" ExpressionTypeL="String" ExpressionR="99e" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
                             </Condition>
+                            <Conditions />
                           </Trigger>
-                          <Trigger Enabled="true" Source="FFXIVNetwork" Name="Double Wind" Id="3937197a-348a-4108-a923-534e1db3820f" RegularExpression="\A26\|[^\|]*\|(?&lt;statusID&gt;[^\|]*)\|[^\|]*\|(?&lt;duration&gt;[^\|]*)\|[^\|]*\|[^\|]*\|[^\|]*\|(?&lt;name&gt;[^\|]*)">
+                          <Trigger Enabled="true" Source="FFXIVNetwork" Name="Double Wind" Id="90732ed3-7fee-4f06-af59-e9cb28ce30b8" RegularExpression="\A26\|[^\|]*\|(?&lt;statusID&gt;[^\|]*)\|[^\|]*\|(?&lt;duration&gt;[^\|]*)\|[^\|]*\|[^\|]*\|[^\|]*\|(?&lt;name&gt;[^\|]*)">
                             <Actions>
                               <Action OrderNumber="1" ListVariableOp="Set" ListVariableName="windTargets" ListVariableExpression="${name}" ListVariableIndex="1" LogLevel="-1" UseTTSTextExpression="Blue Weight" UseTTSExclusive="False" VariableOp="SetString" VariableName="windSelf" VariableExpression="${name}" TextAuraEffect="Bold" TextAuraFontSize="24" TextAuraForeground="Red" TextAuraOutline="Black" TextAuraName="secondBlue" TextAuraExpression="Blue (with ${name})" TextAuraXIniExpression="0" TextAuraYIniExpression="500" TextAuraWIniExpression="${_screenwidth}" TextAuraHIniExpression="100" TextAuraOIniExpression="100" TextAuraTTLTickExpression="5-${_since}" TextAuraUseOutline="True" TextAuraFontName="Arial Black" ActionType="Variable" Description="[Check] Wind Targets: Self" DescriptionOverride="True">
                                 <Condition Enabled="true" Grouping="And">
                                   <ConditionSingle Enabled="true" ExpressionL="${name}" ExpressionTypeL="String" ExpressionR="${_ffxivplayer}" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
                                 </Condition>
+                                <Conditions />
                               </Action>
                               <Action OrderNumber="2" ListVariableOp="Set" ListVariableName="windTargets" ListVariableExpression="${name}" ListVariableIndex="2" LogLevel="-1" UseTTSTextExpression="Blue Weight" UseTTSExclusive="False" VariableOp="SetString" VariableName="windPartner" VariableExpression="${name}" TextAuraEffect="Bold" TextAuraFontSize="24" TextAuraForeground="Red" TextAuraOutline="Black" TextAuraName="secondBlue" TextAuraExpression="Blue (with ${name})" TextAuraXIniExpression="0" TextAuraYIniExpression="500" TextAuraWIniExpression="${_screenwidth}" TextAuraHIniExpression="100" TextAuraOIniExpression="100" TextAuraTTLTickExpression="5-${_since}" TextAuraUseOutline="True" TextAuraFontName="Arial Black" ActionType="Variable" Description="[Check] Wind Targets: Partner" DescriptionOverride="True">
                                 <Condition Enabled="true" Grouping="And">
                                   <ConditionSingle Enabled="true" ExpressionL="${name}" ExpressionTypeL="String" ExpressionR="${_ffxivplayer}" ExpressionTypeR="String" ConditionType="StringNotEqualNocase" />
                                 </Condition>
+                                <Conditions />
                               </Action>
                               <Action OrderNumber="3" LogLevel="-1" UseTTSTextExpression="Blue Weight" UseTTSExclusive="False" TextAuraEffect="Bold" TextAuraFontSize="24" TextAuraForeground="Lime" TextAuraOutline="Black" TextAuraName="doubleWind" TextAuraExpression="Double Wind (with ${var:windPartner})" TextAuraXIniExpression="0" TextAuraYIniExpression="550" TextAuraWIniExpression="${_screenwidth}" TextAuraHIniExpression="100" TextAuraOIniExpression="100" TextAuraTTLTickExpression="5-${_since}" TextAuraUseOutline="True" TextAuraFontName="Arial Black" ActionType="TextAura" ExecutionDelayExpression="100" Description="Display Text: Wind Target (Partner)" DescriptionOverride="True">
                                 <Condition Enabled="true" Grouping="And">
                                   <ConditionSingle Enabled="true" ExpressionL="${var:windSelf}" ExpressionTypeL="String" ExpressionR="${_ffxivplayer}" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
                                   <ConditionSingle Enabled="true" ExpressionL="${evar:windPartner}" ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
                                 </Condition>
+                                <Conditions />
                               </Action>
                               <Action OrderNumber="4" ListVariableName="windTargets" ListVariableExpression="${name}" ListVariableIndex="1" LogLevel="-1" UseTTSTextExpression="Blue Weight" UseTTSExclusive="False" VariableOp="UnsetRegex" VariableName="^wind(Self|Partner)$" TextAuraEffect="Bold" TextAuraFontSize="24" TextAuraForeground="Red" TextAuraOutline="Black" TextAuraName="secondBlue" TextAuraExpression="Blue (with ${name})" TextAuraXIniExpression="0" TextAuraYIniExpression="500" TextAuraWIniExpression="${_screenwidth}" TextAuraHIniExpression="100" TextAuraOIniExpression="100" TextAuraTTLTickExpression="5-${_since}" TextAuraUseOutline="True" TextAuraFontName="Arial Black" ActionType="Variable" ExecutionDelayExpression="10000" Description="Reset" DescriptionOverride="True">
                                 <Condition Enabled="false" Grouping="And" />
+                                <Conditions />
                               </Action>
                             </Actions>
                             <Condition Enabled="true" Grouping="And">
@@ -8161,27 +8174,32 @@
                               <ConditionSingle Enabled="true" ExpressionL="${duration}" ExpressionTypeL="Numeric" ExpressionR="29" ExpressionTypeR="Numeric" ConditionType="NumericGreater" />
                               <ConditionSingle Enabled="true" ExpressionL="${statusID}" ExpressionTypeL="String" ExpressionR="99f" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
                             </Condition>
+                            <Conditions />
                           </Trigger>
-                          <Trigger Enabled="true" Source="FFXIVNetwork" Name="Long Fire" Id="2878c0c8-8a9b-413f-accf-8957de96a654" RegularExpression="^26\|[^\|]*\|(?&lt;statusID&gt;[^\|]*)\|[^\|]*\|(?&lt;duration&gt;[^\|]*)\|[^\|]*\|[^\|]*\|[^\|]*\|(?&lt;name&gt;[^\|]*)">
+                          <Trigger Enabled="true" Source="FFXIVNetwork" Name="Long Fire" Id="037ca503-8e0e-40e7-9236-56fa1c5631c5" RegularExpression="^26\|[^\|]*\|(?&lt;statusID&gt;[^\|]*)\|[^\|]*\|(?&lt;duration&gt;[^\|]*)\|[^\|]*\|[^\|]*\|[^\|]*\|(?&lt;name&gt;[^\|]*)">
                             <Actions>
                               <Action OrderNumber="1" ListVariableOp="Set" ListVariableName="fireLTargets" ListVariableExpression="${name}" ListVariableIndex="1" LogLevel="-1" UseTTSTextExpression="Blue Weight" UseTTSExclusive="False" VariableOp="SetString" VariableName="fireLSelf" VariableExpression="${name}" TextAuraEffect="Bold" TextAuraFontSize="24" TextAuraForeground="Red" TextAuraOutline="Black" TextAuraName="secondBlue" TextAuraExpression="Blue (with ${name})" TextAuraXIniExpression="0" TextAuraYIniExpression="500" TextAuraWIniExpression="${_screenwidth}" TextAuraHIniExpression="100" TextAuraOIniExpression="100" TextAuraTTLTickExpression="5-${_since}" TextAuraUseOutline="True" TextAuraFontName="Arial Black" ActionType="Variable" Description="[Check] Fire Targets: Self" DescriptionOverride="True">
                                 <Condition Enabled="true" Grouping="And">
                                   <ConditionSingle Enabled="true" ExpressionL="${name}" ExpressionTypeL="String" ExpressionR="${_ffxivplayer}" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
                                 </Condition>
+                                <Conditions />
                               </Action>
                               <Action OrderNumber="2" ListVariableOp="Set" ListVariableName="fireLTargets" ListVariableExpression="${name}" ListVariableIndex="2" LogLevel="-1" UseTTSTextExpression="Blue Weight" UseTTSExclusive="False" VariableOp="SetString" VariableName="fireLPartner" VariableExpression="${name}" TextAuraEffect="Bold" TextAuraFontSize="24" TextAuraForeground="Red" TextAuraOutline="Black" TextAuraName="secondBlue" TextAuraExpression="Blue (with ${name})" TextAuraXIniExpression="0" TextAuraYIniExpression="500" TextAuraWIniExpression="${_screenwidth}" TextAuraHIniExpression="100" TextAuraOIniExpression="100" TextAuraTTLTickExpression="5-${_since}" TextAuraUseOutline="True" TextAuraFontName="Arial Black" ActionType="Variable" Description="[Check] Fire Targets: Partner" DescriptionOverride="True">
                                 <Condition Enabled="true" Grouping="And">
                                   <ConditionSingle Enabled="true" ExpressionL="${name}" ExpressionTypeL="String" ExpressionR="${_ffxivplayer}" ExpressionTypeR="String" ConditionType="StringNotEqualNocase" />
                                 </Condition>
+                                <Conditions />
                               </Action>
                               <Action OrderNumber="3" LogLevel="-1" UseTTSTextExpression="Blue Weight" UseTTSExclusive="False" TextAuraEffect="Bold" TextAuraFontSize="24" TextAuraForeground="Red" TextAuraOutline="Black" TextAuraName="longFire" TextAuraExpression="Long Fire (with ${var:fireLPartner})" TextAuraXIniExpression="0" TextAuraYIniExpression="550" TextAuraWIniExpression="${_screenwidth}" TextAuraHIniExpression="100" TextAuraOIniExpression="100" TextAuraTTLTickExpression="5-${_since}" TextAuraUseOutline="True" TextAuraFontName="Arial Black" ActionType="TextAura" ExecutionDelayExpression="100" Description="Display Text: Fire Target (Partner)" DescriptionOverride="True">
                                 <Condition Enabled="true" Grouping="And">
                                   <ConditionSingle Enabled="true" ExpressionL="${evar:fireLPartner}" ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
                                   <ConditionSingle Enabled="true" ExpressionL="${var:fireLSelf}" ExpressionTypeL="String" ExpressionR="${_ffxivplayer}" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
                                 </Condition>
+                                <Conditions />
                               </Action>
                               <Action OrderNumber="4" ListVariableName="fireLLTargets" ListVariableExpression="${name}" ListVariableIndex="1" LogLevel="-1" UseTTSTextExpression="Blue Weight" UseTTSExclusive="False" VariableOp="UnsetRegex" VariableName="^fireL(Self|Partner)$" TextAuraEffect="Bold" TextAuraFontSize="24" TextAuraForeground="Red" TextAuraOutline="Black" TextAuraName="secondBlue" TextAuraExpression="Blue (with ${name})" TextAuraXIniExpression="0" TextAuraYIniExpression="500" TextAuraWIniExpression="${_screenwidth}" TextAuraHIniExpression="100" TextAuraOIniExpression="100" TextAuraTTLTickExpression="5-${_since}" TextAuraUseOutline="True" TextAuraFontName="Arial Black" ActionType="Variable" ExecutionDelayExpression="10000" Description="Reset" DescriptionOverride="True">
                                 <Condition Enabled="false" Grouping="And" />
+                                <Conditions />
                               </Action>
                             </Actions>
                             <Condition Enabled="true" Grouping="And">
@@ -8189,27 +8207,32 @@
                               <ConditionSingle Enabled="true" ExpressionL="${duration}" ExpressionTypeL="Numeric" ExpressionR="20" ExpressionTypeR="Numeric" ConditionType="NumericGreater" />
                               <ConditionSingle Enabled="true" ExpressionL="${statusID}" ExpressionTypeL="String" ExpressionR="997" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
                             </Condition>
+                            <Conditions />
                           </Trigger>
-                          <Trigger Enabled="true" Source="FFXIVNetwork" Name="Long Blizzard" Id="45e79a4a-7c0f-44dd-a385-ab6911293825" RegularExpression="^26\|[^\|]*\|(?&lt;statusID&gt;[^\|]*)\|[^\|]*\|(?&lt;duration&gt;[^\|]*)\|[^\|]*\|[^\|]*\|[^\|]*\|(?&lt;name&gt;[^\|]*)">
+                          <Trigger Enabled="true" Source="FFXIVNetwork" Name="Long Blizzard" Id="fa2db5e2-93f2-42b1-9927-11bffa6c271a" RegularExpression="^26\|[^\|]*\|(?&lt;statusID&gt;[^\|]*)\|[^\|]*\|(?&lt;duration&gt;[^\|]*)\|[^\|]*\|[^\|]*\|[^\|]*\|(?&lt;name&gt;[^\|]*)">
                             <Actions>
                               <Action OrderNumber="1" ListVariableOp="Set" ListVariableName="iceLTargets" ListVariableExpression="${name}" ListVariableIndex="1" LogLevel="-1" UseTTSTextExpression="Blue Weight" UseTTSExclusive="False" VariableOp="SetString" VariableName="iceLSelf" VariableExpression="${name}" TextAuraEffect="Bold" TextAuraFontSize="24" TextAuraForeground="Red" TextAuraOutline="Black" TextAuraName="secondBlue" TextAuraExpression="Blue (with ${name})" TextAuraXIniExpression="0" TextAuraYIniExpression="500" TextAuraWIniExpression="${_screenwidth}" TextAuraHIniExpression="100" TextAuraOIniExpression="100" TextAuraTTLTickExpression="5-${_since}" TextAuraUseOutline="True" TextAuraFontName="Arial Black" ActionType="Variable" Description="[Check] Ice Targets: Self" DescriptionOverride="True">
                                 <Condition Enabled="true" Grouping="And">
                                   <ConditionSingle Enabled="true" ExpressionL="${name}" ExpressionTypeL="String" ExpressionR="${_ffxivplayer}" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
                                 </Condition>
+                                <Conditions />
                               </Action>
                               <Action OrderNumber="2" ListVariableOp="Set" ListVariableName="iceLTargets" ListVariableExpression="${name}" ListVariableIndex="2" LogLevel="-1" UseTTSTextExpression="Blue Weight" UseTTSExclusive="False" VariableOp="SetString" VariableName="iceLPartner" VariableExpression="${name}" TextAuraEffect="Bold" TextAuraFontSize="24" TextAuraForeground="Red" TextAuraOutline="Black" TextAuraName="secondBlue" TextAuraExpression="Blue (with ${name})" TextAuraXIniExpression="0" TextAuraYIniExpression="500" TextAuraWIniExpression="${_screenwidth}" TextAuraHIniExpression="100" TextAuraOIniExpression="100" TextAuraTTLTickExpression="5-${_since}" TextAuraUseOutline="True" TextAuraFontName="Arial Black" ActionType="Variable" Description="[Check] Ice Targets: Partner" DescriptionOverride="True">
                                 <Condition Enabled="true" Grouping="And">
                                   <ConditionSingle Enabled="true" ExpressionL="${name}" ExpressionTypeL="String" ExpressionR="${_ffxivplayer}" ExpressionTypeR="String" ConditionType="StringNotEqualNocase" />
                                 </Condition>
+                                <Conditions />
                               </Action>
-                              <Action OrderNumber="3" LogLevel="-1" UseTTSTextExpression="Blue Weight" UseTTSExclusive="False" TextAuraEffect="Bold" TextAuraFontSize="24" TextAuraForeground="Aqua" TextAuraOutline="Black" TextAuraName="shortBlizzard" TextAuraExpression="Short Blizzard (with ${var:icePartner})" TextAuraXIniExpression="0" TextAuraYIniExpression="550" TextAuraWIniExpression="${_screenwidth}" TextAuraHIniExpression="100" TextAuraOIniExpression="100" TextAuraTTLTickExpression="5-${_since}" TextAuraUseOutline="True" TextAuraFontName="Arial Black" ActionType="TextAura" ExecutionDelayExpression="100" Description="Display Text: Ice Target (Partner)" DescriptionOverride="True">
+                              <Action OrderNumber="3" LogLevel="-1" UseTTSTextExpression="Blue Weight" UseTTSExclusive="False" TextAuraEffect="Bold" TextAuraFontSize="24" TextAuraForeground="Aqua" TextAuraOutline="Black" TextAuraName="longBlizzard" TextAuraExpression="Long Blizzard (with ${var:iceLPartner})" TextAuraXIniExpression="0" TextAuraYIniExpression="550" TextAuraWIniExpression="${_screenwidth}" TextAuraHIniExpression="100" TextAuraOIniExpression="100" TextAuraTTLTickExpression="5-${_since}" TextAuraUseOutline="True" TextAuraFontName="Arial Black" ActionType="TextAura" ExecutionDelayExpression="100" Description="Display Text: Ice Target (Partner)" DescriptionOverride="True">
                                 <Condition Enabled="true" Grouping="And">
                                   <ConditionSingle Enabled="true" ExpressionL="${evar:iceLPartner}" ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
                                   <ConditionSingle Enabled="true" ExpressionL="${var:iceLSelf}" ExpressionTypeL="String" ExpressionR="${_ffxivplayer}" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
                                 </Condition>
+                                <Conditions />
                               </Action>
                               <Action OrderNumber="4" ListVariableName="iceLTargets" ListVariableExpression="${name}" ListVariableIndex="1" LogLevel="-1" UseTTSTextExpression="Blue Weight" UseTTSExclusive="False" VariableOp="UnsetRegex" VariableName="^iceL(Self|Partner)$" TextAuraEffect="Bold" TextAuraFontSize="24" TextAuraForeground="Red" TextAuraOutline="Black" TextAuraName="secondBlue" TextAuraExpression="Blue (with ${name})" TextAuraXIniExpression="0" TextAuraYIniExpression="500" TextAuraWIniExpression="${_screenwidth}" TextAuraHIniExpression="100" TextAuraOIniExpression="100" TextAuraTTLTickExpression="5-${_since}" TextAuraUseOutline="True" TextAuraFontName="Arial Black" ActionType="Variable" ExecutionDelayExpression="10000" Description="Reset" DescriptionOverride="True">
                                 <Condition Enabled="false" Grouping="And" />
+                                <Conditions />
                               </Action>
                             </Actions>
                             <Condition Enabled="true" Grouping="And">
@@ -8217,33 +8240,39 @@
                               <ConditionSingle Enabled="true" ExpressionL="${duration}" ExpressionTypeL="Numeric" ExpressionR="20" ExpressionTypeR="Numeric" ConditionType="NumericGreater" />
                               <ConditionSingle Enabled="true" ExpressionL="${statusID}" ExpressionTypeL="String" ExpressionR="99e" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
                             </Condition>
+                            <Conditions />
                           </Trigger>
-                          <Trigger Enabled="true" Source="FFXIVNetwork" Name="Shadoweye" Id="182b5344-2334-4e91-9034-a3d58845a9bf" RegularExpression="\A26\|[^\|]*\|(?&lt;statusID&gt;[^\|]*)\|[^\|]*\|(?&lt;duration&gt;[^\|]*)\|[^\|]*\|[^\|]*\|[^\|]*\|(?&lt;name&gt;[^\|]*)">
+                          <Trigger Enabled="true" Source="FFXIVNetwork" Name="Shadoweye" Id="dc219812-711d-439c-ab4a-47c2d85ce4b9" RegularExpression="\A26\|[^\|]*\|(?&lt;statusID&gt;[^\|]*)\|[^\|]*\|(?&lt;duration&gt;[^\|]*)\|[^\|]*\|[^\|]*\|[^\|]*\|(?&lt;name&gt;[^\|]*)">
                             <Actions>
                               <Action OrderNumber="1" ListVariableOp="Set" ListVariableName="eyeTargets" ListVariableExpression="${name}" ListVariableIndex="1" LogLevel="-1" UseTTSTextExpression="Blue Weight" UseTTSExclusive="False" VariableOp="SetString" VariableName="eyeSelf" VariableExpression="${name}" TextAuraEffect="Bold" TextAuraFontSize="24" TextAuraForeground="Red" TextAuraOutline="Black" TextAuraName="secondBlue" TextAuraExpression="Blue (with ${name})" TextAuraXIniExpression="0" TextAuraYIniExpression="500" TextAuraWIniExpression="${_screenwidth}" TextAuraHIniExpression="100" TextAuraOIniExpression="100" TextAuraTTLTickExpression="5-${_since}" TextAuraUseOutline="True" TextAuraFontName="Arial Black" ActionType="Variable" Description="[Check] Eye Targets: Self" DescriptionOverride="True">
                                 <Condition Enabled="true" Grouping="And">
                                   <ConditionSingle Enabled="true" ExpressionL="${name}" ExpressionTypeL="String" ExpressionR="${_ffxivplayer}" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
                                 </Condition>
+                                <Conditions />
                               </Action>
                               <Action OrderNumber="2" ListVariableOp="Set" ListVariableName="eyeTargets" ListVariableExpression="${name}" ListVariableIndex="2" LogLevel="-1" UseTTSTextExpression="Blue Weight" UseTTSExclusive="False" VariableOp="SetString" VariableName="eyePartner" VariableExpression="${name}" TextAuraEffect="Bold" TextAuraFontSize="24" TextAuraForeground="Red" TextAuraOutline="Black" TextAuraName="secondBlue" TextAuraExpression="Blue (with ${name})" TextAuraXIniExpression="0" TextAuraYIniExpression="500" TextAuraWIniExpression="${_screenwidth}" TextAuraHIniExpression="100" TextAuraOIniExpression="100" TextAuraTTLTickExpression="5-${_since}" TextAuraUseOutline="True" TextAuraFontName="Arial Black" ActionType="Variable" Description="[Check] Eye Targets: Partner" DescriptionOverride="True">
                                 <Condition Enabled="true" Grouping="And">
                                   <ConditionSingle Enabled="true" ExpressionL="${name}" ExpressionTypeL="String" ExpressionR="${_ffxivplayer}" ExpressionTypeR="String" ConditionType="StringNotEqualNocase" />
                                 </Condition>
+                                <Conditions />
                               </Action>
                               <Action OrderNumber="3" LogLevel="-1" UseTTSTextExpression="Blue Weight" UseTTSExclusive="False" TextAuraEffect="Bold" TextAuraFontSize="24" TextAuraForeground="#FFBB00" TextAuraOutline="Black" TextAuraName="shadowEye" TextAuraExpression="Shadoweye (with ${var:eyePartner})" TextAuraXIniExpression="0" TextAuraYIniExpression="550" TextAuraWIniExpression="${_screenwidth}" TextAuraHIniExpression="100" TextAuraOIniExpression="100" TextAuraTTLTickExpression="5-${_since}" TextAuraUseOutline="True" TextAuraFontName="Arial Black" ActionType="TextAura" ExecutionDelayExpression="100" Description="Display Text: Eye Target (Partner)" DescriptionOverride="True">
                                 <Condition Enabled="true" Grouping="And">
                                   <ConditionSingle Enabled="true" ExpressionL="${evar:eyePartner}" ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
                                   <ConditionSingle Enabled="true" ExpressionL="${var:eyeSelf}" ExpressionTypeL="String" ExpressionR="${_ffxivplayer}" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
                                 </Condition>
+                                <Conditions />
                               </Action>
                               <Action OrderNumber="4" ListVariableName="eyeTargets" ListVariableExpression="${name}" ListVariableIndex="1" LogLevel="-1" UseTTSTextExpression="Blue Weight" UseTTSExclusive="False" VariableOp="UnsetRegex" VariableName="^eye(Self|Partner)$" TextAuraEffect="Bold" TextAuraFontSize="24" TextAuraForeground="Red" TextAuraOutline="Black" TextAuraName="secondBlue" TextAuraExpression="Blue (with ${name})" TextAuraXIniExpression="0" TextAuraYIniExpression="500" TextAuraWIniExpression="${_screenwidth}" TextAuraHIniExpression="100" TextAuraOIniExpression="100" TextAuraTTLTickExpression="5-${_since}" TextAuraUseOutline="True" TextAuraFontName="Arial Black" ActionType="Variable" ExecutionDelayExpression="10000" Description="Reset" DescriptionOverride="True">
                                 <Condition Enabled="false" Grouping="And" />
+                                <Conditions />
                               </Action>
                             </Actions>
                             <Condition Enabled="true" Grouping="And">
                               <ConditionSingle Enabled="true" ExpressionL="${var:dataPhase}" ExpressionTypeL="String" ExpressionR="advanced" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
                               <ConditionSingle Enabled="true" ExpressionL="${statusID}" ExpressionTypeL="String" ExpressionR="998" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
                             </Condition>
+                            <Conditions />
                           </Trigger>
                         </Triggers>
                       </Folder>

@@ -6597,27 +6597,31 @@
                         <Actions>
                           <Action OrderNumber="1" LogLevel="-1" VariableOp="SetNumeric" VariableName="casterIncrement" VariableExpression="${var:casterIncrement}+1" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Variable">
                             <Condition Enabled="false" Grouping="Or" />
+                            <Conditions />
                           </Action>
                           <Action OrderNumber="2" LogLevel="-1" VariableOp="SetString" VariableName="prismaticCaster${var:casterIncrement}" VariableExpression="${func:dec2hex:${numeric:hex2dec(${actorID})+1}}" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Variable" ExecutionDelayExpression="20">
                             <Condition Enabled="false" Grouping="Or" />
+                            <Conditions />
                           </Action>
-                          <Action OrderNumber="3" LogLevel="-1" UseTTSTextExpression="North" UseTTSExclusive="False" TextAuraEffect="Bold" TextAuraFontSize="24" TextAuraForeground="Red" TextAuraOutline="Black" TextAuraName="prismaticDeception" TextAuraExpression="Red: N/S" TextAuraXIniExpression="0" TextAuraYIniExpression="500" TextAuraWIniExpression="${_screenwidth}" TextAuraHIniExpression="100" TextAuraOIniExpression="100" TextAuraTTLTickExpression="3-${_since}" TextAuraUseOutline="True" TextAuraFontName="Microsoft Sans Serif" ActionType="TextAura" ExecutionDelayExpression="50">
+                          <Action OrderNumber="3" LogLevel="-1" UseTTSTextExpression="North" UseTTSExclusive="False" TextAuraEffect="Bold" TextAuraFontSize="24" TextAuraForeground="Red" TextAuraOutline="Black" TextAuraName="prismaticDeception" TextAuraExpression="Red: N/S - (A)(C)" TextAuraXIniExpression="0" TextAuraYIniExpression="500" TextAuraWIniExpression="${_screenwidth}" TextAuraHIniExpression="100" TextAuraOIniExpression="100" TextAuraTTLTickExpression="3-${_since}" TextAuraUseOutline="True" TextAuraFontName="Microsoft Sans Serif" ActionType="TextAura" ExecutionDelayExpression="50">
                             <Condition Enabled="true" Grouping="And">
                               <ConditionSingle Enabled="true" ExpressionL="round(${_ffxiventity[${var:prismaticCaster1}].x})" ExpressionTypeL="Numeric" ExpressionR="100" ExpressionTypeR="Numeric" ConditionType="NumericNotEqual" />
                               <ConditionSingle Enabled="true" ExpressionL="round(${_ffxiventity[${var:prismaticCaster2}].x})" ExpressionTypeL="Numeric" ExpressionR="100" ExpressionTypeR="Numeric" ConditionType="NumericNotEqual" />
                               <ConditionSingle Enabled="true" ExpressionL="round(${_ffxiventity[${var:prismaticCaster3}].x})" ExpressionTypeL="Numeric" ExpressionR="100" ExpressionTypeR="Numeric" ConditionType="NumericNotEqual" />
                               <ConditionSingle Enabled="true" ExpressionL="${evar:prismaticCaster3}" ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
                             </Condition>
+                            <Conditions />
                           </Action>
-                          <Action OrderNumber="4" LogLevel="-1" UseTTSTextExpression="East" TextAuraEffect="Bold" TextAuraFontSize="24" TextAuraForeground="Aqua" TextAuraOutline="Black" TextAuraName="prismaticDeception" TextAuraExpression="Blue: E/W" TextAuraXIniExpression="0" TextAuraYIniExpression="500" TextAuraWIniExpression="${_screenwidth}" TextAuraHIniExpression="100" TextAuraOIniExpression="100" TextAuraTTLTickExpression="3-${_since}" TextAuraUseOutline="True" TextAuraFontName="Microsoft Sans Serif" ActionType="TextAura">
+                          <Action OrderNumber="4" LogLevel="-1" UseTTSTextExpression="East" TextAuraEffect="Bold" TextAuraFontSize="24" TextAuraForeground="Aqua" TextAuraOutline="Black" TextAuraName="prismaticDeception" TextAuraExpression="Blue: E/W - (D)(B)" TextAuraXIniExpression="0" TextAuraYIniExpression="500" TextAuraWIniExpression="${_screenwidth}" TextAuraHIniExpression="100" TextAuraOIniExpression="100" TextAuraTTLTickExpression="3-${_since}" TextAuraUseOutline="True" TextAuraFontName="Microsoft Sans Serif" ActionType="TextAura">
                             <Condition Enabled="true" Grouping="And">
                               <ConditionSingle Enabled="true" ExpressionL="round(${_ffxiventity[${var:prismaticCaster1}].y})" ExpressionTypeL="Numeric" ExpressionR="100" ExpressionTypeR="Numeric" ConditionType="NumericNotEqual" />
                               <ConditionSingle Enabled="true" ExpressionL="round(${_ffxiventity[${var:prismaticCaster2}].y})" ExpressionTypeL="Numeric" ExpressionR="100" ExpressionTypeR="Numeric" ConditionType="NumericNotEqual" />
                               <ConditionSingle Enabled="true" ExpressionL="round(${_ffxiventity[${var:prismaticCaster3}].y})" ExpressionTypeL="Numeric" ExpressionR="100" ExpressionTypeR="Numeric" ConditionType="NumericNotEqual" />
                               <ConditionSingle Enabled="true" ExpressionL="${evar:prismaticCaster3}" ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
                             </Condition>
+                            <Conditions />
                           </Action>
-                          <Action OrderNumber="5" LogLevel="-1" UseTTSTextExpression="Northeast" TextAuraEffect="Bold" TextAuraFontSize="24" TextAuraForeground="Yellow" TextAuraOutline="Black" TextAuraName="prismaticDeception" TextAuraExpression="Yellow: NE/SW" TextAuraXIniExpression="0" TextAuraYIniExpression="500" TextAuraWIniExpression="${_screenwidth}" TextAuraHIniExpression="100" TextAuraOIniExpression="100" TextAuraTTLTickExpression="3-${_since}" TextAuraUseOutline="True" TextAuraFontName="Microsoft Sans Serif" ActionType="TextAura">
+                          <Action OrderNumber="5" LogLevel="-1" UseTTSTextExpression="Northeast" TextAuraEffect="Bold" TextAuraFontSize="24" TextAuraForeground="Yellow" TextAuraOutline="Black" TextAuraName="prismaticDeception" TextAuraExpression="Yellow: NE/SW - [1][3]" TextAuraXIniExpression="0" TextAuraYIniExpression="500" TextAuraWIniExpression="${_screenwidth}" TextAuraHIniExpression="100" TextAuraOIniExpression="100" TextAuraTTLTickExpression="3-${_since}" TextAuraUseOutline="True" TextAuraFontName="Microsoft Sans Serif" ActionType="TextAura">
                             <Condition Enabled="true" Grouping="And">
                               <ConditionSingle Enabled="true" ExpressionL="${numeric:round(${_ffxiventity[${var:prismaticCaster1}].x})}${numeric:round(${_ffxiventity[${var:prismaticCaster1}].y})}" ExpressionTypeL="String" ExpressionR="11486" ExpressionTypeR="String" ConditionType="StringNotEqualNocase" />
                               <ConditionSingle Enabled="true" ExpressionL="${numeric:round(${_ffxiventity[${var:prismaticCaster2}].x})}${numeric:round(${_ffxiventity[${var:prismaticCaster2}].y})}" ExpressionTypeL="String" ExpressionR="11486" ExpressionTypeR="String" ConditionType="StringNotEqualNocase" />
@@ -6627,8 +6631,9 @@
                               <ConditionSingle Enabled="true" ExpressionL="${numeric:round(${_ffxiventity[${var:prismaticCaster3}].x})}${numeric:round(${_ffxiventity[${var:prismaticCaster3}].y})}" ExpressionTypeL="String" ExpressionR="86114" ExpressionTypeR="String" ConditionType="StringNotEqualNocase" />
                               <ConditionSingle Enabled="true" ExpressionL="${evar:prismaticCaster3}" ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
                             </Condition>
+                            <Conditions />
                           </Action>
-                          <Action OrderNumber="6" LogLevel="-1" UseTTSTextExpression="Southeast" TextAuraEffect="Bold" TextAuraFontSize="24" TextAuraForeground="#8000FF" TextAuraOutline="Black" TextAuraName="prismaticDeception" TextAuraExpression="Purple: NW/SE" TextAuraXIniExpression="0" TextAuraYIniExpression="500" TextAuraWIniExpression="${_screenwidth}" TextAuraHIniExpression="100" TextAuraOIniExpression="100" TextAuraTTLTickExpression="3-${_since}" TextAuraUseOutline="True" TextAuraFontName="Microsoft Sans Serif" ActionType="TextAura">
+                          <Action OrderNumber="6" LogLevel="-1" UseTTSTextExpression="Southeast" TextAuraEffect="Bold" TextAuraFontSize="24" TextAuraForeground="#8000FF" TextAuraOutline="Black" TextAuraName="prismaticDeception" TextAuraExpression="Purple: NW/SE - [2][4]" TextAuraXIniExpression="0" TextAuraYIniExpression="500" TextAuraWIniExpression="${_screenwidth}" TextAuraHIniExpression="100" TextAuraOIniExpression="100" TextAuraTTLTickExpression="3-${_since}" TextAuraUseOutline="True" TextAuraFontName="Microsoft Sans Serif" ActionType="TextAura">
                             <Condition Enabled="true" Grouping="And">
                               <ConditionSingle Enabled="true" ExpressionL="${numeric:round(${_ffxiventity[${var:prismaticCaster1}].x})}${numeric:round(${_ffxiventity[${var:prismaticCaster1}].y})}" ExpressionTypeL="String" ExpressionR="8686" ExpressionTypeR="String" ConditionType="StringNotEqualNocase" />
                               <ConditionSingle Enabled="true" ExpressionL="${numeric:round(${_ffxiventity[${var:prismaticCaster2}].x})}${numeric:round(${_ffxiventity[${var:prismaticCaster2}].y})}" ExpressionTypeL="String" ExpressionR="8686" ExpressionTypeR="String" ConditionType="StringNotEqualNocase" />
@@ -6638,16 +6643,19 @@
                               <ConditionSingle Enabled="true" ExpressionL="${numeric:round(${_ffxiventity[${var:prismaticCaster3}].x})}${numeric:round(${_ffxiventity[${var:prismaticCaster3}].y})}" ExpressionTypeL="String" ExpressionR="8686" ExpressionTypeR="String" ConditionType="StringNotEqualNocase" />
                               <ConditionSingle Enabled="true" ExpressionL="${evar:prismaticCaster3}" ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
                             </Condition>
+                            <Conditions />
                           </Action>
                           <Action OrderNumber="7" LogLevel="-1" VariableName="casterIncrement" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Variable" ExecutionDelayExpression="20">
                             <Condition Enabled="true" Grouping="Or">
                               <ConditionSingle Enabled="true" ExpressionL="${evar:prismaticCaster3}" ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
                             </Condition>
+                            <Conditions />
                           </Action>
                           <Action OrderNumber="8" LogLevel="-1" VariableOp="UnsetRegex" VariableName="prismaticCaster" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Variable">
                             <Condition Enabled="true" Grouping="Or">
                               <ConditionSingle Enabled="true" ExpressionL="${evar:prismaticCaster3}" ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
                             </Condition>
+                            <Conditions />
                           </Action>
                         </Actions>
                         <Condition Enabled="false" Grouping="Or" />

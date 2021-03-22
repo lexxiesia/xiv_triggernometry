@@ -12595,11 +12595,9 @@
                                 <Actions>
                                   <Action OrderNumber="1" ListVariableOp="Push" ListVariableName="seenDragon" ListVariableExpression="Firehorn" LogLevel="-1" VariableOp="SetString" VariableName="seen" VariableExpression="true" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="ListVariable">
                                     <Condition Enabled="false" Grouping="Or" />
-                                    <Conditions />
                                   </Action>
                                   <Action OrderNumber="2" ListVariableOp="Push" ListVariableName="dragonMap" ListVariableExpression="N" ListVariableIndex="1" LogLevel="-1" TableVariableOp="Set" TableVariableExpressionType="Numeric" TableVariableName="dragonMap" TableVariableExpression="1" TableVariableX="2" TableVariableY="(round(4 - 4 * arctan2(${_ffxiventity[${aID}].x},${_ffxiventity[${aID}].y)}) / pi) % 8)+1" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="TableVariable">
                                     <Condition Enabled="false" Grouping="Or" />
-                                    <Conditions />
                                   </Action>
                                 </Actions>
                                 <Condition Enabled="true" Grouping="And">
@@ -12611,11 +12609,9 @@
                                 <Actions>
                                   <Action OrderNumber="1" ListVariableOp="Push" ListVariableName="seenDragon" ListVariableExpression="Fang Of Light" LogLevel="-1" VariableOp="SetString" VariableName="seenFangOfLight" VariableExpression="true" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="ListVariable">
                                     <Condition Enabled="false" Grouping="Or" />
-                                    <Conditions />
                                   </Action>
                                   <Action OrderNumber="2" ListVariableOp="Push" ListVariableName="dragonMap" ListVariableExpression="N" ListVariableIndex="1" LogLevel="-1" TableVariableOp="Set" TableVariableExpressionType="Numeric" TableVariableName="dragonMap" TableVariableExpression="1" TableVariableX="2" TableVariableY="(round(4 - 4 * arctan2(${_ffxiventity[${aID}].x},${_ffxiventity[${aID}].y)}) / pi) % 8)+1" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="TableVariable">
                                     <Condition Enabled="false" Grouping="Or" />
-                                    <Conditions />
                                   </Action>
                                 </Actions>
                                 <Condition Enabled="true" Grouping="And">
@@ -12719,59 +12715,49 @@
                             <Actions>
                               <Action OrderNumber="1" AuraName="mapCircle" AuraImage="${var:imagePath}ucob\mapcircle.png" AuraXIniExpression="${var:naelDebuffX}" AuraYIniExpression="${var:naelDebuffY}" AuraWIniExpression="200" AuraHIniExpression="200" AuraOIniExpression="${var:naelDebuffOpacity}" AuraTTLTickExpression="20-${_since}" VariableOp="SetString" VariableName="fate" VariableExpression="a" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Aura" Description="Divebomb Circle (Move me!) | Toggle to enable/disable images" DescriptionOverride="True">
                                 <Condition Enabled="false" Grouping="Or" />
-                                <Conditions />
                               </Action>
                               <Action OrderNumber="2" AuraName="dragonN" AuraImage="${var:imagePath}ucob\blackdot.png" AuraXIniExpression="${_imageaura[mapCircle].x}+92.5" AuraYIniExpression="${_imageaura[mapCircle].y}" AuraWIniExpression="15" AuraHIniExpression="15" AuraOIniExpression="100" AuraTTLTickExpression="20-${_since}" LogLevel="-1" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Aura" Description="Show North Dragon" DescriptionOverride="True">
                                 <Condition Enabled="true" Grouping="Or">
                                   <ConditionSingle Enabled="true" ExpressionL="${tvarrl:dragonMap[N][1]}" ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="String" ConditionType="NumericEqual" />
                                 </Condition>
-                                <Conditions />
                               </Action>
                               <Action OrderNumber="3" AuraName="dragonNE" AuraImage="${var:imagePath}ucob\blackdot.png" AuraXIniExpression="${_imageaura[mapCircle].x}+158" AuraYIniExpression="${_imageaura[mapCircle].y}+27" AuraWIniExpression="15" AuraHIniExpression="15" AuraOIniExpression="100" AuraTTLTickExpression="20-${_since}" LogLevel="-1" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Aura" Description="Show Northeast Dragon" DescriptionOverride="True">
                                 <Condition Enabled="true" Grouping="Or">
                                   <ConditionSingle Enabled="true" ExpressionL="${tvarrl:dragonMap[NE][1]}" ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
                                 </Condition>
-                                <Conditions />
                               </Action>
                               <Action OrderNumber="4" AuraName="dragonE" AuraImage="${var:imagePath}ucob\blackdot.png" AuraXIniExpression="${_imageaura[mapCircle].x}+185" AuraYIniExpression="${_imageaura[mapCircle].y}+92.5" AuraWIniExpression="15" AuraHIniExpression="15" AuraOIniExpression="100" AuraTTLTickExpression="20-${_since}" LogLevel="-1" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Aura" Description="Show East Dragon" DescriptionOverride="True">
                                 <Condition Enabled="true" Grouping="Or">
                                   <ConditionSingle Enabled="true" ExpressionL="${tvarrl:dragonMap[E][1]}" ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
                                 </Condition>
-                                <Conditions />
                               </Action>
                               <Action OrderNumber="5" AuraName="dragonSE" AuraImage="${var:imagePath}ucob\blackdot.png" AuraXIniExpression="${_imageaura[mapCircle].x}+158" AuraYIniExpression="${_imageaura[mapCircle].y}+158" AuraWIniExpression="15" AuraHIniExpression="15" AuraOIniExpression="100" AuraTTLTickExpression="20-${_since}" LogLevel="-1" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Aura" Description="Show Southeast Dragon" DescriptionOverride="True">
                                 <Condition Enabled="true" Grouping="Or">
                                   <ConditionSingle Enabled="true" ExpressionL="${tvarrl:dragonMap[SE][1]}" ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
                                 </Condition>
-                                <Conditions />
                               </Action>
                               <Action OrderNumber="6" AuraName="dragonS" AuraImage="${var:imagePath}ucob\blackdot.png" AuraXIniExpression="${_imageaura[mapCircle].x}+92.5" AuraYIniExpression="${_imageaura[mapCircle].y}+185" AuraWIniExpression="15" AuraHIniExpression="15" AuraOIniExpression="100" AuraTTLTickExpression="20-${_since}" LogLevel="-1" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Aura" Description="Show South Dragon" DescriptionOverride="True">
                                 <Condition Enabled="true" Grouping="Or">
                                   <ConditionSingle Enabled="true" ExpressionL="${tvarrl:dragonMap[S][1]}" ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
                                 </Condition>
-                                <Conditions />
                               </Action>
                               <Action OrderNumber="7" AuraName="dragonSW" AuraImage="${var:imagePath}ucob\blackdot.png" AuraXIniExpression="${_imageaura[mapCircle].x}+27" AuraYIniExpression="${_imageaura[mapCircle].y}+158" AuraWIniExpression="15" AuraHIniExpression="15" AuraOIniExpression="100" AuraTTLTickExpression="20-${_since}" LogLevel="-1" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Aura" Description="Show Southwest Dragon" DescriptionOverride="True">
                                 <Condition Enabled="true" Grouping="Or">
                                   <ConditionSingle Enabled="true" ExpressionL="${tvarrl:dragonMap[SW][1]}" ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
                                 </Condition>
-                                <Conditions />
                               </Action>
                               <Action OrderNumber="8" AuraName="dragonW" AuraImage="${var:imagePath}ucob\blackdot.png" AuraXIniExpression="${_imageaura[mapCircle].x}" AuraYIniExpression="${_imageaura[mapCircle].y}+92.5" AuraWIniExpression="15" AuraHIniExpression="15" AuraOIniExpression="100" AuraTTLTickExpression="20-${_since}" LogLevel="-1" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Aura" Description="Show West Dragon" DescriptionOverride="True">
                                 <Condition Enabled="true" Grouping="Or">
                                   <ConditionSingle Enabled="true" ExpressionL="${tvarrl:dragonMap[W][1]}" ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
                                 </Condition>
-                                <Conditions />
                               </Action>
                               <Action OrderNumber="9" AuraName="dragonNW" AuraImage="${var:imagePath}ucob\blackdot.png" AuraXIniExpression="${_imageaura[mapCircle].x}+27" AuraYIniExpression="${_imageaura[mapCircle].y}+27" AuraWIniExpression="15" AuraHIniExpression="15" AuraOIniExpression="100" AuraTTLTickExpression="20-${_since}" LogLevel="-1" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Aura" Description="Show Northwest Dragon" DescriptionOverride="True">
                                 <Condition Enabled="true" Grouping="Or">
                                   <ConditionSingle Enabled="true" ExpressionL="${tvarrl:dragonMap[NW][1]}" ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
                                 </Condition>
-                                <Conditions />
                               </Action>
                               <Action OrderNumber="10" LogLevel="-1" VariableOp="SetString" VariableName="calledNaelDragons" VariableExpression="true" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Variable">
                                 <Condition Enabled="false" Grouping="Or" />
-                                <Conditions />
                               </Action>
                             </Actions>
                             <Condition Enabled="true" Grouping="And">
@@ -13461,7 +13447,6 @@
                         <Actions>
                           <Action OrderNumber="1" AuraName="naelDebuffs" AuraImage="${var:imagePath}ucob\naeldebuffs.png" AuraXIniExpression="${var:naelDebuffX}" AuraYIniExpression="${var:naelDebuffY}" AuraWIniExpression="256" AuraHIniExpression="204" AuraOIniExpression="${var:naelDebuffOpacity}" VariableOp="SetString" VariableName="fate" VariableExpression="a" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Aura">
                             <Condition Enabled="false" Grouping="Or" />
-                            <Conditions />
                           </Action>
                         </Actions>
                         <Condition Enabled="true" Grouping="Or">
@@ -13520,55 +13505,42 @@
                     <Actions>
                       <Action OrderNumber="1" ListVariableName="myDebuffs" LogLevel="-1" VariableName="dataPhase" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Variable">
                         <Condition Enabled="false" Grouping="Or" />
-                        <Conditions />
                       </Action>
                       <Action OrderNumber="2" ListVariableName="myDebuffs" LogLevel="-1" VariableName="fireballCount" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Variable">
                         <Condition Enabled="false" Grouping="Or" />
-                        <Conditions />
                       </Action>
                       <Action OrderNumber="3" ListVariableName="myDebuffs" LogLevel="-1" VariableName="naelMarks" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Variable">
                         <Condition Enabled="false" Grouping="Or" />
-                        <Conditions />
                       </Action>
                       <Action OrderNumber="4" ListVariableName="myDebuffs" LogLevel="-1" VariableName="calledNaelDragons" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Variable">
                         <Condition Enabled="false" Grouping="Or" />
-                        <Conditions />
                       </Action>
                       <Action OrderNumber="5" ListVariableName="myDebuffs" LogLevel="-1" VariableName="diveMarkCount" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Variable">
                         <Condition Enabled="false" Grouping="Or" />
-                        <Conditions />
                       </Action>
                       <Action OrderNumber="6" ListVariableName="myDebuffs" LogLevel="-1" VariableName="doomCount" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Variable">
                         <Condition Enabled="false" Grouping="Or" />
-                        <Conditions />
                       </Action>
                       <Action OrderNumber="7" ListVariableName="myDebuffs" LogLevel="-1" VariableName="grandOctet" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Variable">
                         <Condition Enabled="false" Grouping="Or" />
-                        <Conditions />
                       </Action>
                       <Action OrderNumber="8" ListVariableName="seenDragon" LogLevel="-1" VariableOp="UnsetRegex" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="ListVariable">
                         <Condition Enabled="false" Grouping="Or" />
-                        <Conditions />
                       </Action>
                       <Action OrderNumber="9" ListVariableOp="UnsetRegex" ListVariableName="^fireball[1-4]$" LogLevel="-1" VariableOp="UnsetRegex" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="ListVariable">
                         <Condition Enabled="false" Grouping="Or" />
-                        <Conditions />
                       </Action>
                       <Action OrderNumber="10" LogLevel="-1" TableVariableName="dragonMap" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="TableVariable">
                         <Condition Enabled="false" Grouping="Or" />
-                        <Conditions />
                       </Action>
                       <Action OrderNumber="11" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" TriggerOp="CancelAllTrigger" ActionType="Trigger">
                         <Condition Enabled="false" Grouping="Or" />
-                        <Conditions />
                       </Action>
                       <Action OrderNumber="12" LogLevel="-1" TextAuraOp="DeactivateAllAura" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="TextAura">
                         <Condition Enabled="false" Grouping="Or" />
-                        <Conditions />
                       </Action>
                       <Action OrderNumber="13" AuraOp="DeactivateAllAura" LogLevel="-1" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Aura">
                         <Condition Enabled="false" Grouping="Or" />
-                        <Conditions />
                       </Action>
                     </Actions>
                     <Condition Enabled="false" Grouping="Or" />
@@ -13759,73 +13731,87 @@
                   </Trigger>
                 </Triggers>
               </Folder>
-              <Folder Id="e57fa2bd-6676-4c1b-980c-ce1b9fd8f852" Name="Network Lines" Enabled="true">
+              <Folder Id="5f133516-d7df-45d1-b436-8df7398e5d4a" Name="Network Lines" Enabled="true">
                 <Folders>
-                  <Folder Id="f03fc764-02bc-43e0-a412-b9f70b20e91d" Name="Nael Debuff UI Config" Enabled="true">
+                  <Folder Id="c8c64726-fb74-46a4-a092-e1fa92af6dc5" Name="Nael Debuff UI Config" Enabled="true">
                     <Folders />
                     <Triggers>
-                      <Trigger Enabled="true" Source="FFXIVNetwork" Name="Set X" Id="bcc6c6f1-820c-4b93-9291-3eb013514a2d" RegularExpression="^00\|[^|]+\|0038\|\|naelDebuffX (?&lt;X&gt;[0-9]{1,4})">
+                      <Trigger Enabled="true" Source="FFXIVNetwork" Name="Set X" Id="db423ebc-b430-433b-b4d7-f9d32d76f687" RegularExpression="^00\|[^|]+\|0038\|\|naelDebuffX (?&lt;X&gt;[0-9]{1,4})">
                         <Actions>
                           <Action OrderNumber="1" LogLevel="-1" VariableOp="SetNumeric" VariableName="naelDebuffX" VariableExpression="${X}" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Variable">
                             <Condition Enabled="false" Grouping="Or" />
+                            <Conditions />
                           </Action>
                         </Actions>
                         <Condition Enabled="false" Grouping="Or" />
+                        <Conditions />
                       </Trigger>
-                      <Trigger Enabled="true" Source="FFXIVNetwork" Name="Set Y" Id="0546f22b-83f7-4da4-a7b0-d8134adf43f7" RegularExpression="^00\|[^|]+\|0038\|\|naelDebuffY (?&lt;Y&gt;[0-9]{1,4})">
+                      <Trigger Enabled="true" Source="FFXIVNetwork" Name="Set Y" Id="f3f7cc5a-3b46-450a-a599-a0639e94ed2a" RegularExpression="^00\|[^|]+\|0038\|\|naelDebuffY (?&lt;Y&gt;[0-9]{1,4})">
                         <Actions>
                           <Action OrderNumber="1" LogLevel="-1" VariableOp="SetNumeric" VariableName="naelDebuffY" VariableExpression="${Y}" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Variable">
                             <Condition Enabled="false" Grouping="Or" />
+                            <Conditions />
                           </Action>
                         </Actions>
                         <Condition Enabled="false" Grouping="Or" />
+                        <Conditions />
                       </Trigger>
-                      <Trigger Enabled="true" Source="FFXIVNetwork" Name="Show" Id="ef6f6099-d6bb-4778-bf32-d6dc56818ec9" RegularExpression="^00\|[^|]+\|0038\|\|showNaelDebuff">
+                      <Trigger Enabled="true" Source="FFXIVNetwork" Name="Show" Id="16f101fe-7162-43b1-bd13-334ef9f361ce" RegularExpression="^00\|[^|]+\|0038\|\|showNaelDebuff">
                         <Actions>
-                          <Action OrderNumber="1" AuraName="naelDebuffs" AuraImage="${var:imagePath}ucob\naeldebuffs.png" AuraXIniExpression="${var:naelDebuffX}" AuraYIniExpression="${var:naelDebuffY}" AuraWIniExpression="350" AuraHIniExpression="318" AuraOIniExpression="${var:naelDebuffOpacity}" VariableOp="SetString" VariableName="fate" VariableExpression="a" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Aura">
+                          <Action OrderNumber="1" AuraName="naelDebuffs" AuraImage="https://raw.githubusercontent.com/lexxiesia/xiv_triggernometry/master/resources/icons/ucob/naeldebuffs.png" AuraXIniExpression="${var:naelDebuffX}" AuraYIniExpression="${var:naelDebuffY}" AuraWIniExpression="350" AuraHIniExpression="318" AuraOIniExpression="${var:naelDebuffOpacity}" VariableOp="SetString" VariableName="fate" VariableExpression="a" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Aura">
                             <Condition Enabled="false" Grouping="Or" />
+                            <Conditions />
                           </Action>
                         </Actions>
                         <Condition Enabled="true" Grouping="Or">
                           <ConditionSingle Enabled="true" ExpressionL="${evar:dataPhase}" ExpressionTypeL="Numeric" ExpressionR="0" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
                         </Condition>
+                        <Conditions />
                       </Trigger>
-                      <Trigger Enabled="true" Source="FFXIVNetwork" Name="Hide" Id="c5813d87-8462-4c56-8fcc-dcfbdd8f1d18" RegularExpression="^00\|[^|]+\|0038\|\|hideNaelDebuff">
+                      <Trigger Enabled="true" Source="FFXIVNetwork" Name="Hide" Id="f733a198-b80d-42ff-b1af-531eb357eb7d" RegularExpression="^00\|[^|]+\|0038\|\|hideNaelDebuff">
                         <Actions>
                           <Action OrderNumber="1" AuraOp="DeactivateAura" AuraName="naelDebuffs" AuraImage="${var:imagePath}ucob\naeldebuffs.png" AuraXIniExpression="${var:naelDebuffX}" AuraYIniExpression="${var:naelDebuffY}" AuraWIniExpression="350" AuraHIniExpression="318" AuraOIniExpression="100" VariableOp="SetString" VariableName="fate" VariableExpression="a" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Aura">
                             <Condition Enabled="false" Grouping="Or" />
+                            <Conditions />
                           </Action>
                         </Actions>
                         <Condition Enabled="false" Grouping="Or" />
+                        <Conditions />
                       </Trigger>
-                      <Trigger Enabled="true" Source="FFXIVNetwork" Name="Set Opacity" Id="00ecf449-d0e5-4589-b5a9-e67904856841" RegularExpression="^00\|[^|]+\|0038\|\|naelDebuffOpacity (?&lt;opacity&gt;[0-9]{1,3})">
+                      <Trigger Enabled="true" Source="FFXIVNetwork" Name="Set Opacity" Id="0e2f8cf1-8584-4cb5-ba39-eceec96a6164" RegularExpression="^00\|[^|]+\|0038\|\|naelDebuffOpacity (?&lt;opacity&gt;[0-9]{1,3})">
                         <Actions>
                           <Action OrderNumber="1" LogLevel="-1" VariableOp="SetNumeric" VariableName="naelDebuffOpacity" VariableExpression="${opacity}" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Variable">
                             <Condition Enabled="false" Grouping="Or" />
+                            <Conditions />
                           </Action>
                         </Actions>
                         <Condition Enabled="true" Grouping="And">
                           <ConditionSingle Enabled="true" ExpressionL="${opacity}" ExpressionTypeL="Numeric" ExpressionR="0" ExpressionTypeR="Numeric" ConditionType="NumericGreaterEqual" />
                           <ConditionSingle Enabled="true" ExpressionL="${opacity}" ExpressionTypeL="Numeric" ExpressionR="100" ExpressionTypeR="Numeric" ConditionType="NumericLessEqual" />
                         </Condition>
+                        <Conditions />
                       </Trigger>
                     </Triggers>
                   </Folder>
                 </Folders>
                 <Triggers>
-                  <Trigger Enabled="true" Name="# Reset UCoB" Id="d2fae0b8-fd89-4299-8d20-82e182830737" RegularExpression="The Unending Coil of Bahamut \(Ultimate\) has ended">
+                  <Trigger Enabled="true" Name="# Reset UCoB" Id="a07cfb56-d9ff-4588-b009-3e39a2dd33d7" RegularExpression="The Unending Coil of Bahamut \(Ultimate\) has ended">
                     <Actions>
                       <Action OrderNumber="1" AuraOp="DeactivateAllAura" LogLevel="-1" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Aura">
                         <Condition Enabled="false" Grouping="Or" />
+                        <Conditions />
                       </Action>
                       <Action OrderNumber="2" LogLevel="-1" TextAuraOp="DeactivateAllAura" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="TextAura">
                         <Condition Enabled="false" Grouping="Or" />
+                        <Conditions />
                       </Action>
                       <Action OrderNumber="3" LogLevel="-1" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" TriggerOp="CancelAllTrigger" ActionType="Trigger">
                         <Condition Enabled="false" Grouping="Or" />
+                        <Conditions />
                       </Action>
                     </Actions>
                     <Condition Enabled="false" Grouping="Or" />
+                    <Conditions />
                   </Trigger>
                 </Triggers>
               </Folder>

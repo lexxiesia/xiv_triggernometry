@@ -14935,6 +14935,10 @@
                                 <Condition Enabled="false" Grouping="Or" />
                                 <Conditions />
                               </Action>
+                              <Action OrderNumber="2" TextAuraEffect="Bold" TextAuraFontSize="18" TextAuraForeground="#22BB22" TextAuraOutline="Black" TextAuraName="trioText" TextAuraExpression="Trio: Relative North" TextAuraXIniExpression="0" TextAuraYIniExpression="500" TextAuraWIniExpression="${_screenwidth}" TextAuraHIniExpression="100" TextAuraOIniExpression="100" TextAuraTTLTickExpression="5-${_since}" TextAuraUseOutline="True" TextAuraFontName="Microsoft Sans Serif" ActionType="TextAura">
+                                <Condition Enabled="false" Grouping="And" />
+                                <Conditions />
+                              </Action>
                             </Actions>
                             <Condition Enabled="false" Grouping="Or" />
                             <Conditions />
@@ -14947,6 +14951,10 @@
                               </Action>
                               <Action OrderNumber="2" AuraOp="DeactivateAura" AuraName="earthshaker" LogLevel="-1" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Aura">
                                 <Condition Enabled="false" Grouping="Or" />
+                                <Conditions />
+                              </Action>
+                              <Action OrderNumber="3" TextAuraEffect="Bold" TextAuraFontSize="18" TextAuraForeground="#22BB22" TextAuraOutline="Black" TextAuraName="trioText" TextAuraExpression="Look for Nael" TextAuraXIniExpression="0" TextAuraYIniExpression="500" TextAuraWIniExpression="${_screenwidth}" TextAuraHIniExpression="100" TextAuraOIniExpression="100" TextAuraTTLTickExpression="5-${_since}" TextAuraUseOutline="True" TextAuraFontName="Microsoft Sans Serif" ActionType="TextAura">
+                                <Condition Enabled="false" Grouping="And" />
                                 <Conditions />
                               </Action>
                             </Actions>
@@ -14977,7 +14985,7 @@
                                 <Condition Enabled="false" Grouping="Or" />
                                 <Conditions />
                               </Action>
-                              <Action OrderNumber="3" TextAuraEffect="Bold" TextAuraFontSize="18" TextAuraForeground="#22BB22" TextAuraOutline="Black" TextAuraName="trioText" TextAuraExpression="If Nael middle, X split (quadrants)" TextAuraXIniExpression="0" TextAuraYIniExpression="500" TextAuraWIniExpression="${_screenwidth}" TextAuraHIniExpression="100" TextAuraOIniExpression="100" TextAuraTTLTickExpression="5-${_since}" TextAuraUseOutline="True" TextAuraFontName="Microsoft Sans Serif" ActionType="TextAura">
+                              <Action OrderNumber="3" TextAuraEffect="Bold" TextAuraFontSize="18" TextAuraForeground="#22BB22" TextAuraOutline="Black" TextAuraName="trioText" TextAuraExpression="If Nael middle, X split (quadrants)" TextAuraXIniExpression="0" TextAuraYIniExpression="500" TextAuraWIniExpression="${_screenwidth}" TextAuraHIniExpression="100" TextAuraOIniExpression="100" TextAuraTTLTickExpression="10-${_since}" TextAuraUseOutline="True" TextAuraFontName="Microsoft Sans Serif" ActionType="TextAura">
                                 <Condition Enabled="true" Grouping="And">
                                   <ConditionSingle Enabled="true" ExpressionL="hex2dec(${id})-${var:decOffset}" ExpressionTypeL="Numeric" ExpressionR="hex2dec(004F)" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
                                 </Condition>
@@ -15007,10 +15015,8 @@
                                 <Condition Enabled="false" Grouping="Or" />
                                 <Conditions />
                               </Action>
-                              <Action OrderNumber="3" TextAuraEffect="Bold" TextAuraFontSize="18" TextAuraForeground="#22BB22" TextAuraOutline="Black" TextAuraName="trioText" TextAuraExpression="Bahamut: Cardinal (move CCW), Intercardinal (move CW)" TextAuraXIniExpression="0" TextAuraYIniExpression="500" TextAuraWIniExpression="${_screenwidth}" TextAuraHIniExpression="100" TextAuraOIniExpression="100" TextAuraTTLTickExpression="5-${_since}" TextAuraUseOutline="True" TextAuraFontName="Microsoft Sans Serif" ActionType="TextAura">
-                                <Condition Enabled="true" Grouping="And">
-                                  <ConditionSingle Enabled="true" ExpressionL="hex2dec(${id})-${var:decOffset}" ExpressionTypeL="Numeric" ExpressionR="hex2dec(004F)" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
-                                </Condition>
+                              <Action OrderNumber="3" TextAuraEffect="Bold" TextAuraFontSize="18" TextAuraForeground="#22BB22" TextAuraOutline="Black" TextAuraName="trioText" TextAuraExpression="Bahamut: Cardinal (move CCW), Intercardinal (move CW)" TextAuraXIniExpression="0" TextAuraYIniExpression="500" TextAuraWIniExpression="${_screenwidth}" TextAuraHIniExpression="100" TextAuraOIniExpression="100" TextAuraTTLTickExpression="10-${_since}" TextAuraUseOutline="True" TextAuraFontName="Microsoft Sans Serif" ActionType="TextAura">
+                                <Condition Enabled="false" Grouping="And" />
                                 <Conditions />
                               </Action>
                             </Actions>
@@ -15339,115 +15345,6 @@
                     </Folders>
                     <Triggers />
                   </Folder>
-                  <Folder Id="dd980177-c8c6-46ce-8a30-869aa4aa9c3a" Name="Grand Octet" Enabled="true">
-                    <Folders />
-                    <Triggers>
-                      <Trigger Enabled="true" Sequential="True" Name="Counter" Id="026d0892-7ef6-48cd-87e0-38cae5813e78" RegularExpression="1B:[0-9A-F]{8}:(?&lt;player&gt;(?&lt;name&gt;[\w-']+) [\w-']+):.{4}:.{4}:(?&lt;ID&gt;00(77|14|29)):">
-                        <Actions>
-                          <Action OrderNumber="1" LogLevel="-1" UseTTSTextExpression="Hatch" VariableOp="SetNumeric" VariableName="grandOctet" VariableExpression="${var:grandOctet}+1" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Variable">
-                            <Condition Enabled="true" Grouping="Or">
-                              <ConditionSingle Enabled="true" ExpressionL="${player}" ExpressionTypeL="String" ExpressionR="${_ffxivplayer}" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
-                            </Condition>
-                            <Conditions />
-                          </Action>
-                          <Action OrderNumber="2" AuraOp="DeactivateAura" AuraName="UCOBOctet${player}" LogLevel="-1" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Aura">
-                            <Condition Enabled="false" Grouping="Or" />
-                            <Conditions />
-                          </Action>
-                          <Action OrderNumber="3" LogLevel="-1" UseTTSTextExpression="outside intercardinal" TextAuraEffect="Bold" TextAuraFontSize="24" TextAuraForeground="#FFBB00" TextAuraOutline="Black" TextAuraName="dragonOctet" TextAuraExpression="#${var:grandOctet}: Dragon" TextAuraXIniExpression="0" TextAuraYIniExpression="${naelY}" TextAuraWIniExpression="${screenwidth}" TextAuraHIniExpression="64" TextAuraOIniExpression="100" TextAuraTTLTickExpression="3-${_since}" TextAuraUseOutline="True" TextAuraFontName="Microsoft Sans Serif" ActionType="TextAura">
-                            <Condition Enabled="true" Grouping="And">
-                              <ConditionSingle Enabled="true" ExpressionL="${ID}" ExpressionTypeL="String" ExpressionR="0014" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
-                              <ConditionSingle Enabled="true" ExpressionL="${player}" ExpressionTypeL="String" ExpressionR="${_ffxivplayer}" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
-                            </Condition>
-                            <Conditions />
-                          </Action>
-                          <Action OrderNumber="4" LogLevel="-1" UseTTSTextExpression="outside intercardinal" TextAuraEffect="Bold" TextAuraFontSize="24" TextAuraForeground="#FFBB00" TextAuraOutline="Black" TextAuraName="naelOctet" TextAuraExpression="#${var:grandOctet}: Nael" TextAuraXIniExpression="0" TextAuraYIniExpression="${naelY}" TextAuraWIniExpression="${screenwidth}" TextAuraHIniExpression="64" TextAuraOIniExpression="100" TextAuraTTLTickExpression="3-${_since}" TextAuraUseOutline="True" TextAuraFontName="Microsoft Sans Serif" ActionType="TextAura">
-                            <Condition Enabled="true" Grouping="And">
-                              <ConditionSingle Enabled="true" ExpressionL="${ID}" ExpressionTypeL="String" ExpressionR="0077" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
-                              <ConditionSingle Enabled="true" ExpressionL="${player}" ExpressionTypeL="String" ExpressionR="${_ffxivplayer}" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
-                            </Condition>
-                            <Conditions />
-                          </Action>
-                          <Action OrderNumber="5" LogLevel="-1" UseTTSTextExpression="outside intercardinal" TextAuraEffect="Bold" TextAuraFontSize="24" TextAuraForeground="#FFBB00" TextAuraOutline="Black" TextAuraName="bahaOctet" TextAuraExpression="#${var:grandOctet}: Bahamut" TextAuraXIniExpression="0" TextAuraYIniExpression="${naelY}" TextAuraWIniExpression="${screenwidth}" TextAuraHIniExpression="64" TextAuraOIniExpression="100" TextAuraTTLTickExpression="3-${_since}" TextAuraUseOutline="True" TextAuraFontName="Microsoft Sans Serif" ActionType="TextAura">
-                            <Condition Enabled="true" Grouping="And">
-                              <ConditionSingle Enabled="true" ExpressionL="${ID}" ExpressionTypeL="String" ExpressionR="0029" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
-                              <ConditionSingle Enabled="true" ExpressionL="${player}" ExpressionTypeL="String" ExpressionR="${_ffxivplayer}" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
-                            </Condition>
-                            <Conditions />
-                          </Action>
-                        </Actions>
-                        <Condition Enabled="true" Grouping="Or">
-                          <ConditionSingle Enabled="true" ExpressionL="${var:dataPhase}" ExpressionTypeL="String" ExpressionR="octet" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
-                        </Condition>
-                        <Conditions />
-                      </Trigger>
-                      <Trigger Enabled="true" Sequential="True" Name="Twintania" Id="3b1ca014-1bdd-4afb-894e-b541c208b86f" RegularExpression="1B:[0-9A-F]{8}:(?&lt;player&gt;(?&lt;name&gt;[\w-']+) [\w-']+):.{4}:.{4}:002A:">
-                        <Actions>
-                          <Action OrderNumber="1" LogLevel="-1" UseTTSTextExpression="outside intercardinal" TextAuraEffect="Bold" TextAuraFontSize="24" TextAuraForeground="#FFBB00" TextAuraOutline="Black" TextAuraName="twinOctet" TextAuraExpression="#8: ${name} (Twintania)" TextAuraXIniExpression="0" TextAuraYIniExpression="${naelY}" TextAuraWIniExpression="${screenwidth}" TextAuraHIniExpression="64" TextAuraOIniExpression="100" TextAuraTTLTickExpression="3.5-${_since}" TextAuraUseOutline="True" TextAuraFontName="Microsoft Sans Serif" ActionType="TextAura" ExecutionDelayExpression="500">
-                            <Condition Enabled="true" Grouping="And">
-                              <ConditionSingle Enabled="true" ExpressionL="${ID}" ExpressionTypeL="String" ExpressionR="0077" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
-                              <ConditionSingle Enabled="true" ExpressionL="${player}" ExpressionTypeL="String" ExpressionR="${_ffxivplayer}" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
-                            </Condition>
-                            <Conditions />
-                          </Action>
-                        </Actions>
-                        <Condition Enabled="true" Grouping="Or">
-                          <ConditionSingle Enabled="true" ExpressionL="${var:dataPhase}" ExpressionTypeL="String" ExpressionR="octet" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
-                        </Condition>
-                        <Conditions />
-                      </Trigger>
-                      <Trigger Enabled="true" Sequential="True" Name="Grand Octet" Id="4b1dd93b-5309-4023-893b-0a1040a7a127" RegularExpression="\A.{15}14:26E7">
-                        <Actions>
-                          <Action OrderNumber="1" AuraName="grandOctet" AuraImage="${var:imagePath}ucob\grandoctet.png" AuraXIniExpression="${var:naelDebuffX}" AuraYIniExpression="${var:naelDebuffY}" AuraWIniExpression="345" AuraHIniExpression="100" AuraOIniExpression="${var:naelDebuffOpacity}" VariableOp="SetString" VariableName="fate" VariableExpression="a" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Aura" Description="Grand Octet Header (Move me!) | Toggle to enable/disable images" DescriptionOverride="True">
-                            <Condition Enabled="false" Grouping="Or" />
-                            <Conditions />
-                          </Action>
-                          <Action OrderNumber="2" AuraName="UCOBOctet${tvarcl:UCOB[NAME][1]}" AuraImage="${var:imagePath}jobs\${tvarcl:UCOB[JOB][1]}.png" AuraXIniExpression="${_imageaura[grandOctet].x}+40" AuraYIniExpression="${_imageaura[grandOctet].y}+40" AuraWIniExpression="64" AuraHIniExpression="64" AuraOIniExpression="100" VariableOp="SetString" VariableName="fate" VariableExpression="a" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Aura" Description="Add Job Image 1" DescriptionOverride="True">
-                            <Condition Enabled="false" Grouping="Or" />
-                            <Conditions />
-                          </Action>
-                          <Action OrderNumber="3" AuraName="UCOBOctet${tvarcl:UCOB[NAME][2]}" AuraImage="${var:imagePath}jobs\${tvarcl:UCOB[JOB][2]}.png" AuraXIniExpression="${_imageaura[grandOctet].x}+107" AuraYIniExpression="${_imageaura[grandOctet].y}+40" AuraWIniExpression="64" AuraHIniExpression="64" AuraOIniExpression="100" VariableOp="SetString" VariableName="fate" VariableExpression="a" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Aura" Description="Add Job Image 2" DescriptionOverride="True">
-                            <Condition Enabled="false" Grouping="Or" />
-                            <Conditions />
-                          </Action>
-                          <Action OrderNumber="4" AuraName="UCOBOctet${tvarcl:UCOB[NAME][3]}" AuraImage="${var:imagePath}jobs\${tvarcl:UCOB[JOB][3]}.png" AuraXIniExpression="${_imageaura[grandOctet].x}+174" AuraYIniExpression="${_imageaura[grandOctet].y}+40" AuraWIniExpression="64" AuraHIniExpression="64" AuraOIniExpression="100" VariableOp="SetString" VariableName="fate" VariableExpression="a" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Aura" Description="Add Job Image 3" DescriptionOverride="True">
-                            <Condition Enabled="false" Grouping="Or" />
-                            <Conditions />
-                          </Action>
-                          <Action OrderNumber="5" AuraName="UCOBOctet${tvarcl:UCOB[NAME][4]}" AuraImage="${var:imagePath}jobs\${tvarcl:UCOB[JOB][4]}.png" AuraXIniExpression="${_imageaura[grandOctet].x}+241" AuraYIniExpression="${_imageaura[grandOctet].y}+40" AuraWIniExpression="64" AuraHIniExpression="64" AuraOIniExpression="100" VariableOp="SetString" VariableName="fate" VariableExpression="a" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Aura" Description="Add Job Image 4" DescriptionOverride="True">
-                            <Condition Enabled="false" Grouping="Or" />
-                            <Conditions />
-                          </Action>
-                          <Action OrderNumber="6" AuraName="UCOBOctet${tvarcl:UCOB[NAME][5]}" AuraImage="${var:imagePath}jobs\${tvarcl:UCOB[JOB][5]}.png" AuraXIniExpression="${_imageaura[grandOctet].x}+40" AuraYIniExpression="${_imageaura[grandOctet].y}+107" AuraWIniExpression="64" AuraHIniExpression="64" AuraOIniExpression="100" VariableOp="SetString" VariableName="fate" VariableExpression="a" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Aura" Description="Add Job Image 5" DescriptionOverride="True">
-                            <Condition Enabled="false" Grouping="Or" />
-                            <Conditions />
-                          </Action>
-                          <Action OrderNumber="7" AuraName="UCOBOctet${tvarcl:UCOB[NAME][6]}" AuraImage="${var:imagePath}jobs\${tvarcl:UCOB[JOB][6]}.png" AuraXIniExpression="${_imageaura[grandOctet].x}+107" AuraYIniExpression="${_imageaura[grandOctet].y}+107" AuraWIniExpression="64" AuraHIniExpression="64" AuraOIniExpression="100" VariableOp="SetString" VariableName="fate" VariableExpression="a" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Aura" Description="Add Job Image 6" DescriptionOverride="True">
-                            <Condition Enabled="false" Grouping="Or" />
-                            <Conditions />
-                          </Action>
-                          <Action OrderNumber="8" AuraName="UCOBOctet${tvarcl:UCOB[NAME][7]}" AuraImage="${var:imagePath}jobs\${tvarcl:UCOB[JOB][7]}.png" AuraXIniExpression="${_imageaura[grandOctet].x}+174" AuraYIniExpression="${_imageaura[grandOctet].y}+107" AuraWIniExpression="64" AuraHIniExpression="64" AuraOIniExpression="100" VariableOp="SetString" VariableName="fate" VariableExpression="a" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Aura" Description="Add Job Image 7" DescriptionOverride="True">
-                            <Condition Enabled="false" Grouping="Or" />
-                            <Conditions />
-                          </Action>
-                          <Action OrderNumber="9" AuraName="UCOBOctet${tvarcl:UCOB[NAME][8]}" AuraImage="${var:imagePath}jobs\${tvarcl:UCOB[JOB][8]}.png" AuraXIniExpression="${_imageaura[grandOctet].x}+241" AuraYIniExpression="${_imageaura[grandOctet].y}+107" AuraWIniExpression="64" AuraHIniExpression="64" AuraOIniExpression="100" VariableOp="SetString" VariableName="fate" VariableExpression="a" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Aura" Description="Add Job Image 8" DescriptionOverride="True">
-                            <Condition Enabled="false" Grouping="Or" />
-                            <Conditions />
-                          </Action>
-                          <Action OrderNumber="10" AuraOp="DeactivateAura" AuraName="grandOctet" LogLevel="-1" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Aura" ExecutionDelayExpression="40000">
-                            <Condition Enabled="false" Grouping="Or" />
-                            <Conditions />
-                          </Action>
-                          <Action OrderNumber="11" AuraOp="DeactivateAuraRegex" AuraName="UCOBOctet" LogLevel="-1" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Aura">
-                            <Condition Enabled="false" Grouping="Or" />
-                            <Conditions />
-                          </Action>
-                        </Actions>
-                        <Condition Enabled="false" Grouping="Or" />
-                        <Conditions />
-                      </Trigger>
-                    </Triggers>
-                  </Folder>
                   <Folder Id="e3f62500-e607-46dd-9d2e-96e31c1a5eed" Name="Earthshaker" Enabled="true">
                     <Folders />
                     <Triggers>
@@ -15493,7 +15390,7 @@
                             </Condition>
                             <Conditions />
                           </Action>
-                          <Action OrderNumber="2" LogLevel="-1" UseTTSTextExpression="Grab Tether" TextAuraEffect="Bold" TextAuraFontSize="24" TextAuraForeground="#FFBB00" TextAuraOutline="Black" TextAuraName="twinOctet" TextAuraExpression="#8: ${name} (Twintania)" TextAuraXIniExpression="0" TextAuraYIniExpression="${naelY}" TextAuraWIniExpression="${screenwidth}" TextAuraHIniExpression="64" TextAuraOIniExpression="100" TextAuraTTLTickExpression="3.5-${_since}" TextAuraUseOutline="True" TextAuraFontName="Microsoft Sans Serif" ActionType="UseTTS">
+                          <Action OrderNumber="2" LogLevel="-1" UseTTSTextExpression="Tethers" TextAuraEffect="Bold" TextAuraFontSize="24" TextAuraForeground="#FFBB00" TextAuraOutline="Black" TextAuraName="twinOctet" TextAuraExpression="#8: ${name} (Twintania)" TextAuraXIniExpression="0" TextAuraYIniExpression="${naelY}" TextAuraWIniExpression="${screenwidth}" TextAuraHIniExpression="64" TextAuraOIniExpression="100" TextAuraTTLTickExpression="3.5-${_since}" TextAuraUseOutline="True" TextAuraFontName="Microsoft Sans Serif" ActionType="UseTTS">
                             <Condition Enabled="true" Grouping="And">
                               <ConditionSingle Enabled="true" ExpressionL="${_ffxivparty[${_ffxivplayer}].role}" ExpressionTypeL="String" ExpressionR="Tank" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
                               <ConditionSingle Enabled="true" ExpressionL="${var:dataPhase}" ExpressionTypeL="String" ExpressionR="quickmarch" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
@@ -15506,7 +15403,7 @@
                       </Trigger>
                     </Triggers>
                   </Folder>
-                  <Folder Id="28ed1d28-bb3a-4ffe-a5d0-0bf113490cc8" Name="Ravensbeak" Enabled="true">
+                  <Folder Id="28ed1d28-bb3a-4ffe-a5d0-0bf113490cc8" Name="Tankbusters" Enabled="true">
                     <Folders>
                       <Folder FFXIVJobFilterEnabled="True" FFXIVJobFilter="70868271104" Id="17a968c9-5fa8-4230-83b2-b14b0605a8bc" Name="Tanks" Enabled="true">
                         <Folders />
@@ -15514,6 +15411,20 @@
                           <Trigger Enabled="true" Name="Ravensbeak" Id="01444c58-0abb-4a0c-9633-e7128f8f7264" RegularExpression="\A.{15}14:26B6">
                             <Actions>
                               <Action OrderNumber="1" LogLevel="-1" UseTTSTextExpression="Tankbuster" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="UseTTS">
+                                <Condition Enabled="false" Grouping="Or" />
+                                <Conditions />
+                              </Action>
+                              <Action OrderNumber="2" LogLevel="-1" UseTTSTextExpression="Tankbuster" TextAuraEffect="Bold" TextAuraFontSize="24" TextAuraForeground="Red" TextAuraOutline="Black" TextAuraName="tankbusterText" TextAuraExpression="Tankbuster + Swap" TextAuraXIniExpression="0" TextAuraYIniExpression="500" TextAuraWIniExpression="${_screenwidth}" TextAuraHIniExpression="100" TextAuraOIniExpression="100" TextAuraTTLTickExpression="3-${_since}" TextAuraUseOutline="True" TextAuraFontName="Arial Black" ActionType="TextAura">
+                                <Condition Enabled="false" Grouping="And" />
+                                <Conditions />
+                              </Action>
+                            </Actions>
+                            <Condition Enabled="false" Grouping="Or" />
+                            <Conditions />
+                          </Trigger>
+                          <Trigger Enabled="true" Name="Death Sentence" Id="7cfe2a9d-796a-44a1-9a4c-a6ca48bb51e7" RegularExpression="\A.{15}14:26A9">
+                            <Actions>
+                              <Action OrderNumber="1" LogLevel="-1" UseTTSTextExpression="Death Sentence" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="UseTTS">
                                 <Condition Enabled="false" Grouping="Or" />
                                 <Conditions />
                               </Action>
@@ -15540,6 +15451,16 @@
                             <Condition Enabled="false" Grouping="Or" />
                             <Conditions />
                           </Trigger>
+                          <Trigger Enabled="true" Name="Death Sentence" Id="49b18f6e-44a6-4058-8447-adee0eae9194" RegularExpression="\A.{15}14:26A9">
+                            <Actions>
+                              <Action OrderNumber="1" LogLevel="-1" UseTTSTextExpression="Death Sentence" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="UseTTS">
+                                <Condition Enabled="false" Grouping="Or" />
+                                <Conditions />
+                              </Action>
+                            </Actions>
+                            <Condition Enabled="false" Grouping="Or" />
+                            <Conditions />
+                          </Trigger>
                         </Triggers>
                       </Folder>
                       <Folder FFXIVJobFilterEnabled="True" FFXIVJobFilter="4437573632" Id="f8bd9525-91b1-4e53-98ec-b243e624af04" Name="Healers" Enabled="true">
@@ -15559,51 +15480,24 @@
                             <Condition Enabled="false" Grouping="Or" />
                             <Conditions />
                           </Trigger>
+                          <Trigger Enabled="true" Name="Death Sentence" Id="fe9dd7ac-4dda-4fc4-9963-4f44ec17a2cd" RegularExpression="14:26A9:Twintania starts using Death Sentence on (?&lt;player&gt;(?&lt;name&gt;[\w-']+) [\w-']+)\.">
+                            <Actions>
+                              <Action OrderNumber="1" LogLevel="-1" UseTTSTextExpression="Death Sentence" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="UseTTS">
+                                <Condition Enabled="false" Grouping="Or" />
+                                <Conditions />
+                              </Action>
+                              <Action OrderNumber="2" LogLevel="-1" UseTTSTextExpression="Tankbuster" TextAuraEffect="Bold" TextAuraFontSize="24" TextAuraForeground="#FFBB00" TextAuraOutline="Black" TextAuraName="tankbusterText" TextAuraExpression="Tankbuster on ${name}" TextAuraXIniExpression="0" TextAuraYIniExpression="500" TextAuraWIniExpression="${_screenwidth}" TextAuraHIniExpression="100" TextAuraOIniExpression="100" TextAuraTTLTickExpression="3-${_since}" TextAuraUseOutline="True" TextAuraFontName="Microsoft Sans Serif" ActionType="TextAura">
+                                <Condition Enabled="false" Grouping="And" />
+                                <Conditions />
+                              </Action>
+                            </Actions>
+                            <Condition Enabled="false" Grouping="Or" />
+                            <Conditions />
+                          </Trigger>
                         </Triggers>
                       </Folder>
                     </Folders>
                     <Triggers />
-                  </Folder>
-                  <Folder FFXIVJobFilterEnabled="True" FFXIVJobFilter="164910071808" Id="20e9226f-56c8-47ce-ab6f-07f3eac7ff8d" Name="Hatch" Enabled="true">
-                    <Folders />
-                    <Triggers>
-                      <Trigger Enabled="true" Sequential="True" Name="Reset" Id="f91f2fd5-b0b1-46bd-938f-fbd3a49da977" RegularExpression=":Oviform:26AF:Hatch:[0-9A-F]{8}:(?&lt;player&gt;[\w-' ]+):">
-                        <Actions>
-                          <Action OrderNumber="1" AuraOp="DeactivateAura" AuraName="UCOBHatch${player}" ListVariableName="hatchTargets" LogLevel="-1" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Aura">
-                            <Condition Enabled="false" Grouping="Or" />
-                            <Conditions />
-                          </Action>
-                        </Actions>
-                        <Condition Enabled="false" Grouping="Or" />
-                        <Conditions />
-                      </Trigger>
-                      <Trigger Enabled="true" Name="Generate" Id="de00d06e-c8ff-4355-9aff-7f9746bc8927" RegularExpression="\A.{15}14:26AE">
-                        <Actions>
-                          <Action OrderNumber="1" LogLevel="-1" UseTTSTextExpression="Go Blue" TextAuraAlignment="MiddleRight" TextAuraEffect="Bold" TextAuraFontSize="24" TextAuraForeground="#FFBB00" TextAuraOutline="Black" TextAuraName="hatchLeft" TextAuraExpression="Hatch: " TextAuraXIniExpression="0" TextAuraYIniExpression="500" TextAuraWIniExpression="${_screenwidth}/2" TextAuraHIniExpression="64" TextAuraOIniExpression="100" TextAuraTTLTickExpression="10-${_since}" TextAuraUseOutline="True" TextAuraFontName="Microsoft Sans Serif" ActionType="TextAura">
-                            <Condition Enabled="false" Grouping="Or" />
-                            <Conditions />
-                          </Action>
-                        </Actions>
-                        <Condition Enabled="false" Grouping="Or" />
-                        <Conditions />
-                      </Trigger>
-                      <Trigger Enabled="true" Name="Hatch" Id="bbbfdfe8-8602-45b9-839c-cf94c0aaf1cd" RegularExpression="1B:[0-9A-F]{8}:(?&lt;player&gt;(?&lt;name&gt;[\w-']+) [\w-']+):.{4}:.{4}:0076:">
-                        <Actions>
-                          <Action OrderNumber="1" LogLevel="-1" UseTTSTextExpression="Hatch" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="UseTTS">
-                            <Condition Enabled="true" Grouping="Or">
-                              <ConditionSingle Enabled="true" ExpressionL="${player}" ExpressionTypeL="String" ExpressionR="${_ffxivplayer}" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
-                            </Condition>
-                            <Conditions />
-                          </Action>
-                          <Action OrderNumber="2" AuraName="UCOBHatch${player}" AuraImage="${var:imagePath}jobs\${tvarrl:UCOB[${player}][1]}.png" AuraXIniExpression="${_screenwidth}/2+(${_imageaura[UCOBHatch${_ffxivparty[1].name}].w})+(${_imageaura[UCOBHatch${_ffxivparty[2].name}].w})+(${_imageaura[UCOBHatch${_ffxivparty[3].name}].w})+(${_imageaura[UCOBHatch${_ffxivparty[4].name}].w})+(${_imageaura[UCOBHatch${_ffxivparty[5].name}].w})+(${_imageaura[UCOBHatch${_ffxivparty[6].name}].w})+(${_imageaura[UCOBHatch${_ffxivparty[7].name}].w})+(${_imageaura[UCOBHatch${_ffxivparty[8].name}].w})" AuraYIniExpression="500" AuraWIniExpression="64" AuraHIniExpression="64" AuraOIniExpression="100" AuraTTLTickExpression="10-${_since}" LogLevel="-1" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Aura">
-                            <Condition Enabled="false" Grouping="Or" />
-                            <Conditions />
-                          </Action>
-                        </Actions>
-                        <Condition Enabled="false" Grouping="Or" />
-                        <Conditions />
-                      </Trigger>
-                    </Triggers>
                   </Folder>
                   <Folder Id="9498b413-e241-44d4-9d74-38e8c1d4345b" Name="Nael RP" Enabled="true">
                     <Folders />
@@ -16231,6 +16125,196 @@
                       </Trigger>
                     </Triggers>
                   </Folder>
+                  <Folder Id="a342437d-b817-43e9-b51e-930dd3e828af" Name="Hatch" Enabled="true">
+                    <Folders>
+                      <Folder FFXIVJobFilterEnabled="True" FFXIVJobFilter="75305844736" Id="20e9226f-56c8-47ce-ab6f-07f3eac7ff8d" Name="Tank/Healer" Enabled="true">
+                        <Folders />
+                        <Triggers>
+                          <Trigger Enabled="true" Name="Generate" Id="de00d06e-c8ff-4355-9aff-7f9746bc8927" RegularExpression="\A.{15}14:26AE">
+                            <Actions>
+                              <Action OrderNumber="1" LogLevel="-1" UseTTSTextExpression="Go Blue" TextAuraAlignment="MiddleRight" TextAuraEffect="Bold" TextAuraFontSize="24" TextAuraForeground="#FFBB00" TextAuraOutline="Black" TextAuraName="hatchLeft" TextAuraExpression="Hatch: " TextAuraXIniExpression="0" TextAuraYIniExpression="500" TextAuraWIniExpression="${_screenwidth}/2" TextAuraHIniExpression="64" TextAuraOIniExpression="100" TextAuraTTLTickExpression="10-${_since}" TextAuraUseOutline="True" TextAuraFontName="Microsoft Sans Serif" ActionType="TextAura">
+                                <Condition Enabled="false" Grouping="Or" />
+                                <Conditions />
+                              </Action>
+                            </Actions>
+                            <Condition Enabled="true" Grouping="Or">
+                              <ConditionSingle Enabled="true" ExpressionL="${var:dataPhase}" ExpressionTypeL="String" ExpressionR="tenstrike" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
+                            </Condition>
+                            <Conditions />
+                          </Trigger>
+                          <Trigger Enabled="true" Name="Hatch" Id="bbbfdfe8-8602-45b9-839c-cf94c0aaf1cd" RegularExpression="1B:[0-9A-F]{8}:(?&lt;player&gt;(?&lt;name&gt;[\w-']+) [\w-']+):.{4}:.{4}:0076:">
+                            <Actions>
+                              <Action OrderNumber="1" LogLevel="-1" UseTTSTextExpression="Hatch" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="UseTTS">
+                                <Condition Enabled="true" Grouping="Or">
+                                  <ConditionSingle Enabled="true" ExpressionL="${player}" ExpressionTypeL="String" ExpressionR="${_ffxivplayer}" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
+                                </Condition>
+                                <Conditions />
+                              </Action>
+                              <Action OrderNumber="2" AuraName="UCOBHatch${player}" AuraImage="${var:imagePath}jobs\${tvarrl:UCOB[${player}][1]}.png" AuraXIniExpression="${_screenwidth}/2+(${_imageaura[UCOBHatch${_ffxivparty[1].name}].w})+(${_imageaura[UCOBHatch${_ffxivparty[2].name}].w})+(${_imageaura[UCOBHatch${_ffxivparty[3].name}].w})+(${_imageaura[UCOBHatch${_ffxivparty[4].name}].w})+(${_imageaura[UCOBHatch${_ffxivparty[5].name}].w})+(${_imageaura[UCOBHatch${_ffxivparty[6].name}].w})+(${_imageaura[UCOBHatch${_ffxivparty[7].name}].w})+(${_imageaura[UCOBHatch${_ffxivparty[8].name}].w})" AuraYIniExpression="500" AuraWIniExpression="64" AuraHIniExpression="64" AuraOIniExpression="100" AuraTTLTickExpression="10-${_since}" LogLevel="-1" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Aura">
+                                <Condition Enabled="false" Grouping="Or" />
+                                <Conditions />
+                              </Action>
+                            </Actions>
+                            <Condition Enabled="true" Grouping="Or">
+                              <ConditionSingle Enabled="true" ExpressionL="${var:dataPhase}" ExpressionTypeL="String" ExpressionR="tenstrike" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
+                            </Condition>
+                            <Conditions />
+                          </Trigger>
+                        </Triggers>
+                      </Folder>
+                      <Folder FFXIVJobFilterEnabled="True" FFXIVJobFilter="164910071808" Id="3b486ec5-8b8a-4e8c-8ce0-95e629159ebc" Name="DPS" Enabled="true">
+                        <Folders />
+                        <Triggers>
+                          <Trigger Enabled="true" Name="Hatch" Id="99898035-ead4-4144-ae9d-0452bf58cfce" RegularExpression="1B:[0-9A-F]{8}:(?&lt;player&gt;(?&lt;name&gt;[\w-']+) [\w-']+):.{4}:.{4}:0076:">
+                            <Actions>
+                              <Action OrderNumber="1" LogLevel="-1" UseTTSTextExpression="Hatch" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="UseTTS">
+                                <Condition Enabled="true" Grouping="Or">
+                                  <ConditionSingle Enabled="true" ExpressionL="${player}" ExpressionTypeL="String" ExpressionR="${_ffxivplayer}" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
+                                </Condition>
+                                <Conditions />
+                              </Action>
+                              <Action OrderNumber="2" AuraName="UCOBHatch${player}" AuraImage="${var:imagePath}jobs\${tvarrl:UCOB[${player}][1]}.png" AuraXIniExpression="${_screenwidth}/2+(${_imageaura[UCOBHatch${_ffxivparty[1].name}].w})+(${_imageaura[UCOBHatch${_ffxivparty[2].name}].w})+(${_imageaura[UCOBHatch${_ffxivparty[3].name}].w})+(${_imageaura[UCOBHatch${_ffxivparty[4].name}].w})+(${_imageaura[UCOBHatch${_ffxivparty[5].name}].w})+(${_imageaura[UCOBHatch${_ffxivparty[6].name}].w})+(${_imageaura[UCOBHatch${_ffxivparty[7].name}].w})+(${_imageaura[UCOBHatch${_ffxivparty[8].name}].w})" AuraYIniExpression="500" AuraWIniExpression="64" AuraHIniExpression="64" AuraOIniExpression="100" AuraTTLTickExpression="10-${_since}" LogLevel="-1" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Aura">
+                                <Condition Enabled="false" Grouping="Or" />
+                                <Conditions />
+                              </Action>
+                            </Actions>
+                            <Condition Enabled="false" Grouping="Or" />
+                            <Conditions />
+                          </Trigger>
+                          <Trigger Enabled="true" Name="Generate" Id="8f812724-591c-4f69-ab09-f3bdb4666c18" RegularExpression="\A.{15}14:26AE">
+                            <Actions>
+                              <Action OrderNumber="1" LogLevel="-1" UseTTSTextExpression="Go Blue" TextAuraAlignment="MiddleRight" TextAuraEffect="Bold" TextAuraFontSize="24" TextAuraForeground="#FFBB00" TextAuraOutline="Black" TextAuraName="hatchLeft" TextAuraExpression="Hatch: " TextAuraXIniExpression="0" TextAuraYIniExpression="500" TextAuraWIniExpression="${_screenwidth}/2" TextAuraHIniExpression="64" TextAuraOIniExpression="100" TextAuraTTLTickExpression="10-${_since}" TextAuraUseOutline="True" TextAuraFontName="Microsoft Sans Serif" ActionType="TextAura">
+                                <Condition Enabled="false" Grouping="Or" />
+                                <Conditions />
+                              </Action>
+                            </Actions>
+                            <Condition Enabled="false" Grouping="Or" />
+                            <Conditions />
+                          </Trigger>
+                        </Triggers>
+                      </Folder>
+                    </Folders>
+                    <Triggers>
+                      <Trigger Enabled="true" Sequential="True" Name="# Reset" Id="f91f2fd5-b0b1-46bd-938f-fbd3a49da977" RegularExpression=":Oviform:26AF:Hatch:[0-9A-F]{8}:(?&lt;player&gt;[\w-' ]+):">
+                        <Actions>
+                          <Action OrderNumber="1" AuraOp="DeactivateAura" AuraName="UCOBHatch${player}" ListVariableName="hatchTargets" LogLevel="-1" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Aura">
+                            <Condition Enabled="false" Grouping="Or" />
+                            <Conditions />
+                          </Action>
+                        </Actions>
+                        <Condition Enabled="false" Grouping="Or" />
+                        <Conditions />
+                      </Trigger>
+                    </Triggers>
+                  </Folder>
+                  <Folder Id="dd980177-c8c6-46ce-8a30-869aa4aa9c3a" Name="Grand Octet" Enabled="true">
+                    <Folders />
+                    <Triggers>
+                      <Trigger Enabled="true" Sequential="True" Name="Counter" Id="026d0892-7ef6-48cd-87e0-38cae5813e78" RegularExpression="1B:[0-9A-F]{8}:(?&lt;player&gt;(?&lt;name&gt;[\w-']+) [\w-']+):.{4}:.{4}:(?&lt;ID&gt;00(77|14|29)):">
+                        <Actions>
+                          <Action OrderNumber="1" LogLevel="-1" UseTTSTextExpression="Hatch" VariableOp="SetNumeric" VariableName="grandOctet" VariableExpression="${var:grandOctet}+1" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Variable">
+                            <Condition Enabled="true" Grouping="Or">
+                              <ConditionSingle Enabled="true" ExpressionL="${player}" ExpressionTypeL="String" ExpressionR="${_ffxivplayer}" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
+                            </Condition>
+                            <Conditions />
+                          </Action>
+                          <Action OrderNumber="2" AuraOp="DeactivateAura" AuraName="UCOBOctet${player}" LogLevel="-1" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Aura">
+                            <Condition Enabled="false" Grouping="Or" />
+                            <Conditions />
+                          </Action>
+                          <Action OrderNumber="3" LogLevel="-1" UseTTSTextExpression="outside intercardinal" TextAuraEffect="Bold" TextAuraFontSize="24" TextAuraForeground="#FFBB00" TextAuraOutline="Black" TextAuraName="dragonOctet" TextAuraExpression="#${var:grandOctet}: Dragon" TextAuraXIniExpression="0" TextAuraYIniExpression="${naelY}" TextAuraWIniExpression="${screenwidth}" TextAuraHIniExpression="64" TextAuraOIniExpression="100" TextAuraTTLTickExpression="3-${_since}" TextAuraUseOutline="True" TextAuraFontName="Microsoft Sans Serif" ActionType="TextAura">
+                            <Condition Enabled="true" Grouping="And">
+                              <ConditionSingle Enabled="true" ExpressionL="${ID}" ExpressionTypeL="String" ExpressionR="0014" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
+                              <ConditionSingle Enabled="true" ExpressionL="${player}" ExpressionTypeL="String" ExpressionR="${_ffxivplayer}" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
+                            </Condition>
+                            <Conditions />
+                          </Action>
+                          <Action OrderNumber="4" LogLevel="-1" UseTTSTextExpression="outside intercardinal" TextAuraEffect="Bold" TextAuraFontSize="24" TextAuraForeground="#FFBB00" TextAuraOutline="Black" TextAuraName="naelOctet" TextAuraExpression="#${var:grandOctet}: Nael" TextAuraXIniExpression="0" TextAuraYIniExpression="${naelY}" TextAuraWIniExpression="${screenwidth}" TextAuraHIniExpression="64" TextAuraOIniExpression="100" TextAuraTTLTickExpression="3-${_since}" TextAuraUseOutline="True" TextAuraFontName="Microsoft Sans Serif" ActionType="TextAura">
+                            <Condition Enabled="true" Grouping="And">
+                              <ConditionSingle Enabled="true" ExpressionL="${ID}" ExpressionTypeL="String" ExpressionR="0077" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
+                              <ConditionSingle Enabled="true" ExpressionL="${player}" ExpressionTypeL="String" ExpressionR="${_ffxivplayer}" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
+                            </Condition>
+                            <Conditions />
+                          </Action>
+                          <Action OrderNumber="5" LogLevel="-1" UseTTSTextExpression="outside intercardinal" TextAuraEffect="Bold" TextAuraFontSize="24" TextAuraForeground="#FFBB00" TextAuraOutline="Black" TextAuraName="bahaOctet" TextAuraExpression="#${var:grandOctet}: Bahamut" TextAuraXIniExpression="0" TextAuraYIniExpression="${naelY}" TextAuraWIniExpression="${screenwidth}" TextAuraHIniExpression="64" TextAuraOIniExpression="100" TextAuraTTLTickExpression="3-${_since}" TextAuraUseOutline="True" TextAuraFontName="Microsoft Sans Serif" ActionType="TextAura">
+                            <Condition Enabled="true" Grouping="And">
+                              <ConditionSingle Enabled="true" ExpressionL="${ID}" ExpressionTypeL="String" ExpressionR="0029" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
+                              <ConditionSingle Enabled="true" ExpressionL="${player}" ExpressionTypeL="String" ExpressionR="${_ffxivplayer}" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
+                            </Condition>
+                            <Conditions />
+                          </Action>
+                        </Actions>
+                        <Condition Enabled="true" Grouping="Or">
+                          <ConditionSingle Enabled="true" ExpressionL="${var:dataPhase}" ExpressionTypeL="String" ExpressionR="octet" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
+                        </Condition>
+                        <Conditions />
+                      </Trigger>
+                      <Trigger Enabled="false" Sequential="True" Name="Twintania" Id="3b1ca014-1bdd-4afb-894e-b541c208b86f" RegularExpression="1B:[0-9A-F]{8}:(?&lt;player&gt;(?&lt;name&gt;[\w-']+) [\w-']+):.{4}:.{4}:002A:">
+                        <Actions>
+                          <Action OrderNumber="1" LogLevel="-1" UseTTSTextExpression="outside intercardinal" TextAuraEffect="Bold" TextAuraFontSize="24" TextAuraForeground="#FFBB00" TextAuraOutline="Black" TextAuraName="twinOctet" TextAuraExpression="#8: ${name} (Twintania)" TextAuraXIniExpression="0" TextAuraYIniExpression="${naelY}" TextAuraWIniExpression="${screenwidth}" TextAuraHIniExpression="64" TextAuraOIniExpression="100" TextAuraTTLTickExpression="3.5-${_since}" TextAuraUseOutline="True" TextAuraFontName="Microsoft Sans Serif" ActionType="TextAura">
+                            <Condition Enabled="true" Grouping="And">
+                              <ConditionSingle Enabled="true" ExpressionL="${player}" ExpressionTypeL="String" ExpressionR="${_ffxivplayer}" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
+                            </Condition>
+                            <Conditions />
+                          </Action>
+                        </Actions>
+                        <Condition Enabled="true" Grouping="Or">
+                          <ConditionSingle Enabled="true" ExpressionL="${var:dataPhase}" ExpressionTypeL="String" ExpressionR="octet" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
+                        </Condition>
+                        <Conditions />
+                      </Trigger>
+                      <Trigger Enabled="true" Sequential="True" Name="Grand Octet" Id="4b1dd93b-5309-4023-893b-0a1040a7a127" RegularExpression="\A.{15}14:26E7">
+                        <Actions>
+                          <Action OrderNumber="1" AuraName="grandOctet" AuraImage="${var:imagePath}ucob\grandoctet.png" AuraXIniExpression="${var:naelDebuffX}" AuraYIniExpression="${var:naelDebuffY}" AuraWIniExpression="345" AuraHIniExpression="100" AuraOIniExpression="${var:naelDebuffOpacity}" VariableOp="SetString" VariableName="fate" VariableExpression="a" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Aura" Description="Grand Octet Header (Move me!) | Toggle to enable/disable images" DescriptionOverride="True">
+                            <Condition Enabled="false" Grouping="Or" />
+                            <Conditions />
+                          </Action>
+                          <Action OrderNumber="2" AuraName="UCOBOctet${tvarcl:UCOB[NAME][1]}" AuraImage="${var:imagePath}jobs\${tvarcl:UCOB[JOB][1]}.png" AuraXIniExpression="${_imageaura[grandOctet].x}+40" AuraYIniExpression="${_imageaura[grandOctet].y}+40" AuraWIniExpression="64" AuraHIniExpression="64" AuraOIniExpression="100" VariableOp="SetString" VariableName="fate" VariableExpression="a" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Aura" Description="Add Job Image 1" DescriptionOverride="True">
+                            <Condition Enabled="false" Grouping="Or" />
+                            <Conditions />
+                          </Action>
+                          <Action OrderNumber="3" AuraName="UCOBOctet${tvarcl:UCOB[NAME][2]}" AuraImage="${var:imagePath}jobs\${tvarcl:UCOB[JOB][2]}.png" AuraXIniExpression="${_imageaura[grandOctet].x}+107" AuraYIniExpression="${_imageaura[grandOctet].y}+40" AuraWIniExpression="64" AuraHIniExpression="64" AuraOIniExpression="100" VariableOp="SetString" VariableName="fate" VariableExpression="a" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Aura" Description="Add Job Image 2" DescriptionOverride="True">
+                            <Condition Enabled="false" Grouping="Or" />
+                            <Conditions />
+                          </Action>
+                          <Action OrderNumber="4" AuraName="UCOBOctet${tvarcl:UCOB[NAME][3]}" AuraImage="${var:imagePath}jobs\${tvarcl:UCOB[JOB][3]}.png" AuraXIniExpression="${_imageaura[grandOctet].x}+174" AuraYIniExpression="${_imageaura[grandOctet].y}+40" AuraWIniExpression="64" AuraHIniExpression="64" AuraOIniExpression="100" VariableOp="SetString" VariableName="fate" VariableExpression="a" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Aura" Description="Add Job Image 3" DescriptionOverride="True">
+                            <Condition Enabled="false" Grouping="Or" />
+                            <Conditions />
+                          </Action>
+                          <Action OrderNumber="5" AuraName="UCOBOctet${tvarcl:UCOB[NAME][4]}" AuraImage="${var:imagePath}jobs\${tvarcl:UCOB[JOB][4]}.png" AuraXIniExpression="${_imageaura[grandOctet].x}+241" AuraYIniExpression="${_imageaura[grandOctet].y}+40" AuraWIniExpression="64" AuraHIniExpression="64" AuraOIniExpression="100" VariableOp="SetString" VariableName="fate" VariableExpression="a" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Aura" Description="Add Job Image 4" DescriptionOverride="True">
+                            <Condition Enabled="false" Grouping="Or" />
+                            <Conditions />
+                          </Action>
+                          <Action OrderNumber="6" AuraName="UCOBOctet${tvarcl:UCOB[NAME][5]}" AuraImage="${var:imagePath}jobs\${tvarcl:UCOB[JOB][5]}.png" AuraXIniExpression="${_imageaura[grandOctet].x}+40" AuraYIniExpression="${_imageaura[grandOctet].y}+107" AuraWIniExpression="64" AuraHIniExpression="64" AuraOIniExpression="100" VariableOp="SetString" VariableName="fate" VariableExpression="a" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Aura" Description="Add Job Image 5" DescriptionOverride="True">
+                            <Condition Enabled="false" Grouping="Or" />
+                            <Conditions />
+                          </Action>
+                          <Action OrderNumber="7" AuraName="UCOBOctet${tvarcl:UCOB[NAME][6]}" AuraImage="${var:imagePath}jobs\${tvarcl:UCOB[JOB][6]}.png" AuraXIniExpression="${_imageaura[grandOctet].x}+107" AuraYIniExpression="${_imageaura[grandOctet].y}+107" AuraWIniExpression="64" AuraHIniExpression="64" AuraOIniExpression="100" VariableOp="SetString" VariableName="fate" VariableExpression="a" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Aura" Description="Add Job Image 6" DescriptionOverride="True">
+                            <Condition Enabled="false" Grouping="Or" />
+                            <Conditions />
+                          </Action>
+                          <Action OrderNumber="8" AuraName="UCOBOctet${tvarcl:UCOB[NAME][7]}" AuraImage="${var:imagePath}jobs\${tvarcl:UCOB[JOB][7]}.png" AuraXIniExpression="${_imageaura[grandOctet].x}+174" AuraYIniExpression="${_imageaura[grandOctet].y}+107" AuraWIniExpression="64" AuraHIniExpression="64" AuraOIniExpression="100" VariableOp="SetString" VariableName="fate" VariableExpression="a" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Aura" Description="Add Job Image 7" DescriptionOverride="True">
+                            <Condition Enabled="false" Grouping="Or" />
+                            <Conditions />
+                          </Action>
+                          <Action OrderNumber="9" AuraName="UCOBOctet${tvarcl:UCOB[NAME][8]}" AuraImage="${var:imagePath}jobs\${tvarcl:UCOB[JOB][8]}.png" AuraXIniExpression="${_imageaura[grandOctet].x}+241" AuraYIniExpression="${_imageaura[grandOctet].y}+107" AuraWIniExpression="64" AuraHIniExpression="64" AuraOIniExpression="100" VariableOp="SetString" VariableName="fate" VariableExpression="a" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Aura" Description="Add Job Image 8" DescriptionOverride="True">
+                            <Condition Enabled="false" Grouping="Or" />
+                            <Conditions />
+                          </Action>
+                          <Action OrderNumber="10" AuraOp="DeactivateAura" AuraName="grandOctet" LogLevel="-1" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Aura" ExecutionDelayExpression="40000">
+                            <Condition Enabled="false" Grouping="Or" />
+                            <Conditions />
+                          </Action>
+                          <Action OrderNumber="11" AuraOp="DeactivateAuraRegex" AuraName="UCOBOctet" LogLevel="-1" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Aura">
+                            <Condition Enabled="false" Grouping="Or" />
+                            <Conditions />
+                          </Action>
+                        </Actions>
+                        <Condition Enabled="false" Grouping="Or" />
+                        <Conditions />
+                      </Trigger>
+                    </Triggers>
+                  </Folder>
                 </Folders>
                 <Triggers>
                   <Trigger Enabled="true" Name="# Reset" Id="855b86aa-7d34-4129-84a8-f3a38ef3f3af" RegularExpression="21:.{8}:400000[01][03]:">
@@ -16427,16 +16511,6 @@
                     </Condition>
                     <Conditions />
                   </Trigger>
-                  <Trigger Enabled="true" Name="Death Sentence" Id="cd823056-42e8-41a3-8619-8edec8b0e47f" RegularExpression="\A.{15}14:26A9">
-                    <Actions>
-                      <Action OrderNumber="1" LogLevel="-1" UseTTSTextExpression="Death Sentence" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="UseTTS">
-                        <Condition Enabled="false" Grouping="Or" />
-                        <Conditions />
-                      </Action>
-                    </Actions>
-                    <Condition Enabled="false" Grouping="Or" />
-                    <Conditions />
-                  </Trigger>
                   <Trigger Enabled="true" Name="Twister" Id="c9ca7080-295f-4b63-9ec8-c277e3985f55" RegularExpression="\A.{15}14:26AA">
                     <Actions>
                       <Action OrderNumber="1" PlaySoundFileExpression="https://raw.githubusercontent.com/lexxiesia/xiv_triggernometry/master/resources/wav/arthars/twister1.wav" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="PlaySound">
@@ -16487,7 +16561,7 @@
                         <Condition Enabled="false" Grouping="Or" />
                         <Conditions />
                       </Action>
-                      <Action OrderNumber="8" LogLevel="-1" VariableOp="SetNumeric" VariableName="naelRPY" VariableExpression="${_screenheight}/2" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Variable">
+                      <Action OrderNumber="8" LogLevel="-1" VariableOp="SetNumeric" VariableName="naelRPY" VariableExpression="(${_screenheight}/10)*3" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Variable">
                         <Condition Enabled="true" Grouping="Or">
                           <ConditionSingle Enabled="true" ExpressionL="${evar:naelRPY}" ExpressionTypeL="Numeric" ExpressionR="0" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
                         </Condition>
@@ -16603,7 +16677,7 @@
                         </Condition>
                         <Conditions />
                       </Trigger>
-                      <Trigger Enabled="true" IsReadme="True" Name="# Readme" Id="f19c5fe0-5efe-40fa-ad1f-e993ecea7dc9" RegularExpression="" Description="This config set controls the on-screen position following triggers:&#xD;&#xA;- Nael Debuffs&#xD;&#xA;- Dragon Divebombs&#xD;&#xA;- Earthshakers&#xD;&#xA;- Grand Octet&#xD;&#xA;&#xD;&#xA;The commands must be preceded with the echo (/e or /echo) chat command or it will not take effect.&#xD;&#xA;&#xD;&#xA;Commands:&#xD;&#xA;&#xD;&#xA;naelDebuffX &lt;value&gt;&#xD;&#xA;Sets the on-screen X value start point of the UI image. Triggernometry dictates the top-left corner of the image as its start point.&#xD;&#xA;(Example: /e naelDebuffX 640)&#xD;&#xA;&#xD;&#xA;naelDebuffY &lt;value&gt;&#xD;&#xA;Sets the on-screen Y value start point of the UI image. Triggernometry dictates the top-left corner of the image as its start point.&#xD;&#xA;(Example: /e naelDebuffX 640)&#xD;&#xA;&#xD;&#xA;naelDebuffOpacity &lt;value, 0-100&gt;&#xD;&#xA;Sets the opacity of the UI image with 100 being the default (fully visible). Setting the image to 0 will make it fully invisible.&#xD;&#xA;&#xD;&#xA;showNaelDebuff&#xD;&#xA;Displays the Nael Debuff UI image. For this to work outside of UCoB, please make sure that X, Y and Opacity have values attached to them or the image will not show.&#xD;&#xA;&#xD;&#xA;hideNaelDebuff&#xD;&#xA;Hides the Nael Debuff UI image. Use this command to hide the UI image if it fails to reset after a wipe or instance change.&#xD;&#xA;&#xD;&#xA;=========&#xD;&#xA;&#xD;&#xA;naelRPY &lt;value&gt;&#xD;&#xA;Sets the on-screen vertical space for displaying Nael RP images. The default is the middle of your screen.&#xD;&#xA;&#xD;&#xA;showNaelRP &lt;value, 2-3&gt;&#xD;&#xA;Displays a sample image combo with Nael's RP moves. Value dictates if the sample image will show a two or three move combo respectively.&#xD;&#xA;&#xD;&#xA;naelRPIcons &lt;value, 0-1&gt;&#xD;&#xA;naelRPIcons &lt;command, enable/disable&gt;&#xD;&#xA;Sets the option for Triggernometry to enable (1) or disable (0) the showing of Nael RP icons during combat.&#xD;&#xA;(Example: /e naelRPIcons 0)&#xD;&#xA;(Example: /e naelRPIcons disable)">
+                      <Trigger Enabled="true" IsReadme="True" Name="# Nael UI Readme" Id="f19c5fe0-5efe-40fa-ad1f-e993ecea7dc9" RegularExpression="" Description="This config set controls the on-screen position following triggers:&#xD;&#xA;- Nael Debuffs&#xD;&#xA;- Dragon Divebombs&#xD;&#xA;- Earthshakers&#xD;&#xA;- Grand Octet&#xD;&#xA;&#xD;&#xA;The commands must be preceded with the echo (/e or /echo) chat command or it will not take effect.&#xD;&#xA;&#xD;&#xA;Commands:&#xD;&#xA;&#xD;&#xA;naelDebuffX &lt;value&gt;&#xD;&#xA;Sets the on-screen X value start point of the UI image. Triggernometry dictates the top-left corner of the image as its start point.&#xD;&#xA;(Example: /e naelDebuffX 640)&#xD;&#xA;&#xD;&#xA;naelDebuffY &lt;value&gt;&#xD;&#xA;Sets the on-screen Y value start point of the UI image. Triggernometry dictates the top-left corner of the image as its start point.&#xD;&#xA;(Example: /e naelDebuffX 640)&#xD;&#xA;&#xD;&#xA;naelDebuffOpacity &lt;value, 0-100&gt;&#xD;&#xA;Sets the opacity of the UI image with 100 being the default (fully visible). Setting the image to 0 will make it fully invisible.&#xD;&#xA;&#xD;&#xA;showNaelDebuff&#xD;&#xA;Displays the Nael Debuff UI image. For this to work outside of UCoB, please make sure that X, Y and Opacity have values attached to them or the image will not show.&#xD;&#xA;&#xD;&#xA;hideNaelDebuff&#xD;&#xA;Hides the Nael Debuff UI image. Use this command to hide the UI image if it fails to reset after a wipe or instance change.&#xD;&#xA;&#xD;&#xA;=========&#xD;&#xA;&#xD;&#xA;naelRPY &lt;value&gt;&#xD;&#xA;Sets the on-screen vertical space for displaying Nael RP images. The default is the middle of your screen.&#xD;&#xA;&#xD;&#xA;showNaelRP &lt;value, 2-3&gt;&#xD;&#xA;Displays a sample image combo with Nael's RP moves. Value dictates if the sample image will show a two or three move combo respectively.&#xD;&#xA;&#xD;&#xA;naelRPIcons &lt;value, 0-1&gt;&#xD;&#xA;naelRPIcons &lt;command, enable/disable&gt;&#xD;&#xA;Sets the option for Triggernometry to enable (1) or disable (0) the showing of Nael RP icons during combat.&#xD;&#xA;(Example: /e naelRPIcons 0)&#xD;&#xA;(Example: /e naelRPIcons disable)">
                         <Actions />
                         <Condition Enabled="false" Grouping="Or" />
                         <Conditions />

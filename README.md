@@ -5,7 +5,7 @@
 
 <p align="center">
   <a href="https://na.finalfantasyxiv.com/shadowbringers/patch_5_4/"><img src="https://img.shields.io/badge/ffxiv-patch%205.4-yellow"></a>
-  <a href="https://github.com/paissaheavyindustries/Triggernometry/releases/tag/v1.1.3.1"><img src="https://img.shields.io/badge/triggernometry-v1.1.3.1-blue"></a>
+  <a href="https://github.com/paissaheavyindustries/Triggernometry/releases/tag/v1.1.4.1"><img src="https://img.shields.io/badge/triggernometry-v1.1.4.1-blue"></a>
 </p>
 
 ## How to Setup
@@ -20,10 +20,10 @@
  
  If you don't see **Remote Triggers**, you are running an old version of Triggernometry. Download the latest update from [https://github.com/paissaheavyindustries/Triggernometry/releases/](https://github.com/paissaheavyindustries/Triggernometry/releases/).
 
- ### Known Issues
+<!-- ### Known Issues
  - Main repository folder `Github` occasionally gets disabled after a new upload.
  - Some disabled folders/triggers becomes enabled after uploading to the repository.
-
+-->
 ## What's in it?
 Triggers within the repository are separated by content folders. Most stuff are enabled by default. Disable triggers that you don't want activated. That is all!
 

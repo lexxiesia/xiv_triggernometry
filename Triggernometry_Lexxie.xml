@@ -9801,7 +9801,7 @@
                         </Condition>
                         <Conditions />
                       </Trigger>
-                      <Trigger Enabled="true" Source="FFXIVNetwork" Sequential="True" Name="Cataclysm" Id="962edafc-2db6-4f05-ad30-4df2a5c76a36" RegularExpression="^20\|[^\|]*\|(?&lt;actorID&gt;[^\|]*)\|[^\|]*\|58C2\|" MutexToCapture="prismatic" Description="This trigger calls out Prismatic Deception safe spots when the casts of Blasting Zone start on the enemy list. The calls by default &#xD;&#xA;are North, Northeast, East, Southeast, obviously the cardinal/intercardinal direction opposite of what the trigger calls will be safe &#xD;&#xA;too. If you prefer, you can change the things the TTS actions call in the Trigger Actions tab of the this trigger.&#xD;&#xA;&#xD;&#xA;Version History:&#xD;&#xA;v1.4: Public Release&#xD;&#xA;v1.5: Rewrote part of this trigger to have fewer moving parts since it wasn't executing consistently&#xD;&#xA;v1.6: I swear to god this thing works now">
+                      <Trigger Enabled="true" Source="FFXIVNetwork" Sequential="True" Name="Cataclysm" Id="962edafc-2db6-4f05-ad30-4df2a5c76a36" RegularExpression="^20\|[^\|]*\|(?&lt;actorID&gt;[^\|]*)\|[^\|]*\|58C2\|" Description="This trigger calls out Prismatic Deception safe spots when the casts of Blasting Zone start on the enemy list. The calls by default &#xD;&#xA;are North, Northeast, East, Southeast, obviously the cardinal/intercardinal direction opposite of what the trigger calls will be safe &#xD;&#xA;too. If you prefer, you can change the things the TTS actions call in the Trigger Actions tab of the this trigger.&#xD;&#xA;&#xD;&#xA;Version History:&#xD;&#xA;v1.4: Public Release&#xD;&#xA;v1.5: Rewrote part of this trigger to have fewer moving parts since it wasn't executing consistently&#xD;&#xA;v1.6: I swear to god this thing works now">
                         <Actions>
                           <Action OrderNumber="1" LogLevel="-1" VariableOp="SetNumeric" VariableName="cataclysmCardinal" VariableExpression="((2 - round(${_ffxiventity[${actorID}].heading} * 4 / pi) / 2) + 2) % 4" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Variable" ExecutionDelayExpression="500">
                             <Condition Enabled="false" Grouping="Or" />
@@ -11661,6 +11661,10 @@
                 </Triggers>
               </Folder>
             </Folders>
+            <Triggers />
+          </Folder>
+          <Folder Id="cf641d8c-746a-40b2-9136-ec50602714d1" Name="6.0 - Endwalker" Enabled="true">
+            <Folders />
             <Triggers />
           </Folder>
         </Folders>
@@ -14961,7 +14965,7 @@
                         </Condition>
                         <Conditions />
                       </Trigger>
-                      <Trigger Enabled="true" Sequential="True" Name="Headmarker" Id="3b2d868c-d685-4185-8a66-e8d33b868b91" RegularExpression="1B:[0-9A-F]{8}:(?&lt;player&gt;(?&lt;name&gt;[\w-']+) [\w-']+):.{4}:.{4}:0028:">
+                      <Trigger Enabled="true" Name="Headmarker" Id="3b2d868c-d685-4185-8a66-e8d33b868b91" RegularExpression="1B:[0-9A-F]{8}:(?&lt;player&gt;(?&lt;name&gt;[\w-']+) [\w-']+):.{4}:.{4}:0028:">
                         <Actions>
                           <Action OrderNumber="1" LogLevel="-1" UseTTSTextExpression="Earthshaker" TextAuraEffect="Bold" TextAuraFontSize="24" TextAuraForeground="#FFBB00" TextAuraOutline="Black" TextAuraName="twinOctet" TextAuraExpression="#8: ${name} (Twintania)" TextAuraXIniExpression="0" TextAuraYIniExpression="${naelY}" TextAuraWIniExpression="${screenwidth}" TextAuraHIniExpression="64" TextAuraOIniExpression="100" TextAuraTTLTickExpression="3.5-${_since}" TextAuraUseOutline="True" TextAuraFontName="Microsoft Sans Serif" ActionType="UseTTS">
                             <Condition Enabled="true" Grouping="And">
@@ -15079,429 +15083,7 @@
                     <Triggers />
                   </Folder>
                   <Folder Id="9498b413-e241-44d4-9d74-38e8c1d4345b" Name="Nael RP" Enabled="true">
-                    <Folders>
-                      <Folder Id="e3884a2f-547d-4da1-a834-60ce140926f5" Name="Trackers" Enabled="true">
-                        <Folders>
-                          <Folder Id="31f7574e-82f0-4220-a5db-c0829a7c1c23" Name="Phase" Enabled="true">
-                            <Folders />
-                            <Triggers>
-                              <Trigger Enabled="true" Name="Quickmarch Trio" Id="839b6bd3-b659-458d-b98a-dba7ff888b15" RegularExpression="\A.{15}14:26E2">
-                                <Actions>
-                                  <Action OrderNumber="1" LogLevel="-1" VariableOp="SetString" VariableName="dataPhase" VariableExpression="quickmarch" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Variable">
-                                    <Condition Enabled="false" Grouping="Or" />
-                                    <Conditions />
-                                  </Action>
-                                  <Action OrderNumber="2" TextAuraEffect="Bold" TextAuraFontSize="18" TextAuraForeground="#22BB22" TextAuraOutline="Black" TextAuraName="trioText" TextAuraExpression="Trio: Relative North" TextAuraXIniExpression="0" TextAuraYIniExpression="500" TextAuraWIniExpression="${_screenwidth}" TextAuraHIniExpression="100" TextAuraOIniExpression="100" TextAuraTTLTickExpression="5-${_since}" TextAuraUseOutline="True" TextAuraFontName="Microsoft Sans Serif" ActionType="TextAura">
-                                    <Condition Enabled="false" Grouping="And" />
-                                    <Conditions />
-                                  </Action>
-                                </Actions>
-                                <Condition Enabled="false" Grouping="Or" />
-                                <Conditions />
-                              </Trigger>
-                              <Trigger Enabled="true" Name="Blackfire Trio" Id="777ab2ea-3a37-4fe0-8687-b46b6fc56e36" RegularExpression="\A.{15}14:26E3">
-                                <Actions>
-                                  <Action OrderNumber="1" LogLevel="-1" VariableOp="SetString" VariableName="dataPhase" VariableExpression="blackfire" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Variable">
-                                    <Condition Enabled="false" Grouping="Or" />
-                                    <Conditions />
-                                  </Action>
-                                  <Action OrderNumber="2" AuraOp="DeactivateAura" AuraName="earthshaker" LogLevel="-1" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Aura">
-                                    <Condition Enabled="false" Grouping="Or" />
-                                    <Conditions />
-                                  </Action>
-                                  <Action OrderNumber="3" TextAuraEffect="Bold" TextAuraFontSize="18" TextAuraForeground="#22BB22" TextAuraOutline="Black" TextAuraName="trioText" TextAuraExpression="Look for Nael" TextAuraXIniExpression="0" TextAuraYIniExpression="500" TextAuraWIniExpression="${_screenwidth}" TextAuraHIniExpression="100" TextAuraOIniExpression="100" TextAuraTTLTickExpression="5-${_since}" TextAuraUseOutline="True" TextAuraFontName="Microsoft Sans Serif" ActionType="TextAura">
-                                    <Condition Enabled="false" Grouping="And" />
-                                    <Conditions />
-                                  </Action>
-                                </Actions>
-                                <Condition Enabled="false" Grouping="Or" />
-                                <Conditions />
-                              </Trigger>
-                              <Trigger Enabled="true" Name="Fellruin Trio" Id="cd5a92c3-c394-412e-bdd4-4ee941658131" RegularExpression="\A.{15}14:26E4">
-                                <Actions>
-                                  <Action OrderNumber="1" LogLevel="-1" VariableOp="SetString" VariableName="dataPhase" VariableExpression="fellruin" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Variable">
-                                    <Condition Enabled="false" Grouping="Or" />
-                                    <Conditions />
-                                  </Action>
-                                  <Action OrderNumber="2" AuraOp="DeactivateAura" AuraName="earthshaker" LogLevel="-1" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Aura">
-                                    <Condition Enabled="false" Grouping="Or" />
-                                    <Conditions />
-                                  </Action>
-                                </Actions>
-                                <Condition Enabled="false" Grouping="Or" />
-                                <Conditions />
-                              </Trigger>
-                              <Trigger Enabled="true" Name="Heavensfall Trio" Id="253b6de5-0c07-473b-bd8b-403dc34774a1" RegularExpression="\A.{15}14:26E5">
-                                <Actions>
-                                  <Action OrderNumber="1" LogLevel="-1" VariableOp="SetString" VariableName="dataPhase" VariableExpression="heavensfall" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Variable">
-                                    <Condition Enabled="false" Grouping="Or" />
-                                    <Conditions />
-                                  </Action>
-                                  <Action OrderNumber="2" AuraOp="DeactivateAura" AuraName="earthshaker" LogLevel="-1" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Aura">
-                                    <Condition Enabled="false" Grouping="Or" />
-                                    <Conditions />
-                                  </Action>
-                                  <Action OrderNumber="3" TextAuraEffect="Bold" TextAuraFontSize="18" TextAuraForeground="#22BB22" TextAuraOutline="Black" TextAuraName="trioText" TextAuraExpression="If Nael middle, X split (quadrants)" TextAuraXIniExpression="0" TextAuraYIniExpression="500" TextAuraWIniExpression="${_screenwidth}" TextAuraHIniExpression="100" TextAuraOIniExpression="100" TextAuraTTLTickExpression="10-${_since}" TextAuraUseOutline="True" TextAuraFontName="Microsoft Sans Serif" ActionType="TextAura">
-                                    <Condition Enabled="true" Grouping="And">
-                                      <ConditionSingle Enabled="true" ExpressionL="hex2dec(${id})-${var:decOffset}" ExpressionTypeL="Numeric" ExpressionR="hex2dec(004F)" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
-                                    </Condition>
-                                    <Conditions />
-                                  </Action>
-                                </Actions>
-                                <Condition Enabled="false" Grouping="Or" />
-                                <Conditions />
-                              </Trigger>
-                              <Trigger Enabled="true" Name="Tenstrike Trio" Id="c4be5278-f82d-43bc-936b-4d048d23c135" RegularExpression="\A.{15}14:26E6">
-                                <Actions>
-                                  <Action OrderNumber="1" LogLevel="-1" VariableOp="SetString" VariableName="dataPhase" VariableExpression="tenstrike" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Variable">
-                                    <Condition Enabled="false" Grouping="Or" />
-                                    <Conditions />
-                                  </Action>
-                                </Actions>
-                                <Condition Enabled="false" Grouping="Or" />
-                                <Conditions />
-                              </Trigger>
-                              <Trigger Enabled="true" Name="Grand Octet" Id="0effbe33-9e68-47c4-86c3-1c50409854f5" RegularExpression="\A.{15}14:26E7">
-                                <Actions>
-                                  <Action OrderNumber="1" LogLevel="-1" VariableOp="SetString" VariableName="dataPhase" VariableExpression="octet" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Variable">
-                                    <Condition Enabled="false" Grouping="Or" />
-                                    <Conditions />
-                                  </Action>
-                                  <Action OrderNumber="2" AuraOp="DeactivateAura" AuraName="earthshaker" LogLevel="-1" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Aura">
-                                    <Condition Enabled="false" Grouping="Or" />
-                                    <Conditions />
-                                  </Action>
-                                  <Action OrderNumber="3" TextAuraEffect="Bold" TextAuraFontSize="18" TextAuraForeground="#22BB22" TextAuraOutline="Black" TextAuraName="trioText" TextAuraExpression="Bahamut: Cardinal (move CCW), Intercardinal (move CW)" TextAuraXIniExpression="0" TextAuraYIniExpression="500" TextAuraWIniExpression="${_screenwidth}" TextAuraHIniExpression="100" TextAuraOIniExpression="100" TextAuraTTLTickExpression="10-${_since}" TextAuraUseOutline="True" TextAuraFontName="Microsoft Sans Serif" ActionType="TextAura">
-                                    <Condition Enabled="false" Grouping="And" />
-                                    <Conditions />
-                                  </Action>
-                                </Actions>
-                                <Condition Enabled="false" Grouping="Or" />
-                                <Conditions />
-                              </Trigger>
-                            </Triggers>
-                          </Folder>
-                          <Folder Id="dc8cf722-8b75-41ed-b2d4-6cb0394564dc" Name="Debuff" Enabled="true">
-                            <Folders />
-                            <Triggers>
-                              <Trigger Enabled="true" Name="Firescorched" Id="f98b04bb-adfb-456e-a03f-17bc0834c311" RegularExpression="1[AE]:[A-F0-9]{8}:(?&lt;player&gt;(?&lt;name&gt;[\w-']+) [\w-']+) (?&lt;effect&gt;gains|loses) the effect of Firescorched">
-                                <Actions>
-                                  <Action OrderNumber="1" VariableName="fireDebuff" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Variable">
-                                    <Condition Enabled="true" Grouping="And">
-                                      <ConditionSingle Enabled="true" ExpressionL="${effect}" ExpressionTypeL="String" ExpressionR="loses" ExpressionTypeR="String" ConditionType="StringEqualCase" />
-                                    </Condition>
-                                    <Conditions />
-                                  </Action>
-                                  <Action OrderNumber="2" VariableOp="SetString" VariableName="fireDebuff" VariableExpression="true" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Variable">
-                                    <Condition Enabled="true" Grouping="And">
-                                      <ConditionSingle Enabled="true" ExpressionL="${effect}" ExpressionTypeL="String" ExpressionR="gains" ExpressionTypeR="String" ConditionType="StringEqualCase" />
-                                    </Condition>
-                                    <Conditions />
-                                  </Action>
-                                </Actions>
-                                <Condition Enabled="true" Grouping="Or">
-                                  <ConditionSingle Enabled="true" ExpressionL="${player}" ExpressionTypeL="String" ExpressionR="${_ffxivplayer}" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
-                                </Condition>
-                                <Conditions />
-                              </Trigger>
-                              <Trigger Enabled="true" Name="Icebitten" Id="ba7fe758-3cf2-4514-b7df-2f1d6a19c182" RegularExpression="1[AE]:[A-F0-9]{8}:(?&lt;player&gt;(?&lt;name&gt;[\w-']+) [\w-']+) (?&lt;effect&gt;gains|loses) the effect of Icebitten">
-                                <Actions>
-                                  <Action OrderNumber="1" VariableName="iceDebuff" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Variable">
-                                    <Condition Enabled="true" Grouping="And">
-                                      <ConditionSingle Enabled="true" ExpressionL="${effect}" ExpressionTypeL="String" ExpressionR="loses" ExpressionTypeR="String" ConditionType="StringEqualCase" />
-                                    </Condition>
-                                    <Conditions />
-                                  </Action>
-                                  <Action OrderNumber="2" VariableOp="SetString" VariableName="iceDebuff" VariableExpression="true" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Variable">
-                                    <Condition Enabled="true" Grouping="And">
-                                      <ConditionSingle Enabled="true" ExpressionL="${effect}" ExpressionTypeL="String" ExpressionR="gains" ExpressionTypeR="String" ConditionType="StringEqualCase" />
-                                    </Condition>
-                                    <Conditions />
-                                  </Action>
-                                </Actions>
-                                <Condition Enabled="true" Grouping="Or">
-                                  <ConditionSingle Enabled="true" ExpressionL="${player}" ExpressionTypeL="String" ExpressionR="${_ffxivplayer}" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
-                                </Condition>
-                                <Conditions />
-                              </Trigger>
-                            </Triggers>
-                          </Folder>
-                          <Folder Id="0f28bbcf-be50-47ae-b333-d2906bdcb219" Name="Dragons" Enabled="true">
-                            <Folders>
-                              <Folder Id="4cd7a26b-1d33-40b6-a166-3aff7d3b1485" Name="Direction" Enabled="true">
-                                <Folders />
-                                <Triggers>
-                                  <Trigger Enabled="true" Sequential="True" Name="Thunderwing" Id="16eba98a-59aa-4f8a-a153-13cc0e7edbca" RegularExpression=":(?&lt;aID&gt;[0-9A-F]{8}):Thunderwing:26C7:" RefirePeriodExpression="1000">
-                                    <Actions>
-                                      <Action OrderNumber="1" ListVariableOp="Push" ListVariableName="seenDragon" ListVariableExpression="Thunderwing" LogLevel="-1" VariableOp="SetString" VariableName="seenThunderwing" VariableExpression="true" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="ListVariable">
-                                        <Condition Enabled="false" Grouping="Or" />
-                                        <Conditions />
-                                      </Action>
-                                      <Action OrderNumber="2" ListVariableOp="Push" ListVariableName="dragonMap" ListVariableExpression="N" ListVariableIndex="1" LogLevel="-1" TableVariableOp="Set" TableVariableExpressionType="Numeric" TableVariableName="dragonMap" TableVariableExpression="1" TableVariableX="2" TableVariableY="(round(4 - 4 * arctan2(${_ffxiventity[${aID}].x},${_ffxiventity[${aID}].y)}) / pi) % 8)+1" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="TableVariable">
-                                        <Condition Enabled="false" Grouping="Or" />
-                                        <Conditions />
-                                      </Action>
-                                    </Actions>
-                                    <Condition Enabled="true" Grouping="And">
-                                      <ConditionSingle Enabled="true" ExpressionL="${evar:dataPhase}" ExpressionTypeL="Numeric" ExpressionR="0" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
-                                      <ConditionSingle Enabled="true" ExpressionL="${lvar:seenDragon.indexof(Thunderwing)}" ExpressionTypeL="Numeric" ExpressionR="0" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
-                                    </Condition>
-                                    <Conditions />
-                                  </Trigger>
-                                  <Trigger Enabled="true" Sequential="True" Name="Tail of Darkness" Id="b13e7d0e-edc1-4f6d-aa3a-aa14eea00f77" RegularExpression=":(?&lt;aID&gt;[0-9A-F]{8}):Tail Of Darkness:26C9:" RefirePeriodExpression="1000">
-                                    <Actions>
-                                      <Action OrderNumber="1" ListVariableOp="Push" ListVariableName="seenDragon" ListVariableExpression="Tail Of Darkness" LogLevel="-1" VariableOp="SetString" VariableName="seenTailOfDarkness" VariableExpression="true" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="ListVariable">
-                                        <Condition Enabled="false" Grouping="Or" />
-                                        <Conditions />
-                                      </Action>
-                                      <Action OrderNumber="2" ListVariableOp="Push" ListVariableName="dragonMap" ListVariableExpression="N" ListVariableIndex="1" LogLevel="-1" TableVariableOp="Set" TableVariableExpressionType="Numeric" TableVariableName="dragonMap" TableVariableExpression="1" TableVariableX="2" TableVariableY="(round(4 - 4 * arctan2(${_ffxiventity[${aID}].x},${_ffxiventity[${aID}].y)}) / pi) % 8)+1" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="TableVariable">
-                                        <Condition Enabled="false" Grouping="Or" />
-                                        <Conditions />
-                                      </Action>
-                                    </Actions>
-                                    <Condition Enabled="true" Grouping="And">
-                                      <ConditionSingle Enabled="true" ExpressionL="${evar:dataPhase}" ExpressionTypeL="Numeric" ExpressionR="0" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
-                                      <ConditionSingle Enabled="true" ExpressionL="${lvar:seenDragon.indexof(Tail Of Darkness)}" ExpressionTypeL="Numeric" ExpressionR="0" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
-                                    </Condition>
-                                    <Conditions />
-                                  </Trigger>
-                                  <Trigger Enabled="true" Sequential="True" Name="Iceclaw" Id="974925c6-de5c-4fa8-8c01-24ec74bbbcc3" RegularExpression=":(?&lt;aID&gt;[0-9A-F]{8}):Iceclaw:26C6:" RefirePeriodExpression="1000">
-                                    <Actions>
-                                      <Action OrderNumber="0" ListVariableOp="Push" ListVariableName="seenDragon" ListVariableExpression="Iceclaw" LogLevel="-1" VariableOp="SetString" VariableName="seenIceclaw" VariableExpression="true" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="ListVariable">
-                                        <Condition Enabled="false" Grouping="Or" />
-                                        <Conditions />
-                                      </Action>
-                                      <Action OrderNumber="2" ListVariableOp="Push" ListVariableName="dragonMap" ListVariableExpression="N" ListVariableIndex="1" LogLevel="-1" TableVariableOp="Set" TableVariableExpressionType="Numeric" TableVariableName="dragonMap" TableVariableExpression="1" TableVariableX="2" TableVariableY="(round(4 - 4 * arctan2(${_ffxiventity[${aID}].x},${_ffxiventity[${aID}].y)}) / pi) % 8)+1" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="TableVariable">
-                                        <Condition Enabled="false" Grouping="Or" />
-                                        <Conditions />
-                                      </Action>
-                                    </Actions>
-                                    <Condition Enabled="true" Grouping="And">
-                                      <ConditionSingle Enabled="true" ExpressionL="${evar:dataPhase}" ExpressionTypeL="Numeric" ExpressionR="0" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
-                                      <ConditionSingle Enabled="true" ExpressionL="${lvar:seenDragon.indexof(Iceclaw)}" ExpressionTypeL="Numeric" ExpressionR="0" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
-                                    </Condition>
-                                    <Conditions />
-                                  </Trigger>
-                                  <Trigger Enabled="true" Sequential="True" Name="Firehorn" Id="97a4902b-6a88-4af5-8573-7df0444e6a94" RegularExpression=":(?&lt;aID&gt;[0-9A-F]{8}):Firehorn:26C5:" RefirePeriodExpression="1000">
-                                    <Actions>
-                                      <Action OrderNumber="1" ListVariableOp="Push" ListVariableName="seenDragon" ListVariableExpression="Firehorn" LogLevel="-1" VariableOp="SetString" VariableName="seen" VariableExpression="true" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="ListVariable">
-                                        <Condition Enabled="false" Grouping="Or" />
-                                        <Conditions />
-                                      </Action>
-                                      <Action OrderNumber="2" ListVariableOp="Push" ListVariableName="dragonMap" ListVariableExpression="N" ListVariableIndex="1" LogLevel="-1" TableVariableOp="Set" TableVariableExpressionType="Numeric" TableVariableName="dragonMap" TableVariableExpression="1" TableVariableX="2" TableVariableY="(round(4 - 4 * arctan2(${_ffxiventity[${aID}].x},${_ffxiventity[${aID}].y)}) / pi) % 8)+1" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="TableVariable">
-                                        <Condition Enabled="false" Grouping="Or" />
-                                        <Conditions />
-                                      </Action>
-                                    </Actions>
-                                    <Condition Enabled="true" Grouping="And">
-                                      <ConditionSingle Enabled="true" ExpressionL="${evar:dataPhase}" ExpressionTypeL="Numeric" ExpressionR="0" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
-                                      <ConditionSingle Enabled="true" ExpressionL="${lvar:seenDragon.indexof(Firehorn)}" ExpressionTypeL="Numeric" ExpressionR="0" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
-                                    </Condition>
-                                    <Conditions />
-                                  </Trigger>
-                                  <Trigger Enabled="true" Sequential="True" Name="Fang of Light" Id="a3cfdd5f-1f81-4b52-b26d-45114e4e07b8" RegularExpression=":(?&lt;aID&gt;[0-9A-F]{8}):Fang Of Light:26CA:" RefirePeriodExpression="1000">
-                                    <Actions>
-                                      <Action OrderNumber="1" ListVariableOp="Push" ListVariableName="seenDragon" ListVariableExpression="Fang Of Light" LogLevel="-1" VariableOp="SetString" VariableName="seenFangOfLight" VariableExpression="true" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="ListVariable">
-                                        <Condition Enabled="false" Grouping="Or" />
-                                        <Conditions />
-                                      </Action>
-                                      <Action OrderNumber="2" ListVariableOp="Push" ListVariableName="dragonMap" ListVariableExpression="N" ListVariableIndex="1" LogLevel="-1" TableVariableOp="Set" TableVariableExpressionType="Numeric" TableVariableName="dragonMap" TableVariableExpression="1" TableVariableX="2" TableVariableY="(round(4 - 4 * arctan2(${_ffxiventity[${aID}].x},${_ffxiventity[${aID}].y)}) / pi) % 8)+1" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="TableVariable">
-                                        <Condition Enabled="false" Grouping="Or" />
-                                        <Conditions />
-                                      </Action>
-                                    </Actions>
-                                    <Condition Enabled="true" Grouping="And">
-                                      <ConditionSingle Enabled="true" ExpressionL="${evar:dataPhase}" ExpressionTypeL="Numeric" ExpressionR="0" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
-                                      <ConditionSingle Enabled="true" ExpressionL="${lvar:seenDragon.indexof(Fang Of Light)}" ExpressionTypeL="Numeric" ExpressionR="0" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
-                                    </Condition>
-                                    <Conditions />
-                                  </Trigger>
-                                </Triggers>
-                              </Folder>
-                            </Folders>
-                            <Triggers>
-                              <Trigger Enabled="true" Sequential="True" Name="Map" Id="cb513443-e292-4b8d-a8f1-2afba1fb2565" RegularExpression=":Ragnarok:26B8:">
-                                <Actions>
-                                  <Action OrderNumber="1" ListVariableOp="Push" ListVariableName="dragonMap" ListVariableExpression="N" ListVariableIndex="1" LogLevel="-1" TableVariableOp="Set" TableVariableName="dragonMap" TableVariableExpression="N" TableVariableX="1" TableVariableY="1" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="TableVariable">
-                                    <Condition Enabled="false" Grouping="Or" />
-                                    <Conditions />
-                                  </Action>
-                                  <Action OrderNumber="2" ListVariableOp="Push" ListVariableName="dragonMap" ListVariableExpression="N" ListVariableIndex="1" LogLevel="-1" TableVariableOp="Set" TableVariableExpressionType="Numeric" TableVariableName="dragonMap" TableVariableExpression="0" TableVariableX="2" TableVariableY="1" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="TableVariable">
-                                    <Condition Enabled="false" Grouping="Or" />
-                                    <Conditions />
-                                  </Action>
-                                  <Action OrderNumber="3" ListVariableOp="Push" ListVariableName="dragonMap" ListVariableExpression="NE" ListVariableIndex="2" LogLevel="-1" TableVariableOp="Set" TableVariableName="dragonMap" TableVariableExpression="NE" TableVariableX="1" TableVariableY="2" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="TableVariable">
-                                    <Condition Enabled="false" Grouping="Or" />
-                                    <Conditions />
-                                  </Action>
-                                  <Action OrderNumber="4" ListVariableOp="Push" ListVariableName="dragonMap" ListVariableExpression="NE" ListVariableIndex="2" LogLevel="-1" TableVariableOp="Set" TableVariableExpressionType="Numeric" TableVariableName="dragonMap" TableVariableExpression="0" TableVariableX="2" TableVariableY="2" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="TableVariable">
-                                    <Condition Enabled="false" Grouping="Or" />
-                                    <Conditions />
-                                  </Action>
-                                  <Action OrderNumber="5" ListVariableOp="Push" ListVariableName="dragonMap" ListVariableExpression="E" ListVariableIndex="3" LogLevel="-1" TableVariableOp="Set" TableVariableName="dragonMap" TableVariableExpression="E" TableVariableX="1" TableVariableY="3" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="TableVariable">
-                                    <Condition Enabled="false" Grouping="Or" />
-                                    <Conditions />
-                                  </Action>
-                                  <Action OrderNumber="6" ListVariableOp="Push" ListVariableName="dragonMap" ListVariableExpression="E" ListVariableIndex="3" LogLevel="-1" TableVariableOp="Set" TableVariableExpressionType="Numeric" TableVariableName="dragonMap" TableVariableExpression="0" TableVariableX="2" TableVariableY="3" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="TableVariable">
-                                    <Condition Enabled="false" Grouping="Or" />
-                                    <Conditions />
-                                  </Action>
-                                  <Action OrderNumber="7" ListVariableOp="Push" ListVariableName="dragonMap" ListVariableExpression="SE" ListVariableIndex="4" LogLevel="-1" TableVariableOp="Set" TableVariableName="dragonMap" TableVariableExpression="SE" TableVariableX="1" TableVariableY="4" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="TableVariable">
-                                    <Condition Enabled="false" Grouping="Or" />
-                                    <Conditions />
-                                  </Action>
-                                  <Action OrderNumber="8" ListVariableOp="Push" ListVariableName="dragonMap" ListVariableExpression="SE" ListVariableIndex="4" LogLevel="-1" TableVariableOp="Set" TableVariableExpressionType="Numeric" TableVariableName="dragonMap" TableVariableExpression="0" TableVariableX="2" TableVariableY="4" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="TableVariable">
-                                    <Condition Enabled="false" Grouping="Or" />
-                                    <Conditions />
-                                  </Action>
-                                  <Action OrderNumber="9" ListVariableOp="Push" ListVariableName="dragonMap" ListVariableExpression="S" ListVariableIndex="5" LogLevel="-1" TableVariableOp="Set" TableVariableName="dragonMap" TableVariableExpression="S" TableVariableX="1" TableVariableY="5" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="TableVariable">
-                                    <Condition Enabled="false" Grouping="Or" />
-                                    <Conditions />
-                                  </Action>
-                                  <Action OrderNumber="10" ListVariableOp="Push" ListVariableName="dragonMap" ListVariableExpression="S" ListVariableIndex="5" LogLevel="-1" TableVariableOp="Set" TableVariableExpressionType="Numeric" TableVariableName="dragonMap" TableVariableExpression="0" TableVariableX="2" TableVariableY="5" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="TableVariable">
-                                    <Condition Enabled="false" Grouping="Or" />
-                                    <Conditions />
-                                  </Action>
-                                  <Action OrderNumber="11" ListVariableOp="Push" ListVariableName="dragonMap" ListVariableExpression="S" ListVariableIndex="5" LogLevel="-1" TableVariableOp="Set" TableVariableName="dragonMap" TableVariableExpression="SW" TableVariableX="1" TableVariableY="6" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="TableVariable">
-                                    <Condition Enabled="false" Grouping="Or" />
-                                    <Conditions />
-                                  </Action>
-                                  <Action OrderNumber="12" ListVariableOp="Push" ListVariableName="dragonMap" ListVariableExpression="S" ListVariableIndex="5" LogLevel="-1" TableVariableOp="Set" TableVariableExpressionType="Numeric" TableVariableName="dragonMap" TableVariableExpression="0" TableVariableX="2" TableVariableY="6" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="TableVariable">
-                                    <Condition Enabled="false" Grouping="Or" />
-                                    <Conditions />
-                                  </Action>
-                                  <Action OrderNumber="13" ListVariableOp="Push" ListVariableName="dragonMap" ListVariableExpression="S" ListVariableIndex="5" LogLevel="-1" TableVariableOp="Set" TableVariableName="dragonMap" TableVariableExpression="W" TableVariableX="1" TableVariableY="7" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="TableVariable">
-                                    <Condition Enabled="false" Grouping="Or" />
-                                    <Conditions />
-                                  </Action>
-                                  <Action OrderNumber="14" ListVariableOp="Push" ListVariableName="dragonMap" ListVariableExpression="S" ListVariableIndex="5" LogLevel="-1" TableVariableOp="Set" TableVariableExpressionType="Numeric" TableVariableName="dragonMap" TableVariableExpression="0" TableVariableX="2" TableVariableY="7" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="TableVariable">
-                                    <Condition Enabled="false" Grouping="Or" />
-                                    <Conditions />
-                                  </Action>
-                                  <Action OrderNumber="15" ListVariableOp="Push" ListVariableName="dragonMap" ListVariableExpression="S" ListVariableIndex="5" LogLevel="-1" TableVariableOp="Set" TableVariableName="dragonMap" TableVariableExpression="NW" TableVariableX="1" TableVariableY="8" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="TableVariable">
-                                    <Condition Enabled="false" Grouping="Or" />
-                                    <Conditions />
-                                  </Action>
-                                  <Action OrderNumber="16" ListVariableOp="Push" ListVariableName="dragonMap" ListVariableExpression="S" ListVariableIndex="5" LogLevel="-1" TableVariableOp="Set" TableVariableExpressionType="Numeric" TableVariableName="dragonMap" TableVariableExpression="0" TableVariableX="2" TableVariableY="8" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="TableVariable">
-                                    <Condition Enabled="false" Grouping="Or" />
-                                    <Conditions />
-                                  </Action>
-                                </Actions>
-                                <Condition Enabled="true" Grouping="Or">
-                                  <ConditionSingle Enabled="true" ExpressionL="${elvar:dragonMap}" ExpressionTypeL="Numeric" ExpressionR="0" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
-                                </Condition>
-                                <Conditions />
-                              </Trigger>
-                              <Trigger Enabled="true" Sequential="True" Name="Dive" Id="53d41883-add2-4934-9d05-eb06092d3399" RegularExpression="1B:[0-9A-F]{8}:(?&lt;player&gt;(?&lt;name&gt;[\w-']+) [\w-']+):.{4}:.{4}:0014:">
-                                <Actions>
-                                  <Action OrderNumber="1" LogLevel="-1" VariableOp="SetNumeric" VariableName="diveMarkCount" VariableExpression="${var:diveMarkCount}+1" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Variable">
-                                    <Condition Enabled="false" Grouping="Or" />
-                                    <Conditions />
-                                  </Action>
-                                  <Action OrderNumber="2" LogLevel="-1" UseTTSTextExpression="Dive ${var:diveMarkCount}" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="UseTTS">
-                                    <Condition Enabled="true" Grouping="Or">
-                                      <ConditionSingle Enabled="true" ExpressionL="${player}" ExpressionTypeL="String" ExpressionR="${_ffxivplayer}" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
-                                    </Condition>
-                                    <Conditions />
-                                  </Action>
-                                  <Action OrderNumber="3" LogLevel="-1" UseTTSTextExpression="outside intercardinal" TextAuraEffect="Bold" TextAuraFontSize="24" TextAuraForeground="#FFBB00" TextAuraOutline="Black" TextAuraName="diveDirection" TextAuraExpression="Dive #${var:diveMarkCount}: ${lvar:dragonMap[${lvar:naelDragons[2]}])" TextAuraXIniExpression="0" TextAuraYIniExpression="${var:naelY}+64" TextAuraWIniExpression="${_screenwidth}" TextAuraHIniExpression="64" TextAuraOIniExpression="100" TextAuraTTLTickExpression="3-${_since}" TextAuraUseOutline="True" TextAuraFontName="Microsoft Sans Serif" Enabled="False" ActionType="TextAura">
-                                    <Condition Enabled="true" Grouping="And">
-                                      <ConditionSingle Enabled="true" ExpressionL="${player}" ExpressionTypeL="String" ExpressionR="${_ffxivplayer}" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
-                                      <ConditionSingle Enabled="true" ExpressionL="${var:diveMarkCount}" ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
-                                    </Condition>
-                                    <Conditions />
-                                  </Action>
-                                  <Action OrderNumber="4" LogLevel="-1" UseTTSTextExpression="outside intercardinal" TextAuraEffect="Bold" TextAuraFontSize="24" TextAuraForeground="#FFBB00" TextAuraOutline="Black" TextAuraName="diveDirection" TextAuraExpression="Dive #${var:diveMarkCount}: ${lvar:dragonMap[${lvar:naelDragons[3]}])" TextAuraXIniExpression="0" TextAuraYIniExpression="${var:naelY}+64" TextAuraWIniExpression="${_screenwidth}" TextAuraHIniExpression="64" TextAuraOIniExpression="100" TextAuraTTLTickExpression="3-${_since}" TextAuraUseOutline="True" TextAuraFontName="Microsoft Sans Serif" Enabled="False" ActionType="TextAura">
-                                    <Condition Enabled="true" Grouping="And">
-                                      <ConditionSingle Enabled="true" ExpressionL="${player}" ExpressionTypeL="String" ExpressionR="${_ffxivplayer}" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
-                                      <ConditionSingle Enabled="true" ExpressionL="${var:diveMarkCount}" ExpressionTypeL="Numeric" ExpressionR="2" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
-                                    </Condition>
-                                    <Conditions />
-                                  </Action>
-                                  <Action OrderNumber="5" LogLevel="-1" UseTTSTextExpression="outside intercardinal" TextAuraEffect="Bold" TextAuraFontSize="24" TextAuraForeground="#FFBB00" TextAuraOutline="Black" TextAuraName="diveDirection" TextAuraExpression="Dive #${var:diveMarkCount}: ${lvar:dragonMap[${lvar:naelDragons[5]}])" TextAuraXIniExpression="0" TextAuraYIniExpression="${var:naelY}+64" TextAuraWIniExpression="${_screenwidth}" TextAuraHIniExpression="64" TextAuraOIniExpression="100" TextAuraTTLTickExpression="3-${_since}" TextAuraUseOutline="True" TextAuraFontName="Microsoft Sans Serif" Enabled="False" ActionType="TextAura">
-                                    <Condition Enabled="true" Grouping="And">
-                                      <ConditionSingle Enabled="true" ExpressionL="${player}" ExpressionTypeL="String" ExpressionR="${_ffxivplayer}" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
-                                      <ConditionSingle Enabled="true" ExpressionL="${var:diveMarkCount}" ExpressionTypeL="Numeric" ExpressionR="3" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
-                                    </Condition>
-                                    <Conditions />
-                                  </Action>
-                                </Actions>
-                                <Condition Enabled="true" Grouping="Or">
-                                  <ConditionSingle Enabled="true" ExpressionL="${evar:dataPhase}" ExpressionTypeL="Numeric" ExpressionR="0" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
-                                </Condition>
-                                <Conditions />
-                              </Trigger>
-                              <Trigger Enabled="true" Sequential="True" Name="Placement" Id="dd0d0268-fd0d-4f4e-841a-cf34b5c37174" RegularExpression="\A.{15}14:26B6">
-                                <Actions>
-                                  <Action OrderNumber="1" AuraName="mapCircle" AuraImage="${var:imagePath}ucob\mapcircle.png" AuraXIniExpression="${var:naelDebuffX}" AuraYIniExpression="${var:naelDebuffY}" AuraWIniExpression="200" AuraHIniExpression="200" AuraOIniExpression="${var:naelDebuffOpacity}" AuraTTLTickExpression="20-${_since}" VariableOp="SetString" VariableName="fate" VariableExpression="a" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Aura" Description="Divebomb Circle (Move me!) | Toggle to enable/disable images" DescriptionOverride="True">
-                                    <Condition Enabled="false" Grouping="Or" />
-                                    <Conditions />
-                                  </Action>
-                                  <Action OrderNumber="2" AuraName="dragonN" AuraImage="${var:imagePath}ucob\blackdot.png" AuraXIniExpression="${_imageaura[mapCircle].x}+92.5" AuraYIniExpression="${_imageaura[mapCircle].y}" AuraWIniExpression="15" AuraHIniExpression="15" AuraOIniExpression="100" AuraTTLTickExpression="20-${_since}" LogLevel="-1" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Aura" Description="Show North Dragon" DescriptionOverride="True">
-                                    <Condition Enabled="true" Grouping="Or">
-                                      <ConditionSingle Enabled="true" ExpressionL="${tvarrl:dragonMap[N][1]}" ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="String" ConditionType="NumericEqual" />
-                                    </Condition>
-                                    <Conditions />
-                                  </Action>
-                                  <Action OrderNumber="3" AuraName="dragonNE" AuraImage="${var:imagePath}ucob\blackdot.png" AuraXIniExpression="${_imageaura[mapCircle].x}+158" AuraYIniExpression="${_imageaura[mapCircle].y}+27" AuraWIniExpression="15" AuraHIniExpression="15" AuraOIniExpression="100" AuraTTLTickExpression="20-${_since}" LogLevel="-1" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Aura" Description="Show Northeast Dragon" DescriptionOverride="True">
-                                    <Condition Enabled="true" Grouping="Or">
-                                      <ConditionSingle Enabled="true" ExpressionL="${tvarrl:dragonMap[NE][1]}" ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
-                                    </Condition>
-                                    <Conditions />
-                                  </Action>
-                                  <Action OrderNumber="4" AuraName="dragonE" AuraImage="${var:imagePath}ucob\blackdot.png" AuraXIniExpression="${_imageaura[mapCircle].x}+185" AuraYIniExpression="${_imageaura[mapCircle].y}+92.5" AuraWIniExpression="15" AuraHIniExpression="15" AuraOIniExpression="100" AuraTTLTickExpression="20-${_since}" LogLevel="-1" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Aura" Description="Show East Dragon" DescriptionOverride="True">
-                                    <Condition Enabled="true" Grouping="Or">
-                                      <ConditionSingle Enabled="true" ExpressionL="${tvarrl:dragonMap[E][1]}" ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
-                                    </Condition>
-                                    <Conditions />
-                                  </Action>
-                                  <Action OrderNumber="5" AuraName="dragonSE" AuraImage="${var:imagePath}ucob\blackdot.png" AuraXIniExpression="${_imageaura[mapCircle].x}+158" AuraYIniExpression="${_imageaura[mapCircle].y}+158" AuraWIniExpression="15" AuraHIniExpression="15" AuraOIniExpression="100" AuraTTLTickExpression="20-${_since}" LogLevel="-1" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Aura" Description="Show Southeast Dragon" DescriptionOverride="True">
-                                    <Condition Enabled="true" Grouping="Or">
-                                      <ConditionSingle Enabled="true" ExpressionL="${tvarrl:dragonMap[SE][1]}" ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
-                                    </Condition>
-                                    <Conditions />
-                                  </Action>
-                                  <Action OrderNumber="6" AuraName="dragonS" AuraImage="${var:imagePath}ucob\blackdot.png" AuraXIniExpression="${_imageaura[mapCircle].x}+92.5" AuraYIniExpression="${_imageaura[mapCircle].y}+185" AuraWIniExpression="15" AuraHIniExpression="15" AuraOIniExpression="100" AuraTTLTickExpression="20-${_since}" LogLevel="-1" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Aura" Description="Show South Dragon" DescriptionOverride="True">
-                                    <Condition Enabled="true" Grouping="Or">
-                                      <ConditionSingle Enabled="true" ExpressionL="${tvarrl:dragonMap[S][1]}" ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
-                                    </Condition>
-                                    <Conditions />
-                                  </Action>
-                                  <Action OrderNumber="7" AuraName="dragonSW" AuraImage="${var:imagePath}ucob\blackdot.png" AuraXIniExpression="${_imageaura[mapCircle].x}+27" AuraYIniExpression="${_imageaura[mapCircle].y}+158" AuraWIniExpression="15" AuraHIniExpression="15" AuraOIniExpression="100" AuraTTLTickExpression="20-${_since}" LogLevel="-1" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Aura" Description="Show Southwest Dragon" DescriptionOverride="True">
-                                    <Condition Enabled="true" Grouping="Or">
-                                      <ConditionSingle Enabled="true" ExpressionL="${tvarrl:dragonMap[SW][1]}" ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
-                                    </Condition>
-                                    <Conditions />
-                                  </Action>
-                                  <Action OrderNumber="8" AuraName="dragonW" AuraImage="${var:imagePath}ucob\blackdot.png" AuraXIniExpression="${_imageaura[mapCircle].x}" AuraYIniExpression="${_imageaura[mapCircle].y}+92.5" AuraWIniExpression="15" AuraHIniExpression="15" AuraOIniExpression="100" AuraTTLTickExpression="20-${_since}" LogLevel="-1" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Aura" Description="Show West Dragon" DescriptionOverride="True">
-                                    <Condition Enabled="true" Grouping="Or">
-                                      <ConditionSingle Enabled="true" ExpressionL="${tvarrl:dragonMap[W][1]}" ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
-                                    </Condition>
-                                    <Conditions />
-                                  </Action>
-                                  <Action OrderNumber="9" AuraName="dragonNW" AuraImage="${var:imagePath}ucob\blackdot.png" AuraXIniExpression="${_imageaura[mapCircle].x}+27" AuraYIniExpression="${_imageaura[mapCircle].y}+27" AuraWIniExpression="15" AuraHIniExpression="15" AuraOIniExpression="100" AuraTTLTickExpression="20-${_since}" LogLevel="-1" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Aura" Description="Show Northwest Dragon" DescriptionOverride="True">
-                                    <Condition Enabled="true" Grouping="Or">
-                                      <ConditionSingle Enabled="true" ExpressionL="${tvarrl:dragonMap[NW][1]}" ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
-                                    </Condition>
-                                    <Conditions />
-                                  </Action>
-                                  <Action OrderNumber="10" LogLevel="-1" VariableOp="SetString" VariableName="calledNaelDragons" VariableExpression="true" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Variable">
-                                    <Condition Enabled="false" Grouping="Or" />
-                                    <Conditions />
-                                  </Action>
-                                </Actions>
-                                <Condition Enabled="true" Grouping="And">
-                                  <ConditionSingle Enabled="true" ExpressionL="${evar:dataPhase}" ExpressionTypeL="Numeric" ExpressionR="0" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
-                                  <ConditionSingle Enabled="true" ExpressionL="${evar:calledNaelDragons}" ExpressionTypeL="Numeric" ExpressionR="0" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
-                                </Condition>
-                                <Conditions />
-                              </Trigger>
-                            </Triggers>
-                          </Folder>
-                        </Folders>
-                        <Triggers />
-                      </Folder>
-                    </Folders>
+                    <Folders />
                     <Triggers>
                       <Trigger Enabled="true" Name="RP01 - RDive Dynamo" Id="e7833507-fc21-46ea-b0fc-2afbf0a7b8d4" RegularExpression="\A.{40}From on high I descend, the hallowed moon to call.*?">
                         <Actions>
@@ -15929,21 +15511,21 @@
                             </Condition>
                             <Conditions />
                           </Action>
-                          <Action OrderNumber="2" LogLevel="-1" UseTTSTextExpression="outside intercardinal" TextAuraEffect="Bold" TextAuraFontSize="24" TextAuraForeground="Red" TextAuraOutline="Black" TextAuraName="doomText" TextAuraExpression="Doom #1" TextAuraXIniExpression="0" TextAuraYIniExpression="(${_screenheight}/2)+64" TextAuraWIniExpression="${_screenwidth}" TextAuraHIniExpression="64" TextAuraOIniExpression="100" TextAuraTTLTickExpression="${duration}-${_since}" TextAuraUseOutline="True" TextAuraFontName="Arial" ActionType="TextAura">
+                          <Action OrderNumber="2" LogLevel="-1" UseTTSTextExpression="outside intercardinal" TextAuraEffect="Bold" TextAuraFontSize="24" TextAuraForeground="Red" TextAuraOutline="Black" TextAuraName="doomText" TextAuraExpression="Doom #1 (${numeric:${duration}-${_since}}s)" TextAuraXIniExpression="0" TextAuraYIniExpression="(${_screenheight}/2)+64" TextAuraWIniExpression="${_screenwidth}" TextAuraHIniExpression="64" TextAuraOIniExpression="100" TextAuraTTLTickExpression="(${duration}-1)-${_since}" TextAuraUseOutline="True" TextAuraFontName="Arial" ActionType="TextAura">
                             <Condition Enabled="true" Grouping="And">
                               <ConditionSingle Enabled="true" ExpressionL="${duration}" ExpressionTypeL="String" ExpressionR="6" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
                               <ConditionSingle Enabled="true" ExpressionL="${player}" ExpressionTypeL="String" ExpressionR="${_ffxivplayer}" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
                             </Condition>
                             <Conditions />
                           </Action>
-                          <Action OrderNumber="3" LogLevel="-1" UseTTSTextExpression="outside intercardinal" TextAuraEffect="Bold" TextAuraFontSize="24" TextAuraForeground="Red" TextAuraOutline="Black" TextAuraName="doomText" TextAuraExpression="Doom #2" TextAuraXIniExpression="0" TextAuraYIniExpression="(${_screenheight}/2)+64" TextAuraWIniExpression="${_screenwidth}${_screenwidth}" TextAuraHIniExpression="64" TextAuraOIniExpression="100" TextAuraTTLTickExpression="${duration}-${_since}" TextAuraUseOutline="True" TextAuraFontName="Arial" ActionType="TextAura">
+                          <Action OrderNumber="3" LogLevel="-1" UseTTSTextExpression="outside intercardinal" TextAuraEffect="Bold" TextAuraFontSize="24" TextAuraForeground="Red" TextAuraOutline="Black" TextAuraName="doomText" TextAuraExpression="Doom #2 (${numeric:${duration}-${_since}}s)" TextAuraXIniExpression="0" TextAuraYIniExpression="(${_screenheight}/2)+64" TextAuraWIniExpression="${_screenwidth}${_screenwidth}" TextAuraHIniExpression="64" TextAuraOIniExpression="100" TextAuraTTLTickExpression="(${duration}-1)-${_since}" TextAuraUseOutline="True" TextAuraFontName="Arial" ActionType="TextAura">
                             <Condition Enabled="true" Grouping="And">
                               <ConditionSingle Enabled="true" ExpressionL="${duration}" ExpressionTypeL="String" ExpressionR="10" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
                               <ConditionSingle Enabled="true" ExpressionL="${player}" ExpressionTypeL="String" ExpressionR="${_ffxivplayer}" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
                             </Condition>
                             <Conditions />
                           </Action>
-                          <Action OrderNumber="4" LogLevel="-1" UseTTSTextExpression="outside intercardinal" TextAuraEffect="Bold" TextAuraFontSize="24" TextAuraForeground="Red" TextAuraOutline="Black" TextAuraName="doomText" TextAuraExpression="Doom #3" TextAuraXIniExpression="0" TextAuraYIniExpression="(${_screenheight}/2)+64" TextAuraWIniExpression="${_screenwidth}" TextAuraHIniExpression="64" TextAuraOIniExpression="100" TextAuraTTLTickExpression="${duration}-${_since}" TextAuraUseOutline="True" TextAuraFontName="Arial" ActionType="TextAura">
+                          <Action OrderNumber="4" LogLevel="-1" UseTTSTextExpression="outside intercardinal" TextAuraEffect="Bold" TextAuraFontSize="24" TextAuraForeground="Red" TextAuraOutline="Black" TextAuraName="doomText" TextAuraExpression="Doom #3 (${numeric:${duration}-${_since}}s)" TextAuraXIniExpression="0" TextAuraYIniExpression="(${_screenheight}/2)+64" TextAuraWIniExpression="${_screenwidth}" TextAuraHIniExpression="64" TextAuraOIniExpression="100" TextAuraTTLTickExpression="(${duration}-1)-${_since}" TextAuraUseOutline="True" TextAuraFontName="Arial" ActionType="TextAura">
                             <Condition Enabled="true" Grouping="And">
                               <ConditionSingle Enabled="true" ExpressionL="${duration}" ExpressionTypeL="String" ExpressionR="16" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
                               <ConditionSingle Enabled="true" ExpressionL="${player}" ExpressionTypeL="String" ExpressionR="${_ffxivplayer}" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
@@ -15993,130 +15575,6 @@
                             <Conditions />
                           </Action>
                           <Action OrderNumber="2" LogLevel="-1" VariableOp="UnsetRegex" VariableName="doom" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Variable">
-                            <Condition Enabled="false" Grouping="Or" />
-                            <Conditions />
-                          </Action>
-                        </Actions>
-                        <Condition Enabled="false" Grouping="Or" />
-                        <Conditions />
-                      </Trigger>
-                    </Triggers>
-                  </Folder>
-                  <Folder Id="8b9525e3-052b-4a1c-be3a-81d4f12539d2" Name="Nael Debuff UI" Enabled="true">
-                    <Folders>
-                      <Folder Id="423542e0-ea70-4c45-a50b-cc3048cf60b2" Name="Timer" Enabled="true">
-                        <Folders />
-                        <Triggers>
-                          <Trigger Enabled="true" Name="Thunderstruck" Id="e86e179f-71e9-4097-9bc4-36cd7aaac27c" RegularExpression="1A:[A-F0-9]{8}:(?&lt;player&gt;[a-zA-Z-' ]{1,31}) gains the effect of Thunderstruck from (.*?)? for (?&lt;duration&gt;[0-9]{1})\.00 Seconds" RefirePeriodExpression="1000">
-                            <Actions>
-                              <Action OrderNumber="1" LogLevel="-1" TextAuraEffect="Bold" TextAuraFontSize="24" TextAuraForeground="#FFBB00" TextAuraBackground="Black" TextAuraOutline="Black" TextAuraName="thunderTimer" TextAuraExpression="${numeric:${duration}-${_since}}" TextAuraXIniExpression="${_imageaura[naelDebuffs].x}+15" TextAuraYIniExpression="${_imageaura[naelDebuffs].y}+77" TextAuraWIniExpression="34" TextAuraHIniExpression="34" TextAuraOIniExpression="100" TextAuraTTLTickExpression="${duration}-${_since}" TextAuraUseOutline="True" TextAuraFontName="Arial" ActionType="TextAura">
-                                <Condition Enabled="false" Grouping="Or" />
-                                <Conditions />
-                              </Action>
-                            </Actions>
-                            <Condition Enabled="false" Grouping="Or" />
-                            <Conditions />
-                          </Trigger>
-                          <Trigger Enabled="true" Name="Fireball" Id="eddc125b-36bf-4c06-a256-d3c250d4a38d" RegularExpression="23:[0-9A-F]{8}:Firehorn:[0-9A-F]{8}:(?&lt;player&gt;(?&lt;name&gt;[\w-']+) [\w-']+):.{4}:.{4}:0005:">
-                            <Actions>
-                              <Action OrderNumber="1" LogLevel="-1" TextAuraEffect="Bold" TextAuraFontSize="24" TextAuraForeground="Red" TextAuraBackground="Black" TextAuraOutline="Black" TextAuraName="fireballTimer" TextAuraExpression="${numeric:5-${_since}}" TextAuraXIniExpression="${_imageaura[naelDebuffs].x}+15" TextAuraYIniExpression="${_imageaura[naelDebuffs].y}+7" TextAuraWIniExpression="34" TextAuraHIniExpression="34" TextAuraOIniExpression="100" TextAuraTTLTickExpression="5-${_since}" TextAuraUseOutline="True" TextAuraFontName="Arial" ActionType="TextAura">
-                                <Condition Enabled="false" Grouping="Or" />
-                                <Conditions />
-                              </Action>
-                            </Actions>
-                            <Condition Enabled="false" Grouping="Or" />
-                            <Conditions />
-                          </Trigger>
-                          <Trigger Enabled="true" Name="Doom" Id="a8b244ee-f296-4ae2-ba87-929127582052" RegularExpression="1A:[A-F0-9]{8}:(?&lt;player&gt;[a-zA-Z-' ]{1,31}) gains the effect of Doom from (.*?)? for (?&lt;duration&gt;[0-9]{1,2})\.00 Seconds">
-                            <Actions>
-                              <Action OrderNumber="1" LogLevel="-1" TextAuraEffect="Bold" TextAuraFontSize="20.25" TextAuraForeground="White" TextAuraBackground="Black" TextAuraOutline="Black" TextAuraName="doomTimer" TextAuraExpression="${numeric:${duration}-${_since}}" TextAuraXIniExpression="${_imageaura[naelDebuffs].x}+15" TextAuraYIniExpression="${_imageaura[naelDebuffs].y}+148" TextAuraWIniExpression="34" TextAuraHIniExpression="34" TextAuraOIniExpression="100" TextAuraTTLTickExpression="${duration}-${_since}" TextAuraUseOutline="True" TextAuraFontName="Arial" ActionType="TextAura">
-                                <Condition Enabled="false" Grouping="Or" />
-                                <Conditions />
-                              </Action>
-                            </Actions>
-                            <Condition Enabled="true" Grouping="Or">
-                              <ConditionSingle Enabled="true" ExpressionL="${player}" ExpressionTypeL="String" ExpressionR="${_ffxivplayer}" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
-                            </Condition>
-                            <Conditions />
-                          </Trigger>
-                        </Triggers>
-                      </Folder>
-                      <Folder Id="d0d335dc-2938-448e-b9d4-b4b4f4fdf5ab" Name="Reset" Enabled="true">
-                        <Folders />
-                        <Triggers>
-                          <Trigger Enabled="true" Name="Doom" Id="7ab63a87-3898-47e3-a4c6-1f1764619219" RegularExpression="1E:[A-F0-9]{8}:(?&lt;player&gt;[a-zA-Z-' ]{1,31}) loses the effect of Doom">
-                            <Actions>
-                              <Action OrderNumber="1" AuraOp="DeactivateAura" AuraName="naelDoom${player}" AuraImage="${var:imagePath}jobs\${tvarrl:UCOB[${player}][1]}.png" AuraXIniExpression="${_imageaura[naelDebuffs].x}+111" AuraYIniExpression="${_imageaura[naelDebuffs].y}+254" AuraWIniExpression="64" AuraHIniExpression="64" AuraOIniExpression="100" AuraTTLTickExpression="6-${_since}" LogLevel="-1" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Aura">
-                                <Condition Enabled="false" Grouping="Or" />
-                                <Conditions />
-                              </Action>
-                            </Actions>
-                            <Condition Enabled="false" Grouping="Or" />
-                            <Conditions />
-                          </Trigger>
-                        </Triggers>
-                      </Folder>
-                    </Folders>
-                    <Triggers>
-                      <Trigger Enabled="true" Name="# Activate" Id="8bf57b49-8a50-45e0-8d99-992a78812788" RegularExpression="\A.{15}14:26C2">
-                        <Actions>
-                          <Action OrderNumber="1" AuraName="naelDebuffs" AuraImage="${var:imagePath}ucob\naeldebuffs.png" AuraXIniExpression="${var:naelDebuffX}" AuraYIniExpression="${var:naelDebuffY}" AuraWIniExpression="256" AuraHIniExpression="204" AuraOIniExpression="${var:naelDebuffOpacity}" VariableOp="SetString" VariableName="fate" VariableExpression="a" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Aura">
-                            <Condition Enabled="false" Grouping="Or" />
-                            <Conditions />
-                          </Action>
-                        </Actions>
-                        <Condition Enabled="true" Grouping="Or">
-                          <ConditionSingle Enabled="true" ExpressionL="${evar:dataPhase}" ExpressionTypeL="Numeric" ExpressionR="0" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
-                        </Condition>
-                        <Conditions />
-                      </Trigger>
-                      <Trigger Enabled="true" Name="Fireball" Id="9877fe4f-88b2-4a45-8547-10095002f586" RegularExpression="23:[0-9A-F]{8}:Firehorn:[0-9A-F]{8}:(?&lt;player&gt;(?&lt;name&gt;[\w-']+) [\w-']+):.{4}:.{4}:0005:">
-                        <Actions>
-                          <Action OrderNumber="1" AuraName="naelFireball${player}" AuraImage="${var:imagePath}jobs\${tvarrl:UCOB[${player}][1]}.png" AuraXIniExpression="${_imageaura[naelDebuffs].x}+64" AuraYIniExpression="${_imageaura[naelDebuffs].y}" AuraWIniExpression="64" AuraHIniExpression="64" AuraOIniExpression="100" AuraTTLTickExpression="5-${_since}" LogLevel="-1" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Aura">
-                            <Condition Enabled="false" Grouping="Or" />
-                            <Conditions />
-                          </Action>
-                        </Actions>
-                        <Condition Enabled="false" Grouping="Or" />
-                        <Conditions />
-                      </Trigger>
-                      <Trigger Enabled="true" Name="Thunderstruck" Id="cf1338ec-48dd-46c1-983d-345436261a8e" RegularExpression=":Thunderwing:26C7:Chain Lightning:[0-9A-F]{8}:(?&lt;player&gt;(?&lt;name&gt;[\w-']+) [\w-']+):">
-                        <Actions>
-                          <Action OrderNumber="1" AuraName="naelThunder${player}" AuraImage="${var:imagePath}jobs\${tvarrl:UCOB[${player}][1]}.png" AuraXIniExpression="${_imageaura[naelDebuffs].x}+64+(${_imageaura[naelThunder${_ffxivparty[1].name}].w})+(${_imageaura[naelThunder${_ffxivparty[2].name}].w})+(${_imageaura[naelThunder${_ffxivparty[3].name}].w})+(${_imageaura[naelThunder${_ffxivparty[4].name}].w})+(${_imageaura[naelThunder${_ffxivparty[5].name}].w})+(${_imageaura[naelThunder${_ffxivparty[6].name}].w})+(${_imageaura[naelThunder${_ffxivparty[7].name}].w})+(${_imageaura[naelThunder${_ffxivparty[8].name}].w})" AuraYIniExpression="${_imageaura[naelDebuffs].y}+70" AuraWIniExpression="64" AuraHIniExpression="64" AuraOIniExpression="100" AuraTTLTickExpression="6-${_since}" LogLevel="-1" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Aura">
-                            <Condition Enabled="false" Grouping="Or" />
-                            <Conditions />
-                          </Action>
-                        </Actions>
-                        <Condition Enabled="false" Grouping="Or" />
-                        <Conditions />
-                      </Trigger>
-                      <Trigger Enabled="true" Name="Doom" Id="e5fbfb9e-8e81-45bc-9f6d-9feab0daece8" RegularExpression="1A:[A-F0-9]{8}:(?&lt;player&gt;[a-zA-Z-' ]{1,31}) gains the effect of Doom from (.*?)? for (?&lt;duration&gt;[0-9]{1,2})\.00 Seconds">
-                        <Actions>
-                          <Action OrderNumber="1" AuraName="naelDoom${player}" AuraImage="${var:imagePath}jobs\${tvarrl:UCOB[${player}][1]}.png" AuraXIniExpression="${_imageaura[naelDebuffs].x}+64" AuraYIniExpression="${_imageaura[naelDebuffs].y}+140" AuraWIniExpression="64" AuraHIniExpression="64" AuraOIniExpression="100" AuraTTLTickExpression="6-${_since}" LogLevel="-1" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Aura">
-                            <Condition Enabled="true" Grouping="Or">
-                              <ConditionSingle Enabled="true" ExpressionL="${duration}" ExpressionTypeL="String" ExpressionR="6" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
-                            </Condition>
-                            <Conditions />
-                          </Action>
-                          <Action OrderNumber="2" AuraName="naelDoom${player}" AuraImage="${var:imagePath}jobs\${tvarrl:UCOB[${player}][1]}.png" AuraXIniExpression="${_imageaura[naelDebuffs].x}+128" AuraYIniExpression="${_imageaura[naelDebuffs].y}+140" AuraWIniExpression="64" AuraHIniExpression="64" AuraOIniExpression="100" AuraTTLTickExpression="10-${_since}" LogLevel="-1" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Aura">
-                            <Condition Enabled="true" Grouping="Or">
-                              <ConditionSingle Enabled="true" ExpressionL="${duration}" ExpressionTypeL="String" ExpressionR="10" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
-                            </Condition>
-                            <Conditions />
-                          </Action>
-                          <Action OrderNumber="3" AuraName="naelDoom${player}" AuraImage="${var:imagePath}jobs\${tvarrl:UCOB[${player}][1]}.png" AuraXIniExpression="${_imageaura[naelDebuffs].x}+192" AuraYIniExpression="${_imageaura[naelDebuffs].y}+140" AuraWIniExpression="64" AuraHIniExpression="64" AuraOIniExpression="100" AuraTTLTickExpression="16-${_since}" LogLevel="-1" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Aura">
-                            <Condition Enabled="true" Grouping="Or">
-                              <ConditionSingle Enabled="true" ExpressionL="${duration}" ExpressionTypeL="String" ExpressionR="16" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
-                            </Condition>
-                            <Conditions />
-                          </Action>
-                        </Actions>
-                        <Condition Enabled="false" Grouping="Or" />
-                        <Conditions />
-                      </Trigger>
-                      <Trigger Enabled="true" Name="# Deactivate" Id="646a0b54-4627-4be5-b337-eec556e36605" RegularExpression="\A.{15}14:26B6">
-                        <Actions>
-                          <Action OrderNumber="1" AuraOp="DeactivateAura" AuraName="naelDebuffs" LogLevel="-1" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Aura">
                             <Condition Enabled="false" Grouping="Or" />
                             <Conditions />
                           </Action>
@@ -16533,6 +15991,605 @@
                       </Trigger>
                     </Triggers>
                   </Folder>
+                  <Folder Id="e3884a2f-547d-4da1-a834-60ce140926f5" Name="Trackers" Enabled="true">
+                    <Folders>
+                      <Folder Id="31f7574e-82f0-4220-a5db-c0829a7c1c23" Name="Phase" Enabled="true">
+                        <Folders />
+                        <Triggers>
+                          <Trigger Enabled="true" Name="Quickmarch Trio" Id="839b6bd3-b659-458d-b98a-dba7ff888b15" RegularExpression="\A.{15}14:26E2">
+                            <Actions>
+                              <Action OrderNumber="1" LogLevel="-1" VariableOp="SetString" VariableName="dataPhase" VariableExpression="quickmarch" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Variable">
+                                <Condition Enabled="false" Grouping="Or" />
+                                <Conditions />
+                              </Action>
+                            </Actions>
+                            <Condition Enabled="false" Grouping="Or" />
+                            <Conditions />
+                          </Trigger>
+                          <Trigger Enabled="true" Name="Blackfire Trio" Id="777ab2ea-3a37-4fe0-8687-b46b6fc56e36" RegularExpression="\A.{15}14:26E3">
+                            <Actions>
+                              <Action OrderNumber="1" LogLevel="-1" VariableOp="SetString" VariableName="dataPhase" VariableExpression="blackfire" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Variable">
+                                <Condition Enabled="false" Grouping="Or" />
+                                <Conditions />
+                              </Action>
+                              <Action OrderNumber="2" AuraOp="DeactivateAura" AuraName="earthshaker" LogLevel="-1" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Aura">
+                                <Condition Enabled="false" Grouping="Or" />
+                                <Conditions />
+                              </Action>
+                              <Action OrderNumber="3" TextAuraEffect="Bold" TextAuraFontSize="18" TextAuraForeground="#22BB22" TextAuraOutline="Black" TextAuraName="trioText" TextAuraExpression="Look for Nael" TextAuraXIniExpression="0" TextAuraYIniExpression="500" TextAuraWIniExpression="${_screenwidth}" TextAuraHIniExpression="100" TextAuraOIniExpression="100" TextAuraTTLTickExpression="5-${_since}" TextAuraUseOutline="True" TextAuraFontName="Microsoft Sans Serif" ActionType="TextAura">
+                                <Condition Enabled="false" Grouping="And" />
+                                <Conditions />
+                              </Action>
+                            </Actions>
+                            <Condition Enabled="false" Grouping="Or" />
+                            <Conditions />
+                          </Trigger>
+                          <Trigger Enabled="true" Name="Fellruin Trio" Id="cd5a92c3-c394-412e-bdd4-4ee941658131" RegularExpression="\A.{15}14:26E4">
+                            <Actions>
+                              <Action OrderNumber="1" LogLevel="-1" VariableOp="SetString" VariableName="dataPhase" VariableExpression="fellruin" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Variable">
+                                <Condition Enabled="false" Grouping="Or" />
+                                <Conditions />
+                              </Action>
+                              <Action OrderNumber="2" AuraOp="DeactivateAura" AuraName="earthshaker" LogLevel="-1" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Aura">
+                                <Condition Enabled="false" Grouping="Or" />
+                                <Conditions />
+                              </Action>
+                            </Actions>
+                            <Condition Enabled="false" Grouping="Or" />
+                            <Conditions />
+                          </Trigger>
+                          <Trigger Enabled="true" Name="Heavensfall Trio" Id="253b6de5-0c07-473b-bd8b-403dc34774a1" RegularExpression="\A.{15}14:26E5">
+                            <Actions>
+                              <Action OrderNumber="1" LogLevel="-1" VariableOp="SetString" VariableName="dataPhase" VariableExpression="heavensfall" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Variable">
+                                <Condition Enabled="false" Grouping="Or" />
+                                <Conditions />
+                              </Action>
+                              <Action OrderNumber="2" AuraOp="DeactivateAura" AuraName="earthshaker" LogLevel="-1" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Aura">
+                                <Condition Enabled="false" Grouping="Or" />
+                                <Conditions />
+                              </Action>
+                              <Action OrderNumber="3" TextAuraEffect="Bold" TextAuraFontSize="18" TextAuraForeground="#22BB22" TextAuraOutline="Black" TextAuraName="trioText" TextAuraExpression="If Nael middle, X split (quadrants)" TextAuraXIniExpression="0" TextAuraYIniExpression="500" TextAuraWIniExpression="${_screenwidth}" TextAuraHIniExpression="100" TextAuraOIniExpression="100" TextAuraTTLTickExpression="10-${_since}" TextAuraUseOutline="True" TextAuraFontName="Microsoft Sans Serif" ActionType="TextAura">
+                                <Condition Enabled="true" Grouping="And">
+                                  <ConditionSingle Enabled="true" ExpressionL="hex2dec(${id})-${var:decOffset}" ExpressionTypeL="Numeric" ExpressionR="hex2dec(004F)" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
+                                </Condition>
+                                <Conditions />
+                              </Action>
+                            </Actions>
+                            <Condition Enabled="false" Grouping="Or" />
+                            <Conditions />
+                          </Trigger>
+                          <Trigger Enabled="true" Name="Tenstrike Trio" Id="c4be5278-f82d-43bc-936b-4d048d23c135" RegularExpression="\A.{15}14:26E6">
+                            <Actions>
+                              <Action OrderNumber="1" LogLevel="-1" VariableOp="SetString" VariableName="dataPhase" VariableExpression="tenstrike" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Variable">
+                                <Condition Enabled="false" Grouping="Or" />
+                                <Conditions />
+                              </Action>
+                            </Actions>
+                            <Condition Enabled="false" Grouping="Or" />
+                            <Conditions />
+                          </Trigger>
+                          <Trigger Enabled="true" Name="Grand Octet" Id="0effbe33-9e68-47c4-86c3-1c50409854f5" RegularExpression="\A.{15}14:26E7">
+                            <Actions>
+                              <Action OrderNumber="1" LogLevel="-1" VariableOp="SetString" VariableName="dataPhase" VariableExpression="octet" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Variable">
+                                <Condition Enabled="false" Grouping="Or" />
+                                <Conditions />
+                              </Action>
+                              <Action OrderNumber="2" AuraOp="DeactivateAura" AuraName="earthshaker" LogLevel="-1" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Aura">
+                                <Condition Enabled="false" Grouping="Or" />
+                                <Conditions />
+                              </Action>
+                              <Action OrderNumber="3" TextAuraEffect="Bold" TextAuraFontSize="18" TextAuraForeground="#22BB22" TextAuraOutline="Black" TextAuraName="trioText" TextAuraExpression="Bahamut: Cardinal (move CCW), Intercardinal (move CW)" TextAuraXIniExpression="0" TextAuraYIniExpression="500" TextAuraWIniExpression="${_screenwidth}" TextAuraHIniExpression="100" TextAuraOIniExpression="100" TextAuraTTLTickExpression="10-${_since}" TextAuraUseOutline="True" TextAuraFontName="Microsoft Sans Serif" ActionType="TextAura">
+                                <Condition Enabled="false" Grouping="And" />
+                                <Conditions />
+                              </Action>
+                            </Actions>
+                            <Condition Enabled="false" Grouping="Or" />
+                            <Conditions />
+                          </Trigger>
+                        </Triggers>
+                      </Folder>
+                      <Folder Id="0f28bbcf-be50-47ae-b333-d2906bdcb219" Name="Dragons" Enabled="true">
+                        <Folders>
+                          <Folder Id="4cd7a26b-1d33-40b6-a166-3aff7d3b1485" Name="Direction" Enabled="true">
+                            <Folders />
+                            <Triggers>
+                              <Trigger Enabled="true" Sequential="True" Name="Thunderwing" Id="16eba98a-59aa-4f8a-a153-13cc0e7edbca" RegularExpression=":(?&lt;aID&gt;[0-9A-F]{8}):Thunderwing:26C7:" RefirePeriodExpression="1000">
+                                <Actions>
+                                  <Action OrderNumber="1" ListVariableOp="Push" ListVariableName="seenDragon" ListVariableExpression="Thunderwing" LogLevel="-1" VariableOp="SetString" VariableName="seenThunderwing" VariableExpression="true" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="ListVariable">
+                                    <Condition Enabled="false" Grouping="Or" />
+                                    <Conditions />
+                                  </Action>
+                                  <Action OrderNumber="2" ListVariableOp="Push" ListVariableName="dragonMap" ListVariableExpression="N" ListVariableIndex="1" LogLevel="-1" TableVariableOp="Set" TableVariableExpressionType="Numeric" TableVariableName="dragonMap" TableVariableExpression="1" TableVariableX="2" TableVariableY="(round(4 - 4 * arctan2(${_ffxiventity[${aID}].x},${_ffxiventity[${aID}].y)}) / pi) % 8)+1" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="TableVariable">
+                                    <Condition Enabled="false" Grouping="Or" />
+                                    <Conditions />
+                                  </Action>
+                                </Actions>
+                                <Condition Enabled="true" Grouping="And">
+                                  <ConditionSingle Enabled="true" ExpressionL="${evar:dataPhase}" ExpressionTypeL="Numeric" ExpressionR="0" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
+                                  <ConditionSingle Enabled="true" ExpressionL="${lvar:seenDragon.indexof(Thunderwing)}" ExpressionTypeL="Numeric" ExpressionR="0" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
+                                </Condition>
+                                <Conditions />
+                              </Trigger>
+                              <Trigger Enabled="true" Sequential="True" Name="Tail of Darkness" Id="b13e7d0e-edc1-4f6d-aa3a-aa14eea00f77" RegularExpression=":(?&lt;aID&gt;[0-9A-F]{8}):Tail Of Darkness:26C9:" RefirePeriodExpression="1000">
+                                <Actions>
+                                  <Action OrderNumber="1" ListVariableOp="Push" ListVariableName="seenDragon" ListVariableExpression="Tail Of Darkness" LogLevel="-1" VariableOp="SetString" VariableName="seenTailOfDarkness" VariableExpression="true" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="ListVariable">
+                                    <Condition Enabled="false" Grouping="Or" />
+                                    <Conditions />
+                                  </Action>
+                                  <Action OrderNumber="2" ListVariableOp="Push" ListVariableName="dragonMap" ListVariableExpression="N" ListVariableIndex="1" LogLevel="-1" TableVariableOp="Set" TableVariableExpressionType="Numeric" TableVariableName="dragonMap" TableVariableExpression="1" TableVariableX="2" TableVariableY="(round(4 - 4 * arctan2(${_ffxiventity[${aID}].x},${_ffxiventity[${aID}].y)}) / pi) % 8)+1" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="TableVariable">
+                                    <Condition Enabled="false" Grouping="Or" />
+                                    <Conditions />
+                                  </Action>
+                                </Actions>
+                                <Condition Enabled="true" Grouping="And">
+                                  <ConditionSingle Enabled="true" ExpressionL="${evar:dataPhase}" ExpressionTypeL="Numeric" ExpressionR="0" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
+                                  <ConditionSingle Enabled="true" ExpressionL="${lvar:seenDragon.indexof(Tail Of Darkness)}" ExpressionTypeL="Numeric" ExpressionR="0" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
+                                </Condition>
+                                <Conditions />
+                              </Trigger>
+                              <Trigger Enabled="true" Sequential="True" Name="Iceclaw" Id="974925c6-de5c-4fa8-8c01-24ec74bbbcc3" RegularExpression=":(?&lt;aID&gt;[0-9A-F]{8}):Iceclaw:26C6:" RefirePeriodExpression="1000">
+                                <Actions>
+                                  <Action OrderNumber="0" ListVariableOp="Push" ListVariableName="seenDragon" ListVariableExpression="Iceclaw" LogLevel="-1" VariableOp="SetString" VariableName="seenIceclaw" VariableExpression="true" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="ListVariable">
+                                    <Condition Enabled="false" Grouping="Or" />
+                                    <Conditions />
+                                  </Action>
+                                  <Action OrderNumber="2" ListVariableOp="Push" ListVariableName="dragonMap" ListVariableExpression="N" ListVariableIndex="1" LogLevel="-1" TableVariableOp="Set" TableVariableExpressionType="Numeric" TableVariableName="dragonMap" TableVariableExpression="1" TableVariableX="2" TableVariableY="(round(4 - 4 * arctan2(${_ffxiventity[${aID}].x},${_ffxiventity[${aID}].y)}) / pi) % 8)+1" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="TableVariable">
+                                    <Condition Enabled="false" Grouping="Or" />
+                                    <Conditions />
+                                  </Action>
+                                </Actions>
+                                <Condition Enabled="true" Grouping="And">
+                                  <ConditionSingle Enabled="true" ExpressionL="${evar:dataPhase}" ExpressionTypeL="Numeric" ExpressionR="0" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
+                                  <ConditionSingle Enabled="true" ExpressionL="${lvar:seenDragon.indexof(Iceclaw)}" ExpressionTypeL="Numeric" ExpressionR="0" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
+                                </Condition>
+                                <Conditions />
+                              </Trigger>
+                              <Trigger Enabled="true" Sequential="True" Name="Firehorn" Id="97a4902b-6a88-4af5-8573-7df0444e6a94" RegularExpression=":(?&lt;aID&gt;[0-9A-F]{8}):Firehorn:26C5:" RefirePeriodExpression="1000">
+                                <Actions>
+                                  <Action OrderNumber="1" ListVariableOp="Push" ListVariableName="seenDragon" ListVariableExpression="Firehorn" LogLevel="-1" VariableOp="SetString" VariableName="seen" VariableExpression="true" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="ListVariable">
+                                    <Condition Enabled="false" Grouping="Or" />
+                                    <Conditions />
+                                  </Action>
+                                  <Action OrderNumber="2" ListVariableOp="Push" ListVariableName="dragonMap" ListVariableExpression="N" ListVariableIndex="1" LogLevel="-1" TableVariableOp="Set" TableVariableExpressionType="Numeric" TableVariableName="dragonMap" TableVariableExpression="1" TableVariableX="2" TableVariableY="(round(4 - 4 * arctan2(${_ffxiventity[${aID}].x},${_ffxiventity[${aID}].y)}) / pi) % 8)+1" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="TableVariable">
+                                    <Condition Enabled="false" Grouping="Or" />
+                                    <Conditions />
+                                  </Action>
+                                </Actions>
+                                <Condition Enabled="true" Grouping="And">
+                                  <ConditionSingle Enabled="true" ExpressionL="${evar:dataPhase}" ExpressionTypeL="Numeric" ExpressionR="0" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
+                                  <ConditionSingle Enabled="true" ExpressionL="${lvar:seenDragon.indexof(Firehorn)}" ExpressionTypeL="Numeric" ExpressionR="0" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
+                                </Condition>
+                                <Conditions />
+                              </Trigger>
+                              <Trigger Enabled="true" Sequential="True" Name="Fang of Light" Id="a3cfdd5f-1f81-4b52-b26d-45114e4e07b8" RegularExpression=":(?&lt;aID&gt;[0-9A-F]{8}):Fang Of Light:26CA:" RefirePeriodExpression="1000">
+                                <Actions>
+                                  <Action OrderNumber="1" ListVariableOp="Push" ListVariableName="seenDragon" ListVariableExpression="Fang Of Light" LogLevel="-1" VariableOp="SetString" VariableName="seenFangOfLight" VariableExpression="true" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="ListVariable">
+                                    <Condition Enabled="false" Grouping="Or" />
+                                    <Conditions />
+                                  </Action>
+                                  <Action OrderNumber="2" ListVariableOp="Push" ListVariableName="dragonMap" ListVariableExpression="N" ListVariableIndex="1" LogLevel="-1" TableVariableOp="Set" TableVariableExpressionType="Numeric" TableVariableName="dragonMap" TableVariableExpression="1" TableVariableX="2" TableVariableY="(round(4 - 4 * arctan2(${_ffxiventity[${aID}].x},${_ffxiventity[${aID}].y)}) / pi) % 8)+1" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="TableVariable">
+                                    <Condition Enabled="false" Grouping="Or" />
+                                    <Conditions />
+                                  </Action>
+                                </Actions>
+                                <Condition Enabled="true" Grouping="And">
+                                  <ConditionSingle Enabled="true" ExpressionL="${evar:dataPhase}" ExpressionTypeL="Numeric" ExpressionR="0" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
+                                  <ConditionSingle Enabled="true" ExpressionL="${lvar:seenDragon.indexof(Fang Of Light)}" ExpressionTypeL="Numeric" ExpressionR="0" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
+                                </Condition>
+                                <Conditions />
+                              </Trigger>
+                            </Triggers>
+                          </Folder>
+                        </Folders>
+                        <Triggers>
+                          <Trigger Enabled="true" Sequential="True" Name="Map" Id="cb513443-e292-4b8d-a8f1-2afba1fb2565" RegularExpression=":Ragnarok:26B8:">
+                            <Actions>
+                              <Action OrderNumber="1" ListVariableOp="Push" ListVariableName="dragonMap" ListVariableExpression="N" ListVariableIndex="1" LogLevel="-1" TableVariableOp="Set" TableVariableName="dragonMap" TableVariableExpression="N" TableVariableX="1" TableVariableY="1" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="TableVariable">
+                                <Condition Enabled="false" Grouping="Or" />
+                                <Conditions />
+                              </Action>
+                              <Action OrderNumber="2" ListVariableOp="Push" ListVariableName="dragonMap" ListVariableExpression="N" ListVariableIndex="1" LogLevel="-1" TableVariableOp="Set" TableVariableExpressionType="Numeric" TableVariableName="dragonMap" TableVariableExpression="0" TableVariableX="2" TableVariableY="1" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="TableVariable">
+                                <Condition Enabled="false" Grouping="Or" />
+                                <Conditions />
+                              </Action>
+                              <Action OrderNumber="3" ListVariableOp="Push" ListVariableName="dragonMap" ListVariableExpression="NE" ListVariableIndex="2" LogLevel="-1" TableVariableOp="Set" TableVariableName="dragonMap" TableVariableExpression="NE" TableVariableX="1" TableVariableY="2" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="TableVariable">
+                                <Condition Enabled="false" Grouping="Or" />
+                                <Conditions />
+                              </Action>
+                              <Action OrderNumber="4" ListVariableOp="Push" ListVariableName="dragonMap" ListVariableExpression="NE" ListVariableIndex="2" LogLevel="-1" TableVariableOp="Set" TableVariableExpressionType="Numeric" TableVariableName="dragonMap" TableVariableExpression="0" TableVariableX="2" TableVariableY="2" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="TableVariable">
+                                <Condition Enabled="false" Grouping="Or" />
+                                <Conditions />
+                              </Action>
+                              <Action OrderNumber="5" ListVariableOp="Push" ListVariableName="dragonMap" ListVariableExpression="E" ListVariableIndex="3" LogLevel="-1" TableVariableOp="Set" TableVariableName="dragonMap" TableVariableExpression="E" TableVariableX="1" TableVariableY="3" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="TableVariable">
+                                <Condition Enabled="false" Grouping="Or" />
+                                <Conditions />
+                              </Action>
+                              <Action OrderNumber="6" ListVariableOp="Push" ListVariableName="dragonMap" ListVariableExpression="E" ListVariableIndex="3" LogLevel="-1" TableVariableOp="Set" TableVariableExpressionType="Numeric" TableVariableName="dragonMap" TableVariableExpression="0" TableVariableX="2" TableVariableY="3" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="TableVariable">
+                                <Condition Enabled="false" Grouping="Or" />
+                                <Conditions />
+                              </Action>
+                              <Action OrderNumber="7" ListVariableOp="Push" ListVariableName="dragonMap" ListVariableExpression="SE" ListVariableIndex="4" LogLevel="-1" TableVariableOp="Set" TableVariableName="dragonMap" TableVariableExpression="SE" TableVariableX="1" TableVariableY="4" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="TableVariable">
+                                <Condition Enabled="false" Grouping="Or" />
+                                <Conditions />
+                              </Action>
+                              <Action OrderNumber="8" ListVariableOp="Push" ListVariableName="dragonMap" ListVariableExpression="SE" ListVariableIndex="4" LogLevel="-1" TableVariableOp="Set" TableVariableExpressionType="Numeric" TableVariableName="dragonMap" TableVariableExpression="0" TableVariableX="2" TableVariableY="4" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="TableVariable">
+                                <Condition Enabled="false" Grouping="Or" />
+                                <Conditions />
+                              </Action>
+                              <Action OrderNumber="9" ListVariableOp="Push" ListVariableName="dragonMap" ListVariableExpression="S" ListVariableIndex="5" LogLevel="-1" TableVariableOp="Set" TableVariableName="dragonMap" TableVariableExpression="S" TableVariableX="1" TableVariableY="5" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="TableVariable">
+                                <Condition Enabled="false" Grouping="Or" />
+                                <Conditions />
+                              </Action>
+                              <Action OrderNumber="10" ListVariableOp="Push" ListVariableName="dragonMap" ListVariableExpression="S" ListVariableIndex="5" LogLevel="-1" TableVariableOp="Set" TableVariableExpressionType="Numeric" TableVariableName="dragonMap" TableVariableExpression="0" TableVariableX="2" TableVariableY="5" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="TableVariable">
+                                <Condition Enabled="false" Grouping="Or" />
+                                <Conditions />
+                              </Action>
+                              <Action OrderNumber="11" ListVariableOp="Push" ListVariableName="dragonMap" ListVariableExpression="S" ListVariableIndex="5" LogLevel="-1" TableVariableOp="Set" TableVariableName="dragonMap" TableVariableExpression="SW" TableVariableX="1" TableVariableY="6" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="TableVariable">
+                                <Condition Enabled="false" Grouping="Or" />
+                                <Conditions />
+                              </Action>
+                              <Action OrderNumber="12" ListVariableOp="Push" ListVariableName="dragonMap" ListVariableExpression="S" ListVariableIndex="5" LogLevel="-1" TableVariableOp="Set" TableVariableExpressionType="Numeric" TableVariableName="dragonMap" TableVariableExpression="0" TableVariableX="2" TableVariableY="6" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="TableVariable">
+                                <Condition Enabled="false" Grouping="Or" />
+                                <Conditions />
+                              </Action>
+                              <Action OrderNumber="13" ListVariableOp="Push" ListVariableName="dragonMap" ListVariableExpression="S" ListVariableIndex="5" LogLevel="-1" TableVariableOp="Set" TableVariableName="dragonMap" TableVariableExpression="W" TableVariableX="1" TableVariableY="7" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="TableVariable">
+                                <Condition Enabled="false" Grouping="Or" />
+                                <Conditions />
+                              </Action>
+                              <Action OrderNumber="14" ListVariableOp="Push" ListVariableName="dragonMap" ListVariableExpression="S" ListVariableIndex="5" LogLevel="-1" TableVariableOp="Set" TableVariableExpressionType="Numeric" TableVariableName="dragonMap" TableVariableExpression="0" TableVariableX="2" TableVariableY="7" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="TableVariable">
+                                <Condition Enabled="false" Grouping="Or" />
+                                <Conditions />
+                              </Action>
+                              <Action OrderNumber="15" ListVariableOp="Push" ListVariableName="dragonMap" ListVariableExpression="S" ListVariableIndex="5" LogLevel="-1" TableVariableOp="Set" TableVariableName="dragonMap" TableVariableExpression="NW" TableVariableX="1" TableVariableY="8" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="TableVariable">
+                                <Condition Enabled="false" Grouping="Or" />
+                                <Conditions />
+                              </Action>
+                              <Action OrderNumber="16" ListVariableOp="Push" ListVariableName="dragonMap" ListVariableExpression="S" ListVariableIndex="5" LogLevel="-1" TableVariableOp="Set" TableVariableExpressionType="Numeric" TableVariableName="dragonMap" TableVariableExpression="0" TableVariableX="2" TableVariableY="8" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="TableVariable">
+                                <Condition Enabled="false" Grouping="Or" />
+                                <Conditions />
+                              </Action>
+                            </Actions>
+                            <Condition Enabled="true" Grouping="Or">
+                              <ConditionSingle Enabled="true" ExpressionL="${elvar:dragonMap}" ExpressionTypeL="Numeric" ExpressionR="0" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
+                            </Condition>
+                            <Conditions />
+                          </Trigger>
+                          <Trigger Enabled="true" Sequential="True" Name="Dive" Id="53d41883-add2-4934-9d05-eb06092d3399" RegularExpression="1B:[0-9A-F]{8}:(?&lt;player&gt;(?&lt;name&gt;[\w-']+) [\w-']+):.{4}:.{4}:0014:">
+                            <Actions>
+                              <Action OrderNumber="1" LogLevel="-1" VariableOp="SetNumeric" VariableName="diveMarkCount" VariableExpression="${var:diveMarkCount}+1" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Variable">
+                                <Condition Enabled="false" Grouping="Or" />
+                                <Conditions />
+                              </Action>
+                              <Action OrderNumber="2" LogLevel="-1" UseTTSTextExpression="Dive ${var:diveMarkCount}" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="UseTTS">
+                                <Condition Enabled="true" Grouping="Or">
+                                  <ConditionSingle Enabled="true" ExpressionL="${player}" ExpressionTypeL="String" ExpressionR="${_ffxivplayer}" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
+                                </Condition>
+                                <Conditions />
+                              </Action>
+                              <Action OrderNumber="3" LogLevel="-1" UseTTSTextExpression="outside intercardinal" TextAuraEffect="Bold" TextAuraFontSize="24" TextAuraForeground="#FFBB00" TextAuraOutline="Black" TextAuraName="diveDirection" TextAuraExpression="Dive #${var:diveMarkCount}: ${lvar:dragonMap[${lvar:naelDragons[2]}])" TextAuraXIniExpression="0" TextAuraYIniExpression="${var:naelY}+64" TextAuraWIniExpression="${_screenwidth}" TextAuraHIniExpression="64" TextAuraOIniExpression="100" TextAuraTTLTickExpression="3-${_since}" TextAuraUseOutline="True" TextAuraFontName="Microsoft Sans Serif" Enabled="False" ActionType="TextAura">
+                                <Condition Enabled="true" Grouping="And">
+                                  <ConditionSingle Enabled="true" ExpressionL="${player}" ExpressionTypeL="String" ExpressionR="${_ffxivplayer}" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
+                                  <ConditionSingle Enabled="true" ExpressionL="${var:diveMarkCount}" ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
+                                </Condition>
+                                <Conditions />
+                              </Action>
+                              <Action OrderNumber="4" LogLevel="-1" UseTTSTextExpression="outside intercardinal" TextAuraEffect="Bold" TextAuraFontSize="24" TextAuraForeground="#FFBB00" TextAuraOutline="Black" TextAuraName="diveDirection" TextAuraExpression="Dive #${var:diveMarkCount}: ${lvar:dragonMap[${lvar:naelDragons[3]}])" TextAuraXIniExpression="0" TextAuraYIniExpression="${var:naelY}+64" TextAuraWIniExpression="${_screenwidth}" TextAuraHIniExpression="64" TextAuraOIniExpression="100" TextAuraTTLTickExpression="3-${_since}" TextAuraUseOutline="True" TextAuraFontName="Microsoft Sans Serif" Enabled="False" ActionType="TextAura">
+                                <Condition Enabled="true" Grouping="And">
+                                  <ConditionSingle Enabled="true" ExpressionL="${player}" ExpressionTypeL="String" ExpressionR="${_ffxivplayer}" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
+                                  <ConditionSingle Enabled="true" ExpressionL="${var:diveMarkCount}" ExpressionTypeL="Numeric" ExpressionR="2" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
+                                </Condition>
+                                <Conditions />
+                              </Action>
+                              <Action OrderNumber="5" LogLevel="-1" UseTTSTextExpression="outside intercardinal" TextAuraEffect="Bold" TextAuraFontSize="24" TextAuraForeground="#FFBB00" TextAuraOutline="Black" TextAuraName="diveDirection" TextAuraExpression="Dive #${var:diveMarkCount}: ${lvar:dragonMap[${lvar:naelDragons[5]}])" TextAuraXIniExpression="0" TextAuraYIniExpression="${var:naelY}+64" TextAuraWIniExpression="${_screenwidth}" TextAuraHIniExpression="64" TextAuraOIniExpression="100" TextAuraTTLTickExpression="3-${_since}" TextAuraUseOutline="True" TextAuraFontName="Microsoft Sans Serif" Enabled="False" ActionType="TextAura">
+                                <Condition Enabled="true" Grouping="And">
+                                  <ConditionSingle Enabled="true" ExpressionL="${player}" ExpressionTypeL="String" ExpressionR="${_ffxivplayer}" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
+                                  <ConditionSingle Enabled="true" ExpressionL="${var:diveMarkCount}" ExpressionTypeL="Numeric" ExpressionR="3" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
+                                </Condition>
+                                <Conditions />
+                              </Action>
+                            </Actions>
+                            <Condition Enabled="true" Grouping="Or">
+                              <ConditionSingle Enabled="true" ExpressionL="${evar:dataPhase}" ExpressionTypeL="Numeric" ExpressionR="0" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
+                            </Condition>
+                            <Conditions />
+                          </Trigger>
+                          <Trigger Enabled="true" Sequential="True" Name="Placement" Id="dd0d0268-fd0d-4f4e-841a-cf34b5c37174" RegularExpression="\A.{15}14:26B6">
+                            <Actions>
+                              <Action OrderNumber="1" AuraName="mapCircle" AuraImage="${var:imagePath}ucob\mapcircle.png" AuraXIniExpression="${var:naelDebuffX}" AuraYIniExpression="${var:naelDebuffY}" AuraWIniExpression="200" AuraHIniExpression="200" AuraOIniExpression="${var:naelDebuffOpacity}" AuraTTLTickExpression="20-${_since}" VariableOp="SetString" VariableName="fate" VariableExpression="a" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Aura" Description="Divebomb Circle (Move me!) | Toggle to enable/disable images" DescriptionOverride="True">
+                                <Condition Enabled="false" Grouping="Or" />
+                                <Conditions />
+                              </Action>
+                              <Action OrderNumber="2" AuraName="dragonN" AuraImage="${var:imagePath}ucob\blackdot.png" AuraXIniExpression="${_imageaura[mapCircle].x}+92.5" AuraYIniExpression="${_imageaura[mapCircle].y}" AuraWIniExpression="15" AuraHIniExpression="15" AuraOIniExpression="100" AuraTTLTickExpression="20-${_since}" LogLevel="-1" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Aura" Description="Show North Dragon" DescriptionOverride="True">
+                                <Condition Enabled="true" Grouping="Or">
+                                  <ConditionSingle Enabled="true" ExpressionL="${tvarrl:dragonMap[N][1]}" ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="String" ConditionType="NumericEqual" />
+                                </Condition>
+                                <Conditions />
+                              </Action>
+                              <Action OrderNumber="3" AuraName="dragonNE" AuraImage="${var:imagePath}ucob\blackdot.png" AuraXIniExpression="${_imageaura[mapCircle].x}+158" AuraYIniExpression="${_imageaura[mapCircle].y}+27" AuraWIniExpression="15" AuraHIniExpression="15" AuraOIniExpression="100" AuraTTLTickExpression="20-${_since}" LogLevel="-1" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Aura" Description="Show Northeast Dragon" DescriptionOverride="True">
+                                <Condition Enabled="true" Grouping="Or">
+                                  <ConditionSingle Enabled="true" ExpressionL="${tvarrl:dragonMap[NE][1]}" ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
+                                </Condition>
+                                <Conditions />
+                              </Action>
+                              <Action OrderNumber="4" AuraName="dragonE" AuraImage="${var:imagePath}ucob\blackdot.png" AuraXIniExpression="${_imageaura[mapCircle].x}+185" AuraYIniExpression="${_imageaura[mapCircle].y}+92.5" AuraWIniExpression="15" AuraHIniExpression="15" AuraOIniExpression="100" AuraTTLTickExpression="20-${_since}" LogLevel="-1" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Aura" Description="Show East Dragon" DescriptionOverride="True">
+                                <Condition Enabled="true" Grouping="Or">
+                                  <ConditionSingle Enabled="true" ExpressionL="${tvarrl:dragonMap[E][1]}" ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
+                                </Condition>
+                                <Conditions />
+                              </Action>
+                              <Action OrderNumber="5" AuraName="dragonSE" AuraImage="${var:imagePath}ucob\blackdot.png" AuraXIniExpression="${_imageaura[mapCircle].x}+158" AuraYIniExpression="${_imageaura[mapCircle].y}+158" AuraWIniExpression="15" AuraHIniExpression="15" AuraOIniExpression="100" AuraTTLTickExpression="20-${_since}" LogLevel="-1" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Aura" Description="Show Southeast Dragon" DescriptionOverride="True">
+                                <Condition Enabled="true" Grouping="Or">
+                                  <ConditionSingle Enabled="true" ExpressionL="${tvarrl:dragonMap[SE][1]}" ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
+                                </Condition>
+                                <Conditions />
+                              </Action>
+                              <Action OrderNumber="6" AuraName="dragonS" AuraImage="${var:imagePath}ucob\blackdot.png" AuraXIniExpression="${_imageaura[mapCircle].x}+92.5" AuraYIniExpression="${_imageaura[mapCircle].y}+185" AuraWIniExpression="15" AuraHIniExpression="15" AuraOIniExpression="100" AuraTTLTickExpression="20-${_since}" LogLevel="-1" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Aura" Description="Show South Dragon" DescriptionOverride="True">
+                                <Condition Enabled="true" Grouping="Or">
+                                  <ConditionSingle Enabled="true" ExpressionL="${tvarrl:dragonMap[S][1]}" ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
+                                </Condition>
+                                <Conditions />
+                              </Action>
+                              <Action OrderNumber="7" AuraName="dragonSW" AuraImage="${var:imagePath}ucob\blackdot.png" AuraXIniExpression="${_imageaura[mapCircle].x}+27" AuraYIniExpression="${_imageaura[mapCircle].y}+158" AuraWIniExpression="15" AuraHIniExpression="15" AuraOIniExpression="100" AuraTTLTickExpression="20-${_since}" LogLevel="-1" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Aura" Description="Show Southwest Dragon" DescriptionOverride="True">
+                                <Condition Enabled="true" Grouping="Or">
+                                  <ConditionSingle Enabled="true" ExpressionL="${tvarrl:dragonMap[SW][1]}" ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
+                                </Condition>
+                                <Conditions />
+                              </Action>
+                              <Action OrderNumber="8" AuraName="dragonW" AuraImage="${var:imagePath}ucob\blackdot.png" AuraXIniExpression="${_imageaura[mapCircle].x}" AuraYIniExpression="${_imageaura[mapCircle].y}+92.5" AuraWIniExpression="15" AuraHIniExpression="15" AuraOIniExpression="100" AuraTTLTickExpression="20-${_since}" LogLevel="-1" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Aura" Description="Show West Dragon" DescriptionOverride="True">
+                                <Condition Enabled="true" Grouping="Or">
+                                  <ConditionSingle Enabled="true" ExpressionL="${tvarrl:dragonMap[W][1]}" ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
+                                </Condition>
+                                <Conditions />
+                              </Action>
+                              <Action OrderNumber="9" AuraName="dragonNW" AuraImage="${var:imagePath}ucob\blackdot.png" AuraXIniExpression="${_imageaura[mapCircle].x}+27" AuraYIniExpression="${_imageaura[mapCircle].y}+27" AuraWIniExpression="15" AuraHIniExpression="15" AuraOIniExpression="100" AuraTTLTickExpression="20-${_since}" LogLevel="-1" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Aura" Description="Show Northwest Dragon" DescriptionOverride="True">
+                                <Condition Enabled="true" Grouping="Or">
+                                  <ConditionSingle Enabled="true" ExpressionL="${tvarrl:dragonMap[NW][1]}" ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
+                                </Condition>
+                                <Conditions />
+                              </Action>
+                              <Action OrderNumber="10" LogLevel="-1" VariableOp="SetString" VariableName="calledNaelDragons" VariableExpression="true" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Variable">
+                                <Condition Enabled="false" Grouping="Or" />
+                                <Conditions />
+                              </Action>
+                            </Actions>
+                            <Condition Enabled="true" Grouping="And">
+                              <ConditionSingle Enabled="true" ExpressionL="${evar:dataPhase}" ExpressionTypeL="Numeric" ExpressionR="0" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
+                              <ConditionSingle Enabled="true" ExpressionL="${evar:calledNaelDragons}" ExpressionTypeL="Numeric" ExpressionR="0" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
+                            </Condition>
+                            <Conditions />
+                          </Trigger>
+                        </Triggers>
+                      </Folder>
+                    </Folders>
+                    <Triggers />
+                  </Folder>
+                  <Folder Id="6a6c6376-ff6e-4307-8d5d-21ad98527413" Name="Megaflare" Enabled="true">
+                    <Folders>
+                      <Folder FFXIVJobFilterEnabled="True" FFXIVJobFilter="164910071808" Id="3f95fa29-473d-4630-b6ee-342982947d91" Name="DPS" Enabled="true">
+                        <Folders />
+                        <Triggers>
+                          <Trigger Enabled="true" Name="Megaflare" Id="fcecb8b9-6af5-40c4-bd6e-11ee93eb2c28" RegularExpression="1B:[0-9A-F]{8}:(?&lt;player&gt;(?&lt;name&gt;[\w-']+) [\w-']+):.{4}:.{4}:0027:">
+                            <Actions>
+                              <Action OrderNumber="1" LogLevel="-1" UseTTSTextExpression="Mega flare stack" TextAuraEffect="Bold" TextAuraFontSize="24" TextAuraForeground="#FFBB00" TextAuraOutline="Black" TextAuraName="twinOctet" TextAuraExpression="#8: ${name} (Twintania)" TextAuraXIniExpression="0" TextAuraYIniExpression="${naelY}" TextAuraWIniExpression="${screenwidth}" TextAuraHIniExpression="64" TextAuraOIniExpression="100" TextAuraTTLTickExpression="3.5-${_since}" TextAuraUseOutline="True" TextAuraFontName="Microsoft Sans Serif" ActionType="UseTTS">
+                                <Condition Enabled="true" Grouping="And">
+                                  <ConditionSingle Enabled="true" ExpressionL="${player}" ExpressionTypeL="String" ExpressionR="${_ffxivplayer}" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
+                                </Condition>
+                                <Conditions />
+                              </Action>
+                              <Action OrderNumber="2" LogLevel="-1" UseTTSTextExpression="Go Blue" TextAuraAlignment="MiddleRight" TextAuraEffect="Bold" TextAuraFontSize="24" TextAuraForeground="#FFBB00" TextAuraOutline="Black" TextAuraName="megaflareLeft" TextAuraExpression="Megaflare: " TextAuraXIniExpression="0" TextAuraYIniExpression="500" TextAuraWIniExpression="${_screenwidth}/2" TextAuraHIniExpression="64" TextAuraOIniExpression="100" TextAuraTTLTickExpression="3-${_since}" TextAuraUseOutline="True" TextAuraFontName="Microsoft Sans Serif" ActionType="TextAura">
+                                <Condition Enabled="false" Grouping="Or" />
+                                <Conditions />
+                              </Action>
+                              <Action OrderNumber="3" AuraName="UCOBMegaflare${player}" AuraImage="${var:imagePath}jobs\${tvarrl:UCOB[${player}][1]}.png" AuraXIniExpression="${_screenwidth}/2+(${_imageaura[UCOBMegaflare${_ffxivparty[1].name}].w})+(${_imageaura[UCOBMegaflare${_ffxivparty[2].name}].w})+(${_imageaura[UCOBMegaflare${_ffxivparty[3].name}].w})+(${_imageaura[UCOBMegaflare${_ffxivparty[4].name}].w})+(${_imageaura[UCOBMegaflare${_ffxivparty[5].name}].w})+(${_imageaura[UCOBMegaflare${_ffxivparty[6].name}].w})+(${_imageaura[UCOBMegaflare${_ffxivparty[7].name}].w})+(${_imageaura[UCOBMegaflare${_ffxivparty[8].name}].w})" AuraYIniExpression="500" AuraWIniExpression="64" AuraHIniExpression="64" AuraOIniExpression="100" AuraTTLTickExpression="3-${_since}" LogLevel="-1" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Aura">
+                                <Condition Enabled="false" Grouping="Or" />
+                                <Conditions />
+                              </Action>
+                            </Actions>
+                            <Condition Enabled="false" Grouping="Or" />
+                            <Conditions />
+                          </Trigger>
+                        </Triggers>
+                      </Folder>
+                      <Folder FFXIVJobFilterEnabled="True" FFXIVJobFilter="75305844736" Id="c7c7f93c-e9c5-453f-b263-1f4143733d7c" Name="Tank/Healer" Enabled="true">
+                        <Folders />
+                        <Triggers>
+                          <Trigger Enabled="true" Name="Megaflare" Id="a8918420-de59-4141-8ab9-9d1e6be9fe29" RegularExpression="1B:[0-9A-F]{8}:(?&lt;player&gt;(?&lt;name&gt;[\w-']+) [\w-']+):.{4}:.{4}:0027:">
+                            <Actions>
+                              <Action OrderNumber="1" LogLevel="-1" UseTTSTextExpression="Mega flare stack" TextAuraEffect="Bold" TextAuraFontSize="24" TextAuraForeground="#FFBB00" TextAuraOutline="Black" TextAuraName="twinOctet" TextAuraExpression="#8: ${name} (Twintania)" TextAuraXIniExpression="0" TextAuraYIniExpression="${naelY}" TextAuraWIniExpression="${screenwidth}" TextAuraHIniExpression="64" TextAuraOIniExpression="100" TextAuraTTLTickExpression="3.5-${_since}" TextAuraUseOutline="True" TextAuraFontName="Microsoft Sans Serif" ActionType="UseTTS">
+                                <Condition Enabled="true" Grouping="And">
+                                  <ConditionSingle Enabled="true" ExpressionL="${player}" ExpressionTypeL="String" ExpressionR="${_ffxivplayer}" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
+                                </Condition>
+                                <Conditions />
+                              </Action>
+                              <Action OrderNumber="2" LogLevel="-1" UseTTSTextExpression="Go Blue" TextAuraAlignment="MiddleRight" TextAuraEffect="Bold" TextAuraFontSize="24" TextAuraForeground="#FFBB00" TextAuraOutline="Black" TextAuraName="megaflareLeft" TextAuraExpression="Megaflare: " TextAuraXIniExpression="0" TextAuraYIniExpression="500" TextAuraWIniExpression="${_screenwidth}/2" TextAuraHIniExpression="64" TextAuraOIniExpression="100" TextAuraTTLTickExpression="3-${_since}" TextAuraUseOutline="True" TextAuraFontName="Microsoft Sans Serif" ActionType="TextAura">
+                                <Condition Enabled="false" Grouping="Or" />
+                                <Conditions />
+                              </Action>
+                              <Action OrderNumber="3" AuraName="UCOBMegaflare${player}" AuraImage="${var:imagePath}jobs\${tvarrl:UCOB[${player}][1]}.png" AuraXIniExpression="${_screenwidth}/2+(${_imageaura[UCOBMegaflare${_ffxivparty[1].name}].w})+(${_imageaura[UCOBMegaflare${_ffxivparty[2].name}].w})+(${_imageaura[UCOBMegaflare${_ffxivparty[3].name}].w})+(${_imageaura[UCOBMegaflare${_ffxivparty[4].name}].w})+(${_imageaura[UCOBMegaflare${_ffxivparty[5].name}].w})+(${_imageaura[UCOBMegaflare${_ffxivparty[6].name}].w})+(${_imageaura[UCOBMegaflare${_ffxivparty[7].name}].w})+(${_imageaura[UCOBMegaflare${_ffxivparty[8].name}].w})" AuraYIniExpression="500" AuraWIniExpression="64" AuraHIniExpression="64" AuraOIniExpression="100" AuraTTLTickExpression="3-${_since}" LogLevel="-1" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Aura">
+                                <Condition Enabled="false" Grouping="Or" />
+                                <Conditions />
+                              </Action>
+                            </Actions>
+                            <Condition Enabled="true" Grouping="Or">
+                              <ConditionSingle Enabled="true" ExpressionL="${var:dataPhase}" ExpressionTypeL="String" ExpressionR="octet" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
+                              <ConditionSingle Enabled="true" ExpressionL="${var:dataPhase}" ExpressionTypeL="String" ExpressionR="blackfire" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
+                            </Condition>
+                            <Conditions />
+                          </Trigger>
+                        </Triggers>
+                      </Folder>
+                    </Folders>
+                    <Triggers />
+                  </Folder>
+                  <Folder Id="8b9525e3-052b-4a1c-be3a-81d4f12539d2" Name="Nael Debuff UI" Enabled="true">
+                    <Folders>
+                      <Folder Id="423542e0-ea70-4c45-a50b-cc3048cf60b2" Name="Timer" Enabled="true">
+                        <Folders />
+                        <Triggers>
+                          <Trigger Enabled="true" Name="Thunderstruck" Id="e86e179f-71e9-4097-9bc4-36cd7aaac27c" RegularExpression="1A:[A-F0-9]{8}:(?&lt;player&gt;[a-zA-Z-' ]{1,31}) gains the effect of Thunderstruck from (.*?)? for (?&lt;duration&gt;[0-9]{1})\.00 Seconds" RefirePeriodExpression="1000">
+                            <Actions>
+                              <Action OrderNumber="1" LogLevel="-1" TextAuraEffect="Bold" TextAuraFontSize="24" TextAuraForeground="#FFBB00" TextAuraBackground="Black" TextAuraOutline="Black" TextAuraName="thunderTimer" TextAuraExpression="${numeric:${duration}-${_since}}" TextAuraXIniExpression="${_imageaura[naelDebuffs].x}+15" TextAuraYIniExpression="${_imageaura[naelDebuffs].y}+77" TextAuraWIniExpression="34" TextAuraHIniExpression="34" TextAuraOIniExpression="100" TextAuraTTLTickExpression="${duration}-${_since}" TextAuraUseOutline="True" TextAuraFontName="Arial" ActionType="TextAura">
+                                <Condition Enabled="false" Grouping="Or" />
+                                <Conditions />
+                              </Action>
+                            </Actions>
+                            <Condition Enabled="false" Grouping="Or" />
+                            <Conditions />
+                          </Trigger>
+                          <Trigger Enabled="true" Name="Fireball" Id="eddc125b-36bf-4c06-a256-d3c250d4a38d" RegularExpression="23:[0-9A-F]{8}:Firehorn:[0-9A-F]{8}:(?&lt;player&gt;(?&lt;name&gt;[\w-']+) [\w-']+):.{4}:.{4}:0005:">
+                            <Actions>
+                              <Action OrderNumber="1" LogLevel="-1" TextAuraEffect="Bold" TextAuraFontSize="24" TextAuraForeground="Red" TextAuraBackground="Black" TextAuraOutline="Black" TextAuraName="fireballTimer" TextAuraExpression="${numeric:5-${_since}}" TextAuraXIniExpression="${_imageaura[naelDebuffs].x}+15" TextAuraYIniExpression="${_imageaura[naelDebuffs].y}+7" TextAuraWIniExpression="34" TextAuraHIniExpression="34" TextAuraOIniExpression="100" TextAuraTTLTickExpression="5-${_since}" TextAuraUseOutline="True" TextAuraFontName="Arial" ActionType="TextAura">
+                                <Condition Enabled="false" Grouping="Or" />
+                                <Conditions />
+                              </Action>
+                            </Actions>
+                            <Condition Enabled="false" Grouping="Or" />
+                            <Conditions />
+                          </Trigger>
+                          <Trigger Enabled="true" Name="Doom" Id="a8b244ee-f296-4ae2-ba87-929127582052" RegularExpression="1A:[A-F0-9]{8}:(?&lt;player&gt;[a-zA-Z-' ]{1,31}) gains the effect of Doom from (.*?)? for (?&lt;duration&gt;[0-9]{1,2})\.00 Seconds">
+                            <Actions>
+                              <Action OrderNumber="1" LogLevel="-1" TextAuraEffect="Bold" TextAuraFontSize="20.25" TextAuraForeground="White" TextAuraBackground="Black" TextAuraOutline="Black" TextAuraName="doomTimer" TextAuraExpression="${numeric:${duration}-${_since}}" TextAuraXIniExpression="${_imageaura[naelDebuffs].x}+15" TextAuraYIniExpression="${_imageaura[naelDebuffs].y}+148" TextAuraWIniExpression="34" TextAuraHIniExpression="34" TextAuraOIniExpression="100" TextAuraTTLTickExpression="${duration}-${_since}" TextAuraUseOutline="True" TextAuraFontName="Arial" ActionType="TextAura">
+                                <Condition Enabled="false" Grouping="Or" />
+                                <Conditions />
+                              </Action>
+                            </Actions>
+                            <Condition Enabled="true" Grouping="Or">
+                              <ConditionSingle Enabled="true" ExpressionL="${player}" ExpressionTypeL="String" ExpressionR="${_ffxivplayer}" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
+                            </Condition>
+                            <Conditions />
+                          </Trigger>
+                        </Triggers>
+                      </Folder>
+                      <Folder Id="d0d335dc-2938-448e-b9d4-b4b4f4fdf5ab" Name="Reset" Enabled="true">
+                        <Folders />
+                        <Triggers>
+                          <Trigger Enabled="true" Name="Doom" Id="7ab63a87-3898-47e3-a4c6-1f1764619219" RegularExpression="1E:[A-F0-9]{8}:(?&lt;player&gt;[a-zA-Z-' ]{1,31}) loses the effect of Doom">
+                            <Actions>
+                              <Action OrderNumber="1" AuraOp="DeactivateAura" AuraName="naelDoom${player}" AuraImage="${var:imagePath}jobs\${tvarrl:UCOB[${player}][1]}.png" AuraXIniExpression="${_imageaura[naelDebuffs].x}+111" AuraYIniExpression="${_imageaura[naelDebuffs].y}+254" AuraWIniExpression="64" AuraHIniExpression="64" AuraOIniExpression="100" AuraTTLTickExpression="6-${_since}" LogLevel="-1" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Aura">
+                                <Condition Enabled="false" Grouping="Or" />
+                                <Conditions />
+                              </Action>
+                            </Actions>
+                            <Condition Enabled="false" Grouping="Or" />
+                            <Conditions />
+                          </Trigger>
+                        </Triggers>
+                      </Folder>
+                      <Folder Id="dc8cf722-8b75-41ed-b2d4-6cb0394564dc" Name="Debuff" Enabled="true">
+                        <Folders />
+                        <Triggers>
+                          <Trigger Enabled="true" Name="Firescorched" Id="f98b04bb-adfb-456e-a03f-17bc0834c311" RegularExpression="1[AE]:[A-F0-9]{8}:(?&lt;player&gt;(?&lt;name&gt;[\w-']+) [\w-']+) (?&lt;effect&gt;gains|loses) the effect of Firescorched">
+                            <Actions>
+                              <Action OrderNumber="1" VariableName="fireDebuff" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Variable">
+                                <Condition Enabled="true" Grouping="And">
+                                  <ConditionSingle Enabled="true" ExpressionL="${effect}" ExpressionTypeL="String" ExpressionR="loses" ExpressionTypeR="String" ConditionType="StringEqualCase" />
+                                </Condition>
+                                <Conditions />
+                              </Action>
+                              <Action OrderNumber="2" VariableOp="SetString" VariableName="fireDebuff" VariableExpression="true" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Variable">
+                                <Condition Enabled="true" Grouping="And">
+                                  <ConditionSingle Enabled="true" ExpressionL="${effect}" ExpressionTypeL="String" ExpressionR="gains" ExpressionTypeR="String" ConditionType="StringEqualCase" />
+                                </Condition>
+                                <Conditions />
+                              </Action>
+                            </Actions>
+                            <Condition Enabled="true" Grouping="Or">
+                              <ConditionSingle Enabled="true" ExpressionL="${player}" ExpressionTypeL="String" ExpressionR="${_ffxivplayer}" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
+                            </Condition>
+                            <Conditions />
+                          </Trigger>
+                          <Trigger Enabled="true" Name="Icebitten" Id="ba7fe758-3cf2-4514-b7df-2f1d6a19c182" RegularExpression="1[AE]:[A-F0-9]{8}:(?&lt;player&gt;(?&lt;name&gt;[\w-']+) [\w-']+) (?&lt;effect&gt;gains|loses) the effect of Icebitten">
+                            <Actions>
+                              <Action OrderNumber="1" VariableName="iceDebuff" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Variable">
+                                <Condition Enabled="true" Grouping="And">
+                                  <ConditionSingle Enabled="true" ExpressionL="${effect}" ExpressionTypeL="String" ExpressionR="loses" ExpressionTypeR="String" ConditionType="StringEqualCase" />
+                                </Condition>
+                                <Conditions />
+                              </Action>
+                              <Action OrderNumber="2" VariableOp="SetString" VariableName="iceDebuff" VariableExpression="true" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Variable">
+                                <Condition Enabled="true" Grouping="And">
+                                  <ConditionSingle Enabled="true" ExpressionL="${effect}" ExpressionTypeL="String" ExpressionR="gains" ExpressionTypeR="String" ConditionType="StringEqualCase" />
+                                </Condition>
+                                <Conditions />
+                              </Action>
+                            </Actions>
+                            <Condition Enabled="true" Grouping="Or">
+                              <ConditionSingle Enabled="true" ExpressionL="${player}" ExpressionTypeL="String" ExpressionR="${_ffxivplayer}" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
+                            </Condition>
+                            <Conditions />
+                          </Trigger>
+                        </Triggers>
+                      </Folder>
+                    </Folders>
+                    <Triggers>
+                      <Trigger Enabled="true" Name="# Activate" Id="8bf57b49-8a50-45e0-8d99-992a78812788" RegularExpression="\A.{15}14:26C2">
+                        <Actions>
+                          <Action OrderNumber="1" AuraName="naelDebuffs" AuraImage="${var:imagePath}ucob\naeldebuffs.png" AuraXIniExpression="${var:naelDebuffX}" AuraYIniExpression="${var:naelDebuffY}" AuraWIniExpression="256" AuraHIniExpression="204" AuraOIniExpression="${var:naelDebuffOpacity}" VariableOp="SetString" VariableName="fate" VariableExpression="a" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Aura">
+                            <Condition Enabled="false" Grouping="Or" />
+                            <Conditions />
+                          </Action>
+                        </Actions>
+                        <Condition Enabled="true" Grouping="Or">
+                          <ConditionSingle Enabled="true" ExpressionL="${evar:dataPhase}" ExpressionTypeL="Numeric" ExpressionR="0" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
+                        </Condition>
+                        <Conditions />
+                      </Trigger>
+                      <Trigger Enabled="true" Name="Fireball" Id="9877fe4f-88b2-4a45-8547-10095002f586" RegularExpression="23:[0-9A-F]{8}:Firehorn:[0-9A-F]{8}:(?&lt;player&gt;(?&lt;name&gt;[\w-']+) [\w-']+):.{4}:.{4}:0005:">
+                        <Actions>
+                          <Action OrderNumber="1" AuraName="naelFireball${player}" AuraImage="${var:imagePath}jobs\${tvarrl:UCOB[${player}][1]}.png" AuraXIniExpression="${_imageaura[naelDebuffs].x}+64" AuraYIniExpression="${_imageaura[naelDebuffs].y}" AuraWIniExpression="64" AuraHIniExpression="64" AuraOIniExpression="100" AuraTTLTickExpression="5-${_since}" LogLevel="-1" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Aura">
+                            <Condition Enabled="false" Grouping="Or" />
+                            <Conditions />
+                          </Action>
+                        </Actions>
+                        <Condition Enabled="false" Grouping="Or" />
+                        <Conditions />
+                      </Trigger>
+                      <Trigger Enabled="true" Name="Thunderstruck" Id="cf1338ec-48dd-46c1-983d-345436261a8e" RegularExpression=":Thunderwing:26C7:Chain Lightning:[0-9A-F]{8}:(?&lt;player&gt;(?&lt;name&gt;[\w-']+) [\w-']+):">
+                        <Actions>
+                          <Action OrderNumber="1" AuraName="naelThunder${player}" AuraImage="${var:imagePath}jobs\${tvarrl:UCOB[${player}][1]}.png" AuraXIniExpression="${_imageaura[naelDebuffs].x}+64+(${_imageaura[naelThunder${_ffxivparty[1].name}].w})+(${_imageaura[naelThunder${_ffxivparty[2].name}].w})+(${_imageaura[naelThunder${_ffxivparty[3].name}].w})+(${_imageaura[naelThunder${_ffxivparty[4].name}].w})+(${_imageaura[naelThunder${_ffxivparty[5].name}].w})+(${_imageaura[naelThunder${_ffxivparty[6].name}].w})+(${_imageaura[naelThunder${_ffxivparty[7].name}].w})+(${_imageaura[naelThunder${_ffxivparty[8].name}].w})" AuraYIniExpression="${_imageaura[naelDebuffs].y}+70" AuraWIniExpression="64" AuraHIniExpression="64" AuraOIniExpression="100" AuraTTLTickExpression="6-${_since}" LogLevel="-1" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Aura">
+                            <Condition Enabled="false" Grouping="Or" />
+                            <Conditions />
+                          </Action>
+                        </Actions>
+                        <Condition Enabled="false" Grouping="Or" />
+                        <Conditions />
+                      </Trigger>
+                      <Trigger Enabled="true" Name="Doom" Id="e5fbfb9e-8e81-45bc-9f6d-9feab0daece8" RegularExpression="1A:[A-F0-9]{8}:(?&lt;player&gt;[a-zA-Z-' ]{1,31}) gains the effect of Doom from (.*?)? for (?&lt;duration&gt;[0-9]{1,2})\.00 Seconds">
+                        <Actions>
+                          <Action OrderNumber="1" AuraName="naelDoom${player}" AuraImage="${var:imagePath}jobs\${tvarrl:UCOB[${player}][1]}.png" AuraXIniExpression="${_imageaura[naelDebuffs].x}+64" AuraYIniExpression="${_imageaura[naelDebuffs].y}+140" AuraWIniExpression="64" AuraHIniExpression="64" AuraOIniExpression="100" AuraTTLTickExpression="6-${_since}" LogLevel="-1" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Aura">
+                            <Condition Enabled="true" Grouping="Or">
+                              <ConditionSingle Enabled="true" ExpressionL="${duration}" ExpressionTypeL="String" ExpressionR="6" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
+                            </Condition>
+                            <Conditions />
+                          </Action>
+                          <Action OrderNumber="2" AuraName="naelDoom${player}" AuraImage="${var:imagePath}jobs\${tvarrl:UCOB[${player}][1]}.png" AuraXIniExpression="${_imageaura[naelDebuffs].x}+128" AuraYIniExpression="${_imageaura[naelDebuffs].y}+140" AuraWIniExpression="64" AuraHIniExpression="64" AuraOIniExpression="100" AuraTTLTickExpression="10-${_since}" LogLevel="-1" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Aura">
+                            <Condition Enabled="true" Grouping="Or">
+                              <ConditionSingle Enabled="true" ExpressionL="${duration}" ExpressionTypeL="String" ExpressionR="10" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
+                            </Condition>
+                            <Conditions />
+                          </Action>
+                          <Action OrderNumber="3" AuraName="naelDoom${player}" AuraImage="${var:imagePath}jobs\${tvarrl:UCOB[${player}][1]}.png" AuraXIniExpression="${_imageaura[naelDebuffs].x}+192" AuraYIniExpression="${_imageaura[naelDebuffs].y}+140" AuraWIniExpression="64" AuraHIniExpression="64" AuraOIniExpression="100" AuraTTLTickExpression="16-${_since}" LogLevel="-1" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Aura">
+                            <Condition Enabled="true" Grouping="Or">
+                              <ConditionSingle Enabled="true" ExpressionL="${duration}" ExpressionTypeL="String" ExpressionR="16" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
+                            </Condition>
+                            <Conditions />
+                          </Action>
+                        </Actions>
+                        <Condition Enabled="false" Grouping="Or" />
+                        <Conditions />
+                      </Trigger>
+                      <Trigger Enabled="true" Name="# Deactivate" Id="646a0b54-4627-4be5-b337-eec556e36605" RegularExpression="\A.{15}14:26B6">
+                        <Actions>
+                          <Action OrderNumber="1" AuraOp="DeactivateAura" AuraName="naelDebuffs" LogLevel="-1" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Aura">
+                            <Condition Enabled="false" Grouping="Or" />
+                            <Conditions />
+                          </Action>
+                        </Actions>
+                        <Condition Enabled="false" Grouping="Or" />
+                        <Conditions />
+                      </Trigger>
+                    </Triggers>
+                  </Folder>
                 </Folders>
                 <Triggers>
                   <Trigger Enabled="true" Name="Akh Morn" Id="34e7ba0b-c349-4b67-aac6-1ddc88839ca4" RegularExpression="\A.{15}14:26EA">
@@ -16565,24 +16622,6 @@
                     <Condition Enabled="false" Grouping="Or" />
                     <Conditions />
                   </Trigger>
-                  <Trigger Enabled="true" Sequential="True" Name="Megaflare" Id="fcecb8b9-6af5-40c4-bd6e-11ee93eb2c28" RegularExpression="1B:[0-9A-F]{8}:(?&lt;player&gt;(?&lt;name&gt;[\w-']+) [\w-']+):.{4}:.{4}:0027:">
-                    <Actions>
-                      <Action OrderNumber="1" LogLevel="-1" UseTTSTextExpression="Mega flare stack" TextAuraEffect="Bold" TextAuraFontSize="24" TextAuraForeground="#FFBB00" TextAuraOutline="Black" TextAuraName="twinOctet" TextAuraExpression="#8: ${name} (Twintania)" TextAuraXIniExpression="0" TextAuraYIniExpression="${naelY}" TextAuraWIniExpression="${screenwidth}" TextAuraHIniExpression="64" TextAuraOIniExpression="100" TextAuraTTLTickExpression="3.5-${_since}" TextAuraUseOutline="True" TextAuraFontName="Microsoft Sans Serif" ActionType="UseTTS">
-                        <Condition Enabled="false" Grouping="And" />
-                        <Conditions />
-                      </Action>
-                      <Action OrderNumber="2" LogLevel="-1" UseTTSTextExpression="outside intercardinal" TextAuraEffect="Bold" TextAuraFontSize="24" TextAuraForeground="#FFBB00" TextAuraOutline="Black" TextAuraName="blackfireTower" TextAuraExpression="Bait Hypernova" TextAuraXIniExpression="0" TextAuraYIniExpression="${var:naelY}+64" TextAuraWIniExpression="${_screenwidth}" TextAuraHIniExpression="64" TextAuraOIniExpression="100" TextAuraTTLTickExpression="3-${_since}" TextAuraUseOutline="True" TextAuraFontName="Microsoft Sans Serif" ActionType="TextAura">
-                        <Condition Enabled="true" Grouping="And">
-                          <ConditionSingle Enabled="true" ExpressionL="${var:dataPhase}" ExpressionTypeL="String" ExpressionR="blackfire" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
-                        </Condition>
-                        <Conditions />
-                      </Action>
-                    </Actions>
-                    <Condition Enabled="true" Grouping="Or">
-                      <ConditionSingle Enabled="true" ExpressionL="${player}" ExpressionTypeL="String" ExpressionR="${_ffxivplayer}" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
-                    </Condition>
-                    <Conditions />
-                  </Trigger>
                   <Trigger Enabled="true" Name="Twister" Id="c9ca7080-295f-4b63-9ec8-c277e3985f55" RegularExpression="\A.{15}14:26AA">
                     <Actions>
                       <Action OrderNumber="1" PlaySoundFileExpression="https://raw.githubusercontent.com/lexxiesia/xiv_triggernometry/master/resources/wav/arthars/twister1.wav" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="PlaySound">
@@ -16606,6 +16645,16 @@
                   <Trigger Enabled="true" Name="Fireball" Id="7c66e3cb-5c8b-4606-9a76-efac7c5ac6eb" RegularExpression="1B:[0-9A-F]{8}:(?&lt;player&gt;(?&lt;name&gt;[\w-']+) [\w-']+):.{4}:.{4}:0075:">
                     <Actions>
                       <Action OrderNumber="1" LogLevel="-1" UseTTSTextExpression="Stack" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="UseTTS">
+                        <Condition Enabled="false" Grouping="Or" />
+                        <Conditions />
+                      </Action>
+                    </Actions>
+                    <Condition Enabled="false" Grouping="Or" />
+                    <Conditions />
+                  </Trigger>
+                  <Trigger Enabled="true" Name="Exaflare" Id="9c57f723-46a2-414b-8f36-b5e145286b93" RegularExpression="\A.{15}14:26EF">
+                    <Actions>
+                      <Action OrderNumber="1" LogLevel="-1" UseTTSTextExpression="Exaflare" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="UseTTS">
                         <Condition Enabled="false" Grouping="Or" />
                         <Conditions />
                       </Action>
@@ -16902,6 +16951,292 @@
                       </Action>
                     </Actions>
                     <Condition Enabled="false" Grouping="Or" />
+                    <Conditions />
+                  </Trigger>
+                  <Trigger Enabled="true" Source="FFXIVNetwork" Sequential="True" Name="Heavensfall Trio" Id="b5ae88a4-2d26-4f38-b52e-452f7cbb7d83" RegularExpression="^20\|[^\|]*\|(?&lt;aID&gt;[^\|]*)\|[^\|]*\|26E1\|" Description="This trigger calls out Prismatic Deception safe spots when the casts of Blasting Zone start on the enemy list. The calls by default &#xD;&#xA;are North, Northeast, East, Southeast, obviously the cardinal/intercardinal direction opposite of what the trigger calls will be safe &#xD;&#xA;too. If you prefer, you can change the things the TTS actions call in the Trigger Actions tab of the this trigger.&#xD;&#xA;&#xD;&#xA;Version History:&#xD;&#xA;v1.4: Public Release&#xD;&#xA;v1.5: Rewrote part of this trigger to have fewer moving parts since it wasn't executing consistently&#xD;&#xA;v1.6: I swear to god this thing works now">
+                    <Actions>
+                      <Action OrderNumber="1" LogLevel="-1" VariableOp="SetNumeric" VariableName="bahamutDirection" VariableExpression="(round(4 - 4 * arctan2(${_ffxiventity[${aID}].x},${_ffxiventity[${aID}].y)}) / pi) % 8)+1" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Variable" ExecutionDelayExpression="100">
+                        <Condition Enabled="false" Grouping="Or" />
+                        <Conditions />
+                      </Action>
+                      <Action OrderNumber="2" LogLevel="-1" VariableOp="SetNumeric" VariableName="naelDirection" VariableExpression="(round(4 - 4 * arctan2(${_ffxiventity[Nael deus Darnus].x},${_ffxiventity[Nael deus Darnus].y)}) / pi) % 8)+1" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Variable">
+                        <Condition Enabled="false" Grouping="Or" />
+                        <Conditions />
+                      </Action>
+                      <Action OrderNumber="3" LogLevel="-1" VariableOp="SetNumeric" VariableName="twinDirection" VariableExpression="(round(4 - 4 * arctan2(${_ffxiventity[Twintania].x},${_ffxiventity[Twintania].y)}) / pi) % 8)+1" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Variable">
+                        <Condition Enabled="false" Grouping="Or" />
+                        <Conditions />
+                      </Action>
+                      <Action OrderNumber="4" LogLevel="-1" MouseX="" MouseY="" UseTTSTextExpression="Quadrant" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="UseTTS">
+                        <Condition Enabled="true" Grouping="Xor">
+                          <ConditionGroup Enabled="true" Grouping="And">
+                            <ConditionSingle Enabled="true" ExpressionL="${var:naelDirection}" ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
+                            <ConditionGroup Enabled="true" Grouping="Or">
+                              <ConditionGroup Enabled="true" Grouping="And">
+                                <ConditionSingle Enabled="true" ExpressionL="${var:twinDirection}" ExpressionTypeL="Numeric" ExpressionR="2" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
+                                <ConditionSingle Enabled="true" ExpressionL="${var:bahamutDirection}" ExpressionTypeL="Numeric" ExpressionR="8" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
+                              </ConditionGroup>
+                              <ConditionGroup Enabled="true" Grouping="And">
+                                <ConditionSingle Enabled="true" ExpressionL="${var:twinDirection}" ExpressionTypeL="Numeric" ExpressionR="8" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
+                                <ConditionSingle Enabled="true" ExpressionL="${var:bahamutDirection}" ExpressionTypeL="Numeric" ExpressionR="2" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
+                              </ConditionGroup>
+                            </ConditionGroup>
+                          </ConditionGroup>
+                          <ConditionGroup Enabled="true" Grouping="And">
+                            <ConditionSingle Enabled="true" ExpressionL="${var:naelDirection}" ExpressionTypeL="Numeric" ExpressionR="2" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
+                            <ConditionGroup Enabled="true" Grouping="Or">
+                              <ConditionGroup Enabled="true" Grouping="And">
+                                <ConditionSingle Enabled="true" ExpressionL="${var:twinDirection}" ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
+                                <ConditionSingle Enabled="true" ExpressionL="${var:bahamutDirection}" ExpressionTypeL="Numeric" ExpressionR="3" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
+                              </ConditionGroup>
+                              <ConditionGroup Enabled="true" Grouping="And">
+                                <ConditionSingle Enabled="true" ExpressionL="${var:twinDirection}" ExpressionTypeL="Numeric" ExpressionR="3" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
+                                <ConditionSingle Enabled="true" ExpressionL="${var:bahamutDirection}" ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
+                              </ConditionGroup>
+                            </ConditionGroup>
+                          </ConditionGroup>
+                          <ConditionGroup Enabled="true" Grouping="And">
+                            <ConditionSingle Enabled="true" ExpressionL="${var:naelDirection}" ExpressionTypeL="Numeric" ExpressionR="3" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
+                            <ConditionGroup Enabled="true" Grouping="Or">
+                              <ConditionGroup Enabled="true" Grouping="And">
+                                <ConditionSingle Enabled="true" ExpressionL="${var:twinDirection}" ExpressionTypeL="Numeric" ExpressionR="2" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
+                                <ConditionSingle Enabled="true" ExpressionL="${var:bahamutDirection}" ExpressionTypeL="Numeric" ExpressionR="4" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
+                              </ConditionGroup>
+                              <ConditionGroup Enabled="true" Grouping="And">
+                                <ConditionSingle Enabled="true" ExpressionL="${var:twinDirection}" ExpressionTypeL="Numeric" ExpressionR="4" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
+                                <ConditionSingle Enabled="true" ExpressionL="${var:bahamutDirection}" ExpressionTypeL="Numeric" ExpressionR="2" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
+                              </ConditionGroup>
+                            </ConditionGroup>
+                          </ConditionGroup>
+                          <ConditionGroup Enabled="true" Grouping="And">
+                            <ConditionSingle Enabled="true" ExpressionL="${var:naelDirection}" ExpressionTypeL="Numeric" ExpressionR="4" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
+                            <ConditionGroup Enabled="true" Grouping="Or">
+                              <ConditionGroup Enabled="true" Grouping="And">
+                                <ConditionSingle Enabled="true" ExpressionL="${var:twinDirection}" ExpressionTypeL="Numeric" ExpressionR="3" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
+                                <ConditionSingle Enabled="true" ExpressionL="${var:bahamutDirection}" ExpressionTypeL="Numeric" ExpressionR="5" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
+                              </ConditionGroup>
+                              <ConditionGroup Enabled="true" Grouping="And">
+                                <ConditionSingle Enabled="true" ExpressionL="${var:twinDirection}" ExpressionTypeL="Numeric" ExpressionR="5" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
+                                <ConditionSingle Enabled="true" ExpressionL="${var:bahamutDirection}" ExpressionTypeL="Numeric" ExpressionR="3" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
+                              </ConditionGroup>
+                            </ConditionGroup>
+                          </ConditionGroup>
+                          <ConditionGroup Enabled="true" Grouping="And">
+                            <ConditionSingle Enabled="true" ExpressionL="${var:naelDirection}" ExpressionTypeL="Numeric" ExpressionR="5" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
+                            <ConditionGroup Enabled="true" Grouping="Or">
+                              <ConditionGroup Enabled="true" Grouping="And">
+                                <ConditionSingle Enabled="true" ExpressionL="${var:twinDirection}" ExpressionTypeL="Numeric" ExpressionR="4" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
+                                <ConditionSingle Enabled="true" ExpressionL="${var:bahamutDirection}" ExpressionTypeL="Numeric" ExpressionR="6" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
+                              </ConditionGroup>
+                              <ConditionGroup Enabled="true" Grouping="And">
+                                <ConditionSingle Enabled="true" ExpressionL="${var:twinDirection}" ExpressionTypeL="Numeric" ExpressionR="6" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
+                                <ConditionSingle Enabled="true" ExpressionL="${var:bahamutDirection}" ExpressionTypeL="Numeric" ExpressionR="4" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
+                              </ConditionGroup>
+                            </ConditionGroup>
+                          </ConditionGroup>
+                          <ConditionGroup Enabled="true" Grouping="And">
+                            <ConditionSingle Enabled="true" ExpressionL="${var:naelDirection}" ExpressionTypeL="Numeric" ExpressionR="6" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
+                            <ConditionGroup Enabled="true" Grouping="Or">
+                              <ConditionGroup Enabled="true" Grouping="And">
+                                <ConditionSingle Enabled="true" ExpressionL="${var:twinDirection}" ExpressionTypeL="Numeric" ExpressionR="5" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
+                                <ConditionSingle Enabled="true" ExpressionL="${var:bahamutDirection}" ExpressionTypeL="Numeric" ExpressionR="7" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
+                              </ConditionGroup>
+                              <ConditionGroup Enabled="true" Grouping="And">
+                                <ConditionSingle Enabled="true" ExpressionL="${var:twinDirection}" ExpressionTypeL="Numeric" ExpressionR="7" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
+                                <ConditionSingle Enabled="true" ExpressionL="${var:bahamutDirection}" ExpressionTypeL="Numeric" ExpressionR="5" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
+                              </ConditionGroup>
+                            </ConditionGroup>
+                          </ConditionGroup>
+                          <ConditionGroup Enabled="true" Grouping="And">
+                            <ConditionSingle Enabled="true" ExpressionL="${var:naelDirection}" ExpressionTypeL="Numeric" ExpressionR="7" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
+                            <ConditionGroup Enabled="true" Grouping="Or">
+                              <ConditionGroup Enabled="true" Grouping="And">
+                                <ConditionSingle Enabled="true" ExpressionL="${var:twinDirection}" ExpressionTypeL="Numeric" ExpressionR="6" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
+                                <ConditionSingle Enabled="true" ExpressionL="${var:bahamutDirection}" ExpressionTypeL="Numeric" ExpressionR="8" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
+                              </ConditionGroup>
+                              <ConditionGroup Enabled="true" Grouping="And">
+                                <ConditionSingle Enabled="true" ExpressionL="${var:twinDirection}" ExpressionTypeL="Numeric" ExpressionR="8" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
+                                <ConditionSingle Enabled="true" ExpressionL="${var:bahamutDirection}" ExpressionTypeL="Numeric" ExpressionR="6" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
+                              </ConditionGroup>
+                            </ConditionGroup>
+                          </ConditionGroup>
+                          <ConditionGroup Enabled="true" Grouping="And">
+                            <ConditionSingle Enabled="true" ExpressionL="${var:naelDirection}" ExpressionTypeL="Numeric" ExpressionR="8" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
+                            <ConditionGroup Enabled="true" Grouping="Or">
+                              <ConditionGroup Enabled="true" Grouping="And">
+                                <ConditionSingle Enabled="true" ExpressionL="${var:twinDirection}" ExpressionTypeL="Numeric" ExpressionR="7" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
+                                <ConditionSingle Enabled="true" ExpressionL="${var:bahamutDirection}" ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
+                              </ConditionGroup>
+                              <ConditionGroup Enabled="true" Grouping="And">
+                                <ConditionSingle Enabled="true" ExpressionL="${var:twinDirection}" ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
+                                <ConditionSingle Enabled="true" ExpressionL="${var:bahamutDirection}" ExpressionTypeL="Numeric" ExpressionR="7" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
+                              </ConditionGroup>
+                            </ConditionGroup>
+                          </ConditionGroup>
+                        </Condition>
+                        <Conditions />
+                      </Action>
+                      <Action OrderNumber="5" LogLevel="-1" MouseX="" MouseY="" UseTTSTextExpression="Sides" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="UseTTS">
+                        <Condition Enabled="true" Grouping="Not">
+                          <ConditionGroup Enabled="true" Grouping="And">
+                            <ConditionSingle Enabled="true" ExpressionL="${var:naelDirection}" ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
+                            <ConditionGroup Enabled="true" Grouping="Or">
+                              <ConditionGroup Enabled="true" Grouping="And">
+                                <ConditionSingle Enabled="true" ExpressionL="${var:twinDirection}" ExpressionTypeL="Numeric" ExpressionR="2" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
+                                <ConditionSingle Enabled="true" ExpressionL="${var:bahamutDirection}" ExpressionTypeL="Numeric" ExpressionR="8" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
+                              </ConditionGroup>
+                              <ConditionGroup Enabled="true" Grouping="And">
+                                <ConditionSingle Enabled="true" ExpressionL="${var:twinDirection}" ExpressionTypeL="Numeric" ExpressionR="8" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
+                                <ConditionSingle Enabled="true" ExpressionL="${var:bahamutDirection}" ExpressionTypeL="Numeric" ExpressionR="2" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
+                              </ConditionGroup>
+                            </ConditionGroup>
+                          </ConditionGroup>
+                          <ConditionGroup Enabled="true" Grouping="And">
+                            <ConditionSingle Enabled="true" ExpressionL="${var:naelDirection}" ExpressionTypeL="Numeric" ExpressionR="2" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
+                            <ConditionGroup Enabled="true" Grouping="Or">
+                              <ConditionGroup Enabled="true" Grouping="And">
+                                <ConditionSingle Enabled="true" ExpressionL="${var:twinDirection}" ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
+                                <ConditionSingle Enabled="true" ExpressionL="${var:bahamutDirection}" ExpressionTypeL="Numeric" ExpressionR="3" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
+                              </ConditionGroup>
+                              <ConditionGroup Enabled="true" Grouping="And">
+                                <ConditionSingle Enabled="true" ExpressionL="${var:twinDirection}" ExpressionTypeL="Numeric" ExpressionR="3" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
+                                <ConditionSingle Enabled="true" ExpressionL="${var:bahamutDirection}" ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
+                              </ConditionGroup>
+                            </ConditionGroup>
+                          </ConditionGroup>
+                          <ConditionGroup Enabled="true" Grouping="And">
+                            <ConditionSingle Enabled="true" ExpressionL="${var:naelDirection}" ExpressionTypeL="Numeric" ExpressionR="3" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
+                            <ConditionGroup Enabled="true" Grouping="Or">
+                              <ConditionGroup Enabled="true" Grouping="And">
+                                <ConditionSingle Enabled="true" ExpressionL="${var:twinDirection}" ExpressionTypeL="Numeric" ExpressionR="2" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
+                                <ConditionSingle Enabled="true" ExpressionL="${var:bahamutDirection}" ExpressionTypeL="Numeric" ExpressionR="4" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
+                              </ConditionGroup>
+                              <ConditionGroup Enabled="true" Grouping="And">
+                                <ConditionSingle Enabled="true" ExpressionL="${var:twinDirection}" ExpressionTypeL="Numeric" ExpressionR="4" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
+                                <ConditionSingle Enabled="true" ExpressionL="${var:bahamutDirection}" ExpressionTypeL="Numeric" ExpressionR="2" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
+                              </ConditionGroup>
+                            </ConditionGroup>
+                          </ConditionGroup>
+                          <ConditionGroup Enabled="true" Grouping="And">
+                            <ConditionSingle Enabled="true" ExpressionL="${var:naelDirection}" ExpressionTypeL="Numeric" ExpressionR="4" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
+                            <ConditionGroup Enabled="true" Grouping="Or">
+                              <ConditionGroup Enabled="true" Grouping="And">
+                                <ConditionSingle Enabled="true" ExpressionL="${var:twinDirection}" ExpressionTypeL="Numeric" ExpressionR="3" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
+                                <ConditionSingle Enabled="true" ExpressionL="${var:bahamutDirection}" ExpressionTypeL="Numeric" ExpressionR="5" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
+                              </ConditionGroup>
+                              <ConditionGroup Enabled="true" Grouping="And">
+                                <ConditionSingle Enabled="true" ExpressionL="${var:twinDirection}" ExpressionTypeL="Numeric" ExpressionR="5" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
+                                <ConditionSingle Enabled="true" ExpressionL="${var:bahamutDirection}" ExpressionTypeL="Numeric" ExpressionR="3" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
+                              </ConditionGroup>
+                            </ConditionGroup>
+                          </ConditionGroup>
+                          <ConditionGroup Enabled="true" Grouping="And">
+                            <ConditionSingle Enabled="true" ExpressionL="${var:naelDirection}" ExpressionTypeL="Numeric" ExpressionR="5" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
+                            <ConditionGroup Enabled="true" Grouping="Or">
+                              <ConditionGroup Enabled="true" Grouping="And">
+                                <ConditionSingle Enabled="true" ExpressionL="${var:twinDirection}" ExpressionTypeL="Numeric" ExpressionR="4" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
+                                <ConditionSingle Enabled="true" ExpressionL="${var:bahamutDirection}" ExpressionTypeL="Numeric" ExpressionR="6" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
+                              </ConditionGroup>
+                              <ConditionGroup Enabled="true" Grouping="And">
+                                <ConditionSingle Enabled="true" ExpressionL="${var:twinDirection}" ExpressionTypeL="Numeric" ExpressionR="6" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
+                                <ConditionSingle Enabled="true" ExpressionL="${var:bahamutDirection}" ExpressionTypeL="Numeric" ExpressionR="4" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
+                              </ConditionGroup>
+                            </ConditionGroup>
+                          </ConditionGroup>
+                          <ConditionGroup Enabled="true" Grouping="And">
+                            <ConditionSingle Enabled="true" ExpressionL="${var:naelDirection}" ExpressionTypeL="Numeric" ExpressionR="6" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
+                            <ConditionGroup Enabled="true" Grouping="Or">
+                              <ConditionGroup Enabled="true" Grouping="And">
+                                <ConditionSingle Enabled="true" ExpressionL="${var:twinDirection}" ExpressionTypeL="Numeric" ExpressionR="5" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
+                                <ConditionSingle Enabled="true" ExpressionL="${var:bahamutDirection}" ExpressionTypeL="Numeric" ExpressionR="7" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
+                              </ConditionGroup>
+                              <ConditionGroup Enabled="true" Grouping="And">
+                                <ConditionSingle Enabled="true" ExpressionL="${var:twinDirection}" ExpressionTypeL="Numeric" ExpressionR="7" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
+                                <ConditionSingle Enabled="true" ExpressionL="${var:bahamutDirection}" ExpressionTypeL="Numeric" ExpressionR="5" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
+                              </ConditionGroup>
+                            </ConditionGroup>
+                          </ConditionGroup>
+                          <ConditionGroup Enabled="true" Grouping="And">
+                            <ConditionSingle Enabled="true" ExpressionL="${var:naelDirection}" ExpressionTypeL="Numeric" ExpressionR="7" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
+                            <ConditionGroup Enabled="true" Grouping="Or">
+                              <ConditionGroup Enabled="true" Grouping="And">
+                                <ConditionSingle Enabled="true" ExpressionL="${var:twinDirection}" ExpressionTypeL="Numeric" ExpressionR="6" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
+                                <ConditionSingle Enabled="true" ExpressionL="${var:bahamutDirection}" ExpressionTypeL="Numeric" ExpressionR="8" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
+                              </ConditionGroup>
+                              <ConditionGroup Enabled="true" Grouping="And">
+                                <ConditionSingle Enabled="true" ExpressionL="${var:twinDirection}" ExpressionTypeL="Numeric" ExpressionR="8" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
+                                <ConditionSingle Enabled="true" ExpressionL="${var:bahamutDirection}" ExpressionTypeL="Numeric" ExpressionR="6" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
+                              </ConditionGroup>
+                            </ConditionGroup>
+                          </ConditionGroup>
+                          <ConditionGroup Enabled="true" Grouping="And">
+                            <ConditionSingle Enabled="true" ExpressionL="${var:naelDirection}" ExpressionTypeL="Numeric" ExpressionR="8" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
+                            <ConditionGroup Enabled="true" Grouping="Or">
+                              <ConditionGroup Enabled="true" Grouping="And">
+                                <ConditionSingle Enabled="true" ExpressionL="${var:twinDirection}" ExpressionTypeL="Numeric" ExpressionR="7" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
+                                <ConditionSingle Enabled="true" ExpressionL="${var:bahamutDirection}" ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
+                              </ConditionGroup>
+                              <ConditionGroup Enabled="true" Grouping="And">
+                                <ConditionSingle Enabled="true" ExpressionL="${var:twinDirection}" ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
+                                <ConditionSingle Enabled="true" ExpressionL="${var:bahamutDirection}" ExpressionTypeL="Numeric" ExpressionR="7" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
+                              </ConditionGroup>
+                            </ConditionGroup>
+                          </ConditionGroup>
+                        </Condition>
+                        <Conditions />
+                      </Action>
+                    </Actions>
+                    <Condition Enabled="true" Grouping="Or">
+                      <ConditionSingle Enabled="true" ExpressionL="${var:dataPhase}" ExpressionTypeL="String" ExpressionR="heavensfall" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
+                    </Condition>
+                    <Conditions />
+                  </Trigger>
+                  <Trigger Enabled="true" Source="FFXIVNetwork" Sequential="True" Name="Quickmarch Trio" Id="232334fa-3481-4eb5-a8f3-caa58e5fb225" RegularExpression="^20\|[^\|]*\|(?&lt;aID&gt;[^\|]*)\|[^\|]*\|26E1\|" Description="This trigger calls out Prismatic Deception safe spots when the casts of Blasting Zone start on the enemy list. The calls by default &#xD;&#xA;are North, Northeast, East, Southeast, obviously the cardinal/intercardinal direction opposite of what the trigger calls will be safe &#xD;&#xA;too. If you prefer, you can change the things the TTS actions call in the Trigger Actions tab of the this trigger.&#xD;&#xA;&#xD;&#xA;Version History:&#xD;&#xA;v1.4: Public Release&#xD;&#xA;v1.5: Rewrote part of this trigger to have fewer moving parts since it wasn't executing consistently&#xD;&#xA;v1.6: I swear to god this thing works now">
+                    <Actions>
+                      <Action OrderNumber="1" LogLevel="-1" VariableOp="SetNumeric" VariableName="bahamutDirection" VariableExpression="(round(4 - 4 * arctan2(${_ffxiventity[${aID}].x},${_ffxiventity[${aID}].y)}) / pi) % 8)+1" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Variable" ExecutionDelayExpression="100">
+                        <Condition Enabled="false" Grouping="Or" />
+                        <Conditions />
+                      </Action>
+                      <Action OrderNumber="2" LogLevel="-1" TextAuraEffect="Bold" TextAuraFontSize="20.25" TextAuraForeground="Lime" TextAuraOutline="Black" TextAuraName="relativeNorth" TextAuraExpression="Bahamut ${tvar:dragonMap[1][${var:bahamutDirection}]}" TextAuraXIniExpression="0" TextAuraYIniExpression="(${_screenheight}/2)+64" TextAuraWIniExpression="${_screenwidth}" TextAuraHIniExpression="100" TextAuraOIniExpression="100" TextAuraTTLTickExpression="3-${_since}" TextAuraUseOutline="True" TextAuraFontName="Microsoft Sans Serif" ActionType="TextAura">
+                        <Condition Enabled="true" Grouping="And">
+                          <ConditionSingle Enabled="true" ExpressionL="${var:cataclysmCardinal}" ExpressionTypeL="Numeric" ExpressionR="0" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
+                        </Condition>
+                        <Conditions />
+                      </Action>
+                    </Actions>
+                    <Condition Enabled="true" Grouping="Or">
+                      <ConditionSingle Enabled="true" ExpressionL="${var:dataPhase}" ExpressionTypeL="String" ExpressionR="quickmarch" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
+                    </Condition>
+                    <Conditions />
+                  </Trigger>
+                  <Trigger Enabled="true" Source="FFXIVNetwork" Sequential="True" Name="Grand Octet" Id="6454ebc3-567a-4b5f-af2c-dc668c4f6cf2" RegularExpression="^21\|[^\|]*\|(?&lt;aID&gt;[^\|]*)\|[^\|]*\|26E7\|" Description="This trigger calls out Prismatic Deception safe spots when the casts of Blasting Zone start on the enemy list. The calls by default &#xD;&#xA;are North, Northeast, East, Southeast, obviously the cardinal/intercardinal direction opposite of what the trigger calls will be safe &#xD;&#xA;too. If you prefer, you can change the things the TTS actions call in the Trigger Actions tab of the this trigger.&#xD;&#xA;&#xD;&#xA;Version History:&#xD;&#xA;v1.4: Public Release&#xD;&#xA;v1.5: Rewrote part of this trigger to have fewer moving parts since it wasn't executing consistently&#xD;&#xA;v1.6: I swear to god this thing works now">
+                    <Actions>
+                      <Action OrderNumber="1" LogLevel="-1" VariableOp="SetNumeric" VariableName="bahamutDirection" VariableExpression="(round(4 - 4 * arctan2(${_ffxiventity[${aID}].x},${_ffxiventity[${aID}].y)}) / pi) % 8)+1" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Variable" ExecutionDelayExpression="5000">
+                        <Condition Enabled="false" Grouping="Or" />
+                        <Conditions />
+                      </Action>
+                      <Action OrderNumber="2" LogLevel="-1" MouseX="" MouseY="" UseTTSTextExpression="Counter Clockwise" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="UseTTS">
+                        <Condition Enabled="true" Grouping="Or">
+                          <ConditionSingle Enabled="true" ExpressionL="${var:bahamutDirection}" ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
+                          <ConditionSingle Enabled="true" ExpressionL="${var:bahamutDirection}" ExpressionTypeL="Numeric" ExpressionR="3" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
+                          <ConditionSingle Enabled="true" ExpressionL="${var:bahamutDirection}" ExpressionTypeL="Numeric" ExpressionR="5" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
+                          <ConditionSingle Enabled="true" ExpressionL="${var:bahamutDirection}" ExpressionTypeL="Numeric" ExpressionR="7" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
+                        </Condition>
+                        <Conditions />
+                      </Action>
+                      <Action OrderNumber="3" LogLevel="-1" MouseX="" MouseY="" UseTTSTextExpression="Clockwise" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="UseTTS">
+                        <Condition Enabled="true" Grouping="Or">
+                          <ConditionSingle Enabled="true" ExpressionL="${var:bahamutDirection}" ExpressionTypeL="Numeric" ExpressionR="2" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
+                          <ConditionSingle Enabled="true" ExpressionL="${var:bahamutDirection}" ExpressionTypeL="Numeric" ExpressionR="4" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
+                          <ConditionSingle Enabled="true" ExpressionL="${var:bahamutDirection}" ExpressionTypeL="Numeric" ExpressionR="6" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
+                          <ConditionSingle Enabled="true" ExpressionL="${var:bahamutDirection}" ExpressionTypeL="Numeric" ExpressionR="8" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
+                        </Condition>
+                        <Conditions />
+                      </Action>
+                    </Actions>
+                    <Condition Enabled="true" Grouping="Or">
+                      <ConditionSingle Enabled="true" ExpressionL="${var:dataPhase}" ExpressionTypeL="String" ExpressionR="octet" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
+                    </Condition>
                     <Conditions />
                   </Trigger>
                 </Triggers>
@@ -21929,6 +22264,10 @@
             </Folders>
             <Triggers />
           </Folder>
+          <Folder Id="ad8d3e9e-ba20-43f1-8ab9-e6cce30c7096" Name="6.0 - Endwalker" Enabled="true">
+            <Folders />
+            <Triggers />
+          </Folder>
         </Folders>
         <Triggers />
       </Folder>
@@ -22847,6 +23186,10 @@
                     <Conditions />
                   </Trigger>
                 </Triggers>
+              </Folder>
+              <Folder Id="cbdad1e5-24bf-4f5e-bcec-ec9580e4d145" Name="03 - The Tower at Paradigm's Breach" Enabled="true">
+                <Folders />
+                <Triggers />
               </Folder>
             </Folders>
             <Triggers />
@@ -24331,6 +24674,10 @@
                 </Triggers>
               </Folder>
             </Folders>
+            <Triggers />
+          </Folder>
+          <Folder Id="7db7b91b-f04a-49a5-aaac-42baa10fa1b0" Name="6.0 - Endwalker" Enabled="true">
+            <Folders />
             <Triggers />
           </Folder>
         </Folders>

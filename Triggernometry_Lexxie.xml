@@ -22597,6 +22597,52 @@
                         <Condition Enabled="false" Grouping="And" />
                         <Conditions />
                       </Trigger>
+                      <Trigger Enabled="true" Name="Movement" Id="4aa07aa6-4c03-4a59-8bb0-3bbb389044ea" RegularExpression="15:[0-9A-F]{8}:The Diamond Weapon:5FC7:Flood Ray:[0-9A-F]{8}:(?&lt;name&gt;[a-zA-Z-' ]+):">
+                        <Actions>
+                          <Action OrderNumber="1" LogLevel="-1" MouseX="" MouseY="" UseTTSTextExpression="Move" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="UseTTS" Description="Limit 1-5" DescriptionOverride="True">
+                            <Condition Enabled="true" Grouping="And">
+                              <ConditionSingle Enabled="true" ExpressionL="${name}" ExpressionTypeL="String" ExpressionR="${var:limit1}" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
+                              <ConditionGroup Enabled="true" Grouping="Or">
+                                <ConditionSingle Enabled="true" ExpressionL="${var:limit1}" ExpressionTypeL="String" ExpressionR="${_ffxivplayer}" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
+                                <ConditionSingle Enabled="true" ExpressionL="${var:limit5}" ExpressionTypeL="String" ExpressionR="${_ffxivplayer}" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
+                              </ConditionGroup>
+                            </Condition>
+                            <Conditions />
+                          </Action>
+                          <Action OrderNumber="2" LogLevel="-1" MouseX="" MouseY="" UseTTSTextExpression="Move" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="UseTTS" Description="Limit 2-6" DescriptionOverride="True">
+                            <Condition Enabled="true" Grouping="And">
+                              <ConditionSingle Enabled="true" ExpressionL="${name}" ExpressionTypeL="String" ExpressionR="${var:limit2}" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
+                              <ConditionGroup Enabled="true" Grouping="Or">
+                                <ConditionSingle Enabled="true" ExpressionL="${var:limit2}" ExpressionTypeL="String" ExpressionR="${_ffxivplayer}" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
+                                <ConditionSingle Enabled="true" ExpressionL="${var:limit6}" ExpressionTypeL="String" ExpressionR="${_ffxivplayer}" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
+                              </ConditionGroup>
+                            </Condition>
+                            <Conditions />
+                          </Action>
+                          <Action OrderNumber="3" LogLevel="-1" MouseX="" MouseY="" UseTTSTextExpression="Move" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="UseTTS" Description="Limit 3-7" DescriptionOverride="True">
+                            <Condition Enabled="true" Grouping="And">
+                              <ConditionSingle Enabled="true" ExpressionL="${name}" ExpressionTypeL="String" ExpressionR="${var:limit3}" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
+                              <ConditionGroup Enabled="true" Grouping="Or">
+                                <ConditionSingle Enabled="true" ExpressionL="${var:limit3}" ExpressionTypeL="String" ExpressionR="${_ffxivplayer}" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
+                                <ConditionSingle Enabled="true" ExpressionL="${var:limit7}" ExpressionTypeL="String" ExpressionR="${_ffxivplayer}" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
+                              </ConditionGroup>
+                            </Condition>
+                            <Conditions />
+                          </Action>
+                          <Action OrderNumber="4" LogLevel="-1" MouseX="" MouseY="" UseTTSTextExpression="Move" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="UseTTS" Description="Limit 4-8" DescriptionOverride="True">
+                            <Condition Enabled="true" Grouping="And">
+                              <ConditionSingle Enabled="true" ExpressionL="${name}" ExpressionTypeL="String" ExpressionR="${var:limit4}" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
+                              <ConditionGroup Enabled="true" Grouping="Or">
+                                <ConditionSingle Enabled="true" ExpressionL="${var:limit4}" ExpressionTypeL="String" ExpressionR="${_ffxivplayer}" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
+                                <ConditionSingle Enabled="true" ExpressionL="${var:limit8}" ExpressionTypeL="String" ExpressionR="${_ffxivplayer}" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
+                              </ConditionGroup>
+                            </Condition>
+                            <Conditions />
+                          </Action>
+                        </Actions>
+                        <Condition Enabled="false" Grouping="Or" />
+                        <Conditions />
+                      </Trigger>
                       <Trigger Enabled="true" Name="Text Aura" Id="745e1fdb-f8e8-4cb9-8fd7-594d81c995b7" RegularExpression="1B:[0-9A-F]{8}:(?&lt;name&gt;[a-zA-Z-' ]+):.{4}:.{4}:(?&lt;id&gt;[0-9A-F]{4}):">
                         <Actions>
                           <Action OrderNumber="1" TextAuraEffect="Bold" TextAuraFontSize="18" TextAuraForeground="#22BB22" TextAuraOutline="Black" TextAuraName="limitText" TextAuraExpression="#1 - Top Left" TextAuraXIniExpression="0" TextAuraYIniExpression="500" TextAuraWIniExpression="${_screenwidth}" TextAuraHIniExpression="100" TextAuraOIniExpression="100" TextAuraTTLTickExpression="12-${_since}" TextAuraUseOutline="True" TextAuraFontName="Microsoft Sans Serif" ActionType="TextAura">
@@ -22651,52 +22697,6 @@
                         <Condition Enabled="true" Grouping="And">
                           <ConditionSingle Enabled="true" ExpressionL="${name}" ExpressionTypeL="String" ExpressionR="${_ffxivplayer}" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
                         </Condition>
-                        <Conditions />
-                      </Trigger>
-                      <Trigger Enabled="true" Name="Movement" Id="4aa07aa6-4c03-4a59-8bb0-3bbb389044ea" RegularExpression="15:[0-9A-F]{8}:The Diamond Weapon:5FC7:Flood Ray:[0-9A-F]{8}:(?&lt;name&gt;[a-zA-Z-' ]+):">
-                        <Actions>
-                          <Action OrderNumber="1" LogLevel="-1" MouseX="" MouseY="" UseTTSTextExpression="Move" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="UseTTS" Description="Limit 1-5" DescriptionOverride="True">
-                            <Condition Enabled="true" Grouping="And">
-                              <ConditionSingle Enabled="true" ExpressionL="${name}" ExpressionTypeL="String" ExpressionR="${var:limit1}" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
-                              <ConditionGroup Enabled="true" Grouping="Or">
-                                <ConditionSingle Enabled="true" ExpressionL="${var:limit1}" ExpressionTypeL="String" ExpressionR="${_ffxivplayer}" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
-                                <ConditionSingle Enabled="true" ExpressionL="${var:limit5}" ExpressionTypeL="String" ExpressionR="${_ffxivplayer}" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
-                              </ConditionGroup>
-                            </Condition>
-                            <Conditions />
-                          </Action>
-                          <Action OrderNumber="2" LogLevel="-1" MouseX="" MouseY="" UseTTSTextExpression="Move" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="UseTTS" Description="Limit 2-6" DescriptionOverride="True">
-                            <Condition Enabled="true" Grouping="And">
-                              <ConditionSingle Enabled="true" ExpressionL="${name}" ExpressionTypeL="String" ExpressionR="${var:limit2}" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
-                              <ConditionGroup Enabled="true" Grouping="Or">
-                                <ConditionSingle Enabled="true" ExpressionL="${var:limit2}" ExpressionTypeL="String" ExpressionR="${_ffxivplayer}" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
-                                <ConditionSingle Enabled="true" ExpressionL="${var:limit6}" ExpressionTypeL="String" ExpressionR="${_ffxivplayer}" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
-                              </ConditionGroup>
-                            </Condition>
-                            <Conditions />
-                          </Action>
-                          <Action OrderNumber="3" LogLevel="-1" MouseX="" MouseY="" UseTTSTextExpression="Move" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="UseTTS" Description="Limit 3-7" DescriptionOverride="True">
-                            <Condition Enabled="true" Grouping="And">
-                              <ConditionSingle Enabled="true" ExpressionL="${name}" ExpressionTypeL="String" ExpressionR="${var:limit3}" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
-                              <ConditionGroup Enabled="true" Grouping="Or">
-                                <ConditionSingle Enabled="true" ExpressionL="${var:limit3}" ExpressionTypeL="String" ExpressionR="${_ffxivplayer}" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
-                                <ConditionSingle Enabled="true" ExpressionL="${var:limit7}" ExpressionTypeL="String" ExpressionR="${_ffxivplayer}" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
-                              </ConditionGroup>
-                            </Condition>
-                            <Conditions />
-                          </Action>
-                          <Action OrderNumber="4" LogLevel="-1" MouseX="" MouseY="" UseTTSTextExpression="Move" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="UseTTS" Description="Limit 4-8" DescriptionOverride="True">
-                            <Condition Enabled="true" Grouping="And">
-                              <ConditionSingle Enabled="true" ExpressionL="${name}" ExpressionTypeL="String" ExpressionR="${var:limit4}" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
-                              <ConditionGroup Enabled="true" Grouping="Or">
-                                <ConditionSingle Enabled="true" ExpressionL="${var:limit4}" ExpressionTypeL="String" ExpressionR="${_ffxivplayer}" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
-                                <ConditionSingle Enabled="true" ExpressionL="${var:limit8}" ExpressionTypeL="String" ExpressionR="${_ffxivplayer}" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
-                              </ConditionGroup>
-                            </Condition>
-                            <Conditions />
-                          </Action>
-                        </Actions>
-                        <Condition Enabled="false" Grouping="Or" />
                         <Conditions />
                       </Trigger>
                     </Triggers>
@@ -22775,19 +22775,19 @@
                   </Trigger>
                   <Trigger Enabled="true" Name="Adamant Purge" Id="1e33c06e-b69d-4c00-89fe-4ce88f1bacfd" RegularExpression="\A.{15}14:(?&lt;ID&gt;5F[A9][24B])">
                     <Actions>
-                      <Action OrderNumber="1" TextAuraEffect="Bold" TextAuraFontSize="24" TextAuraForeground="Lime" TextAuraOutline="Black" TextAuraName="adamantPurge" TextAuraExpression="Emerald: Safe Platform &gt; Spread" TextAuraXIniExpression="0" TextAuraYIniExpression="500" TextAuraWIniExpression="${_screenwidth}" TextAuraHIniExpression="100" TextAuraOIniExpression="100" TextAuraTTLTickExpression="17-${_since}" TextAuraUseOutline="True" TextAuraFontName="Microsoft Sans Serif" ActionType="TextAura">
+                      <Action OrderNumber="1" TextAuraEffect="Bold" TextAuraFontSize="24" TextAuraForeground="Lime" TextAuraOutline="Black" TextAuraName="adamantPurge" TextAuraExpression="Emerald: Safe Platform &gt; Spread" TextAuraXIniExpression="0" TextAuraYIniExpression="500" TextAuraWIniExpression="${_screenwidth}" TextAuraHIniExpression="100" TextAuraOIniExpression="100" TextAuraTTLTickExpression="17-${_since}" TextAuraUseOutline="True" TextAuraFontName="Arial Black" ActionType="TextAura">
                         <Condition Enabled="true" Grouping="Or">
                           <ConditionSingle Enabled="true" ExpressionL="${ID}" ExpressionTypeL="String" ExpressionR="5FA2" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
                         </Condition>
                         <Conditions />
                       </Action>
-                      <Action OrderNumber="2" TextAuraEffect="Bold" TextAuraFontSize="24" TextAuraForeground="Red" TextAuraOutline="Black" TextAuraName="adamantPurge" TextAuraExpression="Ruby: Safe Platform" TextAuraXIniExpression="0" TextAuraYIniExpression="500" TextAuraWIniExpression="${_screenwidth}" TextAuraHIniExpression="100" TextAuraOIniExpression="100" TextAuraTTLTickExpression="14.5-${_since}" TextAuraUseOutline="True" TextAuraFontName="Microsoft Sans Serif" ActionType="TextAura">
+                      <Action OrderNumber="2" TextAuraEffect="Bold" TextAuraFontSize="24" TextAuraForeground="Red" TextAuraOutline="Black" TextAuraName="adamantPurge" TextAuraExpression="Ruby: Safe Platform" TextAuraXIniExpression="0" TextAuraYIniExpression="500" TextAuraWIniExpression="${_screenwidth}" TextAuraHIniExpression="100" TextAuraOIniExpression="100" TextAuraTTLTickExpression="14.5-${_since}" TextAuraUseOutline="True" TextAuraFontName="Arial Black" ActionType="TextAura">
                         <Condition Enabled="true" Grouping="Or">
                           <ConditionSingle Enabled="true" ExpressionL="${ID}" ExpressionTypeL="String" ExpressionR="5F9B" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
                         </Condition>
                         <Conditions />
                       </Action>
-                      <Action OrderNumber="3" TextAuraEffect="Bold" TextAuraFontSize="24" TextAuraForeground="Aqua" TextAuraOutline="Black" TextAuraName="adamantPurge" TextAuraExpression="Sapphire: Safe Platform &gt; Line Stack" TextAuraXIniExpression="0" TextAuraYIniExpression="500" TextAuraWIniExpression="${_screenwidth}" TextAuraHIniExpression="100" TextAuraOIniExpression="100" TextAuraTTLTickExpression="17.5-${_since}" TextAuraUseOutline="True" TextAuraFontName="Microsoft Sans Serif" ActionType="TextAura">
+                      <Action OrderNumber="3" TextAuraEffect="Bold" TextAuraFontSize="24" TextAuraForeground="Aqua" TextAuraOutline="Black" TextAuraName="adamantPurge" TextAuraExpression="Sapphire: Safe Platform &gt; Line Stack" TextAuraXIniExpression="0" TextAuraYIniExpression="500" TextAuraWIniExpression="${_screenwidth}" TextAuraHIniExpression="100" TextAuraOIniExpression="100" TextAuraTTLTickExpression="17.5-${_since}" TextAuraUseOutline="True" TextAuraFontName="Arial Black" ActionType="TextAura">
                         <Condition Enabled="true" Grouping="Or">
                           <ConditionSingle Enabled="true" ExpressionL="${ID}" ExpressionTypeL="String" ExpressionR="5FA4" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
                         </Condition>
@@ -22887,22 +22887,6 @@
                   <Folder FFXIVJobFilterEnabled="True" FFXIVJobFilter="4437573632" Id="b30b5ff3-e6e0-47fe-8a73-bf0c988d3fcd" Name="Healers" Enabled="true">
                     <Folders />
                     <Triggers>
-                      <Trigger Enabled="true" Sequential="True" Name="Veil of the Whorl" Id="d40dcd2f-fd4d-449b-a2fd-00c7116ca8e4" RegularExpression=":Leviathan:5CE5:">
-                        <Actions>
-                          <Action OrderNumber="1" LogLevel="-1" MouseX="" MouseY="" VariableOp="SetString" VariableName="veilWhorl" VariableExpression="true" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Variable">
-                            <Condition Enabled="false" Grouping="Or" />
-                            <Conditions />
-                          </Action>
-                          <Action OrderNumber="2" TextAuraEffect="Bold" TextAuraFontSize="24" TextAuraForeground="#FFBB00" TextAuraOutline="Black" TextAuraName="veilWhorl" TextAuraExpression="Attack Head Only" TextAuraXIniExpression="0" TextAuraYIniExpression="500" TextAuraWIniExpression="${_screenwidth}" TextAuraHIniExpression="100" TextAuraOIniExpression="100" TextAuraTTLTickExpression="3-${_since}" TextAuraUseOutline="True" TextAuraFontName="Microsoft Sans Serif" ActionType="TextAura">
-                            <Condition Enabled="false" Grouping="Or" />
-                            <Conditions />
-                          </Action>
-                        </Actions>
-                        <Condition Enabled="true" Grouping="Or">
-                          <ConditionSingle Enabled="true" ExpressionL="${evar:veilWhorl}" ExpressionTypeL="Numeric" ExpressionR="0" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
-                        </Condition>
-                        <Conditions />
-                      </Trigger>
                       <Trigger Enabled="true" Name="Wavetooth Sahagin" Id="9e412b41-a2ba-4e3c-abcd-21596ef8181b" RegularExpression="03:[0-9A-F]{8}:Added new combatant Wavetooth Sahagin" PeriodRefire="Deny" RefirePeriodExpression="5000">
                         <Actions>
                           <Action OrderNumber="1" PlaySoundFileExpression="https://raw.githubusercontent.com/lexxiesia/xiv_triggernometry/master/resources/wav/isac_hostile_located.mp3" PlaySoundVolumeExpression="50" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="PlaySound">
@@ -22929,6 +22913,22 @@
                           </Action>
                         </Actions>
                         <Condition Enabled="false" Grouping="Or" />
+                        <Conditions />
+                      </Trigger>
+                      <Trigger Enabled="true" Sequential="True" Name="Veil of the Whorl" Id="577b800c-adc3-4740-84d6-caa6f2618693" RegularExpression=":Leviathan:5CE5:">
+                        <Actions>
+                          <Action OrderNumber="1" LogLevel="-1" MouseX="" MouseY="" VariableOp="SetString" VariableName="veilWhorl" VariableExpression="true" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Variable">
+                            <Condition Enabled="false" Grouping="Or" />
+                            <Conditions />
+                          </Action>
+                          <Action OrderNumber="2" TextAuraEffect="Bold" TextAuraFontSize="24" TextAuraForeground="#FFBB00" TextAuraOutline="Black" TextAuraName="veilWhorl" TextAuraExpression="Attack Head Only" TextAuraXIniExpression="0" TextAuraYIniExpression="500" TextAuraWIniExpression="${_screenwidth}" TextAuraHIniExpression="100" TextAuraOIniExpression="100" TextAuraTTLTickExpression="3-${_since}" TextAuraUseOutline="True" TextAuraFontName="Arial Black" ActionType="TextAura">
+                            <Condition Enabled="false" Grouping="Or" />
+                            <Conditions />
+                          </Action>
+                        </Actions>
+                        <Condition Enabled="true" Grouping="Or">
+                          <ConditionSingle Enabled="true" ExpressionL="${evar:veilWhorl}" ExpressionTypeL="Numeric" ExpressionR="0" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
+                        </Condition>
                         <Conditions />
                       </Trigger>
                     </Triggers>
@@ -22975,7 +22975,7 @@
                             <Condition Enabled="false" Grouping="Or" />
                             <Conditions />
                           </Action>
-                          <Action OrderNumber="2" TextAuraEffect="Bold" TextAuraFontSize="24" TextAuraForeground="#FFBB00" TextAuraOutline="Black" TextAuraName="veilWhorl" TextAuraExpression="Attack Tail Only" TextAuraXIniExpression="0" TextAuraYIniExpression="500" TextAuraWIniExpression="${_screenwidth}" TextAuraHIniExpression="100" TextAuraOIniExpression="100" TextAuraTTLTickExpression="3-${_since}" TextAuraUseOutline="True" TextAuraFontName="Microsoft Sans Serif" ActionType="TextAura">
+                          <Action OrderNumber="2" TextAuraEffect="Bold" TextAuraFontSize="24" TextAuraForeground="#FFBB00" TextAuraOutline="Black" TextAuraName="veilWhorl" TextAuraExpression="Attack Tail Only" TextAuraXIniExpression="0" TextAuraYIniExpression="500" TextAuraWIniExpression="${_screenwidth}" TextAuraHIniExpression="100" TextAuraOIniExpression="100" TextAuraTTLTickExpression="3-${_since}" TextAuraUseOutline="True" TextAuraFontName="Arial Black" ActionType="TextAura">
                             <Condition Enabled="false" Grouping="Or" />
                             <Conditions />
                           </Action>
@@ -23024,7 +23024,7 @@
                             <Condition Enabled="false" Grouping="Or" />
                             <Conditions />
                           </Action>
-                          <Action OrderNumber="2" TextAuraEffect="Bold" TextAuraFontSize="24" TextAuraForeground="#FFBB00" TextAuraOutline="Black" TextAuraName="veilWhorl" TextAuraExpression="Attack Head Only" TextAuraXIniExpression="0" TextAuraYIniExpression="500" TextAuraWIniExpression="${_screenwidth}" TextAuraHIniExpression="100" TextAuraOIniExpression="100" TextAuraTTLTickExpression="3-${_since}" TextAuraUseOutline="True" TextAuraFontName="Microsoft Sans Serif" ActionType="TextAura">
+                          <Action OrderNumber="2" TextAuraEffect="Bold" TextAuraFontSize="24" TextAuraForeground="#FFBB00" TextAuraOutline="Black" TextAuraName="veilWhorl" TextAuraExpression="Attack Head Only" TextAuraXIniExpression="0" TextAuraYIniExpression="500" TextAuraWIniExpression="${_screenwidth}" TextAuraHIniExpression="100" TextAuraOIniExpression="100" TextAuraTTLTickExpression="3-${_since}" TextAuraUseOutline="True" TextAuraFontName="Arial Black" ActionType="TextAura">
                             <Condition Enabled="false" Grouping="Or" />
                             <Conditions />
                           </Action>
@@ -25747,7 +25747,6 @@
                 </Actions>
                 <Condition Enabled="true" Grouping="And">
                   <ConditionSingle Enabled="true" ExpressionL="${_ffxivparty[${NIN}].inparty}" ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
-                  <ConditionSingle Enabled="true" ExpressionL="${_ffxivparty[${NIN}].job}" ExpressionTypeL="String" ExpressionR="NIN" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
                 </Condition>
                 <Conditions />
               </Trigger>
@@ -30053,6 +30052,10 @@
                         <Condition Enabled="false" Grouping="Or" />
                         <Conditions />
                       </Action>
+                      <Action OrderNumber="2" LogLevel="-1" PlaySoundFileExpression="https://raw.githubusercontent.com/lexxiesia/xiv_triggernometry/master/resources/wav/genji_dragonblade.mp3" PlaySoundVolumeExpression="50" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" Enabled="False" ActionType="PlaySound">
+                        <Condition Enabled="false" Grouping="Or" />
+                        <Conditions />
+                      </Action>
                     </Actions>
                     <Condition Enabled="true" Grouping="And">
                       <ConditionSingle Enabled="true" ExpressionL="${_ffxivparty[${player}].inparty}" ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
@@ -30082,6 +30085,10 @@
                         <Condition Enabled="false" Grouping="Or" />
                         <Conditions />
                       </Action>
+                      <Action OrderNumber="2" LogLevel="-1" PlaySoundFileExpression="https://raw.githubusercontent.com/lexxiesia/xiv_triggernometry/master/resources/wav/Pharah_JusticeRains.mp3" PlaySoundVolumeExpression="50" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" Enabled="False" ActionType="PlaySound">
+                        <Condition Enabled="false" Grouping="Or" />
+                        <Conditions />
+                      </Action>
                     </Actions>
                     <Condition Enabled="true" Grouping="And">
                       <ConditionSingle Enabled="true" ExpressionL="${_ffxivparty[${player}].inparty}" ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
@@ -30108,6 +30115,39 @@
                   <Trigger Enabled="true" Name="Dragonsong Dive - Hit" Id="8a27c273-9de6-40c5-8815-fbcca51cecde" RegularExpression=":(?&lt;player&gt;(?&lt;name&gt;[\w-']+) [\w-']+):1092:Dragonsong Dive:" PeriodRefire="Deny" RefirePeriodExpression="5000">
                     <Actions>
                       <Action OrderNumber="1" LogLevel="-1" PlaySoundFileExpression="https://raw.githubusercontent.com/lexxiesia/xiv_triggernometry/master/resources/wav/Hanzo_DragonConsumes.mp3" PlaySoundVolumeExpression="50" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="PlaySound" ExecutionDelayExpression="3000">
+                        <Condition Enabled="false" Grouping="Or" />
+                        <Conditions />
+                      </Action>
+                      <Action OrderNumber="2" LogLevel="-1" PlaySoundFileExpression="https://raw.githubusercontent.com/lexxiesia/xiv_triggernometry/master/resources/wav/hanzo_dragonstrike.mp3" PlaySoundVolumeExpression="50" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" Enabled="False" ActionType="PlaySound">
+                        <Condition Enabled="false" Grouping="Or" />
+                        <Conditions />
+                      </Action>
+                    </Actions>
+                    <Condition Enabled="true" Grouping="And">
+                      <ConditionSingle Enabled="true" ExpressionL="${_ffxivparty[${player}].inparty}" ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
+                    </Condition>
+                    <Conditions />
+                  </Trigger>
+                </Triggers>
+              </Folder>
+              <Folder Id="f6ff1e7f-9018-4f16-b4f3-77fdf8f47c30" Name="Ninja" Enabled="true">
+                <Folders />
+                <Triggers>
+                  <Trigger Enabled="true" Name="Chimatsuri - Cast" Id="c5cf8683-2954-4732-b2cd-8e4a628c123a" RegularExpression="\A.{15}14:1093:(?&lt;player&gt;(?&lt;name&gt;[\w-']+) [\w-']+)" PeriodRefire="Deny" RefirePeriodExpression="5000">
+                    <Actions>
+                      <Action OrderNumber="1" LogLevel="-1" PlaySoundFileExpression="https://raw.githubusercontent.com/lexxiesia/xiv_triggernometry/master/resources/wav/kujikiri.mp3" PlaySoundVolumeExpression="50" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="PlaySound">
+                        <Condition Enabled="false" Grouping="Or" />
+                        <Conditions />
+                      </Action>
+                    </Actions>
+                    <Condition Enabled="true" Grouping="And">
+                      <ConditionSingle Enabled="true" ExpressionL="${_ffxivparty[${player}].inparty}" ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
+                    </Condition>
+                    <Conditions />
+                  </Trigger>
+                  <Trigger Enabled="true" Name="Chimatsuri - Hit" Id="8f973778-def8-4ea8-876d-eba4c35122f6" RegularExpression=":(?&lt;player&gt;(?&lt;name&gt;[\w-']+) [\w-']+):1093:Chimatsuri:" PeriodRefire="Deny" RefirePeriodExpression="5000">
+                    <Actions>
+                      <Action OrderNumber="1" LogLevel="-1" PlaySoundFileExpression="https://raw.githubusercontent.com/lexxiesia/xiv_triggernometry/master/resources/wav/genji_onlyhuman.mp3" PlaySoundVolumeExpression="50" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="PlaySound" ExecutionDelayExpression="3000">
                         <Condition Enabled="false" Grouping="Or" />
                         <Conditions />
                       </Action>
@@ -30205,7 +30245,6 @@
             </Actions>
             <Condition Enabled="true" Grouping="And">
               <ConditionSingle Enabled="true" ExpressionL="${_ffxivparty[${ninja}].inparty}" ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
-              <ConditionSingle Enabled="true" ExpressionL="${_ffxivparty[${ninja}].job}" ExpressionTypeL="String" ExpressionR="NIN" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
             </Condition>
             <Conditions />
           </Trigger>
@@ -30265,11 +30304,10 @@
             </Actions>
             <Condition Enabled="true" Grouping="And">
               <ConditionSingle Enabled="true" ExpressionL="${_ffxivparty[${healer}].inparty}" ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
-              <ConditionSingle Enabled="true" ExpressionL="${_ffxivparty[${healer}].role}" ExpressionTypeL="String" ExpressionR="Healer" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
             </Condition>
             <Conditions />
           </Trigger>
-          <Trigger Enabled="true" Name="Passage of Arms" Id="4264ff96-dcfe-4063-9777-0093c0f81614" RegularExpression=":(?&lt;pld&gt;[\w-' ]+):1D93:" PeriodRefire="Deny" RefirePeriodExpression="5000">
+          <Trigger Enabled="false" Name="Passage of Arms" Id="4264ff96-dcfe-4063-9777-0093c0f81614" RegularExpression=":(?&lt;pld&gt;[\w-' ]+):1D93:" PeriodRefire="Deny" RefirePeriodExpression="5000">
             <Actions>
               <Action OrderNumber="1" LogLevel="-1" PlaySoundFileExpression="https://raw.githubusercontent.com/lexxiesia/xiv_triggernometry/master/resources/wav/Reinhardt_Shield.mp3" PlaySoundVolumeExpression="50" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="PlaySound">
                 <Condition Enabled="false" Grouping="Or" />

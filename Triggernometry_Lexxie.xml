@@ -22966,12 +22966,12 @@
                   </Trigger>
                 </Triggers>
               </Folder>
-              <Folder ZoneFilterEnabled="True" Id="aaeac317-c115-4bf9-9388-d7cad7ae9e0e" ZoneFilterRegularExpression="^The Whorleater \(Unreal\)$" Name="Leviathan" Enabled="true">
+              <Folder ZoneFilterEnabled="True" Id="9f2c9803-7652-42a2-8178-8d62ad502867" ZoneFilterRegularExpression="^The Whorleater \(Unreal\)$" Name="Leviathan" Enabled="true">
                 <Folders>
-                  <Folder FFXIVJobFilterEnabled="True" FFXIVJobFilter="70868271104" Id="3b345ea9-0fa6-429c-bd3e-680462167cc7" Name="Tanks" Enabled="true">
+                  <Folder FFXIVJobFilterEnabled="True" FFXIVJobFilter="70868271104" Id="b141547b-a995-49d4-aaf8-92f1c865f82d" Name="Tanks" Enabled="true">
                     <Folders />
                     <Triggers>
-                      <Trigger Enabled="true" Name="Wavetooth Sahagin" Id="8d04e654-1f4a-4fa1-8492-28569bd5b1b0" RegularExpression="03:[0-9A-F]{8}:Added new combatant Wavetooth Sahagin" PeriodRefire="Deny" RefirePeriodExpression="5000">
+                      <Trigger Enabled="true" Name="Wavetooth Sahagin" Id="54ed456f-47ef-458e-a10a-b189bc16635f" RegularExpression="03:[0-9A-F]{8}:Added new combatant Wavetooth Sahagin" PeriodRefire="Deny" RefirePeriodExpression="5000">
                         <Actions>
                           <Action OrderNumber="1" PlaySoundFileExpression="https://raw.githubusercontent.com/lexxiesia/xiv_triggernometry/master/resources/wav/SpiderSense.wav" PlaySoundVolumeExpression="50" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="PlaySound">
                             <Condition Enabled="false" Grouping="Or" />
@@ -22985,7 +22985,7 @@
                         <Condition Enabled="false" Grouping="Or" />
                         <Conditions />
                       </Trigger>
-                      <Trigger Enabled="true" Name="Wave Spume" Id="2641901a-c6fc-4479-bd8e-e95e54420d63" RegularExpression="03:[0-9A-F]{8}:Added new combatant Wave Spume" PeriodRefire="Deny" RefirePeriodExpression="5000">
+                      <Trigger Enabled="true" Name="Wave Spume" Id="916e01ba-9db5-44cb-8be7-899302457985" RegularExpression="03:[0-9A-F]{8}:Added new combatant Wave Spume" PeriodRefire="Deny" RefirePeriodExpression="5000">
                         <Actions>
                           <Action OrderNumber="1" PlaySoundFileExpression="https://raw.githubusercontent.com/lexxiesia/xiv_triggernometry/master/resources/wav/isac_incoming_hostiles_detected.mp3" PlaySoundVolumeExpression="50" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="PlaySound">
                             <Condition Enabled="false" Grouping="Or" />
@@ -22999,12 +22999,31 @@
                         <Condition Enabled="false" Grouping="Or" />
                         <Conditions />
                       </Trigger>
+                      <Trigger Enabled="true" Name="Tidal Roar" Id="c4c19324-222b-433a-9832-d2e560112f98" RegularExpression="0D:Leviathan HP at (?&lt;hp&gt;[0-9]{2})%">
+                        <Actions>
+                          <Action OrderNumber="1" LogLevel="-1" MouseX="" MouseY="" UseTTSTextExpression="Raidwide" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="UseTTS">
+                            <Condition Enabled="false" Grouping="Or" />
+                            <Conditions />
+                          </Action>
+                        </Actions>
+                        <Condition Enabled="true" Grouping="Or">
+                          <ConditionSingle Enabled="true" ExpressionL="${hp}" ExpressionTypeL="String" ExpressionR="80" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
+                          <ConditionSingle Enabled="true" ExpressionL="${hp}" ExpressionTypeL="String" ExpressionR="60" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
+                          <ConditionSingle Enabled="true" ExpressionL="${hp}" ExpressionTypeL="String" ExpressionR="50" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
+                          <ConditionSingle Enabled="true" ExpressionL="${hp}" ExpressionTypeL="String" ExpressionR="70" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
+                          <ConditionSingle Enabled="true" ExpressionL="${hp}" ExpressionTypeL="String" ExpressionR="40" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
+                          <ConditionSingle Enabled="true" ExpressionL="${hp}" ExpressionTypeL="String" ExpressionR="30" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
+                          <ConditionSingle Enabled="true" ExpressionL="${hp}" ExpressionTypeL="String" ExpressionR="10" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
+                          <ConditionSingle Enabled="true" ExpressionL="${hp}" ExpressionTypeL="String" ExpressionR="20" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
+                        </Condition>
+                        <Conditions />
+                      </Trigger>
                     </Triggers>
                   </Folder>
-                  <Folder FFXIVJobFilterEnabled="True" FFXIVJobFilter="4437573632" Id="c6f47b4c-e2ea-4558-8514-2a5284d5f73f" Name="Healers" Enabled="true">
+                  <Folder FFXIVJobFilterEnabled="True" FFXIVJobFilter="4437573632" Id="c191fc8e-da9a-43df-982b-5a57b734c591" Name="Healers" Enabled="true">
                     <Folders />
                     <Triggers>
-                      <Trigger Enabled="true" Name="Wavetooth Sahagin" Id="fe3bd074-66ac-40bd-a706-f73a8674ce50" RegularExpression="03:[0-9A-F]{8}:Added new combatant Wavetooth Sahagin" PeriodRefire="Deny" RefirePeriodExpression="5000">
+                      <Trigger Enabled="true" Name="Wavetooth Sahagin" Id="36f84f52-8a2a-4fe9-9fbe-377968286385" RegularExpression="03:[0-9A-F]{8}:Added new combatant Wavetooth Sahagin" PeriodRefire="Deny" RefirePeriodExpression="5000">
                         <Actions>
                           <Action OrderNumber="1" PlaySoundFileExpression="https://raw.githubusercontent.com/lexxiesia/xiv_triggernometry/master/resources/wav/isac_hostile_located.mp3" PlaySoundVolumeExpression="50" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="PlaySound">
                             <Condition Enabled="false" Grouping="Or" />
@@ -23018,7 +23037,7 @@
                         <Condition Enabled="false" Grouping="Or" />
                         <Conditions />
                       </Trigger>
-                      <Trigger Enabled="true" Name="Wave Spume" Id="b5c0cf3a-6896-4689-9618-d349b0b94762" RegularExpression="03:[0-9A-F]{8}:Added new combatant Wave Spume" PeriodRefire="Deny" RefirePeriodExpression="5000">
+                      <Trigger Enabled="true" Name="Wave Spume" Id="57f2294e-3fb5-442e-a160-4eceb3f2d6e2" RegularExpression="03:[0-9A-F]{8}:Added new combatant Wave Spume" PeriodRefire="Deny" RefirePeriodExpression="5000">
                         <Actions>
                           <Action OrderNumber="1" PlaySoundFileExpression="https://raw.githubusercontent.com/lexxiesia/xiv_triggernometry/master/resources/wav/isac_hostile_located.mp3" PlaySoundVolumeExpression="50" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="PlaySound">
                             <Condition Enabled="false" Grouping="Or" />
@@ -23032,7 +23051,7 @@
                         <Condition Enabled="false" Grouping="Or" />
                         <Conditions />
                       </Trigger>
-                      <Trigger Enabled="true" Sequential="True" Name="Veil of the Whorl" Id="2b90337f-93b0-4932-a1eb-1ffea45df607" RegularExpression=":Leviathan:5CE5:">
+                      <Trigger Enabled="true" Sequential="True" Name="Veil of the Whorl" Id="cc62c3e0-354e-46f0-a1e8-8caa61a3b179" RegularExpression=":Leviathan:5CE5:">
                         <Actions>
                           <Action OrderNumber="1" LogLevel="-1" MouseX="" MouseY="" VariableOp="SetString" VariableName="veilWhorl" VariableExpression="true" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Variable">
                             <Condition Enabled="false" Grouping="Or" />
@@ -23048,12 +23067,31 @@
                         </Condition>
                         <Conditions />
                       </Trigger>
+                      <Trigger Enabled="true" Name="Tidal Roar" Id="5440b904-bb1c-42df-a1a1-d7d36708ecac" RegularExpression="0D:Leviathan HP at (?&lt;hp&gt;[0-9]{2})%">
+                        <Actions>
+                          <Action OrderNumber="1" LogLevel="-1" MouseX="" MouseY="" UseTTSTextExpression="Raidwide" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="UseTTS">
+                            <Condition Enabled="false" Grouping="Or" />
+                            <Conditions />
+                          </Action>
+                        </Actions>
+                        <Condition Enabled="true" Grouping="Or">
+                          <ConditionSingle Enabled="true" ExpressionL="${hp}" ExpressionTypeL="String" ExpressionR="80" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
+                          <ConditionSingle Enabled="true" ExpressionL="${hp}" ExpressionTypeL="String" ExpressionR="60" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
+                          <ConditionSingle Enabled="true" ExpressionL="${hp}" ExpressionTypeL="String" ExpressionR="50" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
+                          <ConditionSingle Enabled="true" ExpressionL="${hp}" ExpressionTypeL="String" ExpressionR="70" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
+                          <ConditionSingle Enabled="true" ExpressionL="${hp}" ExpressionTypeL="String" ExpressionR="40" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
+                          <ConditionSingle Enabled="true" ExpressionL="${hp}" ExpressionTypeL="String" ExpressionR="30" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
+                          <ConditionSingle Enabled="true" ExpressionL="${hp}" ExpressionTypeL="String" ExpressionR="10" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
+                          <ConditionSingle Enabled="true" ExpressionL="${hp}" ExpressionTypeL="String" ExpressionR="20" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
+                        </Condition>
+                        <Conditions />
+                      </Trigger>
                     </Triggers>
                   </Folder>
-                  <Folder FFXIVJobFilterEnabled="True" FFXIVJobFilter="9129426944" Id="e01192e0-845f-4160-89a0-a077b9c0b9c8" Name="Melee" Enabled="true">
+                  <Folder FFXIVJobFilterEnabled="True" FFXIVJobFilter="9129426944" Id="d5ed3054-449f-4857-82f4-60b902f54e81" Name="Melee" Enabled="true">
                     <Folders />
                     <Triggers>
-                      <Trigger Enabled="true" Name="Wavetooth Sahagin" Id="eea81dac-fbf7-40da-ab35-2dbd8801380e" RegularExpression="03:[0-9A-F]{8}:Added new combatant Wavetooth Sahagin" PeriodRefire="Deny" RefirePeriodExpression="5000">
+                      <Trigger Enabled="true" Name="Wavetooth Sahagin" Id="5e040ea0-3d7b-4c65-a485-26052a0e9ace" RegularExpression="03:[0-9A-F]{8}:Added new combatant Wavetooth Sahagin" PeriodRefire="Deny" RefirePeriodExpression="5000">
                         <Actions>
                           <Action OrderNumber="1" PlaySoundFileExpression="https://raw.githubusercontent.com/lexxiesia/xiv_triggernometry/master/resources/wav/SpiderSense.wav" PlaySoundVolumeExpression="50" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="PlaySound">
                             <Condition Enabled="false" Grouping="Or" />
@@ -23067,7 +23105,7 @@
                         <Condition Enabled="false" Grouping="Or" />
                         <Conditions />
                       </Trigger>
-                      <Trigger Enabled="true" Name="Wave Spume" Id="4feb04f2-66c3-4983-beb7-21015fbe8d38" RegularExpression="03:[0-9A-F]{8}:Added new combatant Wave Spume" PeriodRefire="Deny" RefirePeriodExpression="5000">
+                      <Trigger Enabled="true" Name="Wave Spume" Id="9431024e-eb54-4fb3-9a03-705951adee90" RegularExpression="03:[0-9A-F]{8}:Added new combatant Wave Spume" PeriodRefire="Deny" RefirePeriodExpression="5000">
                         <Actions>
                           <Action OrderNumber="1" PlaySoundFileExpression="https://raw.githubusercontent.com/lexxiesia/xiv_triggernometry/master/resources/wav/isac_incoming_hostiles_detected.mp3" PlaySoundVolumeExpression="50" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="PlaySound">
                             <Condition Enabled="false" Grouping="Or" />
@@ -23083,10 +23121,10 @@
                       </Trigger>
                     </Triggers>
                   </Folder>
-                  <Folder FFXIVJobFilterEnabled="True" FFXIVJobFilter="138516889600" Id="9caa010c-0639-4b81-b74e-9c8db9edd262" Name="Ranged" Enabled="true">
+                  <Folder FFXIVJobFilterEnabled="True" FFXIVJobFilter="138516889600" Id="6246de7f-b1b6-4df8-b28f-afc3ce01e606" Name="Ranged" Enabled="true">
                     <Folders />
                     <Triggers>
-                      <Trigger Enabled="true" Sequential="True" Name="Mantle of the Whorl" Id="86870624-e20b-4c81-afee-0514c55666b6" RegularExpression=":Leviathan's Tail:5CE4:">
+                      <Trigger Enabled="true" Sequential="True" Name="Mantle of the Whorl" Id="c614383c-64e3-4b0c-b4c5-458d53441600" RegularExpression=":Leviathan's Tail:5CE4:">
                         <Actions>
                           <Action OrderNumber="1" LogLevel="-1" MouseX="" MouseY="" VariableOp="SetString" VariableName="mantleWhorl" VariableExpression="true" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Variable">
                             <Condition Enabled="false" Grouping="Or" />
@@ -23102,7 +23140,7 @@
                         </Condition>
                         <Conditions />
                       </Trigger>
-                      <Trigger Enabled="true" Name="Wavetooth Sahagin" Id="acdee805-d01b-42f9-a1d2-923f70f85717" RegularExpression="03:[0-9A-F]{8}:Added new combatant Wavetooth Sahagin" PeriodRefire="Deny" RefirePeriodExpression="5000">
+                      <Trigger Enabled="true" Name="Wavetooth Sahagin" Id="ffb658f5-8faf-402f-a2f7-fbcbdbae886f" RegularExpression="03:[0-9A-F]{8}:Added new combatant Wavetooth Sahagin" PeriodRefire="Deny" RefirePeriodExpression="5000">
                         <Actions>
                           <Action OrderNumber="1" PlaySoundFileExpression="https://raw.githubusercontent.com/lexxiesia/xiv_triggernometry/master/resources/wav/isac_hostile_located.mp3" PlaySoundVolumeExpression="50" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="PlaySound">
                             <Condition Enabled="false" Grouping="Or" />
@@ -23116,7 +23154,7 @@
                         <Condition Enabled="false" Grouping="Or" />
                         <Conditions />
                       </Trigger>
-                      <Trigger Enabled="true" Name="Wave Spume" Id="44cbab29-9a16-4984-9d8d-b6abcf3430df" RegularExpression="03:[0-9A-F]{8}:Added new combatant Wave Spume" PeriodRefire="Deny" RefirePeriodExpression="5000">
+                      <Trigger Enabled="true" Name="Wave Spume" Id="af1ebcad-4f44-4512-b4dd-85c63da29f48" RegularExpression="03:[0-9A-F]{8}:Added new combatant Wave Spume" PeriodRefire="Deny" RefirePeriodExpression="5000">
                         <Actions>
                           <Action OrderNumber="1" PlaySoundFileExpression="https://raw.githubusercontent.com/lexxiesia/xiv_triggernometry/master/resources/wav/isac_incoming_hostiles_detected.mp3" PlaySoundVolumeExpression="50" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="PlaySound">
                             <Condition Enabled="false" Grouping="Or" />
@@ -23130,12 +23168,31 @@
                         <Condition Enabled="false" Grouping="Or" />
                         <Conditions />
                       </Trigger>
+                      <Trigger Enabled="true" Name="Tidal Roar" Id="00d17aab-aedc-496f-8398-4e656877d225" RegularExpression="0D:Leviathan HP at (?&lt;hp&gt;[0-9]{2})%">
+                        <Actions>
+                          <Action OrderNumber="1" LogLevel="-1" MouseX="" MouseY="" UseTTSTextExpression="Raidwide" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="UseTTS">
+                            <Condition Enabled="false" Grouping="Or" />
+                            <Conditions />
+                          </Action>
+                        </Actions>
+                        <Condition Enabled="true" Grouping="Or">
+                          <ConditionSingle Enabled="true" ExpressionL="${hp}" ExpressionTypeL="String" ExpressionR="80" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
+                          <ConditionSingle Enabled="true" ExpressionL="${hp}" ExpressionTypeL="String" ExpressionR="60" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
+                          <ConditionSingle Enabled="true" ExpressionL="${hp}" ExpressionTypeL="String" ExpressionR="50" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
+                          <ConditionSingle Enabled="true" ExpressionL="${hp}" ExpressionTypeL="String" ExpressionR="70" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
+                          <ConditionSingle Enabled="true" ExpressionL="${hp}" ExpressionTypeL="String" ExpressionR="40" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
+                          <ConditionSingle Enabled="true" ExpressionL="${hp}" ExpressionTypeL="String" ExpressionR="30" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
+                          <ConditionSingle Enabled="true" ExpressionL="${hp}" ExpressionTypeL="String" ExpressionR="10" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
+                          <ConditionSingle Enabled="true" ExpressionL="${hp}" ExpressionTypeL="String" ExpressionR="20" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
+                        </Condition>
+                        <Conditions />
+                      </Trigger>
                     </Triggers>
                   </Folder>
-                  <Folder FFXIVJobFilterEnabled="True" FFXIVJobFilter="17263755264" Id="6693727b-04f5-47c6-9e9c-ffb1df5d0582" Name="Caster" Enabled="true">
+                  <Folder FFXIVJobFilterEnabled="True" FFXIVJobFilter="17263755264" Id="e0b7eff7-7957-426f-b676-75a6acace32b" Name="Caster" Enabled="true">
                     <Folders />
                     <Triggers>
-                      <Trigger Enabled="true" Sequential="True" Name="Veil of the Whorl" Id="3b816732-10dd-4baf-a82c-eb80c7d3cda6" RegularExpression=":Leviathan:5CE5:">
+                      <Trigger Enabled="true" Sequential="True" Name="Veil of the Whorl" Id="8ac27c33-a157-4350-8e8d-3ce94b01646a" RegularExpression=":Leviathan:5CE5:">
                         <Actions>
                           <Action OrderNumber="1" LogLevel="-1" MouseX="" MouseY="" VariableOp="SetString" VariableName="veilWhorl" VariableExpression="true" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Variable">
                             <Condition Enabled="false" Grouping="Or" />
@@ -23151,7 +23208,7 @@
                         </Condition>
                         <Conditions />
                       </Trigger>
-                      <Trigger Enabled="true" Name="Wavetooth Sahagin" Id="2e10b461-203f-4bc9-ac36-eb1a6d2c1838" RegularExpression="03:[0-9A-F]{8}:Added new combatant Wavetooth Sahagin" PeriodRefire="Deny" RefirePeriodExpression="5000">
+                      <Trigger Enabled="true" Name="Wavetooth Sahagin" Id="94cc578f-ee0f-4a9b-aefb-67be63442b79" RegularExpression="03:[0-9A-F]{8}:Added new combatant Wavetooth Sahagin" PeriodRefire="Deny" RefirePeriodExpression="5000">
                         <Actions>
                           <Action OrderNumber="1" PlaySoundFileExpression="https://raw.githubusercontent.com/lexxiesia/xiv_triggernometry/master/resources/wav/isac_hostile_located.mp3" PlaySoundVolumeExpression="50" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="PlaySound">
                             <Condition Enabled="false" Grouping="Or" />
@@ -23165,7 +23222,7 @@
                         <Condition Enabled="false" Grouping="Or" />
                         <Conditions />
                       </Trigger>
-                      <Trigger Enabled="true" Name="Wave Spume" Id="37ea9c7a-6ac3-45d5-8be1-646947b2bdcb" RegularExpression="03:[0-9A-F]{8}:Added new combatant Wave Spume" PeriodRefire="Deny" RefirePeriodExpression="5000">
+                      <Trigger Enabled="true" Name="Wave Spume" Id="fa26de94-f120-4d82-bbe5-e4979991cdca" RegularExpression="03:[0-9A-F]{8}:Added new combatant Wave Spume" PeriodRefire="Deny" RefirePeriodExpression="5000">
                         <Actions>
                           <Action OrderNumber="1" PlaySoundFileExpression="https://raw.githubusercontent.com/lexxiesia/xiv_triggernometry/master/resources/wav/isac_incoming_hostiles_detected.mp3" PlaySoundVolumeExpression="50" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="PlaySound">
                             <Condition Enabled="false" Grouping="Or" />
@@ -23179,14 +23236,33 @@
                         <Condition Enabled="false" Grouping="Or" />
                         <Conditions />
                       </Trigger>
+                      <Trigger Enabled="true" Name="Tidal Roar" Id="de1bc2d9-4ba9-4b74-9187-89dca8d4cf50" RegularExpression="0D:Leviathan HP at (?&lt;hp&gt;[0-9]{2})%">
+                        <Actions>
+                          <Action OrderNumber="1" LogLevel="-1" MouseX="" MouseY="" UseTTSTextExpression="Raidwide" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="UseTTS">
+                            <Condition Enabled="false" Grouping="Or" />
+                            <Conditions />
+                          </Action>
+                        </Actions>
+                        <Condition Enabled="true" Grouping="Or">
+                          <ConditionSingle Enabled="true" ExpressionL="${hp}" ExpressionTypeL="String" ExpressionR="80" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
+                          <ConditionSingle Enabled="true" ExpressionL="${hp}" ExpressionTypeL="String" ExpressionR="60" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
+                          <ConditionSingle Enabled="true" ExpressionL="${hp}" ExpressionTypeL="String" ExpressionR="50" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
+                          <ConditionSingle Enabled="true" ExpressionL="${hp}" ExpressionTypeL="String" ExpressionR="70" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
+                          <ConditionSingle Enabled="true" ExpressionL="${hp}" ExpressionTypeL="String" ExpressionR="40" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
+                          <ConditionSingle Enabled="true" ExpressionL="${hp}" ExpressionTypeL="String" ExpressionR="30" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
+                          <ConditionSingle Enabled="true" ExpressionL="${hp}" ExpressionTypeL="String" ExpressionR="10" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
+                          <ConditionSingle Enabled="true" ExpressionL="${hp}" ExpressionTypeL="String" ExpressionR="20" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
+                        </Condition>
+                        <Conditions />
+                      </Trigger>
                     </Triggers>
                   </Folder>
-                  <Folder Id="64394dbd-02d7-4f31-950f-1bf4164b2748" Name="Trackers" Enabled="true">
+                  <Folder Id="3ce97af1-5933-4c8f-811e-cb025b90cf9c" Name="Trackers" Enabled="true">
                     <Folders>
-                      <Folder Id="0d0a7f19-c54e-4f25-91b6-2189047e8e0f" Name="Dive Counter" Enabled="true">
+                      <Folder Id="8db53ab9-4e51-4191-8fb0-4a9fa7eb1633" Name="Dive Counter" Enabled="true">
                         <Folders />
                         <Triggers>
-                          <Trigger Enabled="true" Name="Body Slam" Id="7bfe338d-9287-4197-9942-5bc3f3e185ae" RegularExpression=":Leviathan:5CD2:">
+                          <Trigger Enabled="true" Name="Body Slam" Id="6561fb8a-1b47-4ea8-bcf7-cff21272a6c8" RegularExpression=":Leviathan:5CD2:">
                             <Actions>
                               <Action OrderNumber="1" LogLevel="-1" MouseX="" MouseY="" VariableOp="SetNumeric" VariableName="diveCounter" VariableExpression="1" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Variable">
                                 <Condition Enabled="false" Grouping="Or" />
@@ -23196,7 +23272,7 @@
                             <Condition Enabled="false" Grouping="Or" />
                             <Conditions />
                           </Trigger>
-                          <Trigger Enabled="true" Name="Tidal Wave" Id="78d784e3-c2de-4cc2-89a4-1ba1f2eedcfd" RegularExpression=":Leviathan:5CDE:">
+                          <Trigger Enabled="true" Name="Tidal Wave" Id="c474508b-e16b-4054-9a8f-ae0e0b74181d" RegularExpression=":Leviathan:5CDE:">
                             <Actions>
                               <Action OrderNumber="1" LogLevel="-1" MouseX="" MouseY="" VariableOp="SetNumeric" VariableName="diveCounter" VariableExpression="1" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Variable">
                                 <Condition Enabled="false" Grouping="Or" />
@@ -23210,7 +23286,7 @@
                             <Condition Enabled="false" Grouping="Or" />
                             <Conditions />
                           </Trigger>
-                          <Trigger Enabled="true" Name="Wave Spume" Id="d23b8690-10ea-4f95-b117-56776acb51ab" RegularExpression="03:[0-9A-F]{8}:Added new combatant Wave Spume" PeriodRefire="Deny" RefirePeriodExpression="5000">
+                          <Trigger Enabled="true" Name="Wave Spume" Id="c528e7b7-099f-41c5-808e-a75d7d91e684" RegularExpression="03:[0-9A-F]{8}:Added new combatant Wave Spume" PeriodRefire="Deny" RefirePeriodExpression="5000">
                             <Actions>
                               <Action OrderNumber="1" LogLevel="-1" MouseX="" MouseY="" VariableOp="SetNumeric" VariableName="diveCounter" VariableExpression="2" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Variable">
                                 <Condition Enabled="false" Grouping="Or" />
@@ -23224,7 +23300,7 @@
                       </Folder>
                     </Folders>
                     <Triggers>
-                      <Trigger Enabled="true" Name="Elemental Converter" Id="f9d17eb1-b9c1-4345-a10e-e167704d05f1" RegularExpression="22:[0-9A-F]{8}:Elemental Converter:[0-9A-F]{8}:Elemental Converter:">
+                      <Trigger Enabled="true" Name="Elemental Converter" Id="ea01e32f-51ef-483c-bfda-030073d68dc4" RegularExpression="22:[0-9A-F]{8}:Elemental Converter:[0-9A-F]{8}:Elemental Converter:">
                         <Actions>
                           <Action OrderNumber="1" LogLevel="-1" MouseX="" MouseY="" VariableOp="SetString" VariableName="elemConverter" VariableExpression="active" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Variable">
                             <Condition Enabled="false" Grouping="Or" />
@@ -23238,7 +23314,7 @@
                   </Folder>
                 </Folders>
                 <Triggers>
-                  <Trigger Enabled="true" Name="# Reset" Id="52a7e600-fcd5-48ac-a1de-6f75b1510b14" RegularExpression="21:.{8}:400000[01][03]:">
+                  <Trigger Enabled="true" Name="# Reset" Id="59dc8449-8a4f-4476-bd93-66e6c45c5176" RegularExpression="21:.{8}:400000[01][03]:">
                     <Actions>
                       <Action OrderNumber="1" LogLevel="-1" MouseX="" MouseY="" VariableName="diveCounter" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Variable">
                         <Condition Enabled="false" Grouping="Or" />
@@ -23276,7 +23352,7 @@
                     <Condition Enabled="false" Grouping="Or" />
                     <Conditions />
                   </Trigger>
-                  <Trigger Enabled="true" Name="Tidal Wave" Id="8b75707a-343b-4c75-83cd-0bfb5e3706f0" RegularExpression="22:[0-9A-F]{8}:Leviathan:[0-9A-F]{8}:Leviathan:00" PeriodRefire="Deny" RefirePeriodExpression="30000">
+                  <Trigger Enabled="true" Name="Tidal Wave" Id="3a03b0b5-0d70-4efb-a5e6-ca1e19a5c545" RegularExpression="22:[0-9A-F]{8}:Leviathan:[0-9A-F]{8}:Leviathan:00" PeriodRefire="Deny" RefirePeriodExpression="30000">
                     <Actions>
                       <Action OrderNumber="1" LogLevel="-1" UseTTSTextExpression="Tankbuster" TextAuraEffect="Bold" TextAuraFontSize="24" TextAuraForeground="Red" TextAuraOutline="Black" TextAuraName="elementalConverter" TextAuraExpression="PUSH THE BUTTON" TextAuraXIniExpression="0" TextAuraYIniExpression="(${_screenheight}/2)+64" TextAuraWIniExpression="${_screenwidth}" TextAuraHIniExpression="64" TextAuraOIniExpression="100" TextAuraTTLTickExpression="6.5-${_since}" TextAuraUseOutline="True" TextAuraFontName="Arial Black" ActionType="TextAura" ExecutionDelayExpression="3500">
                         <Condition Enabled="false" Grouping="And" />
@@ -23292,33 +23368,7 @@
                     </Condition>
                     <Conditions />
                   </Trigger>
-                  <Trigger Enabled="true" Sequential="True" Name="Grand Fall" Id="24f9877a-2c5a-4f40-8778-585ec69507d4" RegularExpression=":5CDA:Tidal Roar:" PeriodRefire="Deny" RefirePeriodExpression="1000">
-                    <Actions>
-                      <Action OrderNumber="1" LogLevel="-1" MouseX="" MouseY="" VariableOp="SetNumeric" VariableName="roarCounter" VariableExpression="${var:roarCounter}+1" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Variable">
-                        <Condition Enabled="false" Grouping="Or" />
-                        <Conditions />
-                      </Action>
-                      <Action OrderNumber="2" PlaySoundFileExpression="https://raw.githubusercontent.com/lexxiesia/xiv_triggernometry/master/resources/wav/tutturu.mp3" PlaySoundVolumeExpression="50" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="PlaySound" ExecutionDelayExpression="100">
-                        <Condition Enabled="true" Grouping="Or">
-                          <ConditionSingle Enabled="true" ExpressionL="${var:roarCounter}" ExpressionTypeL="Numeric" ExpressionR="5" ExpressionTypeR="Numeric" ConditionType="NumericLessEqual" />
-                          <ConditionSingle Enabled="true" ExpressionL="${var:roarCounter}" ExpressionTypeL="Numeric" ExpressionR="7" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
-                          <ConditionSingle Enabled="true" ExpressionL="${var:roarCounter}" ExpressionTypeL="Numeric" ExpressionR="11" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
-                        </Condition>
-                        <Conditions />
-                      </Action>
-                      <Action OrderNumber="3" LogLevel="-1" UseTTSTextExpression="Tankbuster" TextAuraEffect="Bold" TextAuraFontSize="24" TextAuraForeground="#FFBB00" TextAuraOutline="Black" TextAuraName="tidalRoar" TextAuraExpression="EDGE: Bait Puddles" TextAuraXIniExpression="0" TextAuraYIniExpression="(${_screenheight}/2)+64" TextAuraWIniExpression="${_screenwidth}" TextAuraHIniExpression="64" TextAuraOIniExpression="100" TextAuraTTLTickExpression="3-${_since}" TextAuraUseOutline="True" TextAuraFontName="Arial Black" ActionType="TextAura">
-                        <Condition Enabled="true" Grouping="Or">
-                          <ConditionSingle Enabled="true" ExpressionL="${var:roarCounter}" ExpressionTypeL="Numeric" ExpressionR="11" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
-                          <ConditionSingle Enabled="true" ExpressionL="${var:roarCounter}" ExpressionTypeL="Numeric" ExpressionR="5" ExpressionTypeR="Numeric" ConditionType="NumericLessEqual" />
-                          <ConditionSingle Enabled="true" ExpressionL="${var:roarCounter}" ExpressionTypeL="Numeric" ExpressionR="7" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
-                        </Condition>
-                        <Conditions />
-                      </Action>
-                    </Actions>
-                    <Condition Enabled="false" Grouping="Or" />
-                    <Conditions />
-                  </Trigger>
-                  <Trigger Enabled="true" Name="Spinning Dive" Id="d2f35a83-d2b7-42cb-a245-4bd33600507c" RegularExpression="\A.{15}14:5CDF" PeriodRefire="Deny" RefirePeriodExpression="5000">
+                  <Trigger Enabled="true" Name="Spinning Dive" Id="8c216321-446c-442c-af95-d3151354e549" RegularExpression="\A.{15}14:5CDF" PeriodRefire="Deny" RefirePeriodExpression="5000">
                     <Actions>
                       <Action OrderNumber="1" PlaySoundFileExpression="https://raw.githubusercontent.com/lexxiesia/xiv_triggernometry/master/resources/wav/mvc3_danger.wav" PlaySoundVolumeExpression="50" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="PlaySound">
                         <Condition Enabled="false" Grouping="Or" />
@@ -23332,7 +23382,7 @@
                     <Condition Enabled="false" Grouping="Or" />
                     <Conditions />
                   </Trigger>
-                  <Trigger Enabled="true" Name="Gyre Spume" Id="1612c173-2ea0-4f1b-8d85-72881d968133" RegularExpression="03:[0-9A-F]{8}:Added new combatant Gyre Spume" PeriodRefire="Deny" RefirePeriodExpression="5000">
+                  <Trigger Enabled="true" Name="Gyre Spume" Id="fd7332fa-054f-4bf4-8313-3fe1521ce9a0" RegularExpression="03:[0-9A-F]{8}:Added new combatant Gyre Spume" PeriodRefire="Deny" RefirePeriodExpression="5000">
                     <Actions>
                       <Action OrderNumber="1" PlaySoundFileExpression="https://raw.githubusercontent.com/lexxiesia/xiv_triggernometry/master/resources/wav/isac_incoming_hostiles_detected.mp3" PlaySoundVolumeExpression="50" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="PlaySound">
                         <Condition Enabled="false" Grouping="Or" />
@@ -23346,7 +23396,7 @@
                     <Condition Enabled="false" Grouping="Or" />
                     <Conditions />
                   </Trigger>
-                  <Trigger Enabled="true" Name="Wave Spume" Id="c3e52d1e-1da2-461c-8a91-7c7f85fa0d4e" RegularExpression="03:[0-9A-F]{8}:Added new combatant Wave Spume" PeriodRefire="Deny" RefirePeriodExpression="5000">
+                  <Trigger Enabled="true" Name="Wave Spume" Id="851c00d8-1ce5-4a26-a98a-33728c889f52" RegularExpression="03:[0-9A-F]{8}:Added new combatant Wave Spume" PeriodRefire="Deny" RefirePeriodExpression="5000">
                     <Actions>
                       <Action OrderNumber="1" LogLevel="-1" MouseX="" MouseY="" PlaySoundFileExpression="https://raw.githubusercontent.com/lexxiesia/xiv_triggernometry/master/resources/wav/horeeshiit.mp3" PlaySoundVolumeExpression="50" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="PlaySound" ExecutionDelayExpression="30000">
                         <Condition Enabled="false" Grouping="Or" />
@@ -23360,7 +23410,7 @@
                     <Condition Enabled="false" Grouping="Or" />
                     <Conditions />
                   </Trigger>
-                  <Trigger Enabled="true" Name="Wavespine Sahagin" Id="6845067a-21ed-4bf4-80a9-6b116585c253" RegularExpression="03:[0-9A-F]{8}:Added new combatant Wavespine Sahagin" PeriodRefire="Deny" RefirePeriodExpression="5000">
+                  <Trigger Enabled="true" Name="Wavespine Sahagin" Id="9bf960a9-89cf-4c64-9a3e-d60da99d1faa" RegularExpression="03:[0-9A-F]{8}:Added new combatant Wavespine Sahagin" PeriodRefire="Deny" RefirePeriodExpression="5000">
                     <Actions>
                       <Action OrderNumber="1" PlaySoundFileExpression="https://raw.githubusercontent.com/lexxiesia/xiv_triggernometry/master/resources/wav/isac_incoming_hostiles_detected.mp3" PlaySoundVolumeExpression="50" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="PlaySound">
                         <Condition Enabled="false" Grouping="Or" />
@@ -25759,14 +25809,14 @@
                   </Trigger>
                 </Triggers>
               </Folder>
-              <Folder ZoneFilterEnabled="True" Id="64784360-6f45-4e1c-8068-620d811b0450" ZoneFilterRegularExpression="^The Tower [Aa]t Paradigm's Breach$" Name="03 - The Tower at Paradigm's Breach" Enabled="true">
+              <Folder ZoneFilterEnabled="True" Id="fa7da524-62d5-40bd-8a65-75c672b245c2" ZoneFilterRegularExpression="^The Tower [Aa]t Paradigm's Breach$" Name="03 - The Tower at Paradigm's Breach" Enabled="true">
                 <Folders>
-                  <Folder Id="d703f764-517c-4a17-8af6-fdae91d7e809" Name="Knave of Hearts" Enabled="true">
+                  <Folder Id="cfef8ccf-76b2-4323-8241-f2e8fe1857fa" Name="Knave of Hearts" Enabled="true">
                     <Folders>
-                      <Folder FFXIVJobFilterEnabled="True" FFXIVJobFilter="17263755264" Id="f553d7c0-30d1-449b-b7bc-06d4378794a5" Name="Caster" Enabled="true">
+                      <Folder FFXIVJobFilterEnabled="True" FFXIVJobFilter="17263755264" Id="44cb8b37-4f27-4e99-bf29-358f3450c186" Name="Caster" Enabled="true">
                         <Folders />
                         <Triggers>
-                          <Trigger Enabled="true" Name="Roar" Id="d8ad63d1-5666-4d48-a61f-08ad3e137214" RegularExpression="\A.{15}14:5EB5">
+                          <Trigger Enabled="true" Name="Roar" Id="96d1355a-729e-4d26-95d3-c0aa15984dea" RegularExpression="\A.{15}14:5EB5">
                             <Actions>
                               <Action OrderNumber="1" LogLevel="-1" MouseX="" MouseY="" UseTTSTextExpression="Raidwide" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="UseTTS">
                                 <Condition Enabled="false" Grouping="Or" />
@@ -25776,7 +25826,7 @@
                             <Condition Enabled="false" Grouping="Or" />
                             <Conditions />
                           </Trigger>
-                          <Trigger Enabled="true" Name="Magic Artillery Beta" Id="f1b5c0a5-464f-48ef-8de1-9fef8f5997df" RegularExpression="1B:[0-9A-F]{8}:(?&lt;player&gt;(?&lt;name&gt;[\w-']+) [\w-']+):.{4}:.{4}:00DA:">
+                          <Trigger Enabled="true" Name="Magic Artillery Beta" Id="42168044-8ba6-4329-b5b4-43614d5f5634" RegularExpression="1B:[0-9A-F]{8}:(?&lt;player&gt;(?&lt;name&gt;[\w-']+) [\w-']+):.{4}:.{4}:00DA:">
                             <Actions>
                               <Action OrderNumber="1" LogLevel="-1" UseTTSTextExpression="Tankbuster" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="UseTTS">
                                 <Condition Enabled="false" Grouping="Or" />
@@ -25790,10 +25840,10 @@
                           </Trigger>
                         </Triggers>
                       </Folder>
-                      <Folder FFXIVJobFilterEnabled="True" FFXIVJobFilter="4437573632" Id="abc6dae1-09dd-45c7-bfe2-c23dfb2fd45a" Name="Healers" Enabled="true">
+                      <Folder FFXIVJobFilterEnabled="True" FFXIVJobFilter="4437573632" Id="52369727-ea4d-452b-b7a8-229cf4b76dd9" Name="Healers" Enabled="true">
                         <Folders />
                         <Triggers>
-                          <Trigger Enabled="true" Name="Roar" Id="0ec262dc-6bac-454a-8231-ab94912235c5" RegularExpression="\A.{15}14:5EB5">
+                          <Trigger Enabled="true" Name="Roar" Id="1dfc4164-12b1-408f-8987-81e03facc976" RegularExpression="\A.{15}14:5EB5">
                             <Actions>
                               <Action OrderNumber="1" LogLevel="-1" MouseX="" MouseY="" UseTTSTextExpression="Raidwide" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="UseTTS">
                                 <Condition Enabled="false" Grouping="Or" />
@@ -25803,7 +25853,7 @@
                             <Condition Enabled="false" Grouping="Or" />
                             <Conditions />
                           </Trigger>
-                          <Trigger Enabled="true" Name="Magic Artillery Beta" Id="f35840ae-a781-468d-866f-b57ac6f9c93e" RegularExpression="1B:[0-9A-F]{8}:(?&lt;player&gt;(?&lt;name&gt;[\w-']+) [\w-']+):.{4}:.{4}:00DA:">
+                          <Trigger Enabled="true" Name="Magic Artillery Beta" Id="2f649b5c-ded8-4f5f-a6bf-681745661991" RegularExpression="1B:[0-9A-F]{8}:(?&lt;player&gt;(?&lt;name&gt;[\w-']+) [\w-']+):.{4}:.{4}:00DA:">
                             <Actions>
                               <Action OrderNumber="1" LogLevel="-1" UseTTSTextExpression="Tankbuster" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="UseTTS">
                                 <Condition Enabled="false" Grouping="Or" />
@@ -25823,10 +25873,10 @@
                           </Trigger>
                         </Triggers>
                       </Folder>
-                      <Folder FFXIVJobFilterEnabled="True" FFXIVJobFilter="70868271104" Id="a09d0755-3f31-47e3-9f8f-ac244fb73177" Name="Tanks" Enabled="true">
+                      <Folder FFXIVJobFilterEnabled="True" FFXIVJobFilter="70868271104" Id="41c631aa-1a08-4464-8c76-62439ec2c952" Name="Tanks" Enabled="true">
                         <Folders />
                         <Triggers>
-                          <Trigger Enabled="true" Name="Roar" Id="4e001aa3-4fc4-44b7-88b2-90d11def59e1" RegularExpression="\A.{15}14:5EB5">
+                          <Trigger Enabled="true" Name="Roar" Id="d2ff5dd3-cc46-480f-b9ca-a98a88fac7ef" RegularExpression="\A.{15}14:5EB5">
                             <Actions>
                               <Action OrderNumber="1" LogLevel="-1" MouseX="" MouseY="" UseTTSTextExpression="Raidwide" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="UseTTS">
                                 <Condition Enabled="false" Grouping="Or" />
@@ -25836,7 +25886,7 @@
                             <Condition Enabled="false" Grouping="Or" />
                             <Conditions />
                           </Trigger>
-                          <Trigger Enabled="true" Name="Magic Artillery Beta" Id="c9a59cf8-a156-4827-866b-131b8b0c90eb" RegularExpression="1B:[0-9A-F]{8}:(?&lt;player&gt;(?&lt;name&gt;[\w-']+) [\w-']+):.{4}:.{4}:00DA:">
+                          <Trigger Enabled="true" Name="Magic Artillery Beta" Id="a3c45fbe-5abc-4c93-b3dd-e2e2c94ca436" RegularExpression="1B:[0-9A-F]{8}:(?&lt;player&gt;(?&lt;name&gt;[\w-']+) [\w-']+):.{4}:.{4}:00DA:">
                             <Actions>
                               <Action OrderNumber="1" LogLevel="-1" UseTTSTextExpression="Tankbuster" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="UseTTS">
                                 <Condition Enabled="false" Grouping="Or" />
@@ -25850,10 +25900,10 @@
                           </Trigger>
                         </Triggers>
                       </Folder>
-                      <Folder FFXIVJobFilterEnabled="True" FFXIVJobFilter="138516889600" Id="c9e150bf-ba66-4d63-9543-8b0dba74cc48" Name="Ranged" Enabled="true">
+                      <Folder FFXIVJobFilterEnabled="True" FFXIVJobFilter="138516889600" Id="ab08a831-d2b0-4d73-9ba4-091789a612c8" Name="Ranged" Enabled="true">
                         <Folders />
                         <Triggers>
-                          <Trigger Enabled="true" Name="Roar" Id="0713886d-72cd-4295-b581-0ba3933d8acd" RegularExpression="\A.{15}14:5EB5">
+                          <Trigger Enabled="true" Name="Roar" Id="e8b17bf3-c7fd-4069-b32c-97c8d2f5cdcf" RegularExpression="\A.{15}14:5EB5">
                             <Actions>
                               <Action OrderNumber="1" LogLevel="-1" MouseX="" MouseY="" UseTTSTextExpression="Raidwide" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="UseTTS">
                                 <Condition Enabled="false" Grouping="Or" />
@@ -25865,10 +25915,10 @@
                           </Trigger>
                         </Triggers>
                       </Folder>
-                      <Folder Id="83efd898-ce53-464c-b4e3-6ecaae3f9d25" Name="Colossal Impact" Enabled="true">
+                      <Folder Id="22aa3e76-63f3-415a-b2ea-a9ae032e39b6" Name="Colossal Impact" Enabled="true">
                         <Folders />
                         <Triggers>
-                          <Trigger Enabled="true" Name="Sides - Clone" Id="3cd5e288-4394-4722-aeac-152995ea23be" RegularExpression="\A.{15}14:5EA4:Copied Knave">
+                          <Trigger Enabled="true" Name="Sides - Clone" Id="f035478f-382b-4e3a-acc0-3eea1401cc00" RegularExpression="\A.{15}14:5EA4:Copied Knave">
                             <Actions>
                               <Action OrderNumber="1" LogLevel="-1" MouseX="" MouseY="" UseTTSTextExpression="Clone Middle" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="UseTTS" ExecutionDelayExpression="2100">
                                 <Condition Enabled="false" Grouping="Or" />
@@ -25882,7 +25932,7 @@
                             <Condition Enabled="false" Grouping="Or" />
                             <Conditions />
                           </Trigger>
-                          <Trigger Enabled="true" Name="Sides - Knave" Id="fe7c6e5b-b17e-45e3-8aff-1d75d11d19f0" RegularExpression="\A.{15}14:5EA4:Knave Of Hearts">
+                          <Trigger Enabled="true" Name="Sides - Knave" Id="68e15b62-01a0-4042-b634-f462fc93ce95" RegularExpression="\A.{15}14:5EA4:Knave Of Hearts">
                             <Actions>
                               <Action OrderNumber="1" LogLevel="-1" MouseX="" MouseY="" UseTTSTextExpression="Boss Middle" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="UseTTS">
                                 <Condition Enabled="false" Grouping="Or" />
@@ -25896,7 +25946,7 @@
                             <Condition Enabled="false" Grouping="Or" />
                             <Conditions />
                           </Trigger>
-                          <Trigger Enabled="true" Name="Middle - Knave" Id="bb1549fb-33d9-47c2-81bc-91d9270bf6f3" RegularExpression="\A.{15}14:5EA7:Knave Of Hearts">
+                          <Trigger Enabled="true" Name="Middle - Knave" Id="61de10ad-73f0-43a6-abc0-71bf9fe2bda4" RegularExpression="\A.{15}14:5EA7:Knave Of Hearts">
                             <Actions>
                               <Action OrderNumber="1" LogLevel="-1" MouseX="" MouseY="" UseTTSTextExpression="Boss Sides" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="UseTTS">
                                 <Condition Enabled="false" Grouping="Or" />
@@ -25910,7 +25960,7 @@
                             <Condition Enabled="false" Grouping="Or" />
                             <Conditions />
                           </Trigger>
-                          <Trigger Enabled="true" Name="Middle - Clone" Id="b8038469-8094-4c36-918b-df12b7afa7aa" RegularExpression="\A.{15}14:5EA7:Copied Knave">
+                          <Trigger Enabled="true" Name="Middle - Clone" Id="28629025-79bb-4b82-ab39-40b387f25460" RegularExpression="\A.{15}14:5EA7:Copied Knave">
                             <Actions>
                               <Action OrderNumber="1" LogLevel="-1" MouseX="" MouseY="" UseTTSTextExpression="Clone Sides" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="UseTTS" ExecutionDelayExpression="2100">
                                 <Condition Enabled="false" Grouping="Or" />
@@ -25926,10 +25976,10 @@
                           </Trigger>
                         </Triggers>
                       </Folder>
-                      <Folder Id="d969f29d-c538-4c28-8b7b-1d1528040a79" Name="Lunge" Enabled="true">
+                      <Folder Id="e71dd0e2-2926-4354-966c-b9387fb7a4df" Name="Lunge" Enabled="true">
                         <Folders />
                         <Triggers>
-                          <Trigger Enabled="true" Name="Knave" Id="3767ec4f-6e4c-487f-9806-a6417a06da0b" RegularExpression="\A.{15}14:5EB1:Knave Of Hearts">
+                          <Trigger Enabled="true" Name="Knave" Id="cb5092ef-56a3-430c-9e82-9dd8531712b8" RegularExpression="\A.{15}14:5EB1:Knave Of Hearts">
                             <Actions>
                               <Action OrderNumber="1" LogLevel="-1" MouseX="" MouseY="" UseTTSTextExpression="Boss Knockback" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="UseTTS" ExecutionDelayExpression="2000">
                                 <Condition Enabled="false" Grouping="Or" />
@@ -25943,13 +25993,13 @@
                             <Condition Enabled="false" Grouping="Or" />
                             <Conditions />
                           </Trigger>
-                          <Trigger Enabled="true" Name="Clone" Id="c679712c-64a1-442c-af6f-59c35dd57344" RegularExpression="\A.{15}14:5EB1:Copied Knave">
+                          <Trigger Enabled="true" Name="Clone" Id="cd032c78-7066-488c-98e6-d80d3613d84f" RegularExpression="\A.{15}14:5EB1:Copied Knave">
                             <Actions>
                               <Action OrderNumber="1" LogLevel="-1" MouseX="" MouseY="" VariableOp="SetString" VariableName="cloneLunge" VariableExpression="true" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Variable">
                                 <Condition Enabled="false" Grouping="Or" />
                                 <Conditions />
                               </Action>
-                              <Action OrderNumber="2" LogLevel="-1" MouseX="" MouseY="" UseTTSTextExpression="Boss Knockback" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="UseTTS" ExecutionDelayExpression="2000">
+                              <Action OrderNumber="2" LogLevel="-1" MouseX="" MouseY="" UseTTSTextExpression="Clone Knockback" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="UseTTS" ExecutionDelayExpression="2000">
                                 <Condition Enabled="false" Grouping="Or" />
                                 <Conditions />
                               </Action>
@@ -25963,7 +26013,7 @@
                             </Condition>
                             <Conditions />
                           </Trigger>
-                          <Trigger Enabled="true" Name="Colossal Impact" Id="e4538778-1492-457e-8511-a2417d69f939" RegularExpression="\A.{15}14:(?&lt;ID&gt;60C[78]):Knave Of Hearts">
+                          <Trigger Enabled="true" Name="Colossal Impact" Id="9bb2483b-8d82-4282-a2be-2d345845ae94" RegularExpression="\A.{15}14:(?&lt;ID&gt;60C[78]):Knave Of Hearts">
                             <Actions>
                               <Action OrderNumber="1" LogLevel="-1" MouseX="" MouseY="" UseTTSTextExpression="Middle" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="UseTTS" ExecutionDelayExpression="3000">
                                 <Condition Enabled="true" Grouping="Or">
@@ -25987,7 +26037,7 @@
                       </Folder>
                     </Folders>
                     <Triggers>
-                      <Trigger Enabled="true" Name="Magic Artillery Alpha" Id="c4ea20a3-918a-4765-9c1f-9b8cfb96e2ef" RegularExpression="1B:[0-9A-F]{8}:(?&lt;player&gt;(?&lt;name&gt;[\w-']+) [\w-']+):.{4}:.{4}:00A9:">
+                      <Trigger Enabled="true" Name="Magic Artillery Alpha" Id="697e6c8e-83ca-4c1d-ad30-10573ca383cf" RegularExpression="1B:[0-9A-F]{8}:(?&lt;player&gt;(?&lt;name&gt;[\w-']+) [\w-']+):.{4}:.{4}:00A9:">
                         <Actions>
                           <Action OrderNumber="1" LogLevel="-1" UseTTSTextExpression="Spread" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="UseTTS">
                             <Condition Enabled="false" Grouping="Or" />
@@ -26001,12 +26051,12 @@
                       </Trigger>
                     </Triggers>
                   </Folder>
-                  <Folder Id="b96a98c0-23d9-415e-bba7-6760dd5ae295" Name="Hansel &amp; Gretel" Enabled="true">
+                  <Folder Id="af3d6610-41f1-4f42-90c0-a3f98077e45a" Name="Hansel &amp; Gretel" Enabled="true">
                     <Folders>
-                      <Folder FFXIVJobFilterEnabled="True" FFXIVJobFilter="17263755264" Id="807c4d2c-3b9f-4f12-865a-f45a7a79e443" Name="Caster" Enabled="true">
+                      <Folder FFXIVJobFilterEnabled="True" FFXIVJobFilter="17263755264" Id="bf3817a5-cd64-4128-8485-108b9f5bcc1c" Name="Caster" Enabled="true">
                         <Folders />
                         <Triggers>
-                          <Trigger Enabled="true" Name="Wail" Id="c66d5ed2-b37d-47cc-867f-9016ce8b105e" RegularExpression="\A.{15}14:5C7[67]">
+                          <Trigger Enabled="false" Name="Lamentation" Id="c86f3e80-1e5b-40ae-9259-991dd4bdf939" RegularExpression="\A.{15}14:5C7[34]">
                             <Actions>
                               <Action OrderNumber="1" LogLevel="-1" MouseX="" MouseY="" UseTTSTextExpression="Raidwide" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="UseTTS">
                                 <Condition Enabled="false" Grouping="Or" />
@@ -26016,9 +26066,13 @@
                             <Condition Enabled="false" Grouping="Or" />
                             <Conditions />
                           </Trigger>
-                          <Trigger Enabled="true" Name="Lamentation" Id="1dbd632b-d6fc-4db8-8d68-adea90412521" RegularExpression="\A.{15}14:5C7[34]">
+                          <Trigger Enabled="true" Name="Wail" Id="7079c8b8-1d75-4f9c-a352-d7018eadfc25" RegularExpression="\A.{15}14:5C7[67]:(?&lt;target&gt;[\w-]+)">
                             <Actions>
                               <Action OrderNumber="1" LogLevel="-1" MouseX="" MouseY="" UseTTSTextExpression="Raidwide" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="UseTTS">
+                                <Condition Enabled="false" Grouping="Or" />
+                                <Conditions />
+                              </Action>
+                              <Action OrderNumber="2" LogLevel="-1" MouseX="" MouseY="" TextAuraEffect="Bold" TextAuraFontSize="24" TextAuraForeground="#FFBB00" TextAuraOutline="Black" TextAuraName="wailTarget" TextAuraExpression="${target}: Raidwide" TextAuraXIniExpression="0" TextAuraYIniExpression="${_screenheight}/2" TextAuraWIniExpression="${_screenwidth}" TextAuraHIniExpression="64" TextAuraOIniExpression="100" TextAuraTTLTickExpression="3-${_since}" TextAuraUseOutline="True" TextAuraFontName="Arial Black" ActionType="TextAura">
                                 <Condition Enabled="false" Grouping="Or" />
                                 <Conditions />
                               </Action>
@@ -26028,20 +26082,10 @@
                           </Trigger>
                         </Triggers>
                       </Folder>
-                      <Folder FFXIVJobFilterEnabled="True" FFXIVJobFilter="4437573632" Id="bc8a0320-9ef4-4370-98c1-46cfbb701178" Name="Healers" Enabled="true">
+                      <Folder FFXIVJobFilterEnabled="True" FFXIVJobFilter="4437573632" Id="f8beace0-8bad-4b0d-9aff-cae0d3cf9537" Name="Healers" Enabled="true">
                         <Folders />
                         <Triggers>
-                          <Trigger Enabled="true" Name="Wail" Id="fced151c-827b-45c2-95e5-fa38cd6b1f5d" RegularExpression="\A.{15}14:5C7[67]">
-                            <Actions>
-                              <Action OrderNumber="1" LogLevel="-1" MouseX="" MouseY="" UseTTSTextExpression="Raidwide" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="UseTTS">
-                                <Condition Enabled="false" Grouping="Or" />
-                                <Conditions />
-                              </Action>
-                            </Actions>
-                            <Condition Enabled="false" Grouping="Or" />
-                            <Conditions />
-                          </Trigger>
-                          <Trigger Enabled="true" Name="Crippling Blow" Id="778a92c2-9bb5-44bc-a572-9eeb6a7156d2" RegularExpression="14:5C7[89]:(Hansel|Gretel) starts using Crippling Blow on (?&lt;player&gt;(?&lt;name&gt;[\w-']+) [\w-']+)\.">
+                          <Trigger Enabled="true" Name="Crippling Blow" Id="946e26f7-5efc-407f-b4a2-50faf6ff4889" RegularExpression="14:5C7[89]:(Hansel|Gretel) starts using Crippling Blow on (?&lt;player&gt;(?&lt;name&gt;[\w-']+) [\w-']+)\.">
                             <Actions>
                               <Action OrderNumber="1" LogLevel="-1" UseTTSTextExpression="Tankbuster" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="UseTTS">
                                 <Condition Enabled="false" Grouping="Or" />
@@ -26059,9 +26103,23 @@
                             </Condition>
                             <Conditions />
                           </Trigger>
-                          <Trigger Enabled="true" Name="Lamentation" Id="0746dd55-6c04-4bbd-8421-c1d7f076b8e1" RegularExpression="\A.{15}14:5C7[34]">
+                          <Trigger Enabled="false" Name="Lamentation" Id="43e35c61-b7b3-4287-96cc-2e8339cb99be" RegularExpression="\A.{15}14:5C7[34]">
                             <Actions>
                               <Action OrderNumber="1" LogLevel="-1" MouseX="" MouseY="" UseTTSTextExpression="Raidwide" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="UseTTS">
+                                <Condition Enabled="false" Grouping="Or" />
+                                <Conditions />
+                              </Action>
+                            </Actions>
+                            <Condition Enabled="false" Grouping="Or" />
+                            <Conditions />
+                          </Trigger>
+                          <Trigger Enabled="true" Name="Wail" Id="dac49eeb-f90e-4858-8a67-b6af4477bb8a" RegularExpression="\A.{15}14:5C7[67]:(?&lt;target&gt;[\w-]+)">
+                            <Actions>
+                              <Action OrderNumber="1" LogLevel="-1" MouseX="" MouseY="" UseTTSTextExpression="Raidwide" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="UseTTS">
+                                <Condition Enabled="false" Grouping="Or" />
+                                <Conditions />
+                              </Action>
+                              <Action OrderNumber="2" LogLevel="-1" MouseX="" MouseY="" TextAuraEffect="Bold" TextAuraFontSize="24" TextAuraForeground="#FFBB00" TextAuraOutline="Black" TextAuraName="wailTarget" TextAuraExpression="${target}: Raidwide" TextAuraXIniExpression="0" TextAuraYIniExpression="${_screenheight}/2" TextAuraWIniExpression="${_screenwidth}" TextAuraHIniExpression="64" TextAuraOIniExpression="100" TextAuraTTLTickExpression="3-${_since}" TextAuraUseOutline="True" TextAuraFontName="Arial Black" ActionType="TextAura">
                                 <Condition Enabled="false" Grouping="Or" />
                                 <Conditions />
                               </Action>
@@ -26071,20 +26129,10 @@
                           </Trigger>
                         </Triggers>
                       </Folder>
-                      <Folder FFXIVJobFilterEnabled="True" FFXIVJobFilter="70868271104" Id="3fa8d5d4-5e19-4b39-b13b-9c6e8461e26e" Name="Tanks" Enabled="true">
+                      <Folder FFXIVJobFilterEnabled="True" FFXIVJobFilter="70868271104" Id="0f5f5310-b490-41c6-942a-8c3c7cf6be7e" Name="Tanks" Enabled="true">
                         <Folders />
                         <Triggers>
-                          <Trigger Enabled="true" Name="Wail" Id="d73e27b1-4a8f-4203-b1aa-a1d38d504d36" RegularExpression="\A.{15}14:5C7[67]">
-                            <Actions>
-                              <Action OrderNumber="1" LogLevel="-1" MouseX="" MouseY="" UseTTSTextExpression="Raidwide" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="UseTTS">
-                                <Condition Enabled="false" Grouping="Or" />
-                                <Conditions />
-                              </Action>
-                            </Actions>
-                            <Condition Enabled="false" Grouping="Or" />
-                            <Conditions />
-                          </Trigger>
-                          <Trigger Enabled="true" Name="Crippling Blow" Id="9492bee4-43c2-4144-a78d-e58c6fbb5a52" RegularExpression="14:5C7[89]:(Hansel|Gretel) starts using Crippling Blow on (?&lt;player&gt;(?&lt;name&gt;[\w-']+) [\w-']+)\.">
+                          <Trigger Enabled="true" Name="Crippling Blow" Id="793dd961-1d18-46c7-8c3c-e17c874680cd" RegularExpression="14:5C7[89]:(Hansel|Gretel) starts using Crippling Blow on (?&lt;player&gt;(?&lt;name&gt;[\w-']+) [\w-']+)\.">
                             <Actions>
                               <Action OrderNumber="1" LogLevel="-1" UseTTSTextExpression="Tankbuster" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="UseTTS">
                                 <Condition Enabled="false" Grouping="Or" />
@@ -26096,9 +26144,23 @@
                             </Condition>
                             <Conditions />
                           </Trigger>
-                          <Trigger Enabled="true" Name="Lamentation" Id="169f9fea-baca-4166-8b10-3601a93351f1" RegularExpression="\A.{15}14:5C7[34]">
+                          <Trigger Enabled="false" Name="Lamentation" Id="cbb1a98b-7808-4ace-8837-954a2c1360c8" RegularExpression="\A.{15}14:5C7[34]">
                             <Actions>
                               <Action OrderNumber="1" LogLevel="-1" MouseX="" MouseY="" UseTTSTextExpression="Raidwide" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="UseTTS">
+                                <Condition Enabled="false" Grouping="Or" />
+                                <Conditions />
+                              </Action>
+                            </Actions>
+                            <Condition Enabled="false" Grouping="Or" />
+                            <Conditions />
+                          </Trigger>
+                          <Trigger Enabled="true" Name="Wail" Id="2c3bef79-aed1-4db5-a217-aee7c9fd721b" RegularExpression="\A.{15}14:5C7[67]:(?&lt;target&gt;[\w-]+)">
+                            <Actions>
+                              <Action OrderNumber="1" LogLevel="-1" MouseX="" MouseY="" UseTTSTextExpression="Raidwide" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="UseTTS">
+                                <Condition Enabled="false" Grouping="Or" />
+                                <Conditions />
+                              </Action>
+                              <Action OrderNumber="2" LogLevel="-1" MouseX="" MouseY="" TextAuraEffect="Bold" TextAuraFontSize="24" TextAuraForeground="#FFBB00" TextAuraOutline="Black" TextAuraName="wailTarget" TextAuraExpression="${target}: Raidwide" TextAuraXIniExpression="0" TextAuraYIniExpression="${_screenheight}/2" TextAuraWIniExpression="${_screenwidth}" TextAuraHIniExpression="64" TextAuraOIniExpression="100" TextAuraTTLTickExpression="3-${_since}" TextAuraUseOutline="True" TextAuraFontName="Arial Black" ActionType="TextAura">
                                 <Condition Enabled="false" Grouping="Or" />
                                 <Conditions />
                               </Action>
@@ -26108,10 +26170,10 @@
                           </Trigger>
                         </Triggers>
                       </Folder>
-                      <Folder FFXIVJobFilterEnabled="True" FFXIVJobFilter="138516889600" Id="d3cc623d-b751-47e7-8b0f-63cd7b331a7c" Name="Ranged" Enabled="true">
+                      <Folder FFXIVJobFilterEnabled="True" FFXIVJobFilter="138516889600" Id="11d2250d-5586-414e-9784-ecdcb75582c2" Name="Ranged" Enabled="true">
                         <Folders />
                         <Triggers>
-                          <Trigger Enabled="true" Name="Wail" Id="00847afe-b859-4e1c-9a0a-ad7d1379535b" RegularExpression="\A.{15}14:5C7[67]">
+                          <Trigger Enabled="false" Name="Lamentation" Id="e6f117a9-2bb7-4d7d-9488-4eb275a45088" RegularExpression="\A.{15}14:5C7[34]">
                             <Actions>
                               <Action OrderNumber="1" LogLevel="-1" MouseX="" MouseY="" UseTTSTextExpression="Raidwide" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="UseTTS">
                                 <Condition Enabled="false" Grouping="Or" />
@@ -26121,9 +26183,13 @@
                             <Condition Enabled="false" Grouping="Or" />
                             <Conditions />
                           </Trigger>
-                          <Trigger Enabled="true" Name="Lamentation" Id="f8d3e6ca-ced4-433e-8994-ad718f99a491" RegularExpression="\A.{15}14:5C7[34]">
+                          <Trigger Enabled="true" Name="Wail" Id="777c5e34-5130-4b99-b4ed-d815aebb3562" RegularExpression="\A.{15}14:5C7[67]:(?&lt;target&gt;[\w-]+)">
                             <Actions>
                               <Action OrderNumber="1" LogLevel="-1" MouseX="" MouseY="" UseTTSTextExpression="Raidwide" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="UseTTS">
+                                <Condition Enabled="false" Grouping="Or" />
+                                <Conditions />
+                              </Action>
+                              <Action OrderNumber="2" LogLevel="-1" MouseX="" MouseY="" TextAuraEffect="Bold" TextAuraFontSize="24" TextAuraForeground="#FFBB00" TextAuraOutline="Black" TextAuraName="wailTarget" TextAuraExpression="${target}: Raidwide" TextAuraXIniExpression="0" TextAuraYIniExpression="${_screenheight}/2" TextAuraWIniExpression="${_screenwidth}" TextAuraHIniExpression="64" TextAuraOIniExpression="100" TextAuraTTLTickExpression="3-${_since}" TextAuraUseOutline="True" TextAuraFontName="Arial Black" ActionType="TextAura">
                                 <Condition Enabled="false" Grouping="Or" />
                                 <Conditions />
                               </Action>
@@ -26133,10 +26199,10 @@
                           </Trigger>
                         </Triggers>
                       </Folder>
-                      <Folder FFXIVJobFilterEnabled="True" FFXIVJobFilter="9129426944" Id="17fd3863-a343-4f5f-91b0-1c0f622c2d82" Name="Melee" Enabled="true">
+                      <Folder FFXIVJobFilterEnabled="True" FFXIVJobFilter="9129426944" Id="91555d91-d1ae-43fc-9a8d-5f0a7d0d20be" Name="Melee" Enabled="true">
                         <Folders />
                         <Triggers>
-                          <Trigger Enabled="true" Name="Crippling Blow" Id="3980dbd8-4fe2-4971-84e5-8d1e332385c5" RegularExpression="\A.{15}14:5C7[89]">
+                          <Trigger Enabled="true" Name="Crippling Blow" Id="06c18e2e-039c-4f1b-8880-b42e785fb860" RegularExpression="\A.{15}14:5C7[89]">
                             <Actions>
                               <Action OrderNumber="1" LogLevel="-1" UseTTSTextExpression="Tankbuster" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="UseTTS">
                                 <Condition Enabled="false" Grouping="Or" />
@@ -26150,7 +26216,7 @@
                       </Folder>
                     </Folders>
                     <Triggers>
-                      <Trigger Enabled="true" Name="Upgraded Shield" Id="8f98e00e-1a9c-4c57-a83c-bd51b8eae97c" RegularExpression="\A.{15}14:(?&lt;ID&gt;5C6[9B])">
+                      <Trigger Enabled="true" Name="Upgraded Shield" Id="87b4cb42-a6d8-4629-9842-33ec1647cb93" RegularExpression="\A.{15}14:(?&lt;ID&gt;5C6[9B])">
                         <Actions>
                           <Action OrderNumber="1" LogLevel="-1" MouseX="" MouseY="" PlaySoundFileExpression="https://raw.githubusercontent.com/lexxiesia/xiv_triggernometry/master/resources/wav/isac_subject_located.mp3" PlaySoundVolumeExpression="50" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="PlaySound">
                             <Condition Enabled="false" Grouping="Or" />
@@ -26172,7 +26238,7 @@
                         <Condition Enabled="false" Grouping="Or" />
                         <Conditions />
                       </Trigger>
-                      <Trigger Enabled="true" Name="Seed of Magic Alpha" Id="a69c87c6-6aff-4c94-af74-10793920418e" RegularExpression="1B:[0-9A-F]{8}:(?&lt;player&gt;(?&lt;name&gt;[\w-']+) [\w-']+):.{4}:.{4}:0060:">
+                      <Trigger Enabled="true" Name="Seed of Magic Alpha" Id="d1a5203e-dd03-406a-b3dd-0bb27d4d2ba3" RegularExpression="1B:[0-9A-F]{8}:(?&lt;player&gt;(?&lt;name&gt;[\w-']+) [\w-']+):.{4}:.{4}:0060:">
                         <Actions>
                           <Action OrderNumber="1" LogLevel="-1" MouseX="" MouseY="" VariableOp="SetString" VariableName="seedTarget" VariableExpression="true" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Variable">
                             <Condition Enabled="false" Grouping="Or" />
@@ -26192,7 +26258,7 @@
                         </Condition>
                         <Conditions />
                       </Trigger>
-                      <Trigger Enabled="true" Name="Riot of Magic" Id="2cdf3197-ee53-4c9e-bb5b-5b42b4c7de21" RegularExpression="1B:[0-9A-F]{8}:(?&lt;player&gt;(?&lt;name&gt;[\w-']+) [\w-']+):.{4}:.{4}:003E:">
+                      <Trigger Enabled="true" Name="Riot of Magic" Id="edc28b7f-d03b-4875-8cbd-1914b24918b7" RegularExpression="1B:[0-9A-F]{8}:(?&lt;player&gt;(?&lt;name&gt;[\w-']+) [\w-']+):.{4}:.{4}:003E:">
                         <Actions>
                           <Action OrderNumber="1" LogLevel="-1" UseTTSTextExpression="Stack" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="UseTTS" ExecutionDelayExpression="500">
                             <Condition Enabled="true" Grouping="Or">
@@ -26204,7 +26270,7 @@
                         <Condition Enabled="false" Grouping="Or" />
                         <Conditions />
                       </Trigger>
-                      <Trigger Enabled="true" Name="Bloody Sweep" Id="e38d0361-ff4d-4f56-b45f-880c20a88ad8" RegularExpression="\A.{15}14:5C5[4567]" PeriodRefire="Deny" RefirePeriodExpression="1000">
+                      <Trigger Enabled="true" Name="Bloody Sweep" Id="1fbec0ec-0b11-4182-85ca-98c39477fe73" RegularExpression="\A.{15}14:5C5[4567]" PeriodRefire="Deny" RefirePeriodExpression="1000">
                         <Actions>
                           <Action OrderNumber="1" LogLevel="-1" MouseX="" MouseY="" TextAuraEffect="Bold" TextAuraFontSize="24" TextAuraForeground="#FFBB00" TextAuraOutline="Black" TextAuraName="bloodySweep" TextAuraExpression="●╢╟● Away     ╟●●╢ Between" TextAuraXIniExpression="0" TextAuraYIniExpression="${_screenheight}/2" TextAuraWIniExpression="${_screenwidth}" TextAuraHIniExpression="64" TextAuraOIniExpression="100" TextAuraTTLTickExpression="5-${_since}" TextAuraUseOutline="True" TextAuraFontName="Arial Black" ActionType="TextAura">
                             <Condition Enabled="false" Grouping="Or" />
@@ -26220,12 +26286,12 @@
                       </Trigger>
                     </Triggers>
                   </Folder>
-                  <Folder Id="cd0416c1-8350-431c-8fdc-7bd9a98159b0" Name="Red Girl" Enabled="true">
+                  <Folder Id="265ea111-cf99-4699-840d-34b81d86ad6e" Name="Red Girl" Enabled="true">
                     <Folders>
-                      <Folder FFXIVJobFilterEnabled="True" FFXIVJobFilter="17263755264" Id="792d8f18-b314-45b8-a693-7c84c961cb32" Name="Caster" Enabled="true">
+                      <Folder FFXIVJobFilterEnabled="True" FFXIVJobFilter="17263755264" Id="843cb221-70a9-4c85-9a6a-d2dbe113a2f9" Name="Caster" Enabled="true">
                         <Folders />
                         <Triggers>
-                          <Trigger Enabled="true" Name="Cruelty" Id="f8e1ab4a-31cd-4007-b202-9f11f8e459f6" RegularExpression="\A.{15}14:601[23]">
+                          <Trigger Enabled="true" Name="Cruelty" Id="43139d4d-e497-45e4-b89d-5ddc12e3fac8" RegularExpression="\A.{15}14:601[23]">
                             <Actions>
                               <Action OrderNumber="1" LogLevel="-1" MouseX="" MouseY="" UseTTSTextExpression="Raidwide" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="UseTTS">
                                 <Condition Enabled="false" Grouping="Or" />
@@ -26237,10 +26303,10 @@
                           </Trigger>
                         </Triggers>
                       </Folder>
-                      <Folder FFXIVJobFilterEnabled="True" FFXIVJobFilter="4437573632" Id="aad77350-7336-4412-80e4-b168bc3e44f6" Name="Healers" Enabled="true">
+                      <Folder FFXIVJobFilterEnabled="True" FFXIVJobFilter="4437573632" Id="f01a9ef7-911d-4545-a325-d5eea4d590a6" Name="Healers" Enabled="true">
                         <Folders />
                         <Triggers>
-                          <Trigger Enabled="true" Name="Cruelty" Id="ff088795-8c62-4031-bd0a-359ea99908b4" RegularExpression="\A.{15}14:601[23]">
+                          <Trigger Enabled="true" Name="Cruelty" Id="e5a8b125-fd24-4612-bad9-1efee3406b8f" RegularExpression="\A.{15}14:601[23]">
                             <Actions>
                               <Action OrderNumber="1" LogLevel="-1" MouseX="" MouseY="" UseTTSTextExpression="Raidwide" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="UseTTS">
                                 <Condition Enabled="false" Grouping="Or" />
@@ -26252,10 +26318,10 @@
                           </Trigger>
                         </Triggers>
                       </Folder>
-                      <Folder FFXIVJobFilterEnabled="True" FFXIVJobFilter="70868271104" Id="8d415483-4d2c-4c6c-bed9-9507f4b7caf8" Name="Tanks" Enabled="true">
+                      <Folder FFXIVJobFilterEnabled="True" FFXIVJobFilter="70868271104" Id="d7db5f2d-4bc7-4b74-aa11-16f85c970137" Name="Tanks" Enabled="true">
                         <Folders />
                         <Triggers>
-                          <Trigger Enabled="true" Name="Cruelty" Id="ae7e2729-c535-4848-a059-2b06675bdea4" RegularExpression="\A.{15}14:601[23]">
+                          <Trigger Enabled="true" Name="Cruelty" Id="5587e6c8-603e-48f5-bce7-a05149694b55" RegularExpression="\A.{15}14:601[23]">
                             <Actions>
                               <Action OrderNumber="1" LogLevel="-1" MouseX="" MouseY="" UseTTSTextExpression="Raidwide" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="UseTTS">
                                 <Condition Enabled="false" Grouping="Or" />
@@ -26267,10 +26333,10 @@
                           </Trigger>
                         </Triggers>
                       </Folder>
-                      <Folder FFXIVJobFilterEnabled="True" FFXIVJobFilter="138516889600" Id="f1c772af-54cc-4b8f-bab0-3f56a1b231a3" Name="Ranged" Enabled="true">
+                      <Folder FFXIVJobFilterEnabled="True" FFXIVJobFilter="138516889600" Id="1c436033-e78d-499e-9c42-99722dd14b6b" Name="Ranged" Enabled="true">
                         <Folders />
                         <Triggers>
-                          <Trigger Enabled="true" Name="Cruelty" Id="42b0598c-2568-4e4a-bef0-51f3c12e687c" RegularExpression="\A.{15}14:601[23]">
+                          <Trigger Enabled="true" Name="Cruelty" Id="5bb2b6e3-b4ce-4020-93af-a745205bc54a" RegularExpression="\A.{15}14:601[23]">
                             <Actions>
                               <Action OrderNumber="1" LogLevel="-1" MouseX="" MouseY="" UseTTSTextExpression="Raidwide" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="UseTTS">
                                 <Condition Enabled="false" Grouping="Or" />
@@ -26282,10 +26348,10 @@
                           </Trigger>
                         </Triggers>
                       </Folder>
-                      <Folder Id="642f71e4-a9b6-45d6-9461-b87903cf00c5" Name="Child's Play" Enabled="true">
+                      <Folder Id="65524d54-6714-4314-9989-78a675f3edbc" Name="Child's Play" Enabled="true">
                         <Folders />
                         <Triggers>
-                          <Trigger Enabled="true" Name="Tethers" Id="af8d3f54-a17e-448e-b991-43d34028688c" RegularExpression="23:[0-9A-F]{8}:(?&lt;name&gt;[\w-' ]+):[0-9A-F]{8}:Red Girl:.{4}:.{4}:0095:">
+                          <Trigger Enabled="true" Name="Tethers" Id="1852ca88-55e7-4a09-a3e6-f97ccd7116bf" RegularExpression="23:[0-9A-F]{8}:(?&lt;name&gt;[\w-' ]+):[0-9A-F]{8}:Red Girl:.{4}:.{4}:0095:">
                             <Actions>
                               <Action OrderNumber="1" LogLevel="-1" MouseX="" MouseY="" VariableOp="SetString" VariableName="forceMovement" VariableExpression="${name}" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Variable">
                                 <Condition Enabled="false" Grouping="Or" />
@@ -26301,7 +26367,7 @@
                             </Condition>
                             <Conditions />
                           </Trigger>
-                          <Trigger Enabled="true" Name="Mindjack" Id="59a7df60-2f41-4c40-a62a-954dde6176e6" RegularExpression="\A.{15}14:(602[45])">
+                          <Trigger Enabled="true" Name="Mindjack" Id="b75d1748-79f5-477b-8e55-70615c16b926" RegularExpression="\A.{15}14:(602[45])">
                             <Actions>
                               <Action OrderNumber="1" LogLevel="-1" MouseX="" MouseY="" TextAuraEffect="Bold" TextAuraFontSize="24" TextAuraForeground="#FFBB00" TextAuraOutline="Black" TextAuraName="childsPlay" TextAuraExpression="Mindjack: Right in ${numeric:10-${_since}}" TextAuraXIniExpression="0" TextAuraYIniExpression="${_screenheight}/2" TextAuraWIniExpression="${_screenwidth}" TextAuraHIniExpression="64" TextAuraOIniExpression="100" TextAuraTTLTickExpression="9-${_since}" TextAuraUseOutline="True" TextAuraFontName="Arial Black" ActionType="TextAura">
                                 <Condition Enabled="true" Grouping="And">
@@ -26325,7 +26391,7 @@
                       </Folder>
                     </Folders>
                     <Triggers>
-                      <Trigger Enabled="true" Name="Wave: White" Id="f5218bbc-95f9-40bc-bbca-9bc233758cd4" RegularExpression="\A.{15}14:618D">
+                      <Trigger Enabled="true" Name="Wave: White" Id="8e6b60e4-eb56-4a1d-b568-ade0bb063e05" RegularExpression="\A.{15}14:618D">
                         <Actions>
                           <Action OrderNumber="1" LogLevel="-1" MouseX="" MouseY="" VariableOp="SetString" VariableName="seenSphere" VariableExpression="true" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Variable">
                             <Condition Enabled="false" Grouping="Or" />
@@ -26347,7 +26413,7 @@
                         <Condition Enabled="false" Grouping="Or" />
                         <Conditions />
                       </Trigger>
-                      <Trigger Enabled="true" Name="Wave: Black" Id="a1576986-183d-433a-8436-d4023538ce8d" RegularExpression="\A.{15}14:618E">
+                      <Trigger Enabled="true" Name="Wave: Black" Id="a81d1658-fd90-4f9f-8fe2-df66ed9b1e1e" RegularExpression="\A.{15}14:618E">
                         <Actions>
                           <Action OrderNumber="1" LogLevel="-1" MouseX="" MouseY="" VariableOp="SetString" VariableName="seenSphere" VariableExpression="true" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Variable">
                             <Condition Enabled="false" Grouping="Or" />
@@ -26371,12 +26437,12 @@
                       </Trigger>
                     </Triggers>
                   </Folder>
-                  <Folder Id="fcdce33e-240c-4e7f-ac72-0326fba46a84" Name="False Idol" Enabled="true">
+                  <Folder Id="73691f42-f576-45d6-b345-aaef97851a5f" Name="False Idol" Enabled="true">
                     <Folders>
-                      <Folder FFXIVJobFilterEnabled="True" FFXIVJobFilter="17263755264" Id="8e39277c-eac9-41ee-84a1-fab208505a3a" Name="Caster" Enabled="true">
+                      <Folder FFXIVJobFilterEnabled="True" FFXIVJobFilter="17263755264" Id="e066a10e-df6b-4080-9a10-1ff65ad61f7c" Name="Caster" Enabled="true">
                         <Folders />
                         <Triggers>
-                          <Trigger Enabled="true" Name="Screaming Score" Id="97e6b177-7aed-4abe-baca-d94e6d923943" RegularExpression="\A.{15}14:5BDD">
+                          <Trigger Enabled="true" Name="Screaming Score" Id="f4fbef0d-c560-4df7-9bf6-67a46ba3724a" RegularExpression="\A.{15}14:5BDD">
                             <Actions>
                               <Action OrderNumber="1" LogLevel="-1" MouseX="" MouseY="" UseTTSTextExpression="Raidwide" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="UseTTS">
                                 <Condition Enabled="false" Grouping="Or" />
@@ -26386,7 +26452,7 @@
                             <Condition Enabled="false" Grouping="Or" />
                             <Conditions />
                           </Trigger>
-                          <Trigger Enabled="true" Name="Darker Note" Id="97481e1f-0707-448b-8f50-d1ce4dc8eaed" RegularExpression="1B:[0-9A-F]{8}:(?&lt;player&gt;(?&lt;name&gt;[\w-']+) [\w-']+):.{4}:.{4}:008B:">
+                          <Trigger Enabled="true" Name="Darker Note" Id="415fe240-1659-4d55-8d0a-c52a158f3ee0" RegularExpression="1B:[0-9A-F]{8}:(?&lt;player&gt;(?&lt;name&gt;[\w-']+) [\w-']+):.{4}:.{4}:008B:">
                             <Actions>
                               <Action OrderNumber="1" LogLevel="-1" UseTTSTextExpression="Tankbuster" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="UseTTS">
                                 <Condition Enabled="false" Grouping="Or" />
@@ -26400,10 +26466,10 @@
                           </Trigger>
                         </Triggers>
                       </Folder>
-                      <Folder FFXIVJobFilterEnabled="True" FFXIVJobFilter="4437573632" Id="f4a8a455-80b5-4900-9679-3f1ae26d8cb8" Name="Healers" Enabled="true">
+                      <Folder FFXIVJobFilterEnabled="True" FFXIVJobFilter="4437573632" Id="8b59b06a-287b-48bb-a61e-7f36750adfeb" Name="Healers" Enabled="true">
                         <Folders />
                         <Triggers>
-                          <Trigger Enabled="true" Name="Screaming Score" Id="e63f4e8a-ed09-47fe-bf7f-83b1755ff684" RegularExpression="\A.{15}14:5BDD">
+                          <Trigger Enabled="true" Name="Screaming Score" Id="fc549542-d9ed-497e-a68a-ce91b622e37b" RegularExpression="\A.{15}14:5BDD">
                             <Actions>
                               <Action OrderNumber="1" LogLevel="-1" MouseX="" MouseY="" UseTTSTextExpression="Raidwide" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="UseTTS">
                                 <Condition Enabled="false" Grouping="Or" />
@@ -26413,7 +26479,7 @@
                             <Condition Enabled="false" Grouping="Or" />
                             <Conditions />
                           </Trigger>
-                          <Trigger Enabled="true" Name="Darker Note" Id="ec62b2d8-bb5c-4274-8bf7-df4047e3541a" RegularExpression="1B:[0-9A-F]{8}:(?&lt;player&gt;(?&lt;name&gt;[\w-']+) [\w-']+):.{4}:.{4}:008B:">
+                          <Trigger Enabled="true" Name="Darker Note" Id="10258987-e2d5-4151-8e57-0bf3b9be161b" RegularExpression="1B:[0-9A-F]{8}:(?&lt;player&gt;(?&lt;name&gt;[\w-']+) [\w-']+):.{4}:.{4}:008B:">
                             <Actions>
                               <Action OrderNumber="1" LogLevel="-1" UseTTSTextExpression="Tankbuster" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="UseTTS">
                                 <Condition Enabled="false" Grouping="Or" />
@@ -26433,10 +26499,10 @@
                           </Trigger>
                         </Triggers>
                       </Folder>
-                      <Folder FFXIVJobFilterEnabled="True" FFXIVJobFilter="70868271104" Id="bb1d34b0-af10-48cc-943f-6c69b793931d" Name="Tanks" Enabled="true">
+                      <Folder FFXIVJobFilterEnabled="True" FFXIVJobFilter="70868271104" Id="2cc66b5c-d95e-44b7-835e-cf51362441df" Name="Tanks" Enabled="true">
                         <Folders />
                         <Triggers>
-                          <Trigger Enabled="true" Name="Screaming Score" Id="4827ede8-b2e6-42e2-aac8-787657299cf5" RegularExpression="\A.{15}14:5BDD">
+                          <Trigger Enabled="true" Name="Screaming Score" Id="c4353620-45ab-440e-a0ee-92a39a0a6238" RegularExpression="\A.{15}14:5BDD">
                             <Actions>
                               <Action OrderNumber="1" LogLevel="-1" MouseX="" MouseY="" UseTTSTextExpression="Raidwide" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="UseTTS">
                                 <Condition Enabled="false" Grouping="Or" />
@@ -26446,7 +26512,7 @@
                             <Condition Enabled="false" Grouping="Or" />
                             <Conditions />
                           </Trigger>
-                          <Trigger Enabled="true" Name="Darker Note" Id="102ece9b-2fd6-40ba-b86f-b9b219a3f10f" RegularExpression="1B:[0-9A-F]{8}:(?&lt;player&gt;(?&lt;name&gt;[\w-']+) [\w-']+):.{4}:.{4}:008B:">
+                          <Trigger Enabled="true" Name="Darker Note" Id="370ec38c-6217-43bd-ac51-0c588687af1e" RegularExpression="1B:[0-9A-F]{8}:(?&lt;player&gt;(?&lt;name&gt;[\w-']+) [\w-']+):.{4}:.{4}:008B:">
                             <Actions>
                               <Action OrderNumber="1" LogLevel="-1" UseTTSTextExpression="Tankbuster" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="UseTTS">
                                 <Condition Enabled="false" Grouping="Or" />
@@ -26460,10 +26526,10 @@
                           </Trigger>
                         </Triggers>
                       </Folder>
-                      <Folder FFXIVJobFilterEnabled="True" FFXIVJobFilter="138516889600" Id="2ed45173-95c3-4679-829b-0b845c06ff6d" Name="Ranged" Enabled="true">
+                      <Folder FFXIVJobFilterEnabled="True" FFXIVJobFilter="138516889600" Id="f16604ff-a96e-455a-ac19-618ba3f8d581" Name="Ranged" Enabled="true">
                         <Folders />
                         <Triggers>
-                          <Trigger Enabled="true" Name="Screaming Score" Id="544de282-4506-417a-a850-54aba0f83976" RegularExpression="\A.{15}14:5BDD">
+                          <Trigger Enabled="true" Name="Screaming Score" Id="db798f72-9fb9-4766-a415-cca87321fd32" RegularExpression="\A.{15}14:5BDD">
                             <Actions>
                               <Action OrderNumber="1" LogLevel="-1" MouseX="" MouseY="" UseTTSTextExpression="Raidwide" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="UseTTS">
                                 <Condition Enabled="false" Grouping="Or" />
@@ -26477,7 +26543,7 @@
                       </Folder>
                     </Folders>
                     <Triggers>
-                      <Trigger Enabled="true" Name="Made Magic" Id="1301bc29-2a0d-4c25-abc6-4d18f12cea1e" RegularExpression="\A.{15}14:(?&lt;ID&gt;5BD[67])">
+                      <Trigger Enabled="true" Name="Made Magic" Id="c86d7297-f743-4654-9623-f9d413273728" RegularExpression="\A.{15}14:(?&lt;ID&gt;5BD[67])">
                         <Actions>
                           <Action OrderNumber="1" LogLevel="-1" MouseX="" MouseY="" UseTTSTextExpression="Go Right" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="UseTTS">
                             <Condition Enabled="true" Grouping="Or">
@@ -26495,7 +26561,7 @@
                         <Condition Enabled="false" Grouping="Or" />
                         <Conditions />
                       </Trigger>
-                      <Trigger Enabled="true" Name="Lighter Note" Id="3ee831fd-22ee-41df-9e8c-1a5b57e39956" RegularExpression="1B:[0-9A-F]{8}:(?&lt;player&gt;(?&lt;name&gt;[\w-']+) [\w-']+):.{4}:.{4}:0001:">
+                      <Trigger Enabled="true" Name="Lighter Note" Id="78b007b2-2662-4204-9472-e5aa792efbd0" RegularExpression="1B:[0-9A-F]{8}:(?&lt;player&gt;(?&lt;name&gt;[\w-']+) [\w-']+):.{4}:.{4}:0001:">
                         <Actions>
                           <Action OrderNumber="1" LogLevel="-1" UseTTSTextExpression="Marked" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="UseTTS">
                             <Condition Enabled="false" Grouping="Or" />
@@ -26507,7 +26573,7 @@
                         </Condition>
                         <Conditions />
                       </Trigger>
-                      <Trigger Enabled="true" Name="Rhythm Rings" Id="a2c88f59-fa8b-4709-84b7-9b2fa288d945" RegularExpression="\A.{15}14:5BD4" PeriodRefire="Deny" RefirePeriodExpression="1000">
+                      <Trigger Enabled="true" Name="Rhythm Rings" Id="11cc2b5d-1000-405e-8582-e72093aa48c5" RegularExpression="\A.{15}14:5BD4" PeriodRefire="Deny" RefirePeriodExpression="1000">
                         <Actions>
                           <Action OrderNumber="1" LogLevel="-1" MouseX="" MouseY="" PlaySoundFileExpression="https://raw.githubusercontent.com/lexxiesia/xiv_triggernometry/master/resources/wav/ddr.mp3" PlaySoundVolumeExpression="50" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="PlaySound">
                             <Condition Enabled="false" Grouping="Or" />
@@ -26519,12 +26585,12 @@
                       </Trigger>
                     </Triggers>
                   </Folder>
-                  <Folder Id="eef76fcf-bba2-4faa-8758-dd8ab3d6ca91" Name="Her Inflorescence" Enabled="true">
+                  <Folder Id="9ec5c9c9-68ca-4cf4-b893-1e2ad71b5d07" Name="Her Inflorescence" Enabled="true">
                     <Folders>
-                      <Folder FFXIVJobFilterEnabled="True" FFXIVJobFilter="17263755264" Id="347ed26c-82d4-4bc5-a22a-a4cc9293eaa8" Name="Caster" Enabled="true">
+                      <Folder FFXIVJobFilterEnabled="True" FFXIVJobFilter="17263755264" Id="e6613ca0-2bb3-4dfc-be6b-9e2c7a147f70" Name="Caster" Enabled="true">
                         <Folders />
                         <Triggers>
-                          <Trigger Enabled="true" Name="Screaming Score" Id="6d958b57-7233-40a6-991c-11cd11a078d9" RegularExpression="\A.{15}14:5BF5">
+                          <Trigger Enabled="true" Name="Screaming Score" Id="1e90be82-c6e0-4fa1-afdc-c5500856048c" RegularExpression="\A.{15}14:5BF5">
                             <Actions>
                               <Action OrderNumber="1" LogLevel="-1" MouseX="" MouseY="" UseTTSTextExpression="Raidwide" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="UseTTS">
                                 <Condition Enabled="false" Grouping="Or" />
@@ -26536,10 +26602,10 @@
                           </Trigger>
                         </Triggers>
                       </Folder>
-                      <Folder FFXIVJobFilterEnabled="True" FFXIVJobFilter="4437573632" Id="67a3fdda-625b-47bb-8663-dc9c3a0b71b3" Name="Healers" Enabled="true">
+                      <Folder FFXIVJobFilterEnabled="True" FFXIVJobFilter="4437573632" Id="a2a11c32-39e8-4841-9b22-3b1966435673" Name="Healers" Enabled="true">
                         <Folders />
                         <Triggers>
-                          <Trigger Enabled="true" Name="Screaming Score" Id="bfcc2bdd-4801-4324-9557-764954eac19e" RegularExpression="\A.{15}14:5BF5">
+                          <Trigger Enabled="true" Name="Screaming Score" Id="a01a4eac-eb64-4355-a489-295bb7d3176e" RegularExpression="\A.{15}14:5BF5">
                             <Actions>
                               <Action OrderNumber="1" LogLevel="-1" MouseX="" MouseY="" UseTTSTextExpression="Raidwide" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="UseTTS">
                                 <Condition Enabled="false" Grouping="Or" />
@@ -26551,10 +26617,10 @@
                           </Trigger>
                         </Triggers>
                       </Folder>
-                      <Folder FFXIVJobFilterEnabled="True" FFXIVJobFilter="70868271104" Id="2c941901-a20b-4dbf-a9b7-ed0e203cea07" Name="Tanks" Enabled="true">
+                      <Folder FFXIVJobFilterEnabled="True" FFXIVJobFilter="70868271104" Id="b08c1e5a-9fef-4229-b63c-763f5e81b927" Name="Tanks" Enabled="true">
                         <Folders />
                         <Triggers>
-                          <Trigger Enabled="true" Name="Screaming Score" Id="650ad013-6a83-4dad-b1bc-24b07391ca48" RegularExpression="\A.{15}14:5BF5">
+                          <Trigger Enabled="true" Name="Screaming Score" Id="2bd9f12f-7498-4f27-8663-306ec7975b4f" RegularExpression="\A.{15}14:5BF5">
                             <Actions>
                               <Action OrderNumber="1" LogLevel="-1" MouseX="" MouseY="" UseTTSTextExpression="Raidwide" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="UseTTS">
                                 <Condition Enabled="false" Grouping="Or" />
@@ -26566,10 +26632,10 @@
                           </Trigger>
                         </Triggers>
                       </Folder>
-                      <Folder FFXIVJobFilterEnabled="True" FFXIVJobFilter="138516889600" Id="f955e874-886a-4b43-98e9-2dd2f3791f33" Name="Ranged" Enabled="true">
+                      <Folder FFXIVJobFilterEnabled="True" FFXIVJobFilter="138516889600" Id="db91b030-50ae-4bd5-9065-97aa1df50962" Name="Ranged" Enabled="true">
                         <Folders />
                         <Triggers>
-                          <Trigger Enabled="true" Name="Screaming Score" Id="3ee31c12-ffb4-4114-aa43-8183584d8105" RegularExpression="\A.{15}14:5BF5">
+                          <Trigger Enabled="true" Name="Screaming Score" Id="d9aafbf4-96cf-45ec-91e5-0538a7ba60f6" RegularExpression="\A.{15}14:5BF5">
                             <Actions>
                               <Action OrderNumber="1" LogLevel="-1" MouseX="" MouseY="" UseTTSTextExpression="Raidwide" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="UseTTS">
                                 <Condition Enabled="false" Grouping="Or" />
@@ -26581,14 +26647,14 @@
                           </Trigger>
                         </Triggers>
                       </Folder>
-                      <Folder FFXIVJobFilterEnabled="True" FFXIVJobFilter="9129426944" Id="b506d934-f09c-4d48-99ab-29fbd3c081b9" Name="Melee" Enabled="true">
+                      <Folder FFXIVJobFilterEnabled="True" FFXIVJobFilter="9129426944" Id="83282241-2463-46e8-9782-2a4e3cf4c279" Name="Melee" Enabled="true">
                         <Folders />
                         <Triggers />
                       </Folder>
-                      <Folder Id="50df967f-e4bd-4523-84fa-c10262986e7a" Name="Recreate Signal" Enabled="true">
+                      <Folder Id="e2d2da75-a37f-4261-86b0-4d63b8c04526" Name="Recreate Signal" Enabled="true">
                         <Folders />
                         <Triggers>
-                          <Trigger Enabled="true" Name="Cast" Id="5c124695-ed78-4f82-9157-ec9298e77217" RegularExpression="\A.{15}14:5BE3">
+                          <Trigger Enabled="true" Name="Cast" Id="95fc5eb7-b972-47e0-99ce-e57fc157498d" RegularExpression="\A.{15}14:5BE3">
                             <Actions>
                               <Action OrderNumber="1" LogLevel="-1" MouseX="" MouseY="" VariableOp="SetNumeric" VariableName="signalCount" VariableExpression="0" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Variable">
                                 <Condition Enabled="false" Grouping="Or" />
@@ -26598,7 +26664,7 @@
                             <Condition Enabled="false" Grouping="Or" />
                             <Conditions />
                           </Trigger>
-                          <Trigger Enabled="true" Name="Tether" Id="d1f21062-be46-4ce2-b514-862033e8c9cb" RegularExpression="23:[0-9A-F]{8}:(?&lt;source&gt;[\w-' ]+):[0-9A-F]{8}:Her Inflorescence:.{4}:.{4}:0036:">
+                          <Trigger Enabled="true" Name="Tether" Id="f13079d9-743b-4136-b457-47ea38d98403" RegularExpression="23:[0-9A-F]{8}:(?&lt;source&gt;[\w-' ]+):[0-9A-F]{8}:Her Inflorescence:.{4}:.{4}:0036:">
                             <Actions>
                               <Action OrderNumber="1" LogLevel="-1" MouseX="" MouseY="" VariableOp="SetNumeric" VariableName="signalCount" VariableExpression="${var:signalCount}+1" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Variable">
                                 <Condition Enabled="false" Grouping="Or" />
@@ -26617,17 +26683,14 @@
                                 <Conditions />
                               </Action>
                             </Actions>
-                            <Condition Enabled="true" Grouping="Or">
-                              <ConditionSingle Enabled="true" ExpressionL="${source}" ExpressionTypeL="String" ExpressionR="${_ffxivplayer}" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
-                              <ConditionSingle Enabled="true" ExpressionL="${target}" ExpressionTypeL="String" ExpressionR="${_ffxivplayer}" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
-                            </Condition>
+                            <Condition Enabled="false" Grouping="Or" />
                             <Conditions />
                           </Trigger>
                         </Triggers>
                       </Folder>
                     </Folders>
                     <Triggers>
-                      <Trigger Enabled="true" Name="Recreate Structure" Id="093c8276-d624-447f-97a1-55f9d3843ad5" RegularExpression=":Her Inflorescence:5BE1:">
+                      <Trigger Enabled="true" Name="Recreate Structure" Id="5baac8e6-5fbd-4569-9fb4-32e70943f8f8" RegularExpression=":Her Inflorescence:5BE1:">
                         <Actions>
                           <Action OrderNumber="1" PlaySoundFileExpression="https://raw.githubusercontent.com/lexxiesia/xiv_triggernometry/master/resources/wav/mvc3_danger.wav" PlaySoundVolumeExpression="50" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="PlaySound">
                             <Condition Enabled="false" Grouping="Or" />
@@ -26641,7 +26704,7 @@
                         <Condition Enabled="false" Grouping="Or" />
                         <Conditions />
                       </Trigger>
-                      <Trigger Enabled="true" Name="Heavy Arms" Id="6723c2a9-7867-439b-86f7-905d27ba4362" RegularExpression="\A.{15}14:(?&lt;ID&gt;5BE[DF])" PeriodRefire="Deny" RefirePeriodExpression="1000">
+                      <Trigger Enabled="true" Name="Heavy Arms" Id="0e04e750-763b-4cfa-a4c1-a4b1e27eab24" RegularExpression="\A.{15}14:(?&lt;ID&gt;5BE[DF])" PeriodRefire="Deny" RefirePeriodExpression="1000">
                         <Actions>
                           <Action OrderNumber="1" LogLevel="-1" MouseX="" MouseY="" UseTTSTextExpression="Sides" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="UseTTS">
                             <Condition Enabled="true" Grouping="Or">
@@ -26659,7 +26722,7 @@
                         <Condition Enabled="false" Grouping="Or" />
                         <Conditions />
                       </Trigger>
-                      <Trigger Enabled="true" Name="Pillar Impact" Id="45af20f4-ab84-482c-b3e1-2bae7b5a77ad" RegularExpression="\A.{15}14:5BF0" PeriodRefire="Deny" RefirePeriodExpression="1000">
+                      <Trigger Enabled="true" Name="Pillar Impact" Id="822848a2-b677-4482-b381-191e8f8e5f05" RegularExpression="\A.{15}14:5BF0" PeriodRefire="Deny" RefirePeriodExpression="1000">
                         <Actions>
                           <Action OrderNumber="1" LogLevel="-1" MouseX="" MouseY="" UseTTSTextExpression="Knockback" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="UseTTS">
                             <Condition Enabled="false" Grouping="Or" />
@@ -26669,7 +26732,7 @@
                         <Condition Enabled="false" Grouping="Or" />
                         <Conditions />
                       </Trigger>
-                      <Trigger Enabled="true" Name="Towerfall" Id="599304ce-b6a4-4685-9840-967d056d07d0" RegularExpression="\A.{15}14:5BF[34]" PeriodRefire="Deny" RefirePeriodExpression="1000">
+                      <Trigger Enabled="true" Name="Towerfall" Id="4d859c62-28d8-4b35-bcc0-4517fe987da7" RegularExpression="\A.{15}14:5BF[34]" PeriodRefire="Deny" RefirePeriodExpression="1000">
                         <Actions>
                           <Action OrderNumber="1" LogLevel="-1" MouseX="" MouseY="" UseTTSTextExpression="Tower fall" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="UseTTS">
                             <Condition Enabled="false" Grouping="Or" />
@@ -26679,7 +26742,7 @@
                         <Condition Enabled="false" Grouping="Or" />
                         <Conditions />
                       </Trigger>
-                      <Trigger Enabled="true" Name="Rhythm Rings" Id="0377f17e-b159-4ca1-b154-980f7d1b0953" RegularExpression="\A.{15}14:5C0B" PeriodRefire="Deny" RefirePeriodExpression="1000">
+                      <Trigger Enabled="true" Name="Rhythm Rings" Id="9a931b7b-8e7c-4a7f-a67e-4fda0e7339b5" RegularExpression="\A.{15}14:5C0B" PeriodRefire="Deny" RefirePeriodExpression="1000">
                         <Actions>
                           <Action OrderNumber="1" LogLevel="-1" MouseX="" MouseY="" PlaySoundFileExpression="https://raw.githubusercontent.com/lexxiesia/xiv_triggernometry/master/resources/wav/ddr.mp3" PlaySoundVolumeExpression="50" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="PlaySound">
                             <Condition Enabled="false" Grouping="Or" />
@@ -26691,12 +26754,12 @@
                       </Trigger>
                     </Triggers>
                   </Folder>
-                  <Folder Id="b4937214-0122-4a92-b6be-11b10addc9e7" Name="Meng-Zi &amp; Xun-Zi" Enabled="true">
+                  <Folder Id="40833294-5113-494c-9120-d19632f9981e" Name="Meng-Zi &amp; Xun-Zi" Enabled="true">
                     <Folders>
-                      <Folder FFXIVJobFilterEnabled="True" FFXIVJobFilter="17263755264" Id="41201e9b-a43a-4fd3-8ebf-119811881ff5" Name="Caster" Enabled="true">
+                      <Folder FFXIVJobFilterEnabled="True" FFXIVJobFilter="17263755264" Id="5ab951c1-fc59-41e2-99b0-81aea158f151" Name="Caster" Enabled="true">
                         <Folders />
                         <Triggers>
-                          <Trigger Enabled="true" Name="Universal Assault" Id="be8db752-b912-4335-888b-0caff22c5950" RegularExpression="\A.{15}14:5C06:(?&lt;target&gt;[\w-]+)">
+                          <Trigger Enabled="true" Name="Universal Assault" Id="1e14d4d1-b0e6-45ef-b890-62cd88391269" RegularExpression="\A.{15}14:5C06:(?&lt;target&gt;[\w-]+)">
                             <Actions>
                               <Action OrderNumber="1" LogLevel="-1" MouseX="" MouseY="" UseTTSTextExpression="Raidwide" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="UseTTS">
                                 <Condition Enabled="false" Grouping="Or" />
@@ -26712,10 +26775,10 @@
                           </Trigger>
                         </Triggers>
                       </Folder>
-                      <Folder FFXIVJobFilterEnabled="True" FFXIVJobFilter="70868271104" Id="a8f2a621-4d41-4343-bc55-c00dfef55433" Name="Tanks" Enabled="true">
+                      <Folder FFXIVJobFilterEnabled="True" FFXIVJobFilter="70868271104" Id="dd952cf7-4167-42bf-9c97-044050743dc4" Name="Tanks" Enabled="true">
                         <Folders />
                         <Triggers>
-                          <Trigger Enabled="true" Name="Universal Assault" Id="1454f9ad-9a18-49d0-84b1-96e7fad0af9b" RegularExpression="\A.{15}14:5C06:(?&lt;target&gt;[\w-]+)">
+                          <Trigger Enabled="true" Name="Universal Assault" Id="b3c40579-b502-455d-bb6d-2dae3fc0fcbe" RegularExpression="\A.{15}14:5C06:(?&lt;target&gt;[\w-]+)">
                             <Actions>
                               <Action OrderNumber="1" LogLevel="-1" MouseX="" MouseY="" UseTTSTextExpression="Raidwide" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="UseTTS">
                                 <Condition Enabled="false" Grouping="Or" />
@@ -26731,10 +26794,10 @@
                           </Trigger>
                         </Triggers>
                       </Folder>
-                      <Folder FFXIVJobFilterEnabled="True" FFXIVJobFilter="4437573632" Id="601a8278-82e0-4b4c-a9a3-331133a1c7b4" Name="Healers" Enabled="true">
+                      <Folder FFXIVJobFilterEnabled="True" FFXIVJobFilter="4437573632" Id="d40108ee-1747-47e2-958e-3dd33aeed880" Name="Healers" Enabled="true">
                         <Folders />
                         <Triggers>
-                          <Trigger Enabled="true" Name="Universal Assault" Id="b4a084c7-0ea8-474c-90fb-c6c2baa43840" RegularExpression="\A.{15}14:5C06">
+                          <Trigger Enabled="true" Name="Universal Assault" Id="23e72693-9f58-4a11-b812-2ac9cf4d4979" RegularExpression="\A.{15}14:5C06">
                             <Actions>
                               <Action OrderNumber="1" LogLevel="-1" MouseX="" MouseY="" UseTTSTextExpression="Raidwide" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="UseTTS">
                                 <Condition Enabled="false" Grouping="Or" />
@@ -26746,10 +26809,10 @@
                           </Trigger>
                         </Triggers>
                       </Folder>
-                      <Folder FFXIVJobFilterEnabled="True" FFXIVJobFilter="138516889600" Id="260c7317-66f0-426d-b31a-5e79bcf14dbd" Name="Ranged" Enabled="true">
+                      <Folder FFXIVJobFilterEnabled="True" FFXIVJobFilter="138516889600" Id="e4089957-d22b-4eed-9062-fe31456c1b14" Name="Ranged" Enabled="true">
                         <Folders />
                         <Triggers>
-                          <Trigger Enabled="true" Name="Universal Assault" Id="d45f6438-4bf8-46ec-be5c-d3789a386187" RegularExpression="\A.{15}14:5C06">
+                          <Trigger Enabled="true" Name="Universal Assault" Id="a366128b-ef38-48b9-9073-66b0bbc17a89" RegularExpression="\A.{15}14:5C06">
                             <Actions>
                               <Action OrderNumber="1" LogLevel="-1" MouseX="" MouseY="" UseTTSTextExpression="Raidwide" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="UseTTS">
                                 <Condition Enabled="false" Grouping="Or" />
@@ -26763,7 +26826,7 @@
                       </Folder>
                     </Folders>
                     <Triggers>
-                      <Trigger Enabled="true" Name="Deploy Armaments - Single" Id="60b382ff-4218-491a-bfee-95e7a7f8e102" RegularExpression="\A.{15}14:(5C0[03]):(?&lt;target&gt;[\w-]+)">
+                      <Trigger Enabled="true" Name="Deploy Armaments - Single" Id="8239da3a-7670-4b7b-b618-1ee7cc1ec3d0" RegularExpression="\A.{15}14:(5C0[03]):(?&lt;target&gt;[\w-]+)">
                         <Actions>
                           <Action OrderNumber="1" LogLevel="-1" MouseX="" MouseY="" TextAuraEffect="Bold" TextAuraFontSize="24" TextAuraForeground="#FFBB00" TextAuraOutline="Black" TextAuraName="singleArmament" TextAuraExpression="${target}: Sides" TextAuraXIniExpression="0" TextAuraYIniExpression="${_screenheight}/2" TextAuraWIniExpression="${_screenwidth}" TextAuraHIniExpression="64" TextAuraOIniExpression="100" TextAuraTTLTickExpression="3-${_since}" TextAuraUseOutline="True" TextAuraFontName="Arial Black" ActionType="TextAura">
                             <Condition Enabled="true" Grouping="Or">
@@ -26793,7 +26856,7 @@
                         <Condition Enabled="false" Grouping="Or" />
                         <Conditions />
                       </Trigger>
-                      <Trigger Enabled="true" Name="Deploy Armaments - Double" Id="7886d413-8283-4bca-9349-b3358be50310" RegularExpression="\A.{15}14:(5C0[14])" PeriodRefire="Deny" RefirePeriodExpression="1000">
+                      <Trigger Enabled="true" Name="Deploy Armaments - Double" Id="fbde4db8-6e38-4a0b-bedd-01e638c652e3" RegularExpression="\A.{15}14:(5C0[14])" PeriodRefire="Deny" RefirePeriodExpression="1000">
                         <Actions>
                           <Action OrderNumber="1" LogLevel="-1" MouseX="" MouseY="" UseTTSTextExpression="Corners" TextAuraEffect="Bold" TextAuraFontSize="24" TextAuraForeground="#FFBB00" TextAuraOutline="Black" TextAuraName="singleArmament" TextAuraExpression="${target}: Sides" TextAuraXIniExpression="0" TextAuraYIniExpression="${_screenheight}/2" TextAuraWIniExpression="${_screenwidth}" TextAuraHIniExpression="64" TextAuraOIniExpression="100" TextAuraTTLTickExpression="3-${_since}" TextAuraUseOutline="True" TextAuraFontName="Arial Black" ActionType="UseTTS">
                             <Condition Enabled="true" Grouping="Or">
@@ -26815,7 +26878,7 @@
                   </Folder>
                 </Folders>
                 <Triggers>
-                  <Trigger Enabled="true" Name="# Reset" Id="4e016622-1de5-4317-8698-7a4bb0504769" RegularExpression="21:.{8}:400000[01][03]:">
+                  <Trigger Enabled="true" Name="# Reset" Id="d60755d3-18d9-46e4-9e55-6a41432e5110" RegularExpression="21:.{8}:400000[01][03]:">
                     <Actions>
                       <Action OrderNumber="1" LogLevel="-1" MouseX="" MouseY="" VariableName="cloneLunge" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Variable">
                         <Condition Enabled="false" Grouping="Or" />

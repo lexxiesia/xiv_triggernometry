@@ -17148,35 +17148,13 @@
                       <ConditionSingle Enabled="true" ExpressionL="${var:dataPhase}" ExpressionTypeL="String" ExpressionR="octet" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
                     </Condition>
                   </Trigger>
-                  <Trigger Enabled="true" Source="FFXIVNetwork" Sequential="True" Name="Twister" Id="abc33582-692f-41cf-9a9b-97826ae70ea4" RegularExpression="^20\|[^\|]*\|(?&lt;aID&gt;[^\|]*)\|[^\|]*\|26AA\|">
+                  <Trigger Enabled="true" Source="FFXIVNetwork" Sequential="True" Name="Twister" Id="7ab61de6-8eea-4fb9-be3b-f34791de41a4" RegularExpression="^20\|[^\|]*\|(?&lt;aID&gt;[^\|]*)\|[^\|]*\|26(AA|B2)\|[^\|]*\|[^\|]*\|[^\|]*\|(?&lt;duration&gt;[^\|]*)\|">
                     <Actions>
-                      <Action OrderNumber="1" LogLevel="-1" MouseX="" MouseY="" TextAuraEffect="Bold" TextAuraFontSize="32.25" TextAuraForeground="Red" TextAuraOutline="Black" TextAuraName="textWarning" TextAuraExpression="TWISTER" TextAuraXIniExpression="0" TextAuraYIniExpression="(${_screenheight}/2)-50" TextAuraWIniExpression="${_screenwidth}" TextAuraHIniExpression="50" TextAuraOIniExpression="100" TextAuraOTickExpression="50 + (cos(${_sincems}/100)*50)" TextAuraTTLTickExpression="2-${_since}" TextAuraUseOutline="True" TextAuraFontName="Arial" ActionType="TextAura">
+                      <Action OrderNumber="1" LogLevel="-1" MouseX="" MouseY="" TextAuraFontSize="8.25" TextAuraBackground="Black" TextAuraName="twisterBackground" TextAuraXIniExpression="(${_screenwidth}/2)-((${_screenwidth}/10)/2)" TextAuraYIniExpression="(${_screenheight}/2)-60" TextAuraWIniExpression="${_screenwidth}/10" TextAuraHIniExpression="15" TextAuraOIniExpression="50" TextAuraTTLTickExpression="${duration}-${_since}" TextAuraUseOutline="True" TextAuraFontName="Microsoft Sans Serif" ActionType="TextAura">
                         <Condition Enabled="false" Grouping="Or" />
                         <Conditions />
                       </Action>
-                      <Action OrderNumber="2" LogLevel="-1" MouseX="" MouseY="" TextAuraFontSize="8.25" TextAuraBackground="Black" TextAuraName="textBackground" TextAuraXIniExpression="(${_screenwidth}/2)-((${_screenwidth}/10)/2)" TextAuraYIniExpression="(${_screenheight}/2)-60" TextAuraWIniExpression="${_screenwidth}/10" TextAuraHIniExpression="15" TextAuraOIniExpression="75" TextAuraTTLTickExpression="2-${_since}" TextAuraUseOutline="True" TextAuraFontName="Microsoft Sans Serif" ActionType="TextAura">
-                        <Condition Enabled="false" Grouping="Or" />
-                        <Conditions />
-                      </Action>
-                      <Action OrderNumber="3" LogLevel="-1" MouseX="" MouseY="" TextAuraFontSize="8.25" TextAuraBackground="White" TextAuraName="textFill" TextAuraXIniExpression="${_textaura[textBackground].x}+5" TextAuraYIniExpression="${_textaura[textBackground].y}+5" TextAuraWIniExpression="0" TextAuraHIniExpression="5" TextAuraOIniExpression="100" TextAuraWTickExpression="((${_screenwidth}/10)-10)*(((2 * 1000)-${_sincems})/(2 * 1000))" TextAuraTTLTickExpression="2-${_since}" TextAuraUseOutline="True" TextAuraFontName="Microsoft Sans Serif" ActionType="TextAura">
-                        <Condition Enabled="false" Grouping="Or" />
-                        <Conditions />
-                      </Action>
-                    </Actions>
-                    <Condition Enabled="false" Grouping="Or" />
-                    <Conditions />
-                  </Trigger>
-                  <Trigger Enabled="true" Source="FFXIVNetwork" Sequential="True" Name="Twisting Dive" Id="7561e09e-f6a6-41c6-b668-a8714b6bdecb" RegularExpression="^20\|[^\|]*\|(?&lt;aID&gt;[^\|]*)\|[^\|]*\|26B2\|">
-                    <Actions>
-                      <Action OrderNumber="1" LogLevel="-1" MouseX="" MouseY="" TextAuraEffect="Bold" TextAuraFontSize="32.25" TextAuraForeground="Red" TextAuraOutline="Black" TextAuraName="textWarning" TextAuraExpression="TWISTER" TextAuraXIniExpression="0" TextAuraYIniExpression="(${_screenheight}/2)-50" TextAuraWIniExpression="${_screenwidth}" TextAuraHIniExpression="50" TextAuraOIniExpression="100" TextAuraOTickExpression="50 + (cos(${_sincems}/100)*50)" TextAuraTTLTickExpression="4-${_since}" TextAuraUseOutline="True" TextAuraFontName="Arial" ActionType="TextAura">
-                        <Condition Enabled="false" Grouping="Or" />
-                        <Conditions />
-                      </Action>
-                      <Action OrderNumber="2" LogLevel="-1" MouseX="" MouseY="" TextAuraFontSize="8.25" TextAuraBackground="Black" TextAuraName="textBackground" TextAuraXIniExpression="(${_screenwidth}/2)-((${_screenwidth}/10)/2)" TextAuraYIniExpression="(${_screenheight}/2)-60" TextAuraWIniExpression="${_screenwidth}/10" TextAuraHIniExpression="15" TextAuraOIniExpression="75" TextAuraTTLTickExpression="4-${_since}" TextAuraUseOutline="True" TextAuraFontName="Microsoft Sans Serif" ActionType="TextAura">
-                        <Condition Enabled="false" Grouping="Or" />
-                        <Conditions />
-                      </Action>
-                      <Action OrderNumber="3" LogLevel="-1" MouseX="" MouseY="" TextAuraFontSize="8.25" TextAuraBackground="White" TextAuraName="textFill" TextAuraXIniExpression="${_textaura[textBackground].x}+5" TextAuraYIniExpression="${_textaura[textBackground].y}+5" TextAuraWIniExpression="0" TextAuraHIniExpression="5" TextAuraOIniExpression="100" TextAuraWTickExpression="((${_screenwidth}/10)-10)*(((4 * 1000)-${_sincems})/(4 * 1000))" TextAuraTTLTickExpression="4-${_since}" TextAuraUseOutline="True" TextAuraFontName="Microsoft Sans Serif" ActionType="TextAura">
+                      <Action OrderNumber="2" LogLevel="-1" MouseX="" MouseY="" TextAuraFontSize="8.25" TextAuraBackground="White" TextAuraName="twisterFill" TextAuraXIniExpression="${_textaura[twisterBackground].x}+5" TextAuraYIniExpression="${_textaura[twisterBackground].y}+5" TextAuraWIniExpression="0" TextAuraHIniExpression="5" TextAuraOIniExpression="100" TextAuraWTickExpression="((${_screenwidth}/10)-10)*(((${duration} * 1000)-${_sincems})/(${duration} * 1000))" TextAuraTTLTickExpression="${duration}-${_since}" TextAuraUseOutline="True" TextAuraFontName="Microsoft Sans Serif" ActionType="TextAura">
                         <Condition Enabled="false" Grouping="Or" />
                         <Conditions />
                       </Action>

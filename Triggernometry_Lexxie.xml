@@ -16470,41 +16470,6 @@
                       </Trigger>
                     </Triggers>
                   </Folder>
-                  <Folder FFXIVJobFilter="164910071808" Id="f2ea512c-965f-4ff3-a74d-3f6f4d56af6a" Name="Hatch - Tenstrike" Enabled="true">
-                    <Folders />
-                    <Triggers>
-                      <Trigger Enabled="true" Name="Hatch" Id="52a48a3d-c9be-4ed0-9130-a1c639c52807" RegularExpression="1B:[0-9A-F]{8}:(?&lt;player&gt;(?&lt;name&gt;[\w-']+) [\w-']+):.{4}:.{4}:0076:">
-                        <Actions>
-                          <Action OrderNumber="1" LogLevel="-1" MouseX="" MouseY="" VariableOp="SetNumeric" VariableName="hatchCounter" VariableExpression="${var:hatchCounter}+1" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Variable">
-                            <Condition Enabled="false" Grouping="Or" />
-                          </Action>
-                          <Action OrderNumber="2" LogLevel="-1" UseTTSTextExpression="Hatch" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="UseTTS">
-                            <Condition Enabled="true" Grouping="Or">
-                              <ConditionSingle Enabled="true" ExpressionL="${player}" ExpressionTypeL="String" ExpressionR="${_ffxivplayer}" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
-                            </Condition>
-                          </Action>
-                          <Action OrderNumber="3" AuraImageMode="StretchImage" AuraName="UCOBHatch${player}" AuraImage="${var:imagePath}jobs\${tvarrl:UCOB[${player}][1]}.png" AuraXIniExpression="${_screenwidth}/2+(${_imageaura[UCOBHatch${_ffxivparty[1].name}].w})+(${_imageaura[UCOBHatch${_ffxivparty[2].name}].w})+(${_imageaura[UCOBHatch${_ffxivparty[3].name}].w})+(${_imageaura[UCOBHatch${_ffxivparty[4].name}].w})+(${_imageaura[UCOBHatch${_ffxivparty[5].name}].w})+(${_imageaura[UCOBHatch${_ffxivparty[6].name}].w})+(${_imageaura[UCOBHatch${_ffxivparty[7].name}].w})+(${_imageaura[UCOBHatch${_ffxivparty[8].name}].w})" AuraYIniExpression="${_screenheight}/2" AuraWIniExpression="42" AuraHIniExpression="42" AuraOIniExpression="100" AuraTTLTickExpression="5-${_since}" LogLevel="-1" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Aura">
-                            <Condition Enabled="false" Grouping="Or" />
-                          </Action>
-                        </Actions>
-                        <Condition Enabled="true" Grouping="And">
-                          <ConditionSingle Enabled="true" ExpressionL="${var:dataPhase}" ExpressionTypeL="String" ExpressionR="tenstrike" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
-                          <ConditionSingle Enabled="true" ExpressionL="${var:hatchCounter}" ExpressionTypeL="Numeric" ExpressionR="3" ExpressionTypeR="Numeric" ConditionType="NumericLessEqual" />
-                        </Condition>
-                      </Trigger>
-                      <Trigger Enabled="true" Name="Generate" Id="8ebef31f-0383-4d63-a160-5722c3ca3dda" RegularExpression="1B:[0-9A-F]{8}:(?&lt;player&gt;(?&lt;name&gt;[\w-']+) [\w-']+):.{4}:.{4}:0076:" PeriodRefire="Deny" RefirePeriodExpression="10000">
-                        <Actions>
-                          <Action OrderNumber="1" LogLevel="-1" UseTTSTextExpression="Go Blue" TextAuraAlignment="MiddleRight" TextAuraEffect="Bold" TextAuraFontSize="24" TextAuraForeground="#FFBB00" TextAuraOutline="Black" TextAuraName="hatchLeft" TextAuraExpression="Hatch: " TextAuraXIniExpression="0" TextAuraYIniExpression="${_screenheight}/2" TextAuraWIniExpression="${_screenwidth}/2" TextAuraHIniExpression="42" TextAuraOIniExpression="100" TextAuraTTLTickExpression="5-${_since}" TextAuraUseOutline="True" TextAuraFontName="Arial" ActionType="TextAura">
-                            <Condition Enabled="false" Grouping="Or" />
-                          </Action>
-                        </Actions>
-                        <Condition Enabled="true" Grouping="Or">
-                          <ConditionSingle Enabled="true" ExpressionL="${var:dataPhase}" ExpressionTypeL="String" ExpressionR="tenstrike" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
-                          <ConditionSingle Enabled="true" ExpressionL="${evar:dataPhase}" ExpressionTypeL="Numeric" ExpressionR="0" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
-                        </Condition>
-                      </Trigger>
-                    </Triggers>
-                  </Folder>
                 </Folders>
                 <Triggers>
                   <Trigger Enabled="true" Name="Akh Morn" Id="d7cd561c-c3c2-4d61-96ab-e4e1bbc586ac" RegularExpression="\A.{15}14:26EA">
@@ -16592,244 +16557,308 @@
                   </Trigger>
                 </Triggers>
               </Folder>
-              <Folder Id="13702ba6-36b0-46c1-865c-9fb519ac6e41" Name="Network Lines" Enabled="true">
+              <Folder Id="5b40e4e2-49f7-4ef4-b540-4d7dc1995621" Name="Network Lines" Enabled="true">
                 <Folders>
-                  <Folder Id="796ff7cd-db8d-4deb-9cfa-62332bf6f931" Name="Nael UI User Config" Enabled="true">
+                  <Folder Id="67cb87ad-4ca2-49fb-ae52-a3183060006d" Name="Nael UI User Config" Enabled="true">
                     <Folders />
                     <Triggers>
-                      <Trigger Enabled="true" Source="FFXIVNetwork" Name="Set X" Id="cb2e3c95-3158-4c47-8e81-ee7bf54b8c3b" RegularExpression="^00\|[^|]+\|0038\|\|naelDebuffX (?&lt;X&gt;[0-9]{1,4})">
+                      <Trigger Enabled="true" Source="FFXIVNetwork" Name="Set X" Id="adcf7131-13d6-42f2-bc74-b9ac8054d0a7" RegularExpression="^00\|[^|]+\|0038\|\|naelDebuffX (?&lt;X&gt;[0-9]{1,4})">
                         <Actions>
                           <Action OrderNumber="1" LogLevel="-1" VariableOp="SetNumeric" VariableName="naelDebuffX" VariableExpression="${X}" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Variable">
                             <Condition Enabled="false" Grouping="Or" />
+                            <Conditions />
                           </Action>
                         </Actions>
                         <Condition Enabled="false" Grouping="Or" />
+                        <Conditions />
                       </Trigger>
-                      <Trigger Enabled="true" Source="FFXIVNetwork" Name="Set Y" Id="540444f3-7dcd-4ba7-9f2e-55fb7105691f" RegularExpression="^00\|[^|]+\|0038\|\|naelDebuffY (?&lt;Y&gt;[0-9]{1,4})">
+                      <Trigger Enabled="true" Source="FFXIVNetwork" Name="Set Y" Id="fa6528cb-4aa7-4ed7-92ce-9f0ce73287e1" RegularExpression="^00\|[^|]+\|0038\|\|naelDebuffY (?&lt;Y&gt;[0-9]{1,4})">
                         <Actions>
                           <Action OrderNumber="1" LogLevel="-1" VariableOp="SetNumeric" VariableName="naelDebuffY" VariableExpression="${Y}" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Variable">
                             <Condition Enabled="false" Grouping="Or" />
+                            <Conditions />
                           </Action>
                         </Actions>
                         <Condition Enabled="false" Grouping="Or" />
+                        <Conditions />
                       </Trigger>
-                      <Trigger Enabled="true" Source="FFXIVNetwork" Name="Show UI" Id="93c5f063-b555-4cec-ab2d-2a767dd2bdb0" RegularExpression="^00\|[^|]+\|0038\|\|showNaelDebuff">
+                      <Trigger Enabled="true" Source="FFXIVNetwork" Name="Show UI" Id="12fbaf7d-8458-44b1-a3ec-9d5abf979b30" RegularExpression="^00\|[^|]+\|0038\|\|showNaelDebuff">
                         <Actions>
                           <Action OrderNumber="1" AuraName="naelDebuffs" AuraImage="https://raw.githubusercontent.com/lexxiesia/xiv_triggernometry/master/resources/icons/ucob/naeldebuffs.png" AuraXIniExpression="${var:naelDebuffX}" AuraYIniExpression="${var:naelDebuffY}" AuraWIniExpression="350" AuraHIniExpression="318" AuraOIniExpression="${var:naelDebuffOpacity}" VariableOp="SetString" VariableName="fate" VariableExpression="a" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Aura">
                             <Condition Enabled="false" Grouping="Or" />
+                            <Conditions />
                           </Action>
                         </Actions>
                         <Condition Enabled="true" Grouping="Or">
                           <ConditionSingle Enabled="true" ExpressionL="${evar:dataPhase}" ExpressionTypeL="Numeric" ExpressionR="0" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
                         </Condition>
+                        <Conditions />
                       </Trigger>
-                      <Trigger Enabled="true" Source="FFXIVNetwork" Name="Hide UI" Id="220ceb86-f242-4c49-9b8d-116cafc7835f" RegularExpression="^00\|[^|]+\|0038\|\|hideNaelDebuff">
+                      <Trigger Enabled="true" Source="FFXIVNetwork" Name="Hide UI" Id="7b7f74ab-dee5-492f-b346-72064ef63c29" RegularExpression="^00\|[^|]+\|0038\|\|hideNaelDebuff">
                         <Actions>
                           <Action OrderNumber="1" AuraOp="DeactivateAura" AuraName="naelDebuffs" AuraImage="${var:imagePath}ucob\naeldebuffs.png" AuraXIniExpression="${var:naelDebuffX}" AuraYIniExpression="${var:naelDebuffY}" AuraWIniExpression="350" AuraHIniExpression="318" AuraOIniExpression="100" VariableOp="SetString" VariableName="fate" VariableExpression="a" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Aura">
                             <Condition Enabled="false" Grouping="Or" />
+                            <Conditions />
                           </Action>
                           <Action OrderNumber="2" AuraOp="DeactivateAura" AuraName="grandOctet" AuraImage="${var:imagePath}ucob\naeldebuffs.png" AuraXIniExpression="${var:naelDebuffX}" AuraYIniExpression="${var:naelDebuffY}" AuraWIniExpression="350" AuraHIniExpression="318" AuraOIniExpression="100" VariableOp="SetString" VariableName="fate" VariableExpression="a" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Aura">
                             <Condition Enabled="false" Grouping="Or" />
+                            <Conditions />
                           </Action>
                           <Action OrderNumber="3" AuraOp="DeactivateAura" AuraName="earthshaker" AuraImage="${var:imagePath}ucob\naeldebuffs.png" AuraXIniExpression="${var:naelDebuffX}" AuraYIniExpression="${var:naelDebuffY}" AuraWIniExpression="350" AuraHIniExpression="318" AuraOIniExpression="100" VariableOp="SetString" VariableName="fate" VariableExpression="a" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Aura">
                             <Condition Enabled="false" Grouping="Or" />
+                            <Conditions />
                           </Action>
                         </Actions>
                         <Condition Enabled="false" Grouping="Or" />
+                        <Conditions />
                       </Trigger>
-                      <Trigger Enabled="true" Source="FFXIVNetwork" Name="Set Opacity" Id="46097650-9665-4ef4-b8b9-3e6307baf3b0" RegularExpression="^00\|[^|]+\|0038\|\|naelDebuffOpacity (?&lt;opacity&gt;[0-9]{1,3})">
+                      <Trigger Enabled="true" Source="FFXIVNetwork" Name="Set Opacity" Id="39476487-60c0-4355-bd41-cc467c0b8ca1" RegularExpression="^00\|[^|]+\|0038\|\|naelDebuffOpacity (?&lt;opacity&gt;[0-9]{1,3})">
                         <Actions>
                           <Action OrderNumber="1" LogLevel="-1" VariableOp="SetNumeric" VariableName="naelDebuffOpacity" VariableExpression="${opacity}" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Variable">
                             <Condition Enabled="false" Grouping="Or" />
+                            <Conditions />
                           </Action>
                         </Actions>
                         <Condition Enabled="true" Grouping="And">
                           <ConditionSingle Enabled="true" ExpressionL="${opacity}" ExpressionTypeL="Numeric" ExpressionR="0" ExpressionTypeR="Numeric" ConditionType="NumericGreaterEqual" />
                           <ConditionSingle Enabled="true" ExpressionL="${opacity}" ExpressionTypeL="Numeric" ExpressionR="100" ExpressionTypeR="Numeric" ConditionType="NumericLessEqual" />
                         </Condition>
+                        <Conditions />
                       </Trigger>
-                      <Trigger Enabled="true" IsReadme="True" Name="# Nael UI Readme" Id="bae1ae21-1bcc-468c-aed4-dc59c3d8e37c" RegularExpression="" Description="This config set controls the on-screen position following triggers:&#xD;&#xA;- Nael Debuffs&#xD;&#xA;- Dragon Divebombs&#xD;&#xA;- Earthshakers&#xD;&#xA;- Grand Octet&#xD;&#xA;&#xD;&#xA;The commands must be preceded with the echo (/e or /echo) chat command or it will not take effect.&#xD;&#xA;&#xD;&#xA;Commands:&#xD;&#xA;&#xD;&#xA;setDefault&#xD;&#xA;Resets the entire UI suite in the case of an error where things do not load properly.&#xD;&#xA;(Example: /e setDefault)&#xD;&#xA;&#xD;&#xA;partyDefault&#xD;&#xA;Resets your party tracker that's used for various mechanics across the fight.&#xD;&#xA;(Example: /e partyDefault)&#xD;&#xA;&#xD;&#xA;=========&#xD;&#xA;&#xD;&#xA;naelDebuffX &lt;value&gt;&#xD;&#xA;Sets the on-screen X value start point of the UI image. Triggernometry dictates the top-left corner of the image as its start point.&#xD;&#xA;(Example: /e naelDebuffX 640)&#xD;&#xA;&#xD;&#xA;naelDebuffY &lt;value&gt;&#xD;&#xA;Sets the on-screen Y value start point of the UI image. Triggernometry dictates the top-left corner of the image as its start point.&#xD;&#xA;(Example: /e naelDebuffX 640)&#xD;&#xA;&#xD;&#xA;naelDebuffOpacity &lt;value, 0-100&gt;&#xD;&#xA;Sets the opacity of the UI image with 100 being the default (fully visible). Setting the image to 0 will make it fully invisible.&#xD;&#xA;&#xD;&#xA;showNaelDebuff&#xD;&#xA;Displays the Nael Debuff UI image. For this to work outside of UCoB, please make sure that X, Y and Opacity have values attached to them or the image will not show.&#xD;&#xA;&#xD;&#xA;hideNaelDebuff&#xD;&#xA;Hides the Nael Debuff UI image. Use this command to hide the UI image if it fails to reset after a wipe or instance change.&#xD;&#xA;&#xD;&#xA;=========&#xD;&#xA;&#xD;&#xA;naelRPY &lt;value&gt;&#xD;&#xA;Sets the on-screen vertical space for displaying Nael RP images. The default is the middle of your screen.&#xD;&#xA;&#xD;&#xA;showNaelRP &lt;value, 2-3&gt;&#xD;&#xA;Displays a sample image combo with Nael's RP moves. Value dictates if the sample image will show a two or three move combo respectively.&#xD;&#xA;&#xD;&#xA;naelRPIcons &lt;value, 0-1&gt;&#xD;&#xA;naelRPIcons &lt;command, enable/disable&gt;&#xD;&#xA;Sets the option for Triggernometry to enable (1) or disable (0) the showing of Nael RP icons during combat.&#xD;&#xA;(Example: /e naelRPIcons 0)&#xD;&#xA;(Example: /e naelRPIcons disable)">
+                      <Trigger Enabled="true" IsReadme="True" Name="# Nael UI Readme" Id="b747344e-cc52-462c-9a94-e45d83f51d21" RegularExpression="" Description="This config set controls the on-screen position following triggers:&#xD;&#xA;- Nael Debuffs&#xD;&#xA;- Dragon Divebombs&#xD;&#xA;- Earthshakers&#xD;&#xA;- Grand Octet&#xD;&#xA;&#xD;&#xA;The commands must be preceded with the echo (/e or /echo) chat command or it will not take effect.&#xD;&#xA;&#xD;&#xA;Commands:&#xD;&#xA;&#xD;&#xA;setDefault&#xD;&#xA;Resets the entire UI suite in the case of an error where things do not load properly.&#xD;&#xA;(Example: /e setDefault)&#xD;&#xA;&#xD;&#xA;partyDefault&#xD;&#xA;Resets your party tracker that's used for various mechanics across the fight.&#xD;&#xA;(Example: /e partyDefault)&#xD;&#xA;&#xD;&#xA;=========&#xD;&#xA;&#xD;&#xA;naelDebuffX &lt;value&gt;&#xD;&#xA;Sets the on-screen X value start point of the UI image. Triggernometry dictates the top-left corner of the image as its start point.&#xD;&#xA;(Example: /e naelDebuffX 640)&#xD;&#xA;&#xD;&#xA;naelDebuffY &lt;value&gt;&#xD;&#xA;Sets the on-screen Y value start point of the UI image. Triggernometry dictates the top-left corner of the image as its start point.&#xD;&#xA;(Example: /e naelDebuffX 640)&#xD;&#xA;&#xD;&#xA;naelDebuffOpacity &lt;value, 0-100&gt;&#xD;&#xA;Sets the opacity of the UI image with 100 being the default (fully visible). Setting the image to 0 will make it fully invisible.&#xD;&#xA;&#xD;&#xA;showNaelDebuff&#xD;&#xA;Displays the Nael Debuff UI image. For this to work outside of UCoB, please make sure that X, Y and Opacity have values attached to them or the image will not show.&#xD;&#xA;&#xD;&#xA;hideNaelDebuff&#xD;&#xA;Hides the Nael Debuff UI image. Use this command to hide the UI image if it fails to reset after a wipe or instance change.&#xD;&#xA;&#xD;&#xA;=========&#xD;&#xA;&#xD;&#xA;naelRPY &lt;value&gt;&#xD;&#xA;Sets the on-screen vertical space for displaying Nael RP images. The default is the middle of your screen.&#xD;&#xA;&#xD;&#xA;showNaelRP &lt;value, 2-3&gt;&#xD;&#xA;Displays a sample image combo with Nael's RP moves. Value dictates if the sample image will show a two or three move combo respectively.&#xD;&#xA;&#xD;&#xA;naelRPIcons &lt;value, 0-1&gt;&#xD;&#xA;naelRPIcons &lt;command, enable/disable&gt;&#xD;&#xA;Sets the option for Triggernometry to enable (1) or disable (0) the showing of Nael RP icons during combat.&#xD;&#xA;(Example: /e naelRPIcons 0)&#xD;&#xA;(Example: /e naelRPIcons disable)">
                         <Actions />
                         <Condition Enabled="false" Grouping="Or" />
+                        <Conditions />
                       </Trigger>
-                      <Trigger Enabled="true" Source="FFXIVNetwork" Name="Set RP" Id="a0289670-f142-49dc-accf-e206f8b5dda6" RegularExpression="^00\|[^|]+\|0038\|\|naelRPY (?&lt;Y&gt;[0-9]{1,4})">
+                      <Trigger Enabled="true" Source="FFXIVNetwork" Name="Set RP" Id="8af14351-4736-48fc-b0b6-7b5371594684" RegularExpression="^00\|[^|]+\|0038\|\|naelRPY (?&lt;Y&gt;[0-9]{1,4})">
                         <Actions>
                           <Action OrderNumber="1" LogLevel="-1" VariableOp="SetNumeric" VariableName="naelRPY" VariableExpression="${Y}" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Variable">
                             <Condition Enabled="false" Grouping="Or" />
+                            <Conditions />
                           </Action>
                         </Actions>
                         <Condition Enabled="false" Grouping="Or" />
+                        <Conditions />
                       </Trigger>
-                      <Trigger Enabled="true" Source="FFXIVNetwork" Name="Show RP2" Id="6eed5bd7-d552-403e-9624-1699a10d5e2a" RegularExpression="^00\|[^|]+\|0038\|\|showNaelRP 2">
+                      <Trigger Enabled="true" Source="FFXIVNetwork" Name="Show RP2" Id="0def7809-c496-4700-a363-66da39e35674" RegularExpression="^00\|[^|]+\|0038\|\|showNaelRP 2">
                         <Actions>
                           <Action OrderNumber="1" AuraName="RP1" AuraImage="https://raw.githubusercontent.com/lexxiesia/xiv_triggernometry/master/resources/icons/ucob/thermionicbeam.png" AuraXIniExpression="(${_screenwidth}/2)-64" AuraYIniExpression="${var:naelRPY}" AuraWIniExpression="64" AuraHIniExpression="64" AuraOIniExpression="100" AuraTTLTickExpression="3-${_since}" TextAuraFontSize="0" ActionType="Aura" RefireInterrupt="True">
                             <Condition Enabled="false" Grouping="Or" />
+                            <Conditions />
                           </Action>
                           <Action OrderNumber="2" AuraName="RP2" AuraImage="https://raw.githubusercontent.com/lexxiesia/xiv_triggernometry/master/resources/icons/ucob/lunardynamo.png" AuraXIniExpression="${_screenwidth}/2" AuraYIniExpression="${var:naelRPY}" AuraWIniExpression="64" AuraHIniExpression="64" AuraOIniExpression="100" AuraTTLTickExpression="3-${_since}" TextAuraFontSize="0" ActionType="Aura" RefireInterrupt="True">
                             <Condition Enabled="false" Grouping="Or" />
+                            <Conditions />
                           </Action>
                         </Actions>
                         <Condition Enabled="false" Grouping="Or" />
+                        <Conditions />
                       </Trigger>
-                      <Trigger Enabled="true" Source="FFXIVNetwork" Name="Show RP3" Id="2988543d-fa2a-4edd-b3ae-1f8ce62c8820" RegularExpression="^00\|[^|]+\|0038\|\|showNaelRP 3">
+                      <Trigger Enabled="true" Source="FFXIVNetwork" Name="Show RP3" Id="568e44f2-14f8-4376-bee5-d2e822e24516" RegularExpression="^00\|[^|]+\|0038\|\|showNaelRP 3">
                         <Actions>
                           <Action OrderNumber="1" AuraName="RP1" AuraImage="https://raw.githubusercontent.com/lexxiesia/xiv_triggernometry/master/resources/icons/ucob/lunardynamo.png" AuraXIniExpression="(${_screenwidth}/2)-96" AuraYIniExpression="${var:naelRPY}" AuraWIniExpression="64" AuraHIniExpression="64" AuraOIniExpression="100" AuraTTLTickExpression="3-${_since}" TextAuraFontSize="0" ActionType="Aura" RefireInterrupt="True">
                             <Condition Enabled="false" Grouping="Or" />
+                            <Conditions />
                           </Action>
                           <Action OrderNumber="2" AuraName="RP2" AuraImage="https://raw.githubusercontent.com/lexxiesia/xiv_triggernometry/master/resources/icons/ucob/ironchariot.png" AuraXIniExpression="(${_screenwidth}/2)-32" AuraYIniExpression="${var:naelRPY}" AuraWIniExpression="64" AuraHIniExpression="64" AuraOIniExpression="100" AuraTTLTickExpression="3-${_since}" TextAuraFontSize="0" ActionType="Aura" RefireInterrupt="True">
                             <Condition Enabled="false" Grouping="Or" />
+                            <Conditions />
                           </Action>
                           <Action OrderNumber="3" AuraName="RP3" AuraImage="https://raw.githubusercontent.com/lexxiesia/xiv_triggernometry/master/resources/icons/ucob/ravendive.png" AuraXIniExpression="(${_screenwidth}/2)+32" AuraYIniExpression="${var:naelRPY}" AuraWIniExpression="64" AuraHIniExpression="64" AuraOIniExpression="100" AuraTTLTickExpression="3-${_since}" TextAuraFontSize="0" ActionType="Aura" RefireInterrupt="True">
                             <Condition Enabled="false" Grouping="Or" />
+                            <Conditions />
                           </Action>
                         </Actions>
                         <Condition Enabled="false" Grouping="Or" />
+                        <Conditions />
                       </Trigger>
-                      <Trigger Enabled="true" Name="RP Icons" Id="37018ba2-3fae-456d-97fe-268a133f3393" RegularExpression="^00\|[^|]+\|0038\|\|naelRPIcons (?&lt;command&gt;(en|dis)able|[01])">
+                      <Trigger Enabled="true" Name="RP Icons" Id="2fab2ad7-7b84-4c1e-b766-a18ee52c0647" RegularExpression="^00\|[^|]+\|0038\|\|naelRPIcons (?&lt;command&gt;(en|dis)able|[01])">
                         <Actions>
                           <Action OrderNumber="1" LogLevel="-1" VariableOp="SetNumeric" VariableName="naelRPIcon" VariableExpression="0" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Variable">
                             <Condition Enabled="true" Grouping="Or">
                               <ConditionSingle Enabled="true" ExpressionL="${command}" ExpressionTypeL="String" ExpressionR="disable" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
                               <ConditionSingle Enabled="true" ExpressionL="${command}" ExpressionTypeL="String" ExpressionR="0" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
                             </Condition>
+                            <Conditions />
                           </Action>
                           <Action OrderNumber="2" LogLevel="-1" VariableOp="SetNumeric" VariableName="naelRPIcon" VariableExpression="100" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Variable">
                             <Condition Enabled="true" Grouping="Or">
                               <ConditionSingle Enabled="true" ExpressionL="${command}" ExpressionTypeL="String" ExpressionR="enable" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
                               <ConditionSingle Enabled="true" ExpressionL="${command}" ExpressionTypeL="String" ExpressionR="1" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
                             </Condition>
+                            <Conditions />
                           </Action>
                         </Actions>
                         <Condition Enabled="false" Grouping="Or" />
+                        <Conditions />
                       </Trigger>
-                      <Trigger Enabled="true" Source="FFXIVNetwork" Sequential="True" Name="Default - Party" Id="68a26f5d-1408-4d36-b790-a11a8b1d5266" RegularExpression="^00\|[^|]+\|0038\|\|(partyDefault|!initialize)">
+                      <Trigger Enabled="true" Source="FFXIVNetwork" Sequential="True" Name="Default - Party" Id="1d43d85a-58f1-4e6a-b780-a07eb25e8f9b" RegularExpression="^00\|[^|]+\|0038\|\|(partyDefault|!initialize)">
                         <Actions>
                           <Action OrderNumber="1" LogLevel="-1" TableVariableOp="Set" TableVariableName="UCOB" TableVariableExpression="NAME" TableVariableX="1" TableVariableY="1" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="TableVariable">
                             <Condition Enabled="false" Grouping="Or" />
+                            <Conditions />
                           </Action>
                           <Action OrderNumber="2" LogLevel="-1" TableVariableOp="Set" TableVariableName="UCOB" TableVariableExpression="JOB" TableVariableX="2" TableVariableY="1" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="TableVariable">
                             <Condition Enabled="false" Grouping="Or" />
+                            <Conditions />
                           </Action>
                           <Action OrderNumber="3" LogLevel="-1" TableVariableOp="Set" TableVariableName="UCOB" TableVariableExpression="${_ffxivparty[1].name}" TableVariableX="1" TableVariableY="2" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="TableVariable">
                             <Condition Enabled="false" Grouping="Or" />
+                            <Conditions />
                           </Action>
                           <Action OrderNumber="4" LogLevel="-1" TableVariableOp="Set" TableVariableName="UCOB" TableVariableExpression="${_ffxivparty[2].name}" TableVariableX="1" TableVariableY="3" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="TableVariable">
                             <Condition Enabled="false" Grouping="Or" />
+                            <Conditions />
                           </Action>
                           <Action OrderNumber="5" LogLevel="-1" TableVariableOp="Set" TableVariableName="UCOB" TableVariableExpression="${_ffxivparty[3].name}" TableVariableX="1" TableVariableY="4" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="TableVariable">
                             <Condition Enabled="false" Grouping="Or" />
+                            <Conditions />
                           </Action>
                           <Action OrderNumber="6" LogLevel="-1" TableVariableOp="Set" TableVariableName="UCOB" TableVariableExpression="${_ffxivparty[4].name}" TableVariableX="1" TableVariableY="5" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="TableVariable">
                             <Condition Enabled="false" Grouping="Or" />
+                            <Conditions />
                           </Action>
                           <Action OrderNumber="7" LogLevel="-1" TableVariableOp="Set" TableVariableName="UCOB" TableVariableExpression="${_ffxivparty[5].name}" TableVariableX="1" TableVariableY="6" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="TableVariable">
                             <Condition Enabled="false" Grouping="Or" />
+                            <Conditions />
                           </Action>
                           <Action OrderNumber="8" LogLevel="-1" TableVariableOp="Set" TableVariableName="UCOB" TableVariableExpression="${_ffxivparty[6].name}" TableVariableX="1" TableVariableY="7" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="TableVariable">
                             <Condition Enabled="false" Grouping="Or" />
+                            <Conditions />
                           </Action>
                           <Action OrderNumber="9" LogLevel="-1" TableVariableOp="Set" TableVariableName="UCOB" TableVariableExpression="${_ffxivparty[7].name}" TableVariableX="1" TableVariableY="8" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="TableVariable">
                             <Condition Enabled="false" Grouping="Or" />
+                            <Conditions />
                           </Action>
                           <Action OrderNumber="10" LogLevel="-1" TableVariableOp="Set" TableVariableName="UCOB" TableVariableExpression="${_ffxivparty[8].name}" TableVariableX="1" TableVariableY="9" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="TableVariable">
                             <Condition Enabled="false" Grouping="Or" />
+                            <Conditions />
                           </Action>
                           <Action OrderNumber="11" LogLevel="-1" TableVariableOp="Set" TableVariableName="UCOB" TableVariableExpression="${_ffxivparty[1].job}" TableVariableX="2" TableVariableY="2" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="TableVariable">
                             <Condition Enabled="false" Grouping="Or" />
+                            <Conditions />
                           </Action>
                           <Action OrderNumber="12" LogLevel="-1" TableVariableOp="Set" TableVariableName="UCOB" TableVariableExpression="${_ffxivparty[2].job}" TableVariableX="2" TableVariableY="3" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="TableVariable">
                             <Condition Enabled="false" Grouping="Or" />
+                            <Conditions />
                           </Action>
                           <Action OrderNumber="13" LogLevel="-1" TableVariableOp="Set" TableVariableName="UCOB" TableVariableExpression="${_ffxivparty[3].job}" TableVariableX="2" TableVariableY="4" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="TableVariable">
                             <Condition Enabled="false" Grouping="Or" />
+                            <Conditions />
                           </Action>
                           <Action OrderNumber="14" LogLevel="-1" TableVariableOp="Set" TableVariableName="UCOB" TableVariableExpression="${_ffxivparty[4].job}" TableVariableX="2" TableVariableY="5" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="TableVariable">
                             <Condition Enabled="false" Grouping="Or" />
+                            <Conditions />
                           </Action>
                           <Action OrderNumber="15" LogLevel="-1" TableVariableOp="Set" TableVariableName="UCOB" TableVariableExpression="${_ffxivparty[5].job}" TableVariableX="2" TableVariableY="6" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="TableVariable">
                             <Condition Enabled="false" Grouping="Or" />
+                            <Conditions />
                           </Action>
                           <Action OrderNumber="16" LogLevel="-1" TableVariableOp="Set" TableVariableName="UCOB" TableVariableExpression="${_ffxivparty[6].job}" TableVariableX="2" TableVariableY="7" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="TableVariable">
                             <Condition Enabled="false" Grouping="Or" />
+                            <Conditions />
                           </Action>
                           <Action OrderNumber="17" LogLevel="-1" TableVariableOp="Set" TableVariableName="UCOB" TableVariableExpression="${_ffxivparty[7].job}" TableVariableX="2" TableVariableY="8" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="TableVariable">
                             <Condition Enabled="false" Grouping="Or" />
+                            <Conditions />
                           </Action>
                           <Action OrderNumber="18" LogLevel="-1" TableVariableOp="Set" TableVariableName="UCOB" TableVariableExpression="${_ffxivparty[8].job}" TableVariableX="2" TableVariableY="9" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="TableVariable">
                             <Condition Enabled="false" Grouping="Or" />
+                            <Conditions />
                           </Action>
                         </Actions>
                         <Condition Enabled="false" Grouping="Or" />
+                        <Conditions />
                       </Trigger>
-                      <Trigger Enabled="true" Source="FFXIVNetwork" Name="Default - Settings" Id="f2f7b528-a1b1-4205-b28e-2323d4423a7e" RegularExpression="^00\|[^|]+\|0038\|\|(setDefault|!initialize)">
+                      <Trigger Enabled="true" Source="FFXIVNetwork" Name="Default - Settings" Id="6118e65b-0efa-40ec-97e3-aee63e48f840" RegularExpression="^00\|[^|]+\|0038\|\|(setDefault|!initialize)">
                         <Actions>
                           <Action OrderNumber="1" LogLevel="-1" VariableOp="SetString" VariableName="imagePath" VariableExpression="https://raw.githubusercontent.com/lexxiesia/xiv_triggernometry/master/resources/icons/" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Variable">
                             <Condition Enabled="false" Grouping="Or" />
+                            <Conditions />
                           </Action>
                           <Action OrderNumber="2" LogLevel="-1" VariableOp="SetString" VariableName="ravenDive" VariableExpression="https://raw.githubusercontent.com/lexxiesia/xiv_triggernometry/master/resources/icons/ucob/ravendive.png" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Variable">
                             <Condition Enabled="false" Grouping="Or" />
+                            <Conditions />
                           </Action>
                           <Action OrderNumber="3" LogLevel="-1" VariableOp="SetString" VariableName="dalamudDive" VariableExpression="https://raw.githubusercontent.com/lexxiesia/xiv_triggernometry/master/resources/icons/ucob/dalamuddive.png" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Variable">
                             <Condition Enabled="false" Grouping="Or" />
+                            <Conditions />
                           </Action>
                           <Action OrderNumber="4" LogLevel="-1" VariableOp="SetString" VariableName="ironChariot" VariableExpression="https://raw.githubusercontent.com/lexxiesia/xiv_triggernometry/master/resources/icons/ucob/ironchariot.png" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Variable">
                             <Condition Enabled="false" Grouping="Or" />
+                            <Conditions />
                           </Action>
                           <Action OrderNumber="5" LogLevel="-1" VariableOp="SetString" VariableName="lunarDynamo" VariableExpression="https://raw.githubusercontent.com/lexxiesia/xiv_triggernometry/master/resources/icons/ucob/lunardynamo.png" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Variable">
                             <Condition Enabled="false" Grouping="Or" />
+                            <Conditions />
                           </Action>
                           <Action OrderNumber="6" LogLevel="-1" VariableOp="SetString" VariableName="thermionicBeam" VariableExpression="https://raw.githubusercontent.com/lexxiesia/xiv_triggernometry/master/resources/icons/ucob/thermionicbeam.png" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Variable">
                             <Condition Enabled="false" Grouping="Or" />
+                            <Conditions />
                           </Action>
                           <Action OrderNumber="7" LogLevel="-1" VariableOp="SetString" VariableName="meteorStream" VariableExpression="https://raw.githubusercontent.com/lexxiesia/xiv_triggernometry/master/resources/icons/ucob/meteorstream.png" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Variable">
                             <Condition Enabled="false" Grouping="Or" />
+                            <Conditions />
                           </Action>
                           <Action OrderNumber="8" LogLevel="-1" VariableOp="SetNumeric" VariableName="naelRPY" VariableExpression="(${_screenheight}/10)*3" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Variable">
                             <Condition Enabled="false" Grouping="Or" />
+                            <Conditions />
                           </Action>
                           <Action OrderNumber="9" LogLevel="-1" VariableOp="SetNumeric" VariableName="naelRPIcon" VariableExpression="100" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Variable">
                             <Condition Enabled="false" Grouping="Or" />
+                            <Conditions />
                           </Action>
                           <Action OrderNumber="10" LogLevel="-1" VariableOp="SetNumeric" VariableName="naelDebuffX" VariableExpression="(${_screenwidth}/10)*7" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Variable">
                             <Condition Enabled="false" Grouping="Or" />
+                            <Conditions />
                           </Action>
                           <Action OrderNumber="11" LogLevel="-1" VariableOp="SetString" VariableName="naelDebuffY" VariableExpression="(${_screenheight}/10)*2" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Variable">
                             <Condition Enabled="false" Grouping="Or" />
+                            <Conditions />
                           </Action>
                           <Action OrderNumber="12" LogLevel="-1" VariableOp="SetString" VariableName="naelDebuffOpacity" VariableExpression="100" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Variable">
                             <Condition Enabled="false" Grouping="Or" />
+                            <Conditions />
                           </Action>
                         </Actions>
                         <Condition Enabled="false" Grouping="Or" />
+                        <Conditions />
                       </Trigger>
                     </Triggers>
                   </Folder>
                 </Folders>
                 <Triggers>
-                  <Trigger Enabled="true" Name="# Reset UCoB" Id="4c8d106d-b431-4a77-b113-661ad0e90f83" RegularExpression="The Unending Coil of Bahamut \(Ultimate\) has ended">
+                  <Trigger Enabled="true" Name="# Reset UCoB" Id="5fd937b3-8ef3-4d09-b339-6293b310083b" RegularExpression="The Unending Coil of Bahamut \(Ultimate\) has ended">
                     <Actions>
                       <Action OrderNumber="1" AuraOp="DeactivateAllAura" LogLevel="-1" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Aura">
                         <Condition Enabled="false" Grouping="Or" />
+                        <Conditions />
                       </Action>
                       <Action OrderNumber="2" LogLevel="-1" TextAuraOp="DeactivateAllAura" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="TextAura">
                         <Condition Enabled="false" Grouping="Or" />
+                        <Conditions />
                       </Action>
                       <Action OrderNumber="3" LogLevel="-1" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" TriggerOp="CancelAllTrigger" ActionType="Trigger">
                         <Condition Enabled="false" Grouping="Or" />
+                        <Conditions />
                       </Action>
                     </Actions>
                     <Condition Enabled="false" Grouping="Or" />
+                    <Conditions />
                   </Trigger>
-                  <Trigger Enabled="true" Source="FFXIVNetwork" Sequential="True" Name="Heavensfall Trio" Id="39a35c73-7e35-4754-a0c2-e7086ad17817" RegularExpression="^20\|[^\|]*\|(?&lt;aID&gt;[^\|]*)\|[^\|]*\|26E1\|" Description="This trigger calls out Prismatic Deception safe spots when the casts of Blasting Zone start on the enemy list. The calls by default &#xD;&#xA;are North, Northeast, East, Southeast, obviously the cardinal/intercardinal direction opposite of what the trigger calls will be safe &#xD;&#xA;too. If you prefer, you can change the things the TTS actions call in the Trigger Actions tab of the this trigger.&#xD;&#xA;&#xD;&#xA;Version History:&#xD;&#xA;v1.4: Public Release&#xD;&#xA;v1.5: Rewrote part of this trigger to have fewer moving parts since it wasn't executing consistently&#xD;&#xA;v1.6: I swear to god this thing works now">
+                  <Trigger Enabled="true" Source="FFXIVNetwork" Sequential="True" Name="Heavensfall Trio" Id="82b5ffc4-0572-49ae-9e90-d2ca698e05e1" RegularExpression="^20\|[^\|]*\|(?&lt;aID&gt;[^\|]*)\|[^\|]*\|26E1\|" Description="This trigger calls out Prismatic Deception safe spots when the casts of Blasting Zone start on the enemy list. The calls by default &#xD;&#xA;are North, Northeast, East, Southeast, obviously the cardinal/intercardinal direction opposite of what the trigger calls will be safe &#xD;&#xA;too. If you prefer, you can change the things the TTS actions call in the Trigger Actions tab of the this trigger.&#xD;&#xA;&#xD;&#xA;Version History:&#xD;&#xA;v1.4: Public Release&#xD;&#xA;v1.5: Rewrote part of this trigger to have fewer moving parts since it wasn't executing consistently&#xD;&#xA;v1.6: I swear to god this thing works now">
                     <Actions>
                       <Action OrderNumber="1" LogLevel="-1" VariableOp="SetNumeric" VariableName="bahamutDirection" VariableExpression="(round(4 - 4 * arctan2(${_ffxiventity[${var:bahamutPrime}].x},${_ffxiventity[${var:bahamutPrime}].y}) / pi) % 8)+1" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Variable">
                         <Condition Enabled="false" Grouping="Or" />
+                        <Conditions />
                       </Action>
                       <Action OrderNumber="2" LogLevel="-1" VariableOp="SetNumeric" VariableName="naelDirection" VariableExpression="(round(4 - 4 * arctan2(${_ffxiventity[${var:naelDeusDarnus}].x},${_ffxiventity[${var:naelDeusDarnus}].y}) / pi) % 8)+1" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Variable">
                         <Condition Enabled="false" Grouping="Or" />
+                        <Conditions />
                       </Action>
                       <Action OrderNumber="3" LogLevel="-1" VariableOp="SetNumeric" VariableName="twinDirection" VariableExpression="(round(4 - 4 * arctan2(${_ffxiventity[${var:twintania}].x},${_ffxiventity[${var:twintania}].y}) / pi) % 8)+1" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Variable">
                         <Condition Enabled="false" Grouping="Or" />
+                        <Conditions />
                       </Action>
                       <Action OrderNumber="4" LogLevel="-1" MouseX="" MouseY="" UseTTSTextExpression="Quadrant" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="UseTTS">
                         <Condition Enabled="true" Grouping="Xor">
@@ -16938,6 +16967,7 @@
                             </ConditionGroup>
                           </ConditionGroup>
                         </Condition>
+                        <Conditions />
                       </Action>
                       <Action OrderNumber="5" LogLevel="-1" MouseX="" MouseY="" UseTTSTextExpression="Sides" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="UseTTS">
                         <Condition Enabled="true" Grouping="Not">
@@ -17046,47 +17076,57 @@
                             </ConditionGroup>
                           </ConditionGroup>
                         </Condition>
+                        <Conditions />
                       </Action>
                     </Actions>
                     <Condition Enabled="true" Grouping="Or">
                       <ConditionSingle Enabled="true" ExpressionL="${var:dataPhase}" ExpressionTypeL="String" ExpressionR="heavensfall" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
                     </Condition>
+                    <Conditions />
                   </Trigger>
-                  <Trigger Enabled="true" Source="FFXIVNetwork" Sequential="True" Name="Quickmarch Trio" Id="b7032fc4-c8b6-4e18-9d4c-453d1f83fa60" RegularExpression="^20\|[^\|]*\|(?&lt;aID&gt;[^\|]*)\|[^\|]*\|26E1\|" Description="This trigger calls out Prismatic Deception safe spots when the casts of Blasting Zone start on the enemy list. The calls by default &#xD;&#xA;are North, Northeast, East, Southeast, obviously the cardinal/intercardinal direction opposite of what the trigger calls will be safe &#xD;&#xA;too. If you prefer, you can change the things the TTS actions call in the Trigger Actions tab of the this trigger.&#xD;&#xA;&#xD;&#xA;Version History:&#xD;&#xA;v1.4: Public Release&#xD;&#xA;v1.5: Rewrote part of this trigger to have fewer moving parts since it wasn't executing consistently&#xD;&#xA;v1.6: I swear to god this thing works now">
+                  <Trigger Enabled="true" Source="FFXIVNetwork" Sequential="True" Name="Quickmarch Trio" Id="3df3d190-20ab-472f-9ad4-0ebe300ce03e" RegularExpression="^20\|[^\|]*\|(?&lt;aID&gt;[^\|]*)\|[^\|]*\|26E1\|" Description="This trigger calls out Prismatic Deception safe spots when the casts of Blasting Zone start on the enemy list. The calls by default &#xD;&#xA;are North, Northeast, East, Southeast, obviously the cardinal/intercardinal direction opposite of what the trigger calls will be safe &#xD;&#xA;too. If you prefer, you can change the things the TTS actions call in the Trigger Actions tab of the this trigger.&#xD;&#xA;&#xD;&#xA;Version History:&#xD;&#xA;v1.4: Public Release&#xD;&#xA;v1.5: Rewrote part of this trigger to have fewer moving parts since it wasn't executing consistently&#xD;&#xA;v1.6: I swear to god this thing works now">
                     <Actions>
                       <Action OrderNumber="1" LogLevel="-1" VariableOp="SetNumeric" VariableName="bahamutDirection" VariableExpression="(round(4 - 4 * arctan2(${_ffxiventity[${var:bahamutPrime}].x},${_ffxiventity[${var:bahamutPrime}].y}) / pi) % 8)+1" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Variable">
                         <Condition Enabled="false" Grouping="Or" />
+                        <Conditions />
                       </Action>
                       <Action OrderNumber="2" LogLevel="-1" TextAuraEffect="Bold" TextAuraFontSize="20.25" TextAuraForeground="Lime" TextAuraOutline="Black" TextAuraName="relativeNorth" TextAuraExpression="Bahamut ${tvar:dragonMap[1][${var:bahamutDirection}]}" TextAuraXIniExpression="0" TextAuraYIniExpression="(${_screenheight}/2)+64" TextAuraWIniExpression="${_screenwidth}" TextAuraHIniExpression="100" TextAuraOIniExpression="100" TextAuraTTLTickExpression="3-${_since}" TextAuraUseOutline="True" TextAuraFontName="Microsoft Sans Serif" ActionType="TextAura">
                         <Condition Enabled="true" Grouping="And">
                           <ConditionSingle Enabled="true" ExpressionL="${var:cataclysmCardinal}" ExpressionTypeL="Numeric" ExpressionR="0" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
                         </Condition>
+                        <Conditions />
                       </Action>
                     </Actions>
                     <Condition Enabled="true" Grouping="Or">
                       <ConditionSingle Enabled="true" ExpressionL="${var:dataPhase}" ExpressionTypeL="String" ExpressionR="quickmarch" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
                     </Condition>
+                    <Conditions />
                   </Trigger>
-                  <Trigger Enabled="true" Source="FFXIVNetwork" Sequential="True" Name="Blackfire Trio" Id="df258184-5967-4a65-8ad8-772f3a432e68" RegularExpression="^21\|[^\|]*\|(?&lt;aID&gt;[^\|]*)\|[^\|]*\|26E3\|">
+                  <Trigger Enabled="true" Source="FFXIVNetwork" Sequential="True" Name="Blackfire Trio" Id="c77641cc-9577-4db4-8b35-f454462b6983" RegularExpression="^21\|[^\|]*\|(?&lt;aID&gt;[^\|]*)\|[^\|]*\|26E3\|">
                     <Actions>
                       <Action OrderNumber="1" LogLevel="-1" VariableOp="SetNumeric" VariableName="naelDirection" VariableExpression="(round(4 - 4 * arctan2(${_ffxiventity[${var:naelDeusDarnus}].x},${_ffxiventity[${var:naelDeusDarnus}].y}) / pi) % 8)+1" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Variable" ExecutionDelayExpression="3500">
                         <Condition Enabled="false" Grouping="Or" />
+                        <Conditions />
                       </Action>
                       <Action OrderNumber="2" LogLevel="-1" TextAuraEffect="Bold" TextAuraFontSize="20.25" TextAuraForeground="Lime" TextAuraOutline="Black" TextAuraName="naelDirection" TextAuraExpression="Nael ${tvar:dragonMap[1][${var:naelDirection}]}" TextAuraXIniExpression="0" TextAuraYIniExpression="(${_screenheight}/2)+64" TextAuraWIniExpression="${_screenwidth}" TextAuraHIniExpression="100" TextAuraOIniExpression="100" TextAuraTTLTickExpression="6.5-${_since}" TextAuraUseOutline="True" TextAuraFontName="Microsoft Sans Serif" ActionType="TextAura">
                         <Condition Enabled="false" Grouping="And" />
+                        <Conditions />
                       </Action>
                     </Actions>
                     <Condition Enabled="true" Grouping="Or">
                       <ConditionSingle Enabled="true" ExpressionL="${var:dataPhase}" ExpressionTypeL="String" ExpressionR="blackfire" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
                     </Condition>
+                    <Conditions />
                   </Trigger>
-                  <Trigger Enabled="true" Source="FFXIVNetwork" Sequential="True" Name="Grand Octet" Id="a3a381ca-2db3-42de-8d1d-3564bb45476e" RegularExpression="^21\|[^\|]*\|(?&lt;aID&gt;[^\|]*)\|[^\|]*\|26E7\|" Description="This trigger calls out Prismatic Deception safe spots when the casts of Blasting Zone start on the enemy list. The calls by default &#xD;&#xA;are North, Northeast, East, Southeast, obviously the cardinal/intercardinal direction opposite of what the trigger calls will be safe &#xD;&#xA;too. If you prefer, you can change the things the TTS actions call in the Trigger Actions tab of the this trigger.&#xD;&#xA;&#xD;&#xA;Version History:&#xD;&#xA;v1.4: Public Release&#xD;&#xA;v1.5: Rewrote part of this trigger to have fewer moving parts since it wasn't executing consistently&#xD;&#xA;v1.6: I swear to god this thing works now">
+                  <Trigger Enabled="true" Source="FFXIVNetwork" Sequential="True" Name="Grand Octet" Id="236c2265-0e22-4a43-bfc1-7c38dc105556" RegularExpression="^21\|[^\|]*\|(?&lt;aID&gt;[^\|]*)\|[^\|]*\|26E7\|" Description="This trigger calls out Prismatic Deception safe spots when the casts of Blasting Zone start on the enemy list. The calls by default &#xD;&#xA;are North, Northeast, East, Southeast, obviously the cardinal/intercardinal direction opposite of what the trigger calls will be safe &#xD;&#xA;too. If you prefer, you can change the things the TTS actions call in the Trigger Actions tab of the this trigger.&#xD;&#xA;&#xD;&#xA;Version History:&#xD;&#xA;v1.4: Public Release&#xD;&#xA;v1.5: Rewrote part of this trigger to have fewer moving parts since it wasn't executing consistently&#xD;&#xA;v1.6: I swear to god this thing works now">
                     <Actions>
                       <Action OrderNumber="1" LogLevel="-1" VariableOp="SetNumeric" VariableName="bahamutDirection" VariableExpression="(round(4 - 4 * arctan2(${_ffxiventity[${var:bahamutPrime}].x},${_ffxiventity[${var:bahamutPrime}].y}) / pi) % 8)+1" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Variable" ExecutionDelayExpression="5000">
                         <Condition Enabled="false" Grouping="Or" />
+                        <Conditions />
                       </Action>
                       <Action OrderNumber="2" LogLevel="-1" VariableOp="SetNumeric" VariableName="naelDirection" VariableExpression="(round(4 - 4 * arctan2(${_ffxiventity[${var:naelDeusDarnus}].x},${_ffxiventity[${var:naelDeusDarnus}].y}) / pi) % 8)+1" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Variable">
                         <Condition Enabled="false" Grouping="Or" />
+                        <Conditions />
                       </Action>
                       <Action OrderNumber="3" LogLevel="-1" MouseX="" MouseY="" UseTTSTextExpression="Counter Clockwise" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="UseTTS">
                         <Condition Enabled="true" Grouping="Or">
@@ -17095,6 +17135,7 @@
                           <ConditionSingle Enabled="true" ExpressionL="${var:bahamutDirection}" ExpressionTypeL="Numeric" ExpressionR="5" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
                           <ConditionSingle Enabled="true" ExpressionL="${var:bahamutDirection}" ExpressionTypeL="Numeric" ExpressionR="7" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
                         </Condition>
+                        <Conditions />
                       </Action>
                       <Action OrderNumber="4" LogLevel="-1" MouseX="" MouseY="" UseTTSTextExpression="Clockwise" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="UseTTS">
                         <Condition Enabled="true" Grouping="Or">
@@ -17103,6 +17144,7 @@
                           <ConditionSingle Enabled="true" ExpressionL="${var:bahamutDirection}" ExpressionTypeL="Numeric" ExpressionR="6" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
                           <ConditionSingle Enabled="true" ExpressionL="${var:bahamutDirection}" ExpressionTypeL="Numeric" ExpressionR="8" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
                         </Condition>
+                        <Conditions />
                       </Action>
                       <Action OrderNumber="5" LogLevel="-1" MouseX="" MouseY="" TextAuraEffect="Bold" TextAuraFontSize="32.25" TextAuraForeground="Red" TextAuraOutline="Black" TextAuraName="naelOpposite" TextAuraExpression="WARNING: Nael Opposite" TextAuraXIniExpression="0" TextAuraYIniExpression="${_screenheight}/2" TextAuraWIniExpression="${_screenwidth}" TextAuraHIniExpression="64" TextAuraOIniExpression="100" TextAuraOTickExpression="50 + (cos(${_sincems}/100)*50)" TextAuraTTLTickExpression="10-${_since}" TextAuraUseOutline="True" TextAuraFontName="Arial" ActionType="TextAura">
                         <Condition Enabled="true" Grouping="Or">
@@ -17139,22 +17181,41 @@
                             <ConditionSingle Enabled="true" ExpressionL="${var:naelDirection}" ExpressionTypeL="Numeric" ExpressionR="4" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
                           </ConditionGroup>
                         </Condition>
+                        <Conditions />
                       </Action>
                       <Action OrderNumber="6" LogLevel="-1" MouseX="" MouseY="" TextAuraEffect="Bold" TextAuraFontSize="20.25" TextAuraForeground="Lime" TextAuraOutline="Black" TextAuraName="bahamutPosition" TextAuraExpression="Bahamut ${tvar:dragonMap[1][${var:bahamutDirection}]}" TextAuraXIniExpression="0" TextAuraYIniExpression="(${_screenheight}/2)+64" TextAuraWIniExpression="${_screenwidth}" TextAuraHIniExpression="100" TextAuraOIniExpression="100" TextAuraTTLTickExpression="10-${_since}" TextAuraUseOutline="True" TextAuraFontName="Arial" ActionType="TextAura">
                         <Condition Enabled="false" Grouping="Or" />
+                        <Conditions />
                       </Action>
                     </Actions>
                     <Condition Enabled="true" Grouping="Or">
                       <ConditionSingle Enabled="true" ExpressionL="${var:dataPhase}" ExpressionTypeL="String" ExpressionR="octet" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
                     </Condition>
+                    <Conditions />
                   </Trigger>
-                  <Trigger Enabled="true" Source="FFXIVNetwork" Sequential="True" Name="Twister" Id="7ab61de6-8eea-4fb9-be3b-f34791de41a4" RegularExpression="^20\|[^\|]*\|(?&lt;aID&gt;[^\|]*)\|[^\|]*\|26(AA|B2)\|[^\|]*\|[^\|]*\|[^\|]*\|(?&lt;duration&gt;[^\|]*)\|">
+                  <Trigger Enabled="true" Source="FFXIVNetwork" Sequential="True" Name="Twisting Dive" Id="175d67ec-b123-4048-9ab7-d40b16bcd7b5" RegularExpression="^20\|[^\|]*\|(?&lt;aID&gt;[^\|]*)\|[^\|]*\|26B2\|">
                     <Actions>
-                      <Action OrderNumber="1" LogLevel="-1" MouseX="" MouseY="" TextAuraFontSize="8.25" TextAuraBackground="Black" TextAuraName="twisterBackground" TextAuraXIniExpression="(${_screenwidth}/2)-((${_screenwidth}/10)/2)" TextAuraYIniExpression="(${_screenheight}/2)-60" TextAuraWIniExpression="${_screenwidth}/10" TextAuraHIniExpression="15" TextAuraOIniExpression="50" TextAuraTTLTickExpression="${duration}-${_since}" TextAuraUseOutline="True" TextAuraFontName="Microsoft Sans Serif" ActionType="TextAura">
+                      <Action OrderNumber="1" LogLevel="-1" MouseX="" MouseY="" TextAuraFontSize="8.25" TextAuraBackground="Black" TextAuraName="twisterBackground" TextAuraXIniExpression="(${_screenwidth}/2)-((${_screenwidth}/10)/2)" TextAuraYIniExpression="(${_screenheight}/2)-60" TextAuraWIniExpression="${_screenwidth}/10" TextAuraHIniExpression="15" TextAuraOIniExpression="50" TextAuraTTLTickExpression="4-${_since}" TextAuraUseOutline="True" TextAuraFontName="Microsoft Sans Serif" ActionType="TextAura">
                         <Condition Enabled="false" Grouping="Or" />
                         <Conditions />
                       </Action>
-                      <Action OrderNumber="2" LogLevel="-1" MouseX="" MouseY="" TextAuraFontSize="8.25" TextAuraBackground="White" TextAuraName="twisterFill" TextAuraXIniExpression="${_textaura[twisterBackground].x}+5" TextAuraYIniExpression="${_textaura[twisterBackground].y}+5" TextAuraWIniExpression="0" TextAuraHIniExpression="5" TextAuraOIniExpression="100" TextAuraWTickExpression="((${_screenwidth}/10)-10)*(((${duration} * 1000)-${_sincems})/(${duration} * 1000))" TextAuraTTLTickExpression="${duration}-${_since}" TextAuraUseOutline="True" TextAuraFontName="Microsoft Sans Serif" ActionType="TextAura">
+                      <Action OrderNumber="2" LogLevel="-1" MouseX="" MouseY="" TextAuraFontSize="8.25" TextAuraBackground="White" TextAuraName="twistingFill" TextAuraXIniExpression="${_textaura[twisterBackground].x}+5" TextAuraYIniExpression="${_textaura[twisterBackground].y}+5" TextAuraWIniExpression="${_screenwidth}/10)" TextAuraHIniExpression="5" TextAuraOIniExpression="100" TextAuraWTickExpression="((${_screenwidth}/10)-10)*(((4 * 1000)+${_sincems})/(4 * 1000))" TextAuraTTLTickExpression="4-${_since}" TextAuraUseOutline="True" TextAuraFontName="Microsoft Sans Serif" ActionType="TextAura">
+                        <Condition Enabled="false" Grouping="Or" />
+                        <Conditions />
+                      </Action>
+                    </Actions>
+                    <Condition Enabled="true" Grouping="Or">
+                      <ConditionSingle Enabled="true" ExpressionL="${var:dataPhase}" ExpressionTypeL="String" ExpressionR="octet" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
+                    </Condition>
+                    <Conditions />
+                  </Trigger>
+                  <Trigger Enabled="true" Source="FFXIVNetwork" Sequential="True" Name="Twister" Id="eb518ba1-3fa4-476d-bc6f-c54cc7b7ed38" RegularExpression="^20\|[^\|]*\|(?&lt;aID&gt;[^\|]*)\|[^\|]*\|26AA\|[^\|]*\|[^\|]*\|[^\|]*\|(?&lt;duration&gt;[^\|]*)\|">
+                    <Actions>
+                      <Action OrderNumber="1" LogLevel="-1" MouseX="" MouseY="" TextAuraFontSize="8.25" TextAuraBackground="Black" TextAuraName="twisterBackground" TextAuraXIniExpression="(${_screenwidth}/2)-((${_screenwidth}/10)/2)" TextAuraYIniExpression="(${_screenheight}/2)-60" TextAuraWIniExpression="${_screenwidth}/10" TextAuraHIniExpression="15" TextAuraOIniExpression="50" TextAuraTTLTickExpression="${duration}-${_since}" TextAuraFontName="Microsoft Sans Serif" ActionType="TextAura">
+                        <Condition Enabled="false" Grouping="Or" />
+                        <Conditions />
+                      </Action>
+                      <Action OrderNumber="2" LogLevel="-1" MouseX="" MouseY="" TextAuraFontSize="8.25" TextAuraBackground="White" TextAuraName="twisterFill" TextAuraXIniExpression="${_textaura[twisterBackground].x}+5" TextAuraYIniExpression="${_textaura[twisterBackground].y}+5" TextAuraWIniExpression="${_screenwidth}/10" TextAuraHIniExpression="5" TextAuraOIniExpression="100" TextAuraWTickExpression="((${_screenwidth}/10)-10)*(((${duration} * 1000)-${_sincems})/(${duration} * 1000))" TextAuraTTLTickExpression="${duration}-${_since}" TextAuraUseOutline="True" TextAuraFontName="Microsoft Sans Serif" ActionType="TextAura">
                         <Condition Enabled="false" Grouping="Or" />
                         <Conditions />
                       </Action>

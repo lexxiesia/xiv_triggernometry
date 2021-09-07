@@ -18136,10 +18136,12 @@
                                 <ConditionGroup Enabled="true" Grouping="And">
                                   <ConditionSingle Enabled="true" ExpressionL="${lvar:fireball1.indexof(${_ffxivplayer})}" ExpressionTypeL="Numeric" ExpressionR="0" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
                                   <ConditionSingle Enabled="true" ExpressionL="${lvar:fireball2.indexof(${_ffxivplayer})}" ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
+                                  <ConditionSingle Enabled="true" ExpressionL="${evar:fireDebuff}" ExpressionTypeL="Numeric" ExpressionR="0" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
                                 </ConditionGroup>
                                 <ConditionGroup Enabled="true" Grouping="And">
                                   <ConditionSingle Enabled="true" ExpressionL="${lvar:fireball1.indexof(${_ffxivplayer})}" ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
                                   <ConditionSingle Enabled="true" ExpressionL="${lvar:fireball2.indexof(${_ffxivplayer})}" ExpressionTypeL="Numeric" ExpressionR="0" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
+                                  <ConditionSingle Enabled="true" ExpressionL="${evar:fireDebuff}" ExpressionTypeL="Numeric" ExpressionR="0" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
                                 </ConditionGroup>
                               </ConditionGroup>
                             </Condition>
@@ -18177,6 +18179,7 @@
                                   <ConditionSingle Enabled="true" ExpressionL="${lvar:fireball2.indexof(${_ffxivplayer})}" ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
                                   <ConditionSingle Enabled="true" ExpressionL="${lvar:fireball3.indexof(${_ffxivplayer})}" ExpressionTypeL="Numeric" ExpressionR="0" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
                                 </ConditionGroup>
+                                <ConditionSingle Enabled="true" ExpressionL="${evar:fireDebuff}" ExpressionTypeL="Numeric" ExpressionR="0" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
                               </ConditionGroup>
                             </Condition>
                             <Conditions />
@@ -18184,9 +18187,14 @@
                           <Action OrderNumber="8" LogLevel="-1" UseTTSTextExpression="Stay Out" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="UseTTS" Description="Fire #4 - Stay Out" DescriptionOverride="True">
                             <Condition Enabled="true" Grouping="And">
                               <ConditionSingle Enabled="true" ExpressionL="${var:fireballCount}" ExpressionTypeL="Numeric" ExpressionR="4" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
-                              <ConditionSingle Enabled="true" ExpressionL="${lvar:fireball2.indexof(${_ffxivplayer})}" ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
-                              <ConditionSingle Enabled="true" ExpressionL="${lvar:fireball1.indexof(${_ffxivplayer})}" ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
-                              <ConditionSingle Enabled="true" ExpressionL="${lvar:fireball3.indexof(${_ffxivplayer})}" ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
+                              <ConditionGroup Enabled="true" Grouping="Or">
+                                <ConditionSingle Enabled="true" ExpressionL="${evar:fireDebuff}" ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
+                                <ConditionGroup Enabled="true" Grouping="And">
+                                  <ConditionSingle Enabled="true" ExpressionL="${lvar:fireball1.indexof(${_ffxivplayer})}" ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
+                                  <ConditionSingle Enabled="true" ExpressionL="${lvar:fireball2.indexof(${_ffxivplayer})}" ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
+                                  <ConditionSingle Enabled="true" ExpressionL="${lvar:fireball3.indexof(${_ffxivplayer})}" ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
+                                </ConditionGroup>
+                              </ConditionGroup>
                             </Condition>
                             <Conditions />
                           </Action>
@@ -18281,7 +18289,67 @@
                     </Triggers>
                   </Folder>
                   <Folder Id="7d3a0bbd-4ddc-43d0-a73e-87c11f3dbb3d" Name="Grand Octet" Enabled="true">
-                    <Folders />
+                    <Folders>
+                      <Folder Id="9b39d19b-eab4-4c05-bca5-92987d44310f" Name="Tracker" Enabled="true">
+                        <Folders />
+                        <Triggers>
+                          <Trigger Enabled="true" Name="Text" Id="0f906fac-ba38-4ed7-bba6-01fee3ef073c" RegularExpression=":Bahamut Prime:26E7:">
+                            <Actions>
+                              <Action OrderNumber="1" LogLevel="-1" MouseX="" MouseY="" TextAuraAlignment="MiddleLeft" TextAuraEffect="Bold" TextAuraFontSize="18" TextAuraForeground="White" TextAuraOutline="Black" TextAuraName="textOctetNael" TextAuraExpression="Nael:" TextAuraXIniExpression="${_imageaura[grandOctet].x}+40" TextAuraYIniExpression="${_imageaura[grandOctet].y}+180" TextAuraWIniExpression="128" TextAuraHIniExpression="35" TextAuraOIniExpression="100" TextAuraUseOutline="True" TextAuraFontName="Arial" ActionType="TextAura">
+                                <Condition Enabled="false" Grouping="Or" />
+                                <Conditions />
+                              </Action>
+                              <Action OrderNumber="2" LogLevel="-1" MouseX="" MouseY="" TextAuraAlignment="MiddleLeft" TextAuraEffect="Bold" TextAuraFontSize="18" TextAuraForeground="White" TextAuraOutline="Black" TextAuraName="textOctetDragon" TextAuraExpression="Dragon:" TextAuraXIniExpression="${_imageaura[grandOctet].x}+40" TextAuraYIniExpression="${_imageaura[grandOctet].y}+215" TextAuraWIniExpression="128" TextAuraHIniExpression="35" TextAuraOIniExpression="100" TextAuraUseOutline="True" TextAuraFontName="Arial" ActionType="TextAura">
+                                <Condition Enabled="false" Grouping="Or" />
+                                <Conditions />
+                              </Action>
+                              <Action OrderNumber="3" LogLevel="-1" MouseX="" MouseY="" TextAuraAlignment="MiddleLeft" TextAuraEffect="Bold" TextAuraFontSize="18" TextAuraForeground="White" TextAuraOutline="Black" TextAuraName="textOctetBaha" TextAuraExpression="Bahamut:" TextAuraXIniExpression="${_imageaura[grandOctet].x}+40" TextAuraYIniExpression="${_imageaura[grandOctet].y}+250" TextAuraWIniExpression="128" TextAuraHIniExpression="35" TextAuraOIniExpression="100" TextAuraUseOutline="True" TextAuraFontName="Arial" ActionType="TextAura">
+                                <Condition Enabled="false" Grouping="Or" />
+                                <Conditions />
+                              </Action>
+                            </Actions>
+                            <Condition Enabled="false" Grouping="Or" />
+                            <Conditions />
+                          </Trigger>
+                          <Trigger Enabled="true" Name="Nael" Id="d133ce96-0506-4718-84c6-b93041b49449" RegularExpression="1B:[0-9A-F]{8}:(?&lt;player&gt;(?&lt;name&gt;[\w-']+) [\w-']+):.{4}:.{4}:0077:">
+                            <Actions>
+                              <Action OrderNumber="1" AuraImageMode="StretchImage" AuraName="UCOBNael${player}" AuraImage="https://raw.githubusercontent.com/lexxiesia/xiv_triggernometry/master/resources/icons/jobs/${tvarrl:UCOB[${player}][1]}.png" AuraXIniExpression="${_textaura[textOctetNael].x}+110" AuraYIniExpression="${_textaura[textOctetNael].y}" AuraWIniExpression="35" AuraHIniExpression="35" AuraOIniExpression="100" LogLevel="-1" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Aura">
+                                <Condition Enabled="false" Grouping="Or" />
+                                <Conditions />
+                              </Action>
+                            </Actions>
+                            <Condition Enabled="true" Grouping="Or">
+                              <ConditionSingle Enabled="true" ExpressionL="${var:dataPhase}" ExpressionTypeL="String" ExpressionR="octet" ExpressionTypeR="String" ConditionType="StringNotEqualNocase" />
+                            </Condition>
+                            <Conditions />
+                          </Trigger>
+                          <Trigger Enabled="true" Name="Dragon" Id="3088c454-0848-46d7-bbe0-de9bb907a3c1" RegularExpression="1B:[0-9A-F]{8}:(?&lt;player&gt;(?&lt;name&gt;[\w-']+) [\w-']+):.{4}:.{4}:0014:">
+                            <Actions>
+                              <Action OrderNumber="1" AuraImageMode="StretchImage" AuraName="UCOBDragon${player}" AuraImage="https://raw.githubusercontent.com/lexxiesia/xiv_triggernometry/master/resources/icons/jobs/${tvarrl:UCOB[${player}][1]}.png" AuraXIniExpression="${_textaura[textOctetDragon].x}+110+(${_imageaura[UCOBDragon${_ffxivparty[1].name}].w})+(${_imageaura[UCOBDragon${_ffxivparty[2].name}].w})+(${_imageaura[UCOBDragon${_ffxivparty[3].name}].w})+(${_imageaura[UCOBDragon${_ffxivparty[4].name}].w})+(${_imageaura[UCOBDragon${_ffxivparty[5].name}].w})+(${_imageaura[UCOBDragon${_ffxivparty[6].name}].w})+(${_imageaura[UCOBDragon${_ffxivparty[7].name}].w})+(${_imageaura[UCOBDragon${_ffxivparty[8].name}].w})" AuraYIniExpression="${_textaura[textOctetDragon].y}" AuraWIniExpression="35" AuraHIniExpression="35" AuraOIniExpression="100" LogLevel="-1" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Aura">
+                                <Condition Enabled="false" Grouping="Or" />
+                                <Conditions />
+                              </Action>
+                            </Actions>
+                            <Condition Enabled="true" Grouping="Or">
+                              <ConditionSingle Enabled="true" ExpressionL="${var:dataPhase}" ExpressionTypeL="String" ExpressionR="octet" ExpressionTypeR="String" ConditionType="StringNotEqualNocase" />
+                            </Condition>
+                            <Conditions />
+                          </Trigger>
+                          <Trigger Enabled="true" Name="Bahamut" Id="15112168-e884-4f6e-880b-65cdc9cd6f94" RegularExpression="1B:[0-9A-F]{8}:(?&lt;player&gt;(?&lt;name&gt;[\w-']+) [\w-']+):.{4}:.{4}:0029:">
+                            <Actions>
+                              <Action OrderNumber="1" AuraImageMode="StretchImage" AuraName="UCOBBaha${player}" AuraImage="https://raw.githubusercontent.com/lexxiesia/xiv_triggernometry/master/resources/icons/jobs/${tvarrl:UCOB[${player}][1]}.png" AuraXIniExpression="${_textaura[textOctetBaha].x}+110" AuraYIniExpression="${_textaura[textOctetBaha].y}" AuraWIniExpression="35" AuraHIniExpression="35" AuraOIniExpression="100" LogLevel="-1" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Aura">
+                                <Condition Enabled="false" Grouping="Or" />
+                                <Conditions />
+                              </Action>
+                            </Actions>
+                            <Condition Enabled="true" Grouping="Or">
+                              <ConditionSingle Enabled="true" ExpressionL="${var:dataPhase}" ExpressionTypeL="String" ExpressionR="octet" ExpressionTypeR="String" ConditionType="StringNotEqualNocase" />
+                            </Condition>
+                            <Conditions />
+                          </Trigger>
+                        </Triggers>
+                      </Folder>
+                    </Folders>
                     <Triggers>
                       <Trigger Enabled="true" Sequential="True" Name="Counter" Id="346ed7d2-6f8e-4460-854c-ea8511a976ac" RegularExpression="1B:[0-9A-F]{8}:(?&lt;player&gt;(?&lt;name&gt;[\w-']+) [\w-']+):.{4}:.{4}:(?&lt;ID&gt;00(77|14|29)):">
                         <Actions>
@@ -18362,7 +18430,11 @@
                             <Condition Enabled="false" Grouping="Or" />
                             <Conditions />
                           </Action>
-                          <Action OrderNumber="11" AuraOp="DeactivateAuraRegex" AuraName="UCOBOctet" LogLevel="-1" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Aura">
+                          <Action OrderNumber="11" AuraOp="DeactivateAuraRegex" AuraName="UCOB(Octet|Nael|Dragon|Baha)" LogLevel="-1" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Aura">
+                            <Condition Enabled="false" Grouping="Or" />
+                            <Conditions />
+                          </Action>
+                          <Action OrderNumber="12" AuraOp="DeactivateAuraRegex" AuraName="UCOB(Octet|Nael|Dragon|Baha)" LogLevel="-1" TextAuraOp="DeactivateAuraRegex" TextAuraFontSize="8.25" TextAuraName="textOctet" TextAuraFontName="Microsoft Sans Serif" ActionType="TextAura">
                             <Condition Enabled="false" Grouping="Or" />
                             <Conditions />
                           </Action>
@@ -20478,7 +20550,16 @@
                         </Condition>
                         <Conditions />
                       </Action>
-                      <Action OrderNumber="4" LogLevel="-1" MouseX="" MouseY="" UseTTSTextExpression="Clockwise" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="UseTTS">
+                      <Action OrderNumber="4" LogLevel="-1" MouseX="" MouseY="" UseTTSTextExpression="Counter Clockwise" TextAuraEffect="Bold" TextAuraFontSize="18" TextAuraForeground="#FFBB00" TextAuraOutline="Black" TextAuraName="octetCCW" TextAuraExpression="COUNTERCLOCKWISE" TextAuraXIniExpression="${_imageaura[grandOctet].x}" TextAuraYIniExpression="${_imageaura[grandOctet].y}-20" TextAuraWIniExpression="${_imageaura[grandOctet].w}" TextAuraHIniExpression="24" TextAuraOIniExpression="100" TextAuraTTLTickExpression="10-${_since}" TextAuraUseOutline="True" TextAuraFontName="Arial" ActionType="TextAura">
+                        <Condition Enabled="true" Grouping="Or">
+                          <ConditionSingle Enabled="true" ExpressionL="${var:bahamutDirection}" ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
+                          <ConditionSingle Enabled="true" ExpressionL="${var:bahamutDirection}" ExpressionTypeL="Numeric" ExpressionR="3" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
+                          <ConditionSingle Enabled="true" ExpressionL="${var:bahamutDirection}" ExpressionTypeL="Numeric" ExpressionR="5" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
+                          <ConditionSingle Enabled="true" ExpressionL="${var:bahamutDirection}" ExpressionTypeL="Numeric" ExpressionR="7" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
+                        </Condition>
+                        <Conditions />
+                      </Action>
+                      <Action OrderNumber="5" LogLevel="-1" MouseX="" MouseY="" UseTTSTextExpression="Clockwise" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="UseTTS">
                         <Condition Enabled="true" Grouping="Or">
                           <ConditionSingle Enabled="true" ExpressionL="${var:bahamutDirection}" ExpressionTypeL="Numeric" ExpressionR="2" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
                           <ConditionSingle Enabled="true" ExpressionL="${var:bahamutDirection}" ExpressionTypeL="Numeric" ExpressionR="4" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
@@ -20487,7 +20568,16 @@
                         </Condition>
                         <Conditions />
                       </Action>
-                      <Action OrderNumber="5" LogLevel="-1" MouseX="" MouseY="" TextAuraEffect="Bold" TextAuraFontSize="32.25" TextAuraForeground="Red" TextAuraOutline="Black" TextAuraName="naelOpposite" TextAuraExpression="WARNING: Nael Opposite" TextAuraXIniExpression="0" TextAuraYIniExpression="${_screenheight}/2" TextAuraWIniExpression="${_screenwidth}" TextAuraHIniExpression="64" TextAuraOIniExpression="100" TextAuraOTickExpression="50 + (cos(${_sincems}/100)*50)" TextAuraTTLTickExpression="10-${_since}" TextAuraUseOutline="True" TextAuraFontName="Arial" ActionType="TextAura">
+                      <Action OrderNumber="6" LogLevel="-1" MouseX="" MouseY="" UseTTSTextExpression="Counter Clockwise" TextAuraEffect="Bold" TextAuraFontSize="18" TextAuraForeground="#FFBB00" TextAuraOutline="Black" TextAuraName="octetCW" TextAuraExpression="CLOCKWISE" TextAuraXIniExpression="${_imageaura[grandOctet].x}" TextAuraYIniExpression="${_imageaura[grandOctet].y}-20" TextAuraWIniExpression="${_imageaura[grandOctet].w}" TextAuraHIniExpression="24" TextAuraOIniExpression="100" TextAuraTTLTickExpression="10-${_since}" TextAuraUseOutline="True" TextAuraFontName="Arial" ActionType="TextAura">
+                        <Condition Enabled="true" Grouping="Or">
+                          <ConditionSingle Enabled="true" ExpressionL="${var:bahamutDirection}" ExpressionTypeL="Numeric" ExpressionR="2" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
+                          <ConditionSingle Enabled="true" ExpressionL="${var:bahamutDirection}" ExpressionTypeL="Numeric" ExpressionR="6" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
+                          <ConditionSingle Enabled="true" ExpressionL="${var:bahamutDirection}" ExpressionTypeL="Numeric" ExpressionR="8" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
+                          <ConditionSingle Enabled="true" ExpressionL="${var:bahamutDirection}" ExpressionTypeL="Numeric" ExpressionR="4" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
+                        </Condition>
+                        <Conditions />
+                      </Action>
+                      <Action OrderNumber="7" LogLevel="-1" MouseX="" MouseY="" TextAuraEffect="Bold" TextAuraFontSize="32.25" TextAuraForeground="Red" TextAuraOutline="Black" TextAuraName="naelOpposite" TextAuraExpression="WARNING: Nael Opposite" TextAuraXIniExpression="0" TextAuraYIniExpression="${_screenheight}/2" TextAuraWIniExpression="${_screenwidth}" TextAuraHIniExpression="64" TextAuraOIniExpression="100" TextAuraOTickExpression="50 + (cos(${_sincems}/100)*50)" TextAuraTTLTickExpression="10-${_since}" TextAuraUseOutline="True" TextAuraFontName="Arial" ActionType="TextAura">
                         <Condition Enabled="true" Grouping="Or">
                           <ConditionGroup Enabled="true" Grouping="And">
                             <ConditionSingle Enabled="true" ExpressionL="${var:bahamutDirection}" ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
@@ -20524,7 +20614,7 @@
                         </Condition>
                         <Conditions />
                       </Action>
-                      <Action OrderNumber="6" LogLevel="-1" MouseX="" MouseY="" TextAuraEffect="Bold" TextAuraFontSize="20.25" TextAuraForeground="Lime" TextAuraOutline="Black" TextAuraName="bahamutPosition" TextAuraExpression="Bahamut ${tvar:dragonMap[1][${var:bahamutDirection}]}" TextAuraXIniExpression="0" TextAuraYIniExpression="(${_screenheight}/2)+64" TextAuraWIniExpression="${_screenwidth}" TextAuraHIniExpression="100" TextAuraOIniExpression="100" TextAuraTTLTickExpression="10-${_since}" TextAuraUseOutline="True" TextAuraFontName="Arial" ActionType="TextAura">
+                      <Action OrderNumber="8" LogLevel="-1" MouseX="" MouseY="" TextAuraEffect="Bold" TextAuraFontSize="20.25" TextAuraForeground="Lime" TextAuraOutline="Black" TextAuraName="bahamutPosition" TextAuraExpression="Bahamut ${tvar:dragonMap[1][${var:bahamutDirection}]}" TextAuraXIniExpression="0" TextAuraYIniExpression="(${_screenheight}/2)+64" TextAuraWIniExpression="${_screenwidth}" TextAuraHIniExpression="100" TextAuraOIniExpression="100" TextAuraTTLTickExpression="10-${_since}" TextAuraUseOutline="True" TextAuraFontName="Arial" ActionType="TextAura">
                         <Condition Enabled="false" Grouping="Or" />
                         <Conditions />
                       </Action>

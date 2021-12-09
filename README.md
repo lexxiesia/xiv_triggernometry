@@ -4,7 +4,7 @@
 <h4 align="center">Repository Information</h4>
 
 <p align="center">
-  <a href="https://na.finalfantasyxiv.com/shadowbringers/patch_5_5/"><img src="https://img.shields.io/badge/ffxiv-patch%206.0-yellow"></a>
+  <a href="https://na.finalfantasyxiv.com/endwalker/patch_6_0"><img src="https://img.shields.io/badge/ffxiv-patch%206.0-yellow"></a>
   <a href="https://github.com/paissaheavyindustries/Triggernometry/releases/tag/v1.1.4.4"><img src="https://img.shields.io/badge/triggernometry-v1.1.4.4-blue"></a>
 </p>
 

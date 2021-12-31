@@ -95,36 +95,6 @@
                   <ConditionSingle Enabled="true" ExpressionL="${_zone}" ExpressionTypeL="String" ExpressionR="Garlemald" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
                 </Condition>
               </Trigger>
-              <Trigger Enabled="true" Name="Elpis" Id="446cb413-0eac-4ac6-ba8a-d36f687d8a52" RegularExpression="\A.{28}03:(?&lt;huntID&gt;(?:[^:]*)):(?&lt;hunt&gt;(?:[^:]*)):">
-                <Actions>
-                  <Action OrderNumber="1" UseTTSTextExpression="B rank nearby, ${hunt}" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="UseTTS">
-                    <Condition Enabled="true" Grouping="Or">
-                      <ConditionSingle Enabled="true" ExpressionL="${hunt}" ExpressionTypeL="String" ExpressionR="Shockmaw" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
-                      <ConditionSingle Enabled="true" ExpressionL="${hunt}" ExpressionTypeL="String" ExpressionR="Yumcax" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
-                    </Condition>
-                  </Action>
-                  <Action OrderNumber="2" UseTTSTextExpression="A rank nearby, ${hunt}" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="UseTTS">
-                    <Condition Enabled="true" Grouping="Or">
-                      <ConditionSingle Enabled="true" ExpressionL="${hunt}" ExpressionTypeL="String" ExpressionR="Gurangatch" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
-                      <ConditionSingle Enabled="true" ExpressionL="${hunt}" ExpressionTypeL="String" ExpressionR="Petalodus" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
-                    </Condition>
-                  </Action>
-                  <Action OrderNumber="3" UseTTSTextExpression="${hunt} in zone" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="UseTTS">
-                    <Condition Enabled="true" Grouping="Or">
-                      <ConditionSingle Enabled="true" ExpressionL="${hunt}" ExpressionTypeL="String" ExpressionR="Ophinoneus" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
-                      <ConditionSingle Enabled="true" ExpressionL="${hunt}" ExpressionTypeL="String" ExpressionR="Ker" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
-                    </Condition>
-                  </Action>
-                  <Action OrderNumber="4" UseTTSTextExpression="${hunt} nearby" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="UseTTS">
-                    <Condition Enabled="true" Grouping="Or">
-                      <ConditionSingle Enabled="true" ExpressionL="${hunt}" ExpressionTypeL="String" ExpressionR="Ker Shroud" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
-                    </Condition>
-                  </Action>
-                </Actions>
-                <Condition Enabled="true" Grouping="And">
-                  <ConditionSingle Enabled="true" ExpressionL="${_zone}" ExpressionTypeL="String" ExpressionR="Elpis" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
-                </Condition>
-              </Trigger>
               <Trigger Enabled="true" Name="Ultima Thule" Id="4e16dc81-9db5-4b6e-8d1d-26eac570d465" RegularExpression="\A.{28}03:(?&lt;huntID&gt;(?:[^:]*)):(?&lt;hunt&gt;(?:[^:]*)):">
                 <Actions>
                   <Action OrderNumber="1" UseTTSTextExpression="B rank nearby, ${hunt}" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="UseTTS">
@@ -183,6 +153,40 @@
                 </Actions>
                 <Condition Enabled="true" Grouping="And">
                   <ConditionSingle Enabled="true" ExpressionL="${_zone}" ExpressionTypeL="String" ExpressionR="Mare Lamentorum" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
+                </Condition>
+              </Trigger>
+              <Trigger Enabled="true" Name="Elpis" Id="446cb413-0eac-4ac6-ba8a-d36f687d8a52" RegularExpression="\A.{28}03:(?&lt;huntID&gt;(?:[^:]*)):(?&lt;hunt&gt;(?:[^:]*)):">
+                <Actions>
+                  <Action OrderNumber="1" UseTTSTextExpression="B rank nearby, ${hunt}" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="UseTTS">
+                    <Condition Enabled="true" Grouping="Or">
+                      <ConditionSingle Enabled="true" ExpressionL="${hunt}" ExpressionTypeL="String" ExpressionR="Shockmaw" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
+                      <ConditionSingle Enabled="true" ExpressionL="${hunt}" ExpressionTypeL="String" ExpressionR="Yumcax" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
+                    </Condition>
+                    <Conditions />
+                  </Action>
+                  <Action OrderNumber="2" UseTTSTextExpression="A rank nearby, ${hunt}" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="UseTTS">
+                    <Condition Enabled="true" Grouping="Or">
+                      <ConditionSingle Enabled="true" ExpressionL="${hunt}" ExpressionTypeL="String" ExpressionR="Gurangatch" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
+                      <ConditionSingle Enabled="true" ExpressionL="${hunt}" ExpressionTypeL="String" ExpressionR="Petalodus" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
+                    </Condition>
+                    <Conditions />
+                  </Action>
+                  <Action OrderNumber="3" UseTTSTextExpression="${hunt} in zone" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="UseTTS">
+                    <Condition Enabled="true" Grouping="Or">
+                      <ConditionSingle Enabled="true" ExpressionL="${hunt}" ExpressionTypeL="String" ExpressionR="Ophinoneus" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
+                      <ConditionSingle Enabled="true" ExpressionL="${hunt}" ExpressionTypeL="String" ExpressionR="Ker" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
+                    </Condition>
+                    <Conditions />
+                  </Action>
+                  <Action OrderNumber="4" UseTTSTextExpression="${hunt} nearby" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="UseTTS">
+                    <Condition Enabled="true" Grouping="Or">
+                      <ConditionSingle Enabled="true" ExpressionL="${hunt}" ExpressionTypeL="String" ExpressionR="Ker Shroud" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
+                    </Condition>
+                    <Conditions />
+                  </Action>
+                </Actions>
+                <Condition Enabled="true" Grouping="And">
+                  <ConditionSingle Enabled="true" ExpressionL="${_zone}" ExpressionTypeL="String" ExpressionR="Elpis" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
                 </Condition>
               </Trigger>
             </Triggers>
@@ -21847,7 +21851,7 @@
           </Folder>
           <Folder Id="ad8d3e9e-ba20-43f1-8ab9-e6cce30c7096" Name="6.0 - Endwalker" Enabled="true">
             <Folders>
-              <Folder FFXIVZoneFilterEnabled="True" FfxivZoneFilterRegularExpression="^993$" Id="a900bdda-8abd-4301-a472-ba13d95b7f94" Name="83EX" Enabled="true">
+              <Folder FFXIVZoneFilterEnabled="True" FfxivZoneFilterRegularExpression="^993$" Id="a900bdda-8abd-4301-a472-ba13d95b7f94" Name="Zodiark" Enabled="true">
                 <Folders>
                   <Folder FFXIVJobFilterEnabled="True" FFXIVJobFilter="554193387520" Id="9de77cde-dbf6-40a6-aa86-e1133c7e2901" Name="Healer" Enabled="true">
                     <Folders />
@@ -21986,7 +21990,7 @@
                                 </Condition>
                                 <Conditions />
                               </Action>
-                              <Action OrderNumber="3" ListVariableOp="Push" ListVariableName="data.storedQuetzacoatls" ListVariableExpression="${aID}" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="ListVariable">
+                              <Action OrderNumber="3" ListVariableOp="Push" ListVariableName="data.storedQuetzalcoatls" ListVariableExpression="${aID}" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="ListVariable">
                                 <Condition Enabled="true" Grouping="Or">
                                   <ConditionSingle Enabled="true" ExpressionL="${BNpcID}" ExpressionTypeL="String" ExpressionR="14388" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
                                 </Condition>
@@ -22013,25 +22017,26 @@
                                 <Condition Enabled="true" Grouping="Or">
                                   <ConditionSingle Enabled="true" ExpressionL="${BNpcID}" ExpressionTypeL="String" ExpressionR="14386" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
                                 </Condition>
-                                <Conditions />
                               </Action>
                               <Action OrderNumber="2" ListVariableName="data.storedPythons" ListVariableExpression="${aID}" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="ListVariable">
                                 <Condition Enabled="true" Grouping="Or">
                                   <ConditionSingle Enabled="true" ExpressionL="${BNpcID}" ExpressionTypeL="String" ExpressionR="14387" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
                                 </Condition>
-                                <Conditions />
                               </Action>
-                              <Action OrderNumber="3" ListVariableName="data.storedQuetzacoatls" ListVariableExpression="${aID}" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="ListVariable">
+                              <Action OrderNumber="3" ListVariableName="data.storedQuetzalcoatls" ListVariableExpression="${aID}" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="ListVariable">
                                 <Condition Enabled="true" Grouping="Or">
                                   <ConditionSingle Enabled="true" ExpressionL="${BNpcID}" ExpressionTypeL="String" ExpressionR="14388" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
                                 </Condition>
-                                <Conditions />
                               </Action>
                               <Action OrderNumber="4" VariableName="data.pythonLine" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Variable">
                                 <Condition Enabled="true" Grouping="Or">
                                   <ConditionSingle Enabled="true" ExpressionL="${BNpcID}" ExpressionTypeL="String" ExpressionR="14387" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
                                 </Condition>
-                                <Conditions />
+                              </Action>
+                              <Action OrderNumber="5" VariableOp="UnsetRegex" VariableName="^data.quetz" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Variable">
+                                <Condition Enabled="true" Grouping="Or">
+                                  <ConditionSingle Enabled="true" ExpressionL="${BNpcID}" ExpressionTypeL="String" ExpressionR="14388" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
+                                </Condition>
                               </Action>
                             </Actions>
                             <Condition Enabled="false" Grouping="Or" />
@@ -22047,25 +22052,21 @@
                                 <Condition Enabled="true" Grouping="Or">
                                   <ConditionSingle Enabled="true" ExpressionL="${_ffxiventity[${targetID}].x}" ExpressionTypeL="Numeric" ExpressionR="100" ExpressionTypeR="String" ConditionType="NumericLess" />
                                 </Condition>
-                                <Conditions />
                               </Action>
                               <Action OrderNumber="2" ListVariableOp="Push" ListVariableName="data.storedTetherTargets" ListVariableExpression="East" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="ListVariable">
                                 <Condition Enabled="true" Grouping="Or">
                                   <ConditionSingle Enabled="true" ExpressionL="${_ffxiventity[${targetID}].x}" ExpressionTypeL="Numeric" ExpressionR="100" ExpressionTypeR="String" ConditionType="NumericGreater" />
                                 </Condition>
-                                <Conditions />
                               </Action>
                               <Action OrderNumber="3" ListVariableOp="Push" ListVariableName="data.storedTetherTargets" ListVariableExpression="North" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="ListVariable">
                                 <Condition Enabled="true" Grouping="Or">
                                   <ConditionSingle Enabled="true" ExpressionL="${_ffxiventity[${targetID}].y}" ExpressionTypeL="Numeric" ExpressionR="100" ExpressionTypeR="String" ConditionType="NumericLess" />
                                 </Condition>
-                                <Conditions />
                               </Action>
                               <Action OrderNumber="4" ListVariableOp="Push" ListVariableName="data.storedTetherTargets" ListVariableExpression="South" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="ListVariable">
                                 <Condition Enabled="true" Grouping="Or">
                                   <ConditionSingle Enabled="true" ExpressionL="${_ffxiventity[${targetID}].y}" ExpressionTypeL="Numeric" ExpressionR="100" ExpressionTypeR="String" ConditionType="NumericGreater" />
                                 </Condition>
-                                <Conditions />
                               </Action>
                             </Actions>
                             <Condition Enabled="false" Grouping="Or" />
@@ -22097,163 +22098,253 @@
                           </Trigger>
                         </Triggers>
                       </Folder>
+                      <Folder Id="e690c85e-66ee-43f2-8dc5-d9ba9690349a" Name="Eidolons" Enabled="true">
+                        <Folders />
+                        <Triggers>
+                          <Trigger Enabled="true" Name="Pythons" Id="c18935ca-c6e3-476c-924c-5abd9c5e917f" RegularExpression="\A.{28}03:(?&lt;aID&gt;(?:[^:]*)):(?&lt;combatant&gt;(?:[^:]*)):[^:]*:[^:]*:[^:]*:[^:]*:[^:]*:[^:]*:14387:[^:]*:[^:]*:[^:]*:[^:]*:[^:]*:[^:]*:(?&lt;x&gt;(?:[^:]*)):(?&lt;y&gt;(?:[^:]*)):">
+                            <Actions>
+                              <Action OrderNumber="1" VariableOp="SetString" VariableName="data.pythonLine" VariableExpression="horizontal" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Variable">
+                                <Condition Enabled="true" Grouping="And">
+                                  <ConditionSingle Enabled="true" ExpressionL="${x}" ExpressionTypeL="Numeric" ExpressionR="120" ExpressionTypeR="Numeric" ConditionType="NumericLess" />
+                                  <ConditionSingle Enabled="true" ExpressionL="${x}" ExpressionTypeL="Numeric" ExpressionR="80" ExpressionTypeR="Numeric" ConditionType="NumericGreater" />
+                                </Condition>
+                                <Conditions />
+                              </Action>
+                              <Action OrderNumber="2" VariableOp="SetString" VariableName="data.pythonLine" VariableExpression="vertical" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Variable">
+                                <Condition Enabled="true" Grouping="And">
+                                  <ConditionSingle Enabled="true" ExpressionL="${y}" ExpressionTypeL="Numeric" ExpressionR="120" ExpressionTypeR="Numeric" ConditionType="NumericLess" />
+                                  <ConditionSingle Enabled="true" ExpressionL="${y}" ExpressionTypeL="Numeric" ExpressionR="80" ExpressionTypeR="Numeric" ConditionType="NumericGreater" />
+                                </Condition>
+                                <Conditions />
+                              </Action>
+                            </Actions>
+                            <Condition Enabled="false" Grouping="Or" />
+                          </Trigger>
+                          <Trigger Enabled="true" Sequential="True" Name="Quetzalcoatls" Id="bccc02a8-7113-4b94-8c2c-74bbadab9ffb" RegularExpression="\A.{28}03:(?&lt;aID&gt;(?:[^:]*)):(?&lt;combatant&gt;(?:[^:]*)):[^:]*:[^:]*:[^:]*:[^:]*:[^:]*:[^:]*:14388:[^:]*:[^:]*:[^:]*:[^:]*:[^:]*:[^:]*:(?&lt;x&gt;(?:[^:]*)):(?&lt;y&gt;(?:[^:]*)):">
+                            <Actions>
+                              <Action OrderNumber="1" VariableOp="SetString" VariableName="data.quetzNW" VariableExpression="true" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Variable">
+                                <Condition Enabled="true" Grouping="And">
+                                  <ConditionSingle Enabled="true" ExpressionL="${x}" ExpressionTypeL="String" ExpressionR="89.5" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
+                                  <ConditionSingle Enabled="true" ExpressionL="${y}" ExpressionTypeL="String" ExpressionR="89.5" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
+                                </Condition>
+                                <Conditions />
+                              </Action>
+                              <Action OrderNumber="2" VariableOp="SetString" VariableName="data.quetzNE" VariableExpression="true" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Variable">
+                                <Condition Enabled="true" Grouping="And">
+                                  <ConditionSingle Enabled="true" ExpressionL="${x}" ExpressionTypeL="String" ExpressionR="110.5" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
+                                  <ConditionSingle Enabled="true" ExpressionL="${y}" ExpressionTypeL="String" ExpressionR="89.5" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
+                                </Condition>
+                                <Conditions />
+                              </Action>
+                              <Action OrderNumber="3" VariableOp="SetString" VariableName="data.quetzSW" VariableExpression="true" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Variable">
+                                <Condition Enabled="true" Grouping="And">
+                                  <ConditionSingle Enabled="true" ExpressionL="${x}" ExpressionTypeL="String" ExpressionR="89.5" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
+                                  <ConditionSingle Enabled="true" ExpressionL="${y}" ExpressionTypeL="String" ExpressionR="110.5" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
+                                </Condition>
+                                <Conditions />
+                              </Action>
+                              <Action OrderNumber="4" VariableOp="SetString" VariableName="data.quetzSE" VariableExpression="true" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Variable">
+                                <Condition Enabled="true" Grouping="And">
+                                  <ConditionSingle Enabled="true" ExpressionL="${x}" ExpressionTypeL="String" ExpressionR="110.5" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
+                                  <ConditionSingle Enabled="true" ExpressionL="${y}" ExpressionTypeL="String" ExpressionR="110.5" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
+                                </Condition>
+                                <Conditions />
+                              </Action>
+                            </Actions>
+                            <Condition Enabled="false" Grouping="Or" />
+                          </Trigger>
+                        </Triggers>
+                      </Folder>
+                      <Folder Id="8eb72edc-8652-41a0-87ab-9664f368a4a1" Name="Combo" Enabled="true">
+                        <Folders />
+                        <Triggers>
+                          <Trigger Enabled="true" Name="Adikia" Id="34d301f9-4490-4726-a73e-9955a003ca83" RegularExpression="^.{29}14:(?&lt;sourceID&gt;(?:[^:]*)):(?&lt;source&gt;(?:[^:]*)):67F1:">
+                            <Actions>
+                              <Action OrderNumber="1" TextAuraEffect="Bold" TextAuraFontSize="24" TextAuraForeground="#FFBB00" TextAuraOutline="Black" TextAuraName="adikiaPythons" TextAuraExpression="SAFE: First Row" TextAuraXIniExpression="0" TextAuraYIniExpression="${_screenheight}/2" TextAuraWIniExpression="${_screenwidth}" TextAuraHIniExpression="42" TextAuraOIniExpression="100" TextAuraTTLTickExpression="3-${_since}" TextAuraUseOutline="True" TextAuraFontName="Arial Narrow" ActionType="TextAura">
+                                <Condition Enabled="true" Grouping="Or">
+                                  <ConditionSingle Enabled="true" ExpressionL="${_ffxiventity[${lvar:data.storedPythons[1]}].y}" ExpressionTypeL="Numeric" ExpressionR="115.5" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
+                                  <ConditionSingle Enabled="true" ExpressionL="${_ffxiventity[${lvar:data.storedPythons[1]}].y}" ExpressionTypeL="Numeric" ExpressionR="94.5" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
+                                </Condition>
+                              </Action>
+                              <Action OrderNumber="2" TextAuraEffect="Bold" TextAuraFontSize="24" TextAuraForeground="#FFBB00" TextAuraOutline="Black" TextAuraName="adikiaPythons" TextAuraExpression="SAFE: Second Row" TextAuraXIniExpression="0" TextAuraYIniExpression="${_screenheight}/2" TextAuraWIniExpression="${_screenwidth}" TextAuraHIniExpression="42" TextAuraOIniExpression="100" TextAuraTTLTickExpression="3-${_since}" TextAuraUseOutline="True" TextAuraFontName="Arial Narrow" ActionType="TextAura">
+                                <Condition Enabled="true" Grouping="Or">
+                                  <ConditionSingle Enabled="true" ExpressionL="${_ffxiventity[${lvar:data.storedPythons[1]}].y}" ExpressionTypeL="Numeric" ExpressionR="105.5" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
+                                  <ConditionSingle Enabled="true" ExpressionL="${_ffxiventity[${lvar:data.storedPythons[1]}].y}" ExpressionTypeL="Numeric" ExpressionR="84.5" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
+                                </Condition>
+                              </Action>
+                            </Actions>
+                            <Condition Enabled="true" Grouping="Or">
+                              <ConditionSingle Enabled="true" ExpressionL="${elvar:data.storedPythons}" ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
+                            </Condition>
+                          </Trigger>
+                          <Trigger Enabled="true" Name="Astral Flow" Id="f193b983-7ddd-4cbe-81ca-aa78f436f7ce" RegularExpression="^.{29}14:(?&lt;sourceID&gt;(?:[^:]*)):(?&lt;source&gt;(?:[^:]*)):(?&lt;ID&gt;666[23]):[^:]*:[^:]*:[^:]*:(?&lt;duration&gt;(?:[^:]*)):">
+                            <Actions>
+                              <Action OrderNumber="1" TextAuraEffect="Bold" TextAuraFontSize="24" TextAuraForeground="#FFBB00" TextAuraOutline="Black" TextAuraName="pythonSafeZone" TextAuraExpression="SAFE: Even Columns" TextAuraXIniExpression="0" TextAuraYIniExpression="${_screenheight}/2" TextAuraWIniExpression="${_screenwidth}" TextAuraHIniExpression="42" TextAuraOIniExpression="100" TextAuraTTLTickExpression="${duration}-${_since}" TextAuraUseOutline="True" TextAuraFontName="Arial" ActionType="TextAura">
+                                <Condition Enabled="true" Grouping="Or">
+                                  <ConditionGroup Enabled="true" Grouping="And">
+                                    <ConditionSingle Enabled="true" ExpressionL="${var:data.pythonLine}" ExpressionTypeL="String" ExpressionR="vertical" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
+                                    <ConditionGroup Enabled="true" Grouping="Or">
+                                      <ConditionSingle Enabled="true" ExpressionL="${_ffxiventity[${lvar:data.storedPythons[1]}].y}" ExpressionTypeL="Numeric" ExpressionR="84.5" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
+                                      <ConditionSingle Enabled="true" ExpressionL="${_ffxiventity[${lvar:data.storedPythons[1]}].y}" ExpressionTypeL="Numeric" ExpressionR="105.5" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
+                                    </ConditionGroup>
+                                    <ConditionSingle Enabled="true" ExpressionL="${ID}" ExpressionTypeL="String" ExpressionR="6663" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
+                                  </ConditionGroup>
+                                  <ConditionGroup Enabled="true" Grouping="And">
+                                    <ConditionSingle Enabled="true" ExpressionL="${var:data.pythonLine}" ExpressionTypeL="String" ExpressionR="vertical" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
+                                    <ConditionGroup Enabled="true" Grouping="Or">
+                                      <ConditionSingle Enabled="true" ExpressionL="${_ffxiventity[${lvar:data.storedPythons[1]}].y}" ExpressionTypeL="Numeric" ExpressionR="94.5" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
+                                      <ConditionSingle Enabled="true" ExpressionL="${_ffxiventity[${lvar:data.storedPythons[1]}].y}" ExpressionTypeL="Numeric" ExpressionR="115.5" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
+                                    </ConditionGroup>
+                                    <ConditionSingle Enabled="true" ExpressionL="${ID}" ExpressionTypeL="String" ExpressionR="6662" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
+                                  </ConditionGroup>
+                                </Condition>
+                              </Action>
+                              <Action OrderNumber="2" TextAuraEffect="Bold" TextAuraFontSize="24" TextAuraForeground="#FFBB00" TextAuraOutline="Black" TextAuraName="pythonSafeZone" TextAuraExpression="SAFE: Odd Columns" TextAuraXIniExpression="0" TextAuraYIniExpression="${_screenheight}/2" TextAuraWIniExpression="${_screenwidth}" TextAuraHIniExpression="42" TextAuraOIniExpression="100" TextAuraTTLTickExpression="${duration}-${_since}" TextAuraUseOutline="True" TextAuraFontName="Arial" ActionType="TextAura">
+                                <Condition Enabled="true" Grouping="Or">
+                                  <ConditionGroup Enabled="true" Grouping="And">
+                                    <ConditionSingle Enabled="true" ExpressionL="${var:data.pythonLine}" ExpressionTypeL="String" ExpressionR="vertical" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
+                                    <ConditionSingle Enabled="true" ExpressionL="${ID}" ExpressionTypeL="String" ExpressionR="6663" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
+                                    <ConditionGroup Enabled="true" Grouping="Or">
+                                      <ConditionSingle Enabled="true" ExpressionL="${_ffxiventity[${lvar:data.storedPythons[1]}].y}" ExpressionTypeL="Numeric" ExpressionR="94.5" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
+                                      <ConditionSingle Enabled="true" ExpressionL="${_ffxiventity[${lvar:data.storedPythons[1]}].y}" ExpressionTypeL="Numeric" ExpressionR="115.5" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
+                                    </ConditionGroup>
+                                  </ConditionGroup>
+                                  <ConditionGroup Enabled="true" Grouping="And">
+                                    <ConditionSingle Enabled="true" ExpressionL="${var:data.pythonLine}" ExpressionTypeL="String" ExpressionR="vertical" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
+                                    <ConditionSingle Enabled="true" ExpressionL="${ID}" ExpressionTypeL="String" ExpressionR="6662" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
+                                    <ConditionGroup Enabled="true" Grouping="Or">
+                                      <ConditionSingle Enabled="true" ExpressionL="${_ffxiventity[${lvar:data.storedPythons[1]}].y}" ExpressionTypeL="Numeric" ExpressionR="84.5" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
+                                      <ConditionSingle Enabled="true" ExpressionL="${_ffxiventity[${lvar:data.storedPythons[1]}].y}" ExpressionTypeL="Numeric" ExpressionR="105.5" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
+                                    </ConditionGroup>
+                                  </ConditionGroup>
+                                </Condition>
+                              </Action>
+                              <Action OrderNumber="3" TextAuraEffect="Bold" TextAuraFontSize="24" TextAuraForeground="#FFBB00" TextAuraOutline="Black" TextAuraName="pythonSafeZone" TextAuraExpression="SAFE: Even Rows" TextAuraXIniExpression="0" TextAuraYIniExpression="${_screenheight}/2" TextAuraWIniExpression="${_screenwidth}" TextAuraHIniExpression="42" TextAuraOIniExpression="100" TextAuraTTLTickExpression="${duration}-${_since}" TextAuraUseOutline="True" TextAuraFontName="Arial" ActionType="TextAura">
+                                <Condition Enabled="true" Grouping="Or">
+                                  <ConditionGroup Enabled="true" Grouping="And">
+                                    <ConditionSingle Enabled="true" ExpressionL="${var:data.pythonLine}" ExpressionTypeL="String" ExpressionR="horizontal" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
+                                    <ConditionSingle Enabled="true" ExpressionL="${ID}" ExpressionTypeL="String" ExpressionR="6663" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
+                                    <ConditionGroup Enabled="true" Grouping="Or">
+                                      <ConditionSingle Enabled="true" ExpressionL="${_ffxiventity[${lvar:data.storedPythons[1]}].x}" ExpressionTypeL="Numeric" ExpressionR="94.5" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
+                                      <ConditionSingle Enabled="true" ExpressionL="${_ffxiventity[${lvar:data.storedPythons[1]}].x}" ExpressionTypeL="Numeric" ExpressionR="115.5" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
+                                    </ConditionGroup>
+                                  </ConditionGroup>
+                                  <ConditionGroup Enabled="true" Grouping="And">
+                                    <ConditionSingle Enabled="true" ExpressionL="${var:data.pythonLine}" ExpressionTypeL="String" ExpressionR="horizontal" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
+                                    <ConditionSingle Enabled="true" ExpressionL="${ID}" ExpressionTypeL="String" ExpressionR="6662" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
+                                    <ConditionGroup Enabled="true" Grouping="Or">
+                                      <ConditionSingle Enabled="true" ExpressionL="${_ffxiventity[${lvar:data.storedPythons[1]}].x}" ExpressionTypeL="Numeric" ExpressionR="84.5" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
+                                      <ConditionSingle Enabled="true" ExpressionL="${_ffxiventity[${lvar:data.storedPythons[1]}].x}" ExpressionTypeL="Numeric" ExpressionR="105.5" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
+                                    </ConditionGroup>
+                                  </ConditionGroup>
+                                </Condition>
+                              </Action>
+                              <Action OrderNumber="4" TextAuraEffect="Bold" TextAuraFontSize="24" TextAuraForeground="#FFBB00" TextAuraOutline="Black" TextAuraName="pythonSafeZone" TextAuraExpression="SAFE: Odd Rows" TextAuraXIniExpression="0" TextAuraYIniExpression="${_screenheight}/2" TextAuraWIniExpression="${_screenwidth}" TextAuraHIniExpression="42" TextAuraOIniExpression="100" TextAuraTTLTickExpression="${duration}-${_since}" TextAuraUseOutline="True" TextAuraFontName="Arial" ActionType="TextAura">
+                                <Condition Enabled="true" Grouping="Or">
+                                  <ConditionGroup Enabled="true" Grouping="And">
+                                    <ConditionSingle Enabled="true" ExpressionL="${var:data.pythonLine}" ExpressionTypeL="String" ExpressionR="horizontal" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
+                                    <ConditionSingle Enabled="true" ExpressionL="${ID}" ExpressionTypeL="String" ExpressionR="6663" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
+                                    <ConditionGroup Enabled="true" Grouping="Or">
+                                      <ConditionSingle Enabled="true" ExpressionL="${_ffxiventity[${lvar:data.storedPythons[1]}].x}" ExpressionTypeL="Numeric" ExpressionR="84.5" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
+                                      <ConditionSingle Enabled="true" ExpressionL="${_ffxiventity[${lvar:data.storedPythons[1]}].x}" ExpressionTypeL="Numeric" ExpressionR="105.5" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
+                                    </ConditionGroup>
+                                  </ConditionGroup>
+                                  <ConditionGroup Enabled="true" Grouping="And">
+                                    <ConditionSingle Enabled="true" ExpressionL="${var:data.pythonLine}" ExpressionTypeL="String" ExpressionR="horizontal" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
+                                    <ConditionSingle Enabled="true" ExpressionL="${ID}" ExpressionTypeL="String" ExpressionR="6662" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
+                                    <ConditionGroup Enabled="true" Grouping="Or">
+                                      <ConditionSingle Enabled="true" ExpressionL="${_ffxiventity[${lvar:data.storedPythons[1]}].x}" ExpressionTypeL="Numeric" ExpressionR="94.5" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
+                                      <ConditionSingle Enabled="true" ExpressionL="${_ffxiventity[${lvar:data.storedPythons[1]}].x}" ExpressionTypeL="Numeric" ExpressionR="115.5" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
+                                    </ConditionGroup>
+                                  </ConditionGroup>
+                                </Condition>
+                              </Action>
+                            </Actions>
+                            <Condition Enabled="true" Grouping="Or">
+                              <ConditionSingle Enabled="true" ExpressionL="${elvar:data.storedPythons}" ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
+                            </Condition>
+                          </Trigger>
+                          <Trigger Enabled="true" Name="Algedon" Id="02e06924-0bf6-41f8-bff1-695951902b0a" RegularExpression="^.{29}14:(?&lt;sourceID&gt;(?:[^:]*)):(?&lt;source&gt;(?:[^:]*)):(?&lt;ID&gt;67E[CD]):[^:]*:[^:]*:[^:]*:(?&lt;duration&gt;(?:[^:]*)):">
+                            <Actions>
+                              <Action OrderNumber="1" TextAuraEffect="Bold" TextAuraFontSize="32.25" TextAuraForeground="Red" TextAuraOutline="Black" TextAuraName="quetzAlgedon" TextAuraExpression="BOTTOM LEFT" TextAuraXIniExpression="0" TextAuraYIniExpression="(${_screenheight}/2)-50" TextAuraWIniExpression="${_screenwidth}" TextAuraHIniExpression="50" TextAuraOIniExpression="100" TextAuraOTickExpression="50 + (cos(${_sincems}/100)*50)" TextAuraTTLTickExpression="${duration}-${_since}" TextAuraUseOutline="True" TextAuraFontName="Arial" ActionType="TextAura">
+                                <Condition Enabled="true" Grouping="And">
+                                  <ConditionSingle Enabled="true" ExpressionL="${ID}" ExpressionTypeL="String" ExpressionR="67EC" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
+                                  <ConditionSingle Enabled="true" ExpressionL="${evar:data.quetzSW}" ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
+                                </Condition>
+                              </Action>
+                              <Action OrderNumber="2" TextAuraEffect="Bold" TextAuraFontSize="32.25" TextAuraForeground="Red" TextAuraOutline="Black" TextAuraName="quetzAlgedon" TextAuraExpression="TOP RIGHT" TextAuraXIniExpression="0" TextAuraYIniExpression="(${_screenheight}/2)-50" TextAuraWIniExpression="${_screenwidth}" TextAuraHIniExpression="50" TextAuraOIniExpression="100" TextAuraOTickExpression="50 + (cos(${_sincems}/100)*50)" TextAuraTTLTickExpression="${duration}-${_since}" TextAuraUseOutline="True" TextAuraFontName="Arial" ActionType="TextAura">
+                                <Condition Enabled="true" Grouping="And">
+                                  <ConditionSingle Enabled="true" ExpressionL="${ID}" ExpressionTypeL="String" ExpressionR="67EC" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
+                                  <ConditionSingle Enabled="true" ExpressionL="${evar:data.quetzNE}" ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
+                                </Condition>
+                              </Action>
+                              <Action OrderNumber="3" TextAuraEffect="Bold" TextAuraFontSize="32.25" TextAuraForeground="Red" TextAuraOutline="Black" TextAuraName="quetzAlgedon" TextAuraExpression="TOP LEFT" TextAuraXIniExpression="0" TextAuraYIniExpression="(${_screenheight}/2)-50" TextAuraWIniExpression="${_screenwidth}" TextAuraHIniExpression="50" TextAuraOIniExpression="100" TextAuraOTickExpression="50 + (cos(${_sincems}/100)*50)" TextAuraTTLTickExpression="${duration}-${_since}" TextAuraUseOutline="True" TextAuraFontName="Arial" ActionType="TextAura">
+                                <Condition Enabled="true" Grouping="And">
+                                  <ConditionSingle Enabled="true" ExpressionL="${ID}" ExpressionTypeL="String" ExpressionR="67ED" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
+                                  <ConditionSingle Enabled="true" ExpressionL="${evar:data.quetzNW}" ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
+                                </Condition>
+                              </Action>
+                              <Action OrderNumber="4" TextAuraEffect="Bold" TextAuraFontSize="32.25" TextAuraForeground="Red" TextAuraOutline="Black" TextAuraName="quetzAlgedon" TextAuraExpression="BOTTOM RIGHT" TextAuraXIniExpression="0" TextAuraYIniExpression="(${_screenheight}/2)-50" TextAuraWIniExpression="${_screenwidth}" TextAuraHIniExpression="50" TextAuraOIniExpression="100" TextAuraOTickExpression="50 + (cos(${_sincems}/100)*50)" TextAuraTTLTickExpression="${duration}-${_since}" TextAuraUseOutline="True" TextAuraFontName="Arial" ActionType="TextAura">
+                                <Condition Enabled="true" Grouping="And">
+                                  <ConditionSingle Enabled="true" ExpressionL="${ID}" ExpressionTypeL="String" ExpressionR="67ED" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
+                                  <ConditionSingle Enabled="true" ExpressionL="${evar:data.quetzSE}" ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
+                                </Condition>
+                              </Action>
+                            </Actions>
+                            <Condition Enabled="true" Grouping="Or">
+                              <ConditionSingle Enabled="true" ExpressionL="${elvar:data.storedQuetzalcoatls}" ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
+                            </Condition>
+                          </Trigger>
+                        </Triggers>
+                      </Folder>
+                      <Folder Id="53d714d0-144c-4092-afed-90df9795c61f" Name="# Reset" Enabled="true">
+                        <Folders />
+                        <Triggers>
+                          <Trigger Enabled="true" Name="Keraunos Eidolon" Id="162673de-4789-4492-bb39-e10c94a08dbe" RegularExpression="\A.{14}(?:[^:]*)1[56]:[0-9A-F]{8}:Quetzalcoatl:67E1:">
+                            <Actions>
+                              <Action OrderNumber="1" ListVariableName="data.storedQuetzalcoatls" ListVariableExpression="${aID}" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="ListVariable">
+                                <Condition Enabled="false" Grouping="Or" />
+                                <Conditions />
+                              </Action>
+                              <Action OrderNumber="2" VariableOp="UnsetRegex" VariableName="^data.quetz" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Variable">
+                                <Condition Enabled="false" Grouping="Or" />
+                                <Conditions />
+                              </Action>
+                            </Actions>
+                            <Condition Enabled="false" Grouping="Or" />
+                            <Conditions />
+                          </Trigger>
+                          <Trigger Enabled="true" Name="Meteoros Eidolon" Id="518da836-dce7-4692-a560-95686eff8d77" RegularExpression="\A.{14}(?:[^:]*)1[56]:[0-9A-F]{8}:Behemoth:67E2:">
+                            <Actions>
+                              <Action OrderNumber="1" ListVariableName="data.storedBehemoths" ListVariableExpression="${aID}" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="ListVariable">
+                                <Condition Enabled="false" Grouping="Or" />
+                                <Conditions />
+                              </Action>
+                            </Actions>
+                            <Condition Enabled="false" Grouping="Or" />
+                            <Conditions />
+                          </Trigger>
+                          <Trigger Enabled="true" Name="Opheos Eidolon" Id="c6b7288f-8524-41bf-b8b1-58b66c6d663b" RegularExpression="\A.{14}(?:[^:]*)1[56]:[0-9A-F]{8}:Python:67E3:">
+                            <Actions>
+                              <Action OrderNumber="1" ListVariableName="data.storedPythons" ListVariableExpression="${aID}" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="ListVariable">
+                                <Condition Enabled="false" Grouping="Or" />
+                                <Conditions />
+                              </Action>
+                              <Action OrderNumber="2" VariableName="data.pythonLine" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Variable">
+                                <Condition Enabled="false" Grouping="Or" />
+                                <Conditions />
+                              </Action>
+                            </Actions>
+                            <Condition Enabled="false" Grouping="Or" />
+                            <Conditions />
+                          </Trigger>
+                        </Triggers>
+                      </Folder>
                     </Folders>
-                    <Triggers>
-                      <Trigger Enabled="true" Name="Astral Flow" Id="f193b983-7ddd-4cbe-81ca-aa78f436f7ce" RegularExpression="^.{29}14:(?&lt;sourceID&gt;(?:[^:]*)):(?&lt;source&gt;(?:[^:]*)):(?&lt;ID&gt;666[23]):[^:]*:[^:]*:[^:]*:(?&lt;duration&gt;(?:[^:]*)):">
-                        <Actions>
-                          <Action OrderNumber="1" TextAuraEffect="Bold" TextAuraFontSize="24" TextAuraForeground="#FFBB00" TextAuraOutline="Black" TextAuraName="pythonSafeZone" TextAuraExpression="SAFE: Even Columns" TextAuraXIniExpression="0" TextAuraYIniExpression="${_screenheight}/2" TextAuraWIniExpression="${_screenwidth}" TextAuraHIniExpression="42" TextAuraOIniExpression="100" TextAuraTTLTickExpression="${duration}-${_since}" TextAuraUseOutline="True" TextAuraFontName="Arial" ActionType="TextAura">
-                            <Condition Enabled="true" Grouping="Or">
-                              <ConditionGroup Enabled="true" Grouping="And">
-                                <ConditionSingle Enabled="true" ExpressionL="${var:data.pythonLine}" ExpressionTypeL="String" ExpressionR="vertical" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
-                                <ConditionGroup Enabled="true" Grouping="Or">
-                                  <ConditionSingle Enabled="true" ExpressionL="${_ffxiventity[${lvar:data.storedPythons[1]}].y}" ExpressionTypeL="Numeric" ExpressionR="84.5" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
-                                  <ConditionSingle Enabled="true" ExpressionL="${_ffxiventity[${lvar:data.storedPythons[1]}].y}" ExpressionTypeL="Numeric" ExpressionR="105.5" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
-                                </ConditionGroup>
-                                <ConditionSingle Enabled="true" ExpressionL="${ID}" ExpressionTypeL="String" ExpressionR="6663" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
-                              </ConditionGroup>
-                              <ConditionGroup Enabled="true" Grouping="And">
-                                <ConditionSingle Enabled="true" ExpressionL="${var:data.pythonLine}" ExpressionTypeL="String" ExpressionR="vertical" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
-                                <ConditionGroup Enabled="true" Grouping="Or">
-                                  <ConditionSingle Enabled="true" ExpressionL="${_ffxiventity[${lvar:data.storedPythons[1]}].y}" ExpressionTypeL="Numeric" ExpressionR="94.5" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
-                                  <ConditionSingle Enabled="true" ExpressionL="${_ffxiventity[${lvar:data.storedPythons[1]}].y}" ExpressionTypeL="Numeric" ExpressionR="115.5" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
-                                </ConditionGroup>
-                                <ConditionSingle Enabled="true" ExpressionL="${ID}" ExpressionTypeL="String" ExpressionR="6662" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
-                              </ConditionGroup>
-                            </Condition>
-                            <Conditions />
-                          </Action>
-                          <Action OrderNumber="2" TextAuraEffect="Bold" TextAuraFontSize="24" TextAuraForeground="#FFBB00" TextAuraOutline="Black" TextAuraName="pythonSafeZone" TextAuraExpression="SAFE: Odd Columns" TextAuraXIniExpression="0" TextAuraYIniExpression="${_screenheight}/2" TextAuraWIniExpression="${_screenwidth}" TextAuraHIniExpression="42" TextAuraOIniExpression="100" TextAuraTTLTickExpression="${duration}-${_since}" TextAuraUseOutline="True" TextAuraFontName="Arial" ActionType="TextAura">
-                            <Condition Enabled="true" Grouping="Or">
-                              <ConditionGroup Enabled="true" Grouping="And">
-                                <ConditionSingle Enabled="true" ExpressionL="${var:data.pythonLine}" ExpressionTypeL="String" ExpressionR="vertical" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
-                                <ConditionSingle Enabled="true" ExpressionL="${ID}" ExpressionTypeL="String" ExpressionR="6663" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
-                                <ConditionGroup Enabled="true" Grouping="Or">
-                                  <ConditionSingle Enabled="true" ExpressionL="${_ffxiventity[${lvar:data.storedPythons[1]}].y}" ExpressionTypeL="Numeric" ExpressionR="94.5" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
-                                  <ConditionSingle Enabled="true" ExpressionL="${_ffxiventity[${lvar:data.storedPythons[1]}].y}" ExpressionTypeL="Numeric" ExpressionR="115.5" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
-                                </ConditionGroup>
-                              </ConditionGroup>
-                              <ConditionGroup Enabled="true" Grouping="And">
-                                <ConditionSingle Enabled="true" ExpressionL="${var:data.pythonLine}" ExpressionTypeL="String" ExpressionR="vertical" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
-                                <ConditionSingle Enabled="true" ExpressionL="${ID}" ExpressionTypeL="String" ExpressionR="6662" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
-                                <ConditionGroup Enabled="true" Grouping="Or">
-                                  <ConditionSingle Enabled="true" ExpressionL="${_ffxiventity[${lvar:data.storedPythons[1]}].y}" ExpressionTypeL="Numeric" ExpressionR="84.5" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
-                                  <ConditionSingle Enabled="true" ExpressionL="${_ffxiventity[${lvar:data.storedPythons[1]}].y}" ExpressionTypeL="Numeric" ExpressionR="105.5" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
-                                </ConditionGroup>
-                              </ConditionGroup>
-                            </Condition>
-                            <Conditions />
-                          </Action>
-                          <Action OrderNumber="3" TextAuraEffect="Bold" TextAuraFontSize="24" TextAuraForeground="#FFBB00" TextAuraOutline="Black" TextAuraName="pythonSafeZone" TextAuraExpression="SAFE: Even Rows" TextAuraXIniExpression="0" TextAuraYIniExpression="${_screenheight}/2" TextAuraWIniExpression="${_screenwidth}" TextAuraHIniExpression="42" TextAuraOIniExpression="100" TextAuraTTLTickExpression="${duration}-${_since}" TextAuraUseOutline="True" TextAuraFontName="Arial" ActionType="TextAura">
-                            <Condition Enabled="true" Grouping="Or">
-                              <ConditionGroup Enabled="true" Grouping="And">
-                                <ConditionSingle Enabled="true" ExpressionL="${var:data.pythonLine}" ExpressionTypeL="String" ExpressionR="horizontal" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
-                                <ConditionSingle Enabled="true" ExpressionL="${ID}" ExpressionTypeL="String" ExpressionR="6663" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
-                                <ConditionGroup Enabled="true" Grouping="Or">
-                                  <ConditionSingle Enabled="true" ExpressionL="${_ffxiventity[${lvar:data.storedPythons[1]}].x}" ExpressionTypeL="Numeric" ExpressionR="94.5" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
-                                  <ConditionSingle Enabled="true" ExpressionL="${_ffxiventity[${lvar:data.storedPythons[1]}].x}" ExpressionTypeL="Numeric" ExpressionR="115.5" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
-                                </ConditionGroup>
-                              </ConditionGroup>
-                              <ConditionGroup Enabled="true" Grouping="And">
-                                <ConditionSingle Enabled="true" ExpressionL="${var:data.pythonLine}" ExpressionTypeL="String" ExpressionR="horizontal" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
-                                <ConditionSingle Enabled="true" ExpressionL="${ID}" ExpressionTypeL="String" ExpressionR="6662" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
-                                <ConditionGroup Enabled="true" Grouping="Or">
-                                  <ConditionSingle Enabled="true" ExpressionL="${_ffxiventity[${lvar:data.storedPythons[1]}].x}" ExpressionTypeL="Numeric" ExpressionR="84.5" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
-                                  <ConditionSingle Enabled="true" ExpressionL="${_ffxiventity[${lvar:data.storedPythons[1]}].x}" ExpressionTypeL="Numeric" ExpressionR="105.5" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
-                                </ConditionGroup>
-                              </ConditionGroup>
-                            </Condition>
-                            <Conditions />
-                          </Action>
-                          <Action OrderNumber="4" TextAuraEffect="Bold" TextAuraFontSize="24" TextAuraForeground="#FFBB00" TextAuraOutline="Black" TextAuraName="pythonSafeZone" TextAuraExpression="SAFE: Odd Rows" TextAuraXIniExpression="0" TextAuraYIniExpression="${_screenheight}/2" TextAuraWIniExpression="${_screenwidth}" TextAuraHIniExpression="42" TextAuraOIniExpression="100" TextAuraTTLTickExpression="${duration}-${_since}" TextAuraUseOutline="True" TextAuraFontName="Arial" ActionType="TextAura">
-                            <Condition Enabled="true" Grouping="Or">
-                              <ConditionGroup Enabled="true" Grouping="And">
-                                <ConditionSingle Enabled="true" ExpressionL="${var:data.pythonLine}" ExpressionTypeL="String" ExpressionR="horizontal" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
-                                <ConditionSingle Enabled="true" ExpressionL="${ID}" ExpressionTypeL="String" ExpressionR="6663" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
-                                <ConditionGroup Enabled="true" Grouping="Or">
-                                  <ConditionSingle Enabled="true" ExpressionL="${_ffxiventity[${lvar:data.storedPythons[1]}].x}" ExpressionTypeL="Numeric" ExpressionR="84.5" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
-                                  <ConditionSingle Enabled="true" ExpressionL="${_ffxiventity[${lvar:data.storedPythons[1]}].x}" ExpressionTypeL="Numeric" ExpressionR="105.5" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
-                                </ConditionGroup>
-                              </ConditionGroup>
-                              <ConditionGroup Enabled="true" Grouping="And">
-                                <ConditionSingle Enabled="true" ExpressionL="${var:data.pythonLine}" ExpressionTypeL="String" ExpressionR="horizontal" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
-                                <ConditionSingle Enabled="true" ExpressionL="${ID}" ExpressionTypeL="String" ExpressionR="6662" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
-                                <ConditionGroup Enabled="true" Grouping="Or">
-                                  <ConditionSingle Enabled="true" ExpressionL="${_ffxiventity[${lvar:data.storedPythons[1]}].x}" ExpressionTypeL="Numeric" ExpressionR="94.5" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
-                                  <ConditionSingle Enabled="true" ExpressionL="${_ffxiventity[${lvar:data.storedPythons[1]}].x}" ExpressionTypeL="Numeric" ExpressionR="115.5" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
-                                </ConditionGroup>
-                              </ConditionGroup>
-                            </Condition>
-                            <Conditions />
-                          </Action>
-                        </Actions>
-                        <Condition Enabled="true" Grouping="Or">
-                          <ConditionSingle Enabled="true" ExpressionL="${elvar:data.storedPythons}" ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
-                        </Condition>
-                      </Trigger>
-                      <Trigger Enabled="true" Name="Adikia" Id="34d301f9-4490-4726-a73e-9955a003ca83" RegularExpression="^.{29}14:(?&lt;sourceID&gt;(?:[^:]*)):(?&lt;source&gt;(?:[^:]*)):67F1:">
-                        <Actions>
-                          <Action OrderNumber="1" TextAuraEffect="Bold" TextAuraFontSize="24" TextAuraForeground="#FFBB00" TextAuraOutline="Black" TextAuraName="adikiaPythons" TextAuraExpression="SAFE: First Row" TextAuraXIniExpression="0" TextAuraYIniExpression="${_screenheight}/2" TextAuraWIniExpression="${_screenwidth}" TextAuraHIniExpression="42" TextAuraOIniExpression="100" TextAuraTTLTickExpression="3-${_since}" TextAuraUseOutline="True" TextAuraFontName="Arial Narrow" ActionType="TextAura">
-                            <Condition Enabled="true" Grouping="Or">
-                              <ConditionSingle Enabled="true" ExpressionL="${_ffxiventity[${lvar:data.storedPythons[1]}].y}" ExpressionTypeL="Numeric" ExpressionR="115.5" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
-                              <ConditionSingle Enabled="true" ExpressionL="${_ffxiventity[${lvar:data.storedPythons[1]}].y}" ExpressionTypeL="Numeric" ExpressionR="94.5" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
-                            </Condition>
-                            <Conditions />
-                          </Action>
-                          <Action OrderNumber="2" TextAuraEffect="Bold" TextAuraFontSize="24" TextAuraForeground="#FFBB00" TextAuraOutline="Black" TextAuraName="adikiaPythons" TextAuraExpression="SAFE: Second Row" TextAuraXIniExpression="0" TextAuraYIniExpression="${_screenheight}/2" TextAuraWIniExpression="${_screenwidth}" TextAuraHIniExpression="42" TextAuraOIniExpression="100" TextAuraTTLTickExpression="3-${_since}" TextAuraUseOutline="True" TextAuraFontName="Arial Narrow" ActionType="TextAura">
-                            <Condition Enabled="true" Grouping="Or">
-                              <ConditionSingle Enabled="true" ExpressionL="${_ffxiventity[${lvar:data.storedPythons[1]}].y}" ExpressionTypeL="Numeric" ExpressionR="105.5" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
-                              <ConditionSingle Enabled="true" ExpressionL="${_ffxiventity[${lvar:data.storedPythons[1]}].y}" ExpressionTypeL="Numeric" ExpressionR="84.5" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
-                            </Condition>
-                            <Conditions />
-                          </Action>
-                        </Actions>
-                        <Condition Enabled="true" Grouping="Or">
-                          <ConditionSingle Enabled="true" ExpressionL="${elvar:data.storedPythons}" ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
-                        </Condition>
-                      </Trigger>
-                      <Trigger Enabled="true" Name="Pythons" Id="c18935ca-c6e3-476c-924c-5abd9c5e917f" RegularExpression="\A.{28}03:(?&lt;aID&gt;(?:[^:]*)):(?&lt;combatant&gt;(?:[^:]*)):[^:]*:[^:]*:[^:]*:[^:]*:[^:]*:[^:]*:14387:[^:]*:[^:]*:[^:]*:[^:]*:[^:]*:[^:]*:(?&lt;x&gt;(?:[^:]*)):(?&lt;y&gt;(?:[^:]*)):">
-                        <Actions>
-                          <Action OrderNumber="1" VariableOp="SetString" VariableName="data.pythonLine" VariableExpression="horizontal" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Variable">
-                            <Condition Enabled="true" Grouping="And">
-                              <ConditionSingle Enabled="true" ExpressionL="${x}" ExpressionTypeL="Numeric" ExpressionR="120" ExpressionTypeR="Numeric" ConditionType="NumericLess" />
-                              <ConditionSingle Enabled="true" ExpressionL="${x}" ExpressionTypeL="Numeric" ExpressionR="80" ExpressionTypeR="Numeric" ConditionType="NumericGreater" />
-                            </Condition>
-                            <Conditions />
-                          </Action>
-                          <Action OrderNumber="2" VariableOp="SetString" VariableName="data.pythonLine" VariableExpression="vertical" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Variable">
-                            <Condition Enabled="true" Grouping="And">
-                              <ConditionSingle Enabled="true" ExpressionL="${y}" ExpressionTypeL="Numeric" ExpressionR="120" ExpressionTypeR="Numeric" ConditionType="NumericLess" />
-                              <ConditionSingle Enabled="true" ExpressionL="${y}" ExpressionTypeL="Numeric" ExpressionR="80" ExpressionTypeR="Numeric" ConditionType="NumericGreater" />
-                            </Condition>
-                            <Conditions />
-                          </Action>
-                        </Actions>
-                        <Condition Enabled="false" Grouping="Or" />
-                      </Trigger>
-                    </Triggers>
+                    <Triggers />
                   </Folder>
                 </Folders>
                 <Triggers>
-                  <Trigger Enabled="true" Sequential="True" Name="Paradeigma" Id="e98c485c-4ea4-4749-9d74-5d570acbaf98" RegularExpression="^.{29}14:(?&lt;sourceID&gt;(?:[^:]*)):(?&lt;source&gt;(?:[^:]*)):67BF:">
-                    <Actions>
-                      <Action OrderNumber="1" VariableOp="SetNumeric" VariableName="data.paradeigmaCounter" VariableExpression="${var:data.paradeigmaCounter}+1" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Variable">
-                        <Condition Enabled="false" Grouping="Or" />
-                      </Action>
-                      <Action OrderNumber="2" VariableOp="SetNumeric" VariableName="const.x1" VariableExpression="${_ffxiventity[${lvar:data.storedQuetzalcoatls[3]}].x}" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Variable">
-                        <Condition Enabled="false" Grouping="Or" />
-                      </Action>
-                      <Action OrderNumber="3" VariableOp="SetNumeric" VariableName="const.y1" VariableExpression="${_ffxiventity[${lvar:data.storedQuetzalcoatls[3]}].y}" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Variable">
-                        <Condition Enabled="false" Grouping="Or" />
-                      </Action>
-                      <Action OrderNumber="4" VariableOp="SetNumeric" VariableName="const.x2" VariableExpression="${_ffxiventity[${lvar:data.storedQuetzalcoatls[4]}].x}" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Variable">
-                        <Condition Enabled="false" Grouping="Or" />
-                      </Action>
-                      <Action OrderNumber="5" VariableOp="SetNumeric" VariableName="const.y2" VariableExpression="${_ffxiventity[${lvar:data.storedQuetzalcoatls[4]}].y}" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Variable">
-                        <Condition Enabled="false" Grouping="Or" />
-                      </Action>
-                    </Actions>
-                    <Condition Enabled="false" Grouping="Or" />
-                  </Trigger>
                   <Trigger Enabled="true" Name="Styx" Id="3b0b12bf-d7a0-41c1-873b-7f966e92cc51" RegularExpression="^.{29}14:(?&lt;sourceID&gt;(?:[^:]*)):(?&lt;source&gt;(?:[^:]*)):67F3:">
                     <Actions>
                       <Action OrderNumber="1" UseTTSTextExpression="Stack" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="UseTTS">
@@ -22284,19 +22375,16 @@
                     <Actions>
                       <Action OrderNumber="1" PlaySoundFileExpression="https://raw.githubusercontent.com/lexxiesia/xiv_triggernometry/master/resources/wav/mvc3_danger.wav" PlaySoundVolumeExpression="50" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="PlaySound">
                         <Condition Enabled="false" Grouping="Or" />
-                        <Conditions />
                       </Action>
                       <Action OrderNumber="2" TextAuraEffect="Bold" TextAuraFontSize="32.25" TextAuraForeground="Red" TextAuraOutline="Black" TextAuraName="astralFlow" TextAuraExpression="CW Rotation" TextAuraXIniExpression="0" TextAuraYIniExpression="(${_screenheight}/2)-50" TextAuraWIniExpression="${_screenwidth}" TextAuraHIniExpression="50" TextAuraOIniExpression="100" TextAuraOTickExpression="50 + (cos(${_sincems}/100)*50)" TextAuraTTLTickExpression="${duration}-${_since}" TextAuraUseOutline="True" TextAuraFontName="Arial" ActionType="TextAura">
                         <Condition Enabled="true" Grouping="Or">
                           <ConditionSingle Enabled="true" ExpressionL="${ID}" ExpressionTypeL="String" ExpressionR="6662" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
                         </Condition>
-                        <Conditions />
                       </Action>
                       <Action OrderNumber="3" TextAuraEffect="Bold" TextAuraFontSize="32.25" TextAuraForeground="Red" TextAuraOutline="Black" TextAuraName="astralFlow" TextAuraExpression="CCW Rotation" TextAuraXIniExpression="0" TextAuraYIniExpression="(${_screenheight}/2)-50" TextAuraWIniExpression="${_screenwidth}" TextAuraHIniExpression="50" TextAuraOIniExpression="100" TextAuraOTickExpression="50 + (cos(${_sincems}/100)*50)" TextAuraTTLTickExpression="${duration}-${_since}" TextAuraUseOutline="True" TextAuraFontName="Arial" ActionType="TextAura">
                         <Condition Enabled="true" Grouping="Or">
                           <ConditionSingle Enabled="true" ExpressionL="${ID}" ExpressionTypeL="String" ExpressionR="6663" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
                         </Condition>
-                        <Conditions />
                       </Action>
                     </Actions>
                     <Condition Enabled="false" Grouping="Or" />
@@ -22314,19 +22402,16 @@
                       <Action OrderNumber="1" ListVariableName="myDebuffs" VariableOp="UnsetRegex" VariableName="^data" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Variable">
                         <Condition Enabled="false" Grouping="Or" />
                       </Action>
-                      <Action OrderNumber="2" ListVariableName="myDebuffs" VariableOp="UnsetRegex" VariableName="^const" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Variable">
+                      <Action OrderNumber="2" ListVariableOp="UnsetRegex" ListVariableName="^data" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="ListVariable">
                         <Condition Enabled="false" Grouping="Or" />
                       </Action>
-                      <Action OrderNumber="3" ListVariableOp="UnsetRegex" ListVariableName="^data" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="ListVariable">
+                      <Action OrderNumber="3" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" TriggerOp="CancelAllTrigger" ActionType="Trigger">
                         <Condition Enabled="false" Grouping="Or" />
                       </Action>
-                      <Action OrderNumber="4" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" TriggerOp="CancelAllTrigger" ActionType="Trigger">
+                      <Action OrderNumber="4" TextAuraOp="DeactivateAllAura" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="TextAura">
                         <Condition Enabled="false" Grouping="Or" />
                       </Action>
-                      <Action OrderNumber="5" TextAuraOp="DeactivateAllAura" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="TextAura">
-                        <Condition Enabled="false" Grouping="Or" />
-                      </Action>
-                      <Action OrderNumber="6" AuraOp="DeactivateAllAura" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Aura">
+                      <Action OrderNumber="5" AuraOp="DeactivateAllAura" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Aura">
                         <Condition Enabled="false" Grouping="Or" />
                       </Action>
                     </Actions>
@@ -22353,7 +22438,7 @@
                   </Trigger>
                 </Triggers>
               </Folder>
-              <Folder FFXIVZoneFilterEnabled="True" FfxivZoneFilterRegularExpression="^996$" Id="70b8fcb7-d650-4c55-bde8-efad688572a8" Name="89EX" Enabled="true">
+              <Folder FFXIVZoneFilterEnabled="True" FfxivZoneFilterRegularExpression="^996$" Id="70b8fcb7-d650-4c55-bde8-efad688572a8" Name="Hydaelyn" Enabled="true">
                 <Folders>
                   <Folder FFXIVJobFilterEnabled="True" FFXIVJobFilter="17263755264" Id="7cb845b9-3e41-4540-86c9-5dbdc3eabe4a" Name="Caster" Enabled="true">
                     <Folders />
@@ -22954,7 +23039,7 @@
                   </Trigger>
                 </Triggers>
               </Folder>
-              <Folder Id="94cb67de-f4c6-41cf-b948-4e31122d28da" Name="90EX" Enabled="true">
+              <Folder Id="94cb67de-f4c6-41cf-b948-4e31122d28da" Name="Endsinger" Enabled="true">
                 <Folders />
                 <Triggers />
               </Folder>
@@ -31458,7 +31543,6 @@
                     <Actions>
                       <Action OrderNumber="1" PlaySoundFileExpression="https://raw.githubusercontent.com/lexxiesia/xiv_triggernometry/master/resources/wav/ohshitthebridge.mp3" PlaySoundVolumeExpression="50" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="PlaySound" ExecutionDelayExpression="2500">
                         <Condition Enabled="false" Grouping="Or" />
-                        <Conditions />
                       </Action>
                     </Actions>
                     <Condition Enabled="true" Grouping="Or">
@@ -31489,6 +31573,30 @@
                     <Condition Enabled="true" Grouping="And">
                       <ConditionSingle Enabled="true" ExpressionL="${_ffxivparty[${player}].inparty}" ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
                     </Condition>
+                  </Trigger>
+                </Triggers>
+              </Folder>
+              <Folder Id="c92f0d6c-dc21-4bba-b03d-d8a094280c95" Name="Summoner" Enabled="true">
+                <Folders />
+                <Triggers>
+                  <Trigger Enabled="true" Name="Teraflare - Cast" Id="6297e923-5cfb-43b2-af07-85bc0a23257b" RegularExpression="^.{29}14:(?&lt;sourceID&gt;(?:[^:]*)):(?&lt;player&gt;(?:[^:]*)):1096:" PeriodRefire="Deny" RefirePeriodExpression="5000">
+                    <Actions>
+                      <Action OrderNumber="1" PlaySoundFileExpression="https://raw.githubusercontent.com/lexxiesia/xiv_triggernometry/master/resources/wav/Donald_Flare.mp3" PlaySoundVolumeExpression="50" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="PlaySound">
+                        <Condition Enabled="false" Grouping="Or" />
+                        <Conditions />
+                      </Action>
+                    </Actions>
+                    <Condition Enabled="true" Grouping="And">
+                      <ConditionSingle Enabled="true" ExpressionL="${_ffxivparty[${player}].inparty}" ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
+                    </Condition>
+                    <Conditions />
+                  </Trigger>
+                  <Trigger Enabled="true" Name="Teraflare - Hit" Id="c5311112-6913-4502-9239-b83b46152c45" RegularExpression="\A.{14}(?:[^:]*)1[56]:[0-9A-F]{8}:(?&lt;player&gt;(?&lt;name&gt;[\w-']+) [\w-']+):1096:" PeriodRefire="Deny" RefirePeriodExpression="10000">
+                    <Actions />
+                    <Condition Enabled="true" Grouping="And">
+                      <ConditionSingle Enabled="true" ExpressionL="${_ffxivparty[${player}].inparty}" ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
+                    </Condition>
+                    <Conditions />
                   </Trigger>
                 </Triggers>
               </Folder>

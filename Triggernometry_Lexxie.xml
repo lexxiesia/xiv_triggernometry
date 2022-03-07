@@ -14796,12 +14796,11 @@
                             <Actions>
                               <Action OrderNumber="1" PlaySoundFileExpression="https://raw.githubusercontent.com/lexxiesia/xiv_triggernometry/master/resources/wav/Boop.wav" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="PlaySound">
                                 <Condition Enabled="false" Grouping="Or" />
+                                <Conditions />
                               </Action>
                             </Actions>
                             <Condition Enabled="true" Grouping="Or">
-                              <ConditionSingle Enabled="true" ExpressionL="${var:dataAkanthaiAct}" ExpressionTypeL="String" ExpressionR="1" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
-                              <ConditionSingle Enabled="true" ExpressionL="${var:dataAkanthaiAct}" ExpressionTypeL="String" ExpressionR="3" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
-                              <ConditionSingle Enabled="true" ExpressionL="${var:dataAkanthaiAct}" ExpressionTypeL="String" ExpressionR="4" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
+                              <ConditionSingle Enabled="true" ExpressionL="${var:dataAkanthaiAct}" ExpressionTypeL="String" ExpressionR="curtain" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
                             </Condition>
                           </Trigger>
                         </Triggers>
@@ -15214,10 +15213,11 @@
                     </Actions>
                     <Condition Enabled="false" Grouping="Or" />
                   </Trigger>
-                  <Trigger Enabled="true" Name="Kothornos Kick" Id="339a86a2-9c45-4f72-bd40-5391bcda36be" RegularExpression="^.{29}14:(?&lt;sourceID&gt;(?:[^:]*)):(?&lt;source&gt;(?:[^:]*)):6A23:">
+                  <Trigger Enabled="true" Name="Kothornos Kick" Id="339a86a2-9c45-4f72-bd40-5391bcda36be" RegularExpression="^.{29}14:(?&lt;sourceID&gt;(?:[^:]*)):(?&lt;source&gt;(?:[^:]*)):6A22:">
                     <Actions>
                       <Action OrderNumber="1" PlaySoundFileExpression="https://raw.githubusercontent.com/lexxiesia/xiv_triggernometry/master/resources/wav/arthars/superjump.wav" PlaySoundVolumeExpression="50" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="PlaySound">
                         <Condition Enabled="false" Grouping="Or" />
+                        <Conditions />
                       </Action>
                     </Actions>
                     <Condition Enabled="false" Grouping="Or">
@@ -29974,19 +29974,27 @@
           <Folder FFXIVJobFilterEnabled="True" FFXIVJobFilter="70868271104" Id="44b7cf3a-9b60-45ec-b255-97ca888d7ce6" Name="Tanks" Enabled="true">
             <Folders />
             <Triggers>
-              <Trigger Enabled="true" Name="Provoke" Id="4bc02344-96b0-4228-aafb-a3a09d9d2bce" RegularExpression="\A.{14}(?:[^:]*)15:[^:]*:(?&lt;player&gt;(?&lt;name&gt;[\w\-']+) [\w\-']+):1D6D:[^:]*:[^:]*:(?&lt;target&gt;(?:[^:]*)):">
+              <Trigger Enabled="true" Name="Shirk" Id="4bc02344-96b0-4228-aafb-a3a09d9d2bce" RegularExpression="\A.{14}(?:[^:]*)15:[^:]*:(?&lt;player&gt;(?&lt;name&gt;[\w\-']+) [\w\-']+):1D71:[^:]*:[^:]*:(?&lt;target&gt;(?:[^:]*)):">
                 <Actions>
-                  <Action OrderNumber="1" AuraImageMode="StretchImage" AuraName="skillIcon" AuraImage="https://xivapi.com/i/000000/000803.png" AuraXIniExpression="(${_screenwidth}/2)-30" AuraYIniExpression="(${_screenheight}/2)+80" AuraWIniExpression="20" AuraHIniExpression="20" AuraOIniExpression="100" AuraTTLTickExpression="3-${_since}" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Aura" Description="Skill Icon" DescriptionOverride="True">
+                  <Action OrderNumber="1" AuraImageMode="StretchImage" AuraName="skillIconL" AuraImage="https://xivapi.com/i/000000/000810.png" AuraXIniExpression="(${_screenwidth}/2)-150" AuraYIniExpression="(${_screenheight}/3)+5" AuraWIniExpression="30" AuraHIniExpression="30" AuraOIniExpression="100" AuraXTickExpression="((${_screenwidth}/2)-150)-(cos(${_sincems}/150)*25)" AuraTTLTickExpression="1-${_since}" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Aura" Description="Skill Icon">
                     <Condition Enabled="false" Grouping="Or" />
                     <Conditions />
                   </Action>
-                  <Action OrderNumber="2" TextAuraAlignment="MiddleLeft" TextAuraEffect="Bold" TextAuraFontSize="12" TextAuraForeground="White" TextAuraOutline="Black" TextAuraName="skillText" TextAuraExpression="${name} (${target})" TextAuraXIniExpression="${_screenwidth}/2" TextAuraYIniExpression="(${_screenheight}/2)+80" TextAuraWIniExpression="${_screenwidth}/2" TextAuraHIniExpression="20" TextAuraOIniExpression="100" TextAuraOTickExpression="50 + (cos(${_sincems}/100)*50)" TextAuraTTLTickExpression="3-${_since}" TextAuraUseOutline="True" TextAuraFontName="Arial" ActionType="TextAura" Description="User" DescriptionOverride="True">
+                  <Action OrderNumber="2" AuraImageMode="StretchImage" AuraName="skillIconR" AuraImage="https://xivapi.com/i/000000/000810.png" AuraXIniExpression="(${_screenwidth}/2)+110" AuraYIniExpression="(${_screenheight}/3)+5" AuraWIniExpression="30" AuraHIniExpression="30" AuraOIniExpression="100" AuraXTickExpression="((${_screenwidth}/2)+110)+(cos(${_sincems}/150)*25)" AuraTTLTickExpression="1-${_since}" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Aura" Description="Skill Icon">
+                    <Condition Enabled="false" Grouping="Or" />
+                    <Conditions />
+                  </Action>
+                  <Action OrderNumber="3" TextAuraEffect="Bold" TextAuraFontSize="20.25" TextAuraForeground="#80FFFF" TextAuraOutline="Black" TextAuraName="skillName" TextAuraExpression="SHIRK" TextAuraXIniExpression="0" TextAuraYIniExpression="${_screenheight}/3" TextAuraWIniExpression="${_screenwidth}" TextAuraHIniExpression="40" TextAuraOIniExpression="100" TextAuraOTickExpression="75+(cos(${_sincems}/50)*25))" TextAuraTTLTickExpression="1-${_since}" TextAuraUseOutline="True" TextAuraFontName="Arial" ActionType="TextAura">
+                    <Condition Enabled="false" Grouping="Or" />
+                    <Conditions />
+                  </Action>
+                  <Action OrderNumber="4" TextAuraEffect="Bold" TextAuraFontSize="14.25" TextAuraForeground="White" TextAuraOutline="Black" TextAuraName="skillText" TextAuraExpression="${name}" TextAuraXIniExpression="0" TextAuraYIniExpression="(${_screenheight}/3)+40" TextAuraWIniExpression="${_screenwidth}" TextAuraHIniExpression="20" TextAuraOIniExpression="100" TextAuraTTLTickExpression="1-${_since}" TextAuraUseOutline="True" TextAuraFontName="Courier New" ActionType="TextAura" Description="User">
                     <Condition Enabled="true" Grouping="Or">
                       <ConditionSingle Enabled="true" ExpressionL="${player}" ExpressionTypeL="String" ExpressionR="${_ffxivplayer}" ExpressionTypeR="String" ConditionType="StringNotEqualNocase" />
                     </Condition>
                     <Conditions />
                   </Action>
-                  <Action OrderNumber="3" TextAuraAlignment="MiddleLeft" TextAuraEffect="Bold" TextAuraFontSize="12" TextAuraForeground="White" TextAuraOutline="Black" TextAuraName="skillText" TextAuraExpression="${target} (Provoked)" TextAuraXIniExpression="${_screenwidth}/2" TextAuraYIniExpression="(${_screenheight}/2)+80" TextAuraWIniExpression="${_screenwidth}/2" TextAuraHIniExpression="20" TextAuraOIniExpression="100" TextAuraOTickExpression="50 + (cos(${_sincems}/100)*50)" TextAuraTTLTickExpression="3-${_since}" TextAuraUseOutline="True" TextAuraFontName="Arial" ActionType="TextAura" Description="Target" DescriptionOverride="True">
+                  <Action OrderNumber="5" TextAuraEffect="Bold" TextAuraFontSize="14.25" TextAuraForeground="White" TextAuraOutline="Black" TextAuraName="skillText" TextAuraExpression="${target} (Shirked)" TextAuraXIniExpression="0" TextAuraYIniExpression="(${_screenheight}/3)+40" TextAuraWIniExpression="${_screenwidth}" TextAuraHIniExpression="20" TextAuraOIniExpression="100" TextAuraTTLTickExpression="1-${_since}" TextAuraUseOutline="True" TextAuraFontName="Courier New" ActionType="TextAura" Description="Target">
                     <Condition Enabled="true" Grouping="Or">
                       <ConditionSingle Enabled="true" ExpressionL="${player}" ExpressionTypeL="String" ExpressionR="${_ffxivplayer}" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
                     </Condition>
@@ -29996,21 +30004,28 @@
                 <Condition Enabled="true" Grouping="And">
                   <ConditionSingle Enabled="true" ExpressionL="${_ffxivparty[${player}].inparty}" ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
                 </Condition>
-                <Conditions />
               </Trigger>
-              <Trigger Enabled="true" Name="Shirk" Id="014c0d68-1a03-4341-b71b-bead0f8dd3c0" RegularExpression="\A.{14}(?:[^:]*)15:[^:]*:(?&lt;player&gt;(?&lt;name&gt;[\w\-']+) [\w\-']+):1D71:[^:]*:[^:]*:(?&lt;target&gt;(?:[^:]*)):">
+              <Trigger Enabled="true" Name="Provoke" Id="62dc81c6-cc14-43a2-8c17-12890aeb6e8b" RegularExpression="\A.{14}(?:[^:]*)15:[^:]*:(?&lt;player&gt;(?&lt;name&gt;[\w\-']+) [\w\-']+):1D6D:[^:]*:[^:]*:(?&lt;target&gt;(?:[^:]*)):">
                 <Actions>
-                  <Action OrderNumber="1" AuraImageMode="StretchImage" AuraName="skillIcon" AuraImage="https://xivapi.com/i/000000/000810.png" AuraXIniExpression="(${_screenwidth}/2)-30" AuraYIniExpression="(${_screenheight}/2)+80" AuraWIniExpression="20" AuraHIniExpression="20" AuraOIniExpression="100" AuraTTLTickExpression="3-${_since}" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Aura" Description="Skill Icon" DescriptionOverride="True">
+                  <Action OrderNumber="1" AuraImageMode="StretchImage" AuraName="skillIconL" AuraImage="https://xivapi.com/i/000000/000803.png" AuraXIniExpression="(${_screenwidth}/2)-150" AuraYIniExpression="(${_screenheight}/3)+5" AuraWIniExpression="30" AuraHIniExpression="30" AuraOIniExpression="100" AuraXTickExpression="((${_screenwidth}/2)-150)-(cos(${_sincems}/150)*25)" AuraTTLTickExpression="1-${_since}" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Aura" Description="Skill Icon">
                     <Condition Enabled="false" Grouping="Or" />
                     <Conditions />
                   </Action>
-                  <Action OrderNumber="2" TextAuraAlignment="MiddleLeft" TextAuraEffect="Bold" TextAuraFontSize="12" TextAuraForeground="White" TextAuraOutline="Black" TextAuraName="skillText" TextAuraExpression="${name}" TextAuraXIniExpression="${_screenwidth}/2" TextAuraYIniExpression="(${_screenheight}/2)+80" TextAuraWIniExpression="${_screenwidth}/2" TextAuraHIniExpression="20" TextAuraOIniExpression="100" TextAuraOTickExpression="50 + (cos(${_sincems}/100)*50)" TextAuraTTLTickExpression="3-${_since}" TextAuraUseOutline="True" TextAuraFontName="Arial" ActionType="TextAura" Description="User" DescriptionOverride="True">
+                  <Action OrderNumber="2" AuraImageMode="StretchImage" AuraName="skillIconR" AuraImage="https://xivapi.com/i/000000/000803.png" AuraXIniExpression="(${_screenwidth}/2)+110" AuraYIniExpression="(${_screenheight}/3)+5" AuraWIniExpression="30" AuraHIniExpression="30" AuraOIniExpression="100" AuraXTickExpression="((${_screenwidth}/2)+110)+(cos(${_sincems}/150)*25)" AuraTTLTickExpression="1-${_since}" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Aura" Description="Skill Icon">
+                    <Condition Enabled="false" Grouping="Or" />
+                    <Conditions />
+                  </Action>
+                  <Action OrderNumber="3" TextAuraEffect="Bold" TextAuraFontSize="20.25" TextAuraForeground="#FFFF80" TextAuraOutline="Black" TextAuraName="skillName" TextAuraExpression="PROVOKE" TextAuraXIniExpression="0" TextAuraYIniExpression="${_screenheight}/3" TextAuraWIniExpression="${_screenwidth}" TextAuraHIniExpression="40" TextAuraOIniExpression="100" TextAuraOTickExpression="75+(cos(${_sincems}/50)*25))" TextAuraTTLTickExpression="1-${_since}" TextAuraUseOutline="True" TextAuraFontName="Arial" ActionType="TextAura">
+                    <Condition Enabled="false" Grouping="Or" />
+                    <Conditions />
+                  </Action>
+                  <Action OrderNumber="4" TextAuraEffect="Bold" TextAuraFontSize="14.25" TextAuraForeground="White" TextAuraOutline="Black" TextAuraName="skillText" TextAuraExpression="${name} (${target})" TextAuraXIniExpression="0" TextAuraYIniExpression="(${_screenheight}/3)+40" TextAuraWIniExpression="${_screenwidth}" TextAuraHIniExpression="20" TextAuraOIniExpression="100" TextAuraTTLTickExpression="1-${_since}" TextAuraUseOutline="True" TextAuraFontName="Courier New" ActionType="TextAura" Description="User">
                     <Condition Enabled="true" Grouping="Or">
                       <ConditionSingle Enabled="true" ExpressionL="${player}" ExpressionTypeL="String" ExpressionR="${_ffxivplayer}" ExpressionTypeR="String" ConditionType="StringNotEqualNocase" />
                     </Condition>
                     <Conditions />
                   </Action>
-                  <Action OrderNumber="3" TextAuraAlignment="MiddleLeft" TextAuraEffect="Bold" TextAuraFontSize="12" TextAuraForeground="White" TextAuraOutline="Black" TextAuraName="skillText" TextAuraExpression="${target} (Shirked)" TextAuraXIniExpression="${_screenwidth}/2" TextAuraYIniExpression="(${_screenheight}/2)+80" TextAuraWIniExpression="${_screenwidth}/2" TextAuraHIniExpression="20" TextAuraOIniExpression="100" TextAuraOTickExpression="50 + (cos(${_sincems}/100)*50)" TextAuraTTLTickExpression="3-${_since}" TextAuraUseOutline="True" TextAuraFontName="Arial" ActionType="TextAura" Description="Target" DescriptionOverride="True">
+                  <Action OrderNumber="5" TextAuraEffect="Bold" TextAuraFontSize="14.25" TextAuraForeground="White" TextAuraOutline="Black" TextAuraName="skillText" TextAuraExpression="${target} (Provoked)" TextAuraXIniExpression="0" TextAuraYIniExpression="(${_screenheight}/3)+40" TextAuraWIniExpression="${_screenwidth}" TextAuraHIniExpression="20" TextAuraOIniExpression="100" TextAuraTTLTickExpression="1-${_since}" TextAuraUseOutline="True" TextAuraFontName="Courier New" ActionType="TextAura" Description="Target">
                     <Condition Enabled="true" Grouping="Or">
                       <ConditionSingle Enabled="true" ExpressionL="${player}" ExpressionTypeL="String" ExpressionR="${_ffxivplayer}" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
                     </Condition>

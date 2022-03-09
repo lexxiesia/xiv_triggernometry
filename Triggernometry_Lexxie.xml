@@ -12304,63 +12304,73 @@
                     <Triggers>
                       <Trigger Enabled="true" Source="FFXIVNetwork" Sequential="True" Name="Counter" Id="5fe9f842-28cc-4ef2-9d61-d39dd990ea83" RegularExpression="^27\|[^|]*\|[^|]*\|(?&lt;name&gt;[^|]*)\|[^|]*\|[^|]*\|(?&lt;ID&gt;[0-9A-F]{4})\|" MutexToCapture="headmarkerCount">
                         <Actions>
-                          <Action OrderNumber="1" VariableOp="SetNumeric" VariableName="dataOffsetValue" VariableExpression="hex2dec(${ID})" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Variable">
+                          <Action OrderNumber="1" VariableOp="SetNumeric" VariableName="dataOffsetValue" VariableExpression="hex2dec(${ID})" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Variable" Asynchronous="False">
                             <Condition Enabled="true" Grouping="Or">
                               <ConditionSingle Enabled="true" ExpressionL="${evar:dataOffsetValue}" ExpressionTypeL="Numeric" ExpressionR="0" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
                             </Condition>
+                            <Conditions />
                           </Action>
-                          <Action OrderNumber="2" VariableOp="SetNumeric" VariableName="dataHeadmarkerValue" VariableExpression="(hex2dec(${ID})+1)-${var:dataOffsetValue}" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Variable">
+                          <Action OrderNumber="2" VariableOp="SetNumeric" VariableName="dataHeadmarkerValue" VariableExpression="(hex2dec(${ID})+1)-${var:dataOffsetValue}" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Variable" Asynchronous="False">
                             <Condition Enabled="false" Grouping="Or" />
+                            <Conditions />
                           </Action>
-                          <Action OrderNumber="3" TextAuraEffect="Bold" TextAuraFontSize="24" TextAuraForeground="#FFBB00" TextAuraOutline="Black" TextAuraName="brightenedFireCount" TextAuraExpression="#1" TextAuraXIniExpression="0" TextAuraYIniExpression="${_screenheight}/2" TextAuraWIniExpression="${_screenwidth}" TextAuraHIniExpression="42" TextAuraOIniExpression="100" TextAuraTTLTickExpression="3-${_since}" TextAuraUseOutline="True" TextAuraFontName="Arial" ActionType="TextAura">
+                          <Action OrderNumber="3" TextAuraEffect="Bold" TextAuraFontSize="24" TextAuraForeground="#FFBB00" TextAuraOutline="Black" TextAuraName="brightenedFireCount" TextAuraExpression="#1" TextAuraXIniExpression="0" TextAuraYIniExpression="${_screenheight}/2" TextAuraWIniExpression="${_screenwidth}" TextAuraHIniExpression="42" TextAuraOIniExpression="100" TextAuraTTLTickExpression="3-${_since}" TextAuraUseOutline="True" TextAuraFontName="Arial" ActionType="TextAura" Asynchronous="False">
                             <Condition Enabled="true" Grouping="And">
                               <ConditionSingle Enabled="true" ExpressionL="${var:dataHeadmarkerValue}" ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
                               <ConditionSingle Enabled="true" ExpressionL="${name}" ExpressionTypeL="String" ExpressionR="${_ffxivplayer}" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
                             </Condition>
+                            <Conditions />
                           </Action>
-                          <Action OrderNumber="4" TextAuraEffect="Bold" TextAuraFontSize="24" TextAuraForeground="#FFBB00" TextAuraOutline="Black" TextAuraName="brightenedFireCount" TextAuraExpression="#2" TextAuraXIniExpression="0" TextAuraYIniExpression="${_screenheight}/2" TextAuraWIniExpression="${_screenwidth}" TextAuraHIniExpression="42" TextAuraOIniExpression="100" TextAuraTTLTickExpression="3-${_since}" TextAuraUseOutline="True" TextAuraFontName="Arial" ActionType="TextAura">
+                          <Action OrderNumber="4" TextAuraEffect="Bold" TextAuraFontSize="24" TextAuraForeground="#FFBB00" TextAuraOutline="Black" TextAuraName="brightenedFireCount" TextAuraExpression="#2" TextAuraXIniExpression="0" TextAuraYIniExpression="${_screenheight}/2" TextAuraWIniExpression="${_screenwidth}" TextAuraHIniExpression="42" TextAuraOIniExpression="100" TextAuraTTLTickExpression="3-${_since}" TextAuraUseOutline="True" TextAuraFontName="Arial" ActionType="TextAura" Asynchronous="False">
                             <Condition Enabled="true" Grouping="And">
                               <ConditionSingle Enabled="true" ExpressionL="${var:dataHeadmarkerValue}" ExpressionTypeL="Numeric" ExpressionR="2" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
                               <ConditionSingle Enabled="true" ExpressionL="${name}" ExpressionTypeL="String" ExpressionR="${_ffxivplayer}" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
                             </Condition>
+                            <Conditions />
                           </Action>
-                          <Action OrderNumber="5" TextAuraEffect="Bold" TextAuraFontSize="24" TextAuraForeground="#FFBB00" TextAuraOutline="Black" TextAuraName="brightenedFireCount" TextAuraExpression="#3" TextAuraXIniExpression="0" TextAuraYIniExpression="${_screenheight}/2" TextAuraWIniExpression="${_screenwidth}" TextAuraHIniExpression="42" TextAuraOIniExpression="100" TextAuraTTLTickExpression="3-${_since}" TextAuraUseOutline="True" TextAuraFontName="Arial" ActionType="TextAura">
+                          <Action OrderNumber="5" TextAuraEffect="Bold" TextAuraFontSize="24" TextAuraForeground="#FFBB00" TextAuraOutline="Black" TextAuraName="brightenedFireCount" TextAuraExpression="#3" TextAuraXIniExpression="0" TextAuraYIniExpression="${_screenheight}/2" TextAuraWIniExpression="${_screenwidth}" TextAuraHIniExpression="42" TextAuraOIniExpression="100" TextAuraTTLTickExpression="3-${_since}" TextAuraUseOutline="True" TextAuraFontName="Arial" ActionType="TextAura" Asynchronous="False">
                             <Condition Enabled="true" Grouping="And">
                               <ConditionSingle Enabled="true" ExpressionL="${var:dataHeadmarkerValue}" ExpressionTypeL="Numeric" ExpressionR="3" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
                               <ConditionSingle Enabled="true" ExpressionL="${name}" ExpressionTypeL="String" ExpressionR="${_ffxivplayer}" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
                             </Condition>
+                            <Conditions />
                           </Action>
-                          <Action OrderNumber="6" TextAuraEffect="Bold" TextAuraFontSize="24" TextAuraForeground="#FFBB00" TextAuraOutline="Black" TextAuraName="brightenedFireCount" TextAuraExpression="#4" TextAuraXIniExpression="0" TextAuraYIniExpression="${_screenheight}/2" TextAuraWIniExpression="${_screenwidth}" TextAuraHIniExpression="42" TextAuraOIniExpression="100" TextAuraTTLTickExpression="3-${_since}" TextAuraUseOutline="True" TextAuraFontName="Arial" ActionType="TextAura">
+                          <Action OrderNumber="6" TextAuraEffect="Bold" TextAuraFontSize="24" TextAuraForeground="#FFBB00" TextAuraOutline="Black" TextAuraName="brightenedFireCount" TextAuraExpression="#4" TextAuraXIniExpression="0" TextAuraYIniExpression="${_screenheight}/2" TextAuraWIniExpression="${_screenwidth}" TextAuraHIniExpression="42" TextAuraOIniExpression="100" TextAuraTTLTickExpression="3-${_since}" TextAuraUseOutline="True" TextAuraFontName="Arial" ActionType="TextAura" Asynchronous="False">
                             <Condition Enabled="true" Grouping="And">
                               <ConditionSingle Enabled="true" ExpressionL="${var:dataHeadmarkerValue}" ExpressionTypeL="Numeric" ExpressionR="4" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
                               <ConditionSingle Enabled="true" ExpressionL="${name}" ExpressionTypeL="String" ExpressionR="${_ffxivplayer}" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
                             </Condition>
+                            <Conditions />
                           </Action>
-                          <Action OrderNumber="7" TextAuraEffect="Bold" TextAuraFontSize="24" TextAuraForeground="#FFBB00" TextAuraOutline="Black" TextAuraName="brightenedFireCount" TextAuraExpression="#5" TextAuraXIniExpression="0" TextAuraYIniExpression="${_screenheight}/2" TextAuraWIniExpression="${_screenwidth}" TextAuraHIniExpression="42" TextAuraOIniExpression="100" TextAuraTTLTickExpression="3-${_since}" TextAuraUseOutline="True" TextAuraFontName="Arial" ActionType="TextAura">
+                          <Action OrderNumber="7" TextAuraEffect="Bold" TextAuraFontSize="24" TextAuraForeground="#FFBB00" TextAuraOutline="Black" TextAuraName="brightenedFireCount" TextAuraExpression="#5" TextAuraXIniExpression="0" TextAuraYIniExpression="${_screenheight}/2" TextAuraWIniExpression="${_screenwidth}" TextAuraHIniExpression="42" TextAuraOIniExpression="100" TextAuraTTLTickExpression="3-${_since}" TextAuraUseOutline="True" TextAuraFontName="Arial" ActionType="TextAura" Asynchronous="False">
                             <Condition Enabled="true" Grouping="And">
                               <ConditionSingle Enabled="true" ExpressionL="${var:dataHeadmarkerValue}" ExpressionTypeL="Numeric" ExpressionR="5" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
                               <ConditionSingle Enabled="true" ExpressionL="${name}" ExpressionTypeL="String" ExpressionR="${_ffxivplayer}" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
                             </Condition>
+                            <Conditions />
                           </Action>
-                          <Action OrderNumber="8" TextAuraEffect="Bold" TextAuraFontSize="24" TextAuraForeground="#FFBB00" TextAuraOutline="Black" TextAuraName="brightenedFireCount" TextAuraExpression="#6" TextAuraXIniExpression="0" TextAuraYIniExpression="${_screenheight}/2" TextAuraWIniExpression="${_screenwidth}" TextAuraHIniExpression="42" TextAuraOIniExpression="100" TextAuraTTLTickExpression="3-${_since}" TextAuraUseOutline="True" TextAuraFontName="Arial" ActionType="TextAura">
+                          <Action OrderNumber="8" TextAuraEffect="Bold" TextAuraFontSize="24" TextAuraForeground="#FFBB00" TextAuraOutline="Black" TextAuraName="brightenedFireCount" TextAuraExpression="#6" TextAuraXIniExpression="0" TextAuraYIniExpression="${_screenheight}/2" TextAuraWIniExpression="${_screenwidth}" TextAuraHIniExpression="42" TextAuraOIniExpression="100" TextAuraTTLTickExpression="3-${_since}" TextAuraUseOutline="True" TextAuraFontName="Arial" ActionType="TextAura" Asynchronous="False">
                             <Condition Enabled="true" Grouping="And">
                               <ConditionSingle Enabled="true" ExpressionL="${var:dataHeadmarkerValue}" ExpressionTypeL="Numeric" ExpressionR="6" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
                               <ConditionSingle Enabled="true" ExpressionL="${name}" ExpressionTypeL="String" ExpressionR="${_ffxivplayer}" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
                             </Condition>
+                            <Conditions />
                           </Action>
-                          <Action OrderNumber="9" TextAuraEffect="Bold" TextAuraFontSize="24" TextAuraForeground="#FFBB00" TextAuraOutline="Black" TextAuraName="brightenedFireCount" TextAuraExpression="#7" TextAuraXIniExpression="0" TextAuraYIniExpression="${_screenheight}/2" TextAuraWIniExpression="${_screenwidth}" TextAuraHIniExpression="42" TextAuraOIniExpression="100" TextAuraTTLTickExpression="3-${_since}" TextAuraUseOutline="True" TextAuraFontName="Arial" ActionType="TextAura">
+                          <Action OrderNumber="9" TextAuraEffect="Bold" TextAuraFontSize="24" TextAuraForeground="#FFBB00" TextAuraOutline="Black" TextAuraName="brightenedFireCount" TextAuraExpression="#7" TextAuraXIniExpression="0" TextAuraYIniExpression="${_screenheight}/2" TextAuraWIniExpression="${_screenwidth}" TextAuraHIniExpression="42" TextAuraOIniExpression="100" TextAuraTTLTickExpression="3-${_since}" TextAuraUseOutline="True" TextAuraFontName="Arial" ActionType="TextAura" Asynchronous="False">
                             <Condition Enabled="true" Grouping="And">
                               <ConditionSingle Enabled="true" ExpressionL="${var:dataHeadmarkerValue}" ExpressionTypeL="Numeric" ExpressionR="7" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
                               <ConditionSingle Enabled="true" ExpressionL="${name}" ExpressionTypeL="String" ExpressionR="${_ffxivplayer}" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
                             </Condition>
+                            <Conditions />
                           </Action>
-                          <Action OrderNumber="10" TextAuraEffect="Bold" TextAuraFontSize="24" TextAuraForeground="#FFBB00" TextAuraOutline="Black" TextAuraName="brightenedFireCount" TextAuraExpression="#8" TextAuraXIniExpression="0" TextAuraYIniExpression="${_screenheight}/2" TextAuraWIniExpression="${_screenwidth}" TextAuraHIniExpression="42" TextAuraOIniExpression="100" TextAuraTTLTickExpression="3-${_since}" TextAuraUseOutline="True" TextAuraFontName="Arial" ActionType="TextAura">
+                          <Action OrderNumber="10" TextAuraEffect="Bold" TextAuraFontSize="24" TextAuraForeground="#FFBB00" TextAuraOutline="Black" TextAuraName="brightenedFireCount" TextAuraExpression="#8" TextAuraXIniExpression="0" TextAuraYIniExpression="${_screenheight}/2" TextAuraWIniExpression="${_screenwidth}" TextAuraHIniExpression="42" TextAuraOIniExpression="100" TextAuraTTLTickExpression="3-${_since}" TextAuraUseOutline="True" TextAuraFontName="Arial" ActionType="TextAura" Asynchronous="False">
                             <Condition Enabled="true" Grouping="And">
                               <ConditionSingle Enabled="true" ExpressionL="${var:dataHeadmarkerValue}" ExpressionTypeL="Numeric" ExpressionR="8" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
                               <ConditionSingle Enabled="true" ExpressionL="${name}" ExpressionTypeL="String" ExpressionR="${_ffxivplayer}" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
                             </Condition>
+                            <Conditions />
                           </Action>
-                          <Action OrderNumber="11" TextAuraEffect="Bold" TextAuraFontSize="20.25" TextAuraForeground="Red" TextAuraOutline="Black" TextAuraName="brightenedWaymark" TextAuraExpression="Waymark [1]" TextAuraXIniExpression="0" TextAuraYIniExpression="(${_screenheight}/2)+42" TextAuraWIniExpression="${_screenwidth}" TextAuraHIniExpression="35" TextAuraOIniExpression="100" TextAuraTTLTickExpression="3-${_since}" TextAuraUseOutline="True" TextAuraFontName="Arial" ActionType="TextAura">
+                          <Action OrderNumber="11" TextAuraEffect="Bold" TextAuraFontSize="20.25" TextAuraForeground="Red" TextAuraOutline="Black" TextAuraName="brightenedWaymark" TextAuraExpression="Waymark [1]" TextAuraXIniExpression="0" TextAuraYIniExpression="(${_screenheight}/2)+42" TextAuraWIniExpression="${_screenwidth}" TextAuraHIniExpression="35" TextAuraOIniExpression="100" TextAuraTTLTickExpression="3-${_since}" TextAuraUseOutline="True" TextAuraFontName="Arial" ActionType="TextAura" Asynchronous="False">
                             <Condition Enabled="true" Grouping="And">
                               <ConditionGroup Enabled="true" Grouping="Or">
                                 <ConditionSingle Enabled="true" ExpressionL="${var:dataHeadmarkerValue}" ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
@@ -12368,8 +12378,9 @@
                               </ConditionGroup>
                               <ConditionSingle Enabled="true" ExpressionL="${name}" ExpressionTypeL="String" ExpressionR="${_ffxivplayer}" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
                             </Condition>
+                            <Conditions />
                           </Action>
-                          <Action OrderNumber="12" TextAuraEffect="Bold" TextAuraFontSize="20.25" TextAuraForeground="Yellow" TextAuraOutline="Black" TextAuraName="brightenedWaymark" TextAuraExpression="Waymark [2]" TextAuraXIniExpression="0" TextAuraYIniExpression="(${_screenheight}/2)+42" TextAuraWIniExpression="${_screenwidth}" TextAuraHIniExpression="35" TextAuraOIniExpression="100" TextAuraTTLTickExpression="3-${_since}" TextAuraUseOutline="True" TextAuraFontName="Arial" ActionType="TextAura">
+                          <Action OrderNumber="12" TextAuraEffect="Bold" TextAuraFontSize="20.25" TextAuraForeground="Yellow" TextAuraOutline="Black" TextAuraName="brightenedWaymark" TextAuraExpression="Waymark [2]" TextAuraXIniExpression="0" TextAuraYIniExpression="(${_screenheight}/2)+42" TextAuraWIniExpression="${_screenwidth}" TextAuraHIniExpression="35" TextAuraOIniExpression="100" TextAuraTTLTickExpression="3-${_since}" TextAuraUseOutline="True" TextAuraFontName="Arial" ActionType="TextAura" Asynchronous="False">
                             <Condition Enabled="true" Grouping="And">
                               <ConditionGroup Enabled="true" Grouping="Or">
                                 <ConditionSingle Enabled="true" ExpressionL="${var:dataHeadmarkerValue}" ExpressionTypeL="Numeric" ExpressionR="2" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
@@ -12377,8 +12388,9 @@
                               </ConditionGroup>
                               <ConditionSingle Enabled="true" ExpressionL="${name}" ExpressionTypeL="String" ExpressionR="${_ffxivplayer}" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
                             </Condition>
+                            <Conditions />
                           </Action>
-                          <Action OrderNumber="13" TextAuraEffect="Bold" TextAuraFontSize="20.25" TextAuraForeground="Aqua" TextAuraOutline="Black" TextAuraName="brightenedWaymark" TextAuraExpression="Waymark [3]" TextAuraXIniExpression="0" TextAuraYIniExpression="(${_screenheight}/2)+42" TextAuraWIniExpression="${_screenwidth}" TextAuraHIniExpression="35" TextAuraOIniExpression="100" TextAuraTTLTickExpression="3-${_since}" TextAuraUseOutline="True" TextAuraFontName="Arial" ActionType="TextAura">
+                          <Action OrderNumber="13" TextAuraEffect="Bold" TextAuraFontSize="20.25" TextAuraForeground="Aqua" TextAuraOutline="Black" TextAuraName="brightenedWaymark" TextAuraExpression="Waymark [3]" TextAuraXIniExpression="0" TextAuraYIniExpression="(${_screenheight}/2)+42" TextAuraWIniExpression="${_screenwidth}" TextAuraHIniExpression="35" TextAuraOIniExpression="100" TextAuraTTLTickExpression="3-${_since}" TextAuraUseOutline="True" TextAuraFontName="Arial" ActionType="TextAura" Asynchronous="False">
                             <Condition Enabled="true" Grouping="And">
                               <ConditionGroup Enabled="true" Grouping="Or">
                                 <ConditionSingle Enabled="true" ExpressionL="${var:dataHeadmarkerValue}" ExpressionTypeL="Numeric" ExpressionR="3" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
@@ -12386,8 +12398,9 @@
                               </ConditionGroup>
                               <ConditionSingle Enabled="true" ExpressionL="${name}" ExpressionTypeL="String" ExpressionR="${_ffxivplayer}" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
                             </Condition>
+                            <Conditions />
                           </Action>
-                          <Action OrderNumber="14" TextAuraEffect="Bold" TextAuraFontSize="20.25" TextAuraForeground="#8000FF" TextAuraOutline="Black" TextAuraName="brightenedWaymark" TextAuraExpression="Waymark [4]" TextAuraXIniExpression="0" TextAuraYIniExpression="(${_screenheight}/2)+42" TextAuraWIniExpression="${_screenwidth}" TextAuraHIniExpression="35" TextAuraOIniExpression="100" TextAuraTTLTickExpression="3-${_since}" TextAuraUseOutline="True" TextAuraFontName="Arial" ActionType="TextAura">
+                          <Action OrderNumber="14" TextAuraEffect="Bold" TextAuraFontSize="20.25" TextAuraForeground="#8000FF" TextAuraOutline="Black" TextAuraName="brightenedWaymark" TextAuraExpression="Waymark [4]" TextAuraXIniExpression="0" TextAuraYIniExpression="(${_screenheight}/2)+42" TextAuraWIniExpression="${_screenwidth}" TextAuraHIniExpression="35" TextAuraOIniExpression="100" TextAuraTTLTickExpression="3-${_since}" TextAuraUseOutline="True" TextAuraFontName="Arial" ActionType="TextAura" Asynchronous="False">
                             <Condition Enabled="true" Grouping="And">
                               <ConditionGroup Enabled="true" Grouping="Or">
                                 <ConditionSingle Enabled="true" ExpressionL="${var:dataHeadmarkerValue}" ExpressionTypeL="Numeric" ExpressionR="4" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
@@ -12395,6 +12408,7 @@
                               </ConditionGroup>
                               <ConditionSingle Enabled="true" ExpressionL="${name}" ExpressionTypeL="String" ExpressionR="${_ffxivplayer}" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
                             </Condition>
+                            <Conditions />
                           </Action>
                         </Actions>
                         <Condition Enabled="true" Grouping="Or">
@@ -14796,7 +14810,6 @@
                             <Actions>
                               <Action OrderNumber="1" PlaySoundFileExpression="https://raw.githubusercontent.com/lexxiesia/xiv_triggernometry/master/resources/wav/Boop.wav" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="PlaySound">
                                 <Condition Enabled="false" Grouping="Or" />
-                                <Conditions />
                               </Action>
                             </Actions>
                             <Condition Enabled="true" Grouping="Or">
@@ -15217,7 +15230,6 @@
                     <Actions>
                       <Action OrderNumber="1" PlaySoundFileExpression="https://raw.githubusercontent.com/lexxiesia/xiv_triggernometry/master/resources/wav/arthars/superjump.wav" PlaySoundVolumeExpression="50" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="PlaySound">
                         <Condition Enabled="false" Grouping="Or" />
-                        <Conditions />
                       </Action>
                     </Actions>
                     <Condition Enabled="false" Grouping="Or">
@@ -29978,27 +29990,22 @@
                 <Actions>
                   <Action OrderNumber="1" AuraImageMode="StretchImage" AuraName="skillIconL" AuraImage="https://xivapi.com/i/000000/000810.png" AuraXIniExpression="(${_screenwidth}/2)-150" AuraYIniExpression="(${_screenheight}/3)+5" AuraWIniExpression="30" AuraHIniExpression="30" AuraOIniExpression="100" AuraXTickExpression="((${_screenwidth}/2)-150)-(cos(${_sincems}/150)*25)" AuraTTLTickExpression="1-${_since}" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Aura" Description="Skill Icon">
                     <Condition Enabled="false" Grouping="Or" />
-                    <Conditions />
                   </Action>
                   <Action OrderNumber="2" AuraImageMode="StretchImage" AuraName="skillIconR" AuraImage="https://xivapi.com/i/000000/000810.png" AuraXIniExpression="(${_screenwidth}/2)+110" AuraYIniExpression="(${_screenheight}/3)+5" AuraWIniExpression="30" AuraHIniExpression="30" AuraOIniExpression="100" AuraXTickExpression="((${_screenwidth}/2)+110)+(cos(${_sincems}/150)*25)" AuraTTLTickExpression="1-${_since}" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Aura" Description="Skill Icon">
                     <Condition Enabled="false" Grouping="Or" />
-                    <Conditions />
                   </Action>
                   <Action OrderNumber="3" TextAuraEffect="Bold" TextAuraFontSize="20.25" TextAuraForeground="#80FFFF" TextAuraOutline="Black" TextAuraName="skillName" TextAuraExpression="SHIRK" TextAuraXIniExpression="0" TextAuraYIniExpression="${_screenheight}/3" TextAuraWIniExpression="${_screenwidth}" TextAuraHIniExpression="40" TextAuraOIniExpression="100" TextAuraOTickExpression="75+(cos(${_sincems}/50)*25))" TextAuraTTLTickExpression="1-${_since}" TextAuraUseOutline="True" TextAuraFontName="Arial" ActionType="TextAura">
                     <Condition Enabled="false" Grouping="Or" />
-                    <Conditions />
                   </Action>
                   <Action OrderNumber="4" TextAuraEffect="Bold" TextAuraFontSize="14.25" TextAuraForeground="White" TextAuraOutline="Black" TextAuraName="skillText" TextAuraExpression="${name}" TextAuraXIniExpression="0" TextAuraYIniExpression="(${_screenheight}/3)+40" TextAuraWIniExpression="${_screenwidth}" TextAuraHIniExpression="20" TextAuraOIniExpression="100" TextAuraTTLTickExpression="1-${_since}" TextAuraUseOutline="True" TextAuraFontName="Courier New" ActionType="TextAura" Description="User">
                     <Condition Enabled="true" Grouping="Or">
                       <ConditionSingle Enabled="true" ExpressionL="${player}" ExpressionTypeL="String" ExpressionR="${_ffxivplayer}" ExpressionTypeR="String" ConditionType="StringNotEqualNocase" />
                     </Condition>
-                    <Conditions />
                   </Action>
                   <Action OrderNumber="5" TextAuraEffect="Bold" TextAuraFontSize="14.25" TextAuraForeground="White" TextAuraOutline="Black" TextAuraName="skillText" TextAuraExpression="${target} (Shirked)" TextAuraXIniExpression="0" TextAuraYIniExpression="(${_screenheight}/3)+40" TextAuraWIniExpression="${_screenwidth}" TextAuraHIniExpression="20" TextAuraOIniExpression="100" TextAuraTTLTickExpression="1-${_since}" TextAuraUseOutline="True" TextAuraFontName="Courier New" ActionType="TextAura" Description="Target">
                     <Condition Enabled="true" Grouping="Or">
                       <ConditionSingle Enabled="true" ExpressionL="${player}" ExpressionTypeL="String" ExpressionR="${_ffxivplayer}" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
                     </Condition>
-                    <Conditions />
                   </Action>
                 </Actions>
                 <Condition Enabled="true" Grouping="And">
@@ -30009,33 +30016,27 @@
                 <Actions>
                   <Action OrderNumber="1" AuraImageMode="StretchImage" AuraName="skillIconL" AuraImage="https://xivapi.com/i/000000/000803.png" AuraXIniExpression="(${_screenwidth}/2)-150" AuraYIniExpression="(${_screenheight}/3)+5" AuraWIniExpression="30" AuraHIniExpression="30" AuraOIniExpression="100" AuraXTickExpression="((${_screenwidth}/2)-150)-(cos(${_sincems}/150)*25)" AuraTTLTickExpression="1-${_since}" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Aura" Description="Skill Icon">
                     <Condition Enabled="false" Grouping="Or" />
-                    <Conditions />
                   </Action>
                   <Action OrderNumber="2" AuraImageMode="StretchImage" AuraName="skillIconR" AuraImage="https://xivapi.com/i/000000/000803.png" AuraXIniExpression="(${_screenwidth}/2)+110" AuraYIniExpression="(${_screenheight}/3)+5" AuraWIniExpression="30" AuraHIniExpression="30" AuraOIniExpression="100" AuraXTickExpression="((${_screenwidth}/2)+110)+(cos(${_sincems}/150)*25)" AuraTTLTickExpression="1-${_since}" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Aura" Description="Skill Icon">
                     <Condition Enabled="false" Grouping="Or" />
-                    <Conditions />
                   </Action>
                   <Action OrderNumber="3" TextAuraEffect="Bold" TextAuraFontSize="20.25" TextAuraForeground="#FFFF80" TextAuraOutline="Black" TextAuraName="skillName" TextAuraExpression="PROVOKE" TextAuraXIniExpression="0" TextAuraYIniExpression="${_screenheight}/3" TextAuraWIniExpression="${_screenwidth}" TextAuraHIniExpression="40" TextAuraOIniExpression="100" TextAuraOTickExpression="75+(cos(${_sincems}/50)*25))" TextAuraTTLTickExpression="1-${_since}" TextAuraUseOutline="True" TextAuraFontName="Arial" ActionType="TextAura">
                     <Condition Enabled="false" Grouping="Or" />
-                    <Conditions />
                   </Action>
                   <Action OrderNumber="4" TextAuraEffect="Bold" TextAuraFontSize="14.25" TextAuraForeground="White" TextAuraOutline="Black" TextAuraName="skillText" TextAuraExpression="${name} (${target})" TextAuraXIniExpression="0" TextAuraYIniExpression="(${_screenheight}/3)+40" TextAuraWIniExpression="${_screenwidth}" TextAuraHIniExpression="20" TextAuraOIniExpression="100" TextAuraTTLTickExpression="1-${_since}" TextAuraUseOutline="True" TextAuraFontName="Courier New" ActionType="TextAura" Description="User">
                     <Condition Enabled="true" Grouping="Or">
                       <ConditionSingle Enabled="true" ExpressionL="${player}" ExpressionTypeL="String" ExpressionR="${_ffxivplayer}" ExpressionTypeR="String" ConditionType="StringNotEqualNocase" />
                     </Condition>
-                    <Conditions />
                   </Action>
                   <Action OrderNumber="5" TextAuraEffect="Bold" TextAuraFontSize="14.25" TextAuraForeground="White" TextAuraOutline="Black" TextAuraName="skillText" TextAuraExpression="${target} (Provoked)" TextAuraXIniExpression="0" TextAuraYIniExpression="(${_screenheight}/3)+40" TextAuraWIniExpression="${_screenwidth}" TextAuraHIniExpression="20" TextAuraOIniExpression="100" TextAuraTTLTickExpression="1-${_since}" TextAuraUseOutline="True" TextAuraFontName="Courier New" ActionType="TextAura" Description="Target">
                     <Condition Enabled="true" Grouping="Or">
                       <ConditionSingle Enabled="true" ExpressionL="${player}" ExpressionTypeL="String" ExpressionR="${_ffxivplayer}" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
                     </Condition>
-                    <Conditions />
                   </Action>
                 </Actions>
                 <Condition Enabled="true" Grouping="And">
                   <ConditionSingle Enabled="true" ExpressionL="${_ffxivparty[${player}].inparty}" ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
                 </Condition>
-                <Conditions />
               </Trigger>
             </Triggers>
           </Folder>

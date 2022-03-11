@@ -11563,37 +11563,93 @@
                   <Folder FFXIVJobFilterEnabled="True" FFXIVJobFilter="17263755264" Id="0256df70-48d4-4c73-aa8b-b8987d5f3d45" Name="Caster" Enabled="true">
                     <Folders />
                     <Triggers>
-                      <Trigger Enabled="true" Name="Slam Shut" Id="5913576d-401a-40a3-834e-f732ee91fa02" RegularExpression="^.{29}14:(?&lt;sourceID&gt;(?:[^:]*)):(?&lt;source&gt;(?:[^:]*)):6617:">
+                      <Trigger Enabled="true" Name="Slam Shut" Id="697968ab-01c4-40a4-8929-ac7f0db77321" RegularExpression="^.{29}14:(?&lt;sourceID&gt;(?:[^:]*)):(?&lt;source&gt;(?:[^:]*)):6617:(?&lt;ability&gt;(?:[^:]*)):">
                         <Actions>
                           <Action OrderNumber="1" UseTTSTextExpression="Raidwide" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="UseTTS">
                             <Condition Enabled="false" Grouping="Or" />
+                            <Conditions />
+                          </Action>
+                          <Action OrderNumber="2" AuraImageMode="Zoom" AuraName="iconRole" AuraImage="https://raw.githubusercontent.com/lexxiesia/xiv_triggernometry/master/resources/icons/roles/casterDPS.png" AuraXIniExpression="(${_screenwidth}/2)-80" AuraYIniExpression="(${_screenheight}/2)+42" AuraWIniExpression="35" AuraHIniExpression="35" AuraOIniExpression="100" AuraTTLTickExpression="3-${_since}" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Aura">
+                            <Condition Enabled="false" Grouping="Or" />
+                            <Conditions />
+                          </Action>
+                          <Action OrderNumber="3" AuraImageMode="Zoom" AuraName="iconSkill" AuraImage="https://xivapi.com/i/009000/009335.png" AuraXIniExpression="(${_screenwidth}/2)-40" AuraYIniExpression="(${_screenheight}/2)+42" AuraWIniExpression="35" AuraHIniExpression="35" AuraOIniExpression="100" AuraTTLTickExpression="3-${_since}" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Aura">
+                            <Condition Enabled="false" Grouping="Or" />
+                            <Conditions />
+                          </Action>
+                          <Action OrderNumber="4" TextAuraAlignment="MiddleLeft" TextAuraEffect="Bold" TextAuraFontSize="20.25" TextAuraForeground="Lime" TextAuraOutline="Black" TextAuraName="abilityText" TextAuraExpression="${ability}" TextAuraXIniExpression="${_screenwidth}/2" TextAuraYIniExpression="(${_screenheight}/2)+42" TextAuraWIniExpression="${_screenwidth}/2" TextAuraHIniExpression="35" TextAuraOIniExpression="100" TextAuraTTLTickExpression="3-${_since}" TextAuraUseOutline="True" TextAuraFontName="Arial" ActionType="TextAura">
+                            <Condition Enabled="false" Grouping="Or" />
+                            <Conditions />
                           </Action>
                         </Actions>
                         <Condition Enabled="false" Grouping="Or" />
+                        <Conditions />
                       </Trigger>
-                      <Trigger Enabled="true" Name="Shining Cells" Id="1ad6821a-38c5-4114-bd13-2376eb684677" RegularExpression="^.{29}14:(?&lt;sourceID&gt;(?:[^:]*)):(?&lt;source&gt;(?:[^:]*)):6616:">
+                      <Trigger Enabled="true" Name="Shining Cells" Id="c0d7e71a-da2b-478e-bfbf-787b5f9de8ea" RegularExpression="^.{29}14:(?&lt;sourceID&gt;(?:[^:]*)):(?&lt;source&gt;(?:[^:]*)):6616:(?&lt;ability&gt;(?:[^:]*)):">
                         <Actions>
                           <Action OrderNumber="1" UseTTSTextExpression="Raidwide" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="UseTTS">
                             <Condition Enabled="false" Grouping="Or" />
+                            <Conditions />
                           </Action>
-                        </Actions>
-                        <Condition Enabled="false" Grouping="Or" />
-                      </Trigger>
-                      <Trigger Enabled="true" Name="Heavy Hand" Id="96d775db-8c52-4b6e-9617-4254dc3e20e8" RegularExpression="^.{29}14:(?&lt;sourceID&gt;(?:[^:]*)):(?&lt;source&gt;(?:[^:]*)):6629:">
-                        <Actions>
-                          <Action OrderNumber="1" TextAuraEffect="Bold" TextAuraFontSize="20.25" TextAuraForeground="Lime" TextAuraOutline="Black" TextAuraName="tankbusterText" TextAuraExpression="Tankbuster" TextAuraXIniExpression="0" TextAuraYIniExpression="(${_screenheight}/2)+42" TextAuraWIniExpression="${_screenwidth}" TextAuraHIniExpression="35" TextAuraOIniExpression="100" TextAuraTTLTickExpression="3-${_since}" TextAuraUseOutline="True" TextAuraFontName="Arial" ActionType="TextAura">
+                          <Action OrderNumber="2" AuraImageMode="Zoom" AuraName="iconRole" AuraImage="https://raw.githubusercontent.com/lexxiesia/xiv_triggernometry/master/resources/icons/roles/casterDPS.png" AuraXIniExpression="(${_screenwidth}/2)-80" AuraYIniExpression="(${_screenheight}/2)+42" AuraWIniExpression="35" AuraHIniExpression="35" AuraOIniExpression="100" AuraTTLTickExpression="3-${_since}" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Aura">
                             <Condition Enabled="false" Grouping="Or" />
+                            <Conditions />
                           </Action>
-                        </Actions>
-                        <Condition Enabled="false" Grouping="Or" />
-                      </Trigger>
-                      <Trigger Enabled="true" Name="Warder's Wrath" Id="bb1d8b4c-445f-4343-9ecb-29b188bb0886" RegularExpression="^.{29}14:(?&lt;sourceID&gt;(?:[^:]*)):(?&lt;source&gt;(?:[^:]*)):662A:">
-                        <Actions>
-                          <Action OrderNumber="1" TextAuraEffect="Bold" TextAuraFontSize="20.25" TextAuraForeground="Lime" TextAuraOutline="Black" TextAuraName="raidwideText" TextAuraExpression="Raidwide" TextAuraXIniExpression="0" TextAuraYIniExpression="(${_screenheight}/2)+42" TextAuraWIniExpression="${_screenwidth}" TextAuraHIniExpression="35" TextAuraOIniExpression="100" TextAuraTTLTickExpression="3-${_since}" TextAuraUseOutline="True" TextAuraFontName="Arial" ActionType="TextAura">
+                          <Action OrderNumber="3" AuraImageMode="Zoom" AuraName="iconSkill" AuraImage="https://xivapi.com/i/009000/009335.png" AuraXIniExpression="(${_screenwidth}/2)-40" AuraYIniExpression="(${_screenheight}/2)+42" AuraWIniExpression="35" AuraHIniExpression="35" AuraOIniExpression="100" AuraTTLTickExpression="3-${_since}" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Aura">
                             <Condition Enabled="false" Grouping="Or" />
+                            <Conditions />
+                          </Action>
+                          <Action OrderNumber="4" TextAuraAlignment="MiddleLeft" TextAuraEffect="Bold" TextAuraFontSize="20.25" TextAuraForeground="Lime" TextAuraOutline="Black" TextAuraName="abilityText" TextAuraExpression="${ability}" TextAuraXIniExpression="${_screenwidth}/2" TextAuraYIniExpression="(${_screenheight}/2)+42" TextAuraWIniExpression="${_screenwidth}/2" TextAuraHIniExpression="35" TextAuraOIniExpression="100" TextAuraTTLTickExpression="3-${_since}" TextAuraUseOutline="True" TextAuraFontName="Arial" ActionType="TextAura">
+                            <Condition Enabled="false" Grouping="Or" />
+                            <Conditions />
                           </Action>
                         </Actions>
                         <Condition Enabled="false" Grouping="Or" />
+                        <Conditions />
+                      </Trigger>
+                      <Trigger Enabled="true" Name="Heavy Hand" Id="c623722c-5db9-40cf-a5ac-5fed896c1c31" RegularExpression="^.{29}14:(?&lt;sourceID&gt;(?:[^:]*)):(?&lt;source&gt;(?:[^:]*)):6629:(?&lt;ability&gt;(?:[^:]*)):">
+                        <Actions>
+                          <Action OrderNumber="1" UseTTSTextExpression="Tankbuster" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="UseTTS">
+                            <Condition Enabled="false" Grouping="Or" />
+                            <Conditions />
+                          </Action>
+                          <Action OrderNumber="2" AuraImageMode="Zoom" AuraName="iconRole" AuraImage="https://raw.githubusercontent.com/lexxiesia/xiv_triggernometry/master/resources/icons/roles/meleeDPS.png" AuraXIniExpression="(${_screenwidth}/2)-80" AuraYIniExpression="(${_screenheight}/2)+42" AuraWIniExpression="35" AuraHIniExpression="35" AuraOIniExpression="100" AuraTTLTickExpression="3-${_since}" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Aura">
+                            <Condition Enabled="false" Grouping="Or" />
+                            <Conditions />
+                          </Action>
+                          <Action OrderNumber="3" AuraImageMode="Zoom" AuraName="iconSkill" AuraImage="https://xivapi.com/i/009000/009524.png" AuraXIniExpression="(${_screenwidth}/2)-40" AuraYIniExpression="(${_screenheight}/2)+42" AuraWIniExpression="35" AuraHIniExpression="35" AuraOIniExpression="100" AuraTTLTickExpression="3-${_since}" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Aura">
+                            <Condition Enabled="false" Grouping="Or" />
+                            <Conditions />
+                          </Action>
+                          <Action OrderNumber="4" TextAuraEffect="Bold" TextAuraFontSize="20.25" TextAuraForeground="Lime" TextAuraOutline="Black" TextAuraName="abilityText" TextAuraExpression="${ability}" TextAuraXIniExpression="0" TextAuraYIniExpression="(${_screenheight}/2)+42" TextAuraWIniExpression="${_screenwidth}" TextAuraHIniExpression="35" TextAuraOIniExpression="100" TextAuraTTLTickExpression="3-${_since}" TextAuraUseOutline="True" TextAuraFontName="Arial" ActionType="TextAura">
+                            <Condition Enabled="false" Grouping="Or" />
+                            <Conditions />
+                          </Action>
+                        </Actions>
+                        <Condition Enabled="false" Grouping="Or" />
+                        <Conditions />
+                      </Trigger>
+                      <Trigger Enabled="true" Name="Warder's Wrath" Id="cbf58688-04a9-4c93-bf3a-046c3360d72a" RegularExpression="^.{29}14:(?&lt;sourceID&gt;(?:[^:]*)):(?&lt;source&gt;(?:[^:]*)):662A:(?&lt;ability&gt;(?:[^:]*)):">
+                        <Actions>
+                          <Action OrderNumber="1" UseTTSTextExpression="Raidwide" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="UseTTS">
+                            <Condition Enabled="false" Grouping="Or" />
+                            <Conditions />
+                          </Action>
+                          <Action OrderNumber="2" AuraImageMode="Zoom" AuraName="iconRole" AuraImage="https://raw.githubusercontent.com/lexxiesia/xiv_triggernometry/master/resources/icons/roles/meleeDPS.png" AuraXIniExpression="(${_screenwidth}/2)-80" AuraYIniExpression="(${_screenheight}/2)+42" AuraWIniExpression="35" AuraHIniExpression="35" AuraOIniExpression="100" AuraTTLTickExpression="3-${_since}" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Aura">
+                            <Condition Enabled="false" Grouping="Or" />
+                            <Conditions />
+                          </Action>
+                          <Action OrderNumber="3" AuraImageMode="Zoom" AuraName="iconSkill" AuraImage="https://xivapi.com/i/009000/009524.png" AuraXIniExpression="(${_screenwidth}/2)-40" AuraYIniExpression="(${_screenheight}/2)+42" AuraWIniExpression="35" AuraHIniExpression="35" AuraOIniExpression="100" AuraTTLTickExpression="3-${_since}" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Aura">
+                            <Condition Enabled="false" Grouping="Or" />
+                            <Conditions />
+                          </Action>
+                          <Action OrderNumber="4" TextAuraEffect="Bold" TextAuraFontSize="20.25" TextAuraForeground="Lime" TextAuraOutline="Black" TextAuraName="abilityText" TextAuraExpression="${ability}" TextAuraXIniExpression="0" TextAuraYIniExpression="(${_screenheight}/2)+42" TextAuraWIniExpression="${_screenwidth}" TextAuraHIniExpression="35" TextAuraOIniExpression="100" TextAuraTTLTickExpression="3-${_since}" TextAuraUseOutline="True" TextAuraFontName="Arial" ActionType="TextAura">
+                            <Condition Enabled="false" Grouping="Or" />
+                            <Conditions />
+                          </Action>
+                        </Actions>
+                        <Condition Enabled="false" Grouping="Or" />
+                        <Conditions />
                       </Trigger>
                     </Triggers>
                   </Folder>
@@ -11698,6 +11754,14 @@
                         <Actions>
                           <Action OrderNumber="1" UseTTSTextExpression="Raidwide" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="UseTTS">
                             <Condition Enabled="false" Grouping="Or" />
+                            <Conditions />
+                          </Action>
+                          <Action OrderNumber="2" TextAuraEffect="Bold" TextAuraFontSize="20.25" TextAuraForeground="Lime" TextAuraOutline="Black" TextAuraName="physicalRaidwide" TextAuraExpression="Physical Raidwide" TextAuraXIniExpression="0" TextAuraYIniExpression="(${_screenheight}/2)+42" TextAuraWIniExpression="${_screenwidth}" TextAuraHIniExpression="35" TextAuraOIniExpression="100" TextAuraOTickExpression="50 + (cos(${_sincems}/100)*50)" TextAuraTTLTickExpression="3-${_since}" TextAuraUseOutline="True" TextAuraFontName="Arial" ActionType="TextAura">
+                            <Condition Enabled="true" Grouping="Or">
+                              <ConditionSingle Enabled="true" ExpressionL="${_ffxivparty[${_ffxivplayer}].job}" ExpressionTypeL="String" ExpressionR="GNB" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
+                              <ConditionSingle Enabled="true" ExpressionL="${_ffxivparty[${_ffxivplayer}].job}" ExpressionTypeL="String" ExpressionR="DRK" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
+                            </Condition>
+                            <Conditions />
                           </Action>
                         </Actions>
                         <Condition Enabled="false" Grouping="Or" />
@@ -11723,37 +11787,93 @@
                   <Folder FFXIVJobFilterEnabled="True" FFXIVJobFilter="284007333888" Id="021a262e-14ba-45cf-ba4c-88fe8499c5b4" Name="Melee" Enabled="true">
                     <Folders />
                     <Triggers>
-                      <Trigger Enabled="true" Name="Slam Shut" Id="acd68d63-6646-4175-bd28-0a003177e619" RegularExpression="^.{29}14:(?&lt;sourceID&gt;(?:[^:]*)):(?&lt;source&gt;(?:[^:]*)):6617:">
-                        <Actions>
-                          <Action OrderNumber="1" TextAuraEffect="Bold" TextAuraFontSize="20.25" TextAuraForeground="Lime" TextAuraOutline="Black" TextAuraName="raidwideText" TextAuraExpression="Raidwide" TextAuraXIniExpression="0" TextAuraYIniExpression="(${_screenheight}/2)+42" TextAuraWIniExpression="${_screenwidth}" TextAuraHIniExpression="35" TextAuraOIniExpression="100" TextAuraTTLTickExpression="3-${_since}" TextAuraUseOutline="True" TextAuraFontName="Arial" ActionType="TextAura">
-                            <Condition Enabled="false" Grouping="Or" />
-                          </Action>
-                        </Actions>
-                        <Condition Enabled="false" Grouping="Or" />
-                      </Trigger>
-                      <Trigger Enabled="true" Name="Shining Cells" Id="049c4f4f-1193-4211-97d8-584c2ccbe9cf" RegularExpression="^.{29}14:(?&lt;sourceID&gt;(?:[^:]*)):(?&lt;source&gt;(?:[^:]*)):6616:">
-                        <Actions>
-                          <Action OrderNumber="1" TextAuraEffect="Bold" TextAuraFontSize="20.25" TextAuraForeground="Lime" TextAuraOutline="Black" TextAuraName="raidwideText" TextAuraExpression="Raidwide" TextAuraXIniExpression="0" TextAuraYIniExpression="(${_screenheight}/2)+42" TextAuraWIniExpression="${_screenwidth}" TextAuraHIniExpression="35" TextAuraOIniExpression="100" TextAuraTTLTickExpression="3-${_since}" TextAuraUseOutline="True" TextAuraFontName="Arial" ActionType="TextAura">
-                            <Condition Enabled="false" Grouping="Or" />
-                          </Action>
-                        </Actions>
-                        <Condition Enabled="false" Grouping="Or" />
-                      </Trigger>
-                      <Trigger Enabled="true" Name="Heavy Hand" Id="f098bbf2-5565-48ec-826d-eb1014013b49" RegularExpression="^.{29}14:(?&lt;sourceID&gt;(?:[^:]*)):(?&lt;source&gt;(?:[^:]*)):6629:[^:]*:[^:]*:(?&lt;player&gt;(?&lt;name&gt;[\w-']+) [\w-']+):">
+                      <Trigger Enabled="true" Name="Heavy Hand" Id="58a1a0f7-357f-409d-9e55-838c2810069b" RegularExpression="^.{29}14:(?&lt;sourceID&gt;(?:[^:]*)):(?&lt;source&gt;(?:[^:]*)):6629:(?&lt;ability&gt;(?:[^:]*)):">
                         <Actions>
                           <Action OrderNumber="1" UseTTSTextExpression="Tankbuster" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="UseTTS">
                             <Condition Enabled="false" Grouping="Or" />
+                            <Conditions />
+                          </Action>
+                          <Action OrderNumber="2" AuraImageMode="Zoom" AuraName="iconRole" AuraImage="https://raw.githubusercontent.com/lexxiesia/xiv_triggernometry/master/resources/icons/roles/meleeDPS.png" AuraXIniExpression="(${_screenwidth}/2)-80" AuraYIniExpression="(${_screenheight}/2)+42" AuraWIniExpression="35" AuraHIniExpression="35" AuraOIniExpression="100" AuraTTLTickExpression="3-${_since}" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Aura">
+                            <Condition Enabled="false" Grouping="Or" />
+                            <Conditions />
+                          </Action>
+                          <Action OrderNumber="3" AuraImageMode="Zoom" AuraName="iconSkill" AuraImage="https://xivapi.com/i/009000/009524.png" AuraXIniExpression="(${_screenwidth}/2)-40" AuraYIniExpression="(${_screenheight}/2)+42" AuraWIniExpression="35" AuraHIniExpression="35" AuraOIniExpression="100" AuraTTLTickExpression="3-${_since}" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Aura">
+                            <Condition Enabled="false" Grouping="Or" />
+                            <Conditions />
+                          </Action>
+                          <Action OrderNumber="4" TextAuraEffect="Bold" TextAuraFontSize="20.25" TextAuraForeground="Lime" TextAuraOutline="Black" TextAuraName="abilityText" TextAuraExpression="${ability}" TextAuraXIniExpression="0" TextAuraYIniExpression="(${_screenheight}/2)+42" TextAuraWIniExpression="${_screenwidth}" TextAuraHIniExpression="35" TextAuraOIniExpression="100" TextAuraTTLTickExpression="3-${_since}" TextAuraUseOutline="True" TextAuraFontName="Arial" ActionType="TextAura">
+                            <Condition Enabled="false" Grouping="Or" />
+                            <Conditions />
                           </Action>
                         </Actions>
                         <Condition Enabled="false" Grouping="Or" />
+                        <Conditions />
                       </Trigger>
-                      <Trigger Enabled="true" Name="Warder's Wrath" Id="bafa3759-70a3-480e-87c9-ffacb03c024d" RegularExpression="^.{29}14:(?&lt;sourceID&gt;(?:[^:]*)):(?&lt;source&gt;(?:[^:]*)):662A:">
+                      <Trigger Enabled="true" Name="Shining Cells" Id="e961fcd2-4f07-47d2-9dac-4f77a9c64eda" RegularExpression="^.{29}14:(?&lt;sourceID&gt;(?:[^:]*)):(?&lt;source&gt;(?:[^:]*)):6616:(?&lt;ability&gt;(?:[^:]*)):">
                         <Actions>
                           <Action OrderNumber="1" UseTTSTextExpression="Raidwide" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="UseTTS">
                             <Condition Enabled="false" Grouping="Or" />
+                            <Conditions />
+                          </Action>
+                          <Action OrderNumber="2" AuraImageMode="Zoom" AuraName="iconRole" AuraImage="https://raw.githubusercontent.com/lexxiesia/xiv_triggernometry/master/resources/icons/roles/casterDPS.png" AuraXIniExpression="(${_screenwidth}/2)-80" AuraYIniExpression="(${_screenheight}/2)+42" AuraWIniExpression="35" AuraHIniExpression="35" AuraOIniExpression="100" AuraTTLTickExpression="3-${_since}" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Aura">
+                            <Condition Enabled="false" Grouping="Or" />
+                            <Conditions />
+                          </Action>
+                          <Action OrderNumber="3" AuraImageMode="Zoom" AuraName="iconSkill" AuraImage="https://xivapi.com/i/009000/009335.png" AuraXIniExpression="(${_screenwidth}/2)-40" AuraYIniExpression="(${_screenheight}/2)+42" AuraWIniExpression="35" AuraHIniExpression="35" AuraOIniExpression="100" AuraTTLTickExpression="3-${_since}" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Aura">
+                            <Condition Enabled="false" Grouping="Or" />
+                            <Conditions />
+                          </Action>
+                          <Action OrderNumber="4" TextAuraAlignment="MiddleLeft" TextAuraEffect="Bold" TextAuraFontSize="20.25" TextAuraForeground="Lime" TextAuraOutline="Black" TextAuraName="abilityText" TextAuraExpression="${ability}" TextAuraXIniExpression="${_screenwidth}/2" TextAuraYIniExpression="(${_screenheight}/2)+42" TextAuraWIniExpression="${_screenwidth}/2" TextAuraHIniExpression="35" TextAuraOIniExpression="100" TextAuraTTLTickExpression="3-${_since}" TextAuraUseOutline="True" TextAuraFontName="Arial" ActionType="TextAura">
+                            <Condition Enabled="false" Grouping="Or" />
+                            <Conditions />
                           </Action>
                         </Actions>
                         <Condition Enabled="false" Grouping="Or" />
+                        <Conditions />
+                      </Trigger>
+                      <Trigger Enabled="true" Name="Slam Shut" Id="5d924e63-5247-4938-87a0-18d334a43cd0" RegularExpression="^.{29}14:(?&lt;sourceID&gt;(?:[^:]*)):(?&lt;source&gt;(?:[^:]*)):6617:(?&lt;ability&gt;(?:[^:]*)):">
+                        <Actions>
+                          <Action OrderNumber="1" UseTTSTextExpression="Raidwide" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="UseTTS">
+                            <Condition Enabled="false" Grouping="Or" />
+                            <Conditions />
+                          </Action>
+                          <Action OrderNumber="2" AuraImageMode="Zoom" AuraName="iconRole" AuraImage="https://raw.githubusercontent.com/lexxiesia/xiv_triggernometry/master/resources/icons/roles/casterDPS.png" AuraXIniExpression="(${_screenwidth}/2)-80" AuraYIniExpression="(${_screenheight}/2)+42" AuraWIniExpression="35" AuraHIniExpression="35" AuraOIniExpression="100" AuraTTLTickExpression="3-${_since}" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Aura">
+                            <Condition Enabled="false" Grouping="Or" />
+                            <Conditions />
+                          </Action>
+                          <Action OrderNumber="3" AuraImageMode="Zoom" AuraName="iconSkill" AuraImage="https://xivapi.com/i/009000/009335.png" AuraXIniExpression="(${_screenwidth}/2)-40" AuraYIniExpression="(${_screenheight}/2)+42" AuraWIniExpression="35" AuraHIniExpression="35" AuraOIniExpression="100" AuraTTLTickExpression="3-${_since}" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Aura">
+                            <Condition Enabled="false" Grouping="Or" />
+                            <Conditions />
+                          </Action>
+                          <Action OrderNumber="4" TextAuraAlignment="MiddleLeft" TextAuraEffect="Bold" TextAuraFontSize="20.25" TextAuraForeground="Lime" TextAuraOutline="Black" TextAuraName="abilityText" TextAuraExpression="${ability}" TextAuraXIniExpression="${_screenwidth}/2" TextAuraYIniExpression="(${_screenheight}/2)+42" TextAuraWIniExpression="${_screenwidth}/2" TextAuraHIniExpression="35" TextAuraOIniExpression="100" TextAuraTTLTickExpression="3-${_since}" TextAuraUseOutline="True" TextAuraFontName="Arial" ActionType="TextAura">
+                            <Condition Enabled="false" Grouping="Or" />
+                            <Conditions />
+                          </Action>
+                        </Actions>
+                        <Condition Enabled="false" Grouping="Or" />
+                        <Conditions />
+                      </Trigger>
+                      <Trigger Enabled="true" Name="Warder's Wrath" Id="380ee8ed-6efa-483e-807a-87452bb967c1" RegularExpression="^.{29}14:(?&lt;sourceID&gt;(?:[^:]*)):(?&lt;source&gt;(?:[^:]*)):662A:(?&lt;ability&gt;(?:[^:]*)):">
+                        <Actions>
+                          <Action OrderNumber="1" UseTTSTextExpression="Raidwide" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="UseTTS">
+                            <Condition Enabled="false" Grouping="Or" />
+                            <Conditions />
+                          </Action>
+                          <Action OrderNumber="2" AuraImageMode="Zoom" AuraName="iconRole" AuraImage="https://raw.githubusercontent.com/lexxiesia/xiv_triggernometry/master/resources/icons/roles/meleeDPS.png" AuraXIniExpression="(${_screenwidth}/2)-80" AuraYIniExpression="(${_screenheight}/2)+42" AuraWIniExpression="35" AuraHIniExpression="35" AuraOIniExpression="100" AuraTTLTickExpression="3-${_since}" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Aura">
+                            <Condition Enabled="false" Grouping="Or" />
+                            <Conditions />
+                          </Action>
+                          <Action OrderNumber="3" AuraImageMode="Zoom" AuraName="iconSkill" AuraImage="https://xivapi.com/i/009000/009524.png" AuraXIniExpression="(${_screenwidth}/2)-40" AuraYIniExpression="(${_screenheight}/2)+42" AuraWIniExpression="35" AuraHIniExpression="35" AuraOIniExpression="100" AuraTTLTickExpression="3-${_since}" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Aura">
+                            <Condition Enabled="false" Grouping="Or" />
+                            <Conditions />
+                          </Action>
+                          <Action OrderNumber="4" TextAuraEffect="Bold" TextAuraFontSize="20.25" TextAuraForeground="Lime" TextAuraOutline="Black" TextAuraName="abilityText" TextAuraExpression="${ability}" TextAuraXIniExpression="0" TextAuraYIniExpression="(${_screenheight}/2)+42" TextAuraWIniExpression="${_screenwidth}" TextAuraHIniExpression="35" TextAuraOIniExpression="100" TextAuraTTLTickExpression="3-${_since}" TextAuraUseOutline="True" TextAuraFontName="Arial" ActionType="TextAura">
+                            <Condition Enabled="false" Grouping="Or" />
+                            <Conditions />
+                          </Action>
+                        </Actions>
+                        <Condition Enabled="false" Grouping="Or" />
+                        <Conditions />
                       </Trigger>
                     </Triggers>
                   </Folder>
@@ -12045,35 +12165,79 @@
                   <Folder FFXIVJobFilterEnabled="True" FFXIVJobFilter="17263755264" Id="4c93177c-cb7d-4af8-a552-d13f30287c1c" Name="Caster" Enabled="true">
                     <Folders />
                     <Triggers>
-                      <Trigger Enabled="true" Name="Scorched Exaltation" Id="aa7a2316-4954-4a9e-a014-a821674db68c" RegularExpression="^.{29}14:(?&lt;sourceID&gt;(?:[^:]*)):(?&lt;source&gt;(?:[^:]*)):6706:">
+                      <Trigger Enabled="true" Name="Firestorms of Asphodelos" Id="f655d8f3-e3ff-456e-9ada-3bb4789babe4" RegularExpression="^.{29}14:(?&lt;sourceID&gt;(?:[^:]*)):(?&lt;source&gt;(?:[^:]*)):66F0:(?&lt;ability&gt;(?:[^:]*)):">
                         <Actions>
                           <Action OrderNumber="1" UseTTSTextExpression="Raidwide" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="UseTTS">
                             <Condition Enabled="false" Grouping="Or" />
+                            <Conditions />
+                          </Action>
+                          <Action OrderNumber="2" AuraImageMode="Zoom" AuraName="iconRole" AuraImage="https://raw.githubusercontent.com/lexxiesia/xiv_triggernometry/master/resources/icons/roles/casterDPS.png" AuraXIniExpression="(${_screenwidth}/2)-80" AuraYIniExpression="(${_screenheight}/2)+42" AuraWIniExpression="35" AuraHIniExpression="35" AuraOIniExpression="100" AuraTTLTickExpression="3-${_since}" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Aura">
+                            <Condition Enabled="false" Grouping="Or" />
+                            <Conditions />
+                          </Action>
+                          <Action OrderNumber="3" AuraImageMode="Zoom" AuraName="iconSkill" AuraImage="https://xivapi.com/i/009000/009335.png" AuraXIniExpression="(${_screenwidth}/2)-40" AuraYIniExpression="(${_screenheight}/2)+42" AuraWIniExpression="35" AuraHIniExpression="35" AuraOIniExpression="100" AuraTTLTickExpression="3-${_since}" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Aura">
+                            <Condition Enabled="false" Grouping="Or" />
+                            <Conditions />
+                          </Action>
+                          <Action OrderNumber="4" TextAuraAlignment="MiddleLeft" TextAuraEffect="Bold" TextAuraFontSize="20.25" TextAuraForeground="Lime" TextAuraOutline="Black" TextAuraName="abilityText" TextAuraExpression="${ability}" TextAuraXIniExpression="${_screenwidth}/2" TextAuraYIniExpression="(${_screenheight}/2)+42" TextAuraWIniExpression="${_screenwidth}/2" TextAuraHIniExpression="35" TextAuraOIniExpression="100" TextAuraTTLTickExpression="3-${_since}" TextAuraUseOutline="True" TextAuraFontName="Arial" ActionType="TextAura">
+                            <Condition Enabled="false" Grouping="Or" />
+                            <Conditions />
+                          </Action>
+                          <Action OrderNumber="5" TextAuraEffect="Bold" TextAuraFontSize="32.25" TextAuraForeground="Red" TextAuraOutline="Black" TextAuraName="bigRaidwide" TextAuraExpression="!! DANGER !!" TextAuraXIniExpression="0" TextAuraYIniExpression="(${_screenheight}/2)-50" TextAuraWIniExpression="${_screenwidth}" TextAuraHIniExpression="50" TextAuraOIniExpression="100" TextAuraOTickExpression="50 + (cos(${_sincems}/100)*50)" TextAuraTTLTickExpression="3-${_since}" TextAuraUseOutline="True" TextAuraFontName="Arial" ActionType="TextAura">
+                            <Condition Enabled="false" Grouping="Or" />
+                            <Conditions />
                           </Action>
                         </Actions>
                         <Condition Enabled="false" Grouping="Or" />
+                        <Conditions />
                       </Trigger>
-                      <Trigger Enabled="true" Name="Firestorms of Asphodelos" Id="aceb5daf-a535-479c-bcdd-6f25b88d1267" RegularExpression="^.{29}14:(?&lt;sourceID&gt;(?:[^:]*)):(?&lt;source&gt;(?:[^:]*)):66F0:">
+                      <Trigger Enabled="true" Name="Dead Rebirth" Id="b8982370-f258-4482-92cf-264b36ce4168" RegularExpression="^.{29}14:(?&lt;sourceID&gt;(?:[^:]*)):(?&lt;source&gt;(?:[^:]*)):66E4:(?&lt;ability&gt;(?:[^:]*)):">
                         <Actions>
-                          <Action OrderNumber="1" TextAuraEffect="Bold" TextAuraFontSize="32.25" TextAuraForeground="Red" TextAuraOutline="Black" TextAuraName="bigRaidwide" TextAuraExpression="!! DANGER !!" TextAuraXIniExpression="0" TextAuraYIniExpression="(${_screenheight}/2)-50" TextAuraWIniExpression="${_screenwidth}" TextAuraHIniExpression="50" TextAuraOIniExpression="100" TextAuraOTickExpression="50 + (cos(${_sincems}/100)*50)" TextAuraTTLTickExpression="3-${_since}" TextAuraUseOutline="True" TextAuraFontName="Arial" ActionType="TextAura">
+                          <Action OrderNumber="1" UseTTSTextExpression="Raidwide" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="UseTTS">
                             <Condition Enabled="false" Grouping="Or" />
+                            <Conditions />
                           </Action>
-                          <Action OrderNumber="2" UseTTSTextExpression="Raidwide" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="UseTTS">
+                          <Action OrderNumber="2" AuraImageMode="Zoom" AuraName="iconRole" AuraImage="https://raw.githubusercontent.com/lexxiesia/xiv_triggernometry/master/resources/icons/roles/casterDPS.png" AuraXIniExpression="(${_screenwidth}/2)-80" AuraYIniExpression="(${_screenheight}/2)+42" AuraWIniExpression="35" AuraHIniExpression="35" AuraOIniExpression="100" AuraTTLTickExpression="3-${_since}" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Aura">
                             <Condition Enabled="false" Grouping="Or" />
+                            <Conditions />
+                          </Action>
+                          <Action OrderNumber="3" AuraImageMode="Zoom" AuraName="iconSkill" AuraImage="https://xivapi.com/i/009000/009335.png" AuraXIniExpression="(${_screenwidth}/2)-40" AuraYIniExpression="(${_screenheight}/2)+42" AuraWIniExpression="35" AuraHIniExpression="35" AuraOIniExpression="100" AuraTTLTickExpression="3-${_since}" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Aura">
+                            <Condition Enabled="false" Grouping="Or" />
+                            <Conditions />
+                          </Action>
+                          <Action OrderNumber="4" TextAuraAlignment="MiddleLeft" TextAuraEffect="Bold" TextAuraFontSize="20.25" TextAuraForeground="Lime" TextAuraOutline="Black" TextAuraName="abilityText" TextAuraExpression="${ability}" TextAuraXIniExpression="${_screenwidth}/2" TextAuraYIniExpression="(${_screenheight}/2)+42" TextAuraWIniExpression="${_screenwidth}/2" TextAuraHIniExpression="35" TextAuraOIniExpression="100" TextAuraTTLTickExpression="3-${_since}" TextAuraUseOutline="True" TextAuraFontName="Arial" ActionType="TextAura">
+                            <Condition Enabled="false" Grouping="Or" />
+                            <Conditions />
+                          </Action>
+                          <Action OrderNumber="5" TextAuraEffect="Bold" TextAuraFontSize="32.25" TextAuraForeground="Red" TextAuraOutline="Black" TextAuraName="bigRaidwide" TextAuraExpression="!! DANGER !!" TextAuraXIniExpression="0" TextAuraYIniExpression="(${_screenheight}/2)-50" TextAuraWIniExpression="${_screenwidth}" TextAuraHIniExpression="50" TextAuraOIniExpression="100" TextAuraOTickExpression="50 + (cos(${_sincems}/100)*50)" TextAuraTTLTickExpression="3-${_since}" TextAuraUseOutline="True" TextAuraFontName="Arial" ActionType="TextAura">
+                            <Condition Enabled="false" Grouping="Or" />
+                            <Conditions />
                           </Action>
                         </Actions>
                         <Condition Enabled="false" Grouping="Or" />
+                        <Conditions />
                       </Trigger>
-                      <Trigger Enabled="true" Name="Dead Rebirth" Id="034625b3-4de5-4cad-b6d3-40a54c0faf3c" RegularExpression="^.{29}14:(?&lt;sourceID&gt;(?:[^:]*)):(?&lt;source&gt;(?:[^:]*)):66E4:">
+                      <Trigger Enabled="true" Name="Scorched Exaltation" Id="1ae267b7-f8ed-4f74-937a-782519896446" RegularExpression="^.{29}14:(?&lt;sourceID&gt;(?:[^:]*)):(?&lt;source&gt;(?:[^:]*)):6706:(?&lt;ability&gt;(?:[^:]*)):">
                         <Actions>
-                          <Action OrderNumber="1" TextAuraEffect="Bold" TextAuraFontSize="32.25" TextAuraForeground="Red" TextAuraOutline="Black" TextAuraName="bigRaidwide" TextAuraExpression="!! DANGER !!" TextAuraXIniExpression="0" TextAuraYIniExpression="(${_screenheight}/2)-50" TextAuraWIniExpression="${_screenwidth}" TextAuraHIniExpression="50" TextAuraOIniExpression="100" TextAuraOTickExpression="50 + (cos(${_sincems}/100)*50)" TextAuraTTLTickExpression="3-${_since}" TextAuraUseOutline="True" TextAuraFontName="Arial" ActionType="TextAura">
+                          <Action OrderNumber="1" UseTTSTextExpression="Raidwide" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="UseTTS">
                             <Condition Enabled="false" Grouping="Or" />
+                            <Conditions />
                           </Action>
-                          <Action OrderNumber="2" UseTTSTextExpression="Raidwide" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="UseTTS">
+                          <Action OrderNumber="2" AuraImageMode="Zoom" AuraName="iconRole" AuraImage="https://raw.githubusercontent.com/lexxiesia/xiv_triggernometry/master/resources/icons/roles/casterDPS.png" AuraXIniExpression="(${_screenwidth}/2)-80" AuraYIniExpression="(${_screenheight}/2)+42" AuraWIniExpression="35" AuraHIniExpression="35" AuraOIniExpression="100" AuraTTLTickExpression="3-${_since}" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Aura">
                             <Condition Enabled="false" Grouping="Or" />
+                            <Conditions />
+                          </Action>
+                          <Action OrderNumber="3" AuraImageMode="Zoom" AuraName="iconSkill" AuraImage="https://xivapi.com/i/009000/009335.png" AuraXIniExpression="(${_screenwidth}/2)-40" AuraYIniExpression="(${_screenheight}/2)+42" AuraWIniExpression="35" AuraHIniExpression="35" AuraOIniExpression="100" AuraTTLTickExpression="3-${_since}" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Aura">
+                            <Condition Enabled="false" Grouping="Or" />
+                            <Conditions />
+                          </Action>
+                          <Action OrderNumber="4" TextAuraAlignment="MiddleLeft" TextAuraEffect="Bold" TextAuraFontSize="20.25" TextAuraForeground="Lime" TextAuraOutline="Black" TextAuraName="abilityText" TextAuraExpression="${ability}" TextAuraXIniExpression="${_screenwidth}/2" TextAuraYIniExpression="(${_screenheight}/2)+42" TextAuraWIniExpression="${_screenwidth}/2" TextAuraHIniExpression="35" TextAuraOIniExpression="100" TextAuraTTLTickExpression="3-${_since}" TextAuraUseOutline="True" TextAuraFontName="Arial" ActionType="TextAura">
+                            <Condition Enabled="false" Grouping="Or" />
+                            <Conditions />
                           </Action>
                         </Actions>
                         <Condition Enabled="false" Grouping="Or" />
+                        <Conditions />
                       </Trigger>
                     </Triggers>
                   </Folder>
@@ -12193,35 +12357,79 @@
                   <Folder FFXIVJobFilterEnabled="True" FFXIVJobFilter="284007333888" Id="b320e36d-c755-4414-a251-bd2b9c9c750a" Name="Melee" Enabled="true">
                     <Folders />
                     <Triggers>
-                      <Trigger Enabled="true" Name="Dead Rebirth" Id="e7fd4f24-8b13-4de8-b36b-c241ca4864f7" RegularExpression="^.{29}14:(?&lt;sourceID&gt;(?:[^:]*)):(?&lt;source&gt;(?:[^:]*)):66E4:">
+                      <Trigger Enabled="true" Name="Dead Rebirth" Id="6f45b57b-2ace-458c-9b6c-62c84cbfa023" RegularExpression="^.{29}14:(?&lt;sourceID&gt;(?:[^:]*)):(?&lt;source&gt;(?:[^:]*)):66E4:(?&lt;ability&gt;(?:[^:]*)):">
                         <Actions>
-                          <Action OrderNumber="1" TextAuraEffect="Bold" TextAuraFontSize="32.25" TextAuraForeground="Red" TextAuraOutline="Black" TextAuraName="bigRaidwide" TextAuraExpression="!! DANGER !!" TextAuraXIniExpression="0" TextAuraYIniExpression="(${_screenheight}/2)-50" TextAuraWIniExpression="${_screenwidth}" TextAuraHIniExpression="50" TextAuraOIniExpression="100" TextAuraOTickExpression="50 + (cos(${_sincems}/100)*50)" TextAuraTTLTickExpression="3-${_since}" TextAuraUseOutline="True" TextAuraFontName="Arial" ActionType="TextAura">
+                          <Action OrderNumber="1" UseTTSTextExpression="Raidwide" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="UseTTS">
                             <Condition Enabled="false" Grouping="Or" />
+                            <Conditions />
                           </Action>
-                          <Action OrderNumber="2" TextAuraEffect="Bold" TextAuraFontSize="20.25" TextAuraForeground="Lime" TextAuraOutline="Black" TextAuraName="raidwideText" TextAuraExpression="Raidwide" TextAuraXIniExpression="0" TextAuraYIniExpression="(${_screenheight}/2)+42" TextAuraWIniExpression="${_screenwidth}" TextAuraHIniExpression="35" TextAuraOIniExpression="100" TextAuraTTLTickExpression="3-${_since}" TextAuraUseOutline="True" TextAuraFontName="Arial" ActionType="TextAura">
+                          <Action OrderNumber="2" AuraImageMode="Zoom" AuraName="iconRole" AuraImage="https://raw.githubusercontent.com/lexxiesia/xiv_triggernometry/master/resources/icons/roles/casterDPS.png" AuraXIniExpression="(${_screenwidth}/2)-80" AuraYIniExpression="(${_screenheight}/2)+42" AuraWIniExpression="35" AuraHIniExpression="35" AuraOIniExpression="100" AuraTTLTickExpression="3-${_since}" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Aura">
                             <Condition Enabled="false" Grouping="Or" />
+                            <Conditions />
+                          </Action>
+                          <Action OrderNumber="3" AuraImageMode="Zoom" AuraName="iconSkill" AuraImage="https://xivapi.com/i/009000/009335.png" AuraXIniExpression="(${_screenwidth}/2)-40" AuraYIniExpression="(${_screenheight}/2)+42" AuraWIniExpression="35" AuraHIniExpression="35" AuraOIniExpression="100" AuraTTLTickExpression="3-${_since}" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Aura">
+                            <Condition Enabled="false" Grouping="Or" />
+                            <Conditions />
+                          </Action>
+                          <Action OrderNumber="4" TextAuraAlignment="MiddleLeft" TextAuraEffect="Bold" TextAuraFontSize="20.25" TextAuraForeground="Lime" TextAuraOutline="Black" TextAuraName="abilityText" TextAuraExpression="${ability}" TextAuraXIniExpression="${_screenwidth}/2" TextAuraYIniExpression="(${_screenheight}/2)+42" TextAuraWIniExpression="${_screenwidth}/2" TextAuraHIniExpression="35" TextAuraOIniExpression="100" TextAuraTTLTickExpression="3-${_since}" TextAuraUseOutline="True" TextAuraFontName="Arial" ActionType="TextAura">
+                            <Condition Enabled="false" Grouping="Or" />
+                            <Conditions />
+                          </Action>
+                          <Action OrderNumber="5" TextAuraEffect="Bold" TextAuraFontSize="32.25" TextAuraForeground="Red" TextAuraOutline="Black" TextAuraName="bigRaidwide" TextAuraExpression="!! DANGER !!" TextAuraXIniExpression="0" TextAuraYIniExpression="(${_screenheight}/2)-50" TextAuraWIniExpression="${_screenwidth}" TextAuraHIniExpression="50" TextAuraOIniExpression="100" TextAuraOTickExpression="50 + (cos(${_sincems}/100)*50)" TextAuraTTLTickExpression="3-${_since}" TextAuraUseOutline="True" TextAuraFontName="Arial" ActionType="TextAura">
+                            <Condition Enabled="false" Grouping="Or" />
+                            <Conditions />
                           </Action>
                         </Actions>
                         <Condition Enabled="false" Grouping="Or" />
+                        <Conditions />
                       </Trigger>
-                      <Trigger Enabled="true" Name="Scorched Exaltation" Id="c7e9459c-bc36-4cea-983f-968718c3f864" RegularExpression="^.{29}14:(?&lt;sourceID&gt;(?:[^:]*)):(?&lt;source&gt;(?:[^:]*)):6706:">
+                      <Trigger Enabled="true" Name="Firestorms of Asphodelos" Id="c6cb3b04-cd06-4d49-8c19-cdba325758f1" RegularExpression="^.{29}14:(?&lt;sourceID&gt;(?:[^:]*)):(?&lt;source&gt;(?:[^:]*)):66F0:(?&lt;ability&gt;(?:[^:]*)):">
                         <Actions>
-                          <Action OrderNumber="1" TextAuraEffect="Bold" TextAuraFontSize="20.25" TextAuraForeground="Lime" TextAuraOutline="Black" TextAuraName="raidwideText" TextAuraExpression="Raidwide" TextAuraXIniExpression="0" TextAuraYIniExpression="(${_screenheight}/2)+42" TextAuraWIniExpression="${_screenwidth}" TextAuraHIniExpression="35" TextAuraOIniExpression="100" TextAuraTTLTickExpression="3-${_since}" TextAuraUseOutline="True" TextAuraFontName="Arial" ActionType="TextAura">
+                          <Action OrderNumber="1" UseTTSTextExpression="Raidwide" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="UseTTS">
                             <Condition Enabled="false" Grouping="Or" />
+                            <Conditions />
+                          </Action>
+                          <Action OrderNumber="2" AuraImageMode="Zoom" AuraName="iconRole" AuraImage="https://raw.githubusercontent.com/lexxiesia/xiv_triggernometry/master/resources/icons/roles/casterDPS.png" AuraXIniExpression="(${_screenwidth}/2)-80" AuraYIniExpression="(${_screenheight}/2)+42" AuraWIniExpression="35" AuraHIniExpression="35" AuraOIniExpression="100" AuraTTLTickExpression="3-${_since}" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Aura">
+                            <Condition Enabled="false" Grouping="Or" />
+                            <Conditions />
+                          </Action>
+                          <Action OrderNumber="3" AuraImageMode="Zoom" AuraName="iconSkill" AuraImage="https://xivapi.com/i/009000/009335.png" AuraXIniExpression="(${_screenwidth}/2)-40" AuraYIniExpression="(${_screenheight}/2)+42" AuraWIniExpression="35" AuraHIniExpression="35" AuraOIniExpression="100" AuraTTLTickExpression="3-${_since}" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Aura">
+                            <Condition Enabled="false" Grouping="Or" />
+                            <Conditions />
+                          </Action>
+                          <Action OrderNumber="4" TextAuraAlignment="MiddleLeft" TextAuraEffect="Bold" TextAuraFontSize="20.25" TextAuraForeground="Lime" TextAuraOutline="Black" TextAuraName="abilityText" TextAuraExpression="${ability}" TextAuraXIniExpression="${_screenwidth}/2" TextAuraYIniExpression="(${_screenheight}/2)+42" TextAuraWIniExpression="${_screenwidth}/2" TextAuraHIniExpression="35" TextAuraOIniExpression="100" TextAuraTTLTickExpression="3-${_since}" TextAuraUseOutline="True" TextAuraFontName="Arial" ActionType="TextAura">
+                            <Condition Enabled="false" Grouping="Or" />
+                            <Conditions />
+                          </Action>
+                          <Action OrderNumber="5" TextAuraEffect="Bold" TextAuraFontSize="32.25" TextAuraForeground="Red" TextAuraOutline="Black" TextAuraName="bigRaidwide" TextAuraExpression="!! DANGER !!" TextAuraXIniExpression="0" TextAuraYIniExpression="(${_screenheight}/2)-50" TextAuraWIniExpression="${_screenwidth}" TextAuraHIniExpression="50" TextAuraOIniExpression="100" TextAuraOTickExpression="50 + (cos(${_sincems}/100)*50)" TextAuraTTLTickExpression="3-${_since}" TextAuraUseOutline="True" TextAuraFontName="Arial" ActionType="TextAura">
+                            <Condition Enabled="false" Grouping="Or" />
+                            <Conditions />
                           </Action>
                         </Actions>
                         <Condition Enabled="false" Grouping="Or" />
+                        <Conditions />
                       </Trigger>
-                      <Trigger Enabled="true" Name="Firestorms of Asphodelos" Id="e686c5b0-866a-4e9f-ad60-c662a1e3f968" RegularExpression="^.{29}14:(?&lt;sourceID&gt;(?:[^:]*)):(?&lt;source&gt;(?:[^:]*)):66F0:">
+                      <Trigger Enabled="true" Name="Scorched Exaltation" Id="2d572f28-73c9-4163-87ce-020d509d60c7" RegularExpression="^.{29}14:(?&lt;sourceID&gt;(?:[^:]*)):(?&lt;source&gt;(?:[^:]*)):6706:(?&lt;ability&gt;(?:[^:]*)):">
                         <Actions>
-                          <Action OrderNumber="1" TextAuraEffect="Bold" TextAuraFontSize="32.25" TextAuraForeground="Red" TextAuraOutline="Black" TextAuraName="bigRaidwide" TextAuraExpression="!! DANGER !!" TextAuraXIniExpression="0" TextAuraYIniExpression="(${_screenheight}/2)-50" TextAuraWIniExpression="${_screenwidth}" TextAuraHIniExpression="50" TextAuraOIniExpression="100" TextAuraOTickExpression="50 + (cos(${_sincems}/100)*50)" TextAuraTTLTickExpression="3-${_since}" TextAuraUseOutline="True" TextAuraFontName="Arial" ActionType="TextAura">
+                          <Action OrderNumber="1" UseTTSTextExpression="Raidwide" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="UseTTS">
                             <Condition Enabled="false" Grouping="Or" />
+                            <Conditions />
                           </Action>
-                          <Action OrderNumber="2" TextAuraEffect="Bold" TextAuraFontSize="20.25" TextAuraForeground="Lime" TextAuraOutline="Black" TextAuraName="raidwideText" TextAuraExpression="Raidwide" TextAuraXIniExpression="0" TextAuraYIniExpression="(${_screenheight}/2)+42" TextAuraWIniExpression="${_screenwidth}" TextAuraHIniExpression="35" TextAuraOIniExpression="100" TextAuraTTLTickExpression="3-${_since}" TextAuraUseOutline="True" TextAuraFontName="Arial" ActionType="TextAura">
+                          <Action OrderNumber="2" AuraImageMode="Zoom" AuraName="iconRole" AuraImage="https://raw.githubusercontent.com/lexxiesia/xiv_triggernometry/master/resources/icons/roles/casterDPS.png" AuraXIniExpression="(${_screenwidth}/2)-80" AuraYIniExpression="(${_screenheight}/2)+42" AuraWIniExpression="35" AuraHIniExpression="35" AuraOIniExpression="100" AuraTTLTickExpression="3-${_since}" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Aura">
                             <Condition Enabled="false" Grouping="Or" />
+                            <Conditions />
+                          </Action>
+                          <Action OrderNumber="3" AuraImageMode="Zoom" AuraName="iconSkill" AuraImage="https://xivapi.com/i/009000/009335.png" AuraXIniExpression="(${_screenwidth}/2)-40" AuraYIniExpression="(${_screenheight}/2)+42" AuraWIniExpression="35" AuraHIniExpression="35" AuraOIniExpression="100" AuraTTLTickExpression="3-${_since}" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Aura">
+                            <Condition Enabled="false" Grouping="Or" />
+                            <Conditions />
+                          </Action>
+                          <Action OrderNumber="4" TextAuraAlignment="MiddleLeft" TextAuraEffect="Bold" TextAuraFontSize="20.25" TextAuraForeground="Lime" TextAuraOutline="Black" TextAuraName="abilityText" TextAuraExpression="${ability}" TextAuraXIniExpression="${_screenwidth}/2" TextAuraYIniExpression="(${_screenheight}/2)+42" TextAuraWIniExpression="${_screenwidth}/2" TextAuraHIniExpression="35" TextAuraOIniExpression="100" TextAuraTTLTickExpression="3-${_since}" TextAuraUseOutline="True" TextAuraFontName="Arial" ActionType="TextAura">
+                            <Condition Enabled="false" Grouping="Or" />
+                            <Conditions />
                           </Action>
                         </Actions>
                         <Condition Enabled="false" Grouping="Or" />
+                        <Conditions />
                       </Trigger>
                     </Triggers>
                   </Folder>
@@ -12308,67 +12516,57 @@
                             <Condition Enabled="true" Grouping="Or">
                               <ConditionSingle Enabled="true" ExpressionL="${evar:dataOffsetValue}" ExpressionTypeL="Numeric" ExpressionR="0" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
                             </Condition>
-                            <Conditions />
                           </Action>
                           <Action OrderNumber="2" VariableOp="SetNumeric" VariableName="dataHeadmarkerValue" VariableExpression="(hex2dec(${ID})+1)-${var:dataOffsetValue}" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Variable" Asynchronous="False">
                             <Condition Enabled="false" Grouping="Or" />
-                            <Conditions />
                           </Action>
                           <Action OrderNumber="3" TextAuraEffect="Bold" TextAuraFontSize="24" TextAuraForeground="#FFBB00" TextAuraOutline="Black" TextAuraName="brightenedFireCount" TextAuraExpression="#1" TextAuraXIniExpression="0" TextAuraYIniExpression="${_screenheight}/2" TextAuraWIniExpression="${_screenwidth}" TextAuraHIniExpression="42" TextAuraOIniExpression="100" TextAuraTTLTickExpression="3-${_since}" TextAuraUseOutline="True" TextAuraFontName="Arial" ActionType="TextAura" Asynchronous="False">
                             <Condition Enabled="true" Grouping="And">
                               <ConditionSingle Enabled="true" ExpressionL="${var:dataHeadmarkerValue}" ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
                               <ConditionSingle Enabled="true" ExpressionL="${name}" ExpressionTypeL="String" ExpressionR="${_ffxivplayer}" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
                             </Condition>
-                            <Conditions />
                           </Action>
                           <Action OrderNumber="4" TextAuraEffect="Bold" TextAuraFontSize="24" TextAuraForeground="#FFBB00" TextAuraOutline="Black" TextAuraName="brightenedFireCount" TextAuraExpression="#2" TextAuraXIniExpression="0" TextAuraYIniExpression="${_screenheight}/2" TextAuraWIniExpression="${_screenwidth}" TextAuraHIniExpression="42" TextAuraOIniExpression="100" TextAuraTTLTickExpression="3-${_since}" TextAuraUseOutline="True" TextAuraFontName="Arial" ActionType="TextAura" Asynchronous="False">
                             <Condition Enabled="true" Grouping="And">
                               <ConditionSingle Enabled="true" ExpressionL="${var:dataHeadmarkerValue}" ExpressionTypeL="Numeric" ExpressionR="2" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
                               <ConditionSingle Enabled="true" ExpressionL="${name}" ExpressionTypeL="String" ExpressionR="${_ffxivplayer}" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
                             </Condition>
-                            <Conditions />
                           </Action>
                           <Action OrderNumber="5" TextAuraEffect="Bold" TextAuraFontSize="24" TextAuraForeground="#FFBB00" TextAuraOutline="Black" TextAuraName="brightenedFireCount" TextAuraExpression="#3" TextAuraXIniExpression="0" TextAuraYIniExpression="${_screenheight}/2" TextAuraWIniExpression="${_screenwidth}" TextAuraHIniExpression="42" TextAuraOIniExpression="100" TextAuraTTLTickExpression="3-${_since}" TextAuraUseOutline="True" TextAuraFontName="Arial" ActionType="TextAura" Asynchronous="False">
                             <Condition Enabled="true" Grouping="And">
                               <ConditionSingle Enabled="true" ExpressionL="${var:dataHeadmarkerValue}" ExpressionTypeL="Numeric" ExpressionR="3" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
                               <ConditionSingle Enabled="true" ExpressionL="${name}" ExpressionTypeL="String" ExpressionR="${_ffxivplayer}" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
                             </Condition>
-                            <Conditions />
                           </Action>
                           <Action OrderNumber="6" TextAuraEffect="Bold" TextAuraFontSize="24" TextAuraForeground="#FFBB00" TextAuraOutline="Black" TextAuraName="brightenedFireCount" TextAuraExpression="#4" TextAuraXIniExpression="0" TextAuraYIniExpression="${_screenheight}/2" TextAuraWIniExpression="${_screenwidth}" TextAuraHIniExpression="42" TextAuraOIniExpression="100" TextAuraTTLTickExpression="3-${_since}" TextAuraUseOutline="True" TextAuraFontName="Arial" ActionType="TextAura" Asynchronous="False">
                             <Condition Enabled="true" Grouping="And">
                               <ConditionSingle Enabled="true" ExpressionL="${var:dataHeadmarkerValue}" ExpressionTypeL="Numeric" ExpressionR="4" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
                               <ConditionSingle Enabled="true" ExpressionL="${name}" ExpressionTypeL="String" ExpressionR="${_ffxivplayer}" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
                             </Condition>
-                            <Conditions />
                           </Action>
                           <Action OrderNumber="7" TextAuraEffect="Bold" TextAuraFontSize="24" TextAuraForeground="#FFBB00" TextAuraOutline="Black" TextAuraName="brightenedFireCount" TextAuraExpression="#5" TextAuraXIniExpression="0" TextAuraYIniExpression="${_screenheight}/2" TextAuraWIniExpression="${_screenwidth}" TextAuraHIniExpression="42" TextAuraOIniExpression="100" TextAuraTTLTickExpression="3-${_since}" TextAuraUseOutline="True" TextAuraFontName="Arial" ActionType="TextAura" Asynchronous="False">
                             <Condition Enabled="true" Grouping="And">
                               <ConditionSingle Enabled="true" ExpressionL="${var:dataHeadmarkerValue}" ExpressionTypeL="Numeric" ExpressionR="5" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
                               <ConditionSingle Enabled="true" ExpressionL="${name}" ExpressionTypeL="String" ExpressionR="${_ffxivplayer}" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
                             </Condition>
-                            <Conditions />
                           </Action>
                           <Action OrderNumber="8" TextAuraEffect="Bold" TextAuraFontSize="24" TextAuraForeground="#FFBB00" TextAuraOutline="Black" TextAuraName="brightenedFireCount" TextAuraExpression="#6" TextAuraXIniExpression="0" TextAuraYIniExpression="${_screenheight}/2" TextAuraWIniExpression="${_screenwidth}" TextAuraHIniExpression="42" TextAuraOIniExpression="100" TextAuraTTLTickExpression="3-${_since}" TextAuraUseOutline="True" TextAuraFontName="Arial" ActionType="TextAura" Asynchronous="False">
                             <Condition Enabled="true" Grouping="And">
                               <ConditionSingle Enabled="true" ExpressionL="${var:dataHeadmarkerValue}" ExpressionTypeL="Numeric" ExpressionR="6" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
                               <ConditionSingle Enabled="true" ExpressionL="${name}" ExpressionTypeL="String" ExpressionR="${_ffxivplayer}" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
                             </Condition>
-                            <Conditions />
                           </Action>
                           <Action OrderNumber="9" TextAuraEffect="Bold" TextAuraFontSize="24" TextAuraForeground="#FFBB00" TextAuraOutline="Black" TextAuraName="brightenedFireCount" TextAuraExpression="#7" TextAuraXIniExpression="0" TextAuraYIniExpression="${_screenheight}/2" TextAuraWIniExpression="${_screenwidth}" TextAuraHIniExpression="42" TextAuraOIniExpression="100" TextAuraTTLTickExpression="3-${_since}" TextAuraUseOutline="True" TextAuraFontName="Arial" ActionType="TextAura" Asynchronous="False">
                             <Condition Enabled="true" Grouping="And">
                               <ConditionSingle Enabled="true" ExpressionL="${var:dataHeadmarkerValue}" ExpressionTypeL="Numeric" ExpressionR="7" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
                               <ConditionSingle Enabled="true" ExpressionL="${name}" ExpressionTypeL="String" ExpressionR="${_ffxivplayer}" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
                             </Condition>
-                            <Conditions />
                           </Action>
                           <Action OrderNumber="10" TextAuraEffect="Bold" TextAuraFontSize="24" TextAuraForeground="#FFBB00" TextAuraOutline="Black" TextAuraName="brightenedFireCount" TextAuraExpression="#8" TextAuraXIniExpression="0" TextAuraYIniExpression="${_screenheight}/2" TextAuraWIniExpression="${_screenwidth}" TextAuraHIniExpression="42" TextAuraOIniExpression="100" TextAuraTTLTickExpression="3-${_since}" TextAuraUseOutline="True" TextAuraFontName="Arial" ActionType="TextAura" Asynchronous="False">
                             <Condition Enabled="true" Grouping="And">
                               <ConditionSingle Enabled="true" ExpressionL="${var:dataHeadmarkerValue}" ExpressionTypeL="Numeric" ExpressionR="8" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
                               <ConditionSingle Enabled="true" ExpressionL="${name}" ExpressionTypeL="String" ExpressionR="${_ffxivplayer}" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
                             </Condition>
-                            <Conditions />
                           </Action>
                           <Action OrderNumber="11" TextAuraEffect="Bold" TextAuraFontSize="20.25" TextAuraForeground="Red" TextAuraOutline="Black" TextAuraName="brightenedWaymark" TextAuraExpression="Waymark [1]" TextAuraXIniExpression="0" TextAuraYIniExpression="(${_screenheight}/2)+42" TextAuraWIniExpression="${_screenwidth}" TextAuraHIniExpression="35" TextAuraOIniExpression="100" TextAuraTTLTickExpression="3-${_since}" TextAuraUseOutline="True" TextAuraFontName="Arial" ActionType="TextAura" Asynchronous="False">
                             <Condition Enabled="true" Grouping="And">
@@ -12378,7 +12576,6 @@
                               </ConditionGroup>
                               <ConditionSingle Enabled="true" ExpressionL="${name}" ExpressionTypeL="String" ExpressionR="${_ffxivplayer}" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
                             </Condition>
-                            <Conditions />
                           </Action>
                           <Action OrderNumber="12" TextAuraEffect="Bold" TextAuraFontSize="20.25" TextAuraForeground="Yellow" TextAuraOutline="Black" TextAuraName="brightenedWaymark" TextAuraExpression="Waymark [2]" TextAuraXIniExpression="0" TextAuraYIniExpression="(${_screenheight}/2)+42" TextAuraWIniExpression="${_screenwidth}" TextAuraHIniExpression="35" TextAuraOIniExpression="100" TextAuraTTLTickExpression="3-${_since}" TextAuraUseOutline="True" TextAuraFontName="Arial" ActionType="TextAura" Asynchronous="False">
                             <Condition Enabled="true" Grouping="And">
@@ -12388,7 +12585,6 @@
                               </ConditionGroup>
                               <ConditionSingle Enabled="true" ExpressionL="${name}" ExpressionTypeL="String" ExpressionR="${_ffxivplayer}" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
                             </Condition>
-                            <Conditions />
                           </Action>
                           <Action OrderNumber="13" TextAuraEffect="Bold" TextAuraFontSize="20.25" TextAuraForeground="Aqua" TextAuraOutline="Black" TextAuraName="brightenedWaymark" TextAuraExpression="Waymark [3]" TextAuraXIniExpression="0" TextAuraYIniExpression="(${_screenheight}/2)+42" TextAuraWIniExpression="${_screenwidth}" TextAuraHIniExpression="35" TextAuraOIniExpression="100" TextAuraTTLTickExpression="3-${_since}" TextAuraUseOutline="True" TextAuraFontName="Arial" ActionType="TextAura" Asynchronous="False">
                             <Condition Enabled="true" Grouping="And">
@@ -12398,7 +12594,6 @@
                               </ConditionGroup>
                               <ConditionSingle Enabled="true" ExpressionL="${name}" ExpressionTypeL="String" ExpressionR="${_ffxivplayer}" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
                             </Condition>
-                            <Conditions />
                           </Action>
                           <Action OrderNumber="14" TextAuraEffect="Bold" TextAuraFontSize="20.25" TextAuraForeground="#8000FF" TextAuraOutline="Black" TextAuraName="brightenedWaymark" TextAuraExpression="Waymark [4]" TextAuraXIniExpression="0" TextAuraYIniExpression="(${_screenheight}/2)+42" TextAuraWIniExpression="${_screenwidth}" TextAuraHIniExpression="35" TextAuraOIniExpression="100" TextAuraTTLTickExpression="3-${_since}" TextAuraUseOutline="True" TextAuraFontName="Arial" ActionType="TextAura" Asynchronous="False">
                             <Condition Enabled="true" Grouping="And">
@@ -12408,7 +12603,6 @@
                               </ConditionGroup>
                               <ConditionSingle Enabled="true" ExpressionL="${name}" ExpressionTypeL="String" ExpressionR="${_ffxivplayer}" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
                             </Condition>
-                            <Conditions />
                           </Action>
                         </Actions>
                         <Condition Enabled="true" Grouping="Or">
@@ -12759,22 +12953,6 @@
                   <Folder FFXIVJobFilterEnabled="True" FFXIVJobFilter="17263755264" Id="3ec18799-b5d9-4d79-85f8-3f254357f9bb" Name="Caster" Enabled="true">
                     <Folders />
                     <Triggers>
-                      <Trigger Enabled="true" Name="Murky Depths" Id="4dd0903a-82da-4af9-9c27-82e32d39913b" RegularExpression="^.{29}14:(?&lt;sourceID&gt;(?:[^:]*)):(?&lt;source&gt;(?:[^:]*)):6833:">
-                        <Actions>
-                          <Action OrderNumber="1" UseTTSTextExpression="Raidwide" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="UseTTS">
-                            <Condition Enabled="false" Grouping="Or" />
-                          </Action>
-                        </Actions>
-                        <Condition Enabled="false" Grouping="Or" />
-                      </Trigger>
-                      <Trigger Enabled="true" Name="Doubled Impact" Id="3aa1010f-a71d-4cdb-ad9c-b44f87fc86be" RegularExpression="^.{29}14:(?&lt;sourceID&gt;(?:[^:]*)):(?&lt;source&gt;(?:[^:]*)):6832:">
-                        <Actions>
-                          <Action OrderNumber="1" UseTTSTextExpression="Tankbuster" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="UseTTS">
-                            <Condition Enabled="false" Grouping="Or" />
-                          </Action>
-                        </Actions>
-                        <Condition Enabled="false" Grouping="Or" />
-                      </Trigger>
                       <Trigger Enabled="true" Name="Coherence" Id="6867f83b-19ae-422a-bf11-ad313a99f3c5" RegularExpression="^.{29}14:(?&lt;sourceID&gt;(?:[^:]*)):(?&lt;source&gt;(?:[^:]*)):681B:">
                         <Actions>
                           <Action OrderNumber="1" UseTTSTextExpression="Line Stack" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="UseTTS" ExecutionDelayExpression="9000">
@@ -12783,16 +12961,75 @@
                         </Actions>
                         <Condition Enabled="false" Grouping="Or" />
                       </Trigger>
-                      <Trigger Enabled="true" Name="Sewer Deluge" Id="273133c5-3f90-46da-b837-71132868b01a" RegularExpression="^.{29}14:(?&lt;sourceID&gt;(?:[^:]*)):(?&lt;source&gt;(?:[^:]*)):6810:">
+                      <Trigger Enabled="true" Name="Murky Depths" Id="31f02db2-e77d-483b-b5b0-afc41bb746a8" RegularExpression="^.{29}14:(?&lt;sourceID&gt;(?:[^:]*)):(?&lt;source&gt;(?:[^:]*)):6833:(?&lt;ability&gt;(?:[^:]*)):">
                         <Actions>
-                          <Action OrderNumber="1" TextAuraEffect="Bold" TextAuraFontSize="32.25" TextAuraForeground="Red" TextAuraOutline="Black" TextAuraName="bigRaidwide" TextAuraExpression="!! DANGER !!" TextAuraXIniExpression="0" TextAuraYIniExpression="(${_screenheight}/2)-50" TextAuraWIniExpression="${_screenwidth}" TextAuraHIniExpression="50" TextAuraOIniExpression="100" TextAuraOTickExpression="50 + (cos(${_sincems}/100)*50)" TextAuraTTLTickExpression="3-${_since}" TextAuraUseOutline="True" TextAuraFontName="Arial" ActionType="TextAura">
+                          <Action OrderNumber="1" UseTTSTextExpression="Raidwide" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="UseTTS">
                             <Condition Enabled="false" Grouping="Or" />
+                            <Conditions />
                           </Action>
-                          <Action OrderNumber="2" UseTTSTextExpression="Raidwide" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="UseTTS">
+                          <Action OrderNumber="2" AuraImageMode="Zoom" AuraName="iconRole" AuraImage="https://raw.githubusercontent.com/lexxiesia/xiv_triggernometry/master/resources/icons/roles/casterDPS.png" AuraXIniExpression="(${_screenwidth}/2)-80" AuraYIniExpression="(${_screenheight}/2)+42" AuraWIniExpression="35" AuraHIniExpression="35" AuraOIniExpression="100" AuraTTLTickExpression="3-${_since}" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Aura">
                             <Condition Enabled="false" Grouping="Or" />
+                            <Conditions />
+                          </Action>
+                          <Action OrderNumber="3" AuraImageMode="Zoom" AuraName="iconSkill" AuraImage="https://xivapi.com/i/009000/009335.png" AuraXIniExpression="(${_screenwidth}/2)-40" AuraYIniExpression="(${_screenheight}/2)+42" AuraWIniExpression="35" AuraHIniExpression="35" AuraOIniExpression="100" AuraTTLTickExpression="3-${_since}" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Aura">
+                            <Condition Enabled="false" Grouping="Or" />
+                            <Conditions />
+                          </Action>
+                          <Action OrderNumber="4" TextAuraAlignment="MiddleLeft" TextAuraEffect="Bold" TextAuraFontSize="20.25" TextAuraForeground="Lime" TextAuraOutline="Black" TextAuraName="abilityText" TextAuraExpression="${ability}" TextAuraXIniExpression="${_screenwidth}/2" TextAuraYIniExpression="(${_screenheight}/2)+42" TextAuraWIniExpression="${_screenwidth}/2" TextAuraHIniExpression="35" TextAuraOIniExpression="100" TextAuraTTLTickExpression="3-${_since}" TextAuraUseOutline="True" TextAuraFontName="Arial" ActionType="TextAura">
+                            <Condition Enabled="false" Grouping="Or" />
+                            <Conditions />
                           </Action>
                         </Actions>
                         <Condition Enabled="false" Grouping="Or" />
+                        <Conditions />
+                      </Trigger>
+                      <Trigger Enabled="true" Name="Sewer Deluge" Id="23475452-11b0-4c8e-88ad-f053156fc40a" RegularExpression="^.{29}14:(?&lt;sourceID&gt;(?:[^:]*)):(?&lt;source&gt;(?:[^:]*)):6810:(?&lt;ability&gt;(?:[^:]*)):">
+                        <Actions>
+                          <Action OrderNumber="1" UseTTSTextExpression="Raidwide" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="UseTTS">
+                            <Condition Enabled="false" Grouping="Or" />
+                            <Conditions />
+                          </Action>
+                          <Action OrderNumber="2" AuraImageMode="Zoom" AuraName="iconRole" AuraImage="https://raw.githubusercontent.com/lexxiesia/xiv_triggernometry/master/resources/icons/roles/casterDPS.png" AuraXIniExpression="(${_screenwidth}/2)-80" AuraYIniExpression="(${_screenheight}/2)+42" AuraWIniExpression="35" AuraHIniExpression="35" AuraOIniExpression="100" AuraTTLTickExpression="3-${_since}" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Aura">
+                            <Condition Enabled="false" Grouping="Or" />
+                            <Conditions />
+                          </Action>
+                          <Action OrderNumber="3" AuraImageMode="Zoom" AuraName="iconSkill" AuraImage="https://xivapi.com/i/009000/009335.png" AuraXIniExpression="(${_screenwidth}/2)-40" AuraYIniExpression="(${_screenheight}/2)+42" AuraWIniExpression="35" AuraHIniExpression="35" AuraOIniExpression="100" AuraTTLTickExpression="3-${_since}" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Aura">
+                            <Condition Enabled="false" Grouping="Or" />
+                            <Conditions />
+                          </Action>
+                          <Action OrderNumber="4" TextAuraAlignment="MiddleLeft" TextAuraEffect="Bold" TextAuraFontSize="20.25" TextAuraForeground="Lime" TextAuraOutline="Black" TextAuraName="abilityText" TextAuraExpression="${ability}" TextAuraXIniExpression="${_screenwidth}/2" TextAuraYIniExpression="(${_screenheight}/2)+42" TextAuraWIniExpression="${_screenwidth}/2" TextAuraHIniExpression="35" TextAuraOIniExpression="100" TextAuraTTLTickExpression="3-${_since}" TextAuraUseOutline="True" TextAuraFontName="Arial" ActionType="TextAura">
+                            <Condition Enabled="false" Grouping="Or" />
+                            <Conditions />
+                          </Action>
+                          <Action OrderNumber="5" TextAuraEffect="Bold" TextAuraFontSize="32.25" TextAuraForeground="Red" TextAuraOutline="Black" TextAuraName="bigRaidwide" TextAuraExpression="!! DANGER !!" TextAuraXIniExpression="0" TextAuraYIniExpression="(${_screenheight}/2)-50" TextAuraWIniExpression="${_screenwidth}" TextAuraHIniExpression="50" TextAuraOIniExpression="100" TextAuraOTickExpression="50 + (cos(${_sincems}/100)*50)" TextAuraTTLTickExpression="3-${_since}" TextAuraUseOutline="True" TextAuraFontName="Arial" ActionType="TextAura">
+                            <Condition Enabled="false" Grouping="Or" />
+                            <Conditions />
+                          </Action>
+                        </Actions>
+                        <Condition Enabled="false" Grouping="Or" />
+                        <Conditions />
+                      </Trigger>
+                      <Trigger Enabled="true" Name="Doubled Impact" Id="a2b3c529-2e17-4143-87dd-cbdee3b9b56e" RegularExpression="^.{29}14:(?&lt;sourceID&gt;(?:[^:]*)):(?&lt;source&gt;(?:[^:]*)):6832:(?&lt;ability&gt;(?:[^:]*)):">
+                        <Actions>
+                          <Action OrderNumber="1" UseTTSTextExpression="Tankbuster" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="UseTTS">
+                            <Condition Enabled="false" Grouping="Or" />
+                            <Conditions />
+                          </Action>
+                          <Action OrderNumber="2" AuraImageMode="Zoom" AuraName="iconRole" AuraImage="https://raw.githubusercontent.com/lexxiesia/xiv_triggernometry/master/resources/icons/roles/casterDPS.png" AuraXIniExpression="(${_screenwidth}/2)-80" AuraYIniExpression="(${_screenheight}/2)+42" AuraWIniExpression="35" AuraHIniExpression="35" AuraOIniExpression="100" AuraTTLTickExpression="3-${_since}" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Aura">
+                            <Condition Enabled="false" Grouping="Or" />
+                            <Conditions />
+                          </Action>
+                          <Action OrderNumber="3" AuraImageMode="Zoom" AuraName="iconSkill" AuraImage="https://xivapi.com/i/009000/009335.png" AuraXIniExpression="(${_screenwidth}/2)-40" AuraYIniExpression="(${_screenheight}/2)+42" AuraWIniExpression="35" AuraHIniExpression="35" AuraOIniExpression="100" AuraTTLTickExpression="3-${_since}" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Aura">
+                            <Condition Enabled="false" Grouping="Or" />
+                            <Conditions />
+                          </Action>
+                          <Action OrderNumber="4" TextAuraEffect="Bold" TextAuraFontSize="20.25" TextAuraForeground="Lime" TextAuraOutline="Black" TextAuraName="abilityText" TextAuraExpression="${ability}" TextAuraXIniExpression="0" TextAuraYIniExpression="(${_screenheight}/2)+42" TextAuraWIniExpression="${_screenwidth}" TextAuraHIniExpression="35" TextAuraOIniExpression="100" TextAuraTTLTickExpression="3-${_since}" TextAuraUseOutline="True" TextAuraFontName="Arial" ActionType="TextAura">
+                            <Condition Enabled="false" Grouping="Or" />
+                            <Conditions />
+                          </Action>
+                        </Actions>
+                        <Condition Enabled="false" Grouping="Or" />
+                        <Conditions />
                       </Trigger>
                     </Triggers>
                   </Folder>
@@ -12922,22 +13159,6 @@
                   <Folder FFXIVJobFilterEnabled="True" FFXIVJobFilter="284007333888" Id="bf3f7e3a-21b0-4f04-be4b-cd1482271c5f" Name="Melee" Enabled="true">
                     <Folders />
                     <Triggers>
-                      <Trigger Enabled="true" Name="Murky Depths" Id="ab29d55b-ebd8-41ce-969d-e2ac172f0514" RegularExpression="^.{29}14:(?&lt;sourceID&gt;(?:[^:]*)):(?&lt;source&gt;(?:[^:]*)):6833:">
-                        <Actions>
-                          <Action OrderNumber="1" TextAuraEffect="Bold" TextAuraFontSize="20.25" TextAuraForeground="Lime" TextAuraOutline="Black" TextAuraName="raidwideText" TextAuraExpression="Raidwide" TextAuraXIniExpression="0" TextAuraYIniExpression="(${_screenheight}/2)+42" TextAuraWIniExpression="${_screenwidth}" TextAuraHIniExpression="35" TextAuraOIniExpression="100" TextAuraTTLTickExpression="3-${_since}" TextAuraUseOutline="True" TextAuraFontName="Arial" ActionType="TextAura">
-                            <Condition Enabled="false" Grouping="Or" />
-                          </Action>
-                        </Actions>
-                        <Condition Enabled="false" Grouping="Or" />
-                      </Trigger>
-                      <Trigger Enabled="true" Name="Doubled Impact" Id="feecd873-ce06-48ad-83f6-ba8d394d7da6" RegularExpression="^.{29}14:(?&lt;sourceID&gt;(?:[^:]*)):(?&lt;source&gt;(?:[^:]*)):6832:">
-                        <Actions>
-                          <Action OrderNumber="1" TextAuraEffect="Bold" TextAuraFontSize="18" TextAuraForeground="Lime" TextAuraOutline="Black" TextAuraName="tankbusterText" TextAuraExpression="Tankbuster" TextAuraXIniExpression="0" TextAuraYIniExpression="(${_screenheight}/2)+42" TextAuraWIniExpression="${_screenwidth}" TextAuraHIniExpression="35" TextAuraOIniExpression="100" TextAuraTTLTickExpression="3-${_since}" TextAuraUseOutline="True" TextAuraFontName="Arial" ActionType="TextAura">
-                            <Condition Enabled="false" Grouping="Or" />
-                          </Action>
-                        </Actions>
-                        <Condition Enabled="false" Grouping="Or" />
-                      </Trigger>
                       <Trigger Enabled="true" Name="Coherence" Id="4062995d-b5f2-4e42-b9f6-5461cf3cd43c" RegularExpression="^.{29}14:(?&lt;sourceID&gt;(?:[^:]*)):(?&lt;source&gt;(?:[^:]*)):681B:">
                         <Actions>
                           <Action OrderNumber="1" UseTTSTextExpression="Line Stack" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="UseTTS" ExecutionDelayExpression="9000">
@@ -12946,16 +13167,75 @@
                         </Actions>
                         <Condition Enabled="false" Grouping="Or" />
                       </Trigger>
-                      <Trigger Enabled="true" Name="Sewer Deluge" Id="896e1d18-d5a9-44f0-9312-9acafe867fde" RegularExpression="^.{29}14:(?&lt;sourceID&gt;(?:[^:]*)):(?&lt;source&gt;(?:[^:]*)):6810:">
+                      <Trigger Enabled="true" Name="Doubled Impact" Id="de6b7e09-522b-4299-a06d-c7a022cc086d" RegularExpression="^.{29}14:(?&lt;sourceID&gt;(?:[^:]*)):(?&lt;source&gt;(?:[^:]*)):6832:(?&lt;ability&gt;(?:[^:]*)):">
                         <Actions>
-                          <Action OrderNumber="1" TextAuraEffect="Bold" TextAuraFontSize="32.25" TextAuraForeground="Red" TextAuraOutline="Black" TextAuraName="bigRaidwide" TextAuraExpression="!! DANGER !!" TextAuraXIniExpression="0" TextAuraYIniExpression="(${_screenheight}/2)-50" TextAuraWIniExpression="${_screenwidth}" TextAuraHIniExpression="50" TextAuraOIniExpression="100" TextAuraOTickExpression="50 + (cos(${_sincems}/100)*50)" TextAuraTTLTickExpression="3-${_since}" TextAuraUseOutline="True" TextAuraFontName="Arial" ActionType="TextAura">
+                          <Action OrderNumber="1" UseTTSTextExpression="Tankbuster" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="UseTTS">
                             <Condition Enabled="false" Grouping="Or" />
+                            <Conditions />
                           </Action>
-                          <Action OrderNumber="2" TextAuraEffect="Bold" TextAuraFontSize="20.25" TextAuraForeground="Lime" TextAuraOutline="Black" TextAuraName="raidwideText" TextAuraExpression="Raidwide" TextAuraXIniExpression="0" TextAuraYIniExpression="(${_screenheight}/2)+42" TextAuraWIniExpression="${_screenwidth}" TextAuraHIniExpression="35" TextAuraOIniExpression="100" TextAuraTTLTickExpression="3-${_since}" TextAuraUseOutline="True" TextAuraFontName="Arial" ActionType="TextAura">
+                          <Action OrderNumber="2" AuraImageMode="Zoom" AuraName="iconRole" AuraImage="https://raw.githubusercontent.com/lexxiesia/xiv_triggernometry/master/resources/icons/roles/casterDPS.png" AuraXIniExpression="(${_screenwidth}/2)-80" AuraYIniExpression="(${_screenheight}/2)+42" AuraWIniExpression="35" AuraHIniExpression="35" AuraOIniExpression="100" AuraTTLTickExpression="3-${_since}" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Aura">
                             <Condition Enabled="false" Grouping="Or" />
+                            <Conditions />
+                          </Action>
+                          <Action OrderNumber="3" AuraImageMode="Zoom" AuraName="iconSkill" AuraImage="https://xivapi.com/i/009000/009335.png" AuraXIniExpression="(${_screenwidth}/2)-40" AuraYIniExpression="(${_screenheight}/2)+42" AuraWIniExpression="35" AuraHIniExpression="35" AuraOIniExpression="100" AuraTTLTickExpression="3-${_since}" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Aura">
+                            <Condition Enabled="false" Grouping="Or" />
+                            <Conditions />
+                          </Action>
+                          <Action OrderNumber="4" TextAuraEffect="Bold" TextAuraFontSize="20.25" TextAuraForeground="Lime" TextAuraOutline="Black" TextAuraName="abilityText" TextAuraExpression="${ability}" TextAuraXIniExpression="0" TextAuraYIniExpression="(${_screenheight}/2)+42" TextAuraWIniExpression="${_screenwidth}" TextAuraHIniExpression="35" TextAuraOIniExpression="100" TextAuraTTLTickExpression="3-${_since}" TextAuraUseOutline="True" TextAuraFontName="Arial" ActionType="TextAura">
+                            <Condition Enabled="false" Grouping="Or" />
+                            <Conditions />
                           </Action>
                         </Actions>
                         <Condition Enabled="false" Grouping="Or" />
+                        <Conditions />
+                      </Trigger>
+                      <Trigger Enabled="true" Name="Murky Depths" Id="b3d3a9af-c06e-478f-9baa-981628192dfb" RegularExpression="^.{29}14:(?&lt;sourceID&gt;(?:[^:]*)):(?&lt;source&gt;(?:[^:]*)):6833:(?&lt;ability&gt;(?:[^:]*)):">
+                        <Actions>
+                          <Action OrderNumber="1" UseTTSTextExpression="Raidwide" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="UseTTS">
+                            <Condition Enabled="false" Grouping="Or" />
+                            <Conditions />
+                          </Action>
+                          <Action OrderNumber="2" AuraImageMode="Zoom" AuraName="iconRole" AuraImage="https://raw.githubusercontent.com/lexxiesia/xiv_triggernometry/master/resources/icons/roles/casterDPS.png" AuraXIniExpression="(${_screenwidth}/2)-80" AuraYIniExpression="(${_screenheight}/2)+42" AuraWIniExpression="35" AuraHIniExpression="35" AuraOIniExpression="100" AuraTTLTickExpression="3-${_since}" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Aura">
+                            <Condition Enabled="false" Grouping="Or" />
+                            <Conditions />
+                          </Action>
+                          <Action OrderNumber="3" AuraImageMode="Zoom" AuraName="iconSkill" AuraImage="https://xivapi.com/i/009000/009335.png" AuraXIniExpression="(${_screenwidth}/2)-40" AuraYIniExpression="(${_screenheight}/2)+42" AuraWIniExpression="35" AuraHIniExpression="35" AuraOIniExpression="100" AuraTTLTickExpression="3-${_since}" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Aura">
+                            <Condition Enabled="false" Grouping="Or" />
+                            <Conditions />
+                          </Action>
+                          <Action OrderNumber="4" TextAuraAlignment="MiddleLeft" TextAuraEffect="Bold" TextAuraFontSize="20.25" TextAuraForeground="Lime" TextAuraOutline="Black" TextAuraName="abilityText" TextAuraExpression="${ability}" TextAuraXIniExpression="${_screenwidth}/2" TextAuraYIniExpression="(${_screenheight}/2)+42" TextAuraWIniExpression="${_screenwidth}/2" TextAuraHIniExpression="35" TextAuraOIniExpression="100" TextAuraTTLTickExpression="3-${_since}" TextAuraUseOutline="True" TextAuraFontName="Arial" ActionType="TextAura">
+                            <Condition Enabled="false" Grouping="Or" />
+                            <Conditions />
+                          </Action>
+                        </Actions>
+                        <Condition Enabled="false" Grouping="Or" />
+                        <Conditions />
+                      </Trigger>
+                      <Trigger Enabled="true" Name="Sewer Deluge" Id="58bf00c1-835b-4c8e-bd99-b45c980f6f30" RegularExpression="^.{29}14:(?&lt;sourceID&gt;(?:[^:]*)):(?&lt;source&gt;(?:[^:]*)):6810:(?&lt;ability&gt;(?:[^:]*)):">
+                        <Actions>
+                          <Action OrderNumber="1" UseTTSTextExpression="Raidwide" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="UseTTS">
+                            <Condition Enabled="false" Grouping="Or" />
+                            <Conditions />
+                          </Action>
+                          <Action OrderNumber="2" AuraImageMode="Zoom" AuraName="iconRole" AuraImage="https://raw.githubusercontent.com/lexxiesia/xiv_triggernometry/master/resources/icons/roles/casterDPS.png" AuraXIniExpression="(${_screenwidth}/2)-80" AuraYIniExpression="(${_screenheight}/2)+42" AuraWIniExpression="35" AuraHIniExpression="35" AuraOIniExpression="100" AuraTTLTickExpression="3-${_since}" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Aura">
+                            <Condition Enabled="false" Grouping="Or" />
+                            <Conditions />
+                          </Action>
+                          <Action OrderNumber="3" AuraImageMode="Zoom" AuraName="iconSkill" AuraImage="https://xivapi.com/i/009000/009335.png" AuraXIniExpression="(${_screenwidth}/2)-40" AuraYIniExpression="(${_screenheight}/2)+42" AuraWIniExpression="35" AuraHIniExpression="35" AuraOIniExpression="100" AuraTTLTickExpression="3-${_since}" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Aura">
+                            <Condition Enabled="false" Grouping="Or" />
+                            <Conditions />
+                          </Action>
+                          <Action OrderNumber="4" TextAuraAlignment="MiddleLeft" TextAuraEffect="Bold" TextAuraFontSize="20.25" TextAuraForeground="Lime" TextAuraOutline="Black" TextAuraName="abilityText" TextAuraExpression="${ability}" TextAuraXIniExpression="${_screenwidth}/2" TextAuraYIniExpression="(${_screenheight}/2)+42" TextAuraWIniExpression="${_screenwidth}/2" TextAuraHIniExpression="35" TextAuraOIniExpression="100" TextAuraTTLTickExpression="3-${_since}" TextAuraUseOutline="True" TextAuraFontName="Arial" ActionType="TextAura">
+                            <Condition Enabled="false" Grouping="Or" />
+                            <Conditions />
+                          </Action>
+                          <Action OrderNumber="5" TextAuraEffect="Bold" TextAuraFontSize="32.25" TextAuraForeground="Red" TextAuraOutline="Black" TextAuraName="bigRaidwide" TextAuraExpression="!! DANGER !!" TextAuraXIniExpression="0" TextAuraYIniExpression="(${_screenheight}/2)-50" TextAuraWIniExpression="${_screenwidth}" TextAuraHIniExpression="50" TextAuraOIniExpression="100" TextAuraOTickExpression="50 + (cos(${_sincems}/100)*50)" TextAuraTTLTickExpression="3-${_since}" TextAuraUseOutline="True" TextAuraFontName="Arial" ActionType="TextAura">
+                            <Condition Enabled="false" Grouping="Or" />
+                            <Conditions />
+                          </Action>
+                        </Actions>
+                        <Condition Enabled="false" Grouping="Or" />
+                        <Conditions />
                       </Trigger>
                     </Triggers>
                   </Folder>
@@ -13436,22 +13716,6 @@
                       </Folder>
                     </Folders>
                     <Triggers>
-                      <Trigger Enabled="true" Name="Decollation" Id="1e3f1034-b7e2-42f7-aae8-9715276e3d7f" RegularExpression="^.{29}14:(?&lt;sourceID&gt;(?:[^:]*)):(?&lt;source&gt;(?:[^:]*)):6A09:">
-                        <Actions>
-                          <Action OrderNumber="1" UseTTSTextExpression="Raidwide" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="UseTTS">
-                            <Condition Enabled="false" Grouping="Or" />
-                          </Action>
-                        </Actions>
-                        <Condition Enabled="false" Grouping="Or" />
-                      </Trigger>
-                      <Trigger Enabled="true" Name="Searing Stream" Id="37622803-a618-4dc5-a187-156692f35d92" RegularExpression="^.{29}14:(?&lt;sourceID&gt;(?:[^:]*)):(?&lt;source&gt;(?:[^:]*)):6A2D:">
-                        <Actions>
-                          <Action OrderNumber="1" UseTTSTextExpression="Raidwide" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="UseTTS">
-                            <Condition Enabled="false" Grouping="Or" />
-                          </Action>
-                        </Actions>
-                        <Condition Enabled="false" Grouping="Or" />
-                      </Trigger>
                       <Trigger Enabled="true" Name="Nearsight" Id="244b7eb3-c033-4b9b-8e31-7107595a8ec0" RegularExpression="^.{29}14:(?&lt;sourceID&gt;(?:[^:]*)):(?&lt;source&gt;(?:[^:]*)):6A26:">
                         <Actions>
                           <Action OrderNumber="1" PlaySoundFileExpression="https://raw.githubusercontent.com/lexxiesia/xiv_triggernometry/master/resources/wav/mvc3_danger.wav" PlaySoundVolumeExpression="50" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="PlaySound">
@@ -13474,40 +13738,140 @@
                         </Actions>
                         <Condition Enabled="false" Grouping="Or" />
                       </Trigger>
-                      <Trigger Enabled="true" Name="Ultimate Impulse" Id="de36cca3-28ec-4096-b4a3-dd365c864da8" RegularExpression="^.{29}14:(?&lt;sourceID&gt;(?:[^:]*)):(?&lt;source&gt;(?:[^:]*)):6A2C:">
-                        <Actions>
-                          <Action OrderNumber="1" TextAuraEffect="Bold" TextAuraFontSize="32.25" TextAuraForeground="Red" TextAuraOutline="Black" TextAuraName="bigRaidwide" TextAuraExpression="!! DANGER !!" TextAuraXIniExpression="0" TextAuraYIniExpression="(${_screenheight}/2)-50" TextAuraWIniExpression="${_screenwidth}" TextAuraHIniExpression="50" TextAuraOIniExpression="100" TextAuraOTickExpression="50 + (cos(${_sincems}/100)*50)" TextAuraTTLTickExpression="3-${_since}" TextAuraUseOutline="True" TextAuraFontName="Arial" ActionType="TextAura">
-                            <Condition Enabled="false" Grouping="Or" />
-                          </Action>
-                          <Action OrderNumber="2" UseTTSTextExpression="Raidwide" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="UseTTS">
-                            <Condition Enabled="false" Grouping="Or" />
-                          </Action>
-                        </Actions>
-                        <Condition Enabled="false" Grouping="Or" />
-                      </Trigger>
-                      <Trigger Enabled="true" Name="Elegant Evisceration" Id="a7ac9208-2133-4649-a8f3-6e5c74fffafb" RegularExpression="^.{29}14:(?&lt;sourceID&gt;(?:[^:]*)):(?&lt;source&gt;(?:[^:]*)):6A08:">
+                      <Trigger Enabled="true" Name="Elegant Evisceration" Id="12ace4a2-1585-409b-a3df-4a129811bba1" RegularExpression="^.{29}14:(?&lt;sourceID&gt;(?:[^:]*)):(?&lt;source&gt;(?:[^:]*)):6A08:(?&lt;ability&gt;(?:[^:]*)):">
                         <Actions>
                           <Action OrderNumber="1" UseTTSTextExpression="Tankbuster" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="UseTTS">
                             <Condition Enabled="false" Grouping="Or" />
+                            <Conditions />
+                          </Action>
+                          <Action OrderNumber="2" AuraImageMode="Zoom" AuraName="iconRole" AuraImage="https://raw.githubusercontent.com/lexxiesia/xiv_triggernometry/master/resources/icons/roles/casterDPS.png" AuraXIniExpression="(${_screenwidth}/2)-80" AuraYIniExpression="(${_screenheight}/2)+42" AuraWIniExpression="35" AuraHIniExpression="35" AuraOIniExpression="100" AuraTTLTickExpression="3-${_since}" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Aura">
+                            <Condition Enabled="false" Grouping="Or" />
+                            <Conditions />
+                          </Action>
+                          <Action OrderNumber="3" AuraImageMode="Zoom" AuraName="iconSkill" AuraImage="https://xivapi.com/i/009000/009335.png" AuraXIniExpression="(${_screenwidth}/2)-40" AuraYIniExpression="(${_screenheight}/2)+42" AuraWIniExpression="35" AuraHIniExpression="35" AuraOIniExpression="100" AuraTTLTickExpression="3-${_since}" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Aura">
+                            <Condition Enabled="false" Grouping="Or" />
+                            <Conditions />
+                          </Action>
+                          <Action OrderNumber="4" TextAuraEffect="Bold" TextAuraFontSize="20.25" TextAuraForeground="Lime" TextAuraOutline="Black" TextAuraName="abilityText" TextAuraExpression="${ability}" TextAuraXIniExpression="0" TextAuraYIniExpression="(${_screenheight}/2)+42" TextAuraWIniExpression="${_screenwidth}" TextAuraHIniExpression="35" TextAuraOIniExpression="100" TextAuraTTLTickExpression="3-${_since}" TextAuraUseOutline="True" TextAuraFontName="Arial" ActionType="TextAura">
+                            <Condition Enabled="false" Grouping="Or" />
+                            <Conditions />
                           </Action>
                         </Actions>
                         <Condition Enabled="false" Grouping="Or" />
                       </Trigger>
-                      <Trigger Enabled="true" Name="Bloodrake" Id="12ace4a2-1585-409b-a3df-4a129811bba1" RegularExpression="^.{29}14:(?&lt;sourceID&gt;(?:[^:]*)):(?&lt;source&gt;(?:[^:]*)):69D8:">
+                      <Trigger Enabled="true" Name="Bloodrake" Id="cd038641-ddde-4c4a-876d-3e304c58dfa0" RegularExpression="^.{29}14:(?&lt;sourceID&gt;(?:[^:]*)):(?&lt;source&gt;(?:[^:]*)):69D8:(?&lt;ability&gt;(?:[^:]*)):">
                         <Actions>
                           <Action OrderNumber="1" UseTTSTextExpression="Raidwide" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="UseTTS">
                             <Condition Enabled="false" Grouping="Or" />
+                            <Conditions />
+                          </Action>
+                          <Action OrderNumber="2" AuraImageMode="Zoom" AuraName="iconRole" AuraImage="https://raw.githubusercontent.com/lexxiesia/xiv_triggernometry/master/resources/icons/roles/casterDPS.png" AuraXIniExpression="(${_screenwidth}/2)-80" AuraYIniExpression="(${_screenheight}/2)+42" AuraWIniExpression="35" AuraHIniExpression="35" AuraOIniExpression="100" AuraTTLTickExpression="3-${_since}" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Aura">
+                            <Condition Enabled="false" Grouping="Or" />
+                            <Conditions />
+                          </Action>
+                          <Action OrderNumber="3" AuraImageMode="Zoom" AuraName="iconSkill" AuraImage="https://xivapi.com/i/009000/009335.png" AuraXIniExpression="(${_screenwidth}/2)-40" AuraYIniExpression="(${_screenheight}/2)+42" AuraWIniExpression="35" AuraHIniExpression="35" AuraOIniExpression="100" AuraTTLTickExpression="3-${_since}" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Aura">
+                            <Condition Enabled="false" Grouping="Or" />
+                            <Conditions />
+                          </Action>
+                          <Action OrderNumber="4" TextAuraAlignment="MiddleLeft" TextAuraEffect="Bold" TextAuraFontSize="20.25" TextAuraForeground="Lime" TextAuraOutline="Black" TextAuraName="abilityText" TextAuraExpression="${ability}" TextAuraXIniExpression="${_screenwidth}/2" TextAuraYIniExpression="(${_screenheight}/2)+42" TextAuraWIniExpression="${_screenwidth}/2" TextAuraHIniExpression="35" TextAuraOIniExpression="100" TextAuraTTLTickExpression="3-${_since}" TextAuraUseOutline="True" TextAuraFontName="Arial" ActionType="TextAura">
+                            <Condition Enabled="false" Grouping="Or" />
+                            <Conditions />
                           </Action>
                         </Actions>
                         <Condition Enabled="false" Grouping="Or" />
+                        <Conditions />
                       </Trigger>
-                      <Trigger Enabled="true" Name="Heart Stake" Id="b8b5eb1b-1411-4542-868b-b184807635b7" RegularExpression="^.{29}14:(?&lt;sourceID&gt;(?:[^:]*)):(?&lt;source&gt;(?:[^:]*)):6A2B:">
+                      <Trigger Enabled="true" Name="Decollation" Id="94ddc178-8ac9-4455-ad73-69ff16dabfd9" RegularExpression="^.{29}14:(?&lt;sourceID&gt;(?:[^:]*)):(?&lt;source&gt;(?:[^:]*)):6A09:(?&lt;ability&gt;(?:[^:]*)):">
+                        <Actions>
+                          <Action OrderNumber="1" UseTTSTextExpression="Raidwide" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="UseTTS">
+                            <Condition Enabled="false" Grouping="Or" />
+                            <Conditions />
+                          </Action>
+                          <Action OrderNumber="2" AuraImageMode="Zoom" AuraName="iconRole" AuraImage="https://raw.githubusercontent.com/lexxiesia/xiv_triggernometry/master/resources/icons/roles/casterDPS.png" AuraXIniExpression="(${_screenwidth}/2)-80" AuraYIniExpression="(${_screenheight}/2)+42" AuraWIniExpression="35" AuraHIniExpression="35" AuraOIniExpression="100" AuraTTLTickExpression="3-${_since}" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Aura">
+                            <Condition Enabled="false" Grouping="Or" />
+                            <Conditions />
+                          </Action>
+                          <Action OrderNumber="3" AuraImageMode="Zoom" AuraName="iconSkill" AuraImage="https://xivapi.com/i/009000/009335.png" AuraXIniExpression="(${_screenwidth}/2)-40" AuraYIniExpression="(${_screenheight}/2)+42" AuraWIniExpression="35" AuraHIniExpression="35" AuraOIniExpression="100" AuraTTLTickExpression="3-${_since}" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Aura">
+                            <Condition Enabled="false" Grouping="Or" />
+                            <Conditions />
+                          </Action>
+                          <Action OrderNumber="4" TextAuraAlignment="MiddleLeft" TextAuraEffect="Bold" TextAuraFontSize="20.25" TextAuraForeground="Lime" TextAuraOutline="Black" TextAuraName="abilityText" TextAuraExpression="${ability}" TextAuraXIniExpression="${_screenwidth}/2" TextAuraYIniExpression="(${_screenheight}/2)+42" TextAuraWIniExpression="${_screenwidth}/2" TextAuraHIniExpression="35" TextAuraOIniExpression="100" TextAuraTTLTickExpression="3-${_since}" TextAuraUseOutline="True" TextAuraFontName="Arial" ActionType="TextAura">
+                            <Condition Enabled="false" Grouping="Or" />
+                            <Conditions />
+                          </Action>
+                        </Actions>
+                        <Condition Enabled="false" Grouping="Or" />
+                        <Conditions />
+                      </Trigger>
+                      <Trigger Enabled="true" Name="Heart Stake" Id="3badff20-9413-473f-9dd9-45144320005e" RegularExpression="^.{29}14:(?&lt;sourceID&gt;(?:[^:]*)):(?&lt;source&gt;(?:[^:]*)):6A2B:(?&lt;ability&gt;(?:[^:]*)):">
                         <Actions>
                           <Action OrderNumber="1" UseTTSTextExpression="Tankbuster" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="UseTTS">
                             <Condition Enabled="false" Grouping="Or" />
+                            <Conditions />
+                          </Action>
+                          <Action OrderNumber="2" AuraImageMode="Zoom" AuraName="iconRole" AuraImage="https://raw.githubusercontent.com/lexxiesia/xiv_triggernometry/master/resources/icons/roles/casterDPS.png" AuraXIniExpression="(${_screenwidth}/2)-80" AuraYIniExpression="(${_screenheight}/2)+42" AuraWIniExpression="35" AuraHIniExpression="35" AuraOIniExpression="100" AuraTTLTickExpression="3-${_since}" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Aura">
+                            <Condition Enabled="false" Grouping="Or" />
+                            <Conditions />
+                          </Action>
+                          <Action OrderNumber="3" AuraImageMode="Zoom" AuraName="iconSkill" AuraImage="https://xivapi.com/i/009000/009335.png" AuraXIniExpression="(${_screenwidth}/2)-40" AuraYIniExpression="(${_screenheight}/2)+42" AuraWIniExpression="35" AuraHIniExpression="35" AuraOIniExpression="100" AuraTTLTickExpression="3-${_since}" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Aura">
+                            <Condition Enabled="false" Grouping="Or" />
+                            <Conditions />
+                          </Action>
+                          <Action OrderNumber="4" TextAuraEffect="Bold" TextAuraFontSize="20.25" TextAuraForeground="Lime" TextAuraOutline="Black" TextAuraName="abilityText" TextAuraExpression="${ability}" TextAuraXIniExpression="0" TextAuraYIniExpression="(${_screenheight}/2)+42" TextAuraWIniExpression="${_screenwidth}" TextAuraHIniExpression="35" TextAuraOIniExpression="100" TextAuraTTLTickExpression="3-${_since}" TextAuraUseOutline="True" TextAuraFontName="Arial" ActionType="TextAura">
+                            <Condition Enabled="false" Grouping="Or" />
+                            <Conditions />
                           </Action>
                         </Actions>
                         <Condition Enabled="false" Grouping="Or" />
+                        <Conditions />
+                      </Trigger>
+                      <Trigger Enabled="true" Name="Ultimate Impulse" Id="c6d43cd7-65f7-4d60-9132-7a4e218b2f55" RegularExpression="^.{29}14:(?&lt;sourceID&gt;(?:[^:]*)):(?&lt;source&gt;(?:[^:]*)):6A2C:(?&lt;ability&gt;(?:[^:]*)):">
+                        <Actions>
+                          <Action OrderNumber="1" UseTTSTextExpression="Raidwide" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="UseTTS">
+                            <Condition Enabled="false" Grouping="Or" />
+                            <Conditions />
+                          </Action>
+                          <Action OrderNumber="2" AuraImageMode="Zoom" AuraName="iconRole" AuraImage="https://raw.githubusercontent.com/lexxiesia/xiv_triggernometry/master/resources/icons/roles/casterDPS.png" AuraXIniExpression="(${_screenwidth}/2)-80" AuraYIniExpression="(${_screenheight}/2)+42" AuraWIniExpression="35" AuraHIniExpression="35" AuraOIniExpression="100" AuraTTLTickExpression="3-${_since}" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Aura">
+                            <Condition Enabled="false" Grouping="Or" />
+                            <Conditions />
+                          </Action>
+                          <Action OrderNumber="3" AuraImageMode="Zoom" AuraName="iconSkill" AuraImage="https://xivapi.com/i/009000/009335.png" AuraXIniExpression="(${_screenwidth}/2)-40" AuraYIniExpression="(${_screenheight}/2)+42" AuraWIniExpression="35" AuraHIniExpression="35" AuraOIniExpression="100" AuraTTLTickExpression="3-${_since}" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Aura">
+                            <Condition Enabled="false" Grouping="Or" />
+                            <Conditions />
+                          </Action>
+                          <Action OrderNumber="4" TextAuraAlignment="MiddleLeft" TextAuraEffect="Bold" TextAuraFontSize="20.25" TextAuraForeground="Lime" TextAuraOutline="Black" TextAuraName="abilityText" TextAuraExpression="${ability}" TextAuraXIniExpression="${_screenwidth}/2" TextAuraYIniExpression="(${_screenheight}/2)+42" TextAuraWIniExpression="${_screenwidth}/2" TextAuraHIniExpression="35" TextAuraOIniExpression="100" TextAuraTTLTickExpression="3-${_since}" TextAuraUseOutline="True" TextAuraFontName="Arial" ActionType="TextAura">
+                            <Condition Enabled="false" Grouping="Or" />
+                            <Conditions />
+                          </Action>
+                          <Action OrderNumber="5" TextAuraEffect="Bold" TextAuraFontSize="32.25" TextAuraForeground="Red" TextAuraOutline="Black" TextAuraName="bigRaidwide" TextAuraExpression="!! DANGER !!" TextAuraXIniExpression="0" TextAuraYIniExpression="(${_screenheight}/2)-50" TextAuraWIniExpression="${_screenwidth}" TextAuraHIniExpression="50" TextAuraOIniExpression="100" TextAuraOTickExpression="50 + (cos(${_sincems}/100)*50)" TextAuraTTLTickExpression="3-${_since}" TextAuraUseOutline="True" TextAuraFontName="Arial" ActionType="TextAura">
+                            <Condition Enabled="false" Grouping="Or" />
+                            <Conditions />
+                          </Action>
+                        </Actions>
+                        <Condition Enabled="false" Grouping="Or" />
+                        <Conditions />
+                      </Trigger>
+                      <Trigger Enabled="true" Name="Searing Stream" Id="451d9e29-b2dd-4906-b4e2-37423a78f59f" RegularExpression="^.{29}14:(?&lt;sourceID&gt;(?:[^:]*)):(?&lt;source&gt;(?:[^:]*)):6A2D:(?&lt;ability&gt;(?:[^:]*)):">
+                        <Actions>
+                          <Action OrderNumber="1" UseTTSTextExpression="Raidwide" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="UseTTS">
+                            <Condition Enabled="false" Grouping="Or" />
+                            <Conditions />
+                          </Action>
+                          <Action OrderNumber="2" AuraImageMode="Zoom" AuraName="iconRole" AuraImage="https://raw.githubusercontent.com/lexxiesia/xiv_triggernometry/master/resources/icons/roles/casterDPS.png" AuraXIniExpression="(${_screenwidth}/2)-80" AuraYIniExpression="(${_screenheight}/2)+42" AuraWIniExpression="35" AuraHIniExpression="35" AuraOIniExpression="100" AuraTTLTickExpression="3-${_since}" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Aura">
+                            <Condition Enabled="false" Grouping="Or" />
+                            <Conditions />
+                          </Action>
+                          <Action OrderNumber="3" AuraImageMode="Zoom" AuraName="iconSkill" AuraImage="https://xivapi.com/i/009000/009335.png" AuraXIniExpression="(${_screenwidth}/2)-40" AuraYIniExpression="(${_screenheight}/2)+42" AuraWIniExpression="35" AuraHIniExpression="35" AuraOIniExpression="100" AuraTTLTickExpression="3-${_since}" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Aura">
+                            <Condition Enabled="false" Grouping="Or" />
+                            <Conditions />
+                          </Action>
+                          <Action OrderNumber="4" TextAuraAlignment="MiddleLeft" TextAuraEffect="Bold" TextAuraFontSize="20.25" TextAuraForeground="Lime" TextAuraOutline="Black" TextAuraName="abilityText" TextAuraExpression="${ability}" TextAuraXIniExpression="${_screenwidth}/2" TextAuraYIniExpression="(${_screenheight}/2)+42" TextAuraWIniExpression="${_screenwidth}/2" TextAuraHIniExpression="35" TextAuraOIniExpression="100" TextAuraTTLTickExpression="3-${_since}" TextAuraUseOutline="True" TextAuraFontName="Arial" ActionType="TextAura">
+                            <Condition Enabled="false" Grouping="Or" />
+                            <Conditions />
+                          </Action>
+                        </Actions>
+                        <Condition Enabled="false" Grouping="Or" />
+                        <Conditions />
                       </Trigger>
                     </Triggers>
                   </Folder>
@@ -14008,22 +14372,6 @@
                       </Folder>
                     </Folders>
                     <Triggers>
-                      <Trigger Enabled="true" Name="Decollation" Id="77f19bdf-6e3c-45c3-a071-3e9e5464bd41" RegularExpression="^.{29}14:(?&lt;sourceID&gt;(?:[^:]*)):(?&lt;source&gt;(?:[^:]*)):6A09:">
-                        <Actions>
-                          <Action OrderNumber="1" TextAuraEffect="Bold" TextAuraFontSize="20.25" TextAuraForeground="Lime" TextAuraOutline="Black" TextAuraName="raidwideText" TextAuraExpression="Raidwide" TextAuraXIniExpression="0" TextAuraYIniExpression="(${_screenheight}/2)+42" TextAuraWIniExpression="${_screenwidth}" TextAuraHIniExpression="35" TextAuraOIniExpression="100" TextAuraTTLTickExpression="3-${_since}" TextAuraUseOutline="True" TextAuraFontName="Arial" ActionType="TextAura">
-                            <Condition Enabled="false" Grouping="Or" />
-                          </Action>
-                        </Actions>
-                        <Condition Enabled="false" Grouping="Or" />
-                      </Trigger>
-                      <Trigger Enabled="true" Name="Searing Stream" Id="657fda23-7597-48c9-89f3-97f5564d3035" RegularExpression="^.{29}14:(?&lt;sourceID&gt;(?:[^:]*)):(?&lt;source&gt;(?:[^:]*)):6A2D:">
-                        <Actions>
-                          <Action OrderNumber="1" TextAuraEffect="Bold" TextAuraFontSize="20.25" TextAuraForeground="Lime" TextAuraOutline="Black" TextAuraName="raidwideText" TextAuraExpression="Raidwide" TextAuraXIniExpression="0" TextAuraYIniExpression="(${_screenheight}/2)+42" TextAuraWIniExpression="${_screenwidth}" TextAuraHIniExpression="35" TextAuraOIniExpression="100" TextAuraTTLTickExpression="3-${_since}" TextAuraUseOutline="True" TextAuraFontName="Arial" ActionType="TextAura">
-                            <Condition Enabled="false" Grouping="Or" />
-                          </Action>
-                        </Actions>
-                        <Condition Enabled="false" Grouping="Or" />
-                      </Trigger>
                       <Trigger Enabled="true" Name="Nearsight" Id="77815f70-eaed-4b5c-9d64-8790cf152866" RegularExpression="^.{29}14:(?&lt;sourceID&gt;(?:[^:]*)):(?&lt;source&gt;(?:[^:]*)):6A26:">
                         <Actions>
                           <Action OrderNumber="1" PlaySoundFileExpression="https://raw.githubusercontent.com/lexxiesia/xiv_triggernometry/master/resources/wav/mvc3_danger.wav" PlaySoundVolumeExpression="50" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="PlaySound">
@@ -14046,40 +14394,141 @@
                         </Actions>
                         <Condition Enabled="false" Grouping="Or" />
                       </Trigger>
-                      <Trigger Enabled="true" Name="Ultimate Impulse" Id="7677ac6a-9d07-460d-92b1-70cbff977b6e" RegularExpression="^.{29}14:(?&lt;sourceID&gt;(?:[^:]*)):(?&lt;source&gt;(?:[^:]*)):6A2C:">
+                      <Trigger Enabled="true" Name="Bloodrake" Id="465100da-3936-4b9a-9472-3b6c4cbfd8a8" RegularExpression="^.{29}14:(?&lt;sourceID&gt;(?:[^:]*)):(?&lt;source&gt;(?:[^:]*)):69D8:(?&lt;ability&gt;(?:[^:]*)):">
                         <Actions>
-                          <Action OrderNumber="1" TextAuraEffect="Bold" TextAuraFontSize="32.25" TextAuraForeground="Red" TextAuraOutline="Black" TextAuraName="bigRaidwide" TextAuraExpression="!! DANGER !!" TextAuraXIniExpression="0" TextAuraYIniExpression="(${_screenheight}/2)-50" TextAuraWIniExpression="${_screenwidth}" TextAuraHIniExpression="50" TextAuraOIniExpression="100" TextAuraOTickExpression="50 + (cos(${_sincems}/100)*50)" TextAuraTTLTickExpression="3-${_since}" TextAuraUseOutline="True" TextAuraFontName="Arial" ActionType="TextAura">
+                          <Action OrderNumber="1" UseTTSTextExpression="Raidwide" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="UseTTS">
                             <Condition Enabled="false" Grouping="Or" />
+                            <Conditions />
                           </Action>
-                          <Action OrderNumber="2" TextAuraEffect="Bold" TextAuraFontSize="20.25" TextAuraForeground="Lime" TextAuraOutline="Black" TextAuraName="raidwideText" TextAuraExpression="Raidwide" TextAuraXIniExpression="0" TextAuraYIniExpression="(${_screenheight}/2)+42" TextAuraWIniExpression="${_screenwidth}" TextAuraHIniExpression="35" TextAuraOIniExpression="100" TextAuraTTLTickExpression="3-${_since}" TextAuraUseOutline="True" TextAuraFontName="Arial" ActionType="TextAura">
+                          <Action OrderNumber="2" AuraImageMode="Zoom" AuraName="iconRole" AuraImage="https://raw.githubusercontent.com/lexxiesia/xiv_triggernometry/master/resources/icons/roles/casterDPS.png" AuraXIniExpression="(${_screenwidth}/2)-80" AuraYIniExpression="(${_screenheight}/2)+42" AuraWIniExpression="35" AuraHIniExpression="35" AuraOIniExpression="100" AuraTTLTickExpression="3-${_since}" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Aura">
                             <Condition Enabled="false" Grouping="Or" />
+                            <Conditions />
+                          </Action>
+                          <Action OrderNumber="3" AuraImageMode="Zoom" AuraName="iconSkill" AuraImage="https://xivapi.com/i/009000/009335.png" AuraXIniExpression="(${_screenwidth}/2)-40" AuraYIniExpression="(${_screenheight}/2)+42" AuraWIniExpression="35" AuraHIniExpression="35" AuraOIniExpression="100" AuraTTLTickExpression="3-${_since}" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Aura">
+                            <Condition Enabled="false" Grouping="Or" />
+                            <Conditions />
+                          </Action>
+                          <Action OrderNumber="4" TextAuraAlignment="MiddleLeft" TextAuraEffect="Bold" TextAuraFontSize="20.25" TextAuraForeground="Lime" TextAuraOutline="Black" TextAuraName="abilityText" TextAuraExpression="${ability}" TextAuraXIniExpression="${_screenwidth}/2" TextAuraYIniExpression="(${_screenheight}/2)+42" TextAuraWIniExpression="${_screenwidth}/2" TextAuraHIniExpression="35" TextAuraOIniExpression="100" TextAuraTTLTickExpression="3-${_since}" TextAuraUseOutline="True" TextAuraFontName="Arial" ActionType="TextAura">
+                            <Condition Enabled="false" Grouping="Or" />
+                            <Conditions />
                           </Action>
                         </Actions>
                         <Condition Enabled="false" Grouping="Or" />
+                        <Conditions />
                       </Trigger>
-                      <Trigger Enabled="true" Name="Bloodrake" Id="9fb83c81-17f2-48c7-8026-32cbe8e087ab" RegularExpression="^.{29}14:(?&lt;sourceID&gt;(?:[^:]*)):(?&lt;source&gt;(?:[^:]*)):69D8:">
+                      <Trigger Enabled="true" Name="Decollation" Id="6e793ef6-56bf-4869-9e70-c04b8cb3133a" RegularExpression="^.{29}14:(?&lt;sourceID&gt;(?:[^:]*)):(?&lt;source&gt;(?:[^:]*)):6A09:(?&lt;ability&gt;(?:[^:]*)):">
                         <Actions>
-                          <Action OrderNumber="1" TextAuraEffect="Bold" TextAuraFontSize="20.25" TextAuraForeground="Lime" TextAuraOutline="Black" TextAuraName="raidwideText" TextAuraExpression="Raidwide" TextAuraXIniExpression="0" TextAuraYIniExpression="(${_screenheight}/2)+42" TextAuraWIniExpression="${_screenwidth}" TextAuraHIniExpression="35" TextAuraOIniExpression="100" TextAuraTTLTickExpression="3-${_since}" TextAuraUseOutline="True" TextAuraFontName="Arial" ActionType="TextAura">
+                          <Action OrderNumber="1" UseTTSTextExpression="Raidwide" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="UseTTS">
                             <Condition Enabled="false" Grouping="Or" />
+                            <Conditions />
+                          </Action>
+                          <Action OrderNumber="2" AuraImageMode="Zoom" AuraName="iconRole" AuraImage="https://raw.githubusercontent.com/lexxiesia/xiv_triggernometry/master/resources/icons/roles/casterDPS.png" AuraXIniExpression="(${_screenwidth}/2)-80" AuraYIniExpression="(${_screenheight}/2)+42" AuraWIniExpression="35" AuraHIniExpression="35" AuraOIniExpression="100" AuraTTLTickExpression="3-${_since}" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Aura">
+                            <Condition Enabled="false" Grouping="Or" />
+                            <Conditions />
+                          </Action>
+                          <Action OrderNumber="3" AuraImageMode="Zoom" AuraName="iconSkill" AuraImage="https://xivapi.com/i/009000/009335.png" AuraXIniExpression="(${_screenwidth}/2)-40" AuraYIniExpression="(${_screenheight}/2)+42" AuraWIniExpression="35" AuraHIniExpression="35" AuraOIniExpression="100" AuraTTLTickExpression="3-${_since}" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Aura">
+                            <Condition Enabled="false" Grouping="Or" />
+                            <Conditions />
+                          </Action>
+                          <Action OrderNumber="4" TextAuraAlignment="MiddleLeft" TextAuraEffect="Bold" TextAuraFontSize="20.25" TextAuraForeground="Lime" TextAuraOutline="Black" TextAuraName="abilityText" TextAuraExpression="${ability}" TextAuraXIniExpression="${_screenwidth}/2" TextAuraYIniExpression="(${_screenheight}/2)+42" TextAuraWIniExpression="${_screenwidth}/2" TextAuraHIniExpression="35" TextAuraOIniExpression="100" TextAuraTTLTickExpression="3-${_since}" TextAuraUseOutline="True" TextAuraFontName="Arial" ActionType="TextAura">
+                            <Condition Enabled="false" Grouping="Or" />
+                            <Conditions />
                           </Action>
                         </Actions>
                         <Condition Enabled="false" Grouping="Or" />
+                        <Conditions />
                       </Trigger>
-                      <Trigger Enabled="true" Name="Elegant Evisceration" Id="b2a1c256-03db-41bb-9be4-de44c015e80c" RegularExpression="^.{29}14:(?&lt;sourceID&gt;(?:[^:]*)):(?&lt;source&gt;(?:[^:]*)):6A08:">
+                      <Trigger Enabled="true" Name="Elegant Evisceration" Id="1b9a9629-6202-4d2b-bf96-d6844bf2c9da" RegularExpression="^.{29}14:(?&lt;sourceID&gt;(?:[^:]*)):(?&lt;source&gt;(?:[^:]*)):6A08:(?&lt;ability&gt;(?:[^:]*)):">
                         <Actions>
-                          <Action OrderNumber="1" TextAuraEffect="Bold" TextAuraFontSize="20.25" TextAuraForeground="Lime" TextAuraOutline="Black" TextAuraName="tankbusterText" TextAuraExpression="Tankbuster" TextAuraXIniExpression="0" TextAuraYIniExpression="(${_screenheight}/2)+42" TextAuraWIniExpression="${_screenwidth}" TextAuraHIniExpression="35" TextAuraOIniExpression="100" TextAuraTTLTickExpression="3-${_since}" TextAuraUseOutline="True" TextAuraFontName="Arial" ActionType="TextAura">
+                          <Action OrderNumber="1" UseTTSTextExpression="Tankbuster" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="UseTTS">
                             <Condition Enabled="false" Grouping="Or" />
+                            <Conditions />
+                          </Action>
+                          <Action OrderNumber="2" AuraImageMode="Zoom" AuraName="iconRole" AuraImage="https://raw.githubusercontent.com/lexxiesia/xiv_triggernometry/master/resources/icons/roles/casterDPS.png" AuraXIniExpression="(${_screenwidth}/2)-80" AuraYIniExpression="(${_screenheight}/2)+42" AuraWIniExpression="35" AuraHIniExpression="35" AuraOIniExpression="100" AuraTTLTickExpression="3-${_since}" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Aura">
+                            <Condition Enabled="false" Grouping="Or" />
+                            <Conditions />
+                          </Action>
+                          <Action OrderNumber="3" AuraImageMode="Zoom" AuraName="iconSkill" AuraImage="https://xivapi.com/i/009000/009335.png" AuraXIniExpression="(${_screenwidth}/2)-40" AuraYIniExpression="(${_screenheight}/2)+42" AuraWIniExpression="35" AuraHIniExpression="35" AuraOIniExpression="100" AuraTTLTickExpression="3-${_since}" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Aura">
+                            <Condition Enabled="false" Grouping="Or" />
+                            <Conditions />
+                          </Action>
+                          <Action OrderNumber="4" TextAuraEffect="Bold" TextAuraFontSize="20.25" TextAuraForeground="Lime" TextAuraOutline="Black" TextAuraName="abilityText" TextAuraExpression="${ability}" TextAuraXIniExpression="0" TextAuraYIniExpression="(${_screenheight}/2)+42" TextAuraWIniExpression="${_screenwidth}" TextAuraHIniExpression="35" TextAuraOIniExpression="100" TextAuraTTLTickExpression="3-${_since}" TextAuraUseOutline="True" TextAuraFontName="Arial" ActionType="TextAura">
+                            <Condition Enabled="false" Grouping="Or" />
+                            <Conditions />
                           </Action>
                         </Actions>
                         <Condition Enabled="false" Grouping="Or" />
+                        <Conditions />
                       </Trigger>
-                      <Trigger Enabled="true" Name="Heart Stake" Id="240267cf-1d00-49bd-b3a5-9bf2fa90d91e" RegularExpression="^.{29}14:(?&lt;sourceID&gt;(?:[^:]*)):(?&lt;source&gt;(?:[^:]*)):6A2B:">
+                      <Trigger Enabled="true" Name="Heart Stake" Id="09a4fafe-6df9-4680-a04e-a2415022f4a8" RegularExpression="^.{29}14:(?&lt;sourceID&gt;(?:[^:]*)):(?&lt;source&gt;(?:[^:]*)):6A2B:(?&lt;ability&gt;(?:[^:]*)):">
                         <Actions>
-                          <Action OrderNumber="1" TextAuraEffect="Bold" TextAuraFontSize="20.25" TextAuraForeground="Lime" TextAuraOutline="Black" TextAuraName="tankbusterText" TextAuraExpression="Tankbuster" TextAuraXIniExpression="0" TextAuraYIniExpression="(${_screenheight}/2)+42" TextAuraWIniExpression="${_screenwidth}" TextAuraHIniExpression="35" TextAuraOIniExpression="100" TextAuraTTLTickExpression="3-${_since}" TextAuraUseOutline="True" TextAuraFontName="Arial" ActionType="TextAura">
+                          <Action OrderNumber="1" UseTTSTextExpression="Tankbuster" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="UseTTS">
                             <Condition Enabled="false" Grouping="Or" />
+                            <Conditions />
+                          </Action>
+                          <Action OrderNumber="2" AuraImageMode="Zoom" AuraName="iconRole" AuraImage="https://raw.githubusercontent.com/lexxiesia/xiv_triggernometry/master/resources/icons/roles/casterDPS.png" AuraXIniExpression="(${_screenwidth}/2)-80" AuraYIniExpression="(${_screenheight}/2)+42" AuraWIniExpression="35" AuraHIniExpression="35" AuraOIniExpression="100" AuraTTLTickExpression="3-${_since}" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Aura">
+                            <Condition Enabled="false" Grouping="Or" />
+                            <Conditions />
+                          </Action>
+                          <Action OrderNumber="3" AuraImageMode="Zoom" AuraName="iconSkill" AuraImage="https://xivapi.com/i/009000/009335.png" AuraXIniExpression="(${_screenwidth}/2)-40" AuraYIniExpression="(${_screenheight}/2)+42" AuraWIniExpression="35" AuraHIniExpression="35" AuraOIniExpression="100" AuraTTLTickExpression="3-${_since}" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Aura">
+                            <Condition Enabled="false" Grouping="Or" />
+                            <Conditions />
+                          </Action>
+                          <Action OrderNumber="4" TextAuraEffect="Bold" TextAuraFontSize="20.25" TextAuraForeground="Lime" TextAuraOutline="Black" TextAuraName="abilityText" TextAuraExpression="${ability}" TextAuraXIniExpression="0" TextAuraYIniExpression="(${_screenheight}/2)+42" TextAuraWIniExpression="${_screenwidth}" TextAuraHIniExpression="35" TextAuraOIniExpression="100" TextAuraTTLTickExpression="3-${_since}" TextAuraUseOutline="True" TextAuraFontName="Arial" ActionType="TextAura">
+                            <Condition Enabled="false" Grouping="Or" />
+                            <Conditions />
                           </Action>
                         </Actions>
                         <Condition Enabled="false" Grouping="Or" />
+                        <Conditions />
+                      </Trigger>
+                      <Trigger Enabled="true" Name="Searing Stream" Id="537acc45-fe8b-429d-bb5f-6314dd80bdaa" RegularExpression="^.{29}14:(?&lt;sourceID&gt;(?:[^:]*)):(?&lt;source&gt;(?:[^:]*)):6A2D:(?&lt;ability&gt;(?:[^:]*)):">
+                        <Actions>
+                          <Action OrderNumber="1" UseTTSTextExpression="Raidwide" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="UseTTS">
+                            <Condition Enabled="false" Grouping="Or" />
+                            <Conditions />
+                          </Action>
+                          <Action OrderNumber="2" AuraImageMode="Zoom" AuraName="iconRole" AuraImage="https://raw.githubusercontent.com/lexxiesia/xiv_triggernometry/master/resources/icons/roles/casterDPS.png" AuraXIniExpression="(${_screenwidth}/2)-80" AuraYIniExpression="(${_screenheight}/2)+42" AuraWIniExpression="35" AuraHIniExpression="35" AuraOIniExpression="100" AuraTTLTickExpression="3-${_since}" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Aura">
+                            <Condition Enabled="false" Grouping="Or" />
+                            <Conditions />
+                          </Action>
+                          <Action OrderNumber="3" AuraImageMode="Zoom" AuraName="iconSkill" AuraImage="https://xivapi.com/i/009000/009335.png" AuraXIniExpression="(${_screenwidth}/2)-40" AuraYIniExpression="(${_screenheight}/2)+42" AuraWIniExpression="35" AuraHIniExpression="35" AuraOIniExpression="100" AuraTTLTickExpression="3-${_since}" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Aura">
+                            <Condition Enabled="false" Grouping="Or" />
+                            <Conditions />
+                          </Action>
+                          <Action OrderNumber="4" TextAuraAlignment="MiddleLeft" TextAuraEffect="Bold" TextAuraFontSize="20.25" TextAuraForeground="Lime" TextAuraOutline="Black" TextAuraName="abilityText" TextAuraExpression="${ability}" TextAuraXIniExpression="${_screenwidth}/2" TextAuraYIniExpression="(${_screenheight}/2)+42" TextAuraWIniExpression="${_screenwidth}/2" TextAuraHIniExpression="35" TextAuraOIniExpression="100" TextAuraTTLTickExpression="3-${_since}" TextAuraUseOutline="True" TextAuraFontName="Arial" ActionType="TextAura">
+                            <Condition Enabled="false" Grouping="Or" />
+                            <Conditions />
+                          </Action>
+                        </Actions>
+                        <Condition Enabled="false" Grouping="Or" />
+                        <Conditions />
+                      </Trigger>
+                      <Trigger Enabled="true" Name="Ultimate Impulse" Id="f1053671-30dc-4f76-9baa-a588b9f669bf" RegularExpression="^.{29}14:(?&lt;sourceID&gt;(?:[^:]*)):(?&lt;source&gt;(?:[^:]*)):6A2C:(?&lt;ability&gt;(?:[^:]*)):">
+                        <Actions>
+                          <Action OrderNumber="1" UseTTSTextExpression="Raidwide" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="UseTTS">
+                            <Condition Enabled="false" Grouping="Or" />
+                            <Conditions />
+                          </Action>
+                          <Action OrderNumber="2" AuraImageMode="Zoom" AuraName="iconRole" AuraImage="https://raw.githubusercontent.com/lexxiesia/xiv_triggernometry/master/resources/icons/roles/casterDPS.png" AuraXIniExpression="(${_screenwidth}/2)-80" AuraYIniExpression="(${_screenheight}/2)+42" AuraWIniExpression="35" AuraHIniExpression="35" AuraOIniExpression="100" AuraTTLTickExpression="3-${_since}" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Aura">
+                            <Condition Enabled="false" Grouping="Or" />
+                            <Conditions />
+                          </Action>
+                          <Action OrderNumber="3" AuraImageMode="Zoom" AuraName="iconSkill" AuraImage="https://xivapi.com/i/009000/009335.png" AuraXIniExpression="(${_screenwidth}/2)-40" AuraYIniExpression="(${_screenheight}/2)+42" AuraWIniExpression="35" AuraHIniExpression="35" AuraOIniExpression="100" AuraTTLTickExpression="3-${_since}" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Aura">
+                            <Condition Enabled="false" Grouping="Or" />
+                            <Conditions />
+                          </Action>
+                          <Action OrderNumber="4" TextAuraAlignment="MiddleLeft" TextAuraEffect="Bold" TextAuraFontSize="20.25" TextAuraForeground="Lime" TextAuraOutline="Black" TextAuraName="abilityText" TextAuraExpression="${ability}" TextAuraXIniExpression="${_screenwidth}/2" TextAuraYIniExpression="(${_screenheight}/2)+42" TextAuraWIniExpression="${_screenwidth}/2" TextAuraHIniExpression="35" TextAuraOIniExpression="100" TextAuraTTLTickExpression="3-${_since}" TextAuraUseOutline="True" TextAuraFontName="Arial" ActionType="TextAura">
+                            <Condition Enabled="false" Grouping="Or" />
+                            <Conditions />
+                          </Action>
+                          <Action OrderNumber="5" TextAuraEffect="Bold" TextAuraFontSize="32.25" TextAuraForeground="Red" TextAuraOutline="Black" TextAuraName="bigRaidwide" TextAuraExpression="!! DANGER !!" TextAuraXIniExpression="0" TextAuraYIniExpression="(${_screenheight}/2)-50" TextAuraWIniExpression="${_screenwidth}" TextAuraHIniExpression="50" TextAuraOIniExpression="100" TextAuraOTickExpression="50 + (cos(${_sincems}/100)*50)" TextAuraTTLTickExpression="3-${_since}" TextAuraUseOutline="True" TextAuraFontName="Arial" ActionType="TextAura">
+                            <Condition Enabled="false" Grouping="Or" />
+                            <Conditions />
+                          </Action>
+                        </Actions>
+                        <Condition Enabled="false" Grouping="Or" />
+                        <Conditions />
                       </Trigger>
                     </Triggers>
                   </Folder>
@@ -14175,6 +14624,13 @@
                               <Action OrderNumber="9" TextAuraEffect="Bold" TextAuraFontSize="20.25" TextAuraForeground="Lime" TextAuraOutline="Black" TextAuraName="bloodrakeReminder" TextAuraExpression="${var:dataTetherRole} Tethers, ${var:dataDebuffRole} Debuffs" TextAuraXIniExpression="0" TextAuraYIniExpression="(${_screenheight}/2)+42" TextAuraWIniExpression="${_screenwidth}" TextAuraHIniExpression="35" TextAuraOIniExpression="100" TextAuraTTLTickExpression="15-${_since}" TextAuraUseOutline="True" TextAuraFontName="Arial" ActionType="TextAura">
                                 <Condition Enabled="true" Grouping="And">
                                   <ConditionSingle Enabled="true" ExpressionL="${var:dataBloodrakeCounter}" ExpressionTypeL="Numeric" ExpressionR="2" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
+                                  <ConditionSingle Enabled="true" ExpressionL="${var:dataTetherRole}" ExpressionTypeL="String" ExpressionR="${var:dataDebuffRole}" ExpressionTypeR="String" ConditionType="StringNotEqualCase" />
+                                </Condition>
+                              </Action>
+                              <Action OrderNumber="10" TextAuraEffect="Bold" TextAuraFontSize="20.25" TextAuraForeground="Lime" TextAuraOutline="Black" TextAuraName="bloodrakeReminder" TextAuraExpression="${var:dataDebuffRole} Everything" TextAuraXIniExpression="0" TextAuraYIniExpression="(${_screenheight}/2)+42" TextAuraWIniExpression="${_screenwidth}" TextAuraHIniExpression="35" TextAuraOIniExpression="100" TextAuraTTLTickExpression="15-${_since}" TextAuraUseOutline="True" TextAuraFontName="Arial" ActionType="TextAura">
+                                <Condition Enabled="true" Grouping="And">
+                                  <ConditionSingle Enabled="true" ExpressionL="${var:dataBloodrakeCounter}" ExpressionTypeL="Numeric" ExpressionR="2" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
+                                  <ConditionSingle Enabled="true" ExpressionL="${var:dataTetherRole}" ExpressionTypeL="String" ExpressionR="${var:dataDebuffRole}" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
                                 </Condition>
                               </Action>
                             </Actions>
@@ -14241,6 +14697,13 @@
                               <Action OrderNumber="10" TextAuraEffect="Bold" TextAuraFontSize="20.25" TextAuraForeground="Lime" TextAuraOutline="Black" TextAuraName="coilsReminder" TextAuraExpression="${var:dataTetherRole} Tethers, ${var:dataDebuffRole} Debuffs" TextAuraXIniExpression="0" TextAuraYIniExpression="(${_screenheight}/2)+42" TextAuraWIniExpression="${_screenwidth}" TextAuraHIniExpression="35" TextAuraOIniExpression="100" TextAuraTTLTickExpression="20-${_since}" TextAuraUseOutline="True" TextAuraFontName="Arial" ActionType="TextAura">
                                 <Condition Enabled="true" Grouping="And">
                                   <ConditionSingle Enabled="true" ExpressionL="${var:dataTowerCounter}" ExpressionTypeL="Numeric" ExpressionR="2" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
+                                  <ConditionSingle Enabled="true" ExpressionL="${var:dataTetherRole}" ExpressionTypeL="String" ExpressionR="${var:dataDebuffRole}" ExpressionTypeR="String" ConditionType="StringNotEqualCase" />
+                                </Condition>
+                              </Action>
+                              <Action OrderNumber="11" TextAuraEffect="Bold" TextAuraFontSize="20.25" TextAuraForeground="Lime" TextAuraOutline="Black" TextAuraName="coilsReminder" TextAuraExpression="${var:dataDebuffRole} Everything" TextAuraXIniExpression="0" TextAuraYIniExpression="(${_screenheight}/2)+42" TextAuraWIniExpression="${_screenwidth}" TextAuraHIniExpression="35" TextAuraOIniExpression="100" TextAuraTTLTickExpression="20-${_since}" TextAuraUseOutline="True" TextAuraFontName="Arial" ActionType="TextAura">
+                                <Condition Enabled="true" Grouping="And">
+                                  <ConditionSingle Enabled="true" ExpressionL="${var:dataTowerCounter}" ExpressionTypeL="Numeric" ExpressionR="2" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
+                                  <ConditionSingle Enabled="true" ExpressionL="${var:dataTetherRole}" ExpressionTypeL="String" ExpressionR="${var:dataDebuffRole}" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
                                 </Condition>
                               </Action>
                             </Actions>
@@ -14764,6 +15227,20 @@
                               <ConditionSingle Enabled="true" ExpressionL="${var:dataAkanthaiAct}" ExpressionTypeL="String" ExpressionR="curtain" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
                             </Condition>
                           </Trigger>
+                          <Trigger Enabled="true" Name="# Reset" Id="5b1b984c-2be8-42b9-85b9-863544da55e3" RegularExpression="\A.{28}1E:AF4:[^:]*:(?&lt;duration&gt;[^:]*):[^:]*:[^:]*:[^:]*:(?&lt;player&gt;(?&lt;name&gt;[\w\-']+) [\w\-']+):">
+                            <Actions>
+                              <Action OrderNumber="1" TextAuraOp="DeactivateAura" TextAuraFontSize="8.25" TextAuraName="thornprickedTimer" TextAuraFontName="Microsoft Sans Serif" ActionType="TextAura">
+                                <Condition Enabled="false" Grouping="Or" />
+                              </Action>
+                            </Actions>
+                            <Condition Enabled="true" Grouping="And">
+                              <ConditionGroup Enabled="true" Grouping="Or">
+                                <ConditionSingle Enabled="true" ExpressionL="${var:dataAkanthaiAct}" ExpressionTypeL="String" ExpressionR="curtain" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
+                                <ConditionSingle Enabled="true" ExpressionL="${var:dataAkanthaiAct}" ExpressionTypeL="String" ExpressionR="2" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
+                              </ConditionGroup>
+                              <ConditionSingle Enabled="true" ExpressionL="${player}" ExpressionTypeL="String" ExpressionR="${_ffxivplayer}" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
+                            </Condition>
+                          </Trigger>
                         </Triggers>
                       </Folder>
                       <Folder Id="66f7cd18-933f-4cfd-9dc3-6bc33be7e045" Name="Snapshots" Enabled="true">
@@ -14919,6 +15396,20 @@
                           </Action>
                         </Actions>
                         <Condition Enabled="true" Grouping="Or" />
+                      </Trigger>
+                      <Trigger Enabled="true" Name="Setting the Scene" Id="dca24988-e7c3-4779-a0fa-ce84b34ad077" RegularExpression="\A.{14}(?:[^:]*)1[56]:[^:]*:[^:]*:69CB:">
+                        <Actions>
+                          <Action OrderNumber="1" VariableName="dataTetherRole" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Variable">
+                            <Condition Enabled="false" Grouping="Or" />
+                            <Conditions />
+                          </Action>
+                          <Action OrderNumber="2" VariableName="dataDebuffRole" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Variable">
+                            <Condition Enabled="false" Grouping="Or" />
+                            <Conditions />
+                          </Action>
+                        </Actions>
+                        <Condition Enabled="false" Grouping="Or" />
+                        <Conditions />
                       </Trigger>
                     </Triggers>
                   </Folder>
@@ -15153,15 +15644,15 @@
                       <Action OrderNumber="2" AuraImageMode="StretchImage" AuraName="roleCall${player}" AuraImage="https://raw.githubusercontent.com/lexxiesia/xiv_triggernometry/master/resources/icons/jobs/${_ffxivparty[${player}].job}.png" AuraXIniExpression="${_screenwidth}/2+(${_imageaura[roleCall${_ffxivparty[1].name}].w})+(${_imageaura[roleCall${_ffxivparty[2].name}].w})+(${_imageaura[roleCall${_ffxivparty[3].name}].w})+(${_imageaura[roleCall${_ffxivparty[4].name}].w})+(${_imageaura[roleCall${_ffxivparty[5].name}].w})+(${_imageaura[roleCall${_ffxivparty[6].name}].w})+(${_imageaura[roleCall${_ffxivparty[7].name}].w})+(${_imageaura[roleCall${_ffxivparty[8].name}].w})" AuraYIniExpression="${_screenheight}/2" AuraWIniExpression="42" AuraHIniExpression="42" AuraOIniExpression="100" AuraTTLTickExpression="5-${_since}" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Aura">
                         <Condition Enabled="false" Grouping="Or" />
                       </Action>
-                      <Action OrderNumber="3" UseTTSTextExpression="Grab debuff" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="UseTTS">
+                      <Action OrderNumber="3" TextAuraEffect="Bold" TextAuraFontSize="32.25" TextAuraForeground="Red" TextAuraOutline="Black" TextAuraName="roleCall" TextAuraExpression="${var:dataDebuffRole} Debuffs" TextAuraXIniExpression="0" TextAuraYIniExpression="(${_screenheight}/2)-50" TextAuraWIniExpression="${_screenwidth}" TextAuraHIniExpression="50" TextAuraOIniExpression="100" TextAuraOTickExpression="50 + (cos(${_sincems}/100)*50)" TextAuraTTLTickExpression="3-${_since}" TextAuraUseOutline="True" TextAuraFontName="Arial" ActionType="TextAura">
                         <Condition Enabled="true" Grouping="Or">
                           <ConditionGroup Enabled="true" Grouping="And">
-                            <ConditionSingle Enabled="true" ExpressionL="${_ffxivparty[${_ffxivplayer}].role}" ExpressionTypeL="String" ExpressionR="DPS" ExpressionTypeR="String" ConditionType="StringNotEqualNocase" />
-                            <ConditionSingle Enabled="true" ExpressionL="${var:data.debuffRole}" ExpressionTypeL="String" ExpressionR="Support" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
+                            <ConditionSingle Enabled="true" ExpressionL="${var:data.debuffRole}" ExpressionTypeL="String" ExpressionR="DPS" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
+                            <ConditionSingle Enabled="true" ExpressionL="${_ffxivparty[${_ffxivplayer}].role}" ExpressionTypeL="String" ExpressionR="DPS" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
                           </ConditionGroup>
                           <ConditionGroup Enabled="true" Grouping="And">
-                            <ConditionSingle Enabled="true" ExpressionL="${_ffxivparty[${_ffxivplayer}].role}" ExpressionTypeL="String" ExpressionR="DPS" ExpressionTypeR="String" ConditionType="StringEqualCase" />
-                            <ConditionSingle Enabled="true" ExpressionL="${var:data.debuffRole}" ExpressionTypeL="String" ExpressionR="DPS" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
+                            <ConditionSingle Enabled="true" ExpressionL="${var:data.debuffRole}" ExpressionTypeL="String" ExpressionR="Support" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
+                            <ConditionSingle Enabled="true" ExpressionL="${_ffxivparty[${_ffxivplayer}].role}" ExpressionTypeL="String" ExpressionR="DPS" ExpressionTypeR="String" ConditionType="StringNotEqualNocase" />
                           </ConditionGroup>
                         </Condition>
                       </Action>
@@ -29991,7 +30482,7 @@
                   <Action OrderNumber="1" AuraImageMode="StretchImage" AuraName="skillIconL" AuraImage="https://xivapi.com/i/000000/000810.png" AuraXIniExpression="(${_screenwidth}/2)-150" AuraYIniExpression="(${_screenheight}/3)+5" AuraWIniExpression="30" AuraHIniExpression="30" AuraOIniExpression="100" AuraXTickExpression="((${_screenwidth}/2)-150)-(cos(${_sincems}/150)*25)" AuraTTLTickExpression="1-${_since}" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Aura" Description="Skill Icon">
                     <Condition Enabled="false" Grouping="Or" />
                   </Action>
-                  <Action OrderNumber="2" AuraImageMode="StretchImage" AuraName="skillIconR" AuraImage="https://xivapi.com/i/000000/000810.png" AuraXIniExpression="(${_screenwidth}/2)+110" AuraYIniExpression="(${_screenheight}/3)+5" AuraWIniExpression="30" AuraHIniExpression="30" AuraOIniExpression="100" AuraXTickExpression="((${_screenwidth}/2)+110)+(cos(${_sincems}/150)*25)" AuraTTLTickExpression="1-${_since}" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Aura" Description="Skill Icon">
+                  <Action OrderNumber="2" AuraImageMode="StretchImage" AuraName="skillIconR" AuraImage="https://xivapi.com/i/000000/000810.png" AuraXIniExpression="(${_screenwidth}/2)+120" AuraYIniExpression="(${_screenheight}/3)+5" AuraWIniExpression="30" AuraHIniExpression="30" AuraOIniExpression="100" AuraXTickExpression="((${_screenwidth}/2)+110)+(cos(${_sincems}/150)*25)" AuraTTLTickExpression="1-${_since}" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Aura" Description="Skill Icon">
                     <Condition Enabled="false" Grouping="Or" />
                   </Action>
                   <Action OrderNumber="3" TextAuraEffect="Bold" TextAuraFontSize="20.25" TextAuraForeground="#80FFFF" TextAuraOutline="Black" TextAuraName="skillName" TextAuraExpression="SHIRK" TextAuraXIniExpression="0" TextAuraYIniExpression="${_screenheight}/3" TextAuraWIniExpression="${_screenwidth}" TextAuraHIniExpression="40" TextAuraOIniExpression="100" TextAuraOTickExpression="75+(cos(${_sincems}/50)*25))" TextAuraTTLTickExpression="1-${_since}" TextAuraUseOutline="True" TextAuraFontName="Arial" ActionType="TextAura">
@@ -30017,7 +30508,7 @@
                   <Action OrderNumber="1" AuraImageMode="StretchImage" AuraName="skillIconL" AuraImage="https://xivapi.com/i/000000/000803.png" AuraXIniExpression="(${_screenwidth}/2)-150" AuraYIniExpression="(${_screenheight}/3)+5" AuraWIniExpression="30" AuraHIniExpression="30" AuraOIniExpression="100" AuraXTickExpression="((${_screenwidth}/2)-150)-(cos(${_sincems}/150)*25)" AuraTTLTickExpression="1-${_since}" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Aura" Description="Skill Icon">
                     <Condition Enabled="false" Grouping="Or" />
                   </Action>
-                  <Action OrderNumber="2" AuraImageMode="StretchImage" AuraName="skillIconR" AuraImage="https://xivapi.com/i/000000/000803.png" AuraXIniExpression="(${_screenwidth}/2)+110" AuraYIniExpression="(${_screenheight}/3)+5" AuraWIniExpression="30" AuraHIniExpression="30" AuraOIniExpression="100" AuraXTickExpression="((${_screenwidth}/2)+110)+(cos(${_sincems}/150)*25)" AuraTTLTickExpression="1-${_since}" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Aura" Description="Skill Icon">
+                  <Action OrderNumber="2" AuraImageMode="StretchImage" AuraName="skillIconR" AuraImage="https://xivapi.com/i/000000/000803.png" AuraXIniExpression="(${_screenwidth}/2)+120" AuraYIniExpression="(${_screenheight}/3)+5" AuraWIniExpression="30" AuraHIniExpression="30" AuraOIniExpression="100" AuraXTickExpression="((${_screenwidth}/2)+110)+(cos(${_sincems}/150)*25)" AuraTTLTickExpression="1-${_since}" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Aura" Description="Skill Icon">
                     <Condition Enabled="false" Grouping="Or" />
                   </Action>
                   <Action OrderNumber="3" TextAuraEffect="Bold" TextAuraFontSize="20.25" TextAuraForeground="#FFFF80" TextAuraOutline="Black" TextAuraName="skillName" TextAuraExpression="PROVOKE" TextAuraXIniExpression="0" TextAuraYIniExpression="${_screenheight}/3" TextAuraWIniExpression="${_screenwidth}" TextAuraHIniExpression="40" TextAuraOIniExpression="100" TextAuraOTickExpression="75+(cos(${_sincems}/50)*25))" TextAuraTTLTickExpression="1-${_since}" TextAuraUseOutline="True" TextAuraFontName="Arial" ActionType="TextAura">

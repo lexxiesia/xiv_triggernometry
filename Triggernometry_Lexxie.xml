@@ -23794,25 +23794,21 @@
                         <Actions>
                           <Action OrderNumber="1" VariableOp="SetNumeric" VariableName="lightPillar" VariableExpression="${var:lightPillar}+1" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Variable">
                             <Condition Enabled="false" Grouping="Or" />
-                            <Conditions />
                           </Action>
                           <Action OrderNumber="2" UseTTSTextExpression="Line Stack" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="UseTTS">
                             <Condition Enabled="false" Grouping="And" />
-                            <Conditions />
                           </Action>
                           <Action OrderNumber="3" UseTTSTextExpression="Hit Back Orb" TextAuraEffect="Bold" TextAuraFontSize="24" TextAuraForeground="#FFBB00" TextAuraOutline="Black" TextAuraName="lightPillar" TextAuraExpression="Hit Back Orb" TextAuraXIniExpression="0" TextAuraYIniExpression="${_screenheight}/2" TextAuraWIniExpression="${_screenwidth}" TextAuraHIniExpression="42" TextAuraOIniExpression="100" TextAuraTTLTickExpression="3-${_since}" TextAuraUseOutline="True" TextAuraFontName="Arial" ActionType="TextAura">
                             <Condition Enabled="true" Grouping="And">
                               <ConditionSingle Enabled="true" ExpressionL="${name}" ExpressionTypeL="String" ExpressionR="${_ffxivplayer}" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
                               <ConditionSingle Enabled="true" ExpressionL="${var:lightPillar}" ExpressionTypeL="Numeric" ExpressionR="3" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
                             </Condition>
-                            <Conditions />
                           </Action>
                           <Action OrderNumber="4" UseTTSTextExpression="Avoid Orbs" TextAuraEffect="Bold" TextAuraFontSize="24" TextAuraForeground="#FFBB00" TextAuraOutline="Black" TextAuraName="lightPillar" TextAuraExpression="Avoid Orbs" TextAuraXIniExpression="0" TextAuraYIniExpression="${_screenheight}/2" TextAuraWIniExpression="${_screenwidth}" TextAuraHIniExpression="42" TextAuraOIniExpression="100" TextAuraTTLTickExpression="3-${_since}" TextAuraUseOutline="True" TextAuraFontName="Arial" ActionType="TextAura">
                             <Condition Enabled="true" Grouping="And">
                               <ConditionSingle Enabled="true" ExpressionL="${name}" ExpressionTypeL="String" ExpressionR="${_ffxivplayer}" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
                               <ConditionSingle Enabled="true" ExpressionL="${var:lightPillar}" ExpressionTypeL="Numeric" ExpressionR="3" ExpressionTypeR="Numeric" ConditionType="NumericNotEqual" />
                             </Condition>
-                            <Conditions />
                           </Action>
                         </Actions>
                         <Condition Enabled="false" Grouping="Or" />
@@ -27566,8 +27562,29 @@
                   </Trigger>
                 </Triggers>
               </Folder>
-              <Folder Id="94cb67de-f4c6-41cf-b948-4e31122d28da" Name="Endsinger" Enabled="true">
-                <Folders />
+              <Folder Id="c46833b0-0597-4643-a695-bd9996fa7b75" Name="Endsinger" Enabled="true">
+                <Folders>
+                  <Folder FFXIVJobFilterEnabled="True" FFXIVJobFilter="17263755264" Id="d7b1a8c9-0054-43af-b3be-33625976ad54" Name="Caster" Enabled="true">
+                    <Folders />
+                    <Triggers />
+                  </Folder>
+                  <Folder FFXIVJobFilterEnabled="True" FFXIVJobFilter="554193387520" Id="651b68c8-b5ca-40e4-b1ed-ad9e7d39105c" Name="Healers" Enabled="true">
+                    <Folders />
+                    <Triggers />
+                  </Folder>
+                  <Folder FFXIVJobFilterEnabled="True" FFXIVJobFilter="138516889600" Id="e8c78b64-e3e6-46c7-86a9-08bf7adb83d7" Name="Ranged" Enabled="true">
+                    <Folders />
+                    <Triggers />
+                  </Folder>
+                  <Folder FFXIVJobFilterEnabled="True" FFXIVJobFilter="284007333888" Id="52dee1d3-6e17-4c2f-a791-ff6e0b6fa695" Name="Melee" Enabled="true">
+                    <Folders />
+                    <Triggers />
+                  </Folder>
+                  <Folder FFXIVJobFilterEnabled="True" FFXIVJobFilter="70868271104" Id="3ed06aab-11ce-48ef-80db-3b50b4c106ba" Name="Tanks" Enabled="true">
+                    <Folders />
+                    <Triggers />
+                  </Folder>
+                </Folders>
                 <Triggers />
               </Folder>
             </Folders>
@@ -30430,10 +30447,11 @@
           <Folder Id="c1bba6d6-eb40-4837-8da2-561977026d81" Name="Raid Buffs" Enabled="true">
             <Folders />
             <Triggers>
-              <Trigger Enabled="true" Name="Trick Attack" Id="285a8bc8-3d25-4163-ae23-8c6baaf3c86c" RegularExpression="\A.{14}(?:[^:]*)1[56]:[0-9A-F]{8}:(?&lt;NIN&gt;[\w-' ]+):8D2:">
+              <Trigger Enabled="true" Name="Trick Attack" Id="285a8bc8-3d25-4163-ae23-8c6baaf3c86c" RegularExpression="\A.{28,31}15:[0-9A-F]{8}:(?&lt;NIN&gt;[\w-' ]+):8D2:">
                 <Actions>
                   <Action OrderNumber="1" PlaySoundFileExpression="https://raw.githubusercontent.com/lexxiesia/xiv_triggernometry/master/resources/wav/arthars/trick2.wav" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="PlaySound">
                     <Condition Enabled="false" Grouping="Or" />
+                    <Conditions />
                   </Action>
                 </Actions>
                 <Condition Enabled="true" Grouping="And">
@@ -30445,83 +30463,97 @@
           <Folder FFXIVJobFilterEnabled="True" FFXIVJobFilter="70868271104" Id="44b7cf3a-9b60-45ec-b255-97ca888d7ce6" Name="Tanks" Enabled="true">
             <Folders />
             <Triggers>
-              <Trigger Enabled="true" Name="Shirk" Id="4bc02344-96b0-4228-aafb-a3a09d9d2bce" RegularExpression="\A.{14}(?:[^:]*)15:[^:]*:(?&lt;player&gt;(?&lt;name&gt;[\w\-']+) [\w\-']+):1D71:[^:]*:[^:]*:(?&lt;target&gt;(?:[^:]*)):">
+              <Trigger Enabled="true" Name="Shirk" Id="4bc02344-96b0-4228-aafb-a3a09d9d2bce" RegularExpression="\A.{28,31}15:[^:]*:(?&lt;player&gt;(?&lt;name&gt;[\w\-']+) [\w\-']+):1D71:[^:]*:[^:]*:(?&lt;target&gt;(?:[^:]*)):">
                 <Actions>
                   <Action OrderNumber="1" AuraImageMode="StretchImage" AuraName="skillIcon" AuraImage="https://xivapi.com/i/000000/000810.png" AuraXIniExpression="(${_screenwidth}/2)-15" AuraYIniExpression="${_screenheight}/3" AuraWIniExpression="30" AuraHIniExpression="30" AuraOIniExpression="100" AuraTTLTickExpression="1-${_since}" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Aura" Description="Skill Icon">
                     <Condition Enabled="false" Grouping="Or" />
+                    <Conditions />
                   </Action>
                   <Action OrderNumber="2" TextAuraAlignment="MiddleRight" TextAuraEffect="Bold" TextAuraFontSize="20.25" TextAuraForeground="#80FFFF" TextAuraOutline="Black" TextAuraName="skillName" TextAuraExpression="SHIRKED" TextAuraXIniExpression="-30" TextAuraYIniExpression="${_screenheight}/3" TextAuraWIniExpression="${_screenwidth}/2" TextAuraHIniExpression="30" TextAuraOIniExpression="100" TextAuraOTickExpression="75+(cos(${_sincems}/50)*25))" TextAuraTTLTickExpression="1-${_since}" TextAuraUseOutline="True" TextAuraFontName="Arial" ActionType="TextAura">
                     <Condition Enabled="true" Grouping="Or">
                       <ConditionSingle Enabled="true" ExpressionL="${player}" ExpressionTypeL="String" ExpressionR="${_ffxivplayer}" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
                     </Condition>
+                    <Conditions />
                   </Action>
                   <Action OrderNumber="3" TextAuraAlignment="MiddleRight" TextAuraEffect="Bold" TextAuraFontSize="20.25" TextAuraForeground="White" TextAuraOutline="Black" TextAuraName="skillUser" TextAuraExpression="${name}" TextAuraXIniExpression="-30" TextAuraYIniExpression="${_screenheight}/3" TextAuraWIniExpression="${_screenwidth}/2" TextAuraHIniExpression="30" TextAuraOIniExpression="100" TextAuraTTLTickExpression="1-${_since}" TextAuraUseOutline="True" TextAuraFontName="Arial" ActionType="TextAura" Description="Target">
                     <Condition Enabled="true" Grouping="Or">
                       <ConditionSingle Enabled="true" ExpressionL="${player}" ExpressionTypeL="String" ExpressionR="${_ffxivplayer}" ExpressionTypeR="String" ConditionType="StringNotEqualNocase" />
                     </Condition>
+                    <Conditions />
                   </Action>
                   <Action OrderNumber="4" TextAuraAlignment="MiddleLeft" TextAuraEffect="Bold" TextAuraFontSize="20.25" TextAuraForeground="White" TextAuraOutline="Black" TextAuraName="skillTarget" TextAuraExpression="${target}" TextAuraXIniExpression="(${_screenwidth}/2)+30" TextAuraYIniExpression="${_screenheight}/3" TextAuraWIniExpression="${_screenwidth}/2" TextAuraHIniExpression="30" TextAuraOIniExpression="100" TextAuraTTLTickExpression="1-${_since}" TextAuraUseOutline="True" TextAuraFontName="Arial" ActionType="TextAura" Description="User">
                     <Condition Enabled="true" Grouping="Or">
                       <ConditionSingle Enabled="true" ExpressionL="${target}" ExpressionTypeL="String" ExpressionR="${_ffxivplayer}" ExpressionTypeR="String" ConditionType="StringNotEqualNocase" />
                     </Condition>
+                    <Conditions />
                   </Action>
                   <Action OrderNumber="5" TextAuraAlignment="MiddleLeft" TextAuraEffect="Bold" TextAuraFontSize="20.25" TextAuraForeground="Red" TextAuraOutline="Black" TextAuraName="skillTarget" TextAuraExpression="YOU" TextAuraXIniExpression="(${_screenwidth}/2)+30" TextAuraYIniExpression="${_screenheight}/3" TextAuraWIniExpression="${_screenwidth}/2" TextAuraHIniExpression="30" TextAuraOIniExpression="100" TextAuraOTickExpression="50 + (cos(${_sincems}/100)*50)" TextAuraTTLTickExpression="1-${_since}" TextAuraUseOutline="True" TextAuraFontName="Arial" ActionType="TextAura" Description="User">
                     <Condition Enabled="true" Grouping="Or">
                       <ConditionSingle Enabled="true" ExpressionL="${target}" ExpressionTypeL="String" ExpressionR="${_ffxivplayer}" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
                     </Condition>
+                    <Conditions />
                   </Action>
                 </Actions>
                 <Condition Enabled="true" Grouping="And">
                   <ConditionSingle Enabled="true" ExpressionL="${_ffxivparty[${player}].inparty}" ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
                 </Condition>
               </Trigger>
-              <Trigger Enabled="true" Name="Provoke" Id="62dc81c6-cc14-43a2-8c17-12890aeb6e8b" RegularExpression="\A.{14}(?:[^:]*)15:[^:]*:(?&lt;player&gt;(?&lt;name&gt;[\w\-']+) [\w\-']+):1D6D:[^:]*:[^:]*:(?&lt;target&gt;(?:[^:]*)):">
+              <Trigger Enabled="true" Name="Provoke" Id="62dc81c6-cc14-43a2-8c17-12890aeb6e8b" RegularExpression="\A.{28,31}15:[^:]*:(?&lt;player&gt;(?&lt;name&gt;[\w\-']+) [\w\-']+):1D6D:[^:]*:[^:]*:(?&lt;target&gt;(?:[^:]*)):">
                 <Actions>
                   <Action OrderNumber="1" AuraImageMode="StretchImage" AuraName="skillIcon" AuraImage="https://xivapi.com/i/000000/000803.png" AuraXIniExpression="(${_screenwidth}/2)-15" AuraYIniExpression="${_screenheight}/3" AuraWIniExpression="30" AuraHIniExpression="30" AuraOIniExpression="100" AuraTTLTickExpression="1-${_since}" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Aura" Description="Skill Icon">
                     <Condition Enabled="false" Grouping="Or" />
+                    <Conditions />
                   </Action>
                   <Action OrderNumber="2" TextAuraAlignment="MiddleRight" TextAuraEffect="Bold" TextAuraFontSize="20.25" TextAuraForeground="#FFFF80" TextAuraOutline="Black" TextAuraName="skillName" TextAuraExpression="PROVOKED" TextAuraXIniExpression="-30" TextAuraYIniExpression="${_screenheight}/3" TextAuraWIniExpression="${_screenwidth}/2" TextAuraHIniExpression="30" TextAuraOIniExpression="100" TextAuraOTickExpression="75+(cos(${_sincems}/50)*25))" TextAuraTTLTickExpression="1-${_since}" TextAuraUseOutline="True" TextAuraFontName="Arial" ActionType="TextAura">
                     <Condition Enabled="true" Grouping="Or">
                       <ConditionSingle Enabled="true" ExpressionL="${player}" ExpressionTypeL="String" ExpressionR="${_ffxivplayer}" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
                     </Condition>
+                    <Conditions />
                   </Action>
                   <Action OrderNumber="3" TextAuraAlignment="MiddleRight" TextAuraEffect="Bold" TextAuraFontSize="20.25" TextAuraForeground="White" TextAuraOutline="Black" TextAuraName="skillUser" TextAuraExpression="${name}" TextAuraXIniExpression="-30" TextAuraYIniExpression="${_screenheight}/3" TextAuraWIniExpression="${_screenwidth}/2" TextAuraHIniExpression="30" TextAuraOIniExpression="100" TextAuraTTLTickExpression="1-${_since}" TextAuraUseOutline="True" TextAuraFontName="Arial" ActionType="TextAura" Description="User">
                     <Condition Enabled="true" Grouping="Or">
                       <ConditionSingle Enabled="true" ExpressionL="${player}" ExpressionTypeL="String" ExpressionR="${_ffxivplayer}" ExpressionTypeR="String" ConditionType="StringNotEqualNocase" />
                     </Condition>
+                    <Conditions />
                   </Action>
                   <Action OrderNumber="4" TextAuraAlignment="MiddleLeft" TextAuraEffect="Bold" TextAuraFontSize="20.25" TextAuraForeground="White" TextAuraOutline="Black" TextAuraName="skillTarget" TextAuraExpression="${target}" TextAuraXIniExpression="(${_screenwidth}/2)+30" TextAuraYIniExpression="${_screenheight}/3" TextAuraWIniExpression="${_screenwidth}/2" TextAuraHIniExpression="30" TextAuraOIniExpression="100" TextAuraTTLTickExpression="1-${_since}" TextAuraUseOutline="True" TextAuraFontName="Arial" ActionType="TextAura" Description="Target">
                     <Condition Enabled="false" Grouping="Or" />
+                    <Conditions />
                   </Action>
                 </Actions>
                 <Condition Enabled="true" Grouping="And">
                   <ConditionSingle Enabled="true" ExpressionL="${_ffxivparty[${player}].inparty}" ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
                 </Condition>
               </Trigger>
-              <Trigger Enabled="true" Name="Cover" Id="3f3fef17-24f3-4983-9d48-62a949265711" RegularExpression="\A.{14}(?:[^:]*)15:[^:]*:(?&lt;player&gt;(?&lt;name&gt;[\w\-']+) [\w\-']+):1B:[^:]*:[^:]*:(?&lt;target&gt;(?:[^:]*)):">
+              <Trigger Enabled="true" Name="Cover" Id="3f3fef17-24f3-4983-9d48-62a949265711" RegularExpression="\A.{28,31}15:[^:]*:(?&lt;player&gt;(?&lt;name&gt;[\w\-']+) [\w\-']+):1B:[^:]*:[^:]*:(?&lt;target&gt;(?:[^:]*)):">
                 <Actions>
                   <Action OrderNumber="1" AuraImageMode="StretchImage" AuraName="skillIcon" AuraImage="https://xivapi.com/i/002000/002501.png" AuraXIniExpression="(${_screenwidth}/2)-15" AuraYIniExpression="${_screenheight}/3" AuraWIniExpression="30" AuraHIniExpression="30" AuraOIniExpression="100" AuraTTLTickExpression="1-${_since}" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Aura" Description="Skill Icon">
                     <Condition Enabled="false" Grouping="Or" />
+                    <Conditions />
                   </Action>
                   <Action OrderNumber="2" TextAuraAlignment="MiddleRight" TextAuraEffect="Bold" TextAuraFontSize="20.25" TextAuraForeground="Lime" TextAuraOutline="Black" TextAuraName="skillName" TextAuraExpression="COVERING" TextAuraXIniExpression="-30" TextAuraYIniExpression="${_screenheight}/3" TextAuraWIniExpression="${_screenwidth}/2" TextAuraHIniExpression="30" TextAuraOIniExpression="100" TextAuraOTickExpression="75+(cos(${_sincems}/50)*25))" TextAuraTTLTickExpression="1-${_since}" TextAuraUseOutline="True" TextAuraFontName="Arial" ActionType="TextAura">
                     <Condition Enabled="true" Grouping="Or">
                       <ConditionSingle Enabled="true" ExpressionL="${player}" ExpressionTypeL="String" ExpressionR="${_ffxivplayer}" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
                     </Condition>
+                    <Conditions />
                   </Action>
                   <Action OrderNumber="3" TextAuraAlignment="MiddleRight" TextAuraEffect="Bold" TextAuraFontSize="20.25" TextAuraForeground="White" TextAuraOutline="Black" TextAuraName="skillUser" TextAuraExpression="${name}" TextAuraXIniExpression="-30" TextAuraYIniExpression="${_screenheight}/3" TextAuraWIniExpression="${_screenwidth}/2" TextAuraHIniExpression="30" TextAuraOIniExpression="100" TextAuraTTLTickExpression="1-${_since}" TextAuraUseOutline="True" TextAuraFontName="Arial" ActionType="TextAura" Description="Target">
                     <Condition Enabled="true" Grouping="Or">
                       <ConditionSingle Enabled="true" ExpressionL="${player}" ExpressionTypeL="String" ExpressionR="${_ffxivplayer}" ExpressionTypeR="String" ConditionType="StringNotEqualNocase" />
                     </Condition>
+                    <Conditions />
                   </Action>
                   <Action OrderNumber="4" TextAuraAlignment="MiddleLeft" TextAuraEffect="Bold" TextAuraFontSize="20.25" TextAuraForeground="White" TextAuraOutline="Black" TextAuraName="skillTarget" TextAuraExpression="${target}" TextAuraXIniExpression="(${_screenwidth}/2)+30" TextAuraYIniExpression="${_screenheight}/3" TextAuraWIniExpression="${_screenwidth}/2" TextAuraHIniExpression="30" TextAuraOIniExpression="100" TextAuraTTLTickExpression="1-${_since}" TextAuraUseOutline="True" TextAuraFontName="Arial" ActionType="TextAura" Description="User">
                     <Condition Enabled="true" Grouping="Or">
                       <ConditionSingle Enabled="true" ExpressionL="${target}" ExpressionTypeL="String" ExpressionR="${_ffxivplayer}" ExpressionTypeR="String" ConditionType="StringNotEqualNocase" />
                     </Condition>
+                    <Conditions />
                   </Action>
                   <Action OrderNumber="5" TextAuraAlignment="MiddleLeft" TextAuraEffect="Bold" TextAuraFontSize="20.25" TextAuraForeground="Aqua" TextAuraOutline="Black" TextAuraName="skillTarget" TextAuraExpression="YOU" TextAuraXIniExpression="(${_screenwidth}/2)+30" TextAuraYIniExpression="${_screenheight}/3" TextAuraWIniExpression="${_screenwidth}/2" TextAuraHIniExpression="30" TextAuraOIniExpression="100" TextAuraOTickExpression="50 + (cos(${_sincems}/100)*50)" TextAuraTTLTickExpression="1-${_since}" TextAuraUseOutline="True" TextAuraFontName="Arial" ActionType="TextAura" Description="User">
                     <Condition Enabled="true" Grouping="Or">
                       <ConditionSingle Enabled="true" ExpressionL="${target}" ExpressionTypeL="String" ExpressionR="${_ffxivplayer}" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
                     </Condition>
+                    <Conditions />
                   </Action>
                 </Actions>
                 <Condition Enabled="true" Grouping="And">
@@ -35854,11 +35886,9 @@
                     <Actions>
                       <Action OrderNumber="1" PlaySoundFileExpression="https://raw.githubusercontent.com/lexxiesia/xiv_triggernometry/master/resources/wav/genji_onlyhuman.mp3" PlaySoundVolumeExpression="50" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="PlaySound" ExecutionDelayExpression="3000">
                         <Condition Enabled="false" Grouping="Or" />
-                        <Conditions />
                       </Action>
                       <Action OrderNumber="2" PlaySoundFileExpression="https://raw.githubusercontent.com/lexxiesia/xiv_triggernometry/master/resources/wav/genji_dragonblade.mp3" PlaySoundVolumeExpression="50" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" Enabled="False" ActionType="PlaySound">
                         <Condition Enabled="false" Grouping="Or" />
-                        <Conditions />
                       </Action>
                     </Actions>
                     <Condition Enabled="true" Grouping="And">
@@ -35874,7 +35904,6 @@
                     <Actions>
                       <Action OrderNumber="1" PlaySoundFileExpression="https://raw.githubusercontent.com/lexxiesia/xiv_triggernometry/master/resources/wav/Pharah_JusticeRains.mp3" PlaySoundVolumeExpression="50" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="PlaySound">
                         <Condition Enabled="false" Grouping="Or" />
-                        <Conditions />
                       </Action>
                     </Actions>
                     <Condition Enabled="true" Grouping="And">
@@ -35910,7 +35939,6 @@
                     <Actions>
                       <Action OrderNumber="1" PlaySoundFileExpression="https://raw.githubusercontent.com/lexxiesia/xiv_triggernometry/master/resources/wav/Hanzo_DragonConsumes.mp3" PlaySoundVolumeExpression="50" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="PlaySound" ExecutionDelayExpression="3000">
                         <Condition Enabled="false" Grouping="Or" />
-                        <Conditions />
                       </Action>
                     </Actions>
                     <Condition Enabled="true" Grouping="And">
@@ -35936,7 +35964,6 @@
                     <Actions>
                       <Action OrderNumber="1" PlaySoundFileExpression="https://raw.githubusercontent.com/lexxiesia/xiv_triggernometry/master/resources/wav/genji_mizu.mp3" PlaySoundVolumeExpression="50" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="PlaySound" ExecutionDelayExpression="3000">
                         <Condition Enabled="false" Grouping="Or" />
-                        <Conditions />
                       </Action>
                     </Actions>
                     <Condition Enabled="true" Grouping="And">
@@ -35962,7 +35989,6 @@
                     <Actions>
                       <Action OrderNumber="1" PlaySoundFileExpression="https://raw.githubusercontent.com/lexxiesia/xiv_triggernometry/master/resources/wav/zen_tranquility.mp3" PlaySoundVolumeExpression="50" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="PlaySound" ExecutionDelayExpression="4000">
                         <Condition Enabled="false" Grouping="Or" />
-                        <Conditions />
                       </Action>
                     </Actions>
                     <Condition Enabled="true" Grouping="And">
@@ -35988,7 +36014,6 @@
                     <Actions>
                       <Action OrderNumber="1" PlaySoundFileExpression="https://raw.githubusercontent.com/lexxiesia/xiv_triggernometry/master/resources/wav/Mercy_DeinSchutzengel.mp3" PlaySoundVolumeExpression="50" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="PlaySound" ExecutionDelayExpression="5000">
                         <Condition Enabled="false" Grouping="Or" />
-                        <Conditions />
                       </Action>
                     </Actions>
                     <Condition Enabled="true" Grouping="And">
@@ -36004,7 +36029,6 @@
                     <Actions>
                       <Action OrderNumber="1" PlaySoundFileExpression="https://raw.githubusercontent.com/lexxiesia/xiv_triggernometry/master/resources/wav/Mercy_DerKampf.mp3" PlaySoundVolumeExpression="50" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" Enabled="False" ActionType="PlaySound">
                         <Condition Enabled="false" Grouping="Or" />
-                        <Conditions />
                       </Action>
                     </Actions>
                     <Condition Enabled="true" Grouping="And">
@@ -36040,7 +36064,6 @@
                     <Actions>
                       <Action OrderNumber="1" PlaySoundFileExpression="https://raw.githubusercontent.com/lexxiesia/xiv_triggernometry/master/resources/wav/Ranko_Return.mp3" PlaySoundVolumeExpression="50" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="PlaySound" ExecutionDelayExpression="3000">
                         <Condition Enabled="false" Grouping="Or" />
-                        <Conditions />
                       </Action>
                     </Actions>
                     <Condition Enabled="true" Grouping="And">
@@ -36056,7 +36079,6 @@
                     <Actions>
                       <Action OrderNumber="1" PlaySoundFileExpression="https://raw.githubusercontent.com/lexxiesia/xiv_triggernometry/master/resources/wav/Echo_regen_complete.mp3" PlaySoundVolumeExpression="50" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="PlaySound" ExecutionDelayExpression="5000">
                         <Condition Enabled="false" Grouping="Or" />
-                        <Conditions />
                       </Action>
                     </Actions>
                     <Condition Enabled="true" Grouping="And">
@@ -36082,7 +36104,6 @@
                     <Actions>
                       <Action OrderNumber="1" PlaySoundFileExpression="https://raw.githubusercontent.com/lexxiesia/xiv_triggernometry/master/resources/wav/EVA_ObjectiveComplete.mp3" PlaySoundVolumeExpression="50" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="PlaySound" ExecutionDelayExpression="4000">
                         <Condition Enabled="false" Grouping="Or" />
-                        <Conditions />
                       </Action>
                     </Actions>
                     <Condition Enabled="true" Grouping="And">
@@ -36139,7 +36160,6 @@
                     <Actions>
                       <Action OrderNumber="1" PlaySoundFileExpression="https://raw.githubusercontent.com/lexxiesia/xiv_triggernometry/master/resources/wav/Ranko_BurnFlames.mp3" PlaySoundVolumeExpression="50" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="PlaySound" ExecutionDelayExpression="2000">
                         <Condition Enabled="false" Grouping="Or" />
-                        <Conditions />
                       </Action>
                     </Actions>
                     <Condition Enabled="true" Grouping="And">
@@ -36155,7 +36175,6 @@
                     <Actions>
                       <Action OrderNumber="1" PlaySoundFileExpression="https://raw.githubusercontent.com/lexxiesia/xiv_triggernometry/master/resources/wav/GreatWall.mp3" PlaySoundVolumeExpression="50" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="PlaySound">
                         <Condition Enabled="false" Grouping="Or" />
-                        <Conditions />
                       </Action>
                     </Actions>
                     <Condition Enabled="true" Grouping="Or">
@@ -36171,7 +36190,6 @@
                     <Actions>
                       <Action OrderNumber="1" PlaySoundFileExpression="https://raw.githubusercontent.com/lexxiesia/xiv_triggernometry/master/resources/wav/ohshitthebridge.mp3" PlaySoundVolumeExpression="50" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="PlaySound" ExecutionDelayExpression="2500">
                         <Condition Enabled="false" Grouping="Or" />
-                        <Conditions />
                       </Action>
                     </Actions>
                     <Condition Enabled="true" Grouping="Or">
@@ -36197,7 +36215,6 @@
                     <Actions>
                       <Action OrderNumber="1" PlaySoundFileExpression="https://raw.githubusercontent.com/lexxiesia/xiv_triggernometry/master/resources/wav/Vega_10e.mp3" PlaySoundVolumeExpression="50" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="PlaySound" ExecutionDelayExpression="4000">
                         <Condition Enabled="false" Grouping="Or" />
-                        <Conditions />
                       </Action>
                     </Actions>
                     <Condition Enabled="true" Grouping="And">

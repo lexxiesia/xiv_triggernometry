@@ -5,13 +5,13 @@
 
 <p align="center">
   <a href="https://na.finalfantasyxiv.com/endwalker/patch_6_0"><img src="https://img.shields.io/badge/ffxiv-patch%206.0-yellow"></a>
-  <a href="https://github.com/paissaheavyindustries/Triggernometry/releases/tag/v1.1.4.4"><img src="https://img.shields.io/badge/triggernometry-v1.1.4.4-blue"></a>
+  <a href="https://github.com/paissaheavyindustries/Triggernometry/releases/tag/v1.1.6.0"><img src="https://img.shields.io/badge/triggernometry-v1.1.6.0-blue"></a>
 </p>
 
 ## How to Setup
 
  1. Navigate to your Triggernometry plugin tab in ACT.
- 2. Right-click on **Remote Triggers** and choose **Add**> **Repository** from the list.
+ 2. Right-click on **Remote Triggers** and choose **Add** > **Repository** from the list.
  3. Name it whatever you want but put the following in the address:
  ```https://raw.githubusercontent.com/lexxiesia/xiv_triggernometry/master/Triggernometry_Lexxie.xml```
  4. Under the **Update and Permissions** section, make sure your settings are as follows:

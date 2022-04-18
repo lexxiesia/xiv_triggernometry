@@ -4,7 +4,7 @@
 <h4 align="center">Repository Information</h4>
 
 <p align="center">
-  <a href="https://na.finalfantasyxiv.com/endwalker/patch_6_0"><img src="https://img.shields.io/badge/ffxiv-patch%206.0-yellow"></a>
+  <a href="https://na.finalfantasyxiv.com/endwalker/patch_6_1"><img src="https://img.shields.io/badge/ffxiv-patch%206.1-yellow"></a>
   <a href="https://github.com/paissaheavyindustries/Triggernometry/releases/tag/v1.1.6.0"><img src="https://img.shields.io/badge/triggernometry-v1.1.6.0-blue"></a>
 </p>
 

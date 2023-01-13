@@ -4,9 +4,12 @@
 <h4 align="center">Repository Information</h4>
 
 <p align="center">
-  <a href="https://na.finalfantasyxiv.com/endwalker/patch_6_2"><img src="https://img.shields.io/badge/ffxiv-patch%206.2-yellow"></a>
+  <a href="https://na.finalfantasyxiv.com/endwalker/patch_6_3"><img src="https://img.shields.io/badge/ffxiv-patch%206.3-yellow"></a>
   <a href="https://github.com/paissaheavyindustries/Triggernometry/releases/tag/v1.1.6.7"><img src="https://img.shields.io/badge/triggernometry-v1.1.6.7-blue"></a>
+  <a href="https://github.com/OverlayPlugin/OverlayPlugin/releases/tag/v0.19.5"><img src="https://img.shields.io/badge/OverlayPlugin-v0.19.5+-green"></a>
 </p>
+
+***NOTE:*** *This repository uses triggers that rely on the newly added `MapEffect` custom log line. You will need OverlayPlugin [v0.19.5](https://github.com/OverlayPlugin/OverlayPlugin/releases/tag/v0.19.5 "OverlayPlugin v0.19.5") or [later](https://github.com/OverlayPlugin/OverlayPlugin/releases "later") for them to work.*
 
 ## How to Setup
 

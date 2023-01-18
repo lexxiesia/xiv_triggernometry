@@ -5,7 +5,7 @@
 
 <p align="center">
   <a href="https://na.finalfantasyxiv.com/endwalker/patch_6_3"><img src="https://img.shields.io/badge/ffxiv-patch%206.3-yellow"></a>
-  <a href="https://github.com/paissaheavyindustries/Triggernometry/releases/tag/v1.1.6.7"><img src="https://img.shields.io/badge/triggernometry-v1.1.6.7-blue"></a>
+  <a href="https://github.com/paissaheavyindustries/Triggernometry/releases/tag/v1.1.6.9"><img src="https://img.shields.io/badge/triggernometry-v1.1.6.9-blue"></a>
   <a href="https://github.com/OverlayPlugin/OverlayPlugin/releases/tag/v0.19.5"><img src="https://img.shields.io/badge/OverlayPlugin-v0.19.5+-green"></a>
 </p>
 

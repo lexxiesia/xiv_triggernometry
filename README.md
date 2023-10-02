@@ -4,7 +4,7 @@
 <h4 align="center">Repository Information</h4>
 
 <p align="center">
-  <a href="https://na.finalfantasyxiv.com/endwalker/patch_6_4"><img src="https://img.shields.io/badge/ffxiv-patch%206.4-yellow"></a>
+  <a href="https://na.finalfantasyxiv.com/endwalker/patch_6_5"><img src="https://img.shields.io/badge/ffxiv-patch%206.5-yellow"></a>
   <a href="https://github.com/paissaheavyindustries/Triggernometry/releases/tag/v1.1.7.4"><img src="https://img.shields.io/badge/triggernometry-v1.1.7.4-blue"></a>
   <a href="https://github.com/OverlayPlugin/OverlayPlugin/releases/tag/v0.19.5"><img src="https://img.shields.io/badge/OverlayPlugin-v0.19.5+-green"></a>
 </p>
@@ -21,7 +21,7 @@
 ![](https://raw.githubusercontent.com/lexxiesia/xiv_triggernometry/master/resources/screenshots/repo_setting.jpg)
  5. Click **Add** and you're done!
  
- If you don't see **Remote Triggers**, you are running an old version of Triggernometry. Download the latest update from [https://github.com/paissaheavyindustries/Triggernometry/releases/](https://github.com/paissaheavyindustries/Triggernometry/releases/).
+ If you don't see **Remote Triggers**, you are running an old version of Triggernometry. Download the latest update from Triggernometry's [GitHub page](https://github.com/paissaheavyindustries/Triggernometry/releases/latest "GitHub page").
 
 <!-- ### Known Issues
  - Main repository folder `Github` occasionally gets disabled after a new upload.
@@ -30,4 +30,4 @@
 ## What's in it?
 Triggers within the repository are separated by content folders. Most stuff are enabled by default. Disable triggers that you don't want activated. That is all!
 
-If there're any problems or issues, hit me up on Discord.
+If there are any problems or issues, hit me up on Discord.

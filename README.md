@@ -5,7 +5,7 @@
 
 <p align="center">
   <a href="https://na.finalfantasyxiv.com/dawntrail/"><img src="https://img.shields.io/badge/ffxiv-patch%207.0-yellow"></a>
-  <a href="https://github.com/paissaheavyindustries/Triggernometry/releases/tag/v1.2.0.4"><img src="https://img.shields.io/badge/triggernometry-v1.2.0.4-blue"></a>
+  <a href="https://github.com/paissaheavyindustries/Triggernometry/releases/tag/v1.2.0.7"><img src="https://img.shields.io/badge/triggernometry-v1.2.0.7-blue"></a>
   <a href="https://github.com/OverlayPlugin/OverlayPlugin/releases/tag/v0.19.5"><img src="https://img.shields.io/badge/OverlayPlugin-v0.19.5+-green"></a>
 </p>
 

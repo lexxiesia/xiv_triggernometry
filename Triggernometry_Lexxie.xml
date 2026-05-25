@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <TriggernometryExport PluginVersion="1.2.0.7">
-  <ExportedFolder Id="e6535eb9-7bf8-4213-9032-957dd301fdeb" Name="Github v7.50.260518" Enabled="true">
+  <ExportedFolder Id="e6535eb9-7bf8-4213-9032-957dd301fdeb" Name="Github v7.50.260525" Enabled="true">
     <Folders>
       <Folder Id="ad5d02df-4ec4-455d-8732-28c2d29db1af" Name="Hunts" Enabled="true">
         <Folders>
@@ -43504,108 +43504,98 @@
                           <Action OrderNumber="1" SoundRouting="None" TTSRouting="None" VariableOp="SetString" VariableName="dataPopSide" VariableExpression="east" ActionType="Variable">
                             <Condition Enabled="true" Grouping="And">
                               <ConditionSingle Enabled="true" ExpressionL="${x}" ExpressionTypeL="Numeric" ExpressionR="100" ExpressionTypeR="Numeric" ConditionType="NumericLess" />
-                              <ConditionSingle Enabled="true" ExpressionL="distance(${x}, ${y}, 90,100)" ExpressionTypeL="Numeric" ExpressionR="8" ExpressionTypeR="Numeric" ConditionType="NumericLess" />
+                              <ConditionSingle Enabled="true" ExpressionL="distance(${x}, ${y}, 90,100)" ExpressionTypeL="Numeric" ExpressionR="7" ExpressionTypeR="Numeric" ConditionType="NumericLess" />
                             </Condition>
                           </Action>
                           <Action OrderNumber="2" SoundRouting="None" TTSRouting="None" VariableOp="SetString" VariableName="dataPopSide" VariableExpression="west" ActionType="Variable">
                             <Condition Enabled="true" Grouping="And">
-                              <ConditionSingle Enabled="true" ExpressionL="distance(${x}, ${y}, 110,100)" ExpressionTypeL="Numeric" ExpressionR="8" ExpressionTypeR="Numeric" ConditionType="NumericLess" />
+                              <ConditionSingle Enabled="true" ExpressionL="distance(${x}, ${y}, 110,100)" ExpressionTypeL="Numeric" ExpressionR="7" ExpressionTypeR="Numeric" ConditionType="NumericLess" />
                               <ConditionSingle Enabled="true" ExpressionL="${x}" ExpressionTypeL="Numeric" ExpressionR="100" ExpressionTypeR="Numeric" ConditionType="NumericGreater" />
                             </Condition>
                           </Action>
                           <Action OrderNumber="3" SoundRouting="None" TTSRouting="None" VariableOp="SetString" VariableName="dataCloseShape" VariableExpression="Pop Blue+Purple" ActionType="Variable">
-                            <Condition Enabled="true" Grouping="Or">
-                              <ConditionSingle Enabled="true" ExpressionL="distance(${x}, ${y}, 90, 100)" ExpressionTypeL="Numeric" ExpressionR="8" ExpressionTypeR="Numeric" ConditionType="NumericLess" />
-                              <ConditionSingle Enabled="true" ExpressionL="distance(${x}, ${y}, 110, 100)" ExpressionTypeL="Numeric" ExpressionR="8" ExpressionTypeR="Numeric" ConditionType="NumericLess" />
+                            <Condition Enabled="true" Grouping="And">
+                              <ConditionGroup Enabled="true" Grouping="Or">
+                                <ConditionGroup Enabled="true" Grouping="And">
+                                  <ConditionSingle Enabled="true" ExpressionL="${var:dataPopSide}" ExpressionTypeL="String" ExpressionR="east" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
+                                  <ConditionSingle Enabled="true" ExpressionL="distance(${x}, ${y}, 90, 100)" ExpressionTypeL="Numeric" ExpressionR="7" ExpressionTypeR="Numeric" ConditionType="NumericLess" />
+                                </ConditionGroup>
+                                <ConditionGroup Enabled="true" Grouping="And">
+                                  <ConditionSingle Enabled="true" ExpressionL="distance(${x}, ${y}, 110, 100)" ExpressionTypeL="Numeric" ExpressionR="7" ExpressionTypeR="Numeric" ConditionType="NumericLess" />
+                                  <ConditionSingle Enabled="true" ExpressionL="${var:dataPopSide}" ExpressionTypeL="String" ExpressionR="west" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
+                                </ConditionGroup>
+                              </ConditionGroup>
                               <ConditionSingle Enabled="true" ExpressionL="${var:dataShape${sourceID}}" ExpressionTypeL="String" ExpressionR="water" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
-                              <ConditionSingle Enabled="true" ExpressionL="${var:dataShape${sourceID}}" ExpressionTypeL="String" ExpressionR="lightning" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
                             </Condition>
                           </Action>
                           <Action OrderNumber="4" SoundRouting="None" TTSRouting="None" VariableOp="SetString" VariableName="dataCloseShape" VariableExpression="Pop Green+Red" ActionType="Variable">
-                            <Condition Enabled="true" Grouping="Or">
-                              <ConditionSingle Enabled="true" ExpressionL="distance(${x}, ${y}, 90, 100)" ExpressionTypeL="Numeric" ExpressionR="8" ExpressionTypeR="Numeric" ConditionType="NumericLess" />
-                              <ConditionSingle Enabled="true" ExpressionL="distance(${x}, ${y}, 110, 100)" ExpressionTypeL="Numeric" ExpressionR="8" ExpressionTypeR="Numeric" ConditionType="NumericLess" />
+                            <Condition Enabled="true" Grouping="And">
+                              <ConditionGroup Enabled="true" Grouping="Or">
+                                <ConditionGroup Enabled="true" Grouping="And">
+                                  <ConditionSingle Enabled="true" ExpressionL="${var:dataPopSide}" ExpressionTypeL="String" ExpressionR="east" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
+                                  <ConditionSingle Enabled="true" ExpressionL="distance(${x}, ${y}, 90, 100)" ExpressionTypeL="Numeric" ExpressionR="7" ExpressionTypeR="Numeric" ConditionType="NumericLess" />
+                                </ConditionGroup>
+                                <ConditionGroup Enabled="true" Grouping="And">
+                                  <ConditionSingle Enabled="true" ExpressionL="distance(${x}, ${y}, 110, 100)" ExpressionTypeL="Numeric" ExpressionR="7" ExpressionTypeR="Numeric" ConditionType="NumericLess" />
+                                  <ConditionSingle Enabled="true" ExpressionL="${var:dataPopSide}" ExpressionTypeL="String" ExpressionR="west" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
+                                </ConditionGroup>
+                              </ConditionGroup>
                               <ConditionSingle Enabled="true" ExpressionL="${var:dataShape${sourceID}}" ExpressionTypeL="String" ExpressionR="wind" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
-                              <ConditionSingle Enabled="true" ExpressionL="${var:dataShape${sourceID}}" ExpressionTypeL="String" ExpressionR="fire" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
                             </Condition>
                           </Action>
                           <Action OrderNumber="5" SoundRouting="None" TTSRouting="None" VariableOp="SetString" VariableName="dataBlackHoleOrder1" VariableExpression="←West" ActionType="Variable">
                             <Condition Enabled="true" Grouping="Or">
                               <ConditionGroup Enabled="true" Grouping="And">
-                                <ConditionGroup Enabled="true" Grouping="Or">
-                                  <ConditionSingle Enabled="true" ExpressionL="${var:dataShape${sourceID}}" ExpressionTypeL="String" ExpressionR="lightning" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
-                                  <ConditionSingle Enabled="true" ExpressionL="${var:dataShape${sourceID}}" ExpressionTypeL="String" ExpressionR="wind" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
-                                </ConditionGroup>
                                 <ConditionSingle Enabled="true" ExpressionL="${x}" ExpressionTypeL="Numeric" ExpressionR="100" ExpressionTypeR="Numeric" ConditionType="NumericLess" />
-                                <ConditionSingle Enabled="true" ExpressionL="distance(${x}, ${y}, 90, 100)" ExpressionTypeL="Numeric" ExpressionR="8" ExpressionTypeR="Numeric" ConditionType="NumericLess" />
+                                <ConditionSingle Enabled="true" ExpressionL="distance(${x}, ${y}, 90, 100)" ExpressionTypeL="Numeric" ExpressionR="7" ExpressionTypeR="Numeric" ConditionType="NumericLess" />
+                                <ConditionSingle Enabled="true" ExpressionL="${var:dataShape${sourceID}}" ExpressionTypeL="String" ExpressionR="wind" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
                               </ConditionGroup>
                               <ConditionGroup Enabled="true" Grouping="And">
-                                <ConditionGroup Enabled="true" Grouping="Or">
-                                  <ConditionSingle Enabled="true" ExpressionL="${var:dataShape${sourceID}}" ExpressionTypeL="String" ExpressionR="fire" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
-                                  <ConditionSingle Enabled="true" ExpressionL="${var:dataShape${sourceID}}" ExpressionTypeL="String" ExpressionR="water" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
-                                </ConditionGroup>
                                 <ConditionSingle Enabled="true" ExpressionL="${x}" ExpressionTypeL="Numeric" ExpressionR="100" ExpressionTypeR="Numeric" ConditionType="NumericGreater" />
-                                <ConditionSingle Enabled="true" ExpressionL="distance(${x}, ${y}, 110, 100)" ExpressionTypeL="Numeric" ExpressionR="8" ExpressionTypeR="Numeric" ConditionType="NumericLess" />
+                                <ConditionSingle Enabled="true" ExpressionL="distance(${x}, ${y}, 110, 100)" ExpressionTypeL="Numeric" ExpressionR="7" ExpressionTypeR="Numeric" ConditionType="NumericLess" />
+                                <ConditionSingle Enabled="true" ExpressionL="${var:dataShape${sourceID}}" ExpressionTypeL="String" ExpressionR="water" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
                               </ConditionGroup>
                             </Condition>
                           </Action>
                           <Action OrderNumber="6" SoundRouting="None" TTSRouting="None" VariableOp="SetString" VariableName="dataBlackHoleOrder2" VariableExpression="East→" ActionType="Variable">
                             <Condition Enabled="true" Grouping="Or">
                               <ConditionGroup Enabled="true" Grouping="And">
-                                <ConditionGroup Enabled="true" Grouping="Or">
-                                  <ConditionSingle Enabled="true" ExpressionL="${var:dataShape${sourceID}}" ExpressionTypeL="String" ExpressionR="lightning" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
-                                  <ConditionSingle Enabled="true" ExpressionL="${var:dataShape${sourceID}}" ExpressionTypeL="String" ExpressionR="wind" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
-                                </ConditionGroup>
                                 <ConditionSingle Enabled="true" ExpressionL="${x}" ExpressionTypeL="Numeric" ExpressionR="100" ExpressionTypeR="Numeric" ConditionType="NumericLess" />
-                                <ConditionSingle Enabled="true" ExpressionL="distance(${x}, ${y}, 90, 100)" ExpressionTypeL="Numeric" ExpressionR="8" ExpressionTypeR="Numeric" ConditionType="NumericLess" />
+                                <ConditionSingle Enabled="true" ExpressionL="distance(${x}, ${y}, 90, 100)" ExpressionTypeL="Numeric" ExpressionR="7" ExpressionTypeR="Numeric" ConditionType="NumericLess" />
+                                <ConditionSingle Enabled="true" ExpressionL="${var:dataShape${sourceID}}" ExpressionTypeL="String" ExpressionR="wind" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
                               </ConditionGroup>
                               <ConditionGroup Enabled="true" Grouping="And">
-                                <ConditionGroup Enabled="true" Grouping="Or">
-                                  <ConditionSingle Enabled="true" ExpressionL="${var:dataShape${sourceID}}" ExpressionTypeL="String" ExpressionR="fire" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
-                                  <ConditionSingle Enabled="true" ExpressionL="${var:dataShape${sourceID}}" ExpressionTypeL="String" ExpressionR="water" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
-                                </ConditionGroup>
                                 <ConditionSingle Enabled="true" ExpressionL="${x}" ExpressionTypeL="Numeric" ExpressionR="100" ExpressionTypeR="Numeric" ConditionType="NumericGreater" />
-                                <ConditionSingle Enabled="true" ExpressionL="distance(${x}, ${y}, 110, 100)" ExpressionTypeL="Numeric" ExpressionR="8" ExpressionTypeR="Numeric" ConditionType="NumericLess" />
+                                <ConditionSingle Enabled="true" ExpressionL="distance(${x}, ${y}, 110, 100)" ExpressionTypeL="Numeric" ExpressionR="7" ExpressionTypeR="Numeric" ConditionType="NumericLess" />
+                                <ConditionSingle Enabled="true" ExpressionL="${var:dataShape${sourceID}}" ExpressionTypeL="String" ExpressionR="water" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
                               </ConditionGroup>
                             </Condition>
                           </Action>
                           <Action OrderNumber="7" SoundRouting="None" TTSRouting="None" VariableOp="SetString" VariableName="dataBlackHoleOrder1" VariableExpression="East→" ActionType="Variable">
                             <Condition Enabled="true" Grouping="Or">
                               <ConditionGroup Enabled="true" Grouping="And">
-                                <ConditionGroup Enabled="true" Grouping="Or">
-                                  <ConditionSingle Enabled="true" ExpressionL="${var:dataShape${sourceID}}" ExpressionTypeL="String" ExpressionR="lightning" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
-                                  <ConditionSingle Enabled="true" ExpressionL="${var:dataShape${sourceID}}" ExpressionTypeL="String" ExpressionR="wind" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
-                                </ConditionGroup>
                                 <ConditionSingle Enabled="true" ExpressionL="${x}" ExpressionTypeL="Numeric" ExpressionR="100" ExpressionTypeR="Numeric" ConditionType="NumericGreater" />
-                                <ConditionSingle Enabled="true" ExpressionL="distance(${x}, ${y}, 110, 100)" ExpressionTypeL="Numeric" ExpressionR="8" ExpressionTypeR="Numeric" ConditionType="NumericLess" />
+                                <ConditionSingle Enabled="true" ExpressionL="distance(${x}, ${y}, 110, 100)" ExpressionTypeL="Numeric" ExpressionR="7" ExpressionTypeR="Numeric" ConditionType="NumericLess" />
+                                <ConditionSingle Enabled="true" ExpressionL="${var:dataShape${sourceID}}" ExpressionTypeL="String" ExpressionR="wind" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
                               </ConditionGroup>
                               <ConditionGroup Enabled="true" Grouping="And">
-                                <ConditionGroup Enabled="true" Grouping="Or">
-                                  <ConditionSingle Enabled="true" ExpressionL="${var:dataShape${sourceID}}" ExpressionTypeL="String" ExpressionR="fire" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
-                                  <ConditionSingle Enabled="true" ExpressionL="${var:dataShape${sourceID}}" ExpressionTypeL="String" ExpressionR="water" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
-                                </ConditionGroup>
                                 <ConditionSingle Enabled="true" ExpressionL="${x}" ExpressionTypeL="Numeric" ExpressionR="100" ExpressionTypeR="Numeric" ConditionType="NumericLess" />
-                                <ConditionSingle Enabled="true" ExpressionL="distance(${x}, ${y}, 90, 100)" ExpressionTypeL="Numeric" ExpressionR="8" ExpressionTypeR="Numeric" ConditionType="NumericLess" />
+                                <ConditionSingle Enabled="true" ExpressionL="distance(${x}, ${y}, 90, 100)" ExpressionTypeL="Numeric" ExpressionR="7" ExpressionTypeR="Numeric" ConditionType="NumericLess" />
+                                <ConditionSingle Enabled="true" ExpressionL="${var:dataShape${sourceID}}" ExpressionTypeL="String" ExpressionR="water" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
                               </ConditionGroup>
                             </Condition>
                           </Action>
                           <Action OrderNumber="8" SoundRouting="None" TTSRouting="None" VariableOp="SetString" VariableName="dataBlackHoleOrder2" VariableExpression="←West" ActionType="Variable">
                             <Condition Enabled="true" Grouping="Or">
                               <ConditionGroup Enabled="true" Grouping="And">
-                                <ConditionGroup Enabled="true" Grouping="Or">
-                                  <ConditionSingle Enabled="true" ExpressionL="${var:dataShape${sourceID}}" ExpressionTypeL="String" ExpressionR="lightning" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
-                                  <ConditionSingle Enabled="true" ExpressionL="${var:dataShape${sourceID}}" ExpressionTypeL="String" ExpressionR="wind" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
-                                </ConditionGroup>
                                 <ConditionSingle Enabled="true" ExpressionL="${x}" ExpressionTypeL="Numeric" ExpressionR="100" ExpressionTypeR="Numeric" ConditionType="NumericGreater" />
-                                <ConditionSingle Enabled="true" ExpressionL="distance(${x}, ${y}, 110, 100)" ExpressionTypeL="Numeric" ExpressionR="8" ExpressionTypeR="Numeric" ConditionType="NumericLess" />
+                                <ConditionSingle Enabled="true" ExpressionL="distance(${x}, ${y}, 110, 100)" ExpressionTypeL="Numeric" ExpressionR="7" ExpressionTypeR="Numeric" ConditionType="NumericLess" />
+                                <ConditionSingle Enabled="true" ExpressionL="${var:dataShape${sourceID}}" ExpressionTypeL="String" ExpressionR="wind" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
                               </ConditionGroup>
                               <ConditionGroup Enabled="true" Grouping="And">
-                                <ConditionGroup Enabled="true" Grouping="Or">
-                                  <ConditionSingle Enabled="true" ExpressionL="${var:dataShape${sourceID}}" ExpressionTypeL="String" ExpressionR="fire" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
-                                  <ConditionSingle Enabled="true" ExpressionL="${var:dataShape${sourceID}}" ExpressionTypeL="String" ExpressionR="water" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
-                                </ConditionGroup>
                                 <ConditionSingle Enabled="true" ExpressionL="${x}" ExpressionTypeL="Numeric" ExpressionR="100" ExpressionTypeR="Numeric" ConditionType="NumericLess" />
-                                <ConditionSingle Enabled="true" ExpressionL="distance(${x}, ${y}, 90, 100)" ExpressionTypeL="Numeric" ExpressionR="8" ExpressionTypeR="Numeric" ConditionType="NumericLess" />
+                                <ConditionSingle Enabled="true" ExpressionL="distance(${x}, ${y}, 90, 100)" ExpressionTypeL="Numeric" ExpressionR="7" ExpressionTypeR="Numeric" ConditionType="NumericLess" />
+                                <ConditionSingle Enabled="true" ExpressionL="${var:dataShape${sourceID}}" ExpressionTypeL="String" ExpressionR="water" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
                               </ConditionGroup>
                             </Condition>
                           </Action>
@@ -44012,20 +44002,13 @@
                             </Actions>
                             <Condition Enabled="false" Grouping="And" />
                           </Trigger>
-                          <Trigger Enabled="true" Sequential="True" Name="Safe Zone" Id="04a27643-3819-4c53-8974-79e15767fd55" RegularExpression="^.{19}108:[^:]*:BCB0:" PeriodRefire="Deny" RefirePeriodExpression="1000">
+                          <Trigger Enabled="true" Sequential="True" Name="Safe Zone" Id="04a27643-3819-4c53-8974-79e15767fd55" RegularExpression="^.{19}108:[^:]*:B4FD:" PeriodRefire="Deny" RefirePeriodExpression="1000">
                             <Actions>
-                              <Action OrderNumber="1" SoundRouting="None" TTSRouting="None" VariableOp="Increment" VariableName="dataShapeCounter" VariableExpression="1" ActionType="Variable">
+                              <Action OrderNumber="1" SoundRouting="None" TTSRouting="None" TextAuraEffect="Bold" TextAuraFontSize="24" TextAuraForeground="#FFBB00" TextAuraOutline="Black" TextAuraName="shapeSafeZone" TextAuraExpression="N/S: ${var:dataBlackHoleOrder1} (${func:format(System.Double,&quot;0.0&quot;):${numeric:(((25*1000)-${_sincems})/1000)}}) ► ${var:dataBlackHoleOrder2} (${func:format(System.Double,&quot;0.0&quot;):${numeric:(((30*1000)-${_sincems})/1000)}})" TextAuraXIniExpression="0" TextAuraYIniExpression="${_screenheight}/2" TextAuraWIniExpression="${_screenwidth}" TextAuraHIniExpression="42" TextAuraOIniExpression="100" TextAuraTTLTickExpression="(30*1000)-${_sincems}" TextAuraFontName="Arial" ActionType="TextAura" ExecutionDelayExpression="10000">
                                 <Condition Enabled="false" Grouping="Or" />
                               </Action>
-                              <Action OrderNumber="2" SoundRouting="None" TTSRouting="None" TextAuraEffect="Bold" TextAuraFontSize="24" TextAuraForeground="#FFBB00" TextAuraOutline="Black" TextAuraName="shapeSafeZone" TextAuraExpression="N/S: ${var:dataBlackHoleOrder1} (${func:format(System.Double,&quot;0.0&quot;):${numeric:(((8.5*1000)-${_sincems})/1000)}}) ► ${var:dataBlackHoleOrder2} (${func:format(System.Double,&quot;0.0&quot;):${numeric:(((13.5*1000)-${_sincems})/1000)}})" TextAuraXIniExpression="0" TextAuraYIniExpression="${_screenheight}/2" TextAuraWIniExpression="${_screenwidth}" TextAuraHIniExpression="42" TextAuraOIniExpression="100" TextAuraTTLTickExpression="(13.5*1000)-${_sincems}" TextAuraFontName="Arial" ActionType="TextAura">
-                                <Condition Enabled="true" Grouping="Or">
-                                  <ConditionSingle Enabled="true" ExpressionL="${var:dataShapeCounter}" ExpressionTypeL="Numeric" ExpressionR="3" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
-                                </Condition>
-                              </Action>
-                              <Action OrderNumber="3" SoundRouting="None" TTSRouting="None" TextAuraEffect="Bold" TextAuraFontSize="24" TextAuraForeground="#FFBB00" TextAuraOutline="Black" TextAuraName="shapeSafeZone" TextAuraExpression="N/S: ${var:dataBlackHoleOrder2} (${func:format(System.Double,&quot;0.0&quot;):${numeric:(((13.5*1000)-${_sincems})/1000)}})" TextAuraXIniExpression="0" TextAuraYIniExpression="${_screenheight}/2" TextAuraWIniExpression="${_screenwidth}" TextAuraHIniExpression="42" TextAuraOIniExpression="100" TextAuraTTLTickExpression="(13.5*1000)-${_sincems}" TextAuraFontName="Arial" ActionType="TextAura" ExecutionDelayExpression="8500">
-                                <Condition Enabled="true" Grouping="Or">
-                                  <ConditionSingle Enabled="true" ExpressionL="${var:dataShapeCounter}" ExpressionTypeL="Numeric" ExpressionR="3" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
-                                </Condition>
+                              <Action OrderNumber="2" SoundRouting="None" TTSRouting="None" TextAuraEffect="Bold" TextAuraFontSize="24" TextAuraForeground="#FFBB00" TextAuraOutline="Black" TextAuraName="shapeSafeZone" TextAuraExpression="N/S: ${var:dataBlackHoleOrder2} (${func:format(System.Double,&quot;0.0&quot;):${numeric:(((30*1000)-${_sincems})/1000)}})" TextAuraXIniExpression="0" TextAuraYIniExpression="${_screenheight}/2" TextAuraWIniExpression="${_screenwidth}" TextAuraHIniExpression="42" TextAuraOIniExpression="100" TextAuraTTLTickExpression="(30*1000)-${_sincems}" TextAuraFontName="Arial" ActionType="TextAura" ExecutionDelayExpression="15000">
+                                <Condition Enabled="false" Grouping="Or" />
                               </Action>
                             </Actions>
                             <Condition Enabled="false" Grouping="And" />
@@ -44437,6 +44420,39 @@
                           </Action>
                         </Actions>
                         <Condition Enabled="false" Grouping="Or" />
+                      </Trigger>
+                      <Trigger Enabled="true" Name="Hot Blooded" Id="291385e7-82e9-44f8-b1aa-fa5e5bbce45f" RegularExpression="^.{25}1A:1246:[^:]*:(?&lt;duration&gt;(?:[^:]*)):[^:]*:[^:]*:[^:]*:(?&lt;player&gt;(?:[^:]*)):">
+                        <Actions>
+                          <Action OrderNumber="1" SoundRouting="None" TTSRouting="None" TextAuraEffect="Bold" TextAuraFontSize="20.25" TextAuraForeground="Red" TextAuraOutline="Black" TextAuraName="hotBlooded" TextAuraExpression="DON'T MOVE (${func:format(System.Double,&quot;0.0&quot;):${numeric:(((${duration}*1000)-${_sincems})/1000)}})" TextAuraXIniExpression="0" TextAuraYIniExpression="(${_screenheight}/2)+42" TextAuraWIniExpression="${_screenwidth}" TextAuraHIniExpression="35" TextAuraOIniExpression="100" TextAuraTTLTickExpression="(${duration}*1000)-${_sincems}" TextAuraFontName="Arial" ActionType="TextAura">
+                            <Condition Enabled="false" Grouping="And" />
+                          </Action>
+                        </Actions>
+                        <Condition Enabled="true" Grouping="Or">
+                          <ConditionSingle Enabled="true" ExpressionL="${player}" ExpressionTypeL="String" ExpressionR="${_ffxivplayer}" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
+                        </Condition>
+                        <Conditions />
+                      </Trigger>
+                      <Trigger Enabled="true" Name="Faraway Portent" Id="19894703-1a14-43d3-9fcc-b771dcc77543" RegularExpression="^.{25}1A:129E:[^:]*:(?&lt;duration&gt;(?:[^:]*)):[^:]*:[^:]*:[^:]*:(?&lt;player&gt;(?:[^:]*)):">
+                        <Actions>
+                          <Action OrderNumber="1" SoundRouting="None" TTSRouting="None" TextAuraEffect="Bold" TextAuraFontSize="20.25" TextAuraForeground="Lime" TextAuraOutline="Black" TextAuraName="farawayPortent" TextAuraExpression="Far Cone (${func:format(System.Double,&quot;0.0&quot;):${numeric:(((${duration}*1000)-${_sincems})/1000)}})" TextAuraXIniExpression="0" TextAuraYIniExpression="(${_screenheight}/2)+42" TextAuraWIniExpression="${_screenwidth}" TextAuraHIniExpression="35" TextAuraOIniExpression="100" TextAuraTTLTickExpression="(${duration}*1000)-${_sincems}" TextAuraFontName="Arial" ActionType="TextAura">
+                            <Condition Enabled="false" Grouping="And" />
+                          </Action>
+                        </Actions>
+                        <Condition Enabled="true" Grouping="Or">
+                          <ConditionSingle Enabled="true" ExpressionL="${player}" ExpressionTypeL="String" ExpressionR="${_ffxivplayer}" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
+                        </Condition>
+                        <Conditions />
+                      </Trigger>
+                      <Trigger Enabled="true" Name="Nearby Portent" Id="829207e2-f565-41ff-9693-a436c0683322" RegularExpression="^.{25}1A:129F:[^:]*:(?&lt;duration&gt;(?:[^:]*)):[^:]*:[^:]*:[^:]*:(?&lt;player&gt;(?:[^:]*)):">
+                        <Actions>
+                          <Action OrderNumber="1" SoundRouting="None" TTSRouting="None" TextAuraEffect="Bold" TextAuraFontSize="20.25" TextAuraForeground="Lime" TextAuraOutline="Black" TextAuraName="nearbyPortent" TextAuraExpression="Near Cone (${func:format(System.Double,&quot;0.0&quot;):${numeric:(((${duration}*1000)-${_sincems})/1000)}})" TextAuraXIniExpression="0" TextAuraYIniExpression="(${_screenheight}/2)+42" TextAuraWIniExpression="${_screenwidth}" TextAuraHIniExpression="35" TextAuraOIniExpression="100" TextAuraTTLTickExpression="(${duration}*1000)-${_sincems}" TextAuraFontName="Arial" ActionType="TextAura">
+                            <Condition Enabled="false" Grouping="And" />
+                          </Action>
+                        </Actions>
+                        <Condition Enabled="true" Grouping="Or">
+                          <ConditionSingle Enabled="true" ExpressionL="${player}" ExpressionTypeL="String" ExpressionR="${_ffxivplayer}" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
+                        </Condition>
+                        <Conditions />
                       </Trigger>
                     </Triggers>
                   </Folder>
@@ -71514,7 +71530,6 @@
                           </Action>
                         </Actions>
                         <Condition Enabled="false" Grouping="Or" />
-                        <Conditions />
                       </Trigger>
                       <Trigger Enabled="true" Name="Almagest" Id="5d8e3acd-3b86-4210-b364-55855407afd6" RegularExpression="^.{29}14:(?&lt;sourceID&gt;(?:[^:]*)):(?&lt;source&gt;(?:[^:]*)):C334:">
                         <Actions>
@@ -71523,7 +71538,6 @@
                           </Action>
                         </Actions>
                         <Condition Enabled="false" Grouping="Or" />
-                        <Conditions />
                       </Trigger>
                       <Trigger Enabled="true" Name="Meteorain" Id="7470dcbe-4969-4473-8666-5c0253b62731" RegularExpression="^.{29}14:(?&lt;sourceID&gt;(?:[^:]*)):(?&lt;source&gt;(?:[^:]*)):C381:">
                         <Actions>
@@ -71532,7 +71546,6 @@
                           </Action>
                         </Actions>
                         <Condition Enabled="false" Grouping="Or" />
-                        <Conditions />
                       </Trigger>
                       <Trigger Enabled="true" Name="Airy Emptiness" Id="f2a1fb53-7e89-4304-b7c0-5865e42f6c36" RegularExpression="^.{29}14:(?&lt;sourceID&gt;(?:[^:]*)):(?&lt;source&gt;(?:[^:]*)):C370:">
                         <Actions>
@@ -71541,7 +71554,6 @@
                           </Action>
                         </Actions>
                         <Condition Enabled="false" Grouping="Or" />
-                        <Conditions />
                       </Trigger>
                       <Trigger Enabled="true" Name="Dense Emptiness" Id="fe5de22c-27a0-4933-8845-1dfcb79493c6" RegularExpression="^.{29}14:(?&lt;sourceID&gt;(?:[^:]*)):(?&lt;source&gt;(?:[^:]*)):C371:">
                         <Actions>
@@ -71550,7 +71562,6 @@
                           </Action>
                         </Actions>
                         <Condition Enabled="false" Grouping="Or" />
-                        <Conditions />
                       </Trigger>
                       <Trigger Enabled="true" Name="Gaze of the Void" Id="bb364be4-00a9-4645-8626-a84c6bd7d1e7" RegularExpression="^.{29}14:(?&lt;sourceID&gt;(?:[^:]*)):(?&lt;source&gt;(?:[^:]*)):(?&lt;ID&gt;C35[34]):">
                         <Actions>
@@ -71566,7 +71577,6 @@
                           </Action>
                         </Actions>
                         <Condition Enabled="false" Grouping="Or" />
-                        <Conditions />
                       </Trigger>
                       <Trigger Enabled="true" Name="Lightless World" Id="308c37f0-accc-46ac-91b9-5ee253b4936d" RegularExpression="^.{29}14:(?&lt;sourceID&gt;(?:[^:]*)):(?&lt;source&gt;(?:[^:]*)):C36D:">
                         <Actions>
@@ -71575,7 +71585,6 @@
                           </Action>
                         </Actions>
                         <Condition Enabled="false" Grouping="Or" />
-                        <Conditions />
                       </Trigger>
                       <Trigger Enabled="true" Name="Shrouded Holy" Id="8dcdd153-b895-4c80-8200-2593de0cd757" RegularExpression="^.{29}14:(?&lt;sourceID&gt;(?:[^:]*)):(?&lt;source&gt;(?:[^:]*)):C37D:">
                         <Actions>
@@ -71584,7 +71593,6 @@
                           </Action>
                         </Actions>
                         <Condition Enabled="false" Grouping="Or" />
-                        <Conditions />
                       </Trigger>
                       <Trigger Enabled="true" Name="Dimension Zero" Id="8eee67cc-0d8c-40bd-afa2-e65f55b34895" RegularExpression="^.{29}14:(?&lt;sourceID&gt;(?:[^:]*)):(?&lt;source&gt;(?:[^:]*)):C37F:">
                         <Actions>
@@ -71593,7 +71601,6 @@
                           </Action>
                         </Actions>
                         <Condition Enabled="false" Grouping="Or" />
-                        <Conditions />
                       </Trigger>
                     </Triggers>
                   </Folder>
@@ -71607,7 +71614,6 @@
                           </Action>
                         </Actions>
                         <Condition Enabled="false" Grouping="And" />
-                        <Conditions />
                       </Trigger>
                     </Triggers>
                   </Folder>

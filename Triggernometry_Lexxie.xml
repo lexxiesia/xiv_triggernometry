@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <TriggernometryExport PluginVersion="1.2.0.7">
-  <ExportedFolder Id="e6535eb9-7bf8-4213-9032-957dd301fdeb" Name="Github v7.51.260603" Enabled="true">
+  <ExportedFolder Id="e6535eb9-7bf8-4213-9032-957dd301fdeb" Name="Github v7.51.260605" Enabled="true">
     <Folders>
       <Folder Id="ad5d02df-4ec4-455d-8732-28c2d29db1af" Name="Hunts" Enabled="true">
         <Folders>
@@ -43749,6 +43749,17 @@
                         </Actions>
                         <Condition Enabled="false" Grouping="Or" />
                       </Trigger>
+                      <Trigger Enabled="true" Name="Lindwurm's Portent" Id="d64adbfc-b714-4274-9f52-5b941dbf09c2" RegularExpression="^.{25}1A:129D:[^:]*:(?&lt;duration&gt;(?:[^:]*)):[^:]*:[^:]*:[^:]*:(?&lt;player&gt;(?:[^:]*)):">
+                        <Actions>
+                          <Action OrderNumber="1" SoundRouting="None" TTSRouting="None" VariableOp="SetString" VariableName="dataPortent" VariableExpression="true" ActionType="Variable">
+                            <Condition Enabled="false" Grouping="Or" />
+                          </Action>
+                        </Actions>
+                        <Condition Enabled="true" Grouping="Or">
+                          <ConditionSingle Enabled="true" ExpressionL="${player}" ExpressionTypeL="String" ExpressionR="${_ffxivplayer}" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
+                        </Condition>
+                        <Conditions />
+                      </Trigger>
                     </Triggers>
                   </Folder>
                   <Folder Id="5dd2fe7d-63bb-4ce1-91df-2fe346e55574" Name="Callouts - Text" Enabled="true">
@@ -44116,7 +44127,7 @@
                               </Action>
                               <Action OrderNumber="3" SoundRouting="None" TTSRouting="None" TextAuraEffect="Bold" TextAuraFontSize="32.25" TextAuraForeground="Yellow" TextAuraOutline="Black" TextAuraName="blackHole" TextAuraExpression="POPPING EAST (B) ►►►" TextAuraXIniExpression="0" TextAuraYIniExpression="(${_screenheight}/2)-50" TextAuraWIniExpression="${_screenwidth}" TextAuraHIniExpression="50" TextAuraOIniExpression="100" TextAuraOTickExpression="50 + (cos(${_sincems}/100)*50)" TextAuraTTLTickExpression="(5*1000)-${_sincems}" TextAuraFontName="Arial" ActionType="TextAura">
                                 <Condition Enabled="true" Grouping="And">
-                                  <ConditionSingle Enabled="true" ExpressionL="${var:dataPopSide}" ExpressionTypeL="String" ExpressionR="west" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
+                                  <ConditionSingle Enabled="true" ExpressionL="${var:dataPopSide}" ExpressionTypeL="String" ExpressionR="east" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
                                 </Condition>
                               </Action>
                               <Action OrderNumber="4" SoundRouting="None" TTSRouting="None" TextAuraEffect="Bold" TextAuraFontSize="24" TextAuraForeground="#FFBB00" TextAuraOutline="Black" TextAuraName="closeShape" TextAuraExpression="${var:dataCloseShape}" TextAuraXIniExpression="0" TextAuraYIniExpression="${_screenheight}/2" TextAuraWIniExpression="${_screenwidth}" TextAuraHIniExpression="42" TextAuraOIniExpression="100" TextAuraTTLTickExpression="(5*1000)-${_sincems}" TextAuraFontName="Arial" ActionType="TextAura">
@@ -44731,6 +44742,17 @@
                         </Actions>
                         <Condition Enabled="false" Grouping="Or" />
                       </Trigger>
+                      <Trigger Enabled="true" Name="Lindwurm's Stone III" Id="3ee1e51b-ddc3-4af1-a58c-5eb67eee48cc" RegularExpression="^.{19}108:[^:]*:B4F7:" PeriodRefire="Deny" RefirePeriodExpression="1000">
+                        <Actions>
+                          <Action OrderNumber="1" SoundRouting="None" TTSRouting="None" TextAuraEffect="Bold" TextAuraFontSize="24" TextAuraForeground="#FFBB00" TextAuraOutline="Black" TextAuraName="nearFarPortent" TextAuraExpression="Bait Cones (${func:format(System.Double,&quot;0.0&quot;):${numeric:(((5*1000)-${_sincems})/1000)}})" TextAuraXIniExpression="0" TextAuraYIniExpression="${_screenheight}/2" TextAuraWIniExpression="${_screenwidth}" TextAuraHIniExpression="42" TextAuraOIniExpression="100" TextAuraTTLTickExpression="(5*1000)-${_sincems}" TextAuraFontName="Arial" ActionType="TextAura">
+                            <Condition Enabled="false" Grouping="Or" />
+                          </Action>
+                        </Actions>
+                        <Condition Enabled="true" Grouping="Or">
+                          <ConditionSingle Enabled="true" ExpressionL="${evar:dataPortent}" ExpressionTypeL="String" ExpressionR="0" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
+                        </Condition>
+                        <Conditions />
+                      </Trigger>
                     </Triggers>
                   </Folder>
                   <Folder FFXIVJobFilterEnabled="True" FFXIVJobFilter="2216287010816" Id="8a657fce-a718-412f-9fac-04ea253c2f62" Name="Caster" Enabled="true">
@@ -44937,7 +44959,7 @@
                               <ConditionSingle Enabled="true" ExpressionL="${epvar:soundOff}" ExpressionTypeL="Numeric" ExpressionR="0" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
                             </Condition>
                           </Trigger>
-                          <Trigger Enabled="true" Name="Mana Burst" Id="6be58df7-c375-47a9-af96-45d09532a2a1" RegularExpression="\A.{28,31}1[56]:[^:]*:[^:]*:B4E7:[^:]*:[^:]*:(?&lt;player&gt;(?:[^:]*)):" PeriodRefire="Deny" RefirePeriodExpression="5000">
+                          <Trigger Enabled="true" Name="Mana Burst" Id="6be58df7-c375-47a9-af96-45d09532a2a1" RegularExpression="\A.{28,31}1[56]:[^:]*:[^:]*:B(4E7|518):[^:]*:[^:]*:(?&lt;player&gt;(?:[^:]*)):" PeriodRefire="Deny" RefirePeriodExpression="5000">
                             <Actions>
                               <Action OrderNumber="1" OBSEndPoint="" PlaySoundFileExpression="https://raw.githubusercontent.com/lexxiesia/xiv_triggernometry/master/resources/wav/Boop.wav" SoundRouting="None" TTSRouting="None" ActionType="PlaySound">
                                 <Condition Enabled="false" Grouping="Or" />
@@ -45032,6 +45054,18 @@
                               <ConditionSingle Enabled="true" ExpressionL="${epvar:soundOff}" ExpressionTypeL="Numeric" ExpressionR="0" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
                               <ConditionSingle Enabled="true" ExpressionL="${player}" ExpressionTypeL="String" ExpressionR="${_ffxivplayer}" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
                             </Condition>
+                          </Trigger>
+                          <Trigger Enabled="true" Name="Heavy Slam" Id="d29188e7-1b18-496a-828e-a22849f5e546" RegularExpression="\A.{28,31}1[56]:[^:]*:[^:]*:B(4E8|E5D|519):[^:]*:[^:]*:(?&lt;player&gt;(?:[^:]*)):" PeriodRefire="Deny" RefirePeriodExpression="5000">
+                            <Actions>
+                              <Action OrderNumber="1" OBSEndPoint="" PlaySoundFileExpression="https://raw.githubusercontent.com/lexxiesia/xiv_triggernometry/master/resources/wav/Boop.wav" SoundRouting="None" TTSRouting="None" ActionType="PlaySound">
+                                <Condition Enabled="false" Grouping="Or" />
+                              </Action>
+                            </Actions>
+                            <Condition Enabled="true" Grouping="And">
+                              <ConditionSingle Enabled="true" ExpressionL="${epvar:soundOff}" ExpressionTypeL="Numeric" ExpressionR="0" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
+                              <ConditionSingle Enabled="true" ExpressionL="${player}" ExpressionTypeL="String" ExpressionR="${_ffxivplayer}" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
+                            </Condition>
+                            <Conditions />
                           </Trigger>
                         </Triggers>
                       </Folder>

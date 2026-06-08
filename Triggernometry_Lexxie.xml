@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <TriggernometryExport PluginVersion="1.2.0.7">
-  <ExportedFolder Id="e6535eb9-7bf8-4213-9032-957dd301fdeb" Name="Github v7.51.260605" Enabled="true">
+  <ExportedFolder Id="e6535eb9-7bf8-4213-9032-957dd301fdeb" Name="Github v7.51.260608" Enabled="true">
     <Folders>
       <Folder Id="ad5d02df-4ec4-455d-8732-28c2d29db1af" Name="Hunts" Enabled="true">
         <Folders>
@@ -43327,6 +43327,7 @@
                             <Condition Enabled="true" Grouping="And">
                               <ConditionSingle Enabled="true" ExpressionL="${var:dataPhase}" ExpressionTypeL="String" ExpressionR="idyllic" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
                               <ConditionSingle Enabled="true" ExpressionL="${var:dataReplicationCounter}" ExpressionTypeL="Numeric" ExpressionR="2" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
+                              <ConditionSingle Enabled="true" ExpressionL="${evar:dataTwistedVisionCounter}" ExpressionTypeL="Numeric" ExpressionR="0" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
                             </Condition>
                           </Trigger>
                           <Trigger Enabled="true" Name="Power Gusher" Id="f60defb5-abb8-457b-9c88-f1a7d1d416db" RegularExpression="^.{19}107:(?&lt;sourceID&gt;(?:[^:]*)):B510:(?&lt;x&gt;(?:[^:]*)):(?&lt;y&gt;(?:[^:]*)):(?&lt;z&gt;(?:[^:]*)):">
@@ -43349,10 +43350,10 @@
                               <Action OrderNumber="1" SoundRouting="None" TTSRouting="None" VariableOp="SetString" VariableName="dataFirstMechanic" VariableExpression="DEFAMATIONS FIRST" ActionType="Variable">
                                 <Condition Enabled="true" Grouping="And">
                                   <ConditionGroup Enabled="true" Grouping="Or">
-                                    <ConditionSingle Enabled="true" ExpressionL="round(4 - 4 * arctan2((${var:data${sourceID}X}-100), (${var:data${sourceID}Y}-100)) / pi) % 8" ExpressionTypeL="Numeric" ExpressionR="0" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
-                                    <ConditionSingle Enabled="true" ExpressionL="round(4 - 4 * arctan2((${var:data${sourceID}X}-100), (${var:data${sourceID}Y}-100)) / pi) % 8" ExpressionTypeL="Numeric" ExpressionR="2" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
-                                    <ConditionSingle Enabled="true" ExpressionL="round(4 - 4 * arctan2((${var:data${sourceID}X}-100), (${var:data${sourceID}Y}-100)) / pi) % 8" ExpressionTypeL="Numeric" ExpressionR="4" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
-                                    <ConditionSingle Enabled="true" ExpressionL="round(4 - 4 * arctan2((${var:data${sourceID}X}-100), (${var:data${sourceID}Y}-100)) / pi) % 8" ExpressionTypeL="Numeric" ExpressionR="6" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
+                                    <ConditionSingle Enabled="true" ExpressionL="round(4 - 4 * arctan2((${_ffxiventity[${sourceID}].x}-100), (${_ffxiventity[${sourceID}].y}-100)) / pi) % 8" ExpressionTypeL="Numeric" ExpressionR="0" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
+                                    <ConditionSingle Enabled="true" ExpressionL="round(4 - 4 * arctan2((${_ffxiventity[${sourceID}].x}-100), (${_ffxiventity[${sourceID}].y}-100)) / pi) % 8" ExpressionTypeL="Numeric" ExpressionR="2" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
+                                    <ConditionSingle Enabled="true" ExpressionL="round(4 - 4 * arctan2((${_ffxiventity[${sourceID}].x}-100), (${_ffxiventity[${sourceID}].y}-100)) / pi) % 8" ExpressionTypeL="Numeric" ExpressionR="4" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
+                                    <ConditionSingle Enabled="true" ExpressionL="round(4 - 4 * arctan2((${_ffxiventity[${sourceID}].x}-100), (${_ffxiventity[${sourceID}].y}-100)) / pi) % 8" ExpressionTypeL="Numeric" ExpressionR="6" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
                                   </ConditionGroup>
                                   <ConditionSingle Enabled="true" ExpressionL="${ID}" ExpressionTypeL="String" ExpressionR="0170" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
                                 </Condition>
@@ -43360,10 +43361,10 @@
                               <Action OrderNumber="2" SoundRouting="None" TTSRouting="None" VariableOp="SetString" VariableName="dataFirstMechanic" VariableExpression="STACKS FIRST" ActionType="Variable">
                                 <Condition Enabled="true" Grouping="And">
                                   <ConditionGroup Enabled="true" Grouping="Or">
-                                    <ConditionSingle Enabled="true" ExpressionL="round(4 - 4 * arctan2((${var:data${sourceID}X}-100), (${var:data${sourceID}Y}-100)) / pi) % 8" ExpressionTypeL="Numeric" ExpressionR="0" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
-                                    <ConditionSingle Enabled="true" ExpressionL="round(4 - 4 * arctan2((${var:data${sourceID}X}-100), (${var:data${sourceID}Y}-100)) / pi) % 8" ExpressionTypeL="Numeric" ExpressionR="2" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
-                                    <ConditionSingle Enabled="true" ExpressionL="round(4 - 4 * arctan2((${var:data${sourceID}X}-100), (${var:data${sourceID}Y}-100)) / pi) % 8" ExpressionTypeL="Numeric" ExpressionR="4" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
-                                    <ConditionSingle Enabled="true" ExpressionL="round(4 - 4 * arctan2((${var:data${sourceID}X}-100), (${var:data${sourceID}Y}-100)) / pi) % 8" ExpressionTypeL="Numeric" ExpressionR="6" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
+                                    <ConditionSingle Enabled="true" ExpressionL="round(4 - 4 * arctan2((${_ffxiventity[${sourceID}].x}-100), (${_ffxiventity[${sourceID}].y}-100)) / pi) % 8" ExpressionTypeL="Numeric" ExpressionR="0" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
+                                    <ConditionSingle Enabled="true" ExpressionL="round(4 - 4 * arctan2((${_ffxiventity[${sourceID}].x}-100), (${_ffxiventity[${sourceID}].y}-100)) / pi) % 8" ExpressionTypeL="Numeric" ExpressionR="2" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
+                                    <ConditionSingle Enabled="true" ExpressionL="round(4 - 4 * arctan2((${_ffxiventity[${sourceID}].x}-100), (${_ffxiventity[${sourceID}].y}-100)) / pi) % 8" ExpressionTypeL="Numeric" ExpressionR="4" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
+                                    <ConditionSingle Enabled="true" ExpressionL="round(4 - 4 * arctan2((${_ffxiventity[${sourceID}].x}-100), (${_ffxiventity[${sourceID}].y}-100)) / pi) % 8" ExpressionTypeL="Numeric" ExpressionR="6" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
                                   </ConditionGroup>
                                   <ConditionSingle Enabled="true" ExpressionL="${ID}" ExpressionTypeL="String" ExpressionR="0171" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
                                 </Condition>
@@ -43652,12 +43653,24 @@
                             <Condition Enabled="true" Grouping="And">
                               <ConditionSingle Enabled="true" ExpressionL="${x}" ExpressionTypeL="Numeric" ExpressionR="100" ExpressionTypeR="Numeric" ConditionType="NumericLess" />
                               <ConditionSingle Enabled="true" ExpressionL="distance(${x}, ${y}, 90,100)" ExpressionTypeL="Numeric" ExpressionR="7" ExpressionTypeR="Numeric" ConditionType="NumericLess" />
+                              <ConditionGroup Enabled="true" Grouping="Or">
+                                <ConditionSingle Enabled="true" ExpressionL="${var:dataShape${sourceID}}" ExpressionTypeL="String" ExpressionR="water" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
+                                <ConditionSingle Enabled="true" ExpressionL="${var:dataShape${sourceID}}" ExpressionTypeL="String" ExpressionR="wind" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
+                                <ConditionSingle Enabled="true" ExpressionL="${var:dataShape${sourceID}}" ExpressionTypeL="String" ExpressionR="lightning" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
+                                <ConditionSingle Enabled="true" ExpressionL="${var:dataShape${sourceID}}" ExpressionTypeL="String" ExpressionR="fire" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
+                              </ConditionGroup>
                             </Condition>
                           </Action>
                           <Action OrderNumber="2" SoundRouting="None" TTSRouting="None" VariableOp="SetString" VariableName="dataPopSide" VariableExpression="west" ActionType="Variable">
                             <Condition Enabled="true" Grouping="And">
                               <ConditionSingle Enabled="true" ExpressionL="distance(${x}, ${y}, 110,100)" ExpressionTypeL="Numeric" ExpressionR="7" ExpressionTypeR="Numeric" ConditionType="NumericLess" />
                               <ConditionSingle Enabled="true" ExpressionL="${x}" ExpressionTypeL="Numeric" ExpressionR="100" ExpressionTypeR="Numeric" ConditionType="NumericGreater" />
+                              <ConditionGroup Enabled="true" Grouping="Or">
+                                <ConditionSingle Enabled="true" ExpressionL="${var:dataShape${sourceID}}" ExpressionTypeL="String" ExpressionR="water" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
+                                <ConditionSingle Enabled="true" ExpressionL="${var:dataShape${sourceID}}" ExpressionTypeL="String" ExpressionR="wind" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
+                                <ConditionSingle Enabled="true" ExpressionL="${var:dataShape${sourceID}}" ExpressionTypeL="String" ExpressionR="lightning" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
+                                <ConditionSingle Enabled="true" ExpressionL="${var:dataShape${sourceID}}" ExpressionTypeL="String" ExpressionR="fire" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
+                              </ConditionGroup>
                             </Condition>
                           </Action>
                           <Action OrderNumber="3" SoundRouting="None" TTSRouting="None" VariableOp="SetString" VariableName="dataCloseShape" VariableExpression="Pop Blue+Purple" ActionType="Variable">
@@ -43690,7 +43703,7 @@
                               <ConditionSingle Enabled="true" ExpressionL="${var:dataShape${sourceID}}" ExpressionTypeL="String" ExpressionR="wind" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
                             </Condition>
                           </Action>
-                          <Action OrderNumber="5" SoundRouting="None" TTSRouting="None" VariableOp="SetString" VariableName="dataBlackHoleOrder1" VariableExpression="←West" ActionType="Variable">
+                          <Action OrderNumber="5" SoundRouting="None" TTSRouting="None" VariableOp="SetString" VariableName="dataBlackHoleOrder1" VariableExpression="←West(D)" ActionType="Variable">
                             <Condition Enabled="true" Grouping="Or">
                               <ConditionGroup Enabled="true" Grouping="And">
                                 <ConditionSingle Enabled="true" ExpressionL="${x}" ExpressionTypeL="Numeric" ExpressionR="100" ExpressionTypeR="Numeric" ConditionType="NumericLess" />
@@ -43704,7 +43717,7 @@
                               </ConditionGroup>
                             </Condition>
                           </Action>
-                          <Action OrderNumber="6" SoundRouting="None" TTSRouting="None" VariableOp="SetString" VariableName="dataBlackHoleOrder2" VariableExpression="East→" ActionType="Variable">
+                          <Action OrderNumber="6" SoundRouting="None" TTSRouting="None" VariableOp="SetString" VariableName="dataBlackHoleOrder2" VariableExpression="East(B)→" ActionType="Variable">
                             <Condition Enabled="true" Grouping="Or">
                               <ConditionGroup Enabled="true" Grouping="And">
                                 <ConditionSingle Enabled="true" ExpressionL="${x}" ExpressionTypeL="Numeric" ExpressionR="100" ExpressionTypeR="Numeric" ConditionType="NumericLess" />
@@ -43718,7 +43731,7 @@
                               </ConditionGroup>
                             </Condition>
                           </Action>
-                          <Action OrderNumber="7" SoundRouting="None" TTSRouting="None" VariableOp="SetString" VariableName="dataBlackHoleOrder1" VariableExpression="East→" ActionType="Variable">
+                          <Action OrderNumber="7" SoundRouting="None" TTSRouting="None" VariableOp="SetString" VariableName="dataBlackHoleOrder1" VariableExpression="East(B)→" ActionType="Variable">
                             <Condition Enabled="true" Grouping="Or">
                               <ConditionGroup Enabled="true" Grouping="And">
                                 <ConditionSingle Enabled="true" ExpressionL="${x}" ExpressionTypeL="Numeric" ExpressionR="100" ExpressionTypeR="Numeric" ConditionType="NumericGreater" />
@@ -43732,7 +43745,7 @@
                               </ConditionGroup>
                             </Condition>
                           </Action>
-                          <Action OrderNumber="8" SoundRouting="None" TTSRouting="None" VariableOp="SetString" VariableName="dataBlackHoleOrder2" VariableExpression="←West" ActionType="Variable">
+                          <Action OrderNumber="8" SoundRouting="None" TTSRouting="None" VariableOp="SetString" VariableName="dataBlackHoleOrder2" VariableExpression="←West(D)" ActionType="Variable">
                             <Condition Enabled="true" Grouping="Or">
                               <ConditionGroup Enabled="true" Grouping="And">
                                 <ConditionSingle Enabled="true" ExpressionL="${x}" ExpressionTypeL="Numeric" ExpressionR="100" ExpressionTypeR="Numeric" ConditionType="NumericGreater" />
@@ -43758,7 +43771,6 @@
                         <Condition Enabled="true" Grouping="Or">
                           <ConditionSingle Enabled="true" ExpressionL="${player}" ExpressionTypeL="String" ExpressionR="${_ffxivplayer}" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
                         </Condition>
-                        <Conditions />
                       </Trigger>
                     </Triggers>
                   </Folder>
@@ -44272,6 +44284,30 @@
                           </Trigger>
                         </Triggers>
                       </Folder>
+                      <Folder Id="5091f6a1-aae8-4a20-8b41-8e8b06d67642" Name="Lindwurm's Stone III" Enabled="true">
+                        <Folders />
+                        <Triggers>
+                          <Trigger Enabled="true" Name="Timer" Id="3ee1e51b-ddc3-4af1-a58c-5eb67eee48cc" RegularExpression="^.{19}108:[^:]*:B4F7:" PeriodRefire="Deny" RefirePeriodExpression="1000">
+                            <Actions>
+                              <Action OrderNumber="1" SoundRouting="None" TTSRouting="None" TextAuraEffect="Bold" TextAuraFontSize="24" TextAuraForeground="#FFBB00" TextAuraOutline="Black" TextAuraName="nearFarPortent" TextAuraExpression="Bait Cones (${func:format(System.Double,&quot;0.0&quot;):${numeric:(((5*1000)-${_sincems})/1000)}})" TextAuraXIniExpression="0" TextAuraYIniExpression="${_screenheight}/2" TextAuraWIniExpression="${_screenwidth}" TextAuraHIniExpression="42" TextAuraOIniExpression="100" TextAuraTTLTickExpression="(5*1000)-${_sincems}" TextAuraFontName="Arial" ActionType="TextAura">
+                                <Condition Enabled="false" Grouping="Or" />
+                              </Action>
+                            </Actions>
+                            <Condition Enabled="true" Grouping="Or">
+                              <ConditionSingle Enabled="true" ExpressionL="${evar:dataPortent}" ExpressionTypeL="String" ExpressionR="0" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
+                            </Condition>
+                          </Trigger>
+                          <Trigger Enabled="true" Name="Warning" Id="f8778147-64bb-4b9b-b3ef-8475b5a7b1ea" RegularExpression="^.{29}14:(?&lt;sourceID&gt;(?:[^:]*)):(?&lt;source&gt;(?:[^:]*)):B47F:" PeriodRefire="Deny" RefirePeriodExpression="5000">
+                            <Actions>
+                              <Action OrderNumber="1" SoundRouting="None" TTSRouting="None" TextAuraEffect="Bold" TextAuraFontSize="32.25" TextAuraForeground="Red" TextAuraOutline="Black" TextAuraName="lindwurmsStone" TextAuraExpression="AVOID STONE TOWERS (${func:format(System.Double,&quot;0.0&quot;):${numeric:(((5*1000)-${_sincems})/1000)}})" TextAuraXIniExpression="0" TextAuraYIniExpression="(${_screenheight}/2)-50" TextAuraWIniExpression="${_screenwidth}" TextAuraHIniExpression="50" TextAuraOIniExpression="100" TextAuraOTickExpression="50 + (cos(${_sincems}/100)*50)" TextAuraTTLTickExpression="(5*1000)-${_sincems}" TextAuraFontName="Arial" ActionType="TextAura">
+                                <Condition Enabled="false" Grouping="And" />
+                              </Action>
+                            </Actions>
+                            <Condition Enabled="false" Grouping="Or" />
+                            <Conditions />
+                          </Trigger>
+                        </Triggers>
+                      </Folder>
                     </Folders>
                     <Triggers>
                       <Trigger Enabled="true" Name="The Fixer" Id="eb33b446-c7c3-493d-82c5-1a905392ed45" RegularExpression="^.{29}14:(?&lt;sourceID&gt;(?:[^:]*)):(?&lt;source&gt;(?:[^:]*)):B4D7:">
@@ -44678,7 +44714,7 @@
                         </Actions>
                         <Condition Enabled="false" Grouping="Or" />
                       </Trigger>
-                      <Trigger Enabled="true" Name="Hot Blooded" Id="291385e7-82e9-44f8-b1aa-fa5e5bbce45f" RegularExpression="^.{25}1A:1246:[^:]*:(?&lt;duration&gt;(?:[^:]*)):[^:]*:[^:]*:[^:]*:(?&lt;player&gt;(?:[^:]*)):">
+                      <Trigger Enabled="true" Name="Hot-blooded" Id="291385e7-82e9-44f8-b1aa-fa5e5bbce45f" RegularExpression="^.{25}1A:12A0:[^:]*:(?&lt;duration&gt;(?:[^:]*)):[^:]*:[^:]*:[^:]*:(?&lt;player&gt;(?:[^:]*)):">
                         <Actions>
                           <Action OrderNumber="1" SoundRouting="None" TTSRouting="None" TextAuraEffect="Bold" TextAuraFontSize="20.25" TextAuraForeground="Red" TextAuraOutline="Black" TextAuraName="hotBlooded" TextAuraExpression="DON'T MOVE (${func:format(System.Double,&quot;0.0&quot;):${numeric:(((${duration}*1000)-${_sincems})/1000)}})" TextAuraXIniExpression="0" TextAuraYIniExpression="(${_screenheight}/2)+42" TextAuraWIniExpression="${_screenwidth}" TextAuraHIniExpression="35" TextAuraOIniExpression="100" TextAuraTTLTickExpression="(${duration}*1000)-${_sincems}" TextAuraFontName="Arial" ActionType="TextAura">
                             <Condition Enabled="false" Grouping="And" />
@@ -44718,9 +44754,31 @@
                               <ConditionSingle Enabled="true" ExpressionL="${var:dataTwistedVisionCounter}" ExpressionTypeL="Numeric" ExpressionR="3" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
                             </Condition>
                           </Action>
-                          <Action OrderNumber="3" SoundRouting="None" TTSRouting="None" TextAuraEffect="Bold" TextAuraFontSize="32.25" TextAuraForeground="Red" TextAuraOutline="Black" TextAuraName="defamStackWarning" TextAuraExpression="${var:dataFirstMechanic}" TextAuraXIniExpression="0" TextAuraYIniExpression="(${_screenheight}/2)-50" TextAuraWIniExpression="${_screenwidth}" TextAuraHIniExpression="50" TextAuraOIniExpression="100" TextAuraOTickExpression="50 + (cos(${_sincems}/100)*50)" TextAuraTTLTickExpression="(5*1000)-${_sincems}" TextAuraFontName="Arial" ActionType="TextAura">
+                          <Action OrderNumber="3" SoundRouting="None" TTSRouting="None" TextAuraEffect="Bold" TextAuraFontSize="32.25" TextAuraForeground="Red" TextAuraOutline="Black" TextAuraName="defamStackWarning" TextAuraExpression="${var:dataFirstMechanic}" TextAuraXIniExpression="0" TextAuraYIniExpression="(${_screenheight}/2)-50" TextAuraWIniExpression="${_screenwidth}" TextAuraHIniExpression="50" TextAuraOIniExpression="100" TextAuraOTickExpression="50 + (cos(${_sincems}/100)*50)" TextAuraTTLTickExpression="(10*1000)-${_sincems}" TextAuraFontName="Arial" ActionType="TextAura">
                             <Condition Enabled="true" Grouping="And">
                               <ConditionSingle Enabled="true" ExpressionL="${var:dataTwistedVisionCounter}" ExpressionTypeL="Numeric" ExpressionR="4" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
+                            </Condition>
+                          </Action>
+                          <Action OrderNumber="4" SoundRouting="None" TTSRouting="None" TextAuraEffect="Bold" TextAuraFontSize="24" TextAuraForeground="#FFBB00" TextAuraOutline="Black" TextAuraName="cosmicKiss" TextAuraExpression="Tower Positions (${func:format(System.Double,&quot;0.0&quot;):${numeric:(((8*1000)-${_sincems})/1000)}})" TextAuraXIniExpression="0" TextAuraYIniExpression="${_screenheight}/2" TextAuraWIniExpression="${_screenwidth}" TextAuraHIniExpression="42" TextAuraOIniExpression="100" TextAuraTTLTickExpression="(8*1000)-${_sincems}" TextAuraFontName="Arial" ActionType="TextAura">
+                            <Condition Enabled="true" Grouping="Or">
+                              <ConditionSingle Enabled="true" ExpressionL="${var:dataTwistedVisionCounter}" ExpressionTypeL="Numeric" ExpressionR="5" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
+                            </Condition>
+                          </Action>
+                          <Action OrderNumber="5" SoundRouting="None" TTSRouting="None" TextAuraEffect="Bold" TextAuraFontSize="24" TextAuraForeground="#FFBB00" TextAuraOutline="Black" TextAuraName="cloneStacks" TextAuraExpression="Stack: ${var:dataFirstClones} (${func:format(System.Double,&quot;0.0&quot;):${numeric:(((13.5*1000)-${_sincems})/1000)}})" TextAuraXIniExpression="0" TextAuraYIniExpression="${_screenheight}/2" TextAuraWIniExpression="${_screenwidth}" TextAuraHIniExpression="42" TextAuraOIniExpression="100" TextAuraTTLTickExpression="(13.5*1000)-${_sincems}" TextAuraFontName="Arial" ActionType="TextAura">
+                            <Condition Enabled="true" Grouping="Or">
+                              <ConditionSingle Enabled="true" ExpressionL="${var:dataTwistedVisionCounter}" ExpressionTypeL="Numeric" ExpressionR="6" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
+                            </Condition>
+                          </Action>
+                          <Action OrderNumber="6" SoundRouting="None" TTSRouting="None" TextAuraEffect="Bold" TextAuraFontSize="24" TextAuraForeground="#FFBB00" TextAuraOutline="Black" TextAuraName="cloneStacks" TextAuraExpression="Stack: CARDINALS (${func:format(System.Double,&quot;0.0&quot;):${numeric:(((12*1000)-${_sincems})/1000)}})" TextAuraXIniExpression="0" TextAuraYIniExpression="${_screenheight}/2" TextAuraWIniExpression="${_screenwidth}" TextAuraHIniExpression="42" TextAuraOIniExpression="100" TextAuraTTLTickExpression="(12*1000)-${_sincems}" TextAuraFontName="Arial" ActionType="TextAura">
+                            <Condition Enabled="true" Grouping="And">
+                              <ConditionSingle Enabled="true" ExpressionL="${var:dataTwistedVisionCounter}" ExpressionTypeL="Numeric" ExpressionR="8" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
+                              <ConditionSingle Enabled="true" ExpressionL="${var:dataFirstClones}" ExpressionTypeL="String" ExpressionR="INTERCARDINALS" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
+                            </Condition>
+                          </Action>
+                          <Action OrderNumber="7" SoundRouting="None" TTSRouting="None" TextAuraEffect="Bold" TextAuraFontSize="24" TextAuraForeground="#FFBB00" TextAuraOutline="Black" TextAuraName="cloneStacks" TextAuraExpression="Stack: INTERCARDINALS (${func:format(System.Double,&quot;0.0&quot;):${numeric:(((12*1000)-${_sincems})/1000)}})" TextAuraXIniExpression="0" TextAuraYIniExpression="${_screenheight}/2" TextAuraWIniExpression="${_screenwidth}" TextAuraHIniExpression="42" TextAuraOIniExpression="100" TextAuraTTLTickExpression="(12*1000)-${_sincems}" TextAuraFontName="Arial" ActionType="TextAura">
+                            <Condition Enabled="true" Grouping="And">
+                              <ConditionSingle Enabled="true" ExpressionL="${var:dataTwistedVisionCounter}" ExpressionTypeL="Numeric" ExpressionR="8" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
+                              <ConditionSingle Enabled="true" ExpressionL="${var:dataFirstClones}" ExpressionTypeL="String" ExpressionR="CARDINALS" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
                             </Condition>
                           </Action>
                         </Actions>
@@ -44742,15 +44800,20 @@
                         </Actions>
                         <Condition Enabled="false" Grouping="Or" />
                       </Trigger>
-                      <Trigger Enabled="true" Name="Lindwurm's Stone III" Id="3ee1e51b-ddc3-4af1-a58c-5eb67eee48cc" RegularExpression="^.{19}108:[^:]*:B4F7:" PeriodRefire="Deny" RefirePeriodExpression="1000">
+                      <Trigger Enabled="true" Name="Arcadian Hell" Id="cf5d09a1-d64e-42f0-a53e-0830603702ee" RegularExpression="^.{29}14:(?&lt;sourceID&gt;(?:[^:]*)):(?&lt;source&gt;(?:[^:]*)):(?&lt;ID&gt;B53[37]):">
                         <Actions>
-                          <Action OrderNumber="1" SoundRouting="None" TTSRouting="None" TextAuraEffect="Bold" TextAuraFontSize="24" TextAuraForeground="#FFBB00" TextAuraOutline="Black" TextAuraName="nearFarPortent" TextAuraExpression="Bait Cones (${func:format(System.Double,&quot;0.0&quot;):${numeric:(((5*1000)-${_sincems})/1000)}})" TextAuraXIniExpression="0" TextAuraYIniExpression="${_screenheight}/2" TextAuraWIniExpression="${_screenwidth}" TextAuraHIniExpression="42" TextAuraOIniExpression="100" TextAuraTTLTickExpression="(5*1000)-${_sincems}" TextAuraFontName="Arial" ActionType="TextAura">
-                            <Condition Enabled="false" Grouping="Or" />
+                          <Action OrderNumber="1" SoundRouting="None" TTSRouting="None" TextAuraEffect="Bold" TextAuraFontSize="24" TextAuraForeground="#FFBB00" TextAuraOutline="Black" TextAuraName="arcadianHell" TextAuraExpression="Mag. Raidwide (${func:format(System.Double,&quot;0.0&quot;):${numeric:(((5*1000)-${_sincems})/1000)}})" TextAuraXIniExpression="0" TextAuraYIniExpression="${_screenheight}/2" TextAuraWIniExpression="${_screenwidth}" TextAuraHIniExpression="42" TextAuraOIniExpression="100" TextAuraTTLTickExpression="(5*1000)-${_sincems}" TextAuraFontName="Arial" ActionType="TextAura">
+                            <Condition Enabled="true" Grouping="Or">
+                              <ConditionSingle Enabled="true" ExpressionL="${ID}" ExpressionTypeL="String" ExpressionR="B533" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
+                            </Condition>
+                          </Action>
+                          <Action OrderNumber="2" SoundRouting="None" TTSRouting="None" TextAuraEffect="Bold" TextAuraFontSize="24" TextAuraForeground="Red" TextAuraOutline="Black" TextAuraName="arcadianHell" TextAuraExpression="ENRAGE (${func:format(System.Double,&quot;0.0&quot;):${numeric:(((10*1000)-${_sincems})/1000)}})" TextAuraXIniExpression="0" TextAuraYIniExpression="${_screenheight}/2" TextAuraWIniExpression="${_screenwidth}" TextAuraHIniExpression="42" TextAuraOIniExpression="100" TextAuraTTLTickExpression="(10*1000)-${_sincems}" TextAuraFontName="Arial" ActionType="TextAura">
+                            <Condition Enabled="true" Grouping="Or">
+                              <ConditionSingle Enabled="true" ExpressionL="${ID}" ExpressionTypeL="String" ExpressionR="B537" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
+                            </Condition>
                           </Action>
                         </Actions>
-                        <Condition Enabled="true" Grouping="Or">
-                          <ConditionSingle Enabled="true" ExpressionL="${evar:dataPortent}" ExpressionTypeL="String" ExpressionR="0" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
-                        </Condition>
+                        <Condition Enabled="false" Grouping="Or" />
                         <Conditions />
                       </Trigger>
                     </Triggers>
@@ -45065,7 +45128,6 @@
                               <ConditionSingle Enabled="true" ExpressionL="${epvar:soundOff}" ExpressionTypeL="Numeric" ExpressionR="0" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
                               <ConditionSingle Enabled="true" ExpressionL="${player}" ExpressionTypeL="String" ExpressionR="${_ffxivplayer}" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
                             </Condition>
-                            <Conditions />
                           </Trigger>
                         </Triggers>
                       </Folder>
@@ -45127,6 +45189,29 @@
                         <Condition Enabled="true" Grouping="And">
                           <ConditionSingle Enabled="true" ExpressionL="${epvar:soundOff}" ExpressionTypeL="Numeric" ExpressionR="0" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
                         </Condition>
+                      </Trigger>
+                      <Trigger Enabled="true" Name="Lindwurm's Stone III" Id="e75fab79-f11a-4291-8d90-fa54289ef9f7" RegularExpression="^.{29}14:(?&lt;sourceID&gt;(?:[^:]*)):(?&lt;source&gt;(?:[^:]*)):B4F7:" PeriodRefire="Deny" RefirePeriodExpression="1000">
+                        <Actions>
+                          <Action OrderNumber="1" PlaySoundFileExpression="https://raw.githubusercontent.com/lexxiesia/xiv_triggernometry/master/resources/wav/mvc3_danger.wav" PlaySoundVolumeExpression="50" SoundRouting="None" TTSRouting="None" ActionType="PlaySound">
+                            <Condition Enabled="false" Grouping="Or" />
+                          </Action>
+                        </Actions>
+                        <Condition Enabled="true" Grouping="And">
+                          <ConditionSingle Enabled="true" ExpressionL="${epvar:soundOff}" ExpressionTypeL="Numeric" ExpressionR="0" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
+                        </Condition>
+                        <Conditions />
+                      </Trigger>
+                      <Trigger Enabled="true" Name="Arcadian Hell" Id="ef6d1e9a-6959-4b1b-9327-c1f1bb23168c" RegularExpression="^.{29}14:(?&lt;sourceID&gt;(?:[^:]*)):(?&lt;source&gt;(?:[^:]*)):B537:" PeriodRefire="Deny" RefirePeriodExpression="5000">
+                        <Actions>
+                          <Action OrderNumber="1" OBSEndPoint="" PlaySoundFileExpression="https://raw.githubusercontent.com/lexxiesia/xiv_triggernometry/master/resources/wav/fubuki-chipi-chipi-chapa-chapa.mp3" PlaySoundVolumeExpression="50" SoundRouting="None" TTSRouting="None" ActionType="PlaySound">
+                            <Condition Enabled="false" Grouping="Or" />
+                          </Action>
+                        </Actions>
+                        <Condition Enabled="true" Grouping="And">
+                          <ConditionSingle Enabled="true" ExpressionL="${epvar:soundOff}" ExpressionTypeL="Numeric" ExpressionR="0" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
+                          <ConditionSingle Enabled="true" ExpressionL="(${_ffxiventity[${sourceID}].currenthp}/${_ffxiventity[${sourceID}].maxhp})*100" ExpressionTypeL="Numeric" ExpressionR="1.8" ExpressionTypeR="Numeric" ConditionType="NumericGreater" />
+                        </Condition>
+                        <Conditions />
                       </Trigger>
                     </Triggers>
                   </Folder>

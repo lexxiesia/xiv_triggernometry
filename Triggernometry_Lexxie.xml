@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <TriggernometryExport PluginVersion="1.2.0.7">
-  <ExportedFolder Id="e6535eb9-7bf8-4213-9032-957dd301fdeb" Name="Github v7.55.260731" Enabled="true">
+  <ExportedFolder Id="e6535eb9-7bf8-4213-9032-957dd301fdeb" Name="Github v7.55.260803" Enabled="true">
     <Folders>
       <Folder Id="ad5d02df-4ec4-455d-8732-28c2d29db1af" Name="Hunts" Enabled="true">
         <Folders>
@@ -75914,7 +75914,7 @@
                   </Folder>
                 </Folders>
                 <Triggers>
-                  <Trigger Enabled="true" Name="# Checker" Id="bb4f3311-f7be-4f8e-806f-456eab9ebc42" RegularExpression="21:[0-9A-F]{8}:80000014:(?&lt;ID&gt;(?:[^:]*)):">
+                  <Trigger Enabled="true" Name="# Checker" Id="bb4f3311-f7be-4f8e-806f-456eab9ebc42" RegularExpression="^.{24}21:[0-9A-F]{8}:80000014:(?&lt;ID&gt;(?:[^:]*)):">
                     <Actions>
                       <Action OrderNumber="1" SoundRouting="None" TTSRouting="None" VariableOp="SetString" VariableName="criticalEncounter" VariableExpression="calamity" ActionType="Variable" Description="Calamity Bound" DescriptionOverride="True">
                         <Condition Enabled="true" Grouping="Or">
@@ -76127,10 +76127,138 @@
                           <ConditionSingle Enabled="true" ExpressionL="${var:criticalEncounter}" ExpressionTypeL="String" ExpressionR="tiny" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
                         </Condition>
                       </Trigger>
+                      <Trigger Enabled="true" Name="Tiny Holy" Id="ae021c71-7cad-43ff-9d1a-f02828b495c5" RegularExpression="^.{29}14:(?&lt;sourceID&gt;(?:[^:]*)):(?&lt;source&gt;(?:[^:]*)):BCB4:">
+                        <Actions>
+                          <Action OrderNumber="1" SoundRouting="None" TTSRouting="None" TextAuraEffect="Bold" TextAuraFontSize="24" TextAuraForeground="#FFBB00" TextAuraOutline="Black" TextAuraName="tinyHoly" TextAuraExpression="Radial Knockback (${func:format(System.Double,&quot;0.0&quot;):${numeric:(((16.5*1000)-${_sincems})/1000)}})" TextAuraXIniExpression="0" TextAuraYIniExpression="${_screenheight}/2" TextAuraWIniExpression="${_screenwidth}" TextAuraHIniExpression="42" TextAuraOIniExpression="100" TextAuraTTLTickExpression="(16.5*1000)-${_sincems}" TextAuraFontName="Arial" ActionType="TextAura">
+                            <Condition Enabled="false" Grouping="And" />
+                          </Action>
+                        </Actions>
+                        <Condition Enabled="true" Grouping="Or">
+                          <ConditionSingle Enabled="true" ExpressionL="${var:criticalEncounter}" ExpressionTypeL="String" ExpressionR="tiny" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
+                        </Condition>
+                        <Conditions />
+                      </Trigger>
                     </Triggers>
                   </Folder>
                   <Folder Id="e75895d9-12fb-4a57-a670-a6263f350511" Name="Forbidden Folios" Enabled="true">
-                    <Folders />
+                    <Folders>
+                      <Folder Id="af1313e0-072e-48e9-94bf-4520402113ac" Name="Knowledge Level Correction" Enabled="true">
+                        <Folders />
+                        <Triggers>
+                          <Trigger Enabled="true" Name="Knowledge Level" Id="b876d87f-34f5-4a34-b12a-4676503dd075" RegularExpression="^.{24}21:[0-9A-F]{8}:80000014:39A:">
+                            <Actions>
+                              <Action OrderNumber="1" SoundRouting="None" TTSRouting="None" VariableOp="SetNumeric" VariableName="dataMyLevel" VariableExpression="${_ffxivparty[${_ffxivplayer}].level}" ActionType="Variable" ExecutionDelayExpression="3000">
+                                <Condition Enabled="true" Grouping="Or">
+                                  <ConditionSingle Enabled="true" ExpressionL="${var:criticalEncounter}" ExpressionTypeL="String" ExpressionR="folios" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
+                                </Condition>
+                              </Action>
+                            </Actions>
+                            <Condition Enabled="false" Grouping="Or" />
+                            <Conditions />
+                          </Trigger>
+                          <Trigger Enabled="true" Name="Correction" Id="b8079e54-e052-4a4b-b771-83469cd25be0" RegularExpression="^.{25}1A:(?&lt;ID&gt;139[6-9A]):[^:]*:(?&lt;duration&gt;(?:[^:]*)):[^:]*:[^:]*:[^:]*:(?&lt;player&gt;(?:[^:]*)):">
+                            <Actions>
+                              <Action OrderNumber="1" SoundRouting="None" TTSRouting="None" VariableOp="SetNumeric" VariableName="dataLevelCorrection" VariableExpression="${var:dataMyLevel}+1" ActionType="Variable">
+                                <Condition Enabled="true" Grouping="Or">
+                                  <ConditionSingle Enabled="true" ExpressionL="${ID}" ExpressionTypeL="String" ExpressionR="1396" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
+                                </Condition>
+                              </Action>
+                              <Action OrderNumber="2" SoundRouting="None" TTSRouting="None" VariableOp="SetNumeric" VariableName="dataLevelCorrection" VariableExpression="${var:dataMyLevel}+2" ActionType="Variable">
+                                <Condition Enabled="true" Grouping="Or">
+                                  <ConditionSingle Enabled="true" ExpressionL="${ID}" ExpressionTypeL="String" ExpressionR="1397" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
+                                </Condition>
+                              </Action>
+                              <Action OrderNumber="3" SoundRouting="None" TTSRouting="None" VariableOp="SetNumeric" VariableName="dataLevelCorrection" VariableExpression="${var:dataMyLevel}+3" ActionType="Variable">
+                                <Condition Enabled="true" Grouping="Or">
+                                  <ConditionSingle Enabled="true" ExpressionL="${ID}" ExpressionTypeL="String" ExpressionR="1398" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
+                                </Condition>
+                              </Action>
+                              <Action OrderNumber="4" SoundRouting="None" TTSRouting="None" VariableOp="SetNumeric" VariableName="dataLevelCorrection" VariableExpression="${var:dataMyLevel}+4" ActionType="Variable">
+                                <Condition Enabled="true" Grouping="Or">
+                                  <ConditionSingle Enabled="true" ExpressionL="${ID}" ExpressionTypeL="String" ExpressionR="1399" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
+                                </Condition>
+                              </Action>
+                              <Action OrderNumber="5" SoundRouting="None" TTSRouting="None" VariableOp="SetNumeric" VariableName="dataLevelCorrection" VariableExpression="${var:dataMyLevel}+5" ActionType="Variable">
+                                <Condition Enabled="true" Grouping="Or">
+                                  <ConditionSingle Enabled="true" ExpressionL="${ID}" ExpressionTypeL="String" ExpressionR="139A" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
+                                </Condition>
+                              </Action>
+                            </Actions>
+                            <Condition Enabled="true" Grouping="And">
+                              <ConditionSingle Enabled="true" ExpressionL="${player}" ExpressionTypeL="String" ExpressionR="${_ffxivplayer}" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
+                              <ConditionSingle Enabled="true" ExpressionL="${var:criticalEncounter}" ExpressionTypeL="String" ExpressionR="folios" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
+                            </Condition>
+                            <Conditions />
+                          </Trigger>
+                          <Trigger Enabled="true" Name="# Reset" Id="8cf5dda7-f041-4caf-bcd7-e596a3f3fd38" RegularExpression="^.{29}14:(?&lt;sourceID&gt;(?:[^:]*)):(?&lt;source&gt;(?:[^:]*)):B8C0:">
+                            <Actions>
+                              <Action OrderNumber="1" SoundRouting="None" TTSRouting="None" VariableName="dataLevelCorrection" ActionType="Variable">
+                                <Condition Enabled="false" Grouping="Or" />
+                              </Action>
+                            </Actions>
+                            <Condition Enabled="true" Grouping="Or">
+                              <ConditionSingle Enabled="true" ExpressionL="${var:criticalEncounter}" ExpressionTypeL="String" ExpressionR="folios" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
+                            </Condition>
+                            <Conditions />
+                          </Trigger>
+                          <Trigger Enabled="true" Name="Spell" Id="ca0ff795-2754-47f3-83f5-12e2d4e065db" RegularExpression="^.{29}14:(?&lt;sourceID&gt;(?:[^:]*)):(?&lt;source&gt;(?:[^:]*)):B8D[3-6]:" PeriodRefire="Deny" RefirePeriodExpression="1000">
+                            <Actions>
+                              <Action OrderNumber="1" SoundRouting="None" TTSRouting="None" TextAuraEffect="Bold" TextAuraFontSize="32.25" TextAuraForeground="Red" TextAuraOutline="Black" TextAuraName="knowledgeLevelWarning" TextAuraExpression="AVOID PRIME" TextAuraXIniExpression="0" TextAuraYIniExpression="(${_screenheight}/2)-50" TextAuraWIniExpression="${_screenwidth}" TextAuraHIniExpression="50" TextAuraOIniExpression="100" TextAuraOTickExpression="50 + (cos(${_sincems}/100)*50)" TextAuraTTLTickExpression="(11*1000)-${_sincems}" TextAuraFontName="Arial" ActionType="TextAura">
+                                <Condition Enabled="true" Grouping="Or">
+                                  <ConditionSingle Enabled="true" ExpressionL="${var:dataLevelCorrection}" ExpressionTypeL="Numeric" ExpressionR="23" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
+                                  <ConditionSingle Enabled="true" ExpressionL="${var:dataLevelCorrection}" ExpressionTypeL="Numeric" ExpressionR="29" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
+                                  <ConditionSingle Enabled="true" ExpressionL="${var:dataLevelCorrection}" ExpressionTypeL="Numeric" ExpressionR="31" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
+                                  <ConditionSingle Enabled="true" ExpressionL="${var:dataLevelCorrection}" ExpressionTypeL="Numeric" ExpressionR="37" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
+                                  <ConditionSingle Enabled="true" ExpressionL="${var:dataLevelCorrection}" ExpressionTypeL="Numeric" ExpressionR="41" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
+                                  <ConditionSingle Enabled="true" ExpressionL="${var:dataLevelCorrection}" ExpressionTypeL="Numeric" ExpressionR="43" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
+                                </Condition>
+                              </Action>
+                              <Action OrderNumber="2" SoundRouting="None" TTSRouting="None" TextAuraEffect="Bold" TextAuraFontSize="32.25" TextAuraForeground="Red" TextAuraOutline="Black" TextAuraName="knowledgeLevelWarning" TextAuraExpression="AVOID Lv.3" TextAuraXIniExpression="0" TextAuraYIniExpression="(${_screenheight}/2)-50" TextAuraWIniExpression="${_screenwidth}" TextAuraHIniExpression="50" TextAuraOIniExpression="100" TextAuraOTickExpression="50 + (cos(${_sincems}/100)*50)" TextAuraTTLTickExpression="(11*1000)-${_sincems}" TextAuraFontName="Arial" ActionType="TextAura">
+                                <Condition Enabled="true" Grouping="Or">
+                                  <ConditionSingle Enabled="true" ExpressionL="${var:dataLevelCorrection}" ExpressionTypeL="Numeric" ExpressionR="21" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
+                                  <ConditionSingle Enabled="true" ExpressionL="${var:dataLevelCorrection}" ExpressionTypeL="Numeric" ExpressionR="27" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
+                                  <ConditionSingle Enabled="true" ExpressionL="${var:dataLevelCorrection}" ExpressionTypeL="Numeric" ExpressionR="33" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
+                                  <ConditionSingle Enabled="true" ExpressionL="${var:dataLevelCorrection}" ExpressionTypeL="Numeric" ExpressionR="39" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
+                                  <ConditionSingle Enabled="true" ExpressionL="${var:dataLevelCorrection}" ExpressionTypeL="Numeric" ExpressionR="42" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
+                                </Condition>
+                              </Action>
+                              <Action OrderNumber="3" SoundRouting="None" TTSRouting="None" TextAuraEffect="Bold" TextAuraFontSize="32.25" TextAuraForeground="Red" TextAuraOutline="Black" TextAuraName="knowledgeLevelWarning" TextAuraExpression="AVOID Lv.4" TextAuraXIniExpression="0" TextAuraYIniExpression="(${_screenheight}/2)-50" TextAuraWIniExpression="${_screenwidth}" TextAuraHIniExpression="50" TextAuraOIniExpression="100" TextAuraOTickExpression="50 + (cos(${_sincems}/100)*50)" TextAuraTTLTickExpression="(11*1000)-${_sincems}" TextAuraFontName="Arial" ActionType="TextAura">
+                                <Condition Enabled="true" Grouping="Or">
+                                  <ConditionSingle Enabled="true" ExpressionL="${var:dataLevelCorrection}" ExpressionTypeL="Numeric" ExpressionR="28" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
+                                  <ConditionSingle Enabled="true" ExpressionL="${var:dataLevelCorrection}" ExpressionTypeL="Numeric" ExpressionR="32" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
+                                  <ConditionSingle Enabled="true" ExpressionL="${var:dataLevelCorrection}" ExpressionTypeL="Numeric" ExpressionR="44" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
+                                </Condition>
+                              </Action>
+                              <Action OrderNumber="4" SoundRouting="None" TTSRouting="None" TextAuraEffect="Bold" TextAuraFontSize="32.25" TextAuraForeground="Red" TextAuraOutline="Black" TextAuraName="knowledgeLevelWarning" TextAuraExpression="AVOID Lv.5" TextAuraXIniExpression="0" TextAuraYIniExpression="(${_screenheight}/2)-50" TextAuraWIniExpression="${_screenwidth}" TextAuraHIniExpression="50" TextAuraOIniExpression="100" TextAuraOTickExpression="50 + (cos(${_sincems}/100)*50)" TextAuraTTLTickExpression="(11*1000)-${_sincems}" TextAuraFontName="Arial" ActionType="TextAura">
+                                <Condition Enabled="true" Grouping="Or">
+                                  <ConditionSingle Enabled="true" ExpressionL="${var:dataLevelCorrection}" ExpressionTypeL="Numeric" ExpressionR="25" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
+                                  <ConditionSingle Enabled="true" ExpressionL="${var:dataLevelCorrection}" ExpressionTypeL="Numeric" ExpressionR="35" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
+                                  <ConditionSingle Enabled="true" ExpressionL="${var:dataLevelCorrection}" ExpressionTypeL="Numeric" ExpressionR="45" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
+                                </Condition>
+                              </Action>
+                              <Action OrderNumber="5" SoundRouting="None" TTSRouting="None" TextAuraEffect="Bold" TextAuraFontSize="32.25" TextAuraForeground="Red" TextAuraOutline="Black" TextAuraName="knowledgeLevelWarning" TextAuraExpression="AVOID Lv.3 &amp; 4" TextAuraXIniExpression="0" TextAuraYIniExpression="(${_screenheight}/2)-50" TextAuraWIniExpression="${_screenwidth}" TextAuraHIniExpression="50" TextAuraOIniExpression="100" TextAuraOTickExpression="50 + (cos(${_sincems}/100)*50)" TextAuraTTLTickExpression="(11*1000)-${_sincems}" TextAuraFontName="Arial" ActionType="TextAura">
+                                <Condition Enabled="true" Grouping="Or">
+                                  <ConditionSingle Enabled="true" ExpressionL="${var:dataLevelCorrection}" ExpressionTypeL="Numeric" ExpressionR="24" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
+                                  <ConditionSingle Enabled="true" ExpressionL="${var:dataLevelCorrection}" ExpressionTypeL="Numeric" ExpressionR="36" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
+                                </Condition>
+                              </Action>
+                              <Action OrderNumber="6" SoundRouting="None" TTSRouting="None" TextAuraEffect="Bold" TextAuraFontSize="32.25" TextAuraForeground="Red" TextAuraOutline="Black" TextAuraName="knowledgeLevelWarning" TextAuraExpression="AVOID Lv.3 &amp; 5" TextAuraXIniExpression="0" TextAuraYIniExpression="(${_screenheight}/2)-50" TextAuraWIniExpression="${_screenwidth}" TextAuraHIniExpression="50" TextAuraOIniExpression="100" TextAuraOTickExpression="50 + (cos(${_sincems}/100)*50)" TextAuraTTLTickExpression="(11*1000)-${_sincems}" TextAuraFontName="Arial" ActionType="TextAura">
+                                <Condition Enabled="true" Grouping="Or">
+                                  <ConditionSingle Enabled="true" ExpressionL="${var:dataLevelCorrection}" ExpressionTypeL="Numeric" ExpressionR="30" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
+                                </Condition>
+                              </Action>
+                              <Action OrderNumber="7" SoundRouting="None" TTSRouting="None" TextAuraEffect="Bold" TextAuraFontSize="32.25" TextAuraForeground="Red" TextAuraOutline="Black" TextAuraName="knowledgeLevelWarning" TextAuraExpression="AVOID Lv.4 &amp; 5" TextAuraXIniExpression="0" TextAuraYIniExpression="(${_screenheight}/2)-50" TextAuraWIniExpression="${_screenwidth}" TextAuraHIniExpression="50" TextAuraOIniExpression="100" TextAuraOTickExpression="50 + (cos(${_sincems}/100)*50)" TextAuraTTLTickExpression="(11*1000)-${_sincems}" TextAuraFontName="Arial" ActionType="TextAura">
+                                <Condition Enabled="true" Grouping="Or">
+                                  <ConditionSingle Enabled="true" ExpressionL="${var:dataLevelCorrection}" ExpressionTypeL="Numeric" ExpressionR="40" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
+                                </Condition>
+                              </Action>
+                            </Actions>
+                            <Condition Enabled="false" Grouping="Or" />
+                            <Conditions />
+                          </Trigger>
+                        </Triggers>
+                      </Folder>
+                    </Folders>
                     <Triggers>
                       <Trigger Enabled="true" Name="Marginalia" Id="50033784-ee8e-4f0d-9998-8c5858213702" RegularExpression="^.{29}14:(?&lt;sourceID&gt;(?:[^:]*)):(?&lt;source&gt;(?:[^:]*)):B8E0:">
                         <Actions>
@@ -76174,7 +76302,6 @@
                         <Condition Enabled="true" Grouping="Or">
                           <ConditionSingle Enabled="true" ExpressionL="${var:criticalEncounter}" ExpressionTypeL="String" ExpressionR="folios" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
                         </Condition>
-                        <Conditions />
                       </Trigger>
                     </Triggers>
                   </Folder>
@@ -76203,20 +76330,19 @@
                       </Trigger>
                       <Trigger Enabled="true" Name="Digested Juice" Id="d1df5c3a-30af-492f-9831-19e88d5ac436" RegularExpression="^.{29}14:(?&lt;sourceID&gt;(?:[^:]*)):(?&lt;source&gt;(?:[^:]*)):BBF4:">
                         <Actions>
-                          <Action OrderNumber="1" SoundRouting="None" TTSRouting="None" TextAuraEffect="Bold" TextAuraFontSize="24" TextAuraForeground="#FFBB00" TextAuraOutline="Black" TextAuraName="digestedJuice" TextAuraExpression="Behind (${func:format(System.Double,&quot;0.0&quot;):${numeric:((4*1000)-${_sincems})/1000)}}) ► Behind (${func:format(System.Double,&quot;0.0&quot;):${numeric:((9*1000)-${_sincems})/1000)}}) ► Out / Chariot (${func:format(System.Double,&quot;0.0&quot;):${numeric:((11*1000)-${_sincems})/1000)}})" TextAuraXIniExpression="0" TextAuraYIniExpression="${_screenheight}/2" TextAuraWIniExpression="${_screenwidth}" TextAuraHIniExpression="42" TextAuraOIniExpression="100" TextAuraTTLTickExpression="(11*1000)-${_sincems}" TextAuraFontName="Arial" ActionType="TextAura">
+                          <Action OrderNumber="1" SoundRouting="None" TTSRouting="None" TextAuraEffect="Bold" TextAuraFontSize="24" TextAuraForeground="#FFBB00" TextAuraOutline="Black" TextAuraName="digestedJuice" TextAuraExpression="Behind (${func:format(System.Double,&quot;0.0&quot;):${numeric:((4*1000)-${_sincems})/1000)}}) ► Behind (${func:format(System.Double,&quot;0.0&quot;):${numeric:((9*1000)-${_sincems})/1000)}}) ► Out / Chariot (${func:format(System.Double,&quot;0.0&quot;):${numeric:((12*1000)-${_sincems})/1000)}})" TextAuraXIniExpression="0" TextAuraYIniExpression="${_screenheight}/2" TextAuraWIniExpression="${_screenwidth}" TextAuraHIniExpression="42" TextAuraOIniExpression="100" TextAuraTTLTickExpression="(12*1000)-${_sincems}" TextAuraFontName="Arial" ActionType="TextAura">
                             <Condition Enabled="false" Grouping="And" />
                           </Action>
-                          <Action OrderNumber="2" SoundRouting="None" TTSRouting="None" TextAuraEffect="Bold" TextAuraFontSize="24" TextAuraForeground="#FFBB00" TextAuraOutline="Black" TextAuraName="digestedJuice" TextAuraExpression="Behind (${func:format(System.Double,&quot;0.0&quot;):${numeric:((9*1000)-${_sincems})/1000)}}) ► Out / Chariot (${func:format(System.Double,&quot;0.0&quot;):${numeric:((11*1000)-${_sincems})/1000)}})" TextAuraXIniExpression="0" TextAuraYIniExpression="${_screenheight}/2" TextAuraWIniExpression="${_screenwidth}" TextAuraHIniExpression="42" TextAuraOIniExpression="100" TextAuraTTLTickExpression="(11*1000)-${_sincems}" TextAuraFontName="Arial" ActionType="TextAura" ExecutionDelayExpression="4000">
+                          <Action OrderNumber="2" SoundRouting="None" TTSRouting="None" TextAuraEffect="Bold" TextAuraFontSize="24" TextAuraForeground="#FFBB00" TextAuraOutline="Black" TextAuraName="digestedJuice" TextAuraExpression="Behind (${func:format(System.Double,&quot;0.0&quot;):${numeric:((9*1000)-${_sincems})/1000)}}) ► Out / Chariot (${func:format(System.Double,&quot;0.0&quot;):${numeric:((12*1000)-${_sincems})/1000)}})" TextAuraXIniExpression="0" TextAuraYIniExpression="${_screenheight}/2" TextAuraWIniExpression="${_screenwidth}" TextAuraHIniExpression="42" TextAuraOIniExpression="100" TextAuraTTLTickExpression="(12*1000)-${_sincems}" TextAuraFontName="Arial" ActionType="TextAura" ExecutionDelayExpression="4000">
                             <Condition Enabled="false" Grouping="And" />
                           </Action>
-                          <Action OrderNumber="3" SoundRouting="None" TTSRouting="None" TextAuraEffect="Bold" TextAuraFontSize="24" TextAuraForeground="#FFBB00" TextAuraOutline="Black" TextAuraName="digestedJuice" TextAuraExpression="Out / Chariot (${func:format(System.Double,&quot;0.0&quot;):${numeric:((11*1000)-${_sincems})/1000)}})" TextAuraXIniExpression="0" TextAuraYIniExpression="${_screenheight}/2" TextAuraWIniExpression="${_screenwidth}" TextAuraHIniExpression="42" TextAuraOIniExpression="100" TextAuraTTLTickExpression="(11*1000)-${_sincems}" TextAuraFontName="Arial" ActionType="TextAura" ExecutionDelayExpression="5000">
+                          <Action OrderNumber="3" SoundRouting="None" TTSRouting="None" TextAuraEffect="Bold" TextAuraFontSize="24" TextAuraForeground="#FFBB00" TextAuraOutline="Black" TextAuraName="digestedJuice" TextAuraExpression="Out / Chariot (${func:format(System.Double,&quot;0.0&quot;):${numeric:((12*1000)-${_sincems})/1000)}})" TextAuraXIniExpression="0" TextAuraYIniExpression="${_screenheight}/2" TextAuraWIniExpression="${_screenwidth}" TextAuraHIniExpression="42" TextAuraOIniExpression="100" TextAuraTTLTickExpression="(12*1000)-${_sincems}" TextAuraFontName="Arial" ActionType="TextAura" ExecutionDelayExpression="5000">
                             <Condition Enabled="false" Grouping="And" />
                           </Action>
                         </Actions>
                         <Condition Enabled="true" Grouping="Or">
                           <ConditionSingle Enabled="true" ExpressionL="${var:criticalEncounter}" ExpressionTypeL="String" ExpressionR="diet" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
                         </Condition>
-                        <Conditions />
                       </Trigger>
                     </Triggers>
                   </Folder>
@@ -76232,7 +76358,6 @@
                         <Condition Enabled="true" Grouping="Or">
                           <ConditionSingle Enabled="true" ExpressionL="${var:criticalEncounter}" ExpressionTypeL="String" ExpressionR="artistry" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
                         </Condition>
-                        <Conditions />
                       </Trigger>
                       <Trigger Enabled="true" Name="Dark Flare" Id="9a550850-bc8c-4521-8363-e1214a406b62" RegularExpression="^.{29}14:(?&lt;sourceID&gt;(?:[^:]*)):(?&lt;source&gt;(?:[^:]*)):B84E:">
                         <Actions>
@@ -76243,7 +76368,6 @@
                         <Condition Enabled="true" Grouping="Or">
                           <ConditionSingle Enabled="true" ExpressionL="${var:criticalEncounter}" ExpressionTypeL="String" ExpressionR="artistry" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
                         </Condition>
-                        <Conditions />
                       </Trigger>
                       <Trigger Enabled="true" Name="Necrosurge" Id="6eb78c4c-e642-4280-b2b1-70a7c113472b" RegularExpression="^.{29}14:(?&lt;sourceID&gt;(?:[^:]*)):(?&lt;source&gt;(?:[^:]*)):B84C:" PeriodRefire="Deny" RefirePeriodExpression="1000">
                         <Actions>
@@ -76254,7 +76378,6 @@
                         <Condition Enabled="true" Grouping="Or">
                           <ConditionSingle Enabled="true" ExpressionL="${var:criticalEncounter}" ExpressionTypeL="String" ExpressionR="artistry" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
                         </Condition>
-                        <Conditions />
                       </Trigger>
                     </Triggers>
                   </Folder>
@@ -76270,7 +76393,6 @@
                         <Condition Enabled="true" Grouping="Or">
                           <ConditionSingle Enabled="true" ExpressionL="${var:criticalEncounter}" ExpressionTypeL="String" ExpressionR="beast" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
                         </Condition>
-                        <Conditions />
                       </Trigger>
                       <Trigger Enabled="true" Name="Claw to Tail" Id="f1130106-a811-4127-8138-fb02b8685dbd" RegularExpression="^.{29}14:(?&lt;sourceID&gt;(?:[^:]*)):(?&lt;source&gt;(?:[^:]*)):BCA6:">
                         <Actions>
@@ -76284,21 +76406,19 @@
                         <Condition Enabled="true" Grouping="Or">
                           <ConditionSingle Enabled="true" ExpressionL="${var:criticalEncounter}" ExpressionTypeL="String" ExpressionR="beast" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
                         </Condition>
-                        <Conditions />
                       </Trigger>
                       <Trigger Enabled="true" Name="Tail to Claw" Id="981ff5a9-1010-4858-beb6-69f2a23c209a" RegularExpression="^.{29}14:(?&lt;sourceID&gt;(?:[^:]*)):(?&lt;source&gt;(?:[^:]*)):BCA7:">
                         <Actions>
                           <Action OrderNumber="1" SoundRouting="None" TTSRouting="None" TextAuraEffect="Bold" TextAuraFontSize="24" TextAuraForeground="#FFBB00" TextAuraOutline="Black" TextAuraName="frontBack" TextAuraExpression="SAFE: Front (${func:format(System.Double,&quot;0.0&quot;):${numeric:((6*1000)-${_sincems})/1000)}}) ► Back (${func:format(System.Double,&quot;0.0&quot;):${numeric:((9*1000)-${_sincems})/1000)}})" TextAuraXIniExpression="0" TextAuraYIniExpression="${_screenheight}/2" TextAuraWIniExpression="${_screenwidth}" TextAuraHIniExpression="42" TextAuraOIniExpression="100" TextAuraTTLTickExpression="(9*1000)-${_sincems}" TextAuraFontName="Arial" ActionType="TextAura">
                             <Condition Enabled="false" Grouping="And" />
                           </Action>
-                          <Action OrderNumber="2" SoundRouting="None" TTSRouting="None" TextAuraEffect="Bold" TextAuraFontSize="24" TextAuraForeground="#FFBB00" TextAuraOutline="Black" TextAuraName="frontBack" TextAuraExpression="SAFE: Back (${func:format(System.Double,&quot;0.0&quot;):${numeric:((9*1000)-${_sincems})/1000)}})" TextAuraXIniExpression="0" TextAuraYIniExpression="${_screenheight}/2" TextAuraWIniExpression="${_screenwidth}" TextAuraHIniExpression="42" TextAuraOIniExpression="100" TextAuraTTLTickExpression="(9*1000)-${_sincems}" TextAuraFontName="Arial" ActionType="TextAura">
+                          <Action OrderNumber="2" SoundRouting="None" TTSRouting="None" TextAuraEffect="Bold" TextAuraFontSize="24" TextAuraForeground="#FFBB00" TextAuraOutline="Black" TextAuraName="frontBack" TextAuraExpression="SAFE: Back (${func:format(System.Double,&quot;0.0&quot;):${numeric:((9*1000)-${_sincems})/1000)}})" TextAuraXIniExpression="0" TextAuraYIniExpression="${_screenheight}/2" TextAuraWIniExpression="${_screenwidth}" TextAuraHIniExpression="42" TextAuraOIniExpression="100" TextAuraTTLTickExpression="(9*1000)-${_sincems}" TextAuraFontName="Arial" ActionType="TextAura" ExecutionDelayExpression="6000">
                             <Condition Enabled="false" Grouping="And" />
                           </Action>
                         </Actions>
                         <Condition Enabled="true" Grouping="Or">
                           <ConditionSingle Enabled="true" ExpressionL="${var:criticalEncounter}" ExpressionTypeL="String" ExpressionR="beast" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
                         </Condition>
-                        <Conditions />
                       </Trigger>
                       <Trigger Enabled="true" Name="Spinebreaking Stampede" Id="9656e420-e201-4cf6-b487-b58ae109bf18" RegularExpression="^.{29}14:(?&lt;sourceID&gt;(?:[^:]*)):(?&lt;source&gt;(?:[^:]*)):BCA3:">
                         <Actions>
@@ -76312,7 +76432,6 @@
                         <Condition Enabled="true" Grouping="Or">
                           <ConditionSingle Enabled="true" ExpressionL="${var:criticalEncounter}" ExpressionTypeL="String" ExpressionR="beast" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
                         </Condition>
-                        <Conditions />
                       </Trigger>
                       <Trigger Enabled="true" Name="Sonic Howl" Id="a0d40639-7e5f-4729-a7b1-1ca488908da4" RegularExpression="^.{29}14:(?&lt;sourceID&gt;(?:[^:]*)):(?&lt;source&gt;(?:[^:]*)):BCAA:">
                         <Actions>
@@ -76323,7 +76442,6 @@
                         <Condition Enabled="true" Grouping="Or">
                           <ConditionSingle Enabled="true" ExpressionL="${var:criticalEncounter}" ExpressionTypeL="String" ExpressionR="beast" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
                         </Condition>
-                        <Conditions />
                       </Trigger>
                     </Triggers>
                   </Folder>
@@ -76339,7 +76457,6 @@
                         <Condition Enabled="true" Grouping="Or">
                           <ConditionSingle Enabled="true" ExpressionL="${var:criticalEncounter}" ExpressionTypeL="String" ExpressionR="familiar" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
                         </Condition>
-                        <Conditions />
                       </Trigger>
                       <Trigger Enabled="true" Name="Spinning Sweep" Id="84418e63-ca2e-43db-b5fa-ce887c5ebcfa" RegularExpression="^.{29}14:(?&lt;sourceID&gt;(?:[^:]*)):(?&lt;source&gt;(?:[^:]*)):B9B5:">
                         <Actions>
@@ -76350,7 +76467,6 @@
                         <Condition Enabled="true" Grouping="Or">
                           <ConditionSingle Enabled="true" ExpressionL="${var:criticalEncounter}" ExpressionTypeL="String" ExpressionR="familiar" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
                         </Condition>
-                        <Conditions />
                       </Trigger>
                     </Triggers>
                   </Folder>
@@ -76366,7 +76482,6 @@
                         <Condition Enabled="true" Grouping="Or">
                           <ConditionSingle Enabled="true" ExpressionL="${var:criticalEncounter}" ExpressionTypeL="String" ExpressionR="quarried" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
                         </Condition>
-                        <Conditions />
                       </Trigger>
                       <Trigger Enabled="true" Name="Right-Left Combination" Id="568b79a8-fd57-47fc-a5f2-4f048aaa50f3" RegularExpression="^.{29}14:(?&lt;sourceID&gt;(?:[^:]*)):(?&lt;source&gt;(?:[^:]*)):B83E:">
                         <Actions>
@@ -76380,7 +76495,6 @@
                         <Condition Enabled="true" Grouping="Or">
                           <ConditionSingle Enabled="true" ExpressionL="${var:criticalEncounter}" ExpressionTypeL="String" ExpressionR="quarried" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
                         </Condition>
-                        <Conditions />
                       </Trigger>
                       <Trigger Enabled="true" Name="Left-Right Combination" Id="b8ae1921-804a-485d-b43b-fe3a6ddb06f2" RegularExpression="^.{29}14:(?&lt;sourceID&gt;(?:[^:]*)):(?&lt;source&gt;(?:[^:]*)):B83F:">
                         <Actions>
@@ -76394,7 +76508,6 @@
                         <Condition Enabled="true" Grouping="Or">
                           <ConditionSingle Enabled="true" ExpressionL="${var:criticalEncounter}" ExpressionTypeL="String" ExpressionR="quarried" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
                         </Condition>
-                        <Conditions />
                       </Trigger>
                       <Trigger Enabled="true" Name="False Spellblade Holy" Id="941bba49-7f82-4247-a05d-c8337dd9908a" RegularExpression="^.{29}14:(?&lt;sourceID&gt;(?:[^:]*)):(?&lt;source&gt;(?:[^:]*)):BA8D:">
                         <Actions>
@@ -76403,9 +76516,8 @@
                           </Action>
                         </Actions>
                         <Condition Enabled="true" Grouping="Or">
-                          <ConditionSingle Enabled="true" ExpressionL="${var:criticalEncounter}" ExpressionTypeL="String" ExpressionR="diet" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
+                          <ConditionSingle Enabled="true" ExpressionL="${var:criticalEncounter}" ExpressionTypeL="String" ExpressionR="quarried" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
                         </Condition>
-                        <Conditions />
                       </Trigger>
                     </Triggers>
                   </Folder>
@@ -76421,7 +76533,6 @@
                         <Condition Enabled="true" Grouping="Or">
                           <ConditionSingle Enabled="true" ExpressionL="${var:criticalEncounter}" ExpressionTypeL="String" ExpressionR="behavior" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
                         </Condition>
-                        <Conditions />
                       </Trigger>
                       <Trigger Enabled="true" Name="Roulette" Id="2cc50eb2-4304-4ef8-9445-ec0c2cede7dc" RegularExpression="^.{29}14:(?&lt;sourceID&gt;(?:[^:]*)):(?&lt;source&gt;(?:[^:]*)):C27B:">
                         <Actions>
@@ -76432,13 +76543,50 @@
                         <Condition Enabled="true" Grouping="Or">
                           <ConditionSingle Enabled="true" ExpressionL="${var:criticalEncounter}" ExpressionTypeL="String" ExpressionR="behavior" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
                         </Condition>
+                      </Trigger>
+                    </Triggers>
+                  </Folder>
+                  <Folder Id="8530b67c-419c-4dee-8a03-aecb805a45b0" Name="Many Mouths to Feed" Enabled="true">
+                    <Folders />
+                    <Triggers>
+                      <Trigger Enabled="true" Name="Side Gardening" Id="ae290150-99cd-4e7a-a529-290f1e2f8dd3" RegularExpression="^.{29}14:(?&lt;sourceID&gt;(?:[^:]*)):(?&lt;source&gt;(?:[^:]*)):B873:">
+                        <Actions>
+                          <Action OrderNumber="1" SoundRouting="None" TTSRouting="None" TextAuraEffect="Bold" TextAuraFontSize="24" TextAuraForeground="#FFBB00" TextAuraOutline="Black" TextAuraName="sideGardening" TextAuraExpression="SAFE: Middle (${func:format(System.Double,&quot;0.0&quot;):${numeric:((6*1000)-${_sincems})/1000)}})" TextAuraXIniExpression="0" TextAuraYIniExpression="${_screenheight}/2" TextAuraWIniExpression="${_screenwidth}" TextAuraHIniExpression="42" TextAuraOIniExpression="100" TextAuraTTLTickExpression="(6*1000)-${_sincems}" TextAuraFontName="Arial" ActionType="TextAura">
+                            <Condition Enabled="false" Grouping="And" />
+                          </Action>
+                        </Actions>
+                        <Condition Enabled="true" Grouping="Or">
+                          <ConditionSingle Enabled="true" ExpressionL="${var:criticalEncounter}" ExpressionTypeL="String" ExpressionR="mouths" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
+                        </Condition>
+                        <Conditions />
+                      </Trigger>
+                      <Trigger Enabled="true" Name="Central Gardening" Id="5f4acf80-47ba-4b73-9571-7ae7c9b103e8" RegularExpression="^.{29}14:(?&lt;sourceID&gt;(?:[^:]*)):(?&lt;source&gt;(?:[^:]*)):B872:">
+                        <Actions>
+                          <Action OrderNumber="1" SoundRouting="None" TTSRouting="None" TextAuraEffect="Bold" TextAuraFontSize="24" TextAuraForeground="#FFBB00" TextAuraOutline="Black" TextAuraName="centralGardening" TextAuraExpression="SAFE: Sides (${func:format(System.Double,&quot;0.0&quot;):${numeric:((6*1000)-${_sincems})/1000)}})" TextAuraXIniExpression="0" TextAuraYIniExpression="${_screenheight}/2" TextAuraWIniExpression="${_screenwidth}" TextAuraHIniExpression="42" TextAuraOIniExpression="100" TextAuraTTLTickExpression="(6*1000)-${_sincems}" TextAuraFontName="Arial" ActionType="TextAura">
+                            <Condition Enabled="false" Grouping="And" />
+                          </Action>
+                        </Actions>
+                        <Condition Enabled="true" Grouping="Or">
+                          <ConditionSingle Enabled="true" ExpressionL="${var:criticalEncounter}" ExpressionTypeL="String" ExpressionR="mouths" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
+                        </Condition>
+                        <Conditions />
+                      </Trigger>
+                      <Trigger Enabled="true" Name="Acrid Rain" Id="f4b7448f-c652-4bbb-8fcb-0c10ab877066" RegularExpression="^.{29}14:(?&lt;sourceID&gt;(?:[^:]*)):(?&lt;source&gt;(?:[^:]*)):B87F:">
+                        <Actions>
+                          <Action OrderNumber="1" SoundRouting="None" TTSRouting="None" TextAuraEffect="Bold" TextAuraFontSize="24" TextAuraForeground="#FFBB00" TextAuraOutline="Black" TextAuraName="raidwideMag" TextAuraExpression="Mag. Raidwide (${func:format(System.Double,&quot;0.0&quot;):${numeric:((6*1000)-${_sincems})/1000)}})" TextAuraXIniExpression="0" TextAuraYIniExpression="${_screenheight}/2" TextAuraWIniExpression="${_screenwidth}" TextAuraHIniExpression="42" TextAuraOIniExpression="100" TextAuraTTLTickExpression="(6*1000)-${_sincems}" TextAuraFontName="Arial" ActionType="TextAura">
+                            <Condition Enabled="false" Grouping="And" />
+                          </Action>
+                        </Actions>
+                        <Condition Enabled="true" Grouping="Or">
+                          <ConditionSingle Enabled="true" ExpressionL="${var:criticalEncounter}" ExpressionTypeL="String" ExpressionR="diet" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
+                        </Condition>
                         <Conditions />
                       </Trigger>
                     </Triggers>
                   </Folder>
                 </Folders>
                 <Triggers>
-                  <Trigger Enabled="true" Name="# Checker" Id="98393be8-1885-465a-8d90-ec6a6d3068c0" RegularExpression="21:[0-9A-F]{8}:80000014:(?&lt;ID&gt;(?:[^:]*)):">
+                  <Trigger Enabled="true" Name="# Checker" Id="98393be8-1885-465a-8d90-ec6a6d3068c0" RegularExpression="^.{24}21:[0-9A-F]{8}:80000014:(?&lt;ID&gt;(?:[^:]*)):">
                     <Actions>
                       <Action OrderNumber="1" SoundRouting="None" TTSRouting="None" VariableOp="SetString" VariableName="criticalEncounter" VariableExpression="beast" ActionType="Variable" Description="A Beast Unleashed" DescriptionOverride="True">
                         <Condition Enabled="true" Grouping="Or">

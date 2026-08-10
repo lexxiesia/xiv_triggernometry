@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <TriggernometryExport PluginVersion="1.2.0.7">
-  <ExportedFolder Id="e6535eb9-7bf8-4213-9032-957dd301fdeb" Name="Github v7.55.260807" Enabled="true">
+  <ExportedFolder Id="e6535eb9-7bf8-4213-9032-957dd301fdeb" Name="Github v7.55.260810" Enabled="true">
     <Folders>
       <Folder Id="ad5d02df-4ec4-455d-8732-28c2d29db1af" Name="Hunts" Enabled="true">
         <Folders>
@@ -76569,6 +76569,16 @@
                               <ConditionSingle Enabled="true" ExpressionL="${ID}" ExpressionTypeL="String" ExpressionR="B7CE" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
                             </Condition>
                           </Action>
+                          <Action OrderNumber="5" SoundRouting="None" TTSRouting="None" TextAuraEffect="Bold" TextAuraFontSize="32.25" TextAuraForeground="Red" TextAuraOutline="Black" TextAuraName="assymmetricCoifChange" TextAuraExpression="RIGHT ► LEFT" TextAuraXIniExpression="0" TextAuraYIniExpression="(${_screenheight}/2)-50" TextAuraWIniExpression="${_screenwidth}" TextAuraHIniExpression="50" TextAuraOIniExpression="100" TextAuraOTickExpression="50 + (cos(${_sincems}/100)*50)" TextAuraTTLTickExpression="(3*1000)-${_sincems}" TextAuraFontName="Arial" ActionType="TextAura">
+                            <Condition Enabled="true" Grouping="And">
+                              <ConditionSingle Enabled="true" ExpressionL="${ID}" ExpressionTypeL="String" ExpressionR="B7CF" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
+                            </Condition>
+                          </Action>
+                          <Action OrderNumber="6" SoundRouting="None" TTSRouting="None" TextAuraEffect="Bold" TextAuraFontSize="32.25" TextAuraForeground="Red" TextAuraOutline="Black" TextAuraName="assymmetricCoifChange" TextAuraExpression="LEFT ► RIGHT" TextAuraXIniExpression="0" TextAuraYIniExpression="(${_screenheight}/2)-50" TextAuraWIniExpression="${_screenwidth}" TextAuraHIniExpression="50" TextAuraOIniExpression="100" TextAuraOTickExpression="50 + (cos(${_sincems}/100)*50)" TextAuraTTLTickExpression="(3*1000)-${_sincems}" TextAuraFontName="Arial" ActionType="TextAura">
+                            <Condition Enabled="true" Grouping="And">
+                              <ConditionSingle Enabled="true" ExpressionL="${ID}" ExpressionTypeL="String" ExpressionR="B7CE" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
+                            </Condition>
+                          </Action>
                         </Actions>
                         <Condition Enabled="true" Grouping="Or">
                           <ConditionSingle Enabled="true" ExpressionL="${var:criticalEncounter}" ExpressionTypeL="String" ExpressionR="trouble" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
@@ -76737,63 +76747,13 @@
                                   </Action>
                                 </Actions>
                                 <Condition Enabled="true" Grouping="Or">
-                                  <ConditionSingle Enabled="true" ExpressionL="${var:criticalEncounter}" ExpressionTypeL="String" ExpressionR="ftmAevis" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
+                                  <ConditionSingle Enabled="true" ExpressionL="${var:criticalEncounter}" ExpressionTypeL="String" ExpressionR="ftmDancer" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
                                 </Condition>
                               </Trigger>
-                              <Trigger Enabled="true" Name="Callout" Id="888e1601-bb9b-4481-bcc0-37997b3428b6" RegularExpression="^.{22}23:(?&lt;sourceID&gt;[^:]*):(?&lt;source&gt;[^:]*):(?&lt;targetID&gt;[^:]*):(?&lt;target&gt;[^:]*):[^:]*:[^:]*:01A8:">
+                              <Trigger Enabled="true" Name="Callout" Id="888e1601-bb9b-4481-bcc0-37997b3428b6" RegularExpression="^.{22}23:(?&lt;sourceID&gt;[^:]*):(?&lt;source&gt;[^:]*):(?&lt;targetID&gt;[^:]*):(?&lt;target&gt;[^:]*):[^:]*:[^:]*:01A[78]:">
                                 <Actions>
                                   <Action OrderNumber="1" SoundRouting="None" TTSRouting="None" TextAuraEffect="Bold" TextAuraFontSize="24" TextAuraForeground="#FFBB00" TextAuraOutline="Black" TextAuraName="martialMystique" TextAuraExpression="SAFE: ${var:dataDancerSafeHalf} (${func:format(System.Double,&quot;0.0&quot;):${numeric:((4*1000)-${_sincems})/1000)}})" TextAuraXIniExpression="0" TextAuraYIniExpression="${_screenheight}/2" TextAuraWIniExpression="${_screenwidth}" TextAuraHIniExpression="42" TextAuraOIniExpression="100" TextAuraTTLTickExpression="(4*1000)-${_sincems}" TextAuraFontName="Arial" ActionType="TextAura">
                                     <Condition Enabled="false" Grouping="And" />
-                                  </Action>
-                                </Actions>
-                                <Condition Enabled="true" Grouping="Or">
-                                  <ConditionSingle Enabled="true" ExpressionL="${var:criticalEncounter}" ExpressionTypeL="String" ExpressionR="ftmDancer" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
-                                </Condition>
-                              </Trigger>
-                            </Triggers>
-                          </Folder>
-                          <Folder Id="e6f1256f-9b9f-4a4c-a8e8-10256a93ca77" Name="Cycloswords" Enabled="true">
-                            <Folders />
-                            <Triggers>
-                              <Trigger Enabled="true" Name="Tracker" Id="893acb6a-1b16-4283-bd2f-e5911b7d5caf" RegularExpression="^.{25}1A:DE6:[^:]*:(?&lt;duration&gt;(?:[^:]*)):[^:]*:[^:]*:[^:]*:(?&lt;target&gt;(?:[^:]*)):(?&lt;count&gt;46[EF]):">
-                                <Actions>
-                                  <Action OrderNumber="1" ListVariableOp="Push" ListVariableName="dataCycloswords" ListVariableExpression="Out" SoundRouting="None" TTSRouting="None" ActionType="ListVariable">
-                                    <Condition Enabled="true" Grouping="Or">
-                                      <ConditionSingle Enabled="true" ExpressionL="${count}" ExpressionTypeL="String" ExpressionR="46E" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
-                                    </Condition>
-                                  </Action>
-                                  <Action OrderNumber="2" ListVariableOp="Push" ListVariableName="dataCycloswords" ListVariableExpression="In" SoundRouting="None" TTSRouting="None" ActionType="ListVariable">
-                                    <Condition Enabled="true" Grouping="Or">
-                                      <ConditionSingle Enabled="true" ExpressionL="${count}" ExpressionTypeL="String" ExpressionR="46F" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
-                                    </Condition>
-                                  </Action>
-                                </Actions>
-                                <Condition Enabled="false" Grouping="Or" />
-                              </Trigger>
-                              <Trigger Enabled="true" Name="# Reset" Id="72f61cbd-0785-4a78-8647-d211a8f1d93f" RegularExpression="^.{29}14:(?&lt;sourceID&gt;(?:[^:]*)):(?&lt;source&gt;(?:[^:]*)):C1B2:" PeriodRefire="Deny" RefirePeriodExpression="1000">
-                                <Actions>
-                                  <Action OrderNumber="1" ListVariableName="dataCycloswords" SoundRouting="None" TTSRouting="None" ActionType="ListVariable">
-                                    <Condition Enabled="false" Grouping="Or" />
-                                  </Action>
-                                </Actions>
-                                <Condition Enabled="true" Grouping="Or">
-                                  <ConditionSingle Enabled="true" ExpressionL="${var:criticalEncounter}" ExpressionTypeL="String" ExpressionR="ftmDancer" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
-                                </Condition>
-                              </Trigger>
-                              <Trigger Enabled="true" Name="Callout" Id="d06fa105-580a-40f1-a7db-ebed55c2d14f" RegularExpression="^.{25}1A:DE6:[^:]*:(?&lt;duration&gt;(?:[^:]*)):[^:]*:[^:]*:[^:]*:(?&lt;target&gt;(?:[^:]*)):(?&lt;count&gt;46[EF]):" PeriodRefire="Deny" RefirePeriodExpression="1000">
-                                <Actions>
-                                  <Action OrderNumber="1" SoundRouting="None" TTSRouting="None" ActionType="Placeholder" ExecutionDelayExpression="500" Description="0.5s Delay" DescriptionOverride="True">
-                                    <Condition Enabled="false" Grouping="Or" />
-                                  </Action>
-                                  <Action OrderNumber="2" SoundRouting="None" TTSRouting="None" TextAuraEffect="Bold" TextAuraFontSize="24" TextAuraForeground="#FFBB00" TextAuraOutline="Black" TextAuraName="cycloswordsUnsheathed" TextAuraExpression="SAFE: ${lvar:dataCycloswords[1]} (${func:format(System.Double,&quot;0.0&quot;):${numeric:((9*1000)-${_sincems})/1000)}})" TextAuraXIniExpression="0" TextAuraYIniExpression="${_screenheight}/2" TextAuraWIniExpression="${_screenwidth}" TextAuraHIniExpression="42" TextAuraOIniExpression="100" TextAuraTTLTickExpression="(9*1000)-${_sincems}" TextAuraFontName="Arial" ActionType="TextAura">
-                                    <Condition Enabled="true" Grouping="And">
-                                      <ConditionSingle Enabled="true" ExpressionL="${lvar:dataCycloswords.size}" ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
-                                    </Condition>
-                                  </Action>
-                                  <Action OrderNumber="3" SoundRouting="None" TTSRouting="None" TextAuraEffect="Bold" TextAuraFontSize="24" TextAuraForeground="#FFBB00" TextAuraOutline="Black" TextAuraName="cycloswordsUnsheathed" TextAuraExpression="SAFE: ${lvar:dataCycloswords[1]}+${lvar:dataCycloswords[2]} (${func:format(System.Double,&quot;0.0&quot;):${numeric:((8*1000)-${_sincems})/1000)}})" TextAuraXIniExpression="0" TextAuraYIniExpression="${_screenheight}/2" TextAuraWIniExpression="${_screenwidth}" TextAuraHIniExpression="42" TextAuraOIniExpression="100" TextAuraTTLTickExpression="(8*1000)-${_sincems}" TextAuraFontName="Arial" ActionType="TextAura">
-                                    <Condition Enabled="true" Grouping="And">
-                                      <ConditionSingle Enabled="true" ExpressionL="${lvar:dataCycloswords.size}" ExpressionTypeL="Numeric" ExpressionR="2" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
-                                    </Condition>
                                   </Action>
                                 </Actions>
                                 <Condition Enabled="true" Grouping="Or">
@@ -76826,16 +76786,16 @@
                           </Trigger>
                           <Trigger Enabled="true" Name="Swordpointe" Id="bbeb1a0d-988c-4cc8-927d-74748885af6d" RegularExpression="^.{29}14:(?&lt;sourceID&gt;(?:[^:]*)):(?&lt;source&gt;(?:[^:]*)):C215:" PeriodRefire="Deny" RefirePeriodExpression="1000">
                             <Actions>
-                              <Action OrderNumber="1" SoundRouting="None" TTSRouting="None" TextAuraEffect="Bold" TextAuraFontSize="24" TextAuraForeground="#FFBB00" TextAuraOutline="Black" TextAuraName="knockbackTimer" TextAuraExpression="Knockback #1 (${func:format(System.Double,&quot;0.0&quot;):${numeric:((5*1000)-${_sincems})/1000)}}) ► #2 (${func:format(System.Double,&quot;0.0&quot;):${numeric:((7.5*1000)-${_sincems})/1000)}}) ► #3 (${func:format(System.Double,&quot;0.0&quot;):${numeric:((10*1000)-${_sincems})/1000)}}) ► #4 (${func:format(System.Double,&quot;0.0&quot;):${numeric:((12.5*1000)-${_sincems})/1000)}})" TextAuraXIniExpression="0" TextAuraYIniExpression="${_screenheight}/2" TextAuraWIniExpression="${_screenwidth}" TextAuraHIniExpression="42" TextAuraOIniExpression="100" TextAuraTTLTickExpression="(12.5*1000)-${_sincems}" TextAuraFontName="Arial" ActionType="TextAura">
+                              <Action OrderNumber="1" SoundRouting="None" TTSRouting="None" TextAuraEffect="Bold" TextAuraFontSize="24" TextAuraForeground="#FFBB00" TextAuraOutline="Black" TextAuraName="knockbackTimer" TextAuraExpression="Knockback ${lvar:dataLeapingLift[1]} (${func:format(System.Double,&quot;0.0&quot;):${numeric:((5*1000)-${_sincems})/1000)}}) ► ${lvar:dataLeapingLift[2]} (${func:format(System.Double,&quot;0.0&quot;):${numeric:((7.5*1000)-${_sincems})/1000)}}) ► ${lvar:dataLeapingLift[3]} (${func:format(System.Double,&quot;0.0&quot;):${numeric:((10*1000)-${_sincems})/1000)}}) ► ${lvar:dataLeapingLift[4]} (${func:format(System.Double,&quot;0.0&quot;):${numeric:((12.5*1000)-${_sincems})/1000)}})" TextAuraXIniExpression="0" TextAuraYIniExpression="${_screenheight}/2" TextAuraWIniExpression="${_screenwidth}" TextAuraHIniExpression="42" TextAuraOIniExpression="100" TextAuraTTLTickExpression="(12.5*1000)-${_sincems}" TextAuraFontName="Arial" ActionType="TextAura">
                                 <Condition Enabled="false" Grouping="And" />
                               </Action>
-                              <Action OrderNumber="2" SoundRouting="None" TTSRouting="None" TextAuraEffect="Bold" TextAuraFontSize="24" TextAuraForeground="#FFBB00" TextAuraOutline="Black" TextAuraName="knockbackTimer" TextAuraExpression="Knockback #2 (${func:format(System.Double,&quot;0.0&quot;):${numeric:((7.5*1000)-${_sincems})/1000)}}) ► #3 (${func:format(System.Double,&quot;0.0&quot;):${numeric:((10*1000)-${_sincems})/1000)}}) ► #4 (${func:format(System.Double,&quot;0.0&quot;):${numeric:((12.5*1000)-${_sincems})/1000)}})" TextAuraXIniExpression="0" TextAuraYIniExpression="${_screenheight}/2" TextAuraWIniExpression="${_screenwidth}" TextAuraHIniExpression="42" TextAuraOIniExpression="100" TextAuraTTLTickExpression="(12.5*1000)-${_sincems}" TextAuraFontName="Arial" ActionType="TextAura" ExecutionDelayExpression="5000">
+                              <Action OrderNumber="2" SoundRouting="None" TTSRouting="None" TextAuraEffect="Bold" TextAuraFontSize="24" TextAuraForeground="#FFBB00" TextAuraOutline="Black" TextAuraName="knockbackTimer" TextAuraExpression="Knockback ${lvar:dataLeapingLift[2]} (${func:format(System.Double,&quot;0.0&quot;):${numeric:((7.5*1000)-${_sincems})/1000)}}) ► ${lvar:dataLeapingLift[3]} (${func:format(System.Double,&quot;0.0&quot;):${numeric:((10*1000)-${_sincems})/1000)}}) ► ${lvar:dataLeapingLift[4]} (${func:format(System.Double,&quot;0.0&quot;):${numeric:((12.5*1000)-${_sincems})/1000)}})" TextAuraXIniExpression="0" TextAuraYIniExpression="${_screenheight}/2" TextAuraWIniExpression="${_screenwidth}" TextAuraHIniExpression="42" TextAuraOIniExpression="100" TextAuraTTLTickExpression="(12.5*1000)-${_sincems}" TextAuraFontName="Arial" ActionType="TextAura" ExecutionDelayExpression="5000">
                                 <Condition Enabled="false" Grouping="And" />
                               </Action>
-                              <Action OrderNumber="3" SoundRouting="None" TTSRouting="None" TextAuraEffect="Bold" TextAuraFontSize="24" TextAuraForeground="#FFBB00" TextAuraOutline="Black" TextAuraName="knockbackTimer" TextAuraExpression="Knockback #3 (${func:format(System.Double,&quot;0.0&quot;):${numeric:((10*1000)-${_sincems})/1000)}}) ► #4 (${func:format(System.Double,&quot;0.0&quot;):${numeric:((12.5*1000)-${_sincems})/1000)}})" TextAuraXIniExpression="0" TextAuraYIniExpression="${_screenheight}/2" TextAuraWIniExpression="${_screenwidth}" TextAuraHIniExpression="42" TextAuraOIniExpression="100" TextAuraTTLTickExpression="(12.5*1000)-${_sincems}" TextAuraFontName="Arial" ActionType="TextAura" ExecutionDelayExpression="2500">
+                              <Action OrderNumber="3" SoundRouting="None" TTSRouting="None" TextAuraEffect="Bold" TextAuraFontSize="24" TextAuraForeground="#FFBB00" TextAuraOutline="Black" TextAuraName="knockbackTimer" TextAuraExpression="Knockback ${lvar:dataLeapingLift[3]} (${func:format(System.Double,&quot;0.0&quot;):${numeric:((10*1000)-${_sincems})/1000)}}) ► ${lvar:dataLeapingLift[4]} (${func:format(System.Double,&quot;0.0&quot;):${numeric:((12.5*1000)-${_sincems})/1000)}})" TextAuraXIniExpression="0" TextAuraYIniExpression="${_screenheight}/2" TextAuraWIniExpression="${_screenwidth}" TextAuraHIniExpression="42" TextAuraOIniExpression="100" TextAuraTTLTickExpression="(12.5*1000)-${_sincems}" TextAuraFontName="Arial" ActionType="TextAura" ExecutionDelayExpression="2500">
                                 <Condition Enabled="false" Grouping="And" />
                               </Action>
-                              <Action OrderNumber="4" SoundRouting="None" TTSRouting="None" TextAuraEffect="Bold" TextAuraFontSize="24" TextAuraForeground="#FFBB00" TextAuraOutline="Black" TextAuraName="knockbackTimer" TextAuraExpression="Knockback #4 (${func:format(System.Double,&quot;0.0&quot;):${numeric:((12.5*1000)-${_sincems})/1000)}})" TextAuraXIniExpression="0" TextAuraYIniExpression="${_screenheight}/2" TextAuraWIniExpression="${_screenwidth}" TextAuraHIniExpression="42" TextAuraOIniExpression="100" TextAuraTTLTickExpression="(12.5*1000)-${_sincems}" TextAuraFontName="Arial" ActionType="TextAura" ExecutionDelayExpression="2500">
+                              <Action OrderNumber="4" SoundRouting="None" TTSRouting="None" TextAuraEffect="Bold" TextAuraFontSize="24" TextAuraForeground="#FFBB00" TextAuraOutline="Black" TextAuraName="knockbackTimer" TextAuraExpression="Knockback ${lvar:dataLeapingLift[4]} (${func:format(System.Double,&quot;0.0&quot;):${numeric:((12.5*1000)-${_sincems})/1000)}})" TextAuraXIniExpression="0" TextAuraYIniExpression="${_screenheight}/2" TextAuraWIniExpression="${_screenwidth}" TextAuraHIniExpression="42" TextAuraOIniExpression="100" TextAuraTTLTickExpression="(12.5*1000)-${_sincems}" TextAuraFontName="Arial" ActionType="TextAura" ExecutionDelayExpression="2500">
                                 <Condition Enabled="false" Grouping="And" />
                               </Action>
                             </Actions>
@@ -76852,6 +76812,34 @@
                             <Condition Enabled="true" Grouping="Or">
                               <ConditionSingle Enabled="true" ExpressionL="${var:criticalEncounter}" ExpressionTypeL="String" ExpressionR="ftmDancer" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
                             </Condition>
+                          </Trigger>
+                          <Trigger Enabled="true" Name="Leaping Lift" Id="6418804c-6c7f-41cf-95c1-6c70af6b377c" RegularExpression="^.{19}108:(?&lt;sourceID&gt;[^:]*):C1B[DE]:[^:]*:[^:]*:(?&lt;x&gt;[^:]*):(?&lt;y&gt;[^:]*):(?&lt;z&gt;[^:]*):(?&lt;heading&gt;[^:]*):">
+                            <Actions>
+                              <Action OrderNumber="1" ListVariableOp="Push" ListVariableName="dataLeapingLift" ListVariableExpression="N↑" SoundRouting="None" TTSRouting="None" ActionType="ListVariable">
+                                <Condition Enabled="true" Grouping="Or">
+                                  <ConditionSingle Enabled="true" ExpressionL="round(2 - 2 * arctan2((${x}-600), (${y}-703.98)) / pi) % 4" ExpressionTypeL="Numeric" ExpressionR="0" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
+                                </Condition>
+                              </Action>
+                              <Action OrderNumber="2" ListVariableOp="Push" ListVariableName="dataLeapingLift" ListVariableExpression="E→" SoundRouting="None" TTSRouting="None" ActionType="ListVariable">
+                                <Condition Enabled="true" Grouping="Or">
+                                  <ConditionSingle Enabled="true" ExpressionL="round(2 - 2 * arctan2((${x}-600), (${y}-703.98)) / pi) % 4" ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
+                                </Condition>
+                              </Action>
+                              <Action OrderNumber="3" ListVariableOp="Push" ListVariableName="dataLeapingLift" ListVariableExpression="S↓" SoundRouting="None" TTSRouting="None" ActionType="ListVariable">
+                                <Condition Enabled="true" Grouping="Or">
+                                  <ConditionSingle Enabled="true" ExpressionL="round(2 - 2 * arctan2((${x}-600), (${y}-703.98)) / pi) % 4" ExpressionTypeL="Numeric" ExpressionR="2" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
+                                </Condition>
+                              </Action>
+                              <Action OrderNumber="4" ListVariableOp="Push" ListVariableName="dataLeapingLift" ListVariableExpression="W←" SoundRouting="None" TTSRouting="None" ActionType="ListVariable">
+                                <Condition Enabled="true" Grouping="Or">
+                                  <ConditionSingle Enabled="true" ExpressionL="round(2 - 2 * arctan2((${x}-600), (${y}-703.98)) / pi) % 4" ExpressionTypeL="Numeric" ExpressionR="3" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
+                                </Condition>
+                              </Action>
+                            </Actions>
+                            <Condition Enabled="true" Grouping="Or">
+                              <ConditionSingle Enabled="true" ExpressionL="${var:criticalEncounter}" ExpressionTypeL="String" ExpressionR="ftmDancer" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
+                            </Condition>
+                            <Conditions />
                           </Trigger>
                         </Triggers>
                       </Folder>
@@ -76978,6 +76966,39 @@
                               <ConditionSingle Enabled="true" ExpressionL="${var:criticalEncounter}" ExpressionTypeL="String" ExpressionR="ftmNecro" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
                             </Condition>
                           </Trigger>
+                          <Trigger Enabled="true" Name="Severed Fire III" Id="b21e7919-8273-46eb-a4b0-b4d9ccfe4cce" RegularExpression="^.{29}14:(?&lt;sourceID&gt;(?:[^:]*)):(?&lt;source&gt;(?:[^:]*)):B969:">
+                            <Actions>
+                              <Action OrderNumber="1" SoundRouting="None" TTSRouting="None" TextAuraEffect="Bold" TextAuraFontSize="24" TextAuraForeground="#FFBB00" TextAuraOutline="Black" TextAuraName="severedFiraga" TextAuraExpression="Chariot / Out (${func:format(System.Double,&quot;0.0&quot;):${numeric:((5.5*1000)-${_sincems})/1000)}})" TextAuraXIniExpression="0" TextAuraYIniExpression="${_screenheight}/2" TextAuraWIniExpression="${_screenwidth}" TextAuraHIniExpression="42" TextAuraOIniExpression="100" TextAuraTTLTickExpression="(5.5*1000)-${_sincems}" TextAuraFontName="Arial" ActionType="TextAura">
+                                <Condition Enabled="false" Grouping="And" />
+                              </Action>
+                            </Actions>
+                            <Condition Enabled="true" Grouping="Or">
+                              <ConditionSingle Enabled="true" ExpressionL="${var:criticalEncounter}" ExpressionTypeL="String" ExpressionR="ftmNecro" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
+                            </Condition>
+                            <Conditions />
+                          </Trigger>
+                          <Trigger Enabled="true" Name="Severed Blizzard III" Id="6347a21a-2405-4d98-850b-25ccca2a1719" RegularExpression="^.{29}14:(?&lt;sourceID&gt;(?:[^:]*)):(?&lt;source&gt;(?:[^:]*)):B96A:">
+                            <Actions>
+                              <Action OrderNumber="1" SoundRouting="None" TTSRouting="None" TextAuraEffect="Bold" TextAuraFontSize="24" TextAuraForeground="#FFBB00" TextAuraOutline="Black" TextAuraName="severedBlizzaga" TextAuraExpression="Intercardinals (${func:format(System.Double,&quot;0.0&quot;):${numeric:((5.5*1000)-${_sincems})/1000)}})" TextAuraXIniExpression="0" TextAuraYIniExpression="${_screenheight}/2" TextAuraWIniExpression="${_screenwidth}" TextAuraHIniExpression="42" TextAuraOIniExpression="100" TextAuraTTLTickExpression="(5.5*1000)-${_sincems}" TextAuraFontName="Arial" ActionType="TextAura">
+                                <Condition Enabled="false" Grouping="And" />
+                              </Action>
+                            </Actions>
+                            <Condition Enabled="true" Grouping="Or">
+                              <ConditionSingle Enabled="true" ExpressionL="${var:criticalEncounter}" ExpressionTypeL="String" ExpressionR="ftmNecro" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
+                            </Condition>
+                            <Conditions />
+                          </Trigger>
+                          <Trigger Enabled="true" Name="Severed Thunder III" Id="1954b930-cea9-4836-bfcd-aa2e1a74feaa" RegularExpression="^.{29}14:(?&lt;sourceID&gt;(?:[^:]*)):(?&lt;source&gt;(?:[^:]*)):C4B5:" PeriodRefire="Deny" RefirePeriodExpression="1000">
+                            <Actions>
+                              <Action OrderNumber="1" SoundRouting="None" TTSRouting="None" TextAuraEffect="Bold" TextAuraFontSize="24" TextAuraForeground="#FFBB00" TextAuraOutline="Black" TextAuraName="severedThundaga" TextAuraExpression="Dodge Proteans (${func:format(System.Double,&quot;0.0&quot;):${numeric:((5.5*1000)-${_sincems})/1000)}})" TextAuraXIniExpression="0" TextAuraYIniExpression="${_screenheight}/2" TextAuraWIniExpression="${_screenwidth}" TextAuraHIniExpression="42" TextAuraOIniExpression="100" TextAuraTTLTickExpression="(5.5*1000)-${_sincems}" TextAuraFontName="Arial" ActionType="TextAura">
+                                <Condition Enabled="false" Grouping="And" />
+                              </Action>
+                            </Actions>
+                            <Condition Enabled="true" Grouping="Or">
+                              <ConditionSingle Enabled="true" ExpressionL="${var:criticalEncounter}" ExpressionTypeL="String" ExpressionR="ftmNecro" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
+                            </Condition>
+                            <Conditions />
+                          </Trigger>
                         </Triggers>
                       </Folder>
                       <Folder Id="4363366a-46f9-43cd-ac7e-4579bbec6ba9" Name="The Index" Enabled="true">
@@ -76994,7 +77015,6 @@
                                 <Condition Enabled="true" Grouping="Or">
                                   <ConditionSingle Enabled="true" ExpressionL="${var:criticalEncounter}" ExpressionTypeL="String" ExpressionR="ftmIndex" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
                                 </Condition>
-                                <Conditions />
                               </Trigger>
                               <Trigger Enabled="true" Name="Swirling Orb" Id="18bbb6e7-1546-45fd-9e73-1459f2a5d6c7" RegularExpression="\A.{28}03:(?&lt;aID&gt;(?:[^:]*))(?::[^:]*){6}:14723:19300(?::[^:]*){6}:(?&lt;x&gt;(?:[^:]*)):(?&lt;y&gt;(?:[^:]*)):" PeriodRefire="Deny" RefirePeriodExpression="1000">
                                 <Actions>
@@ -77005,7 +77025,6 @@
                                 <Condition Enabled="true" Grouping="Or">
                                   <ConditionSingle Enabled="true" ExpressionL="${var:criticalEncounter}" ExpressionTypeL="String" ExpressionR="ftmIndex" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
                                 </Condition>
-                                <Conditions />
                               </Trigger>
                               <Trigger Enabled="true" Name="Ball of Levin" Id="743909b0-4242-47f1-9e64-71e0e72eedeb" RegularExpression="\A.{28}03:(?&lt;aID&gt;(?:[^:]*))(?::[^:]*){6}:14725:19302(?::[^:]*){6}:(?&lt;x&gt;(?:[^:]*)):(?&lt;y&gt;(?:[^:]*)):" PeriodRefire="Deny" RefirePeriodExpression="1000">
                                 <Actions>
@@ -77016,7 +77035,6 @@
                                 <Condition Enabled="true" Grouping="Or">
                                   <ConditionSingle Enabled="true" ExpressionL="${var:criticalEncounter}" ExpressionTypeL="String" ExpressionR="ftmIndex" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
                                 </Condition>
-                                <Conditions />
                               </Trigger>
                               <Trigger Enabled="true" Name="Ball of Fire" Id="dd29160d-033f-4c6e-b7d8-8eb895b24f13" RegularExpression="\A.{28}03:(?&lt;aID&gt;(?:[^:]*))(?::[^:]*){6}:14724:19301(?::[^:]*){6}:(?&lt;x&gt;(?:[^:]*)):(?&lt;y&gt;(?:[^:]*)):" PeriodRefire="Deny" RefirePeriodExpression="1000">
                                 <Actions>
@@ -77027,7 +77045,6 @@
                                 <Condition Enabled="true" Grouping="Or">
                                   <ConditionSingle Enabled="true" ExpressionL="${var:criticalEncounter}" ExpressionTypeL="String" ExpressionR="ftmIndex" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
                                 </Condition>
-                                <Conditions />
                               </Trigger>
                             </Triggers>
                           </Folder>
@@ -77049,7 +77066,6 @@
                             <Condition Enabled="true" Grouping="Or">
                               <ConditionSingle Enabled="true" ExpressionL="${var:criticalEncounter}" ExpressionTypeL="String" ExpressionR="ftmIndex" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
                             </Condition>
-                            <Conditions />
                           </Trigger>
                           <Trigger Enabled="true" Name="Aim" Id="d13794dd-3bfc-4736-a86a-cfcd0f15ca29" RegularExpression="^.{29}14:(?&lt;sourceID&gt;(?:[^:]*)):(?&lt;source&gt;(?:[^:]*)):BD02:">
                             <Actions>
@@ -77067,7 +77083,6 @@
                             <Condition Enabled="true" Grouping="Or">
                               <ConditionSingle Enabled="true" ExpressionL="${var:criticalEncounter}" ExpressionTypeL="String" ExpressionR="ftmIndex" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
                             </Condition>
-                            <Conditions />
                           </Trigger>
                           <Trigger Enabled="true" Name="Romeo's Ballad" Id="c7c465ac-9598-4b81-95d8-a15bb30c96f3" RegularExpression="^.{29}14:(?&lt;sourceID&gt;(?:[^:]*)):(?&lt;source&gt;(?:[^:]*)):BD00:">
                             <Actions>
@@ -77085,7 +77100,6 @@
                             <Condition Enabled="true" Grouping="Or">
                               <ConditionSingle Enabled="true" ExpressionL="${var:criticalEncounter}" ExpressionTypeL="String" ExpressionR="ftmIndex" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
                             </Condition>
-                            <Conditions />
                           </Trigger>
                           <Trigger Enabled="true" Name="Propulsive Prophecy" Id="d37589ad-b4c8-42ee-8a72-53fa6484830b" RegularExpression="^.{29}14:(?&lt;sourceID&gt;(?:[^:]*)):(?&lt;source&gt;(?:[^:]*)):BD13:">
                             <Actions>
@@ -77099,9 +77113,8 @@
                             <Condition Enabled="true" Grouping="Or">
                               <ConditionSingle Enabled="true" ExpressionL="${var:criticalEncounter}" ExpressionTypeL="String" ExpressionR="ftmIndex" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
                             </Condition>
-                            <Conditions />
                           </Trigger>
-                          <Trigger Enabled="true" Name="Summon" Id="755d5e84-3a56-4048-b448-5004126c99d9" RegularExpression="^.{29}14:(?&lt;sourceID&gt;(?:[^:]*)):(?&lt;source&gt;(?:[^:]*)):BD00:">
+                          <Trigger Enabled="true" Name="Summon" Id="755d5e84-3a56-4048-b448-5004126c99d9" RegularExpression="^.{29}14:(?&lt;sourceID&gt;(?:[^:]*)):(?&lt;source&gt;(?:[^:]*)):BD18:">
                             <Actions>
                               <Action OrderNumber="1" SoundRouting="None" TTSRouting="None" TextAuraEffect="Bold" TextAuraFontSize="32.25" TextAuraForeground="Red" TextAuraOutline="Black" TextAuraName="summonedBomb" TextAuraExpression="KILL BOMB ADDS" TextAuraXIniExpression="0" TextAuraYIniExpression="(${_screenheight}/2)-50" TextAuraWIniExpression="${_screenwidth}" TextAuraHIniExpression="50" TextAuraOIniExpression="100" TextAuraOTickExpression="50 + (cos(${_sincems}/100)*50)" TextAuraTTLTickExpression="(3.5*1000)-${_sincems}" TextAuraFontName="Arial" ActionType="TextAura">
                                 <Condition Enabled="false" Grouping="And" />
@@ -77110,7 +77123,6 @@
                             <Condition Enabled="true" Grouping="Or">
                               <ConditionSingle Enabled="true" ExpressionL="${var:criticalEncounter}" ExpressionTypeL="String" ExpressionR="ftmIndex" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
                             </Condition>
-                            <Conditions />
                           </Trigger>
                           <Trigger Enabled="true" Name="All-consuming Flames" Id="fcb5bab7-6a2e-4c6a-83a0-f98bf2a6627e" RegularExpression="\A.{26}1B:(?&lt;sourceID&gt;[^:]*):(?&lt;player&gt;(?&lt;firstName&gt;(?:[^:]*)) (?&lt;lastName&gt;(?:[^:]*))):[^:]*:[^:]*:01D2:">
                             <Actions>
@@ -77122,7 +77134,6 @@
                               <ConditionSingle Enabled="true" ExpressionL="${player}" ExpressionTypeL="String" ExpressionR="${_ffxivplayer}" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
                               <ConditionSingle Enabled="true" ExpressionL="${var:criticalEncounter}" ExpressionTypeL="String" ExpressionR="ftmIndex" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
                             </Condition>
-                            <Conditions />
                           </Trigger>
                           <Trigger Enabled="true" Name="Predict" Id="a0106f94-27c5-4e10-8520-057f8223e90d" RegularExpression="^.{29}14:(?&lt;sourceID&gt;(?:[^:]*)):(?&lt;source&gt;(?:[^:]*)):BD1C:">
                             <Actions>
@@ -77133,7 +77144,6 @@
                             <Condition Enabled="true" Grouping="Or">
                               <ConditionSingle Enabled="true" ExpressionL="${var:criticalEncounter}" ExpressionTypeL="String" ExpressionR="ftmIndex" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
                             </Condition>
-                            <Conditions />
                           </Trigger>
                           <Trigger Enabled="true" Sequential="True" Name="Elementary Evocation" Id="06a0e376-e645-4179-82e1-6a2a3f1954ee" RegularExpression="^.{19}108:[^:]*:BD10:">
                             <Actions>
@@ -77160,7 +77170,6 @@
                               <ConditionSingle Enabled="true" ExpressionL="${var:criticalEncounter}" ExpressionTypeL="String" ExpressionR="ftmIndex" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
                               <ConditionSingle Enabled="true" ExpressionL="${evar:dataDualcast}" ExpressionTypeL="Numeric" ExpressionR="0" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
                             </Condition>
-                            <Conditions />
                           </Trigger>
                           <Trigger Enabled="true" Name="Dualcast" Id="5e73bf8c-ee38-4a0b-bb01-349446bd4b84" RegularExpression="^.{29}14:(?&lt;sourceID&gt;(?:[^:]*)):(?&lt;source&gt;(?:[^:]*)):BD17:">
                             <Actions>
@@ -77171,9 +77180,8 @@
                             <Condition Enabled="true" Grouping="Or">
                               <ConditionSingle Enabled="true" ExpressionL="${var:criticalEncounter}" ExpressionTypeL="String" ExpressionR="ftmIndex" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
                             </Condition>
-                            <Conditions />
                           </Trigger>
-                          <Trigger Enabled="true" Name="Duology of Implements" Id="c4848c60-e11b-492d-b123-837aa5d46ccf" RegularExpression="^.{29}14:(?&lt;sourceID&gt;(?:[^:]*)):(?&lt;source&gt;(?:[^:]*)):BD06:" PeriodRefire="Deny" RefirePeriodExpression="1000">
+                          <Trigger Enabled="true" Name="Duology of Implements" Id="c4848c60-e11b-492d-b123-837aa5d46ccf" RegularExpression="^.{29}14:(?&lt;sourceID&gt;(?:[^:]*)):(?&lt;source&gt;(?:[^:]*)):BD0[46]:" PeriodRefire="Deny" RefirePeriodExpression="1000">
                             <Actions>
                               <Action OrderNumber="1" SoundRouting="None" TTSRouting="None" TextAuraEffect="Bold" TextAuraFontSize="20.25" TextAuraForeground="Lime" TextAuraOutline="Black" TextAuraName="duologyImplements" TextAuraExpression="Platform Cleaves #1 (${func:format(System.Double,&quot;0.0&quot;):${numeric:(((6*1000)-${_sincems})/1000)}}) ► #2 (${func:format(System.Double,&quot;0.0&quot;):${numeric:(((10*1000)-${_sincems})/1000)}})" TextAuraXIniExpression="0" TextAuraYIniExpression="(${_screenheight}/2)+42" TextAuraWIniExpression="${_screenwidth}" TextAuraHIniExpression="35" TextAuraOIniExpression="100" TextAuraTTLTickExpression="(10*1000)-${_sincems}" TextAuraFontName="Arial" ActionType="TextAura">
                                 <Condition Enabled="false" Grouping="Or" />
@@ -77185,7 +77193,6 @@
                             <Condition Enabled="true" Grouping="Or">
                               <ConditionSingle Enabled="true" ExpressionL="${var:criticalEncounter}" ExpressionTypeL="String" ExpressionR="ftmIndex" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
                             </Condition>
-                            <Conditions />
                           </Trigger>
                         </Triggers>
                       </Folder>
@@ -77240,7 +77247,7 @@
                           <ConditionSingle Enabled="true" ExpressionL="${var:criticalEncounter}" ExpressionTypeL="String" ExpressionR="web" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
                         </Condition>
                       </Trigger>
-                      <Trigger Enabled="true" Name="Queen's Orders" Id="9cf51354-fe85-46e1-990f-b7e6844ba40e" RegularExpression="^.{29}14:(?&lt;sourceID&gt;(?:[^:]*)):(?&lt;source&gt;(?:[^:]*)):C4BE:" PeriodRefire="Deny" RefirePeriodExpression="1000">
+                      <Trigger Enabled="true" Name="Queen's Orders" Id="9cf51354-fe85-46e1-990f-b7e6844ba40e" RegularExpression="^.{29}14:(?&lt;sourceID&gt;(?:[^:]*)):(?&lt;source&gt;(?:[^:]*)):C5D7:" PeriodRefire="Deny" RefirePeriodExpression="1000">
                         <Actions>
                           <Action OrderNumber="1" SoundRouting="None" TTSRouting="None" TextAuraEffect="Bold" TextAuraFontSize="24" TextAuraForeground="#FFBB00" TextAuraOutline="Black" TextAuraName="queensOrders" TextAuraExpression="Double Cones (${func:format(System.Double,&quot;0.0&quot;):${numeric:((15.5*1000)-${_sincems})/1000)}})" TextAuraXIniExpression="0" TextAuraYIniExpression="${_screenheight}/2" TextAuraWIniExpression="${_screenwidth}" TextAuraHIniExpression="42" TextAuraOIniExpression="100" TextAuraTTLTickExpression="(15.5*1000)-${_sincems}" TextAuraFontName="Arial" ActionType="TextAura">
                             <Condition Enabled="false" Grouping="And" />
@@ -77249,7 +77256,6 @@
                         <Condition Enabled="true" Grouping="Or">
                           <ConditionSingle Enabled="true" ExpressionL="${var:criticalEncounter}" ExpressionTypeL="String" ExpressionR="web" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
                         </Condition>
-                        <Conditions />
                       </Trigger>
                     </Triggers>
                   </Folder>
